@@ -1,0 +1,145 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Tile Grid
+// --------------------------------------------------
+
+.tile-grid {
+  // HACK: Hides 1px rounding errors on percent width grid cells
+  // width: 100.12%;
+}
+
+.grid-cell {
+
+  width: 100%;
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50%;
+  overflow: hidden;
+
+  color: @white;
+
+  &:nth-child(4n)   { background-color: @ccswd-dark; }
+  &:nth-child(4n+1) { background-color: @ccswd-blue; }
+  &:nth-child(4n+2) { background-color: @ccswd-green-1; }
+  &:nth-child(4n+3) { background-color: @ccswd-yellow; }
+
+  &.grid-full-width {
+    width: 100% !important;
+  }
+
+  &.grid-sizer {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .generate-grid(@cols) {
+
+    @subunits: 2;
+    @subcols: (@cols * @subunits);
+    @subrows: 4;
+
+    .generate-cell(@x, @y, @w, @h) {
+      &.grid-cell-@{w}-@{h} {
+        width: (@w / @x * 100%);
+        padding-bottom: (@subunits * @h / @y * 100% / @subcols);
+      }
+    }
+
+    .generate-cells(@x, @y) {
+      .generate-cols();
+      .generate-cols(@i: 1) when (@i =< @x) {
+        .generate-rows();
+        .generate-rows(@j: 1) when (@j =< @y) {
+          .generate-cell(@x, @y, @i, @j);
+          .generate-rows((@j + 1));
+        }
+        .generate-cols((@i + 1));
+      }
+      .generate-cols();
+    }
+
+    .generate-cells(@subcols, @subrows);
+
+  }
+
+  .generate-grid(1);
+
+  @media (min-width: @screen-xs-min) {
+    .generate-grid(2);
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .generate-grid(3);
+  }
+
+  @media (min-width: @screen-lg-min) {
+    // .generate-grid(4);
+  }
+
+  > .grid-cell-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    > .grid-cell-content-box {
+      width: 100%;
+      height: 100%;
+      display: table;
+      > .grid-cell-content {
+        display: table-cell;
+        vertical-align: bottom;
+        &.grid-cell-cta {
+          font-size: 30px;
+          letter-spacing: @letter-spacing;
+          text-align: center;
+          text-transform: uppercase;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  .grid-cell-link,
+  .grid-cell-link:link,
+  .grid-cell-link:visited,
+  .grid-cell-link:hover,
+  .grid-cell-link:focus,
+  .grid-cell-link:active {
+    padding: (@grid-gutter-width * 3 / 8) (@grid-gutter-width * 1 / 2);
+    color: @white;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: @letter-spacing;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .grid-cell-video-player {
+    padding: 0;
+    > iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+}

@@ -1,0 +1,169 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Background Colors
+// --------------------------------------------------
+
+.bg-white   { background-color: @white; }
+.bg-green-1 { background-color: @ccswd-green-1; }
+.bg-green-2 { background-color: @ccswd-green-2; }
+.bg-blue    { background-color: @ccswd-blue;    }
+.bg-yellow  { background-color: @ccswd-yellow;  }
+.bg-red     { background-color: @ccswd-red;     }
+.bg-dark    { background-color: @ccswd-dark;    }
+
+
+//
+// Buttons
+// --------------------------------------------------
+
+.btn-hollow( @btn-hollow-color, @btn-hollow-hover-color ) {
+  color: @btn-hollow-color;
+  border-color: @btn-hollow-color;
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    color: @btn-hollow-hover-color;
+    border-color: @btn-hollow-hover-color;
+  }
+}
+
+.btn-hollow-white   {
+  background: rgba( 0, 0, 0, 0.3 );
+  .btn-hollow( @white , @ccswd-green-2 );
+}
+
+.btn-hollow-green-1 { .btn-hollow( @ccswd-green-1 , @white ); }
+.btn-hollow-green-2 { .btn-hollow( @ccswd-green-2 , @white ); }
+.btn-hollow-blue    { .btn-hollow( @ccswd-blue    , @white ); }
+.btn-hollow-yellow  { .btn-hollow( @ccswd-yellow  , @white ); }
+.btn-hollow-red     { .btn-hollow( @ccswd-red     , @white ); }
+.btn-hollow-dark    { .btn-hollow( @ccswd-dark    , @white ); }
+
+
+//
+// Link lists
+// --------------------------------------------------
+
+.generate-inline-link-list() {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  > li {
+    display: inline;
+
+    > a {
+      color: inherit;
+    }
+  }
+}
+
+.inline-link-list {
+  .generate-inline-link-list();
+}
+
+
+//
+// Social media
+// --------------------------------------------------
+
+@social-link-size: (@font-size-base * 2.5);
+
+
+//
+// Page globals
+// --------------------------------------------------
+
+body {
+  color: @gray;
+}
+
+.page-header {
+  color: @white;
+
+  .page-header-upper {
+    padding-top: (@font-size-base * 2);
+  }
+
+  .page-header-social {
+    float: right;
+
+    > li {
+      margin-right: @font-size-base;
+
+      > a {
+        width: @social-link-size;
+        height: @social-link-size;
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid @white;
+        line-height: @social-link-size;
+        text-align: center;
+
+        > .fa.fa-lg {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+}
+
+.page-footer {
+  .page-footer-col {
+    padding-top: 64px;
+    padding-bottom: 96px;
+
+    dt {
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin-bottom: @font-size-base;
+    }
+
+    .page-footer-nav {
+      margin-bottom: 0;
+      padding-left: 0;
+      line-height: 2;
+      list-style: none;
+      text-transform: uppercase;
+
+      > li > a {
+        color: @gray;
+      }
+    }
+  }
+
+  .page-footer-col-siteinfo {
+    padding-top: @font-size-base;
+    padding-bottom: @font-size-base;
+    background: @gray-light;
+  }
+
+  .page-footer-social {
+    > li {
+      margin-right: (@font-size-base / 2);
+    }
+  }
+
+  .page-footer-nav-siteinfo {
+    > li:not(:last-child):after {
+      content: '|';
+      margin: 0 (@font-size-base / 2);
+    }
+  }
+}
