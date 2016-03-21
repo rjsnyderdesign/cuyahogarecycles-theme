@@ -352,7 +352,7 @@ html
 }
 body
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 
@@ -6751,7 +6751,7 @@ button.close
 }
 .tooltip
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -6907,7 +6907,7 @@ button.close
 }
 .popover
 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
@@ -7765,9 +7765,7 @@ button.close
     }
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 .bg-white
 {
@@ -7988,9 +7986,7 @@ body
     content: '|';
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 .grid-cell
 {
@@ -8582,13 +8578,39 @@ body
     height: 100%;
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
+.nav-center-wrapper
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    display: block;
+
+    height: 0;
+}
+.nav-center-inner
+{
+    display: table;
+
+    height: 70px;
+    margin-right: 50%;
+    margin-left: -50%;
+
+    background: #00833c;
+}
 .wdidw-button
 {
     font-size: 24px;
+
+    display: table-cell;
+
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
 }
 .wdidw-button,
 .wdidw-button:hover,

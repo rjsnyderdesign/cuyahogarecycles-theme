@@ -446,36 +446,6 @@ fieldset[disabled] .btn-danger.active
 {
     color: #fff;
 }
-.nav-center-wrapper
-{
-    position: absolute;
-    top: 0;
-    left: 50%;
-
-    display: block;
-
-    height: 0;
-}
-.nav-center-inner
-{
-    display: table;
-
-    height: 70px;
-    margin-right: 50%;
-    margin-left: -50%;
-
-    background: #00833c;
-}
-.wdidw-button
-{
-    display: table-cell;
-
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-
-    color: #fff;
-}
 @media (max-width: 767px)
 {
     .navbar .navbar-nav .open .dropdown-menu > .active > a,
