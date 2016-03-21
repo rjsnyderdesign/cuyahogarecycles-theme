@@ -354,7 +354,7 @@ body
 {
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.25;
 
     color: #333;
     background-color: #fff;
@@ -412,7 +412,7 @@ img
 }
 .img-thumbnail
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: inline-block;
 
@@ -434,8 +434,8 @@ img
 }
 hr
 {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     border: 0;
     border-top: 1px solid #e6e6e6;
@@ -526,8 +526,8 @@ h2,
 h3,
 .h3
 {
-    margin-top: 24px;
-    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 h1 small,
 .h1 small,
@@ -551,8 +551,8 @@ h5,
 h6,
 .h6
 {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 h4 small,
 .h4 small,
@@ -601,7 +601,7 @@ h6,
 }
 p
 {
-    margin: 0 0 1.5;
+    margin: 0 0 1.25;
 }
 .lead
 {
@@ -609,7 +609,7 @@ p
     font-weight: 300;
     line-height: 1.4;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 @media (min-width: 768px)
 {
@@ -766,7 +766,7 @@ ul,
 ol
 {
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 ul ul,
 ol ul,
@@ -798,12 +798,12 @@ ol ol
 dl
 {
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 dt,
 dd
 {
-    line-height: 1.5;
+    line-height: 1.25;
 }
 dt
 {
@@ -849,8 +849,8 @@ blockquote
 {
     font-size: 20px;
 
-    margin: 0 0 24px;
-    padding: 12px 24px;
+    margin: 0 0 20px;
+    padding: 10px 20px;
 
     border-left: 5px solid #e6e6e6;
 }
@@ -865,7 +865,7 @@ blockquote small,
 blockquote .small
 {
     font-size: 80%;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
@@ -909,9 +909,9 @@ blockquote.pull-right .small:after
 address
 {
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.25;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 code,
 kbd,
@@ -955,12 +955,12 @@ kbd kbd
 pre
 {
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
-    margin: 0 0 12px;
-    padding: 11.5px;
+    margin: 0 0 10px;
+    padding: 9.5px;
 
     word-wrap: break-word;
     word-break: break-all;
@@ -1989,7 +1989,7 @@ th
 {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -1998,7 +1998,7 @@ th
 .table > tbody > tr > td,
 .table > tfoot > tr > td
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     padding: 8px;
 
@@ -2207,7 +2207,7 @@ table th[class*='col-']
         overflow-y: hidden;
 
         width: 100%;
-        margin-bottom: 18px;
+        margin-bottom: 15px;
 
         border: 1px solid #ddd;
 
@@ -2272,7 +2272,7 @@ legend
     display: block;
 
     width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding: 0;
 
     color: #333;
@@ -2330,7 +2330,7 @@ input[type='checkbox']:focus
 output
 {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
@@ -2341,12 +2341,12 @@ output
 .form-control
 {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
     width: 100%;
-    height: 38px;
+    height: 34px;
     margin-bottom: 16px;
     padding: 6px 12px;
 
@@ -2412,7 +2412,7 @@ input[type='search']
     input[type='datetime-local'].form-control,
     input[type='month'].form-control
     {
-        line-height: 38px;
+        line-height: 34px;
     }
     input[type='date'].input-sm,
     input[type='time'].input-sm,
@@ -2456,7 +2456,7 @@ input[type='search']
 {
     font-weight: normal;
 
-    min-height: 24px;
+    min-height: 20px;
     margin-bottom: 0;
     padding-left: 20px;
 
@@ -2523,7 +2523,7 @@ fieldset[disabled] .checkbox label
 }
 .form-control-static
 {
-    min-height: 40px;
+    min-height: 36px;
     margin-bottom: 0;
     padding-top: 7px;
     padding-bottom: 7px;
@@ -2582,7 +2582,7 @@ select[multiple].input-sm
     line-height: 1.5;
 
     height: 33px;
-    min-height: 38px;
+    min-height: 34px;
     padding: 6px 10px;
 }
 .input-lg
@@ -2633,7 +2633,7 @@ select[multiple].input-lg
     line-height: 1.3333333;
 
     height: 61px;
-    min-height: 44px;
+    min-height: 40px;
     padding: 17px 16px;
 }
 .has-feedback
@@ -2642,11 +2642,11 @@ select[multiple].input-lg
 }
 .has-feedback .form-control
 {
-    padding-right: 47.5px;
+    padding-right: 42.5px;
 }
 .form-control-feedback
 {
-    line-height: 38px;
+    line-height: 34px;
 
     position: absolute;
     z-index: 2;
@@ -2655,8 +2655,8 @@ select[multiple].input-lg
 
     display: block;
 
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
 
     text-align: center;
     pointer-events: none;
@@ -2786,7 +2786,7 @@ select[multiple].input-lg
 }
 .has-feedback label ~ .form-control-feedback
 {
-    top: 29px;
+    top: 25px;
 }
 .has-feedback label.sr-only ~ .form-control-feedback
 {
@@ -2884,7 +2884,7 @@ select[multiple].input-lg
 .form-horizontal .radio,
 .form-horizontal .checkbox
 {
-    min-height: 31px;
+    min-height: 27px;
 }
 .form-horizontal .form-group
 {
@@ -2927,7 +2927,7 @@ select[multiple].input-lg
 {
     font-size: 16px;
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: inline-block;
 
@@ -3580,14 +3580,14 @@ tbody.collapse.in
     overflow: hidden;
 
     height: 1px;
-    margin: 11px 0;
+    margin: 9px 0;
 
     background-color: #e5e5e5;
 }
 .dropdown-menu > li > a
 {
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
     clear: both;
@@ -3654,7 +3654,7 @@ tbody.collapse.in
 .dropdown-header
 {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
@@ -4185,7 +4185,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     overflow: hidden;
 
     height: 1px;
-    margin: 11px 0;
+    margin: 9px 0;
 
     background-color: #e5e5e5;
 }
@@ -4205,7 +4205,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .nav-tabs > li > a
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     margin-right: 2px;
 
@@ -4538,12 +4538,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .navbar-brand
 {
     font-size: 20px;
-    line-height: 24px;
+    line-height: 20px;
 
     float: left;
 
     height: 70px;
-    padding: 23px 40px;
+    padding: 25px 40px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus
@@ -4604,11 +4604,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-nav
 {
-    margin: 11.5px -40px;
+    margin: 12.5px -40px;
 }
 .navbar-nav > li > a
 {
-    line-height: 24px;
+    line-height: 20px;
 
     padding-top: 10px;
     padding-bottom: 10px;
@@ -4636,7 +4636,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     }
     .navbar-nav .open .dropdown-menu > li > a
     {
-        line-height: 24px;
+        line-height: 20px;
     }
     .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-nav .open .dropdown-menu > li > a:focus
@@ -4658,15 +4658,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     }
     .navbar-nav > li > a
     {
-        padding-top: 23px;
-        padding-bottom: 23px;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 }
 .navbar-form
 {
-    margin-top: 16px;
+    margin-top: 18px;
     margin-right: -40px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     margin-left: -40px;
     padding: 10px 40px;
 
@@ -4790,8 +4790,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-btn
 {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 .navbar-btn.btn-sm
 {
@@ -4805,8 +4805,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-text
 {
-    margin-top: 23px;
-    margin-bottom: 23px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 @media (min-width: 768px)
 {
@@ -5097,7 +5097,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 }
 .breadcrumb
 {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding: 8px 15px;
 
     list-style: none;
@@ -5125,7 +5125,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 {
     display: inline-block;
 
-    margin: 24px 0;
+    margin: 20px 0;
     padding-left: 0;
 
     border-radius: 0;
@@ -5137,7 +5137,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 .pagination > li > a,
 .pagination > li > span
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     position: relative;
 
@@ -5247,7 +5247,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 }
 .pager
 {
-    margin: 24px 0;
+    margin: 20px 0;
     padding-left: 0;
 
     list-style: none;
@@ -5503,11 +5503,11 @@ a.badge:focus
 }
 .thumbnail
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     display: block;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding: 4px;
 
     -webkit-transition: border .2s ease-in-out;
@@ -5538,7 +5538,7 @@ a.thumbnail.active
 }
 .alert
 {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     padding: 15px;
 
     border: 1px solid transparent;
@@ -5670,8 +5670,8 @@ a.thumbnail.active
 {
     overflow: hidden;
 
-    height: 24px;
-    margin-bottom: 24px;
+    height: 20px;
+    margin-bottom: 20px;
 
     border-radius: 0;
     background-color: #f5f5f5;
@@ -5681,7 +5681,7 @@ a.thumbnail.active
 .progress-bar
 {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 20px;
 
     float: left;
 
@@ -6070,7 +6070,7 @@ button.list-group-item-danger.active:focus
 }
 .panel
 {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     border: 1px solid transparent;
     border-radius: 0;
@@ -6320,7 +6320,7 @@ button.list-group-item-danger.active:focus
 }
 .panel-group
 {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 .panel-group .panel
 {
@@ -6684,7 +6684,7 @@ button.close
 }
 .modal-title
 {
-    line-height: 1.5;
+    line-height: 1.25;
 
     margin: 0;
 }
@@ -6755,7 +6755,7 @@ button.close
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.25;
 
     position: absolute;
     z-index: 1070;
@@ -6911,7 +6911,7 @@ button.close
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
-    line-height: 1.5;
+    line-height: 1.25;
 
     position: absolute;
     z-index: 1060;
@@ -8109,7 +8109,7 @@ body
     width: 100%;
     padding-bottom: 100%;
 }
-@media (min-width: 480px)
+@media (min-width: 800px)
 {
     .grid-cell.grid-cell-1-1
     {
@@ -8272,7 +8272,7 @@ body
         padding-bottom: 50%;
     }
 }
-@media (min-width: 768px)
+@media (min-width: 1200px)
 {
     .grid-cell.grid-cell-1-1
     {
@@ -8524,26 +8524,34 @@ body
     width: 100%;
     height: 100%;
 }
-.grid-cell > .grid-cell-container > .grid-cell-content-box
+.grid-cell > .grid-cell-container > .grid-cell-inner-container
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    padding: 30px 40px;
+}
+.grid-cell > .grid-cell-container > .grid-cell-inner-container > .grid-cell-inner-content
 {
     display: table;
 
     width: 100%;
     height: 100%;
 }
-.grid-cell > .grid-cell-container > .grid-cell-content-box > .grid-cell-content
+.grid-cell > .grid-cell-container > .grid-cell-inner-container > .grid-cell-inner-content > .grid-cell-content
 {
     display: table-cell;
 
     vertical-align: bottom;
 }
-.grid-cell > .grid-cell-container > .grid-cell-content-box > .grid-cell-content.grid-cell-cta
+.grid-cell > .grid-cell-container > .grid-cell-inner-container > .grid-cell-inner-content > .grid-cell-content.grid-cell-cta
 {
     font-size: 30px;
 
     text-align: center;
     vertical-align: middle;
-    letter-spacing: .1em;
+    letter-spacing: .05em;
     text-transform: uppercase;
 }
 .grid-cell .grid-cell-link,
@@ -8556,10 +8564,8 @@ body
     font-size: 24px;
     font-weight: bold;
 
-    padding: 30px 40px;
-
     text-decoration: none;
-    letter-spacing: .1em;
+    letter-spacing: .05em;
     text-transform: uppercase;
 
     color: #fff;
