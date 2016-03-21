@@ -8554,6 +8554,20 @@ body
     letter-spacing: .05em;
     text-transform: uppercase;
 }
+.grid-cell > .grid-cell-container > .grid-cell-inner-container > .grid-cell-inner-content > .grid-cell-content.grid-cell-info-box
+{
+    font-size: 30px;
+
+    text-align: center;
+    vertical-align: middle;
+}
+.grid-cell > .grid-cell-container > .grid-cell-inner-container > .grid-cell-inner-content > .grid-cell-content.grid-cell-info-box > h4
+{
+    font-size: 36px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
 .grid-cell .grid-cell-link,
 .grid-cell .grid-cell-link:link,
 .grid-cell .grid-cell-link:visited,
