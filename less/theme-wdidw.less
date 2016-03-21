@@ -1,7 +1,5 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 
 //
@@ -16,8 +14,29 @@
 // What Do I Do With? Toolbar
 // --------------------------------------------------
 
+.nav-center-wrapper {
+  height: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.nav-center-inner {
+  height: @navbar-height;
+  display: table;
+  margin-left: -50%;
+  margin-right: 50%;
+  background: @ccswd-green-1;
+}
+
 .wdidw-button {
+  display: table-cell;;
+  color: #fff;
   font-size: 24px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
 
   &,
   &:hover,
