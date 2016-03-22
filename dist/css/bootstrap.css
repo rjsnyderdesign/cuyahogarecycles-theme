@@ -8885,6 +8885,28 @@ h1
 {
     height: 100%;
 }
+.brand
+{
+    display: block;
+}
+.brand a,
+.brand img
+{
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+.brand .brand-logo-main
+{
+    width: 330px;
+    height: 84px;
+}
+.brand .brand-district-logo
+{
+    width: 372px;
+    height: 96px;
+}
 .btn-hollow-white
 {
     color: #fff;
@@ -9003,6 +9025,18 @@ body
 .page-header .page-header-upper
 {
     padding-top: 32px;
+}
+.page-header .page-header-upper .page-header-upper-content
+{
+    position: relative;
+
+    width: 100%;
+}
+.page-header .page-header-upper .page-header-upper-right
+{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .page-header .page-header-social
 {

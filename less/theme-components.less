@@ -45,6 +45,37 @@ h1 {
 
 
 //
+// Logos
+// --------------------------------------------------
+
+.brand {
+  display: block;
+
+  a,
+  img {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .brand-logo-main {
+    width: 330px;
+    height: 84px;
+  }
+
+  .brand-logo-main-horizontal {
+    width: 516px;
+    height: 84px;
+  }
+
+  .brand-district-logo {
+    width: 372px;
+    height: 96px;
+  }
+}
+
+
+//
 // Buttons
 // --------------------------------------------------
 
@@ -121,6 +152,17 @@ body {
 
   .page-header-upper {
     padding-top: (@font-size-base * 2);
+
+    .page-header-upper-content {
+      width: 100%;
+      position: relative;
+    }
+
+    .page-header-upper-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   .page-header-social {
