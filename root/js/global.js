@@ -19,16 +19,14 @@
 
     $( window.document.body ).ready( function () {
 
-        var $grid     = $( '.grid' ),
+        var $grid       = $( '.grid' ),
             $gridSizer  = $('#grid-sizer'),
             shuffleOpts = {
                 speed: 1,
                 easing: 'ease-out',
                 itemSelector: '.grid-cell',
                 gutterWidth: 0,
-                columnWidth: function () {
-                    return $gridSizer.width();
-                },
+                columnWidth: function () { return $gridSizer.width(); },
                 buffer: 0.01,
                 throttleTime: 250,
                 sequentialFadeDelay: 150,
@@ -40,24 +38,16 @@
         //
 
         $( window ).resize( function () {
-            var cols;
-            if ( true ) {
-                cols = 3;
-            } else if ( true ) {
-                cols = 2;
-            } else {
-                cols = 1;
-            }
+            // var cols;
+            // if ( true ) {
+            //     cols = 3;
+            // } else if ( true ) {
+            //     cols = 2;
+            // } else {
+            //     cols = 1;
+            // }
             // $grid.width( roundUp ( $grid.width(), cols ) );
         } );
-
-        //
-        // Init Shuffle
-        //
-
-        // $grid.shuffle( shuffleOpts );
-        // $grid.shuffle( 'update' );
-
 
         //
         // SlidePanel
@@ -97,6 +87,18 @@
         while ( $( '.slide-reveal-overlay' ).length > 1 ) {
             $( '.slide-reveal-overlay' ).eq( 0 ).remove();
         }
+
+        //
+        // What Do I Do With?
+        //
+
+        $( '.wdidw-show' ).on( 'click', function () {
+          $( '.wdidw-search-bar' ).addClass( 'active' );
+        } );
+
+        $( '.wdidw-hide' ).on( 'click', function () {
+          $( '.wdidw-search-bar' ).removeClass( 'active' );
+        } );
 
     } );
 

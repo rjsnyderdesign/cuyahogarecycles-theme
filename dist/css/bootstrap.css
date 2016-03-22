@@ -3,6 +3,9 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*!
+ * CuyahogaRecycles.org theme
+ */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html
 {
@@ -572,17 +575,17 @@ h6 .small,
 h1,
 .h1
 {
-    font-size: 41px;
+    font-size: 48px;
 }
 h2,
 .h2
 {
-    font-size: 34px;
+    font-size: 32px;
 }
 h3,
 .h3
 {
-    font-size: 28px;
+    font-size: 24px;
 }
 h4,
 .h4
@@ -597,7 +600,7 @@ h5,
 h6,
 .h6
 {
-    font-size: 14px;
+    font-size: 12px;
 }
 p
 {
@@ -621,7 +624,7 @@ p
 small,
 .small
 {
-    font-size: 87%;
+    font-size: 75%;
 }
 mark,
 .mark
@@ -2423,7 +2426,7 @@ input[type='search']
     .input-group-sm input[type='datetime-local'],
     .input-group-sm input[type='month']
     {
-        line-height: 33px;
+        line-height: 30px;
     }
     input[type='date'].input-lg,
     input[type='time'].input-lg,
@@ -2434,7 +2437,7 @@ input[type='search']
     .input-group-lg input[type='datetime-local'],
     .input-group-lg input[type='month']
     {
-        line-height: 61px;
+        line-height: 66px;
     }
 }
 .form-group
@@ -2536,19 +2539,19 @@ fieldset[disabled] .checkbox label
 }
 .input-sm
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
-    height: 33px;
+    height: 30px;
     padding: 5px 10px;
 
     border-radius: 0;
 }
 select.input-sm
 {
-    line-height: 33px;
+    line-height: 30px;
 
-    height: 33px;
+    height: 30px;
 }
 textarea.input-sm,
 select[multiple].input-sm
@@ -2557,19 +2560,19 @@ select[multiple].input-sm
 }
 .form-group-sm .form-control
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
-    height: 33px;
+    height: 30px;
     padding: 5px 10px;
 
     border-radius: 0;
 }
 .form-group-sm select.form-control
 {
-    line-height: 33px;
+    line-height: 30px;
 
-    height: 33px;
+    height: 30px;
 }
 .form-group-sm textarea.form-control,
 .form-group-sm select[multiple].form-control
@@ -2578,28 +2581,28 @@ select[multiple].input-sm
 }
 .form-group-sm .form-control-static
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
-    height: 33px;
-    min-height: 34px;
+    height: 30px;
+    min-height: 32px;
     padding: 6px 10px;
 }
 .input-lg
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
-    height: 61px;
+    height: 66px;
     padding: 16px 16px;
 
     border-radius: 0;
 }
 select.input-lg
 {
-    line-height: 61px;
+    line-height: 66px;
 
-    height: 61px;
+    height: 66px;
 }
 textarea.input-lg,
 select[multiple].input-lg
@@ -2608,19 +2611,19 @@ select[multiple].input-lg
 }
 .form-group-lg .form-control
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
-    height: 61px;
+    height: 66px;
     padding: 16px 16px;
 
     border-radius: 0;
 }
 .form-group-lg select.form-control
 {
-    line-height: 61px;
+    line-height: 66px;
 
-    height: 61px;
+    height: 66px;
 }
 .form-group-lg textarea.form-control,
 .form-group-lg select[multiple].form-control
@@ -2629,11 +2632,11 @@ select[multiple].input-lg
 }
 .form-group-lg .form-control-static
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
-    height: 61px;
-    min-height: 40px;
+    height: 66px;
+    min-height: 44px;
     padding: 17px 16px;
 }
 .has-feedback
@@ -2665,19 +2668,19 @@ select[multiple].input-lg
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback
 {
-    line-height: 61px;
+    line-height: 66px;
 
-    width: 61px;
-    height: 61px;
+    width: 66px;
+    height: 66px;
 }
 .input-sm + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback
 {
-    line-height: 33px;
+    line-height: 30px;
 
-    width: 33px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
 }
 .has-success .help-block,
 .has-success .control-label,
@@ -2909,7 +2912,7 @@ select[multiple].input-lg
 {
     .form-horizontal .form-group-lg .control-label
     {
-        font-size: 20px;
+        font-size: 24px;
 
         padding-top: 17px;
     }
@@ -2918,7 +2921,7 @@ select[multiple].input-lg
 {
     .form-horizontal .form-group-sm .control-label
     {
-        font-size: 14px;
+        font-size: 12px;
 
         padding-top: 6px;
     }
@@ -3428,7 +3431,7 @@ fieldset[disabled] .btn-link:focus
 .btn-lg,
 .btn-group-lg > .btn
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
     padding: 16px 16px;
@@ -3438,7 +3441,7 @@ fieldset[disabled] .btn-link:focus
 .btn-sm,
 .btn-group-sm > .btn
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
     padding: 5px 10px;
@@ -3448,7 +3451,7 @@ fieldset[disabled] .btn-link:focus
 .btn-xs,
 .btn-group-xs > .btn
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
     padding: 1px 5px;
@@ -3653,7 +3656,7 @@ tbody.collapse.in
 }
 .dropdown-header
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.25;
 
     display: block;
@@ -3958,10 +3961,10 @@ tbody.collapse.in
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
-    height: 61px;
+    height: 66px;
     padding: 16px 16px;
 
     border-radius: 0;
@@ -3970,9 +3973,9 @@ select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn
 {
-    line-height: 61px;
+    line-height: 66px;
 
-    height: 61px;
+    height: 66px;
 }
 textarea.input-group-lg > .form-control,
 textarea.input-group-lg > .input-group-addon,
@@ -3987,10 +3990,10 @@ select[multiple].input-group-lg > .input-group-btn > .btn
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
-    height: 33px;
+    height: 30px;
     padding: 5px 10px;
 
     border-radius: 0;
@@ -3999,9 +4002,9 @@ select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn
 {
-    line-height: 33px;
+    line-height: 30px;
 
-    height: 33px;
+    height: 30px;
 }
 textarea.input-group-sm > .form-control,
 textarea.input-group-sm > .input-group-addon,
@@ -4049,7 +4052,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .input-group-addon.input-sm
 {
-    font-size: 14px;
+    font-size: 12px;
 
     padding: 5px 10px;
 
@@ -4057,7 +4060,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .input-group-addon.input-lg
 {
-    font-size: 20px;
+    font-size: 24px;
 
     padding: 16px 16px;
 
@@ -4537,7 +4540,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-brand
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 20px;
 
     float: left;
@@ -4795,8 +4798,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-btn.btn-sm
 {
-    margin-top: 18.5px;
-    margin-bottom: 18.5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .navbar-btn.btn-xs
 {
@@ -5208,7 +5211,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 .pagination-lg > li > a,
 .pagination-lg > li > span
 {
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.3333333;
 
     padding: 16px 16px;
@@ -5228,7 +5231,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 .pagination-sm > li > a,
 .pagination-sm > li > span
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.5;
 
     padding: 5px 10px;
@@ -5386,7 +5389,7 @@ a.label:focus
 }
 .badge
 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1;
 
@@ -5680,7 +5683,7 @@ a.thumbnail.active
 }
 .progress-bar
 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
 
     float: left;
@@ -6752,7 +6755,7 @@ button.close
 .tooltip
 {
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     font-style: normal;
     line-height: 1.25;
@@ -7807,6 +7810,10 @@ h1
 {
     font-weight: bold;
 }
+.full-height
+{
+    height: 100%;
+}
 .btn-hollow-white
 {
     color: #fff;
@@ -8653,5 +8660,80 @@ body
     text-decoration: none;
 
     color: #94d60a;
+}
+.wdidw-search-bar
+{
+    position: absolute;
+    top: -100%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: top 500ms;
+         -o-transition: top 500ms;
+            transition: top 500ms;
+
+    background-color: #94d60a;
+}
+.wdidw-search-bar.active
+{
+    top: 0;
+}
+.wdidw-search-bar .wdidw-search-form
+{
+    width: 100%;
+    height: 100%;
+    padding: 8px 0;
+}
+.wdidw-search-bar .wdidw-search-form .input-group
+{
+    height: 100%;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input,
+.wdidw-search-bar .wdidw-search-form .input-group .form-control,
+.wdidw-search-bar .wdidw-search-form .input-group .btn
+{
+    height: 100%;
+    padding: 4px 0;
+
+    color: #00833c;
+    border: 0 none;
+    outline: none;
+    background: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input .fa,
+.wdidw-search-bar .wdidw-search-form .input-group .form-control .fa,
+.wdidw-search-bar .wdidw-search-form .input-group .btn .fa
+{
+    font-size: 32px;
+
+    padding: 2px 0;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input[type='text']
+{
+    font-size: 24px;
+
+    padding: 0 16px;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input[type='text']::-webkit-input-placeholder
+{
+    color: #fff;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input[type='text']:-moz-placeholder
+{
+    /* Firefox 18- */
+    color: #fff;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input[type='text']::-moz-placeholder
+{
+    /* Firefox 19+ */
+    color: #fff;
+}
+.wdidw-search-bar .wdidw-search-form .input-group input[type='text']:-ms-input-placeholder
+{
+    color: #fff;
 }
 /*# sourceMappingURL=bootstrap.css.map */

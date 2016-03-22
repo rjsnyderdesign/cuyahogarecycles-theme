@@ -30,14 +30,14 @@
 
   <body>
 
-  <header class="page-header bg-blue">
+  <header class="page-header bg-blue" role="banner">
     <div class="container-fluid page-header-upper">
       <ul class="inline-link-list page-header-social">
         <li><a href="#"><i class="fa fa-lg fa-facebook"    ></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
            ><a href="#"><i class="fa fa-lg fa-twitter"     ></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
            ><a href="#"><i class="fa fa-lg fa-youtube-play"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
       </ul>
-    </div>
+    </div><!-- /.container-fluid -->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-globals">
@@ -48,9 +48,9 @@
           <li><a class="action-open-calendar" href="#!">Events <i class="fa fa-caret-square-o-right"></i></a></li>
           <li><a href="#">Login</a></li>
         </ul>
-      </div>
+      </div><!-- /.container-fluid -->
     </nav>
-    <nav class="navbar navbar-default bg-green-1">
+    <nav class="navbar navbar-default bg-green-1" role="navigation">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-left navbar-primary">
           <li><a href="#">Recycling for Home</a></li>
@@ -62,10 +62,31 @@
         </ul>
         <div class="nav-center-wrapper">
           <div class="nav-center-inner">
-            <a class="wdidw-button" href="#!">What Do I Do With ?</a>
+            <a class="wdidw-button wdidw-show" href="#!">What Do I Do With ?</a>
           </div>
         </div>
-      </div>
+      </div><!-- /.container-fluid -->
+      <div class="wdidw-search-bar">
+        <div class="container-fluid full-height">
+          <form class="wdidw-search-form">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i><span class="sr-only">Search</span></button>
+              </span>
+              <label class="sr-only" for="wdidw-search-field">Enter items here to get recycling information</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter items here to get recycling information"
+                id="wdidw-search-field"
+              />
+              <span class="input-group-btn">
+                <button class="btn btn-default wdidw-hide"><i class="fa fa-close"></i><span class="sr-only">Cancel search</span></button>
+              </span>
+            </div><!-- /.input-group -->
+          </form>
+        </div><!-- /.container-fluid -->
+      </div><!-- /.wdidw-search-bar -->
     </nav>
   </header>
 
@@ -93,8 +114,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="grid-cell grid-cell-6-1 grid-full-width">
+      </div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-4-1 grid-full-width">
         <div class="grid-cell-container pal-inverse bg-dark">
           <div class="grid-cell-inner-container">
             <div class="grid-cell-inner-content">
@@ -104,17 +125,17 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-blue"    ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">What goes in<br />the recycling bin?</div></div></a></div></div>
-      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-green-2" ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">Businesses:<br />Recycle more, save more</div></div></a></div></div>
-      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-yellow"  ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">Master Recycler Program<br />Class of 2016</div></div></a></div></div>
+      </div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-blue"    ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">What goes in<br />the recycling bin?</div></div></a></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-green-2" ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">Businesses:<br />Recycle more, save more</div></div></a></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-2-2"><div class="grid-cell-container pal-inverse bg-yellow"  ><a class="grid-cell-inner-container grid-cell-link" href="#"><div class="grid-cell-inner-content"><div class="grid-cell-content">Master Recycler Program<br />Class of 2016</div></div></a></div></div><!-- /.grid-cell -->
       <div class="grid-cell grid-cell-4-4">
         <div class="grid-cell-container pal-inverse">
           <div class="grid-cell-video-player">
             <iframe width="853" height="480" src="https://www.youtube.com/embed/xUjHSwEeEds?list=PL4BB135E683261DAB" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
-      </div>
+      </div><!-- /.grid-cell -->
       <div class="grid-cell grid-cell-2-4">
         <div class="grid-cell-container pal-inverse bg-blue">
           <div class="grid-cell-inner-container">
@@ -126,18 +147,18 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!-- /.grid-cell -->
       <div class="grid-cell grid-cell-6-3 grid-full-width">
         <div class="grid-cell-container pal-inverse bg-yellow">
         </div>
-      </div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div>
-      <div class="grid-cell grid-cell-6-1 grid-full-width">
+      </div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-1-2"><div class="grid-cell-container pal-inverse"><div class="grid-cell-inner-container"><div class="grid-cell-inner-content"><div class="grid-cell-content">.grid-cell</div></div></div></div></div><!-- /.grid-cell -->
+      <div class="grid-cell grid-cell-4-1 grid-full-width">
         <div class="grid-cell-container pal-inverse bg-green-2">
           <div class="grid-cell-inner-container">
             <div class="grid-cell-inner-content">
@@ -147,10 +168,9 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><!-- /.grid-cell -->
+    </div><!-- /.tile-grid -->
   </main>
-  <div class="grid-cell grid-cell-1-1 grid-sizer" id="grid-sizer"></div>
 
   <footer class="page-footer" role="contentinfo">
     <div class="container-fluid">
@@ -209,15 +229,15 @@
 
   <div class="slidereveal-panel" id="panel-calendar">
       <h2>Events</h2>
-  </div>
+  </div><!-- /.slidereveal-panel -->
 
   <div class="slidereveal-panel" id="panel-newsletters">
       <h2>Newsletters</h2>
-  </div>
+  </div><!-- /.slidereveal-panel -->
 
   <div class="slidereveal-panel" id="panel-menu">
       <h2>Menu</h2>
-  </div>
+  </div><!-- /.slidereveal-panel -->
 
   <!-- /slider panels -->
 

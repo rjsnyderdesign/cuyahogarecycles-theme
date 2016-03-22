@@ -23,7 +23,6 @@
 .btn-info,
 .btn-warning,
 .btn-danger {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
   @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
   .box-shadow(@shadow);
 
@@ -88,12 +87,12 @@
 }
 
 // Apply the mixin to the buttons
-.btn-default { .btn-styles(@btn-default-bg); text-shadow: 0 1px 0 #fff; border-color: #ccc; }
+.btn-default { .btn-styles(@btn-default-bg); }
 .btn-primary { .btn-styles(@btn-primary-bg); }
 .btn-success { .btn-styles(@btn-success-bg); }
-.btn-info    { .btn-styles(@btn-info-bg); }
+.btn-info    { .btn-styles(@btn-info-bg);    }
 .btn-warning { .btn-styles(@btn-warning-bg); }
-.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-danger  { .btn-styles(@btn-danger-bg);  }
 
 
 //
@@ -128,6 +127,7 @@
 
 // Default navbar
 .navbar {
+  overflow: hidden;
   font-size: 16px;
   letter-spacing: @letter-spacing;
   text-transform: uppercase;
