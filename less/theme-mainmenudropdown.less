@@ -1,0 +1,136 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// What Do I Do With? Toolbar
+// --------------------------------------------------
+
+.nav > li {
+	position: static;
+}
+	
+.navbar-default {
+	.navbar-nav {
+		> .open {
+			> a {
+				&:hover,
+				&:focus,
+				&:active,
+				&:link,
+				&:visited {
+					background-color: @brand-primary;
+				}
+			}
+		}
+	}
+}
+
+.dropdown.open {
+	.sub-menu.first {
+		display: block;
+	}
+	.dropdown-toggle {
+		&::after {
+			position: absolute;
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    border-color: transparent;
+	    border-style: solid;
+	    left: 50%;
+			bottom: 0;
+	    margin-left: -12px;
+	    content: " ";
+	    border-width: 12px;
+	    border-top-width: 0;
+	    border-bottom-color: @brand-dark;
+			}
+	}
+}
+
+.main-menu-dropdown {
+  background: @brand-dark;
+  width:100%;
+	position: absolute;
+	padding: 100px 30px 40px;
+			
+	.dropdown-menu {
+		top: 100%;
+		left: 0;
+		background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+		padding: 0 10px;
+		position: relative;
+		margin: 0;
+	
+		> li {
+			text-transform: none;
+			list-style: none;
+			
+			> a {
+				color: @white;
+				font-size: 12px;
+				line-height: 15px;
+			  display: block;
+			  padding: 0 0 4px;
+			  clear: both;
+			  white-space: normal;
+				&:hover, 
+				&:focus, 
+				&:visited,
+				&:active {
+					background: none;
+				}
+				
+				.glyphicon {
+					font-size: 10px;
+					padding-left: 3px;
+					color: lighten(@brand-dark, 15%)
+				}
+				
+				&.selected {
+					color: @brand-success;
+					
+					.glyphicon {
+						color: lighten(@brand-dark, 30%)
+					}
+				}
+			}
+		}
+		.dropdown-menu {
+			top: 0;
+			left: 100%;
+			width: 100%;
+			position: absolute;
+		}
+	}	
+	
+	.call-out {
+		margin-top: -3px;
+		h2 {
+			margin: 0;
+			text-transform: none;
+			span {
+				font-weight: normal;
+			}
+		}
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+
