@@ -7636,25 +7636,43 @@ body {
   }
   .navbar-left,
   .navbar-right,
-  .page-header-upper,
+  .navbar-upper,
+  .page-header-upper-right,
   .navbar-globals {
     display: none;
   }
-  .navbar-default .navbar-toggle {
-    margin-left: 20px;
+  .mega-menu {
+    overflow: hidden;
+  }
+  .page-header .page-header-upper {
+    height: 90px;
+    position: relative;
+    padding-top: 17px;
+  }
+  .brand .brand-logo-main {
+    margin: 0 auto;
+    width: 200px;
+    height: auto;
+  }
+  .page-header-upper-content .navbar-toggle {
+    margin: 0;
     border-color: #fff;
+    position: absolute;
+    top: 11px;
+    left: -20px;
+    padding: 8px 7px;
   }
-  .navbar-default .navbar-toggle .icon-bar {
+  .page-header-upper-content .navbar-toggle .icon-bar {
     background-color: #fff;
   }
-  .navbar-default .navbar-toggle:hover,
-  .navbar-default .navbar-toggle:focus,
-  .navbar-default .navbar-toggle:active {
+  .page-header-upper-content .navbar-toggle:hover,
+  .page-header-upper-content .navbar-toggle:focus,
+  .page-header-upper-content .navbar-toggle:active {
     background-color: #fff;
   }
-  .navbar-default .navbar-toggle:hover .icon-bar,
-  .navbar-default .navbar-toggle:focus .icon-bar,
-  .navbar-default .navbar-toggle:active .icon-bar {
+  .page-header-upper-content .navbar-toggle:hover .icon-bar,
+  .page-header-upper-content .navbar-toggle:focus .icon-bar,
+  .page-header-upper-content .navbar-toggle:active .icon-bar {
     background-color: #25cbd3;
   }
   #panel-menu {
@@ -7736,7 +7754,7 @@ body {
     color: #94d60a;
   }
   #panel-menu .dropdown > a.selected .fa {
-    color: #d32d18;
+    color: #25cbd3;
     transform: rotateZ(45deg);
   }
   #panel-menu .dropdown .sub-menu {
@@ -7770,7 +7788,7 @@ body {
     color: #94d60a;
   }
   #panel-menu .dropdown .sub-menu > li > a.selected .fa {
-    color: #e84a36;
+    color: #25cbd3;
     transform: rotateZ(45deg);
   }
   #panel-menu .dropdown.open .dropdown-toggle:after {

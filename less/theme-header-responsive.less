@@ -14,20 +14,44 @@
 
 @media (max-width: 768px) {
 	
+	
 	.navbar-nav {
 		margin: 0;
 	}
 	.navbar-left,
 	.navbar-right,
-	.page-header-upper,
+	.navbar-upper,
+	.page-header-upper-right,
 	.navbar-globals {
 		display: none;
 	}
 	
-	.navbar-default {
+	.mega-menu {
+		overflow: hidden;
+	}
+	
+	.page-header {
+		.page-header-upper {
+			height: 90px;
+			position: relative;
+			padding-top: 17px;
+		}
+	}
+	
+	.brand .brand-logo-main {
+		margin: 0 auto;
+		width: 200px;
+		height: auto; 
+	}
+	
+	.page-header-upper-content {
 		.navbar-toggle {
-			margin-left: 20px;
+			margin: 0;
 			border-color: @white;
+			position: absolute;
+			top: 11px;
+	    left: -20px;
+			padding: 8px 7px;
 			.icon-bar {
 				background-color: @white;
 			}
@@ -115,7 +139,7 @@
 					color: @brand-success;
 		
 					.fa {
-						color: darken(@brand-danger, 10%);
+						color: @brand-info;
 						transform: rotateZ(45deg);
 						
 					}
@@ -153,7 +177,7 @@
 							color: @brand-success;
 		
 							.fa {
-								color: @brand-danger;
+								color: @brand-info;
 								transform: rotateZ(45deg);
 							}
 						}
