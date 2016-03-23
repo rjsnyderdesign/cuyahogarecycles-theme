@@ -1,0 +1,102 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Item Icons
+// --------------------------------------------------
+
+@item-icon-border-width: 4px;
+
+.item-icon-size(@size) {
+  width: (@size + 2 * @item-icon-border-width);
+  height: (@size + 2 * @item-icon-border-width);
+}
+
+.item-icon {
+  display: block;
+  background: @white;
+  border: @item-icon-border-width solid @gray;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .item-icon-size(270px);
+
+  &.item-icon-size-4 { .item-icon-size(270px); }
+  &.item-icon-size-3 { .item-icon-size(210px); }
+  &.item-icon-size-2 { .item-icon-size(120px); }
+  &.item-icon-size-1 { .item-icon-size( 90px); }
+
+  &.item-icon-home-recycling    { border-color: @ccswd-blue;    }
+  &.item-icon-dropoff-recycling { border-color: @ccswd-yellow;  }
+  &.item-icon-proper-disposal   { border-color: @ccswd-red;     }
+  &.item-icon-compost           { border-color: @ccswd-green-1; }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+  }
+}
+
+
+//
+// Item Figures
+// --------------------------------------------------
+
+.item-figure {
+  display: inline-block;
+  margin-bottom: @font-size-base;
+  margin-right: @font-size-base;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  > .item-caption {
+    width: 100%;
+    color: @gray;
+    margin-top: @font-size-small;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+
+//
+// Item Color Key
+// --------------------------------------------------
+
+.item-color-key-list {
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+
+  > li {
+    vertical-align: middle;
+  }
+}
+
+.item-color-key {
+  width: 1.5em;
+  height: 1.5em;
+  display: inline-block;
+  margin: 4px;
+  background: @gray;
+  border-radius: 50%;
+  vertical-align: middle;
+
+  &.item-color-key-home-recycling    { background: @ccswd-blue;    }
+  &.item-color-key-dropoff-recycling { background: @ccswd-yellow;  }
+  &.item-color-key-proper-disposal   { background: @ccswd-red;     }
+  &.item-color-key-compost           { background: @ccswd-green-1; }
+}
