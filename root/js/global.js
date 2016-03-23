@@ -73,14 +73,18 @@
             overlay: true
         } );
 
-        var sliderPanelNewsletters = $( '#panel-menu' ).slideReveal( {
-            width: 480,
-            push: true,
-            position: 'right',
+        var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
+            width: 300,
+            position: 'left',
             speed: 300,
             trigger: $( '.action-open-menu' ),
             push: true,
-            overlay: true
+            overlay: true,
+						hidden: function(slider, trigger){
+							// Close Sub Menu's when menu is hidden
+							$("#panel-menu .dropdown").find('.trigger').removeClass('selected');
+							$("#panel-menu .dropdown").find('.sub-menu').hide();
+						  }
         } );
 
         // Remove extra overlays

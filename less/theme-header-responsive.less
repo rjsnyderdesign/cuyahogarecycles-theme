@@ -1,0 +1,209 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+@media (max-width: 768px) {
+	
+	.navbar-nav {
+		margin: 0;
+	}
+	.navbar-left,
+	.navbar-right,
+	.page-header-upper,
+	.navbar-globals {
+		display: none;
+	}
+	
+	.navbar-default {
+		.navbar-toggle {
+			margin-left: 20px;
+			border-color: @white;
+			.icon-bar {
+				background-color: @white;
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: @white;
+				.icon-bar {
+					background-color: @brand-info;
+				}
+			}
+		}
+	}
+	
+	#panel-menu {
+		color: @white;
+		background: @brand-primary;
+		padding: 80px 20px 0;
+		
+		.search-container {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			input[type="text"] {
+				height: 100%;
+				width: 100%;
+				font-size: @font-size-base;
+				padding: 15px 50px 15px 20px;
+		    border: none;
+		    background: @brand-success;
+		    color: @brand-primary;
+		    outline: none;
+		    box-shadow: none;
+				margin: 0;
+	        .placeholder-color(@brand-primary);
+			}
+			
+			i {
+				position: absolute;
+				top: 50%;
+				right: 22px;
+		    margin-top: -10px;
+		    font-size: 20px;
+				color: @brand-primary;
+			}
+		}
+		
+		.close-button {
+			font-size: 30px;
+			font-weight: normal;
+			color: @brand-success;
+		}
+		
+		.dropdown {
+			
+			.dropdown-menu {
+				top: 100%;
+				left: 0;
+				width: 100%;
+				background: none;
+		    border: none;
+		    border-radius: 0;
+		    box-shadow: none;
+				padding: 0;
+				position: relative;
+				margin: 0;
+			}
+			
+			.fa {
+				font-size: 12px;
+				margin-left: 7px;
+				color: darken(@brand-primary, 3%);
+				top: -3px;
+				position: relative;
+				transition: all 400ms;
+			}
+			
+			> a {
+				font-size: 18px;
+				text-transform: uppercase;
+				
+				&.selected {
+					color: @brand-success;
+		
+					.fa {
+						color: darken(@brand-danger, 10%);
+						transform: rotateZ(45deg);
+						
+					}
+				}
+			}
+			
+			.sub-menu {
+				margin: 0 0 10px;
+				> li {
+					padding-left: 15px;
+					margin: 10px 0;
+		
+					> a {
+						color: @white;
+						font-size: 16px;
+						line-height: 20px;
+					  display: block;
+					  padding: 0;
+					  clear: both;
+					  white-space: normal;
+						&:hover, 
+						&:focus, 
+						&:visited,
+						&:active {
+							background: none;
+						}
+						
+						.fa {
+							top: 0;
+							font-size: 11px
+							transition: all 400ms;
+						}
+						
+						&.selected {
+							color: @brand-success;
+		
+							.fa {
+								color: @brand-danger;
+								transform: rotateZ(45deg);
+							}
+						}
+					}
+				}
+			}
+				
+			&.open {
+				.dropdown-toggle {
+						&:after {
+							display: none;
+						}	
+					}
+				}
+			}
+				
+		.nav {
+			> li {
+				> a {
+					&:hover,
+					&:active,
+					&:focus,
+					&:visited,
+					&:link {
+						background: none;
+						&:before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		ul.page-header-social {
+			li {
+				margin-right: 16px;
+				a {
+					width: 40px;
+			    height: 40px;
+			    display: inline-block;
+			    border-radius: 50%;
+			    border: 2px solid #fff;
+			    line-height: 40px;
+			    text-align: center;
+				}
+			}
+		}
+		.newsletter-events {
+			margin: 20px 0;
+		}
+	}
+}
+
+
