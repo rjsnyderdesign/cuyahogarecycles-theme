@@ -51,10 +51,20 @@
         </div><!-- /.brand -->
         <div class="page-header-upper-right">
           <ul class="inline-link-list page-header-social">
-            <li><a href="#"><i class="fa fa-lg fa-facebook"    ></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
-               ><a href="#"><i class="fa fa-lg fa-twitter"     ></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
-               ><a href="#"><i class="fa fa-lg fa-youtube-play"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
+            <li><a href="#"><i class="fa fa-facebook"    ></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
+               ><a href="#"><i class="fa fa-twitter"     ></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
+               ><a href="#"><i class="fa fa-youtube-play"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
           </ul>
+					<div class="search-container">
+						<label>Search Site</label>
+						<div id="sb-search" class="sb-search">
+							<form>
+								<input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"><i class="fa fa-search"></i></span>
+							</form>
+						</div>
+					</div>
         </div>
       </div>
     </div><!-- /.container-fluid -->
@@ -583,7 +593,11 @@
   <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../root/js/jquery.slidereveal.min.js"></script>
   <script type="text/javascript" src="../root/js/global.js"></script>
-  <script type="text/javascript" src="../root/js/main-menu-dropdown.js"></script>
+  <script type="text/javascript" src="../root/js/classie.js"></script>
+  <script type="text/javascript" src="../root/js/uisearch.js"></script>
+	<script>
+		new UISearch( document.getElementById( 'sb-search' ) );
+	</script>
   <!-- /scripts -->
 
   </body>

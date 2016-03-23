@@ -1,0 +1,111 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Header Searchbar
+// --------------------------------------------------
+
+
+.search-container {
+	position: relative;
+	right: 0;
+	top: -30px;
+	z-index: 3;
+	
+	label {
+		position: absolute;
+		top: 37px;
+		right: 30px;
+		font-size: 12px;
+		font-weight: normal;
+	}
+}
+
+.sb-search {
+	position: relative;
+  margin-top: 0;
+  width: 0%;
+  min-width: 30px;
+  height: 30px;
+  float: right;
+  overflow: hidden;
+  transition: width 0.3s;
+	-webkit-backface-visibility: hidden;
+	
+	&.sb-search-open {
+		width: 100%;
+		
+		.sb-icon-search {
+			background: darken(@brand-info, 5%);
+			z-index: 11;
+		}
+		
+		.sb-search-submit {
+			z-index: 90;
+		}
+	}
+}
+
+.sb-search-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	outline: none;
+	background: #fff;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	z-index: 10;
+	padding: 5px 30px 5px 10px;
+	font-family: inherit;
+	font-size: 14px;
+	color: @brand-dark;
+	.placeholder-color(@brand-info);
+	
+}
+
+.sb-icon-search,
+.sb-search-submit  {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.sb-search-submit {
+	background: none; /* IE needs this */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
+    filter: alpha(opacity=0); /* IE 5-7 */
+    opacity: 0;
+	color: transparent;
+	border: none;
+	outline: none;
+	z-index: -1;
+}
+
+.sb-icon-search {
+	background: @brand-info;
+	z-index: 90;
+	transition: width 0.3s;
+}
+
+
