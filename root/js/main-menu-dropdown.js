@@ -12,7 +12,6 @@ $(function(){
 		
 	$(".mega-menu .dropdown a.trigger").on("click",function(e){	
 		var current=$(this).next();
-		menuDropdown.desktop();
 		var grandparent=$(this).parent().parent();
 		if($(this).hasClass('selected')) {
 			$(this).removeClass('selected');
