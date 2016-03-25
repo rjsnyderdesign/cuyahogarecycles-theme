@@ -95,7 +95,7 @@ h1 {
   margin-top: (-@font-size-base / 2);
   margin-left: (@font-size-base * 2);
   margin-right: (@font-size-base * 2);
-  transition: color @link-transition-speed;
+  transition: border-color @link-transition-speed, color @link-transition-speed;
 
   &:focus,
   &:hover,
@@ -117,6 +117,26 @@ h1 {
 .btn-hollow-yellow  { .btn-hollow( @ccswd-yellow  , @white ); }
 .btn-hollow-red     { .btn-hollow( @ccswd-red     , @white ); }
 .btn-hollow-dark    { .btn-hollow( @ccswd-dark    , @white ); }
+
+
+//
+// Vertically aligned content boxes
+// --------------------------------------------------
+
+.content-v-align-outer {
+  width: 100%;
+  height: 100%;
+  display: table;
+
+  > .content-v-align-inner {
+    display: table-cell;
+    vertical-align: middle;
+
+    &.content-v-align-center { vertical-align: middle; }
+    &.content-v-align-top    { vertical-align: top;    }
+    &.content-v-align-bottom { vertical-align: bottom; }
+  }
+}
 
 
 //
@@ -147,6 +167,55 @@ h1 {
 // --------------------------------------------------
 
 @social-link-size: (@font-size-base * 1.75);
+
+
+//
+// YouTube play button
+// --------------------------------------------------
+
+.youtube-video-play-button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: @gray-light;
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  opacity: 1;
+  transition: opacity @link-transition-speed, z-index @link-transition-speed;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @white;
+    text-decoration: none;
+  }
+
+  &.video-playing {
+    opacity: 0;
+    z-index: -1;
+    transition: opacity @link-transition-speed, z-index 0;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: @font-size-large;
+  }
+}
 
 
 //
@@ -205,6 +274,7 @@ body {
 }
 
 .navbar {
+  height: @navbar-height;
   font-size: 16px;
   letter-spacing: @letter-spacing;
   text-transform: uppercase;

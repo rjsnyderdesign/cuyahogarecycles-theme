@@ -423,7 +423,21 @@
         <div class="grid-cell grid-cell-4-4">
           <div class="grid-cell-container pal-inverse">
             <div class="grid-cell-video-player">
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/xUjHSwEeEds?list=PL4BB135E683261DAB" frameborder="0" allowfullscreen></iframe>
+              <iframe
+                width="853"
+                height="480"
+                src="https://www.youtube.com/embed/xUjHSwEeEds?list=PL4BB135E683261DAB&enablejsapi=1"
+                frameborder="0"
+                allowfullscreen="allowfullscreen"
+                id="youtube-video"
+              ></iframe>
+              <a class="youtube-video-play-button">
+                <div class="content-v-align-outer">
+                  <div class="content-v-align-inner content-v-align-center">
+                    <h4><small>Learn More About</small> <br />Recycling Glass</h4>
+                  </div>
+                </div>
+              </a>
             </div>
           </div><!-- /.grid-cell-container -->
         </div><!-- /.grid-cell -->
@@ -775,8 +789,28 @@
     <script type="text/javascript" src="../root/js/global.js"></script>
     <script type="text/javascript" src="../root/js/classie.js"></script>
     <script type="text/javascript" src="../root/js/uisearch.js"></script>
-    <script>
+    <script type="text/javascript">
+      // Site Search
       new UISearch( document.getElementById( 'sb-search' ) );
+    </script>
+    <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
+    <script type="text/javascript">
+      // Custom YouTube Play functionality
+      var player;
+
+      function onYouTubePlayerAPIReady () {
+        // create the global player from the specific iframe (#youtube-video)
+        player = new YT.Player( 'youtube-video', {
+          events: { onReady: onPlayerReady }
+        } );
+      }
+
+      function onPlayerReady ( e ) { // bind events
+        $( '.youtube-video-play-button' ).on( 'click', function () {
+          player.playVideo();
+          $( this ).addClass( 'video-playing' );
+        } );
+      }
     </script>
     <!-- /scripts -->
 
