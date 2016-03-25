@@ -1,0 +1,54 @@
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Panel - Recycle in My Community
+// --------------------------------------------------
+
+.slidereveal-panel {
+	
+	&#panel-community {
+		background: @brand-success;
+		z-index: 1050 !important;
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				margin: 0;
+				padding: 0;
+				border-bottom: 1px solid darken(@brand-success, 1%);
+				a:link,
+				a:visited {
+					margin: 5px 0;
+					padding: 5px 0;
+					color: @brand-primary;
+					display: block;
+					
+					&:hover,
+					&:focus,
+					&:active {
+						color: @white;
+						text-decoration: none;
+					}
+				}
+				
+				&:last-child {
+					border: none;
+				}
+			}
+		}
+	}
+}
