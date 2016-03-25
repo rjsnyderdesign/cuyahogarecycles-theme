@@ -278,6 +278,53 @@ body {
 }
 
 
+
+//
+// Slide Revel Panel
+// --------------------------------------------------
+
+.slidereveal-panel {
+	padding: 80px 20px 0;
+	
+	.search-container {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		input[type="text"] {
+			height: 100%;
+			width: 100%;
+			font-size: @font-size-base;
+			padding: 15px 50px 15px 20px;
+	    border: none;
+	    background: @brand-success;
+	    color: @brand-primary;
+	    outline: none;
+	    box-shadow: none;
+			margin: 0;
+        .placeholder-color(@brand-primary);
+		}
+
+		i {
+			position: absolute;
+			top: 50%;
+			right: 22px;
+	    margin-top: -10px;
+	    font-size: 20px;
+			color: @brand-primary;
+		}
+	}
+
+	.close-button {
+		font-size: 30px;
+		font-weight: normal;
+		color: @brand-success;
+	}
+}
+
+
 //
 // Footer
 // --------------------------------------------------

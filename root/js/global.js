@@ -86,6 +86,15 @@
 							$("#panel-menu .dropdown").find('.sub-menu').hide();
 						  }
         } );
+				
+        var sliderPanelCommunity = $( '#panel-community' ).slideReveal( {
+            width: 300,
+            position: 'left',
+            speed: 300,
+            trigger: $( '.action-open-community' ),
+            push: true,
+            overlay: true
+        } );
 
         // Remove extra overlays
         while ( $( '.slide-reveal-overlay' ).length > 1 ) {
