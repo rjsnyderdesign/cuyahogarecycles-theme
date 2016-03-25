@@ -300,7 +300,10 @@ body {
 // --------------------------------------------------
 
 .slidereveal-panel {
-	padding: 80px 20px 0;
+	padding: 60px 20px 0;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 	
 	.search-container {
 		width: 100%;
@@ -330,6 +333,29 @@ body {
 	    margin-top: -10px;
 	    font-size: 20px;
 			color: @brand-primary;
+		}
+	}
+	
+	.full-width-button {
+		width: 100%;
+		background: @brand-success;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding-left: 20px;
+		a {
+			display: block;
+	    height: 100%;
+	    width: 100%;
+	    line-height: 50px;
+			transition: color 500ms;
+			&:hover,
+			&:focus {
+				color: @white;
+				font-weight: normal;
+				text-decoration: none;
+			}
 		}
 	}
 

@@ -7047,7 +7047,10 @@ body {
   text-decoration: none;
 }
 .slidereveal-panel {
-  padding: 80px 20px 0;
+  padding: 60px 20px 0;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 .slidereveal-panel .search-container {
   width: 100%;
@@ -7090,6 +7093,28 @@ body {
   margin-top: -10px;
   font-size: 20px;
   color: #00833e;
+}
+.slidereveal-panel .full-width-button {
+  width: 100%;
+  background: #95d600;
+  height: 50px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding-left: 20px;
+}
+.slidereveal-panel .full-width-button a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  transition: color 500ms;
+}
+.slidereveal-panel .full-width-button a:hover,
+.slidereveal-panel .full-width-button a:focus {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: none;
 }
 .slidereveal-panel .close-button {
   font-size: 30px;
@@ -7432,7 +7457,8 @@ body {
   .navbar-left,
   .navbar-right,
   .page-header-upper-right,
-  .navbar-globals {
+  .navbar-globals,
+  .mega-menu {
     display: none;
   }
   .mega-menu {
@@ -8112,6 +8138,7 @@ body {
 .slidereveal-panel#panel-menu {
   color: #fff;
   background: #26cad3;
+  padding-top: 100px;
 }
 .slidereveal-panel#panel-menu .divider {
   background: #22b5bd;
@@ -8297,129 +8324,15 @@ body {
 .slidereveal-panel#panel-community ul li:last-child {
   border: none;
 }
-/*#panel-menu {
-	color: @white;
-	background: @brand-primary;
-
-	.dropdown {
-
-		.dropdown-menu {
-			top: 100%;
-			left: 0;
-			width: 100%;
-			background: none;
-	    border: none;
-	    border-radius: 0;
-	    box-shadow: none;
-			padding: 0;
-			position: relative;
-			margin: 0;
-		}
-
-		.fa {
-			font-size: 12px;
-			margin-left: 7px;
-			color: darken(@brand-primary, 3%);
-			top: -3px;
-			position: relative;
-			transition: all 400ms;
-		}
-
-		> a {
-			font-size: 18px;
-			text-transform: uppercase;
-
-			&.selected {
-				color: @brand-success;
-
-				.fa {
-					color: @brand-info;
-					transform: rotateZ(45deg);
-
-				}
-			}
-		}
-
-		.sub-menu {
-			margin: 0 0 10px;
-			> li {
-				padding-left: 15px;
-				margin: 10px 0;
-
-				> a {
-					color: @white;
-					font-size: 16px;
-					line-height: 20px;
-				  display: block;
-				  padding: 0;
-				  clear: both;
-				  white-space: normal;
-					&:hover,
-					&:focus,
-					&:visited,
-					&:active {
-						background: none;
-					}
-
-					.fa {
-						top: 0;
-						font-size: 11px;
-						transition: all 400ms;
-					}
-
-					&.selected {
-						color: @brand-success;
-
-						.fa {
-							color: @brand-info;
-							transform: rotateZ(45deg);
-						}
-					}
-				}
-			}
-		}
-
-		&.open {
-			.dropdown-toggle {
-					&:after {
-						display: none;
-					}
-				}
-			}
-		}
-
-	.nav {
-		> li {
-			> a {
-				&:hover,
-				&:active,
-				&:focus,
-				&:visited,
-				&:link {
-					background: none;
-					&:before {
-						display: none;
-					}
-				}
-			}
-		}
-	}
-	ul.page-header-social {
-		li {
-			margin-right: 16px;
-			a {
-				width: 40px;
-		    height: 40px;
-		    display: inline-block;
-		    border-radius: 50%;
-		    border: 2px solid #fff;
-		    line-height: 40px;
-		    text-align: center;
-			}
-		}
-	}
-	.newsletter-events {
-		margin: 20px 0;
-	}
-}*/
+.slidereveal-panel#panel-community .btn-hollow-white {
+  background: none;
+  width: 100%;
+  margin: 0 auto 20px;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.slidereveal-panel#panel-community .btn-hollow-white:hover,
+.slidereveal-panel#panel-community .btn-hollow-white:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
 /*# sourceMappingURL=bootstrap.css.map */
