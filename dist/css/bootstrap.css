@@ -8025,4 +8025,197 @@ body {
 .item-color-key.item-color-key-compost {
   background: #00833e;
 }
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+.slidereveal-panel#panel-menu {
+  color: #fff;
+  background: #26cad3;
+}
+.slidereveal-panel#panel-menu .divider {
+  background: #22b5bd;
+  display: block;
+  height: 1px;
+  margin: 10px 0;
+}
+.slidereveal-panel#panel-menu li > a {
+  color: #fff;
+}
+.slidereveal-panel#panel-menu li > a:hover,
+.slidereveal-panel#panel-menu li > a:active {
+  color: #1a8c92;
+}
+.slidereveal-panel#panel-menu li > a.action-open-community .fa {
+  color: #95d600;
+}
+.slidereveal-panel#panel-menu .dropdown .dropdown-menu {
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  position: relative;
+  margin: 0;
+}
+.slidereveal-panel#panel-menu .dropdown .fa {
+  font-size: 12px;
+  margin-left: 7px;
+  color: #22b5bd;
+  top: -3px;
+  position: relative;
+  transition: all 400ms;
+}
+.slidereveal-panel#panel-menu .dropdown > a {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.slidereveal-panel#panel-menu .dropdown > a:focus {
+  color: #fff;
+}
+.slidereveal-panel#panel-menu .dropdown > a:hover,
+.slidereveal-panel#panel-menu .dropdown > a:active {
+  color: #1a8c92;
+}
+.slidereveal-panel#panel-menu .dropdown > a.selected {
+  color: #141d25;
+}
+.slidereveal-panel#panel-menu .dropdown > a.selected .fa {
+  color: #e84b37;
+  transform: rotateZ(45deg);
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu {
+  margin: 0 0 10px;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li {
+  padding-left: 15px;
+  margin: 10px 0;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  padding: 0;
+  clear: both;
+  white-space: normal;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:visited,
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:focus {
+  background: none;
+  color: #fff;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:hover,
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:active {
+  color: #1a8c92;
+  background: none;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a .fa {
+  top: 0;
+  font-size: 11px;
+  transition: all 400ms;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a.selected {
+  color: #263746;
+}
+.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a.selected .fa {
+  color: #e84b37;
+  transform: rotateZ(45deg);
+}
+.slidereveal-panel#panel-menu .dropdown.open .dropdown-toggle:after {
+  display: none;
+}
+.slidereveal-panel#panel-menu .nav > li > a:hover,
+.slidereveal-panel#panel-menu .nav > li > a:active,
+.slidereveal-panel#panel-menu .nav > li > a:focus,
+.slidereveal-panel#panel-menu .nav > li > a:visited,
+.slidereveal-panel#panel-menu .nav > li > a:link {
+  background: none;
+}
+.slidereveal-panel#panel-menu .nav > li > a:hover:before,
+.slidereveal-panel#panel-menu .nav > li > a:active:before,
+.slidereveal-panel#panel-menu .nav > li > a:focus:before,
+.slidereveal-panel#panel-menu .nav > li > a:visited:before,
+.slidereveal-panel#panel-menu .nav > li > a:link:before {
+  display: none;
+}
+.slidereveal-panel#panel-menu ul.page-header-social li {
+  margin-right: 16px;
+}
+.slidereveal-panel#panel-menu ul.page-header-social li a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  line-height: 40px;
+  text-align: center;
+}
+.slidereveal-panel#panel-menu .newsletter-events {
+  margin: 20px 0;
+}
+.slidereveal-panel#panel-menu .search-container input[type="text"] {
+  background: #fff;
+  color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container input[type="text"]::-webkit-input-placeholder {
+  color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container input[type="text"]:-moz-placeholder {
+  /* Firefox 18- */
+  color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container input[type="text"]::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container input[type="text"]:-ms-input-placeholder {
+  color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container i {
+  color: #26cad3;
+}
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+.slidereveal-panel#panel-community {
+  background: #95d600;
+  z-index: 1050 !important;
+}
+.slidereveal-panel#panel-community ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.slidereveal-panel#panel-community ul li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #91d100;
+}
+.slidereveal-panel#panel-community ul li a:link,
+.slidereveal-panel#panel-community ul li a:visited {
+  margin: 5px 0;
+  padding: 5px 0;
+  color: #00833e;
+  display: block;
+}
+.slidereveal-panel#panel-community ul li a:link:hover,
+.slidereveal-panel#panel-community ul li a:visited:hover,
+.slidereveal-panel#panel-community ul li a:link:focus,
+.slidereveal-panel#panel-community ul li a:visited:focus,
+.slidereveal-panel#panel-community ul li a:link:active,
+.slidereveal-panel#panel-community ul li a:visited:active {
+  color: #fff;
+  text-decoration: none;
+}
+.slidereveal-panel#panel-community ul li:last-child {
+  border: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */
