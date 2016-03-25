@@ -126,13 +126,6 @@
 // --------------------------------------------------
 
 // Default navbar
-.navbar {
-  font-size: 16px;
-  letter-spacing: @letter-spacing;
-  text-transform: uppercase;
-}
-
-// Default navbar
 .navbar-default {
   border-radius: @navbar-border-radius;
 }
@@ -147,55 +140,6 @@
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0;
-}
-
-// Mouseovers
-
-.navbar-nav.navbar-primary > li > a,
-.navbar-nav.navbar-globals > li > a {
-  color: @white;
-  transition: color @link-transition-speed;
-
-  &:before {
-    width: 100%;
-    height: 0;
-    display: block;
-    position: absolute;
-    left: 0;
-    background: @ccswd-green-2;
-    content: '';
-    transition: height @link-transition-speed;
-  }
-
-  &:hover {
-    color: @ccswd-green-2;
-
-    &:before {
-      height: (@font-size-base / 2);
-    }
-  }
-}
-
-.navbar-nav.navbar-primary > li > a {
-  &:before {
-    top: 0;
-    background: @ccswd-green-2;
-  }
-
-  &:hover {
-    color: @ccswd-green-2;
-  }
-}
-
-.navbar-nav.navbar-globals > li > a {
-  &:before {
-    bottom: 0;
-    background: @white;
-  }
-
-  &:hover {
-    color: @white;
-  }
 }
 
 // Fix active state of dropdown items in collapsed mode

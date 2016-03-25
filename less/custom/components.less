@@ -197,9 +197,77 @@ body {
   }
 }
 
-.navbar-upper {
-  position: relative;
-  z-index: 10;
+.navbar {
+  font-size: 16px;
+  letter-spacing: @letter-spacing;
+  text-transform: uppercase;
+}
+
+.navbar-nav.navbar-primary > li > a {
+  color: @white;
+  transition: color @link-transition-speed;
+
+  &:before {
+    width: 100%;
+    height: 0;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: @white;
+    content: '';
+    transition: height @link-transition-speed;
+  }
+
+  &:hover {
+    color: @white;
+
+    &:before {
+      height: (@font-size-base / 2);
+    }
+  }
+}
+
+.header-infobar {
+  width: 100%;
+  height: 100%;
+  display: table;
+  border-collapse: collapse;
+
+  .header-infobar-left,
+  .header-infobar-right {
+    height: 100%;
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  .header-infobar-left {
+    width: 1%;
+  }
+
+  .header-infobar-right {
+    width: 100%;
+  }
+}
+
+.city-recycling-button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: @navbar-padding-vertical (@grid-gutter-width / 2);
+  background: @ccswd-green-2;
+  border-right: 2px solid @ccswd-green-1;
+  color: @ccswd-green-1;
+  transition: color @link-transition-speed;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @white;
+    text-decoration: none;
+  }
 }
 
 

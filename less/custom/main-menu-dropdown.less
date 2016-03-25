@@ -19,7 +19,7 @@
 .nav > li {
 	position: static;
 }
-	
+
 .navbar-default {
 	.navbar-nav {
 		> .open {
@@ -29,7 +29,7 @@
 				&:active,
 				&:link,
 				&:visited {
-					background-color: @brand-primary;
+					background-color: none;
 				}
 			}
 		}
@@ -64,7 +64,7 @@
   width:100%;
 	position: absolute;
 	padding: 100px 30px 40px;
-			
+
 	.dropdown-menu {
 		top: 100%;
 		left: 0;
@@ -75,11 +75,11 @@
 		padding: 0 10px;
 		position: relative;
 		margin: 0;
-	
+
 		> li {
 			text-transform: none;
 			list-style: none;
-			
+
 			> a {
 				color: @white;
 				font-size: 12px;
@@ -88,22 +88,22 @@
 			  padding: 0 0 4px;
 			  clear: both;
 			  white-space: normal;
-				&:hover, 
-				&:focus, 
+				&:hover,
+				&:focus,
 				&:visited,
 				&:active {
 					background: none;
 				}
-				
+
 				.fa {
 					font-size: 10px;
 					padding-left: 3px;
 					color: lighten(@brand-dark, 15%)
 				}
-				
+
 				&.selected {
 					color: @brand-success;
-					
+
 					.fa {
 						color: lighten(@brand-dark, 30%)
 					}
@@ -116,8 +116,8 @@
 			width: 100%;
 			position: absolute;
 		}
-	}	
-	
+	}
+
 	.call-out {
 		margin-top: -3px;
 		h2 {
@@ -132,5 +132,3 @@
 		max-width: 100%;
 	}
 }
-
-

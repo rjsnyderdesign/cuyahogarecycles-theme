@@ -5949,14 +5949,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: #26cad3;
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -5988,7 +5988,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: #26cad3;
 }
 @media (max-width: 767px)
@@ -6000,14 +6000,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus
     {
-        color: #95d600;
+        color: #fff;
         background-color: transparent;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus
     {
-        color: #95d600;
+        color: #fff;
         background-color: #26cad3;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
@@ -6024,7 +6024,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-default .navbar-link:hover
 {
-    color: #95d600;
+    color: #fff;
 }
 .navbar-default .btn-link
 {
@@ -6033,7 +6033,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .navbar-default .btn-link:hover,
 .navbar-default .btn-link:focus
 {
-    color: #95d600;
+    color: #fff;
 }
 .navbar-default .btn-link[disabled]:hover,
 fieldset[disabled] .navbar-default .btn-link:hover,
@@ -6068,14 +6068,14 @@ fieldset[disabled] .navbar-default .btn-link:focus
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: #263746;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -6107,7 +6107,7 @@ fieldset[disabled] .navbar-default .btn-link:focus
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus
 {
-    color: #95d600;
+    color: #fff;
     background-color: #263746;
 }
 @media (max-width: 767px)
@@ -6127,14 +6127,14 @@ fieldset[disabled] .navbar-default .btn-link:focus
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus
     {
-        color: #95d600;
+        color: #fff;
         background-color: transparent;
     }
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus
     {
-        color: #95d600;
+        color: #fff;
         background-color: #263746;
     }
     .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
@@ -6151,7 +6151,7 @@ fieldset[disabled] .navbar-default .btn-link:focus
 }
 .navbar-inverse .navbar-link:hover
 {
-    color: #95d600;
+    color: #fff;
 }
 .navbar-inverse .btn-link
 {
@@ -6160,7 +6160,7 @@ fieldset[disabled] .navbar-default .btn-link:focus
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus
 {
-    color: #95d600;
+    color: #fff;
 }
 .navbar-inverse .btn-link[disabled]:hover,
 fieldset[disabled] .navbar-inverse .btn-link:hover,
@@ -9082,10 +9082,98 @@ body
 {
     vertical-align: baseline;
 }
-.navbar-upper
+.navbar
 {
-    position: relative;
-    z-index: 10;
+    font-size: 16px;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.navbar-nav.navbar-primary > li > a
+{
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #fff;
+}
+.navbar-nav.navbar-primary > li > a:before
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 0;
+
+    content: '';
+    -webkit-transition: height 500ms;
+         -o-transition: height 500ms;
+            transition: height 500ms;
+
+    background: #fff;
+}
+.navbar-nav.navbar-primary > li > a:hover
+{
+    color: #fff;
+}
+.navbar-nav.navbar-primary > li > a:hover:before
+{
+    height: 8px;
+}
+.header-infobar
+{
+    display: table;
+
+    width: 100%;
+    height: 100%;
+
+    border-collapse: collapse;
+}
+.header-infobar .header-infobar-left,
+.header-infobar .header-infobar-right
+{
+    display: table-cell;
+
+    height: 100%;
+
+    vertical-align: top;
+    white-space: nowrap;
+}
+.header-infobar .header-infobar-left
+{
+    width: 1%;
+}
+.header-infobar .header-infobar-right
+{
+    width: 100%;
+}
+.city-recycling-button
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    padding: 25px 40px;
+
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #00833e;
+    border-right: 2px solid #00833e;
+    background: #95d600;
+}
+.city-recycling-button:hover,
+.city-recycling-button:focus,
+.city-recycling-button:active,
+.city-recycling-button.active
+{
+    text-decoration: none;
+
+    color: #fff;
 }
 .page-footer .page-footer-col
 {
@@ -9147,7 +9235,7 @@ body
 .navbar-default .navbar-nav > .open > a:link,
 .navbar-default .navbar-nav > .open > a:visited
 {
-    background-color: #00833e;
+    background-color: none;
 }
 .dropdown.open .sub-menu.first
 {
@@ -9405,47 +9493,47 @@ body
 /*!
  * CuyahogaRecycles.org theme
  */
-.nav-center-wrapper
+.wdidw-wrapper
 {
-    position: absolute;
-    top: 0;
-    left: 50%;
+    position: relative;
 
     display: block;
+    overflow: hidden;
 
-    height: 0;
+    width: 100%;
+    height: 70px;
 }
-.nav-center-inner
+.wdidw-button-wrapper
 {
     display: table;
 
-    height: 70px;
-    margin-right: 50%;
-    margin-left: -50%;
-
-    background: #00833e;
+    width: 100%;
+    height: 100%;
 }
-.wdidw-button
+.wdidw-button-wrapper > .wdidw-button
 {
     font-size: 24px;
 
     display: table-cell;
 
-    text-align: center;
+    padding: 0 40px;
+
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
     vertical-align: middle;
     white-space: nowrap;
 
-    color: #fff;
+    color: #95d600;
 }
-.wdidw-button,
-.wdidw-button:hover,
-.wdidw-button:focus,
-.wdidw-button:active,
-.wdidw-button.active
+.wdidw-button-wrapper > .wdidw-button:hover,
+.wdidw-button-wrapper > .wdidw-button:focus,
+.wdidw-button-wrapper > .wdidw-button:active,
+.wdidw-button-wrapper > .wdidw-button.active
 {
     text-decoration: none;
 
-    color: #95d600;
+    color: #fff;
 }
 .wdidw-search-bar
 {
@@ -9535,7 +9623,6 @@ body
     }
     .navbar-left,
     .navbar-right,
-    .navbar-upper,
     .page-header-upper-right,
     .navbar-globals
     {

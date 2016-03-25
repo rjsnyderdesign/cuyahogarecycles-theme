@@ -14,37 +14,35 @@
 // What Do I Do With? Toolbar
 // --------------------------------------------------
 
-.nav-center-wrapper {
-  height: 0;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-}
-
-.nav-center-inner {
+.wdidw-wrapper {
+  width: 100%;
   height: @navbar-height;
-  display: table;
-  margin-left: -50%;
-  margin-right: 50%;
-  background: @ccswd-green-1;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
-.wdidw-button {
-  display: table-cell;;
-  color: #fff;
-  font-size: @font-size-large;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
+.wdidw-button-wrapper {
+  width: 100%;
+  height: 100%;
+  display: table;
 
-  &,
-  &:hover,
-  &:focus,
-  &:active,
-  &.active {
+  > .wdidw-button {
+    display: table-cell;
+    padding: 0 (@grid-gutter-width / 2);
     color: @ccswd-green-2;
-    text-decoration: none;
+    font-size: @font-size-large;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: color @link-transition-speed;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: @white;
+      text-decoration: none;
+    }
   }
 }
 

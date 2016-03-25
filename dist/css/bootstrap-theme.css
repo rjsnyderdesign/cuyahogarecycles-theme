@@ -368,13 +368,6 @@ fieldset[disabled] .btn-danger.active
 {
     background-color: #006a32;
 }
-.navbar
-{
-    font-size: 16px;
-
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
 .navbar-default
 {
     border-radius: 0;
@@ -388,63 +381,6 @@ fieldset[disabled] .btn-danger.active
 .navbar-fixed-bottom
 {
     border-radius: 0;
-}
-.navbar-nav.navbar-primary > li > a,
-.navbar-nav.navbar-globals > li > a
-{
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-
-    color: #fff;
-}
-.navbar-nav.navbar-primary > li > a:before,
-.navbar-nav.navbar-globals > li > a:before
-{
-    position: absolute;
-    left: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 0;
-
-    content: '';
-    -webkit-transition: height 500ms;
-         -o-transition: height 500ms;
-            transition: height 500ms;
-
-    background: #95d600;
-}
-.navbar-nav.navbar-primary > li > a:hover,
-.navbar-nav.navbar-globals > li > a:hover
-{
-    color: #95d600;
-}
-.navbar-nav.navbar-primary > li > a:hover:before,
-.navbar-nav.navbar-globals > li > a:hover:before
-{
-    height: 8px;
-}
-.navbar-nav.navbar-primary > li > a:before
-{
-    top: 0;
-
-    background: #95d600;
-}
-.navbar-nav.navbar-primary > li > a:hover
-{
-    color: #95d600;
-}
-.navbar-nav.navbar-globals > li > a:before
-{
-    bottom: 0;
-
-    background: #fff;
-}
-.navbar-nav.navbar-globals > li > a:hover
-{
-    color: #fff;
 }
 @media (max-width: 767px)
 {
