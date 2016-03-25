@@ -110,6 +110,7 @@
 		open : function() {
 			var self = this;
 			classie.add( this.el, 'sb-search-open' );
+			$('.page-header-upper-right .search-container').addClass('open');
 			// focus the input
 			if( !mobilecheck() ) {
 				this.inputEl.focus();
@@ -126,6 +127,7 @@
 		close : function() {
 			this.inputEl.blur();
 			classie.remove( this.el, 'sb-search-open' );
+			$('.page-header-upper-right .search-container').removeClass('open');
 		}
 	}
 

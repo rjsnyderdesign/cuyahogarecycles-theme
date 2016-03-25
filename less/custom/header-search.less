@@ -19,23 +19,30 @@
 
 .search-container {
 	position: relative;
-	right: 0;
-	top: -30px;
 	z-index: 3;
+	min-width: 110px;
+	float: right;
 	
 	label {
 		position: absolute;
-		top: 37px;
+		top: 7px;
 		right: 30px;
 		font-size: 12px;
 		font-weight: normal;
+		
+		&:hover,
+		&:focus {
+			color: darken(@brand-info, 15%);
+			cursor: pointer;
+		}
+		
 	}
 }
 
 .sb-search {
 	position: relative;
   margin-top: 0;
-  width: 0%;
+  width: 0;
   min-width: 30px;
   height: 30px;
   float: right;
@@ -44,7 +51,7 @@
 	-webkit-backface-visibility: hidden;
 	
 	&.sb-search-open {
-		width: 100%;
+		width: 220px;
 		
 		.sb-icon-search {
 			background: darken(@brand-info, 5%);

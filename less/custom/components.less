@@ -177,12 +177,28 @@ body {
       position: absolute;
       top: 0;
       right: 0;
+			width: 100%;
     }
+		
+		.login-link {
+			color: @white;
+			font-size: 12px;
+			font-weight: normal;
+			text-transform: uppercase;
+			margin-right: 20px;
+			padding-top: 7px;
+			
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: darken(@brand-info, 15%);
+			}
+		}
   }
 
   .page-header-social {
     float: right;
-		margin-right: 120px;
+		margin-right: 5px;
 
     > li {
       margin-right: @font-size-base;
@@ -292,7 +308,7 @@ body {
 		top: 0;
 		left: 0;
 		right: 0;
-		z-index: 1;
+		z-index: 0;
 		input[type="text"] {
 			height: 100%;
 			width: 100%;
