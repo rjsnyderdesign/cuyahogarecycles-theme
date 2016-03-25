@@ -51,11 +51,6 @@
             </a>
           </div><!-- /.brand -->
           <div class="page-header-upper-right">
-            <ul class="inline-link-list page-header-social">
-              <li><a href="#"><i class="fa fa-facebook"    ></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
-                 ><a href="#"><i class="fa fa-twitter"     ></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
-                 ><a href="#"><i class="fa fa-youtube-play"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
-            </ul>
             <div class="search-container">
               <label>Search Site</label>
               <div id="sb-search" class="sb-search">
@@ -66,9 +61,12 @@
                 </form>
               </div>
             </div>
-            <ul class="nav navbar-nav navbar-right navbar-primary">
-              <li><a href="#">Member Login</a></li>
+            <ul class="inline-link-list page-header-social">
+              <li><a href="#"><i class="fa fa-facebook"    ></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
+                 ><a href="#"><i class="fa fa-twitter"     ></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
+                 ><a href="#"><i class="fa fa-youtube-play"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
             </ul>
+            <a class="pull-right login-link" href="#">Member Login</a>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -206,7 +204,7 @@
 
           <div class="header-infobar-left hidden-sm hidden-xs">
 
-            <a class="city-recycling-button" href="#"><i class="fa fa-caret-square-o-left"></i> Recycling in my Community</a>
+            <a class="city-recycling-button action-open-community" href="#"><i class="fa fa-caret-square-o-left"></i> Recycling in my Community</a>
 
           </div><!-- /.header-infobar-left -->
 
@@ -663,12 +661,31 @@
     <div class="slidereveal-panel" id="panel-newsletters">
       <h2>Newsletters</h2>
     </div><!-- /.slidereveal-panel -->
+		
+    <div class="slidereveal-panel" id="panel-community">
+      <div class="search-container">
+        <input type="text" placeholder="Enter City or Zip Code" />
+        <i class="fa fa-search"></i>
+			</div>
+			<button type="button" class="btn btn-hollow btn-hollow-white action-open-community">Close</button>
+			<ul class="city-list">
+				<li><a href="#">Bay Village</a></li>
+				<li><a href="#">Beachwood</a></li>
+				<li><a href="#">Bedford</a></li>
+				<li><a href="#">Bedford Heights</a></li>
+				<li><a href="#">Brecksville</a></li>
+				<li><a href="#">Cleveland</a></li>
+			</ul>
+    </div><!-- /.slidereveal-panel -->
 
     <div class="slidereveal-panel" id="panel-menu">
       <div class="search-container">
         <input type="text" placeholder="Search" />
         <i class="fa fa-search"></i>
       </div>
+      <div class="full-width-button">
+        <a href="#" class="action-open-community"><i class="fa fa-caret-square-o-left"></i> Recycling In My Community<a>
+			</div>
       <ul class="nav navbar-nav navbar-primary">
         <li class="dropdown"><a href="#" class="trigger">Recycling for Home<span class="fa fa-plus"></span></a>
           <ul class="col-sm-4 dropdown-menu sub-menu first">

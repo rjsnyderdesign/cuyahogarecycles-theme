@@ -246,12 +246,28 @@ body {
       position: absolute;
       top: 0;
       right: 0;
+			width: 100%;
     }
+		
+		.login-link {
+			color: @white;
+			font-size: 12px;
+			font-weight: normal;
+			text-transform: uppercase;
+			margin-right: 20px;
+			padding-top: 7px;
+			
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: darken(@brand-info, 15%);
+			}
+		}
   }
 
   .page-header-social {
     float: right;
-		margin-right: 120px;
+		margin-right: 5px;
 
     > li {
       margin-right: @font-size-base;
@@ -345,6 +361,79 @@ body {
     color: @white;
     text-decoration: none;
   }
+}
+
+
+
+//
+// Slide Revel Panel
+// --------------------------------------------------
+
+.slidereveal-panel {
+	padding: 60px 20px 0;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+	
+	.search-container {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+		input[type="text"] {
+			height: 100%;
+			width: 100%;
+			font-size: @font-size-base;
+			padding: 15px 50px 15px 20px;
+	    border: none;
+	    background: @brand-success;
+	    color: @brand-primary;
+	    outline: none;
+	    box-shadow: none;
+			margin: 0;
+        .placeholder-color(@brand-primary);
+		}
+
+		i {
+			position: absolute;
+			top: 50%;
+			right: 22px;
+	    margin-top: -10px;
+	    font-size: 20px;
+			color: @brand-primary;
+		}
+	}
+	
+	.full-width-button {
+		width: 100%;
+		background: @brand-success;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding-left: 20px;
+		a {
+			display: block;
+	    height: 100%;
+	    width: 100%;
+	    line-height: 50px;
+			transition: color 500ms;
+			&:hover,
+			&:focus {
+				color: @white;
+				font-weight: normal;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.close-button {
+		font-size: 30px;
+		font-weight: normal;
+		color: @brand-success;
+	}
 }
 
 

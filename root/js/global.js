@@ -72,20 +72,45 @@
             push: true,
             overlay: true
         } );
+				
+				
 
-        var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
-            width: 300,
-            position: 'left',
-            speed: 300,
-            trigger: $( '.action-open-menu' ),
-            push: true,
-            overlay: true,
-						hidden: function(slider, trigger){
-							// Close Sub Menu's when menu is hidden
-							$("#panel-menu .dropdown").find('.trigger').removeClass('selected');
-							$("#panel-menu .dropdown").find('.sub-menu').hide();
-						  }
-        } );
+	        var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
+	            width: 300,
+	            position: 'left',
+	            speed: 300,
+	            trigger: $( '.action-open-menu' ),
+	            push: true,
+	            overlay: true,
+							hidden: function(slider, trigger){
+								// Close Sub Menu's when menu is hidden
+								$("#panel-menu .dropdown").find('.trigger').removeClass('selected');
+								$("#panel-menu .dropdown").find('.sub-menu').hide();
+							  },
+								hide: function(slider, trigger){
+									$( '#panel-community' ).slideReveal("hide");
+								}
+	        } );
+				if(window.innerWidth > 767) {
+	        var sliderPanelCommunity = $( '#panel-community' ).slideReveal( {
+	            width: 300,
+	            position: 'left',
+	            speed: 300,
+	            trigger: $( '.action-open-community' ),
+	            push: true,
+	            overlay: true
+	        } );
+				}
+				else {
+		      var sliderPanelMenu = $( '#panel-community' ).slideReveal( {
+		          width: 300,
+		          position: 'left',
+		          speed: 300,
+		          trigger: $( '.action-open-community' ),
+		          push: false,
+		          overlay: false
+		      } );
+				}
 
         // Remove extra overlays
         while ( $( '.slide-reveal-overlay' ).length > 1 ) {
