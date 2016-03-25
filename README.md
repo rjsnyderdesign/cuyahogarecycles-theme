@@ -1,4 +1,4 @@
-# [CuyahogaRecyles.org Demo Page](https://trait-ksugiura.github.io/cuyahogarecycles-theme/root)
+# [CuyahogaRecycles.org Demo Page](https://trait-ksugiura.github.io/cuyahogarecycles-theme/root)
 
 # [Bootstrap](http://getbootstrap.com)
 

@@ -90,6 +90,13 @@ h1 {
 .btn-hollow( @btn-hollow-color, @btn-hollow-hover-color ) {
   color: @btn-hollow-color;
   border-color: @btn-hollow-color;
+  padding-left: (@font-size-base * 2.5);
+  padding-right: (@font-size-base * 2.5);
+  margin-top: (-@font-size-base / 2);
+  margin-left: (@font-size-base * 2);
+  margin-right: (@font-size-base * 2);
+  transition: color @link-transition-speed;
+
   &:focus,
   &:hover,
   &:active,
