@@ -1446,14 +1446,14 @@ a
 {
     text-decoration: none;
 
-    color: #00833e;
+    color: #26cad3;
 }
 a:hover,
 a:focus
 {
     text-decoration: underline;
 
-    color: #00361a;
+    color: #1a8c92;
 }
 a:focus
 {
@@ -1664,12 +1664,12 @@ h4,
 h5,
 .h5
 {
-    font-size: 16px;
+    font-size: 18px;
 }
 h6,
 .h6
 {
-    font-size: 12px;
+    font-size: 16px;
 }
 p
 {
@@ -3353,14 +3353,9 @@ legend
 }
 label
 {
-    font-weight: bold;
-
     display: inline-block;
 
     max-width: 100%;
-    margin-bottom: 5px;
-
-    text-transform: uppercase;
 }
 input[type='search']
 {
@@ -4460,7 +4455,7 @@ fieldset[disabled] .btn-danger.focus
 {
     font-weight: normal;
 
-    color: #00833e;
+    color: #26cad3;
     border-radius: 0;
 }
 .btn-link,
@@ -4485,7 +4480,7 @@ fieldset[disabled] .btn-link
 {
     text-decoration: underline;
 
-    color: #00361a;
+    color: #1a8c92;
     background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -5249,7 +5244,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .nav .open > a:hover,
 .nav .open > a:focus
 {
-    border-color: #00833e;
+    border-color: #26cad3;
     background-color: #e6e6e6;
 }
 .nav .nav-divider
@@ -6220,7 +6215,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 
     text-decoration: none;
 
-    color: #00833e;
+    color: #26cad3;
     border: 1px solid #ddd;
     background-color: #fff;
 }
@@ -6245,7 +6240,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 {
     z-index: 2;
 
-    color: #00361a;
+    color: #1a8c92;
     border-color: #ddd;
     background-color: #e6e6e6;
 }
@@ -6502,7 +6497,7 @@ a.badge:focus
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge
 {
-    color: #00833e;
+    color: #26cad3;
     background-color: #fff;
 }
 .list-group-item > .badge
@@ -6600,7 +6595,7 @@ a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active
 {
-    border-color: #00833e;
+    border-color: #26cad3;
 }
 .thumbnail .caption
 {
@@ -8909,17 +8904,17 @@ h1
 .brand .brand-logo-main
 {
     width: 330px;
-    height: 84px;
+    max-width: 100%;
 }
 .brand .brand-logo-main-horizontal
 {
     width: 516px;
-    height: 84px;
+    max-width: 100%;
 }
 .brand .brand-district-logo
 {
     width: 372px;
-    height: 96px;
+    max-width: 100%;
 }
 .btn-hollow-white
 {
@@ -9178,11 +9173,26 @@ h1
 
     text-align: center;
 }
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-title
+    {
+        padding-bottom: 64px;
+    }
+}
 .youtube-video-play-button > .video-play-title h4
 {
     font-size: 24px;
+    font-weight: bold;
 
     text-transform: uppercase;
+}
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-title h4
+    {
+        font-size: 36px;
+    }
 }
 .youtube-video-play-button > .video-play-icon-box
 {
@@ -9201,6 +9211,13 @@ h1
 .youtube-video-play-button > .video-play-icon-box .fa
 {
     font-size: 64px;
+}
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-icon-box .fa
+    {
+        font-size: 128px;
+    }
 }
 .youtube-video-play-button > .video-play-cover-img
 {
@@ -9540,6 +9557,47 @@ body
     margin: 0 8px;
 
     content: '|';
+}
+.page-content
+{
+    padding: 40px;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-weight: bold;
+}
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6
+{
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+.page-content h1:not(:first-child),
+.page-content h2:not(:first-child),
+.page-content h3:not(:first-child),
+.page-content h4:not(:first-child),
+.page-content h5:not(:first-child),
+.page-content h6:not(:first-child)
+{
+    margin-top: 48px;
+    margin-bottom: 8px;
+}
+.page-content p
+{
+    line-height: 1.5;
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -10820,6 +10878,97 @@ body
 .item-color-key.item-color-key-compost
 {
     background: #00833e;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.item-search-col-left,
+.item-search-col-right
+{
+    padding: 40px;
+}
+.item-search-col-left
+{
+    background: #e6e6e6;
+}
+.item-search-col-right
+{
+    background: #fff;
+}
+.item-filter-list
+{
+    padding: 0;
+
+    list-style: none;
+}
+.item-filter-list > li
+{
+    white-space: nowrap;
+}
+.item-filter-list > li > input[type='checkbox']
+{
+    margin-right: 8px;
+}
+.item-search-results
+{
+    padding: 0;
+
+    list-style: none;
+}
+.item-search-result
+{
+    padding: 0;
+
+    border-top: 2px solid #e6e6e6;
+}
+.item-search-result > .item-search-result-row
+{
+    display: table;
+
+    width: 100%;
+}
+.item-search-result > .item-search-result-row > .item-search-result-col-left,
+.item-search-result > .item-search-result-row > .item-search-result-col-right
+{
+    display: table-cell;
+
+    vertical-align: middle;
+}
+.item-search-result > .item-search-result-row > .item-search-result-col-left
+{
+    width: 1%;
+    padding: 40px;
+    padding-left: 0;
+}
+.item-search-result > .item-search-result-row > .item-search-result-col-right
+{
+    width: 100%;
+}
+.item-search-result-info > .item-search-result-title
+{
+    text-transform: uppercase;
+}
+.item-search-result-info > .item-search-result-types
+{
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+.item-type-label.item-type-home-recycling
+{
+    color: #26cad3;
+}
+.item-type-label.item-type-dropoff-recycling
+{
+    color: #f6b221;
+}
+.item-type-label.item-type-proper-disposal
+{
+    color: #e84b37;
+}
+.item-type-label.item-type-compost
+{
+    color: #00833e;
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)

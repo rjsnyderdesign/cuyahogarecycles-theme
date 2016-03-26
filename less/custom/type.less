@@ -1,0 +1,50 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Headings
+// --------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+
+//
+// Page content
+// --------------------------------------------------
+
+.page-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:not(:first-child) {
+      margin-top: (@font-size-base * 3);
+      margin-bottom: (@font-size-base / 2);
+    }
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}

@@ -68,17 +68,17 @@ h1 {
 
   .brand-logo-main {
     width: 330px;
-    height: 84px;
+    max-width: 100%;
   }
 
   .brand-logo-main-horizontal {
     width: 516px;
-    height: 84px;
+    max-width: 100%;
   }
 
   .brand-district-logo {
     width: 372px;
-    height: 96px;
+    max-width: 100%;
   }
 }
 
@@ -173,7 +173,10 @@ h1 {
 // YouTube play button
 // --------------------------------------------------
 
-@video-play-icon-size: (@font-size-base * 4);
+@video-play-icon-size-base: (@font-size-base * 4);
+@video-play-icon-size-large: (@video-play-icon-size-base * 2);
+@video-play-title-font-size-base: @font-size-large;
+@video-play-title-font-size-large: (@font-size-large * 1.5);
 
 .youtube-video-play-button {
   width: 100%;
@@ -211,12 +214,21 @@ h1 {
     top: 0;
     left: 0;
     z-index: 2;
-    padding-bottom: (@video-play-icon-size / 2);
+    padding-bottom: (@video-play-icon-size-base / 2);
     text-align: center;
+
+    @media screen and (min-width: @screen-sm-min) {
+      padding-bottom: (@video-play-icon-size-large / 2);
+    }
 
     h4 {
       text-transform: uppercase;
-      font-size: @font-size-large;
+      font-size: @video-play-title-font-size-base;
+      font-weight: bold;
+
+      @media screen and (min-width: @screen-sm-min) {
+        font-size: @video-play-title-font-size-large;
+      }
     }
   }
 
@@ -231,7 +243,11 @@ h1 {
     text-align: center;
 
     .fa {
-      font-size: @video-play-icon-size;
+      font-size: @video-play-icon-size-base;
+
+      @media screen and (min-width: @screen-sm-min) {
+        font-size: @video-play-icon-size-large;
+      }
     }
   }
 
@@ -521,4 +537,13 @@ body {
       margin: 0 (@font-size-base / 2);
     }
   }
+}
+
+
+//
+// Page content
+// --------------------------------------------------
+
+.page-content {
+  padding: (@grid-gutter-width / 2);
 }
