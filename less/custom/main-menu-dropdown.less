@@ -58,12 +58,20 @@
 			}
 	}
 }
+// New Styles
+.mega-menu {
+	width: 100%;
+	display: block;
+}
+
+// /New Styles
 
 .main-menu-dropdown {
   background: @brand-dark;
   width:100%;
-	position: absolute;
 	padding: 100px 30px 40px;
+	display: none;
+	border-bottom: 1px solid @brand-info;
 
 	.dropdown-menu {
 		top: 100%;
@@ -75,6 +83,12 @@
 		padding: 0 10px;
 		position: relative;
 		margin: 0;
+		
+		&.first {
+			display: block;
+			top: inherit;
+			left: inherit;
+		}
 
 		> li {
 			text-transform: none;
