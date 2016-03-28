@@ -134,7 +134,7 @@
 				// Mega Menu + Sub Menus
 				//
 				
-				$(".mega-menu .dropdown a.trigger").on("click",function(e){	
+				$(".mega-menu .dropdown-menu a.trigger").on("click",function(e){	
 					var current=$(this).next();
 					var grandparent=$(this).parent().parent();
 					if($(this).hasClass('selected')) {
@@ -151,16 +151,66 @@
 					e.stopPropagation();
 				});
 	
-				$(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
+				$(".mega-menu .dropdown-menu > li > a:not(.trigger)").on("click",function(){
 					var root=$(this).closest('.dropdown');
 					$('.trigger').removeClass('selected');
 					root.find('.sub-menu:not(.first)').hide();
 				});
-	
+				
+	/*
 				$('.dropdown').on('hide.bs.dropdown', function () {
 				  $('.dropdown').find('.sub-menu:not(.first)').hide();
 					$('.dropdown').find('li > a.trigger').removeClass('selected');
-				})
+				})*/
+				
+				//
+				// New Mega Menu (Hover)
+				//
+				
+				var megaMenu = {
+					init: function() {
+						var that = this;
+						$('.navbar-primary li a').hover(function() {
+							that.enter(this);
+						}, function() {
+							that.exit(this);
+						});
+						/*
+						$('.navbar-primary li a').hoverIntent({
+							over: function() {
+								that.enter(this);
+							},
+							out: function() {
+								that.exit(this);
+							}						
+						});
+						*/						
+					},
+					
+					menu: $('.mega-menu'),
+					currentItem: null,
+					nextItem: null,
+					enter: function(el){
+						var elClass = $(el).attr("class");
+						$(el).parent().addClass('selected');
+						$('.'+ elClass + '-sub').stop().slideDown(400);
+						$('.'+ elClass + '-sub').hover(function() {
+							$(this).stop().slideDown(400);
+						}, function() {
+							$(this).stop().slideUp(400);
+						  $(this).find('.sub-menu:not(.first)').hide();
+							$(this).find('li > a.trigger').removeClass('selected');
+						});		
+					},
+					exit: function(el){
+						var elClass = $(el).attr("class");
+						$(el).parent().removeClass('selected');
+						$('.'+ elClass + '-sub').stop().slideUp(400);
+					  $('.'+ elClass + '-sub').find('.sub-menu:not(.first)').hide();
+						$('.'+ elClass + '-sub').find('li > a.trigger').removeClass('selected');
+					}
+				};
+				megaMenu.init();
 	
 	
 				//
@@ -198,6 +248,8 @@
 					$("#panel-menu .dropdown").find('.trigger').removeClass('selected');
 					$("#panel-menu .dropdown").find('.sub-menu').hide();
 				};
+				
+			
 				
 				//
 				// Header Search

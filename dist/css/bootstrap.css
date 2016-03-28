@@ -7186,11 +7186,16 @@ body {
   border-top-width: 0;
   border-bottom-color: #263746;
 }
+.mega-menu {
+  width: 100%;
+  display: block;
+}
 .main-menu-dropdown {
   background: #263746;
   width: 100%;
-  position: absolute;
   padding: 100px 30px 40px;
+  display: none;
+  border-bottom: 1px solid #26cad3;
 }
 .main-menu-dropdown .dropdown-menu {
   top: 100%;
@@ -7202,6 +7207,11 @@ body {
   padding: 0 10px;
   position: relative;
   margin: 0;
+}
+.main-menu-dropdown .dropdown-menu.first {
+  display: block;
+  top: inherit;
+  left: inherit;
 }
 .main-menu-dropdown .dropdown-menu > li {
   text-transform: none;
