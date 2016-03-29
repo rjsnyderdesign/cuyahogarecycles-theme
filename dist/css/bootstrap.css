@@ -8916,6 +8916,20 @@ h1
     width: 372px;
     max-width: 100%;
 }
+.small-header
+{
+    font-size: 16px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+form label
+{
+    font-size: 16px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
 .btn-hollow-white
 {
     margin-top: -8px;
@@ -9117,6 +9131,12 @@ h1
 .inline-link-list > li > a
 {
     color: inherit;
+}
+.symbol
+{
+    display: inline-block;
+
+    height: 60px;
 }
 .youtube-video-play-button
 {
@@ -9498,11 +9518,18 @@ body
 }
 .page-footer .page-footer-col
 {
-    padding-top: 64px;
-    padding-bottom: 96px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.page-footer .page-footer-col h2
+{
+    margin-top: 0;
 }
 .page-footer .page-footer-col dt
 {
+    font-size: 16px;
+    font-weight: bold;
+
     text-transform: uppercase;
 }
 .page-footer .page-footer-col dd
@@ -10251,6 +10278,35 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+.tile-grid
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.tile-grid:before,
+.tile-grid:after
+{
+    display: table;
+
+    content: ' ';
+}
+.tile-grid:after
+{
+    clear: both;
+}
+.tile-grid:before,
+.tile-grid:after
+{
+    display: table;
+
+    content: ' ';
+}
+.tile-grid:after
+{
+    clear: both;
+}
 .tile-grid > .grid-cell
 {
     position: relative;
@@ -10282,7 +10338,7 @@ h6
 {
     background-color: #f6b221;
 }
-.tile-grid > .grid-cell.grid-full-width
+.tile-grid > .grid-cell.grid-cell-full-width
 {
     width: 100% !important;
 }
@@ -10861,6 +10917,27 @@ h6
 {
     vertical-align: baseline;
 }
+.grid-cell-container-inner.grid-cell-link-event
+{
+    position: relative;
+    z-index: 1;
+}
+.grid-cell-container-inner.grid-cell-link-event > .grid-cell-content-outer > .grid-cell-content-inner
+{
+    vertical-align: bottom;
+}
+.grid-cell-container-inner.grid-cell-link-event h2
+{
+    font-size: 40px;
+
+    margin-top: 8px;
+}
+.grid-cell-container-inner.grid-cell-link-event h4
+{
+    font-size: 24px;
+
+    margin: 0;
+}
 .grid-cell-container-inner.grid-cell-link-bg
 {
     position: absolute;
@@ -10876,15 +10953,26 @@ h6
     margin: 0;
     padding: 0;
 }
+.grid-cell-container-inner.grid-cell-link-event-bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.grid-cell-container-inner.grid-cell-link-event-bg > img
+{
+    display: block;
+
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
 .grid-cell-container-inner.grid-cell-info-box
 {
-    font-size: 28px;
+    font-size: 24px;
 
     text-align: center;
-}
-.grid-cell-container-inner.grid-cell-info-box.grid-cell-info-box-small
-{
-    font-size: 24px;
 }
 .grid-cell-container-inner.grid-cell-info-box > .grid-cell-content-outer > .grid-cell-content-inner
 {
@@ -10892,7 +10980,7 @@ h6
 }
 .grid-cell-container-inner.grid-cell-info-box h4
 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
 
     text-transform: uppercase;

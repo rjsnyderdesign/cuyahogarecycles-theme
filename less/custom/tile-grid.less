@@ -73,6 +73,11 @@
 .tile-grid {
   // HACK: Hides 1px rounding errors on percent width grid cells
   // width: 100.12%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .clearfix;
 
   > .grid-cell {
     width: 100%;
@@ -90,7 +95,7 @@
     &:nth-child(4n+2) { background-color: @ccswd-green-1; }
     &:nth-child(4n+3) { background-color: @ccswd-yellow;  }
 
-    &.grid-full-width {
+    &.grid-cell-full-width {
       width: 100% !important;
     }
 
@@ -182,6 +187,27 @@
     }
   }
 
+  &.grid-cell-link-event {
+    position: relative;
+    z-index: 1;
+
+    > .grid-cell-content-outer {
+      > .grid-cell-content-inner {
+        vertical-align: bottom;
+      }
+    }
+
+    h2 {
+      margin-top: (@font-size-base / 2);
+      font-size: (@font-size-base * 2.5);
+    }
+
+    h4 {
+      margin: 0;
+      font-size: (@font-size-base * 1.5);
+    }
+  }
+
   &.grid-cell-link-bg {
     position: absolute;
     top: 0;
@@ -196,13 +222,23 @@
     }
   }
 
-  &.grid-cell-info-box {
-    font-size: 28px;
-    text-align: center;
+  &.grid-cell-link-event-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    &.grid-cell-info-box-small {
-      font-size: (@font-size-base * 1.5);
+    > img {
+      width: auto;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+      padding: 0;
     }
+  }
+
+  &.grid-cell-info-box {
+    font-size: (@font-size-base * 1.5);
+    text-align: center;
 
     > .grid-cell-content-outer {
       > .grid-cell-content-inner {
@@ -211,7 +247,7 @@
     }
 
     h4 {
-      font-size: 36px;
+      font-size: (@font-size-base * 2.5);
       font-weight: bold;
       text-transform: uppercase;
     }

@@ -84,6 +84,23 @@ h1 {
 
 
 //
+// Forms
+// --------------------------------------------------
+
+.small-header {
+  font-size: @font-size-base;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+form {
+  label {
+    .small-header
+  }
+}
+
+
+//
 // Buttons
 // --------------------------------------------------
 
@@ -155,6 +172,16 @@ h1 {
       color: inherit;
     }
   }
+}
+
+
+//
+// Symbols
+// --------------------------------------------------
+
+.symbol {
+  display: inline-block;
+  height: 60px;
 }
 
 
@@ -478,11 +505,15 @@ body {
 
 .page-footer {
   .page-footer-col {
-    padding-top: 64px;
-    padding-bottom: 96px;
+    padding-top: (@grid-gutter-width / 2);
+    padding-bottom: @grid-gutter-width;
+
+    h2 {
+      margin-top: 0;
+    }
 
     dt {
-      text-transform: uppercase;
+      .small-header
     }
 
     dd {
