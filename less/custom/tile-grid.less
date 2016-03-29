@@ -44,6 +44,27 @@
 
 }
 
+.generate-placeholders(@cols) {
+
+  .generate-placeholder-loop(@i: 2) when (@i < @cols) {
+    // Hide placeholders made for smaller grids
+    &.grid-cell-placeholder.grid-cell-placeholder-@{i}:nth-child(n) {
+      display: none;
+    }
+    &.grid-cell-placeholder.grid-cell-placeholder-@{cols}.grid-cell-placeholder-pos-@{i}:nth-child(@{cols}n+@{i}) {
+      display: block;
+    }
+    .generate-placeholder-loop((@i + 1));
+  }
+
+  .generate-placeholder-loop();
+
+  &.grid-cell-placeholder.grid-cell-placeholder-@{cols}.grid-cell-placeholder-pos-@{cols}:nth-child(@{cols}n) {
+    display: block;
+  }
+
+}
+
 
 //
 // Tile grid
@@ -73,6 +94,10 @@
       width: 100% !important;
     }
 
+    &.grid-cell-placeholder {
+      display: none;
+    }
+
     &.grid-sizer {
       position: absolute;
       top: -9999px;
@@ -82,14 +107,16 @@
     // 1 column grid
     .generate-grid(1);
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: 800px) and (max-width: 1199px) {
       // 2 column grid
       .generate-grid(2);
+      .generate-placeholders(2)
     }
 
     @media screen and (min-width: 1200px) {
       // 3 column grid
       .generate-grid(3);
+      .generate-placeholders(3)
     }
 
     @media screen and (min-width: 1600px) {
@@ -169,22 +196,13 @@
     }
   }
 
-  &.grid-cell-cta {
-    font-size: 30px;
-    letter-spacing: @letter-spacing;
-    text-align: center;
-    text-transform: uppercase;
-
-    > .grid-cell-content-outer {
-      > .grid-cell-content-inner {
-        vertical-align: middle;
-      }
-    }
-  }
-
   &.grid-cell-info-box {
     font-size: 28px;
     text-align: center;
+
+    &.grid-cell-info-box-small {
+      font-size: (@font-size-base * 1.5);
+    }
 
     > .grid-cell-content-outer {
       > .grid-cell-content-inner {
