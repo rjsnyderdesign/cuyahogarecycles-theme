@@ -9357,30 +9357,13 @@ body
 }
 .header-infobar
 {
-    display: table;
-
-    width: 100%;
     height: 100%;
-
-    border-collapse: collapse;
 }
-.header-infobar .header-infobar-left,
-.header-infobar .header-infobar-right
+.header-infobar .col-main-full-height,
+.header-infobar .col-side-full-height
 {
-    display: table-cell;
-
-    height: 100%;
-
     vertical-align: top;
     white-space: nowrap;
-}
-.header-infobar .header-infobar-left
-{
-    width: 1%;
-}
-.header-infobar .header-infobar-right
-{
-    width: 100%;
 }
 .city-recycling-button
 {
@@ -9395,7 +9378,7 @@ body
             transition: color 500ms;
 
     color: #00833e;
-    border-right: 2px solid #00833e;
+    border-left: 2px solid #00833e;
     background: #95d600;
 }
 .city-recycling-button:hover,
@@ -9558,9 +9541,13 @@ body
 
     content: '|';
 }
-.page-content
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.container-content-default
 {
-    padding: 40px;
+    width: 100%;
+    padding: 40px 0;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -9574,28 +9561,28 @@ h6
 {
     font-weight: bold;
 }
-.page-content h1,
-.page-content h2,
-.page-content h3,
-.page-content h4,
-.page-content h5,
-.page-content h6
+.container-content-default h1,
+.container-content-default h2,
+.container-content-default h3,
+.container-content-default h4,
+.container-content-default h5,
+.container-content-default h6
 {
     font-weight: bold;
 
     text-transform: uppercase;
 }
-.page-content h1:not(:first-child),
-.page-content h2:not(:first-child),
-.page-content h3:not(:first-child),
-.page-content h4:not(:first-child),
-.page-content h5:not(:first-child),
-.page-content h6:not(:first-child)
+.container-content-default h1:not(:first-child),
+.container-content-default h2:not(:first-child),
+.container-content-default h3:not(:first-child),
+.container-content-default h4:not(:first-child),
+.container-content-default h5:not(:first-child),
+.container-content-default h6:not(:first-child)
 {
     margin-top: 48px;
     margin-bottom: 8px;
 }
-.page-content p
+.container-content-default p
 {
     line-height: 1.5;
 }
@@ -9621,6 +9608,26 @@ h6
 {
     padding-right: 40px;
     padding-left: 40px;
+}
+.row-xs-full-height.no-padding,
+.row-sm-full-height.no-padding,
+.row-md-full-height.no-padding,
+.row-lg-full-height.no-padding
+{
+    margin-right: 0;
+    margin-left: 0;
+}
+.row-xs-full-height.no-padding > .col-main-full-height,
+.row-sm-full-height.no-padding > .col-main-full-height,
+.row-md-full-height.no-padding > .col-main-full-height,
+.row-lg-full-height.no-padding > .col-main-full-height,
+.row-xs-full-height.no-padding > .col-side-full-height,
+.row-sm-full-height.no-padding > .col-side-full-height,
+.row-md-full-height.no-padding > .col-side-full-height,
+.row-lg-full-height.no-padding > .col-side-full-height
+{
+    padding-right: 0;
+    padding-left: 0;
 }
 .row-sm-full-height,
 .row-md-full-height,
@@ -10862,7 +10869,13 @@ h6
 }
 .grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:hover .grid-cell-link-title
 {
-    margin-top: -100%;
+    margin-top: -50%;
+}
+.grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption
+{
+    height: 50%;
+
+    background: rgba(0, 0, 0, .4);
 }
 .grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption > .grid-cell-content-outer
 {
@@ -10870,7 +10883,7 @@ h6
 }
 .grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption > .grid-cell-content-outer > .grid-cell-content-inner
 {
-    vertical-align: bottom;
+    vertical-align: baseline;
 }
 .grid-cell-video-player
 {
