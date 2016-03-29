@@ -10211,6 +10211,21 @@ h6
 {
     color: #fff;
 }
+.wdidw-animated-term
+{
+    font-size: 24px;
+
+    display: inline-block;
+
+    width: 10ex;
+    height: 28px;
+
+    vertical-align: top;
+    text-transform: none;
+
+    color: #fff;
+    border-bottom: 2px solid #95d600;
+}
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
