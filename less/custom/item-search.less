@@ -58,28 +58,12 @@
 }
 
 .item-search-result {
-  padding: 0;
+  padding: (@grid-gutter-width / 2) 0;
   border-top: 2px solid @gray-lighter;
 
-  > .item-search-result-row {
-    width: 100%;
-    display: table;
-
-    > .item-search-result-col-left,
-    > .item-search-result-col-right {
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    > .item-search-result-col-left {
-      width: 1%;
-      padding: (@grid-gutter-width / 2);
-      padding-left: 0;
-    }
-
-    > .item-search-result-col-right {
-      width: 100%;
-    }
+  .col-main-full-height,
+  .col-side-full-height {
+    vertical-align: middle;
   }
 }
 

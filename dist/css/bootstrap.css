@@ -9600,6 +9600,119 @@ h6
     line-height: 1.5;
 }
 /*!
+ * CuyahogaRecycles.org theme
+ */
+.row-xs-full-height,
+.row-sm-full-height,
+.row-md-full-height,
+.row-lg-full-height
+{
+    margin-right: -40px;
+    margin-left: -40px;
+}
+.row-xs-full-height > .col-main-full-height,
+.row-sm-full-height > .col-main-full-height,
+.row-md-full-height > .col-main-full-height,
+.row-lg-full-height > .col-main-full-height,
+.row-xs-full-height > .col-side-full-height,
+.row-sm-full-height > .col-side-full-height,
+.row-md-full-height > .col-side-full-height,
+.row-lg-full-height > .col-side-full-height
+{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.row-sm-full-height,
+.row-md-full-height,
+.row-lg-full-height
+{
+    display: block;
+}
+.row-sm-full-height > .col-main-full-height,
+.row-md-full-height > .col-main-full-height,
+.row-lg-full-height > .col-main-full-height,
+.row-sm-full-height > .col-side-full-height,
+.row-md-full-height > .col-side-full-height,
+.row-lg-full-height > .col-side-full-height
+{
+    display: block;
+
+    width: 100%;
+}
+.row-xs-full-height
+{
+    display: table;
+}
+.row-xs-full-height > .col-main-full-height
+{
+    display: table-cell;
+
+    width: 100%;
+}
+.row-xs-full-height > .col-side-full-height
+{
+    display: table-cell;
+
+    width: 1%;
+}
+@media screen and (min-width: 768px)
+{
+    .row-sm-full-height
+    {
+        display: table;
+    }
+    .row-sm-full-height > .col-main-full-height
+    {
+        display: table-cell;
+
+        width: 100%;
+    }
+    .row-sm-full-height > .col-side-full-height
+    {
+        display: table-cell;
+
+        width: 1%;
+    }
+}
+@media screen and (min-width: 992px)
+{
+    .row-md-full-height
+    {
+        display: table;
+    }
+    .row-md-full-height > .col-main-full-height
+    {
+        display: table-cell;
+
+        width: 100%;
+    }
+    .row-md-full-height > .col-side-full-height
+    {
+        display: table-cell;
+
+        width: 1%;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .row-lg-full-height
+    {
+        display: table;
+    }
+    .row-lg-full-height > .col-main-full-height
+    {
+        display: table-cell;
+
+        width: 100%;
+    }
+    .row-lg-full-height > .col-side-full-height
+    {
+        display: table-cell;
+
+        width: 1%;
+    }
+}
+/*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -10200,7 +10313,7 @@ h6
     width: 100%;
     padding-bottom: 100%;
 }
-@media (min-width: 800px)
+@media screen and (min-width: 800px)
 {
     .tile-grid > .grid-cell.grid-cell-1-1
     {
@@ -10363,7 +10476,7 @@ h6
         padding-bottom: 50%;
     }
 }
-@media (min-width: 1200px)
+@media screen and (min-width: 1200px)
 {
     .tile-grid > .grid-cell.grid-cell-1-1
     {
@@ -10931,32 +11044,14 @@ h6
 }
 .item-search-result
 {
-    padding: 0;
+    padding: 40px 0;
 
     border-top: 2px solid #e6e6e6;
 }
-.item-search-result > .item-search-result-row
+.item-search-result .col-main-full-height,
+.item-search-result .col-side-full-height
 {
-    display: table;
-
-    width: 100%;
-}
-.item-search-result > .item-search-result-row > .item-search-result-col-left,
-.item-search-result > .item-search-result-row > .item-search-result-col-right
-{
-    display: table-cell;
-
     vertical-align: middle;
-}
-.item-search-result > .item-search-result-row > .item-search-result-col-left
-{
-    width: 1%;
-    padding: 40px;
-    padding-left: 0;
-}
-.item-search-result > .item-search-result-row > .item-search-result-col-right
-{
-    width: 100%;
 }
 .item-search-result-info > .item-search-result-title
 {

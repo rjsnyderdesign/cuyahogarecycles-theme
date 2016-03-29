@@ -1,0 +1,77 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Full height grid
+// --------------------------------------------------
+
+.generate-grid-full-height() {
+  display: table;
+
+  > .col-main-full-height {
+    width: 100%;
+    display: table-cell;
+  }
+
+  > .col-side-full-height {
+    width: 1%;
+    display: table-cell;
+  }
+}
+
+.row-xs-full-height,
+.row-sm-full-height,
+.row-md-full-height,
+.row-lg-full-height {
+  margin-left:  ceil((@grid-gutter-width / -2));
+  margin-right: floor((@grid-gutter-width / -2));
+
+  > .col-main-full-height,
+  > .col-side-full-height {
+    padding-left:  (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+  }
+}
+
+.row-sm-full-height,
+.row-md-full-height,
+.row-lg-full-height {
+  display: block;
+
+  > .col-main-full-height,
+  > .col-side-full-height {
+    width: 100%;
+    display: block;
+  }
+}
+
+.row-xs-full-height {
+  .generate-grid-full-height();
+}
+
+@media screen and (min-width: @screen-sm-min) {
+  .row-sm-full-height {
+    .generate-grid-full-height();
+  }
+}
+
+@media screen and (min-width: @screen-md-min) {
+  .row-md-full-height {
+    .generate-grid-full-height();
+  }
+}
+
+@media screen and (min-width: @screen-lg-min) {
+  .row-lg-full-height {
+    .generate-grid-full-height();
+  }
+}
