@@ -71,20 +71,22 @@
         </div>
       </div><!-- /.container-fluid -->
 
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default hidden-xs" role="navigation">
 
         <div class="container-fluid">
 
           <ul class="nav navbar-nav navbar-left navbar-primary">
-            <li class="dropdown"><a href="#" class="rfh" data-toggle="dropdown">Recycling for Home</a></li>
-            <li class="dropdown"><a href="#" class="ps" data-toggle="dropdown">Programs &amp; Services</a></li>
-            <li class="dropdown"><a href="#" class="hrw" data-toggle="dropdown">How Recycling Works</a></li>
-            <li class="dropdown"><a href="#" class="au" data-toggle="dropdown">About Us</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="rfh" data-toggle="dropdown">Recycling for Home</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="ps"  data-toggle="dropdown">Programs &amp; Services</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="hrw" data-toggle="dropdown">How Recycling Works</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="au"  data-toggle="dropdown">About Us</a></li>
           </ul>
+
         </div><!-- /.container-fluid -->
-        <div class="mega-menu"><!-- .mega-menu -->
+
+        <div class="mega-menu bg-dark"><!-- .mega-menu -->
           <!-- .rfh-sub -->
-          <div class="main-menu-dropdown rfh-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="rfh">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Recycling in Your Comunity</a></li>
               <li><a href="#">Composting</a></li>
@@ -112,7 +114,7 @@
             </div>
           </div><!-- /.rfh-sub -->
           <!-- .ps-sub -->
-          <div class="main-menu-dropdown ps-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="ps">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#" class="trigger">Community Programs<span class="fa fa-chevron-right"></span></a>
                 <ul class="dropdown-menu sub-menu second">
@@ -163,7 +165,7 @@
             </div>
           </div><!-- /.ps-sub -->
           <!-- .hrw-sub -->
-          <div class="main-menu-dropdown hrw-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="hrw">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">The Recycling Process: Reduce,Reuse, Recycle</a></li>
               <li><a href="#">Environment &amp; Recycling Facts</a></li>
@@ -179,7 +181,7 @@
             </div>
           </div><!-- /.hrw-sub -->
           <!-- .au-sub -->
-          <div class="main-menu-dropdown au-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="au">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Annual Residential Recycling Report</a></li>
               <li><a href="#">Solid Waste Management Plan</a></li>
@@ -198,23 +200,20 @@
             </div>
           </div><!-- /.au-sub -->
         </div><!-- /.mega-menu -->
+
       </nav>
 
       <nav class="navbar navbar-default bg-green-1">
 
-        <div class="header-infobar">
+        <div class="row-sm-full-height no-padding header-infobar">
 
-          <div class="header-infobar-left hidden-sm hidden-xs">
-
-            <a class="city-recycling-button action-open-community" href="#"><i class="fa fa-caret-square-o-left"></i> Recycling in my Community</a>
-
-          </div><!-- /.header-infobar-left -->
-
-          <div class="header-infobar-right">
+          <div class="col-main-full-height">
 
             <div class="wdidw-wrapper">
               <div class="wdidw-button-wrapper">
-                <a class="wdidw-button wdidw-show" href="#!">What Do I Do With ________?</a>
+                <a class="wdidw-button wdidw-show" href="#!">
+                  What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
+                </a>
               </div>
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
@@ -241,6 +240,12 @@
 
           </div><!-- /.header-infobar-right -->
 
+          <div class="col-side-full-height hidden-xs">
+
+            <a class="city-recycling-button action-open-community" href="#">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right"></i></a>
+
+          </div><!-- /.header-infobar-left -->
+
         </div><!-- /.header-infobar -->
 
       </nav>
@@ -250,6 +255,14 @@
     <main role="main">
 
       <div class="container-fluid item-search">
+
+        <div class="row">
+          <div class="col-xs-12 bg-dark">
+            <div class="item-search-query">
+              Showing results for : <span class="item-search-query-entry">City of Bay Village</span> : <span class="item-search-query-entry">In-home Recycling</span> : <span class="item-search-query-entry">Paper</span>
+            </div>
+          </div><!-- /.col-*-* -->
+        </div><!-- /.row -->
 
         <div class="row-sm-full-height">
 
@@ -281,7 +294,7 @@
               <li><a href="#">Curbside</a></li>
               <li><a href="#">Paper</a></li>
             </ul>
-          </div><!-- /.col-*-* -->
+          </div><!-- /.col-side-full-height -->
 
           <div class="col-main-full-height item-search">
 
@@ -326,6 +339,12 @@
                           <p class="item-search-result-desc">Quisque urna ante, pharetra eget tortor ut, rutrum cursus dui. Fusce id bibendum justo, ac sollicitudin velit. Suspendisse elementum posuere urna quis ultricies.</p>
                         </div>
                       </div>
+                      <div class="col-side-full-height">
+                        <a class="item-search-result-link" href="#">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span class="sr-only">More information</span>
+                        </a>
+                      </div>
                     </div>
                   </li>
 
@@ -342,6 +361,12 @@
                           <p class="item-search-result-types"><span class="item-type-label item-type-home-recycling">In-home Recycling</span></p>
                           <p class="item-search-result-desc">Quisque urna ante, pharetra eget tortor ut, rutrum cursus dui. Fusce id bibendum justo, ac sollicitudin velit. Suspendisse elementum posuere urna quis ultricies.</p>
                         </div>
+                      </div>
+                      <div class="col-side-full-height">
+                        <a class="item-search-result-link" href="#">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span class="sr-only">More information</span>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -360,6 +385,12 @@
                           <p class="item-search-result-desc">Quisque urna ante, pharetra eget tortor ut, rutrum cursus dui. Fusce id bibendum justo, ac sollicitudin velit. Suspendisse elementum posuere urna quis ultricies.</p>
                         </div>
                       </div>
+                      <div class="col-side-full-height">
+                        <a class="item-search-result-link" href="#">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span class="sr-only">More information</span>
+                        </a>
+                      </div>
                     </div>
                   </li>
 
@@ -376,6 +407,12 @@
                           <p class="item-search-result-types"><span class="item-type-label item-type-home-recycling">In-home Recycling</span></p>
                           <p class="item-search-result-desc">Quisque urna ante, pharetra eget tortor ut, rutrum cursus dui. Fusce id bibendum justo, ac sollicitudin velit. Suspendisse elementum posuere urna quis ultricies.</p>
                         </div>
+                      </div>
+                      <div class="col-side-full-height">
+                        <a class="item-search-result-link" href="#">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span class="sr-only">More information</span>
+                        </a>
                       </div>
                     </div>
                   </li>
@@ -394,6 +431,12 @@
                           <p class="item-search-result-desc">Quisque urna ante, pharetra eget tortor ut, rutrum cursus dui. Fusce id bibendum justo, ac sollicitudin velit. Suspendisse elementum posuere urna quis ultricies.</p>
                         </div>
                       </div>
+                      <div class="col-side-full-height">
+                        <a class="item-search-result-link" href="#">
+                          <i class="fa fa-arrow-circle-o-right"></i>
+                          <span class="sr-only">More information</span>
+                        </a>
+                      </div>
                     </div>
                   </li>
 
@@ -403,15 +446,15 @@
 
             </div><!-- /.row -->
 
-          </div><!-- /.col-*-* -->
+          </div><!-- /.col-main-full-height -->
 
-        </div><!-- /.row -->
+        </div><!-- /.row-sm-full-height -->
 
       </div><!-- /.container-fluid -->
 
-      <div class="tile-grid grid-cell-full-width">
+      <ul class="tile-grid grid-cell-full-width">
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse bg-blue">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -428,9 +471,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse bg-green-2">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -447,9 +490,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -466,9 +509,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -485,9 +528,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -504,9 +547,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -523,9 +566,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -542,9 +585,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -561,9 +604,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -580,9 +623,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -599,9 +642,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -618,9 +661,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-2-2">
+        <li class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -637,16 +680,16 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-      </div><!-- /.tile-grid -->
+      </ul><!-- /.tile-grid -->
 
     </main>
 
     <footer class="page-footer" role="contentinfo">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-12 col-lg-4 page-footer-col">
             <p>
               <div class="brand">
                 <a href="#">
@@ -667,7 +710,8 @@
               <dd>4750 East 131 Street<br />Garfield Heights, OH 00000-0000</dd>
             </dl>
           </div><!-- /.col-*-* -->
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
+            <h2>Send us a message</h2>
             <form>
               <label for="contact-form-name">Name</label>
               <input type="text" class="form-control" />
@@ -678,7 +722,7 @@
               <input type="submit" class="form-control" />
             </form>
           </div><!-- /.col-*-* -->
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
               <li><a href="#">Recycling for Home</a></li>
               <li><a href="#">Programs &amp; Services</a></li>
@@ -695,7 +739,7 @@
           </div><!-- /.col-*-* -->
         </div><!-- /.row -->
         <div class="row">
-          <div class="col-sm-12 page-footer-col-siteinfo">
+          <div class="col-xs-12 page-footer-col-siteinfo">
             <span>Copyright &copy; 2016 Cuyahoga County Solid Waste District</span>
             <ul class="inline-link-list page-footer-nav-siteinfo pull-right">
               <li><a href="#">Privacy Policy</a></li><li
@@ -722,16 +766,16 @@
       <div class="search-container">
         <input type="text" placeholder="Enter City or Zip Code" />
         <i class="fa fa-search"></i>
-			</div>
-			<button type="button" class="btn btn-hollow btn-hollow-white action-open-community">Close</button>
-			<ul class="city-list">
-				<li><a href="#">Bay Village</a></li>
-				<li><a href="#">Beachwood</a></li>
-				<li><a href="#">Bedford</a></li>
-				<li><a href="#">Bedford Heights</a></li>
-				<li><a href="#">Brecksville</a></li>
-				<li><a href="#">Cleveland</a></li>
-			</ul>
+      </div>
+      <button type="button" class="btn btn-hollow btn-hollow-white action-open-community">Close</button>
+      <ul class="city-list">
+        <li><a href="#">Bay Village</a></li>
+        <li><a href="#">Beachwood</a></li>
+        <li><a href="#">Bedford</a></li>
+        <li><a href="#">Bedford Heights</a></li>
+        <li><a href="#">Brecksville</a></li>
+        <li><a href="#">Cleveland</a></li>
+      </ul>
     </div><!-- /.slidereveal-panel -->
 
     <div class="slidereveal-panel" id="panel-menu">
@@ -740,8 +784,8 @@
         <i class="fa fa-search"></i>
       </div>
       <div class="full-width-button">
-        <a href="#" class="action-open-community"><i class="fa fa-caret-square-o-left"></i> Recycling In My Community<a>
-			</div>
+        <a href="#" class="action-open-community">Recycling In My Community <i class="fa fa-caret-square-o-right"></i><a>
+      </div>
       <ul class="nav navbar-nav navbar-primary">
         <li class="dropdown"><a href="#" class="trigger">Recycling for Home<span class="fa fa-plus"></span></a>
           <ul class="col-sm-4 dropdown-menu sub-menu first">
@@ -859,9 +903,10 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../root/js/jquery.slidereveal.min.js"></script>
-    <script type="text/javascript" src="../root/js/global.js"></script>
     <script type="text/javascript" src="../root/js/classie.js"></script>
     <script type="text/javascript" src="../root/js/uisearch.js"></script>
+    <script type="text/javascript" src="../root/js/typed.min.js"></script>
+    <script type="text/javascript" src="../root/js/global.js"></script>
     <script type="text/javascript">
       // Site Search
       new UISearch( document.getElementById( 'sb-search' ) );

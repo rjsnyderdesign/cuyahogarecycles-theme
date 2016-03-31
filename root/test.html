@@ -71,20 +71,22 @@
         </div>
       </div><!-- /.container-fluid -->
 
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default hidden-xs" role="navigation">
 
         <div class="container-fluid">
 
           <ul class="nav navbar-nav navbar-left navbar-primary">
-            <li class="dropdown"><a href="#" class="rfh" data-toggle="dropdown">Recycling for Home</a></li>
-            <li class="dropdown"><a href="#" class="ps" data-toggle="dropdown">Programs &amp; Services</a></li>
-            <li class="dropdown"><a href="#" class="hrw" data-toggle="dropdown">How Recycling Works</a></li>
-            <li class="dropdown"><a href="#" class="au" data-toggle="dropdown">About Us</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="rfh" data-toggle="dropdown">Recycling for Home</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="ps"  data-toggle="dropdown">Programs &amp; Services</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="hrw" data-toggle="dropdown">How Recycling Works</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="au"  data-toggle="dropdown">About Us</a></li>
           </ul>
+
         </div><!-- /.container-fluid -->
-        <div class="mega-menu"><!-- .mega-menu -->
+
+        <div class="mega-menu bg-dark"><!-- .mega-menu -->
           <!-- .rfh-sub -->
-          <div class="main-menu-dropdown rfh-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="rfh">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Recycling in Your Comunity</a></li>
               <li><a href="#">Composting</a></li>
@@ -112,7 +114,7 @@
             </div>
           </div><!-- /.rfh-sub -->
           <!-- .ps-sub -->
-          <div class="main-menu-dropdown ps-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="ps">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#" class="trigger">Community Programs<span class="fa fa-chevron-right"></span></a>
                 <ul class="dropdown-menu sub-menu second">
@@ -163,7 +165,7 @@
             </div>
           </div><!-- /.ps-sub -->
           <!-- .hrw-sub -->
-          <div class="main-menu-dropdown hrw-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="hrw">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">The Recycling Process: Reduce,Reuse, Recycle</a></li>
               <li><a href="#">Environment &amp; Recycling Facts</a></li>
@@ -179,7 +181,7 @@
             </div>
           </div><!-- /.hrw-sub -->
           <!-- .au-sub -->
-          <div class="main-menu-dropdown au-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="au">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Annual Residential Recycling Report</a></li>
               <li><a href="#">Solid Waste Management Plan</a></li>
@@ -198,23 +200,20 @@
             </div>
           </div><!-- /.au-sub -->
         </div><!-- /.mega-menu -->
+
       </nav>
 
       <nav class="navbar navbar-default bg-green-1">
 
-        <div class="header-infobar">
+        <div class="row-sm-full-height no-padding header-infobar">
 
-          <div class="header-infobar-left hidden-sm hidden-xs">
-
-            <a class="city-recycling-button action-open-community" href="#"><i class="fa fa-caret-square-o-left"></i> Recycling in my Community</a>
-
-          </div><!-- /.header-infobar-left -->
-
-          <div class="header-infobar-right">
+          <div class="col-main-full-height">
 
             <div class="wdidw-wrapper">
               <div class="wdidw-button-wrapper">
-                <a class="wdidw-button wdidw-show" href="#!">What Do I Do With ________?</a>
+                <a class="wdidw-button wdidw-show" href="#!">
+                  What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
+                </a>
               </div>
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
@@ -241,6 +240,12 @@
 
           </div><!-- /.header-infobar-right -->
 
+          <div class="col-side-full-height hidden-xs">
+
+            <a class="city-recycling-button action-open-community" href="#">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right"></i></a>
+
+          </div><!-- /.header-infobar-left -->
+
         </div><!-- /.header-infobar -->
 
       </nav>
@@ -265,116 +270,114 @@
         </div>
       </div>
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-            <h1>Headline statement goes here.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo ex, finibus sit amet ante nec, viverra lacinia magna. Pellentesque vel justo odio.</p>
-            <p>
-              <ul class="item-color-key-list">
-                <li><span class="item-color-key item-color-key-home-recycling"></span> In-home</li>
-                <li><span class="item-color-key item-color-key-dropoff-recycling"></span> Drop-off</li>
-                <li><span class="item-color-key item-color-key-proper-disposal"></span> Proper Disposal</li>
-              </ul>
-            </p>
-          </div><!-- /.col-*-* -->
-          <div class="col-md-8">
-            <p class="text-large"><strong>Recycle</strong> these five items in your home:</p>
+      <div class="container-content-default">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Headline statement goes here.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo ex, finibus sit amet ante nec, viverra lacinia magna. Pellentesque vel justo odio.</p>
+              <p>
+                <ul class="item-color-key-list">
+                  <li><span class="item-color-key item-color-key-home-recycling"></span> In-home</li>
+                  <li><span class="item-color-key item-color-key-dropoff-recycling"></span> Drop-off</li>
+                  <li><span class="item-color-key item-color-key-proper-disposal"></span> Proper Disposal</li>
+                </ul>
+              </p>
+            </div><!-- /.col-*-* -->
+            <div class="col-md-8">
+              <p class="text-large"><strong>Recycle</strong> these five items in your home:</p>
 
-            <p>
+              <p>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                  <img alt="Cans" title="Cans" src="../root/img/items/item-01.jpg" />
-                </div>
-                <figcaption class="item-caption">Cans</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Cans" title="Cans" src="../root/img/items/item-01.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Cans</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                  <img alt="Cartons" title="Cartons" src="../root/img/items/item-02.jpg" />
-                </div>
-                <figcaption class="item-caption">Cartons</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Cartons" title="Cartons" src="../root/img/items/item-02.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Cartons</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                  <img alt="Glass" title="Glass" src="../root/img/items/item-03.jpg" />
-                </div>
-                <figcaption class="item-caption">Glass</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Glass" title="Glass" src="../root/img/items/item-03.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Glass</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                  <img alt="Paper" title="Paper" src="../root/img/items/item-04.jpg" />
-                </div>
-                <figcaption class="item-caption">Paper</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Paper" title="Paper" src="../root/img/items/item-04.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Paper</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                  <img alt="Plastic" title="Plastic" src="../root/img/items/item-05.jpg" />
-                </div>
-                <figcaption class="item-caption">Plastic</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Plastic" title="Plastic" src="../root/img/items/item-05.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Plastic</figcaption>
+                </figure>
 
-            </p>
+              </p>
 
-            <p><strong>Lorem</strong> ipsum dolor sit amet:</p>
+              <p><strong>Lorem</strong> ipsum dolor sit amet:</p>
 
-            <p>
+              <p>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
-                  <img alt="Plastic Bags" title="Plastic Bags" src="../root/img/items/item-12.jpg" />
-                </div>
-                <figcaption class="item-caption text-small">Plastic Bags</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
+                    <img alt="Plastic Bags" title="Plastic Bags" src="../root/img/items/item-12.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Plastic Bags</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
-                  <img alt="Clothing" title="Clothing" src="../root/img/items/item-07.jpg" />
-                </div>
-                <figcaption class="item-caption text-small">Clothing</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
+                    <img alt="Clothing" title="Clothing" src="../root/img/items/item-07.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Clothing</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                  <img alt="Scrap Metal" title="Scrap Metal" src="../root/img/items/item-15.jpg" />
-                </div>
-                <figcaption class="item-caption text-small">Scrap Metal</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Scrap Metal" title="Scrap Metal" src="../root/img/items/item-15.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Scrap Metal</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                  <img alt="Tanglers" title="Tanglers" src="../root/img/items/item-22.jpg" />
-                </div>
-                <figcaption class="item-caption text-small">Tanglers</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Tanglers" title="Tanglers" src="../root/img/items/item-22.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Tanglers</figcaption>
+                </figure>
 
-              <figure class="item-figure">
-                <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                  <img alt="Needles" title="Needles" src="../root/img/items/item-19.jpg" />
-                </div>
-                <figcaption class="item-caption text-small">Needles</figcaption>
-              </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Needles" title="Needles" src="../root/img/items/item-19.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Needles</figcaption>
+                </figure>
 
-            </p>
-          </div><!-- /.col-*-* -->
-        </div><!-- /.row -->
+              </p>
+            </div><!-- /.col-*-* -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div><!-- /.container-content-default -->
+
+      <div class="container-fluid pal-inverse bg-dark">
+        <div class="container-content-cta">
+          <strong>Recycling</strong> is easier than ever in Cuyahoga County. <a class="btn btn-hollow btn-hollow-green-2">Learn Now</a>
+        </div><!-- /.container-content-cta -->
       </div><!-- /.container-fluid -->
 
       <div class="tile-grid grid-cell-full-width">
-
-        <div class="grid-cell grid-cell-4-1 grid-cell-full-width">
-          <div class="grid-cell-container pal-inverse bg-dark">
-            <div class="grid-cell-container-inner grid-cell-cta">
-              <div class="grid-cell-content-outer">
-                <div class="grid-cell-content-inner"><strong>Recycling</strong> is easier than ever in Cuyahoga County. <a class="btn btn-hollow btn-hollow-green-2">Learn Now</a></div>
-              </div>
-            </div>
-          </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
 
         <div class="grid-cell grid-cell-2-2">
           <div class="grid-cell-container pal-inverse bg-blue">
@@ -436,6 +439,26 @@
           </div><!-- /.grid-cell-container -->
         </div><!-- /.grid-cell -->
 
+        <div class="grid-cell grid-cell-2-2 grid-cell-placeholder grid-cell-placeholder-2 grid-cell-placeholder-3 grid-cell-placeholder-pos-2 grid-cell-placeholder-pos-3">
+          <div class="grid-cell-container pal-inverse">
+            <div class="grid-cell-container-inner grid-cell-info-box grid-cell-info-box-small">
+              <div class="grid-cell-content-outer">
+                <div class="grid-cell-content-inner">Fun Fact 1: Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+          </div><!-- /.grid-cell-container -->
+        </div><!-- /.grid-cell -->
+
+        <div class="grid-cell grid-cell-2-2 grid-cell-placeholder grid-cell-placeholder-3 grid-cell-placeholder-pos-3">
+          <div class="grid-cell-container pal-inverse">
+            <div class="grid-cell-container-inner grid-cell-info-box grid-cell-info-box-small">
+              <div class="grid-cell-content-outer">
+                <div class="grid-cell-content-inner">Fun Fact 2: Lorem ipsum dolor sit amet.</div>
+              </div>
+            </div>
+          </div><!-- /.grid-cell-container -->
+        </div><!-- /.grid-cell -->
+
         <div class="grid-cell grid-cell-4-4">
           <div class="grid-cell-container pal-inverse">
             <div class="grid-cell-video-player">
@@ -475,6 +498,7 @@
             <div class="grid-cell-container-inner grid-cell-info-box">
               <div class="grid-cell-content-outer">
                 <div class="grid-cell-content-inner">
+                  <img class="symbol" src="../root/img/symbols/recycling-symbol.png" />
                   <h4>Did you Know?</h4>
                   <p>Recycling one aluminum can saves enough energy to keep a 100-watt bulb burning for almost four hours or run your television for three hours.</p>
                 </div>
@@ -483,12 +507,42 @@
           </div><!-- /.grid-cell-container -->
         </div><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-6-3 grid-cell-full-width">
-          <div class="grid-cell-container pal-inverse bg-yellow">
-          </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+      </div><!-- /.tile-grid -->
 
-        <div class="grid-cell grid-cell-1-2">
+      <ul class="tile-grid grid-cell-full-width">
+
+        <li class="grid-cell grid-cell-2-3 grid-cell-full-width">
+          <div class="grid-cell-container pal-inverse bg-yellow">
+
+            <a class="grid-cell-link" href="#">
+              <div class="grid-cell-container-inner grid-cell-link-event">
+                <div class="grid-cell-content-outer">
+                  <div class="grid-cell-content-inner">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                          <h4>Come celebrate</h4>
+                          <h2>EarthFest 2016</h2>
+                          <p>Kids and families will find hands-on, environmental activities, crafts, games, biodiesel-powered amusement rides, musical entertainment, petting zoos, and much more.</p>
+                        </div><!-- /.col-*-* -->
+                      </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                  </div>
+                </div>
+              </div>
+              <div class="grid-cell-container-inner grid-cell-link-event-bg">
+                <img src="../root/img/tiles/tile-event-01.jpg" />
+              </div>
+            </a>
+
+          </div><!-- /.grid-cell-container -->
+        </li><!-- /.grid-cell -->
+
+      </ul><!-- /.tile-grid -->
+
+      <ul class="tile-grid grid-cell-full-width">
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -506,8 +560,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
-        <div class="grid-cell grid-cell-1-2">
+        </li><!-- /.grid-cell -->
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -525,8 +580,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
-        <div class="grid-cell grid-cell-1-2">
+        </li><!-- /.grid-cell -->
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -544,8 +600,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
-        <div class="grid-cell grid-cell-1-2">
+        </li><!-- /.grid-cell -->
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -563,8 +620,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
-        <div class="grid-cell grid-cell-1-2">
+        </li><!-- /.grid-cell -->
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -582,8 +640,9 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
-        <div class="grid-cell grid-cell-1-2">
+        </li><!-- /.grid-cell -->
+
+        <li class="grid-cell grid-cell-1-2">
           <div class="grid-cell-container pal-inverse">
             <a class="grid-cell-link grid-cell-link-reveal grid-cell-link-staff" href="#">
               <div class="grid-cell-container-inner grid-cell-link-title">
@@ -601,26 +660,22 @@
               </div>
             </a>
           </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+        </li><!-- /.grid-cell -->
 
-        <div class="grid-cell grid-cell-4-1 grid-cell-full-width">
-          <div class="grid-cell-container pal-inverse bg-green-2">
-            <div class="grid-cell-container-inner grid-cell-cta">
-              <div class="grid-cell-content-outer">
-                <div class="grid-cell-content-inner"><strong>Meet</strong> the Cuyahoga County Solid Waste District Team</div>
-              </div>
-            </div>
-          </div><!-- /.grid-cell-container -->
-        </div><!-- /.grid-cell -->
+      </ul><!-- /.tile-grid -->
 
-      </div><!-- /.tile-grid -->
+      <div class="container-fluid pal-inverse bg-green-2">
+        <div class="container-content-cta">
+          <strong>Meet</strong> the Cuyahoga County Solid Waste District Team
+        </div><!-- /.container-content-cta -->
+      </div><!-- /.container-fluid -->
 
     </main>
 
     <footer class="page-footer" role="contentinfo">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-12 col-lg-4 page-footer-col">
             <p>
               <div class="brand">
                 <a href="#">
@@ -641,7 +696,8 @@
               <dd>4750 East 131 Street<br />Garfield Heights, OH 00000-0000</dd>
             </dl>
           </div><!-- /.col-*-* -->
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
+            <h2>Send us a message</h2>
             <form>
               <label for="contact-form-name">Name</label>
               <input type="text" class="form-control" />
@@ -652,7 +708,7 @@
               <input type="submit" class="form-control" />
             </form>
           </div><!-- /.col-*-* -->
-          <div class="col-sm-12 col-md-4 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
               <li><a href="#">Recycling for Home</a></li>
               <li><a href="#">Programs &amp; Services</a></li>
@@ -669,7 +725,7 @@
           </div><!-- /.col-*-* -->
         </div><!-- /.row -->
         <div class="row">
-          <div class="col-sm-12 page-footer-col-siteinfo">
+          <div class="col-xs-12 page-footer-col-siteinfo">
             <span>Copyright &copy; 2016 Cuyahoga County Solid Waste District</span>
             <ul class="inline-link-list page-footer-nav-siteinfo pull-right">
               <li><a href="#">Privacy Policy</a></li><li
@@ -714,7 +770,7 @@
         <i class="fa fa-search"></i>
       </div>
       <div class="full-width-button">
-        <a href="#" class="action-open-community"><i class="fa fa-caret-square-o-left"></i> Recycling In My Community<a>
+        <a href="#" class="action-open-community">Recycling In My Community <i class="fa fa-caret-square-o-right"></i><a>
       </div>
       <ul class="nav navbar-nav navbar-primary">
         <li class="dropdown"><a href="#" class="trigger">Recycling for Home<span class="fa fa-plus"></span></a>
@@ -833,9 +889,10 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../root/js/jquery.slidereveal.min.js"></script>
-    <script type="text/javascript" src="../root/js/global.js"></script>
     <script type="text/javascript" src="../root/js/classie.js"></script>
     <script type="text/javascript" src="../root/js/uisearch.js"></script>
+    <script type="text/javascript" src="../root/js/typed.min.js"></script>
+    <script type="text/javascript" src="../root/js/global.js"></script>
     <script type="text/javascript">
       // Site Search
       new UISearch( document.getElementById( 'sb-search' ) );
@@ -858,12 +915,6 @@
           $( this ).addClass( 'video-playing' );
         } );
       }
-    </script>
-    <script>
-      $( window ).on( 'resize', function () {
-        $( '#screen-size' ).text( $( window ).width() + 'px' );
-      } );
-      $( '#screen-size' ).text( $( window ).width() + 'px' );
     </script>
     <!-- /scripts -->
 

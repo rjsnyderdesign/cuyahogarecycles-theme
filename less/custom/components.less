@@ -333,7 +333,9 @@ body {
       padding-top: 7px;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:active,
+      &.active {
         text-decoration: none;
         color: darken(@brand-info, 15%);
       }
@@ -488,14 +490,18 @@ body {
     top: 50px;
     left: 0;
     padding-left: 20px;
+
     a {
       display: block;
       height: 100%;
       width: 100%;
       line-height: 50px;
       transition: color 500ms;
+
       &:hover,
-      &:focus {
+      &:focus,
+      &:active,
+      &.active {
         color: @white;
         font-weight: normal;
         text-decoration: none;

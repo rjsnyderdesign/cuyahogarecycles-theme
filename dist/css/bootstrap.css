@@ -9298,7 +9298,9 @@ body
     color: #fff;
 }
 .page-header .page-header-upper .login-link:hover,
-.page-header .page-header-upper .login-link:focus
+.page-header .page-header-upper .login-link:focus,
+.page-header .page-header-upper .login-link:active,
+.page-header .page-header-upper .login-link.active
 {
     text-decoration: none;
 
@@ -9513,7 +9515,9 @@ body
             transition: color 500ms;
 }
 .slidereveal-panel .full-width-button a:hover,
-.slidereveal-panel .full-width-button a:focus
+.slidereveal-panel .full-width-button a:focus,
+.slidereveal-panel .full-width-button a:active,
+.slidereveal-panel .full-width-button a.active
 {
     font-weight: normal;
 
@@ -10189,6 +10193,31 @@ h6
 
     color: #fff;
 }
+.wdidw-button-wrapper > .wdidw-button:hover > .wdidw-animated-term,
+.wdidw-button-wrapper > .wdidw-button:focus > .wdidw-animated-term,
+.wdidw-button-wrapper > .wdidw-button:active > .wdidw-animated-term,
+.wdidw-button-wrapper > .wdidw-button.active > .wdidw-animated-term
+{
+    border-bottom-color: #fff;
+}
+.wdidw-button-wrapper > .wdidw-button > .wdidw-animated-term
+{
+    font-size: 24px;
+
+    display: inline-block;
+
+    width: 10ex;
+    height: 28px;
+
+    -webkit-transition: border-bottom-color 500ms;
+         -o-transition: border-bottom-color 500ms;
+            transition: border-bottom-color 500ms;
+    vertical-align: top;
+    text-transform: none;
+
+    color: #fff;
+    border-bottom: 2px solid #95d600;
+}
 @media screen and (min-width: 480px)
 {
     .wdidw-button-wrapper > .wdidw-button > .wdidw-button-break
@@ -10270,21 +10299,6 @@ h6
 .wdidw-search-bar .wdidw-search-form .input-group input[type='text']:-ms-input-placeholder
 {
     color: #fff;
-}
-.wdidw-animated-term
-{
-    font-size: 24px;
-
-    display: inline-block;
-
-    width: 10ex;
-    height: 28px;
-
-    vertical-align: top;
-    text-transform: none;
-
-    color: #fff;
-    border-bottom: 2px solid #95d600;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11260,6 +11274,19 @@ h6
 {
     background: #fff;
 }
+.item-search-query
+{
+    font-size: 16px;
+
+    padding-top: 48px;
+    padding-bottom: 16px;
+
+    color: #fff;
+}
+.item-search-query > .item-search-query-entry
+{
+    font-weight: bold;
+}
 .item-filter-list
 {
     padding: 0;
@@ -11291,6 +11318,13 @@ h6
 {
     vertical-align: middle;
 }
+@media screen and (min-width: 768px)
+{
+    .item-search-result .col-main-full-height
+    {
+        padding: 0;
+    }
+}
 .item-search-result-info > .item-search-result-title
 {
     text-transform: uppercase;
@@ -11300,6 +11334,25 @@ h6
     font-weight: bold;
 
     text-transform: uppercase;
+}
+.item-search-result-link
+{
+    font-size: 48px;
+
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: inherit;
+}
+.item-search-result-link:hover,
+.item-search-result-link:focus,
+.item-search-result-link:active,
+.item-search-result-link.active
+{
+    text-decoration: none;
+
+    color: #26cad3;
 }
 .item-type-label.item-type-home-recycling
 {

@@ -31,6 +31,22 @@
 
 
 //
+// Item search query
+// --------------------------------------------------
+
+.item-search-query {
+  padding-top: (@font-size-base * 3);
+  padding-bottom: @font-size-base;
+  color: @white;
+  font-size: @font-size-base;
+
+  > .item-search-query-entry {
+    font-weight: bold;
+  }
+}
+
+
+//
 // Item filter list
 // --------------------------------------------------
 
@@ -65,6 +81,12 @@
   .col-side-full-height {
     vertical-align: middle;
   }
+
+  .col-main-full-height {
+    @media screen and (min-width: @screen-sm-min) {
+      padding: 0;
+    }
+  }
 }
 
 .item-search-result-info {
@@ -78,6 +100,20 @@
   }
 
   > .item-search-result-desc {}
+}
+
+.item-search-result-link {
+  color: inherit;
+  font-size: (@font-size-base * 3);
+  transition: color @link-transition-speed;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @brand-info;
+    text-decoration: none;
+  }
 }
 
 
