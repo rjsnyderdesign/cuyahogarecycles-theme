@@ -11,27 +11,10 @@
 
 
 //
-// Full height grid
+// Full height grid mixins
 // --------------------------------------------------
 
-.row-full-height {
-  display: table;
-
-  > .col-main-full-height {
-    width: 100%;
-    display: table-cell;
-  }
-
-  > .col-side-full-height {
-    width: 1%;
-    display: table-cell;
-  }
-}
-
-.row-xs-full-height,
-.row-sm-full-height,
-.row-md-full-height,
-.row-lg-full-height {
+.row-full-height-default-padding {
   margin-left:  ceil((@grid-gutter-width / -2));
   margin-right: floor((@grid-gutter-width / -2));
 
@@ -42,10 +25,26 @@
   }
 }
 
-.row-xs-full-height.no-padding,
-.row-sm-full-height.no-padding,
-.row-md-full-height.no-padding,
-.row-lg-full-height.no-padding {
+.row-full-height-even-padding {
+  margin-left:  ceil((@grid-gutter-width / -2));
+  margin-right: floor((@grid-gutter-width / -2));
+
+  > .col-main-full-height,
+  > .col-side-full-height {
+    padding-left:  (@grid-gutter-width / 2);
+    padding-right: 0;
+
+    &:first-child {
+      padding-left:  (@grid-gutter-width / 2);
+    }
+
+    &:last-child {
+      padding-right:  (@grid-gutter-width / 2);
+    }
+  }
+}
+
+.row-full-height-no-padding {
   margin-left:  0;
   margin-right: 0;
 
@@ -53,6 +52,44 @@
   > .col-side-full-height {
     padding-left:  0;
     padding-right: 0;
+  }
+}
+
+.row-full-height {
+  display: table;
+
+  > .col-main-full-height,
+  > .col-side-full-height {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  > .col-main-full-height {
+    width: 100%;
+  }
+
+  > .col-side-full-height {
+    width: 1%;
+  }
+
+  &.row-full-height-even-padding {
+    .row-full-height-even-padding;
+  }
+}
+
+
+//
+// Full height grid
+// --------------------------------------------------
+
+.row-xs-full-height,
+.row-sm-full-height,
+.row-md-full-height,
+.row-lg-full-height {
+  .row-full-height-default-padding;
+
+  &.row-full-height-no-padding {
+    .row-full-height-no-padding;
   }
 }
 
@@ -72,20 +109,20 @@
   .row-full-height;
 }
 
-@media screen and (min-width: @screen-sm-min) {
-  .row-sm-full-height {
+.row-sm-full-height {
+  @media screen and (min-width: @screen-sm-min) {
     .row-full-height;
   }
 }
 
-@media screen and (min-width: @screen-md-min) {
-  .row-md-full-height {
+.row-md-full-height {
+  @media screen and (min-width: @screen-md-min) {
     .row-full-height;
   }
 }
 
-@media screen and (min-width: @screen-lg-min) {
-  .row-lg-full-height {
+.row-lg-full-height {
+  @media screen and (min-width: @screen-lg-min) {
     .row-full-height;
   }
 }

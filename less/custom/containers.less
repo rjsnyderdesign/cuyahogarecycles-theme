@@ -27,3 +27,35 @@
 
   .container-content-default;
 }
+
+.container-content-article {
+  width: 100%;
+  max-width: @screen-lg-min;
+  margin: 0 auto;
+  padding: (@grid-gutter-width) 0;
+
+  .col-main-full-height,
+  .col-side-full-height {
+    vertical-align: top;
+  }
+
+  .item-icon {
+    margin: (@font-size-base * 2) 0;
+  }
+
+  h2 {
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  hr {
+    margin-top: (@font-size-base * 1.5);
+    margin-bottom: (@font-size-base * 2);
+    border-top: 2px solid @gray;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}

@@ -8889,6 +8889,12 @@ h1
 {
     height: 100%;
 }
+.page-divider
+{
+    margin: 0;
+
+    border-bottom: 2px solid #e6e6e6;
+}
 .brand
 {
     display: block;
@@ -9628,6 +9634,40 @@ body
 {
     line-height: 1.5;
 }
+.container-content-article
+{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+.container-content-article .col-main-full-height,
+.container-content-article .col-side-full-height
+{
+    vertical-align: top;
+}
+.container-content-article .item-icon
+{
+    margin: 32px 0;
+}
+.container-content-article h2
+{
+    font-weight: normal;
+
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.container-content-article hr
+{
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    border-top: 2px solid #666;
+}
+.container-content-article p
+{
+    line-height: 1.5;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -9668,21 +9708,88 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+.row-full-height-default-padding
+{
+    margin-right: -40px;
+    margin-left: -40px;
+}
+.row-full-height-default-padding > .col-main-full-height,
+.row-full-height-default-padding > .col-side-full-height
+{
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.row-full-height-even-padding
+{
+    margin-right: -40px;
+    margin-left: -40px;
+}
+.row-full-height-even-padding > .col-main-full-height,
+.row-full-height-even-padding > .col-side-full-height
+{
+    padding-right: 0;
+    padding-left: 40px;
+}
+.row-full-height-even-padding > .col-main-full-height:first-child,
+.row-full-height-even-padding > .col-side-full-height:first-child
+{
+    padding-left: 40px;
+}
+.row-full-height-even-padding > .col-main-full-height:last-child,
+.row-full-height-even-padding > .col-side-full-height:last-child
+{
+    padding-right: 40px;
+}
+.row-full-height-no-padding
+{
+    margin-right: 0;
+    margin-left: 0;
+}
+.row-full-height-no-padding > .col-main-full-height,
+.row-full-height-no-padding > .col-side-full-height
+{
+    padding-right: 0;
+    padding-left: 0;
+}
 .row-full-height
 {
     display: table;
 }
-.row-full-height > .col-main-full-height
-{
-    display: table-cell;
-
-    width: 100%;
-}
+.row-full-height > .col-main-full-height,
 .row-full-height > .col-side-full-height
 {
     display: table-cell;
 
+    vertical-align: top;
+}
+.row-full-height > .col-main-full-height
+{
+    width: 100%;
+}
+.row-full-height > .col-side-full-height
+{
     width: 1%;
+}
+.row-full-height.row-full-height-even-padding
+{
+    margin-right: -40px;
+    margin-left: -40px;
+}
+.row-full-height.row-full-height-even-padding > .col-main-full-height,
+.row-full-height.row-full-height-even-padding > .col-side-full-height
+{
+    padding-right: 0;
+    padding-left: 40px;
+}
+.row-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
+.row-full-height.row-full-height-even-padding > .col-side-full-height:first-child
+{
+    padding-left: 40px;
+}
+.row-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
+.row-full-height.row-full-height-even-padding > .col-side-full-height:last-child
+{
+    padding-right: 40px;
 }
 .row-xs-full-height,
 .row-sm-full-height,
@@ -9704,22 +9811,22 @@ h6
     padding-right: 40px;
     padding-left: 40px;
 }
-.row-xs-full-height.no-padding,
-.row-sm-full-height.no-padding,
-.row-md-full-height.no-padding,
-.row-lg-full-height.no-padding
+.row-xs-full-height.row-full-height-no-padding,
+.row-sm-full-height.row-full-height-no-padding,
+.row-md-full-height.row-full-height-no-padding,
+.row-lg-full-height.row-full-height-no-padding
 {
     margin-right: 0;
     margin-left: 0;
 }
-.row-xs-full-height.no-padding > .col-main-full-height,
-.row-sm-full-height.no-padding > .col-main-full-height,
-.row-md-full-height.no-padding > .col-main-full-height,
-.row-lg-full-height.no-padding > .col-main-full-height,
-.row-xs-full-height.no-padding > .col-side-full-height,
-.row-sm-full-height.no-padding > .col-side-full-height,
-.row-md-full-height.no-padding > .col-side-full-height,
-.row-lg-full-height.no-padding > .col-side-full-height
+.row-xs-full-height.row-full-height-no-padding > .col-main-full-height,
+.row-sm-full-height.row-full-height-no-padding > .col-main-full-height,
+.row-md-full-height.row-full-height-no-padding > .col-main-full-height,
+.row-lg-full-height.row-full-height-no-padding > .col-main-full-height,
+.row-xs-full-height.row-full-height-no-padding > .col-side-full-height,
+.row-sm-full-height.row-full-height-no-padding > .col-side-full-height,
+.row-md-full-height.row-full-height-no-padding > .col-side-full-height,
+.row-lg-full-height.row-full-height-no-padding > .col-side-full-height
 {
     padding-right: 0;
     padding-left: 0;
@@ -9745,17 +9852,41 @@ h6
 {
     display: table;
 }
-.row-xs-full-height > .col-main-full-height
-{
-    display: table-cell;
-
-    width: 100%;
-}
+.row-xs-full-height > .col-main-full-height,
 .row-xs-full-height > .col-side-full-height
 {
     display: table-cell;
 
+    vertical-align: top;
+}
+.row-xs-full-height > .col-main-full-height
+{
+    width: 100%;
+}
+.row-xs-full-height > .col-side-full-height
+{
     width: 1%;
+}
+.row-xs-full-height.row-full-height-even-padding
+{
+    margin-right: -40px;
+    margin-left: -40px;
+}
+.row-xs-full-height.row-full-height-even-padding > .col-main-full-height,
+.row-xs-full-height.row-full-height-even-padding > .col-side-full-height
+{
+    padding-right: 0;
+    padding-left: 40px;
+}
+.row-xs-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
+.row-xs-full-height.row-full-height-even-padding > .col-side-full-height:first-child
+{
+    padding-left: 40px;
+}
+.row-xs-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
+.row-xs-full-height.row-full-height-even-padding > .col-side-full-height:last-child
+{
+    padding-right: 40px;
 }
 @media screen and (min-width: 768px)
 {
@@ -9763,17 +9894,41 @@ h6
     {
         display: table;
     }
-    .row-sm-full-height > .col-main-full-height
-    {
-        display: table-cell;
-
-        width: 100%;
-    }
+    .row-sm-full-height > .col-main-full-height,
     .row-sm-full-height > .col-side-full-height
     {
         display: table-cell;
 
+        vertical-align: top;
+    }
+    .row-sm-full-height > .col-main-full-height
+    {
+        width: 100%;
+    }
+    .row-sm-full-height > .col-side-full-height
+    {
         width: 1%;
+    }
+    .row-sm-full-height.row-full-height-even-padding
+    {
+        margin-right: -40px;
+        margin-left: -40px;
+    }
+    .row-sm-full-height.row-full-height-even-padding > .col-main-full-height,
+    .row-sm-full-height.row-full-height-even-padding > .col-side-full-height
+    {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    .row-sm-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
+    .row-sm-full-height.row-full-height-even-padding > .col-side-full-height:first-child
+    {
+        padding-left: 40px;
+    }
+    .row-sm-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
+    .row-sm-full-height.row-full-height-even-padding > .col-side-full-height:last-child
+    {
+        padding-right: 40px;
     }
 }
 @media screen and (min-width: 992px)
@@ -9782,17 +9937,41 @@ h6
     {
         display: table;
     }
-    .row-md-full-height > .col-main-full-height
-    {
-        display: table-cell;
-
-        width: 100%;
-    }
+    .row-md-full-height > .col-main-full-height,
     .row-md-full-height > .col-side-full-height
     {
         display: table-cell;
 
+        vertical-align: top;
+    }
+    .row-md-full-height > .col-main-full-height
+    {
+        width: 100%;
+    }
+    .row-md-full-height > .col-side-full-height
+    {
         width: 1%;
+    }
+    .row-md-full-height.row-full-height-even-padding
+    {
+        margin-right: -40px;
+        margin-left: -40px;
+    }
+    .row-md-full-height.row-full-height-even-padding > .col-main-full-height,
+    .row-md-full-height.row-full-height-even-padding > .col-side-full-height
+    {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    .row-md-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
+    .row-md-full-height.row-full-height-even-padding > .col-side-full-height:first-child
+    {
+        padding-left: 40px;
+    }
+    .row-md-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
+    .row-md-full-height.row-full-height-even-padding > .col-side-full-height:last-child
+    {
+        padding-right: 40px;
     }
 }
 @media screen and (min-width: 1200px)
@@ -9801,17 +9980,41 @@ h6
     {
         display: table;
     }
-    .row-lg-full-height > .col-main-full-height
-    {
-        display: table-cell;
-
-        width: 100%;
-    }
+    .row-lg-full-height > .col-main-full-height,
     .row-lg-full-height > .col-side-full-height
     {
         display: table-cell;
 
+        vertical-align: top;
+    }
+    .row-lg-full-height > .col-main-full-height
+    {
+        width: 100%;
+    }
+    .row-lg-full-height > .col-side-full-height
+    {
         width: 1%;
+    }
+    .row-lg-full-height.row-full-height-even-padding
+    {
+        margin-right: -40px;
+        margin-left: -40px;
+    }
+    .row-lg-full-height.row-full-height-even-padding > .col-main-full-height,
+    .row-lg-full-height.row-full-height-even-padding > .col-side-full-height
+    {
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    .row-lg-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
+    .row-lg-full-height.row-full-height-even-padding > .col-side-full-height:first-child
+    {
+        padding-left: 40px;
+    }
+    .row-lg-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
+    .row-lg-full-height.row-full-height-even-padding > .col-side-full-height:last-child
+    {
+        padding-right: 40px;
     }
 }
 /*!
@@ -10361,6 +10564,29 @@ h6
     {
         background-color: #26cad3;
     }
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.nav.side-nav
+{
+    min-width: 160px;
+}
+.nav.side-nav > li > a
+{
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+}
+.nav.side-nav > li > a:focus,
+.nav.side-nav > li > a:hover,
+.nav.side-nav > li > a:active,
+.nav.side-nav > li > a.active
+{
+    text-decoration: none;
+
+    color: #fff;
+    background: none;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11287,6 +11513,10 @@ h6
 {
     font-weight: bold;
 }
+.item-filter-section
+{
+    margin-bottom: 24px;
+}
 .item-filter-list
 {
     padding: 0;
@@ -11391,19 +11621,16 @@ h6
 {
     padding: 40px 0;
 
-    border-top: 2px solid #e6e6e6;
+    border-bottom: 2px solid #e6e6e6;
+}
+.item-search-result:last-child
+{
+    border-bottom: 0 none transparent;
 }
 .item-search-result .col-main-full-height,
 .item-search-result .col-side-full-height
 {
     vertical-align: middle;
-}
-@media screen and (min-width: 768px)
-{
-    .item-search-result .col-main-full-height
-    {
-        padding: 0;
-    }
 }
 .item-search-result-info > .item-search-result-title
 {

@@ -50,6 +50,10 @@
 // Item filter list
 // --------------------------------------------------
 
+.item-filter-section {
+  margin-bottom: @font-size-large;
+}
+
 .item-filter-list {
   padding: 0;
   list-style: none;
@@ -148,17 +152,15 @@
 
 .item-search-result {
   padding: (@grid-gutter-width / 2) 0;
-  border-top: 2px solid @gray-lighter;
+  border-bottom: 2px solid @gray-lighter;
+
+  &:last-child {
+    border-bottom: 0 none transparent;
+  }
 
   .col-main-full-height,
   .col-side-full-height {
     vertical-align: middle;
-  }
-
-  .col-main-full-height {
-    @media screen and (min-width: @screen-sm-min) {
-      padding: 0;
-    }
   }
 }
 
