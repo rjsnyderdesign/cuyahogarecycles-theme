@@ -1,7 +1,5 @@
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 
 //
@@ -17,57 +15,60 @@
 // --------------------------------------------------
 
 
-@media (max-width: 768px) {
+@media (max-width: @screen-xs-max) {
 
+  .navbar-nav {
+    margin: 0;
+  }
 
-	.navbar-nav {
-		margin: 0;
-	}
-	.navbar-left,
-	.navbar-right,
-	.page-header-upper-right,
-	.navbar-globals,
-	.mega-menu {
-		display: none;
-	}
+  .navbar-left,
+  .navbar-right,
+  .page-header-upper-right,
+  .navbar-globals,
+  .mega-menu {
+    display: none;
+  }
 
-	.mega-menu {
-		overflow: hidden;
-	}
+  .mega-menu {
+    overflow: hidden;
+  }
 
-	.page-header {
-		.page-header-upper {
-			height: 90px;
-			position: relative;
-			padding-top: 17px;
-		}
-	}
+  .page-header {
+    .page-header-upper {
+      height: 90px;
+      position: relative;
+      padding-top: 17px;
+    }
+  }
 
-	.brand .brand-logo-main {
-		margin: 0 auto;
-		width: 200px;
-		height: auto;
-	}
+  .brand .brand-logo-main {
+    margin: 0 auto;
+    width: 200px;
+    height: auto;
+  }
 
-	.page-header-upper-content {
-		.navbar-toggle {
-			margin: 0;
-			border-color: @white;
-			position: absolute;
-			top: 11px;
-	    left: -20px;
-			padding: 8px 7px;
-			.icon-bar {
-				background-color: @white;
-			}
-			&:hover,
-			&:focus,
-			&:active {
-				background-color: @white;
-				.icon-bar {
-					background-color: @brand-info;
-				}
-			}
-		}
-	}
+  .page-header-upper-content {
+    .navbar-toggle {
+      margin: 0;
+      border-color: @white;
+      position: absolute;
+      top: 11px;
+      right: -20px;
+      padding: 8px 7px;
+
+      .icon-bar {
+        background-color: @white;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: @white;
+
+        .icon-bar {
+          background-color: @brand-info;
+        }
+      }
+    }
+  }
 }

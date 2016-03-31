@@ -59,7 +59,7 @@
 
         var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
             width: 300,
-            position: 'left',
+            position: 'right',
             speed: 300,
             trigger: $( '.action-open-menu' ),
             push: true,
@@ -77,7 +77,7 @@
         if ( window.innerWidth > 767 ) {
             var sliderPanelCommunity = $( '#panel-community' ).slideReveal( {
                 width: 300,
-                position: 'left',
+                position: 'right',
                 speed: 300,
                 trigger: $( '.action-open-community' ),
                 push: true,
@@ -87,7 +87,7 @@
         else {
             var sliderPanelMenu = $( '#panel-community' ).slideReveal( {
                 width: 300,
-                position: 'left',
+                position: 'right',
                 speed: 300,
                 trigger: $( '.action-open-community' ),
                 push: false,
@@ -160,44 +160,55 @@
         // New Mega Menu (Hover)
         //
 
+        var $mainMenu = $( '.mega-menu' ),
+            submenuEnterSpeed = 400,
+            submenuExitSpeed  = submenuEnterSpeed / 2;
+
         var megaMenu = {
             init: function () {
                 var that = this;
                 $( '.navbar-primary li a' ).hover(
                     function () { that.enter( this ); },
-                    function() { that.exit( this ); }
+                    function () { that.exit( this ); }
                 );
-                /*
-                $( '.navbar-primary li a' ).hoverIntent( {
-                    over: function() { that.enter( this ); },
-                    out: function() { that.exit( this ); }
-                });
-                */
             },
-
-            menu: $( '.mega-menu' ),
+            menu: $mainMenu,
             currentItem: null,
             nextItem: null,
-            enter: function(el){
-                var elClass = $(el).attr("class");
-                $(el).parent().addClass('selected');
-                $('.'+ elClass + '-sub').stop().slideDown(400);
-                $('.'+ elClass + '-sub').hover(function() {
-                    $(this).stop().slideDown(400);
-                }, function() {
-                    $(this).stop().slideUp(400);
-                    $(this).find('.sub-menu:not(.first)').hide();
-                    $(this).find('li > a.trigger').removeClass('selected');
-                });
+            enter: function ( elem ) {
+                var $elem = $( elem ),
+                    subMenuKey = $elem.data( 'dropdown-controls' ),
+                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
+                $elem.parent().addClass( 'selected' );
+                $mainMenu.addClass( 'open' );
+                $subMenu.addClass( 'open' );
+                $subMenu.hover(
+                    function () {
+                        var $this = $( this );
+                        $this.addClass( 'open' );
+                        $mainMenu.addClass( 'open' );
+                    },
+                    function () {
+                        var $this = $( this );
+                        $this.removeClass( 'open' );
+                        $mainMenu.removeClass( 'open' );
+                        $this.find( '.sub-menu:not(.first)' ).hide();
+                        $this.find( 'li > a.trigger' ).removeClass( 'selected' );
+                    }
+                );
             },
-            exit: function(el){
-                var elClass = $(el).attr("class");
-                $(el).parent().removeClass('selected');
-                $('.'+ elClass + '-sub').stop().slideUp(400);
-                $('.'+ elClass + '-sub').find('.sub-menu:not(.first)').hide();
-                $('.'+ elClass + '-sub').find('li > a.trigger').removeClass('selected');
+            exit: function ( elem ) {
+                var $elem = $( elem ),
+                    subMenuKey = $elem.data( 'dropdown-controls' ),
+                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
+                $elem.parent().removeClass( 'selected' );
+                $mainMenu.removeClass( 'open' );
+                $subMenu.removeClass( 'open' );
+                $subMenu.find( '.sub-menu:not(.first)' ).hide();
+                $subMenu.find( 'li > a.trigger' ).removeClass( 'selected' );
             }
         };
+
         megaMenu.init();
 
         //
@@ -240,9 +251,9 @@
         // Header Search
         //
 
-        $(".search-container label").on("click",function(e){
-            $('.sb-search').addClass('sb-search-open');
-            $('.sb-search-input').focus();
+        $( '.search-container label' ).on( 'click', function ( e ) {
+            $( '.sb-search' ).addClass( 'sb-search-open' );
+            $( '.sb-search-input' ).focus();
             e.preventDefault()
             e.stopPropagation();
         });

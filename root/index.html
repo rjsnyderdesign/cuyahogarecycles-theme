@@ -71,20 +71,22 @@
         </div>
       </div><!-- /.container-fluid -->
 
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default hidden-xs" role="navigation">
 
         <div class="container-fluid">
 
           <ul class="nav navbar-nav navbar-left navbar-primary">
-            <li class="dropdown"><a href="#" class="rfh" data-toggle="dropdown">Recycling for Home</a></li>
-            <li class="dropdown"><a href="#" class="ps" data-toggle="dropdown">Programs &amp; Services</a></li>
-            <li class="dropdown"><a href="#" class="hrw" data-toggle="dropdown">How Recycling Works</a></li>
-            <li class="dropdown"><a href="#" class="au" data-toggle="dropdown">About Us</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="rfh" data-toggle="dropdown">Recycling for Home</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="ps"  data-toggle="dropdown">Programs &amp; Services</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="hrw" data-toggle="dropdown">How Recycling Works</a></li>
+            <li class="dropdown"><a href="#" data-dropdown-controls="au"  data-toggle="dropdown">About Us</a></li>
           </ul>
+
         </div><!-- /.container-fluid -->
-        <div class="mega-menu"><!-- .mega-menu -->
+
+        <div class="mega-menu bg-dark"><!-- .mega-menu -->
           <!-- .rfh-sub -->
-          <div class="main-menu-dropdown rfh-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="rfh">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Recycling in Your Comunity</a></li>
               <li><a href="#">Composting</a></li>
@@ -112,7 +114,7 @@
             </div>
           </div><!-- /.rfh-sub -->
           <!-- .ps-sub -->
-          <div class="main-menu-dropdown ps-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="ps">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#" class="trigger">Community Programs<span class="fa fa-chevron-right"></span></a>
                 <ul class="dropdown-menu sub-menu second">
@@ -163,7 +165,7 @@
             </div>
           </div><!-- /.ps-sub -->
           <!-- .hrw-sub -->
-          <div class="main-menu-dropdown hrw-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="hrw">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">The Recycling Process: Reduce,Reuse, Recycle</a></li>
               <li><a href="#">Environment &amp; Recycling Facts</a></li>
@@ -179,7 +181,7 @@
             </div>
           </div><!-- /.hrw-sub -->
           <!-- .au-sub -->
-          <div class="main-menu-dropdown au-sub clearfix">
+          <div class="main-menu-dropdown clearfix" data-dropdown="au">
             <ul class="col-sm-4 dropdown-menu sub-menu first">
               <li><a href="#">Annual Residential Recycling Report</a></li>
               <li><a href="#">Solid Waste Management Plan</a></li>
@@ -198,6 +200,7 @@
             </div>
           </div><!-- /.au-sub -->
         </div><!-- /.mega-menu -->
+
       </nav>
 
       <nav class="navbar navbar-default bg-green-1">
@@ -209,7 +212,7 @@
             <div class="wdidw-wrapper">
               <div class="wdidw-button-wrapper">
                 <a class="wdidw-button wdidw-show" href="#!">
-                  What Do I Do With <span class="wdidw-animated-term"></span>?
+                  What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
                 </a>
               </div>
               <div class="wdidw-search-bar">
@@ -237,9 +240,9 @@
 
           </div><!-- /.header-infobar-right -->
 
-          <div class="col-side-full-height hidden-xs hidden-sm">
+          <div class="col-side-full-height hidden-xs">
 
-            <a class="city-recycling-button action-open-community" href="#">Recycling in my Community <i class="fa fa-caret-square-o-right"></i></a>
+            <a class="city-recycling-button action-open-community" href="#">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right"></i></a>
 
           </div><!-- /.header-infobar-left -->
 
@@ -251,108 +254,106 @@
 
     <main role="main">
 
-      <div class="container-fluid">
-        <div class="container-content-default">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4">
-                <h1>Headline statement goes here.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo ex, finibus sit amet ante nec, viverra lacinia magna. Pellentesque vel justo odio.</p>
-                <p>
-                  <ul class="item-color-key-list">
-                    <li><span class="item-color-key item-color-key-home-recycling"></span> In-home</li>
-                    <li><span class="item-color-key item-color-key-dropoff-recycling"></span> Drop-off</li>
-                    <li><span class="item-color-key item-color-key-proper-disposal"></span> Proper Disposal</li>
-                  </ul>
-                </p>
-              </div><!-- /.col-*-* -->
-              <div class="col-md-8">
-                <p class="text-large"><strong>Recycle</strong> these five items in your home:</p>
+      <div class="container-content-default">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Headline statement goes here.</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque justo ex, finibus sit amet ante nec, viverra lacinia magna. Pellentesque vel justo odio.</p>
+              <p>
+                <ul class="item-color-key-list">
+                  <li><span class="item-color-key item-color-key-home-recycling"></span> In-home</li>
+                  <li><span class="item-color-key item-color-key-dropoff-recycling"></span> Drop-off</li>
+                  <li><span class="item-color-key item-color-key-proper-disposal"></span> Proper Disposal</li>
+                </ul>
+              </p>
+            </div><!-- /.col-*-* -->
+            <div class="col-md-8">
+              <p class="text-large"><strong>Recycle</strong> these five items in your home:</p>
 
-                <p>
+              <p>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                      <img alt="Cans" title="Cans" src="../root/img/items/item-01.jpg" />
-                    </div>
-                    <figcaption class="item-caption">Cans</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Cans" title="Cans" src="../root/img/items/item-01.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Cans</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                      <img alt="Cartons" title="Cartons" src="../root/img/items/item-02.jpg" />
-                    </div>
-                    <figcaption class="item-caption">Cartons</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Cartons" title="Cartons" src="../root/img/items/item-02.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Cartons</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                      <img alt="Glass" title="Glass" src="../root/img/items/item-03.jpg" />
-                    </div>
-                    <figcaption class="item-caption">Glass</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Glass" title="Glass" src="../root/img/items/item-03.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Glass</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                      <img alt="Paper" title="Paper" src="../root/img/items/item-04.jpg" />
-                    </div>
-                    <figcaption class="item-caption">Paper</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Paper" title="Paper" src="../root/img/items/item-04.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Paper</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-2 item-icon-home-recycling">
-                      <img alt="Plastic" title="Plastic" src="../root/img/items/item-05.jpg" />
-                    </div>
-                    <figcaption class="item-caption">Plastic</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-2 item-icon-home-recycling">
+                    <img alt="Plastic" title="Plastic" src="../root/img/items/item-05.jpg" />
+                  </div>
+                  <figcaption class="item-caption">Plastic</figcaption>
+                </figure>
 
-                </p>
+              </p>
 
-                <p><strong>Lorem</strong> ipsum dolor sit amet:</p>
+              <p><strong>Lorem</strong> ipsum dolor sit amet:</p>
 
-                <p>
+              <p>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
-                      <img alt="Plastic Bags" title="Plastic Bags" src="../root/img/items/item-12.jpg" />
-                    </div>
-                    <figcaption class="item-caption text-small">Plastic Bags</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
+                    <img alt="Plastic Bags" title="Plastic Bags" src="../root/img/items/item-12.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Plastic Bags</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
-                      <img alt="Clothing" title="Clothing" src="../root/img/items/item-07.jpg" />
-                    </div>
-                    <figcaption class="item-caption text-small">Clothing</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-dropoff-recycling">
+                    <img alt="Clothing" title="Clothing" src="../root/img/items/item-07.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Clothing</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                      <img alt="Scrap Metal" title="Scrap Metal" src="../root/img/items/item-15.jpg" />
-                    </div>
-                    <figcaption class="item-caption text-small">Scrap Metal</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Scrap Metal" title="Scrap Metal" src="../root/img/items/item-15.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Scrap Metal</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                      <img alt="Tanglers" title="Tanglers" src="../root/img/items/item-22.jpg" />
-                    </div>
-                    <figcaption class="item-caption text-small">Tanglers</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Tanglers" title="Tanglers" src="../root/img/items/item-22.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Tanglers</figcaption>
+                </figure>
 
-                  <figure class="item-figure">
-                    <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
-                      <img alt="Needles" title="Needles" src="../root/img/items/item-19.jpg" />
-                    </div>
-                    <figcaption class="item-caption text-small">Needles</figcaption>
-                  </figure>
+                <figure class="item-figure">
+                  <div class="item-icon item-icon-size-1 item-icon-proper-disposal">
+                    <img alt="Needles" title="Needles" src="../root/img/items/item-19.jpg" />
+                  </div>
+                  <figcaption class="item-caption text-small">Needles</figcaption>
+                </figure>
 
-                </p>
-              </div><!-- /.col-*-* -->
-            </div><!-- /.row -->
-          </div><!-- /.container-fluid -->
-        </div><!-- /.container-content-default -->
-      </div><!-- /.container-fluid -->
+              </p>
+            </div><!-- /.col-*-* -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div><!-- /.container-content-default -->
 
       <div class="container-fluid pal-inverse bg-dark">
         <div class="container-content-cta">

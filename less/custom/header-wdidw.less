@@ -32,9 +32,14 @@
     padding: 0 (@grid-gutter-width / 2);
     color: @ccswd-green-2;
     font-size: @font-size-large;
+    text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     transition: color @link-transition-speed;
+
+    @media screen and (min-width: @screen-sm-min) {
+      text-align: left;
+    }
 
     &:hover,
     &:focus,
@@ -42,6 +47,12 @@
     &.active {
       color: @white;
       text-decoration: none;
+    }
+
+    > .wdidw-button-break {
+      @media screen and (min-width: @screen-xs-min) {
+        display: none;
+      }
     }
   }
 }

@@ -9341,6 +9341,18 @@ body
     letter-spacing: .05em;
     text-transform: uppercase;
 }
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+    .navbar-nav.navbar-primary > li
+    {
+        display: inline-block;
+        float: none;
+
+        max-width: 140px;
+
+        vertical-align: bottom;
+    }
+}
 .navbar-nav.navbar-primary > li > a
 {
     -webkit-transition: color 500ms;
@@ -9382,7 +9394,7 @@ body
 .header-infobar .col-main-full-height,
 .header-infobar .col-side-full-height
 {
-    vertical-align: top;
+    vertical-align: middle;
     white-space: nowrap;
 }
 .city-recycling-button
@@ -9799,9 +9811,7 @@ h6
     }
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 .nav > li
 {
@@ -9841,19 +9851,54 @@ h6
 }
 .mega-menu
 {
+    position: relative;
+
     display: block;
+    overflow: hidden;
 
     width: 100%;
+    height: 0;
+
+    -webkit-transition: height 250ms 500ms;
+         -o-transition: height 250ms 500ms;
+            transition: height 250ms 500ms;
+}
+.mega-menu.open
+{
+    height: 270px;
+
+    -webkit-transition: height 500ms;
+         -o-transition: height 500ms;
+            transition: height 500ms;
 }
 .main-menu-dropdown
 {
-    display: none;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
 
     width: 100%;
-    padding: 100px 30px 40px;
+    height: 100%;
+    padding: 40px;
+    padding-top: 80px;
 
-    border-bottom: 1px solid #26cad3;
+    -webkit-transition: opacity 250ms;
+         -o-transition: opacity 250ms;
+            transition: opacity 250ms;
+
+    opacity: 0;
     background: #263746;
+}
+.main-menu-dropdown.open
+{
+    z-index: 1;
+
+    -webkit-transition: opacity 500ms 250ms;
+         -o-transition: opacity 500ms 250ms;
+            transition: opacity 500ms 250ms;
+
+    opacity: 1;
 }
 .main-menu-dropdown .dropdown-menu
 {
@@ -9862,7 +9907,7 @@ h6
     left: 0;
 
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
 
     border: none;
     border-radius: 0;
@@ -10122,10 +10167,18 @@ h6
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
+    text-align: center;
     vertical-align: middle;
     white-space: nowrap;
 
     color: #95d600;
+}
+@media screen and (min-width: 768px)
+{
+    .wdidw-button-wrapper > .wdidw-button
+    {
+        text-align: left;
+    }
 }
 .wdidw-button-wrapper > .wdidw-button:hover,
 .wdidw-button-wrapper > .wdidw-button:focus,
@@ -10135,6 +10188,13 @@ h6
     text-decoration: none;
 
     color: #fff;
+}
+@media screen and (min-width: 480px)
+{
+    .wdidw-button-wrapper > .wdidw-button > .wdidw-button-break
+    {
+        display: none;
+    }
 }
 .wdidw-search-bar
 {
@@ -10227,11 +10287,9 @@ h6
     border-bottom: 2px solid #95d600;
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
-@media (max-width: 768px)
+@media (max-width: 767px)
 {
     .navbar-nav
     {
@@ -10266,7 +10324,7 @@ h6
     {
         position: absolute;
         top: 11px;
-        left: -20px;
+        right: -20px;
 
         margin: 0;
         padding: 8px 7px;
