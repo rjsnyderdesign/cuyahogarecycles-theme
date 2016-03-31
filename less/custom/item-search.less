@@ -65,6 +65,79 @@
 
 
 //
+// Item filter city list
+// --------------------------------------------------
+
+@item-filter-city-list-inner-padding: (@font-size-base / 4) @font-size-base;
+
+.btn-group .dropdown-toggle.item-filter-city-button {
+  background: inherit;
+  border: 0 none transparent;
+  color: inherit;
+  font-size: @font-size-large;
+  transition: color @link-transition-speed;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @brand-info;
+    text-decoration: none;
+  }
+
+  .box-shadow(none);
+}
+
+.btn-group.open .dropdown-toggle.item-filter-city-button {
+  background: inherit;
+  border: 0 none transparent;
+
+  .box-shadow(none);
+}
+
+.dropdown-menu.item-filter-city-list {
+  border-color: @gray;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      > a {
+        display: block;
+        padding: @item-filter-city-list-inner-padding;
+        color: inherit;
+        transition: background-color @link-transition-speed, color @link-transition-speed;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: @gray-lighter;
+          color: @brand-info;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.item-filter-city-zip-wrapper {
+  display: block;
+  padding: @item-filter-city-list-inner-padding;
+
+  > label {
+    .small-header;
+  }
+
+  > .form-control {
+    margin: 0;
+  }
+}
+
+
+//
 // Item search results
 // --------------------------------------------------
 
