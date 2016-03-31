@@ -102,6 +102,10 @@ form {
   label {
     .small-header
   }
+
+  .form-control {
+    .placeholder-color( @gray-lighter );
+  }
 }
 
 
@@ -110,6 +114,7 @@ form {
 // --------------------------------------------------
 
 .btn-hollow( @btn-hollow-color, @btn-hollow-hover-color ) {
+  background: none;
   color: @btn-hollow-color;
   border-color: @btn-hollow-color;
   padding-left: (@font-size-base * 2.5);

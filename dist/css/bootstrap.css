@@ -8936,6 +8936,24 @@ form label
 
     text-transform: uppercase;
 }
+form .form-control::-webkit-input-placeholder
+{
+    color: #e6e6e6;
+}
+form .form-control:-moz-placeholder
+{
+    /* Firefox 18- */
+    color: #e6e6e6;
+}
+form .form-control::-moz-placeholder
+{
+    /* Firefox 19+ */
+    color: #e6e6e6;
+}
+form .form-control:-ms-input-placeholder
+{
+    color: #e6e6e6;
+}
 .btn-hollow-white
 {
     margin-top: -8px;
@@ -8951,6 +8969,7 @@ form label
     color: #fff;
     border-color: #fff;
     background: rgba(0, 0, 0, .3);
+    background: none;
 }
 .btn-hollow-white:focus,
 .btn-hollow-white:hover,
@@ -8974,6 +8993,7 @@ form label
 
     color: #00833e;
     border-color: #00833e;
+    background: none;
 }
 .btn-hollow-green-1:focus,
 .btn-hollow-green-1:hover,
@@ -8997,6 +9017,7 @@ form label
 
     color: #95d600;
     border-color: #95d600;
+    background: none;
 }
 .btn-hollow-green-2:focus,
 .btn-hollow-green-2:hover,
@@ -9020,6 +9041,7 @@ form label
 
     color: #26cad3;
     border-color: #26cad3;
+    background: none;
 }
 .btn-hollow-blue:focus,
 .btn-hollow-blue:hover,
@@ -9043,6 +9065,7 @@ form label
 
     color: #f6b221;
     border-color: #f6b221;
+    background: none;
 }
 .btn-hollow-yellow:focus,
 .btn-hollow-yellow:hover,
@@ -9066,6 +9089,7 @@ form label
 
     color: #e84b37;
     border-color: #e84b37;
+    background: none;
 }
 .btn-hollow-red:focus,
 .btn-hollow-red:hover,
@@ -9089,6 +9113,7 @@ form label
 
     color: #263746;
     border-color: #263746;
+    background: none;
 }
 .btn-hollow-dark:focus,
 .btn-hollow-dark:hover,
@@ -11676,6 +11701,63 @@ h6
 .item-type-label.item-type-compost
 {
     color: #00833e;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.inline-form .form-control
+{
+    display: inline-block;
+
+    width: auto;
+    min-width: 240px;
+
+    vertical-align: top;
+}
+.inline-form-xs .form-control
+{
+    display: inline-block;
+
+    width: auto;
+    min-width: 240px;
+
+    vertical-align: top;
+}
+@media screen and (min-width: 768px)
+{
+    .inline-form-sm .form-control
+    {
+        display: inline-block;
+
+        width: auto;
+        min-width: 240px;
+
+        vertical-align: top;
+    }
+}
+@media screen and (min-width: 992px)
+{
+    .inline-form-md .form-control
+    {
+        display: inline-block;
+
+        width: auto;
+        min-width: 240px;
+
+        vertical-align: top;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .inline-form-lg .form-control
+    {
+        display: inline-block;
+
+        width: auto;
+        min-width: 240px;
+
+        vertical-align: top;
+    }
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
