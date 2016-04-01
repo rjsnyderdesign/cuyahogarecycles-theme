@@ -258,6 +258,18 @@
                 .trigger( 'click' );
         } );
 
+        //
+        // Responsive images
+        //
+
+        $( '.responsive-image' ).responsImg( {
+            elementQuery: true,
+            breakpoints: {
+                brk400: 400,
+                brk800: 800
+            }
+        } );
+
     } );
 
 } )( window, jQuery );
