@@ -8951,7 +8951,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-white
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -8976,7 +8975,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-green-1
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9000,7 +8998,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-green-2
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9024,7 +9021,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-blue
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9048,7 +9044,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-yellow
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9072,7 +9067,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-red
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9096,7 +9090,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-dark
 {
-    margin-top: -8px;
     margin-right: 32px;
     margin-left: 32px;
     padding-right: 40px;
@@ -9660,6 +9653,57 @@ body
     width: 100%;
     padding: 40px 0;
 }
+.container-content-newsletter-form
+{
+    width: 100%;
+    padding: 40px 0;
+
+    text-align: center;
+}
+.container-content-newsletter-form h1,
+.container-content-newsletter-form h2,
+.container-content-newsletter-form h3,
+.container-content-newsletter-form h4,
+.container-content-newsletter-form h5,
+.container-content-newsletter-form h6
+{
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+.container-content-newsletter-form h1:not(:first-child),
+.container-content-newsletter-form h2:not(:first-child),
+.container-content-newsletter-form h3:not(:first-child),
+.container-content-newsletter-form h4:not(:first-child),
+.container-content-newsletter-form h5:not(:first-child),
+.container-content-newsletter-form h6:not(:first-child)
+{
+    margin-top: 48px;
+    margin-bottom: 8px;
+}
+.container-content-newsletter-form p
+{
+    line-height: 1.5;
+}
+.container-content-newsletter-form a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-transform: uppercase;
+
+    color: #fff;
+}
+.container-content-newsletter-form a:hover,
+.container-content-newsletter-form a:focus,
+.container-content-newsletter-form a:active,
+.container-content-newsletter-form a.active
+{
+    text-decoration: none;
+
+    color: #26cad3;
+}
 .container-content-cta
 {
     font-size: 30px;
@@ -10175,6 +10219,7 @@ h6
     top: 100%;
     left: 0;
 
+    width: 180px;
     margin: 0;
     padding: 0;
 
