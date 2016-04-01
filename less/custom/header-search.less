@@ -22,20 +22,20 @@
 	z-index: 3;
 	min-width: 110px;
 	float: right;
-	
+
 	label {
 		position: absolute;
 		top: 7px;
 		right: 30px;
 		font-size: 12px;
 		font-weight: normal;
-		
+
 		&:hover,
 		&:focus {
 			color: darken(@brand-info, 15%);
 			cursor: pointer;
 		}
-		
+
 	}
 }
 
@@ -47,17 +47,18 @@
   height: 30px;
   float: right;
   overflow: hidden;
-  transition: width 0.3s;
 	-webkit-backface-visibility: hidden;
-	
+
+  .transition(width 0.3s);
+
 	&.sb-search-open {
 		width: 220px;
-		
+
 		.sb-icon-search {
 			background: darken(@brand-info, 5%);
 			z-index: 11;
 		}
-		
+
 		.sb-search-submit {
 			z-index: 90;
 		}
@@ -79,8 +80,8 @@
 	font-family: inherit;
 	font-size: 14px;
 	color: @brand-dark;
-	.placeholder-color(@brand-info);
-	
+	.placeholder(@brand-info);
+
 }
 
 .sb-icon-search,
@@ -112,7 +113,6 @@
 .sb-icon-search {
 	background: @brand-info;
 	z-index: 90;
-	transition: width 0.3s;
+
+	.transition(width 0.3s);
 }
-
-

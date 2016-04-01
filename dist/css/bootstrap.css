@@ -8936,21 +8936,16 @@ form label
 
     text-transform: uppercase;
 }
-form .form-control::-webkit-input-placeholder
-{
-    color: #e6e6e6;
-}
-form .form-control:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: #e6e6e6;
-}
 form .form-control::-moz-placeholder
 {
-    /* Firefox 19+ */
+    opacity: 1;
     color: #e6e6e6;
 }
 form .form-control:-ms-input-placeholder
+{
+    color: #e6e6e6;
+}
+form .form-control::-webkit-input-placeholder
 {
     color: #e6e6e6;
 }
@@ -9490,21 +9485,16 @@ body
     -webkit-box-shadow: none;
             box-shadow: none;
 }
-.slidereveal-panel .search-container input[type='text']::-webkit-input-placeholder
-{
-    color: #00833e;
-}
-.slidereveal-panel .search-container input[type='text']:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: #00833e;
-}
 .slidereveal-panel .search-container input[type='text']::-moz-placeholder
 {
-    /* Firefox 19+ */
+    opacity: 1;
     color: #00833e;
 }
 .slidereveal-panel .search-container input[type='text']:-ms-input-placeholder
+{
+    color: #00833e;
+}
+.slidereveal-panel .search-container input[type='text']::-webkit-input-placeholder
 {
     color: #00833e;
 }
@@ -10305,21 +10295,16 @@ h6
     outline: none;
     background: #fff;
 }
-.sb-search-input::-webkit-input-placeholder
-{
-    color: #26cad3;
-}
-.sb-search-input:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: #26cad3;
-}
 .sb-search-input::-moz-placeholder
 {
-    /* Firefox 19+ */
+    opacity: 1;
     color: #26cad3;
 }
 .sb-search-input:-ms-input-placeholder
+{
+    color: #26cad3;
+}
+.sb-search-input::-webkit-input-placeholder
 {
     color: #26cad3;
 }
@@ -10510,21 +10495,16 @@ h6
 
     padding: 0 16px;
 }
-.wdidw-search-form .input-group input[type='text']::-webkit-input-placeholder
-{
-    color: #fff;
-}
-.wdidw-search-form .input-group input[type='text']:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: #fff;
-}
 .wdidw-search-form .input-group input[type='text']::-moz-placeholder
 {
-    /* Firefox 19+ */
+    opacity: 1;
     color: #fff;
 }
 .wdidw-search-form .input-group input[type='text']:-ms-input-placeholder
+{
+    color: #fff;
+}
+.wdidw-search-form .input-group input[type='text']::-webkit-input-placeholder
 {
     color: #fff;
 }
@@ -10683,12 +10663,6 @@ h6
 .tile-grid > .grid-cell.grid-cell-placeholder
 {
     display: none;
-}
-.tile-grid > .grid-cell.grid-sizer
-{
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
 }
 .tile-grid > .grid-cell.grid-cell-1-1
 {
@@ -11290,6 +11264,18 @@ h6
     height: 100%;
     margin: 0;
     padding: 0;
+
+    -webkit-transition: -webkit-transform 500ms ease;
+         -o-transition:      -o-transform 500ms ease;
+            transition:         transform 500ms ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
 }
 .grid-cell-container-inner.grid-cell-link-event-bg
 {
@@ -11336,16 +11322,24 @@ h6
 
     color: #fff;
 }
-.grid-cell-link,
-.grid-cell-link:link,
-.grid-cell-link:visited,
 .grid-cell-link:hover,
 .grid-cell-link:focus,
-.grid-cell-link:active
+.grid-cell-link:active,
+.grid-cell-link.active
 {
     text-decoration: none;
 
     color: #fff;
+}
+.grid-cell-link:hover > .grid-cell-link-bg > img,
+.grid-cell-link:focus > .grid-cell-link-bg > img,
+.grid-cell-link:active > .grid-cell-link-bg > img,
+.grid-cell-link.active > .grid-cell-link-bg > img
+{
+    -webkit-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+         -o-transform: scale(1.25);
+            transform: scale(1.25);
 }
 .grid-cell-link.grid-cell-link-reveal .grid-cell-link-title
 {
@@ -11955,21 +11949,16 @@ h6
     color: #26cad3;
     background: #fff;
 }
-.slidereveal-panel#panel-menu .search-container input[type='text']::-webkit-input-placeholder
-{
-    color: #26cad3;
-}
-.slidereveal-panel#panel-menu .search-container input[type='text']:-moz-placeholder
-{
-    /* Firefox 18- */
-    color: #26cad3;
-}
 .slidereveal-panel#panel-menu .search-container input[type='text']::-moz-placeholder
 {
-    /* Firefox 19+ */
+    opacity: 1;
     color: #26cad3;
 }
 .slidereveal-panel#panel-menu .search-container input[type='text']:-ms-input-placeholder
+{
+    color: #26cad3;
+}
+.slidereveal-panel#panel-menu .search-container input[type='text']::-webkit-input-placeholder
 {
     color: #26cad3;
 }

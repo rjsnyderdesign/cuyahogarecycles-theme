@@ -79,7 +79,8 @@
   border: 0 none transparent;
   color: inherit;
   font-size: @font-size-large;
-  transition: color @link-transition-speed;
+
+  .transition(color @link-transition-speed);
 
   &:hover,
   &:focus,
@@ -112,7 +113,8 @@
         display: block;
         padding: @item-filter-city-list-inner-padding;
         color: inherit;
-        transition: background-color @link-transition-speed, color @link-transition-speed;
+
+        .transition(@transition: background-color @link-transition-speed, color @link-transition-speed;);
 
         &:hover,
         &:focus,
@@ -180,7 +182,8 @@
 .item-search-result-link {
   color: inherit;
   font-size: (@font-size-base * 3);
-  transition: color @link-transition-speed;
+
+  .transition(color @link-transition-speed);
 
   &:hover,
   &:focus,

@@ -104,7 +104,7 @@ form {
   }
 
   .form-control {
-    .placeholder-color( @gray-lighter );
+    .placeholder( @gray-lighter );
   }
 }
 
@@ -122,7 +122,8 @@ form {
   margin-top: (-@font-size-base / 2);
   margin-left: (@font-size-base * 2);
   margin-right: (@font-size-base * 2);
-  transition: border-color @link-transition-speed, color @link-transition-speed;
+
+  .transition(@transition: border-color @link-transition-speed, color @link-transition-speed;);
 
   &:focus,
   &:hover,
@@ -223,7 +224,8 @@ form {
   background: rgba(0,0,0,0.6);
   color: @white;
   opacity: 1;
-  transition: color @link-transition-speed, opacity @link-transition-speed, z-index @link-transition-speed;
+
+  .transition(@transition:color @link-transition-speed, opacity @link-transition-speed, z-index @link-transition-speed;);
 
   &:hover,
   &:focus,
@@ -236,7 +238,8 @@ form {
   &.video-playing {
     opacity: 0;
     z-index: -1;
-    transition: opacity @link-transition-speed, z-index 0;
+
+    .transition(@transition:opacity @link-transition-speed, z-index 0;);
   }
 
   > .video-play-title {
@@ -395,7 +398,8 @@ body {
 
     > a {
       color: @white;
-      transition: color @link-transition-speed;
+
+      .transition(color @link-transition-speed);
 
       &:before {
         width: 100%;
@@ -406,7 +410,8 @@ body {
         bottom: 0;
         background: @white;
         content: '';
-        transition: height @link-transition-speed;
+
+        .transition(height @link-transition-speed);
       }
 
       &:hover {
@@ -438,7 +443,8 @@ body {
   background: @ccswd-green-2;
   border-left: 2px solid @ccswd-green-1;
   color: @ccswd-green-1;
-  transition: color @link-transition-speed;
+
+  .transition(color @link-transition-speed);
 
   &:hover,
   &:focus,
@@ -481,7 +487,7 @@ body {
       box-shadow: none;
       margin: 0;
 
-      .placeholder-color(@brand-primary);
+      .placeholder(@brand-primary);
     }
 
     i {
@@ -508,7 +514,8 @@ body {
       height: 100%;
       width: 100%;
       line-height: 50px;
-      transition: color 500ms;
+
+      .transition(color @link-transition-speed);
 
       &:hover,
       &:focus,

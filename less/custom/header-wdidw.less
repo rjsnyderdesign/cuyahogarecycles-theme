@@ -36,7 +36,8 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  transition: color @link-transition-speed;
+
+  .transition(color @link-transition-speed);
 
   @media screen and (min-width: @screen-sm-min) {
     text-align: left;
@@ -63,7 +64,8 @@
     font-size: (@font-size-base * 1.5);
     text-transform: none;
     vertical-align: top;
-    transition: border-bottom-color @link-transition-speed;
+
+    .transition(border-bottom-color @link-transition-speed);
   }
 
   > .wdidw-button-break {
@@ -80,7 +82,8 @@
   top: -100%;
   left: 0;
   background-color: @ccswd-green-2;
-  transition: top @link-transition-speed;
+
+  .transition(top @link-transition-speed);
 
   &.active {
     top: 0;
@@ -117,7 +120,7 @@
       font-size: @font-size-large;
       padding: 0 @font-size-base;
 
-      .placeholder-color(@white);
+      .placeholder(@white);
     }
   }
 }

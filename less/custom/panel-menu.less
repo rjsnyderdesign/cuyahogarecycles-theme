@@ -17,7 +17,7 @@
 // --------------------------------------------------
 
 .slidereveal-panel {
-	
+
 
 	&#panel-menu {
 		color: @white;
@@ -44,7 +44,7 @@
 				}
 			}
 		}
-		
+
 		.dropdown {
 
 			.dropdown-menu {
@@ -66,18 +66,19 @@
 				color: darken(@brand-info, 5%);
 				top: -3px;
 				position: relative;
-				transition: all 400ms;
+
+				.transition(all 400ms);
 			}
 
 			> a {
 				font-size: 18px;
 				text-transform: uppercase;
 				color: @white;
-				
+
 				&:focus {
 					color: @white;
 				}
-				
+
 				&:hover,
 				&:active
 				 {
@@ -114,7 +115,7 @@
 							background: none;
 							color: @white;
 						}
-						
+
 						&:hover,
 						&:active {
 							color: darken(@brand-info, 15%);
@@ -181,12 +182,12 @@
 		.newsletter-events {
 			margin: 20px 0;
 		}
-		
+
 		.search-container {
 			input[type="text"] {
 		    background: @white;
 		    color: @brand-info;
-		      .placeholder-color(@brand-info);
+		      .placeholder(@brand-info);
 			}
 			i {
 				color: @brand-info;
