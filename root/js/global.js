@@ -19,43 +19,9 @@
 
     $( window.document.body ).ready( function () {
 
-        var $grid       = $( '.grid' ),
-            $gridSizer  = $('#grid-sizer'),
-            shuffleOpts = {
-                speed: 1,
-                easing: 'ease-out',
-                itemSelector: '.grid-cell',
-                gutterWidth: 0,
-                columnWidth: function () { return $gridSizer.width(); },
-                buffer: 0.01,
-                throttleTime: 250,
-                sequentialFadeDelay: 150,
-                supported: false
-            };
-
         //
         // SlidePanel
         //
-
-        var sliderPanelCalendar = $( '#panel-calendar' ).slideReveal( {
-            width: 480,
-            push: true,
-            position: 'right',
-            speed: 300,
-            trigger: $( '.action-open-calendar' ),
-            push: true,
-            overlay: true
-        } );
-
-        var sliderPanelNewsletters = $( '#panel-newsletters' ).slideReveal( {
-            width: 480,
-            push: true,
-            position: 'right',
-            speed: 300,
-            trigger: $( '.action-open-newsletters' ),
-            push: true,
-            overlay: true
-        } );
 
         var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
             width: 300,
@@ -130,7 +96,7 @@
         } );
 
         //
-        // Mega Menu + Sub Menus
+        // Mega menu + Sub menus
         //
 
         $( '.mega-menu .dropdown-menu a.trigger' ).on( 'click' , function ( e ) {
@@ -157,7 +123,7 @@
         });
 
         //
-        // New Mega Menu (Hover)
+        // New mega menu (hover)
         //
 
         var $mainMenu = $( '.mega-menu' ),
@@ -212,7 +178,7 @@
         megaMenu.init();
 
         //
-        // Mobile Menu + Sub Menus
+        // Mobile menu + Sub menus
         //
 
         $("#panel-menu .dropdown a.trigger").on("click",function(e){
@@ -248,7 +214,7 @@
         };
 
         //
-        // Header Search
+        // Header search
         //
 
         $( '.search-container label' ).on( 'click', function ( e ) {
@@ -257,6 +223,40 @@
             e.preventDefault()
             e.stopPropagation();
         });
+
+        //
+        // Item basics
+        //
+
+        $( '.item-basics' ).each( function ( i, elem ) {
+            var $elem = $( elem );
+            $elem
+                .find( '.item-cat-selector-opt' )
+                .on( 'click', function () {
+                    var $this = $( this ),
+                        itemKey = $this.data( 'item-key' );
+                    $elem
+                        .find( '.item-cat-selector-opt' )
+                        .removeClass( 'active' )
+                        .attr( 'aria-selected', 'false' );
+                    $elem
+                        .find( '.item-basics-cat' )
+                        .removeClass( 'active' )
+                        .attr( 'aria-hidden', 'true' );
+                    $( this )
+                        .addClass( 'active' )
+                        .attr( 'aria-selected', 'true' );
+                    $elem
+                        .find(
+                            '.item-basics-cat[data-item-cat="' + itemKey + '"]'
+                        )
+                        .addClass( 'active' )
+                        .attr( 'aria-hidden', 'false' );
+                } );
+            $elem
+                .find( '.item-cat-selector-opt' ).eq( 0 )
+                .trigger( 'click' );
+        } );
 
     } );
 

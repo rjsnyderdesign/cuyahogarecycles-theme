@@ -9176,9 +9176,10 @@ form .form-control::-webkit-input-placeholder
     width: 100%;
     height: 100%;
 
-    -webkit-transition: color 500ms, opacity 500ms, z-index 500ms;
-         -o-transition: color 500ms, opacity 500ms, z-index 500ms;
-            transition: color 500ms, opacity 500ms, z-index 500ms;
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
 
     opacity: 1;
     color: #fff;
@@ -9285,6 +9286,17 @@ form .form-control::-webkit-input-placeholder
     height: 100%;
     margin: 0;
 }
+.item-basics > .item-basics-cat,
+.item-basics > .item-cat-selector
+{
+    margin: 0 auto;
+
+    text-align: center;
+}
+.item-basics > .item-basics-cat:not(.active)
+{
+    display: none;
+}
 body
 {
     color: #666;
@@ -9319,6 +9331,10 @@ body
     margin-right: 20px;
     padding-top: 7px;
 
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
     text-transform: uppercase;
 
     color: #fff;
@@ -9433,6 +9449,7 @@ body
     height: 100%;
     padding: 25px 40px;
 
+    cursor: pointer;
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
@@ -9531,6 +9548,7 @@ body
     width: 100%;
     height: 100%;
 
+    cursor: pointer;
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
@@ -9540,8 +9558,6 @@ body
 .slidereveal-panel .full-width-button a:active,
 .slidereveal-panel .full-width-button a.active
 {
-    font-weight: normal;
-
     text-decoration: none;
 
     color: #fff;
@@ -9555,38 +9571,8 @@ body
 }
 .page-footer .page-footer-col
 {
-    padding-top: 40px;
+    padding-top: 120px;
     padding-bottom: 80px;
-}
-.page-footer .page-footer-col h2
-{
-    margin-top: 0;
-}
-.page-footer .page-footer-col dt
-{
-    font-size: 16px;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-.page-footer .page-footer-col dd
-{
-    margin-bottom: 16px;
-}
-.page-footer .page-footer-col .page-footer-nav
-{
-    line-height: 2;
-
-    margin-bottom: 0;
-    padding-left: 0;
-
-    list-style: none;
-
-    text-transform: uppercase;
-}
-.page-footer .page-footer-col .page-footer-nav > li > a
-{
-    color: #666;
 }
 .page-footer .page-footer-col-siteinfo
 {
@@ -9594,6 +9580,67 @@ body
     padding-bottom: 16px;
 
     background: #d9d9d9;
+}
+.page-footer h4
+{
+    font-weight: normal;
+
+    margin: 16px 0;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.page-footer p
+{
+    margin: 16px 0;
+}
+.page-footer a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #666;
+}
+.page-footer a:hover,
+.page-footer a:focus,
+.page-footer a:active,
+.page-footer a.active
+{
+    text-decoration: none;
+
+    color: #26cad3;
+}
+.page-footer dt
+{
+    font-size: 16px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+.page-footer dd
+{
+    margin-bottom: 16px;
+}
+.page-footer .brand-district-logo
+{
+    width: auto;
+    max-width: auto;
+    height: auto;
+    max-height: 80px;
+    margin-top: -80px;
+}
+.page-footer .page-footer-nav
+{
+    line-height: 2;
+
+    margin: 8px 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    text-transform: uppercase;
 }
 .page-footer .page-footer-social > li
 {
@@ -11277,20 +11324,10 @@ h6
          -o-transform-origin: center center;
             transform-origin: center center;
 }
-.grid-cell-container-inner.grid-cell-link-event-bg
+.grid-cell-container-inner.grid-cell-link-bg.grid-cell-link-event-bg > img
 {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.grid-cell-container-inner.grid-cell-link-event-bg > img
-{
-    display: block;
-
     width: auto;
-    height: 100%;
     margin: 0 auto;
-    padding: 0;
 }
 .grid-cell-container-inner.grid-cell-info-box
 {
@@ -11353,12 +11390,10 @@ h6
 }
 .grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:hover .grid-cell-link-title
 {
-    margin-top: -50%;
+    margin-top: -100%;
 }
 .grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption
 {
-    height: 50%;
-
     background: rgba(0, 0, 0, .4);
 }
 .grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption > .grid-cell-content-outer
@@ -11472,7 +11507,115 @@ h6
 }
 .item-color-key-list > li
 {
+    display: inline-block;
+
+    margin-right: 16px;
+
     vertical-align: middle;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt
+{
+    display: block;
+
+    padding-right: 8px;
+
+    -webkit-transition: border-color 500ms, color 500ms;
+         -o-transition: border-color 500ms, color 500ms;
+            transition: border-color 500ms, color 500ms;
+
+    color: inherit;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background: #e6e6e6;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt .item-color-key
+{
+    background: none;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected
+{
+    text-decoration: none;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='home-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='home-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='home-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='home-recycling']
+{
+    color: #26cad3;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='dropoff-recycling']
+{
+    color: #f6b221;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='proper-disposal'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='proper-disposal'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='proper-disposal'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='proper-disposal']
+{
+    color: #e84b37;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='compost'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='compost'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='compost'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='compost']
+{
+    color: #00833e;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected
+{
+    background: none;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-home-recycling
+{
+    background: #26cad3;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-dropoff-recycling
+{
+    background: #f6b221;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-proper-disposal
+{
+    background: #e84b37;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-compost,
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-compost
+{
+    background: #00833e;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='home-recycling']
+{
+    border-color: #26cad3;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='dropoff-recycling']
+{
+    border-color: #f6b221;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='proper-disposal']
+{
+    border-color: #e84b37;
+}
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost'],
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='compost']
+{
+    border-color: #00833e;
 }
 .item-color-key
 {
@@ -11489,19 +11632,55 @@ h6
 }
 .item-color-key.item-color-key-home-recycling
 {
+    border: 2px solid #26cad3;
     background: #26cad3;
+}
+.item-color-key.item-color-key-home-recycling.item-color-key-filled
+{
+    background: #26cad3;
+}
+.item-color-key.item-color-key-home-recycling.item-color-key-hollow
+{
+    background: none;
 }
 .item-color-key.item-color-key-dropoff-recycling
 {
+    border: 2px solid #f6b221;
     background: #f6b221;
+}
+.item-color-key.item-color-key-dropoff-recycling.item-color-key-filled
+{
+    background: #f6b221;
+}
+.item-color-key.item-color-key-dropoff-recycling.item-color-key-hollow
+{
+    background: none;
 }
 .item-color-key.item-color-key-proper-disposal
 {
+    border: 2px solid #e84b37;
     background: #e84b37;
+}
+.item-color-key.item-color-key-proper-disposal.item-color-key-filled
+{
+    background: #e84b37;
+}
+.item-color-key.item-color-key-proper-disposal.item-color-key-hollow
+{
+    background: none;
 }
 .item-color-key.item-color-key-compost
 {
+    border: 2px solid #00833e;
     background: #00833e;
+}
+.item-color-key.item-color-key-compost.item-color-key-filled
+{
+    background: #00833e;
+}
+.item-color-key.item-color-key-compost.item-color-key-hollow
+{
+    background: none;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11554,6 +11733,7 @@ h6
 {
     font-size: 24px;
 
+    cursor: pointer;
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
@@ -11665,6 +11845,7 @@ h6
 {
     font-size: 48px;
 
+    cursor: pointer;
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
@@ -11974,6 +12155,8 @@ h6
 .slidereveal-panel#panel-community
 {
     z-index: 1050 !important;
+
+    overflow: scroll;
 
     background: #95d600;
 }

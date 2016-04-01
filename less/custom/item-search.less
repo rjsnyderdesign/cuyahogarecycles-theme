@@ -80,15 +80,7 @@
   color: inherit;
   font-size: @font-size-large;
 
-  .transition(color @link-transition-speed);
-
-  &:hover,
-  &:focus,
-  &:active,
-  &.active {
-    color: @brand-info;
-    text-decoration: none;
-  }
+  .link-effect(@brand-info);
 
   .box-shadow(none);
 }
@@ -183,15 +175,7 @@
   color: inherit;
   font-size: (@font-size-base * 3);
 
-  .transition(color @link-transition-speed);
-
-  &:hover,
-  &:focus,
-  &:active,
-  &.active {
-    color: @brand-info;
-    text-decoration: none;
-  }
+  .link-effect(@brand-info);
 }
 
 

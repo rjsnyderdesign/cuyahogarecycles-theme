@@ -223,19 +223,12 @@
       .transform-origin(center center);
       .scale(1);
     }
-  }
 
-  &.grid-cell-link-event-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    > img {
-      width: auto;
-      height: 100%;
-      display: block;
-      margin: 0 auto;
-      padding: 0;
+    &.grid-cell-link-event-bg {
+      > img {
+        width: auto;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -294,14 +287,13 @@
 
     &.grid-cell-link-staff:hover {
       .grid-cell-link-title {
-        margin-top: -50%;
+        margin-top: -100%;
       }
     }
   }
 
   &.grid-cell-link-staff {
     > .grid-cell-link-caption {
-      height: 50%;
       background: rgba(0,0,0,0.4);
 
       > .grid-cell-content-outer {

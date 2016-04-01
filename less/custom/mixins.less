@@ -3,7 +3,19 @@
  */
 
 //
-// Placeholders
+// Links
 // --------------------------------------------------
 
-//
+.link-effect(@color: @brand-info) {
+  cursor: pointer;
+
+  .transition(color @link-transition-speed);
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: @color;
+    text-decoration: none;
+  }
+}
