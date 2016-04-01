@@ -9169,24 +9169,10 @@ form .form-control::-webkit-input-placeholder
     width: 100%;
     height: 100%;
 
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-
     opacity: 1;
     color: #fff;
     background: #d9d9d9;
     background: rgba(0, 0, 0, .6);
-}
-.youtube-video-play-button:hover,
-.youtube-video-play-button:focus,
-.youtube-video-play-button:active,
-.youtube-video-play-button.active
-{
-    text-decoration: none;
-
-    color: #26cad3;
 }
 .youtube-video-play-button.video-playing
 {
@@ -11356,18 +11342,6 @@ h6
     height: 100%;
     margin: 0;
     padding: 0;
-
-    -webkit-transition: -webkit-transform 500ms ease;
-         -o-transition:      -o-transform 500ms ease;
-            transition:         transform 500ms ease;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-         -o-transform: scale(1);
-            transform: scale(1);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center;
 }
 .grid-cell-container-inner.grid-cell-link-bg.grid-cell-link-event-bg > img
 {
@@ -11413,16 +11387,6 @@ h6
 
     color: #fff;
 }
-.grid-cell-link:hover > .grid-cell-link-bg > img,
-.grid-cell-link:focus > .grid-cell-link-bg > img,
-.grid-cell-link:active > .grid-cell-link-bg > img,
-.grid-cell-link.active > .grid-cell-link-bg > img
-{
-    -webkit-transform: scale(1.25);
-        -ms-transform: scale(1.25);
-         -o-transform: scale(1.25);
-            transform: scale(1.25);
-}
 .grid-cell-link.grid-cell-link-reveal .grid-cell-link-title
 {
     -webkit-transition: margin 500ms;
@@ -11461,6 +11425,37 @@ h6
 
     width: 100%;
     height: 100%;
+}
+.tile-img-zoom img
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    -webkit-transition: -webkit-transform 500ms ease;
+         -o-transition:      -o-transform 500ms ease;
+            transition:         transform 500ms ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+}
+.tile-img-zoom:hover img,
+.tile-img-zoom:focus img,
+.tile-img-zoom:active img,
+.tile-img-zoom.active img
+{
+    -webkit-transform: scale(1.25);
+        -ms-transform: scale(1.25);
+         -o-transform: scale(1.25);
+            transform: scale(1.25);
 }
 /*!
  * CuyahogaRecycles.org theme

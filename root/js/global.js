@@ -262,11 +262,20 @@
         // Responsive images
         //
 
-        $( '.responsive-image' ).responsImg( {
+        $( '.responsive-image.img-tile' ).responsImg( {
             elementQuery: true,
             breakpoints: {
                 brk400: 400,
                 brk800: 800
+            }
+        } );
+
+        $( '.responsive-image.img-event' ).responsImg( {
+            elementQuery: false,
+            breakpoints: {
+                brk400: 400,
+                brk800: 800,
+                brk1200: 1200
             }
         } );
 
