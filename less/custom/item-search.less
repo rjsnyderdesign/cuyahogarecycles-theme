@@ -35,9 +35,9 @@
 // --------------------------------------------------
 
 .item-search-query {
-  padding-top: (@font-size-base * 3);
+  padding-top: (@font-size-base * 2);
   padding-bottom: @font-size-base;
-  color: @white;
+  border-bottom: 2px solid @gray-lighter;
   font-size: @font-size-base;
 
   > .item-search-query-entry {
@@ -72,8 +72,6 @@
 // Item filter city list
 // --------------------------------------------------
 
-@item-filter-city-list-inner-padding: (@font-size-base / 4) @font-size-base;
-
 .btn-group .dropdown-toggle.item-filter-city-button {
   background: inherit;
   border: 0 none transparent;
@@ -96,14 +94,16 @@
   border-color: @gray;
 
   ul {
+    max-height: 400px;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
     list-style: none;
 
     > li {
       > a {
         display: block;
-        padding: @item-filter-city-list-inner-padding;
+        padding: (@font-size-base / 4) @font-size-base;
         color: inherit;
 
         .transition(@transition: background-color @link-transition-speed, color @link-transition-speed;);
@@ -123,7 +123,8 @@
 
 .item-filter-city-zip-wrapper {
   display: block;
-  padding: @item-filter-city-list-inner-padding;
+  padding: (@font-size-base / 2) @font-size-base @font-size-base;
+  border-bottom: 1px solid @gray-lighter;
 
   > label {
     .small-header;

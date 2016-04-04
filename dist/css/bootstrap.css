@@ -11748,10 +11748,10 @@ h6
 {
     font-size: 16px;
 
-    padding-top: 48px;
+    padding-top: 32px;
     padding-bottom: 16px;
 
-    color: #fff;
+    border-bottom: 2px solid #e6e6e6;
 }
 .item-search-query > .item-search-query-entry
 {
@@ -11812,6 +11812,9 @@ h6
 }
 .dropdown-menu.item-filter-city-list ul
 {
+    overflow-y: auto;
+
+    max-height: 400px;
     margin: 0;
     padding: 0;
 
@@ -11843,7 +11846,9 @@ h6
 {
     display: block;
 
-    padding: 4px 16px;
+    padding: 8px 16px 16px;
+
+    border-bottom: 1px solid #e6e6e6;
 }
 .item-filter-city-zip-wrapper > label
 {
