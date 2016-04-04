@@ -6164,13 +6164,13 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 }
 .breadcrumb
 {
-    margin-bottom: 20px;
-    padding: 8px 15px;
+    margin-bottom: 0;
+    padding: 0 0;
 
     list-style: none;
 
     border-radius: 0;
-    background-color: #f5f5f5;
+    background-color: #263746;
 }
 .breadcrumb > li
 {
@@ -6182,11 +6182,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 
     content: '/\00a0';
 
-    color: #ccc;
+    color: #fff;
 }
 .breadcrumb > .active
 {
-    color: #d9d9d9;
+    color: #95d600;
 }
 .pagination
 {
@@ -9778,6 +9778,16 @@ body
 {
     width: 100%;
     height: auto;
+}
+.container-breadcrumbs
+{
+    font-size: 16px;
+
+    padding-top: 48px;
+    padding-bottom: 16px;
+
+    color: #fff;
+    background: #263746;
 }
 /*!
  * CuyahogaRecycles.org theme
