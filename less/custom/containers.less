@@ -19,6 +19,20 @@
   padding: (@grid-gutter-width / 2) 0;
 }
 
+.container-content-cta {
+  font-size: 30px;
+  letter-spacing: @letter-spacing;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:extend(.container-content-default);
+
+  .btn {
+    margin-left: (@font-size-base * 2);
+    margin-right: (@font-size-base * 2);
+  }
+}
+
 .container-content-newsletter-form {
   text-align: center;
 
@@ -30,15 +44,10 @@
 
     .link-effect(@brand-info);
   }
-}
 
-.container-content-cta {
-  font-size: 30px;
-  letter-spacing: @letter-spacing;
-  text-align: center;
-  text-transform: uppercase;
-
-  &:extend(.container-content-default);
+  .btn {
+    &:extend(.container-content-cta .btn);
+  }
 }
 
 .container-content-article {
@@ -84,4 +93,13 @@
   background: @brand-dark;
   color: @white;
   font-size: @font-size-base;
+}
+
+.container-img-banner {
+  .img-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 }

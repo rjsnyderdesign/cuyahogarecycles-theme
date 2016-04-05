@@ -205,6 +205,14 @@
       margin: 0;
       font-size: (@font-size-base * 1.5);
     }
+
+    .btn.btn-hollow {
+      @media screen and (min-width: @screen-sm-min) {
+        position: absolute;
+        right: (@grid-gutter-width / 2);
+        bottom: (@grid-gutter-width / 2);
+      }
+    }
   }
 
   &.grid-cell-link-bg {

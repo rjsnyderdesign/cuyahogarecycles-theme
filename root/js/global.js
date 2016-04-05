@@ -17,10 +17,11 @@
         // SlidePanel
         //
 
-        var panelMenu,
-            panelMenuBtn;
+        var $panelMenu = $( '#panel-menu' );
 
-        var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
+        var $panelCommunity = $( '#panel-community' );
+
+        var sliderPanelMenu = $panelMenu.slideReveal( {
             width: 300,
             position: 'right',
             speed: 300,
@@ -31,14 +32,14 @@
                 // Close Sub Menu's when menu is hidden
                 $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
                 $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
-                },
+            },
             hide: function ( slider, trigger ) {
                 $( '#panel-community' ).slideReveal( 'hide' );
             }
         } );
 
         if ( window.innerWidth > 767 ) {
-            var sliderPanelCommunity = $( '#panel-community' ).slideReveal( {
+            var sliderPanelCommunity = $panelCommunity.slideReveal( {
                 width: 300,
                 position: 'right',
                 speed: 300,
@@ -48,7 +49,7 @@
             } );
         }
         else {
-            var sliderPanelMenu = $( '#panel-community' ).slideReveal( {
+            var sliderPanelMenu = $panelCommunity.slideReveal( {
                 width: 300,
                 position: 'right',
                 speed: 300,
@@ -57,6 +58,14 @@
                 overlay: false
             } );
         }
+
+        // Close Buttons
+        $panelMenu.find( '.btn-panel-close' ).on( 'click', function () {
+            $panelMenu.slideReveal( 'hide' );
+        } );
+        $panelCommunity.find( '.btn-panel-close' ).on( 'click', function () {
+            $panelCommunity.slideReveal( 'hide' );
+        } );
 
         // Remove extra overlays
         while ( $( '.slide-reveal-overlay' ).length > 1 ) {
@@ -253,9 +262,10 @@
                         $this.attr( 'href' ).substring( 1 )
                     );
                 } )
-                .on( 'click', function () {
+                .on( 'click', function ( e ) {
                     var $this = $( this ),
                         itemKey = $this.data( 'item-key' );
+                    e.preventDefault();
                     $elem
                         .find( '.item-cat-selector-opt' )
                         .removeClass( 'active' )
@@ -297,6 +307,15 @@
         } );
 
         $( '.responsive-image.img-event' ).responsImg( {
+            elementQuery: false,
+            breakpoints: {
+                brk400: 400,
+                brk800: 800,
+                brk1200: 1200
+            }
+        } );
+
+        $( '.responsive-image.img-banner' ).responsImg( {
             elementQuery: false,
             breakpoints: {
                 brk400: 400,

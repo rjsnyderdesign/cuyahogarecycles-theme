@@ -1,0 +1,77 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// SlideReveal panels
+// --------------------------------------------------
+
+.slidereveal-panel {
+  max-width: @screen-xs-min;
+  position: absolute;
+  top: 0;
+  right: 100%;
+
+  .panel-head {
+    padding-top: 50px;
+  }
+
+  .panel-body {
+    padding: 32px;
+    overflow-y: auto;
+  }
+
+  .panel-content {
+    padding: 8px 32px;
+  }
+
+  .btn-panel-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: 0 none;
+    background: none;
+    font-size: (@font-size-base * 2);
+
+    .link-effect(@brand-danger);
+  }
+
+  .search-container {
+    width: 100%;
+    float: none;
+
+    input[type="text"] {
+      width: 100%;
+      margin: 0;
+      padding: 15px 50px 15px 20px;
+      border: 0 none;
+      font-size: @font-size-base;
+      outline: none;
+
+      .box-shadow(none);
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: none;
+      border: 0 none;
+      font-size: @font-size-large;
+    }
+  }
+}

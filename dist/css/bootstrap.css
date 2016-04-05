@@ -1512,7 +1512,7 @@ hr
     margin-bottom: 20px;
 
     border: 0;
-    border-top: 1px solid #fff;
+    border-top: 2px solid #666;
 }
 .sr-only
 {
@@ -8945,8 +8945,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-white
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -8969,8 +8967,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-green-1
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -8992,8 +8988,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-green-2
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -9015,8 +9009,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-blue
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -9038,8 +9030,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-yellow
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -9061,8 +9051,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-red
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -9084,8 +9072,6 @@ form .form-control::-webkit-input-placeholder
 }
 .btn-hollow-dark
 {
-    margin-right: 32px;
-    margin-left: 32px;
     padding-right: 40px;
     padding-left: 40px;
 
@@ -9273,14 +9259,6 @@ form .form-control::-webkit-input-placeholder
     height: 100%;
     margin: 0;
 }
-.slidereveal-panel
-{
-    position: absolute;
-    top: 0;
-    right: 100%;
-
-    max-width: 480px;
-}
 .item-basics > .item-basics-cat,
 .item-basics > .item-cat-selector
 {
@@ -9463,108 +9441,6 @@ body
 
     color: #fff;
 }
-.slidereveal-panel
-{
-    font-size: 14px;
-
-    padding: 60px 20px 0;
-
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-.slidereveal-panel .search-container
-{
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-
-    width: 100%;
-}
-.slidereveal-panel .search-container input[type='text']
-{
-    font-size: 16px;
-
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 15px 50px 15px 20px;
-
-    color: #00833e;
-    border: none;
-    outline: none;
-    background: #95d600;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-}
-.slidereveal-panel .search-container input[type='text']::-moz-placeholder
-{
-    opacity: 1;
-    color: #00833e;
-}
-.slidereveal-panel .search-container input[type='text']:-ms-input-placeholder
-{
-    color: #00833e;
-}
-.slidereveal-panel .search-container input[type='text']::-webkit-input-placeholder
-{
-    color: #00833e;
-}
-.slidereveal-panel .search-container i
-{
-    font-size: 20px;
-
-    position: absolute;
-    top: 50%;
-    right: 22px;
-
-    margin-top: -10px;
-
-    color: #00833e;
-}
-.slidereveal-panel .full-width-button
-{
-    position: absolute;
-    top: 50px;
-    left: 0;
-
-    width: 100%;
-    height: 50px;
-    padding-left: 20px;
-
-    background: #95d600;
-}
-.slidereveal-panel .full-width-button a
-{
-    line-height: 50px;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-}
-.slidereveal-panel .full-width-button a:hover,
-.slidereveal-panel .full-width-button a:focus,
-.slidereveal-panel .full-width-button a:active,
-.slidereveal-panel .full-width-button a.active
-{
-    text-decoration: none;
-
-    color: #fff;
-}
-.slidereveal-panel .close-button
-{
-    font-size: 30px;
-    font-weight: normal;
-
-    color: #95d600;
-}
 .page-footer .page-footer-col
 {
     padding-top: 120px;
@@ -9652,11 +9528,25 @@ body
  * CuyahogaRecycles.org theme
  */
 .container-content-default,
-.container-content-newsletter-form,
-.container-content-cta
+.container-content-cta,
+.container-content-newsletter-form
 {
     width: 100%;
     padding: 40px 0;
+}
+.container-content-cta
+{
+    font-size: 30px;
+
+    text-align: center;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.container-content-cta .btn,
+.container-content-newsletter-form .btn
+{
+    margin-right: 32px;
+    margin-left: 32px;
 }
 .container-content-newsletter-form
 {
@@ -9680,14 +9570,6 @@ body
     text-decoration: none;
 
     color: #26cad3;
-}
-.container-content-cta
-{
-    font-size: 30px;
-
-    text-align: center;
-    letter-spacing: .05em;
-    text-transform: uppercase;
 }
 .container-content-article
 {
@@ -9737,6 +9619,14 @@ body
 
     color: #fff;
     background: #263746;
+}
+.container-img-banner .img-banner
+{
+    display: block;
+
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -10187,9 +10077,7 @@ h6
     max-width: 100%;
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 .search-container
 {
@@ -11204,6 +11092,15 @@ h6
 
     margin: 0;
 }
+@media screen and (min-width: 768px)
+{
+    .grid-cell-container-inner.grid-cell-link-event .btn.btn-hollow
+    {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+    }
+}
 .grid-cell-container-inner.grid-cell-link-bg
 {
     position: absolute;
@@ -11454,85 +11351,71 @@ h6
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover,
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus,
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active
 {
     text-decoration: none;
 }
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='home-recycling'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='home-recycling'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='home-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='home-recycling']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling']
 {
     color: #26cad3;
 }
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='dropoff-recycling']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
 {
     color: #f6b221;
 }
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='proper-disposal'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='proper-disposal'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='proper-disposal'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='proper-disposal']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal']
 {
     color: #e84b37;
 }
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:hover[data-item-key='compost'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:focus[data-item-key='compost'],
 .item-color-key-list.item-cat-selector > li > .item-cat-selector-opt:active[data-item-key='compost'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='compost']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost']
 {
     color: #00833e;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active
 {
     background: none;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-home-recycling
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling
 {
     background: #26cad3;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-dropoff-recycling
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling
 {
     background: #f6b221;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-proper-disposal
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal
 {
     background: #e84b37;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-compost,
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected .item-color-key.item-color-key-compost
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active .item-color-key.item-color-key-compost
 {
     background: #00833e;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='home-recycling']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='home-recycling']
 {
     border-color: #26cad3;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='dropoff-recycling']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
 {
     border-color: #f6b221;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='proper-disposal']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='proper-disposal']
 {
     border-color: #e84b37;
 }
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost'],
-.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.selected[data-item-key='compost']
+.item-color-key-list.item-cat-selector > li > .item-cat-selector-opt.active[data-item-key='compost']
 {
     border-color: #00833e;
 }
@@ -11647,6 +11530,29 @@ h6
 .item-filter-list > li > input[type='checkbox']
 {
     margin-right: 8px;
+}
+.item-filter-list > dt
+{
+    margin-top: 16px;
+}
+.item-filter-list > dd > button
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    border: 0 none;
+    background: none;
+}
+.item-filter-list > dd > button:hover,
+.item-filter-list > dd > button:focus,
+.item-filter-list > dd > button:active,
+.item-filter-list > dd > button.active
+{
+    text-decoration: none;
+
+    color: #e84b37;
 }
 .btn-group .dropdown-toggle.item-filter-city-button
 {
@@ -11850,16 +11756,102 @@ h6
     }
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
+ */
+.slidereveal-panel
+{
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    max-width: 480px;
+}
+.slidereveal-panel .panel-head
+{
+    padding-top: 50px;
+}
+.slidereveal-panel .panel-body
+{
+    overflow-y: auto;
+
+    padding: 32px;
+}
+.slidereveal-panel .panel-content
+{
+    padding: 8px 32px;
+}
+.slidereveal-panel .btn-panel-close
+{
+    font-size: 32px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    border: 0 none;
+    background: none;
+}
+.slidereveal-panel .btn-panel-close:hover,
+.slidereveal-panel .btn-panel-close:focus,
+.slidereveal-panel .btn-panel-close:active,
+.slidereveal-panel .btn-panel-close.active
+{
+    text-decoration: none;
+
+    color: #e84b37;
+}
+.slidereveal-panel .search-container
+{
+    float: none;
+
+    width: 100%;
+}
+.slidereveal-panel .search-container input[type='text']
+{
+    font-size: 16px;
+
+    width: 100%;
+    margin: 0;
+    padding: 15px 50px 15px 20px;
+
+    border: 0 none;
+    outline: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.slidereveal-panel .search-container button
+{
+    font-size: 24px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 50px;
+    height: 50px;
+
+    border: 0 none;
+    background: none;
+}
+/*!
+ * CuyahogaRecycles.org theme
  */
 .slidereveal-panel#panel-menu
 {
-    padding-top: 100px;
-
     color: #fff;
-    background: #26cad3;
+    background: #263746;
 }
 .slidereveal-panel#panel-menu .divider
 {
@@ -11870,18 +11862,78 @@ h6
 
     background: #22b5bd;
 }
-.slidereveal-panel#panel-menu li > a
+.slidereveal-panel#panel-menu .nav > li > a,
+.slidereveal-panel#panel-menu .sub-menu > li > a
 {
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-transform: uppercase;
+
     color: #fff;
 }
-.slidereveal-panel#panel-menu li > a:hover,
-.slidereveal-panel#panel-menu li > a:active
+.slidereveal-panel#panel-menu .nav > li > a:hover,
+.slidereveal-panel#panel-menu .sub-menu > li > a:hover,
+.slidereveal-panel#panel-menu .nav > li > a:focus,
+.slidereveal-panel#panel-menu .sub-menu > li > a:focus,
+.slidereveal-panel#panel-menu .nav > li > a:active,
+.slidereveal-panel#panel-menu .sub-menu > li > a:active,
+.slidereveal-panel#panel-menu .nav > li > a.active,
+.slidereveal-panel#panel-menu .sub-menu > li > a.active
 {
-    color: #1a8c92;
+    text-decoration: none;
+
+    color: #26cad3;
 }
-.slidereveal-panel#panel-menu li > a.action-open-community .fa
+.slidereveal-panel#panel-menu .nav > li > a:hover,
+.slidereveal-panel#panel-menu .sub-menu > li > a:hover,
+.slidereveal-panel#panel-menu .nav > li > a:focus,
+.slidereveal-panel#panel-menu .sub-menu > li > a:focus
+{
+    background: none;
+}
+.slidereveal-panel#panel-menu .nav > li > a:hover:before,
+.slidereveal-panel#panel-menu .sub-menu > li > a:hover:before,
+.slidereveal-panel#panel-menu .nav > li > a:focus:before,
+.slidereveal-panel#panel-menu .sub-menu > li > a:focus:before
+{
+    display: none;
+}
+.slidereveal-panel#panel-menu .nav > li > a.selected,
+.slidereveal-panel#panel-menu .sub-menu > li > a.selected
 {
     color: #95d600;
+}
+.slidereveal-panel#panel-menu .nav > li > a.selected .fa,
+.slidereveal-panel#panel-menu .sub-menu > li > a.selected .fa
+{
+    -webkit-transform: rotateZ(45deg);
+        -ms-transform: rotateZ(45deg);
+         -o-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+
+    color: #e84b37;
+}
+.slidereveal-panel#panel-menu .nav > li > a .fa,
+.slidereveal-panel#panel-menu .sub-menu > li > a .fa
+{
+    font-size: 12px;
+
+    position: relative;
+    top: -3px;
+
+    margin-left: 8px;
+
+    -webkit-transition: all 500ms;
+         -o-transition: all 500ms;
+            transition: all 500ms;
+
+    color: #1ea1a8;
+}
+.slidereveal-panel#panel-menu .dropdown > a
+{
+    font-size: 18px;
 }
 .slidereveal-panel#panel-menu .dropdown .dropdown-menu
 {
@@ -11893,54 +11945,10 @@ h6
     margin: 0;
     padding: 0;
 
-    border: none;
-    border-radius: 0;
+    border: 0 none;
     background: none;
     -webkit-box-shadow: none;
             box-shadow: none;
-}
-.slidereveal-panel#panel-menu .dropdown .fa
-{
-    font-size: 12px;
-
-    position: relative;
-    top: -3px;
-
-    margin-left: 7px;
-
-    -webkit-transition: all 400ms;
-         -o-transition: all 400ms;
-            transition: all 400ms;
-
-    color: #22b5bd;
-}
-.slidereveal-panel#panel-menu .dropdown > a
-{
-    font-size: 18px;
-
-    text-transform: uppercase;
-
-    color: #fff;
-}
-.slidereveal-panel#panel-menu .dropdown > a:focus
-{
-    color: #fff;
-}
-.slidereveal-panel#panel-menu .dropdown > a:hover,
-.slidereveal-panel#panel-menu .dropdown > a:active
-{
-    color: #1a8c92;
-}
-.slidereveal-panel#panel-menu .dropdown > a.selected
-{
-    color: #141d25;
-}
-.slidereveal-panel#panel-menu .dropdown > a.selected .fa
-{
-    -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
-
-    color: #e84b37;
 }
 .slidereveal-panel#panel-menu .dropdown .sub-menu
 {
@@ -11962,67 +11970,20 @@ h6
     padding: 0;
 
     white-space: normal;
-
-    color: #fff;
-}
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:visited,
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:focus
-{
-    color: #fff;
-    background: none;
-}
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:hover,
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a:active
-{
-    color: #1a8c92;
-    background: none;
 }
 .slidereveal-panel#panel-menu .dropdown .sub-menu > li > a .fa
 {
-    font-size: 11px;
-
     top: 0;
-
-    -webkit-transition: all 400ms;
-         -o-transition: all 400ms;
-            transition: all 400ms;
-}
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a.selected
-{
-    color: #263746;
-}
-.slidereveal-panel#panel-menu .dropdown .sub-menu > li > a.selected .fa
-{
-    -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
-
-    color: #e84b37;
 }
 .slidereveal-panel#panel-menu .dropdown.open .dropdown-toggle:after
 {
     display: none;
 }
-.slidereveal-panel#panel-menu .nav > li > a:hover,
-.slidereveal-panel#panel-menu .nav > li > a:active,
-.slidereveal-panel#panel-menu .nav > li > a:focus,
-.slidereveal-panel#panel-menu .nav > li > a:visited,
-.slidereveal-panel#panel-menu .nav > li > a:link
-{
-    background: none;
-}
-.slidereveal-panel#panel-menu .nav > li > a:hover:before,
-.slidereveal-panel#panel-menu .nav > li > a:active:before,
-.slidereveal-panel#panel-menu .nav > li > a:focus:before,
-.slidereveal-panel#panel-menu .nav > li > a:visited:before,
-.slidereveal-panel#panel-menu .nav > li > a:link:before
-{
-    display: none;
-}
-.slidereveal-panel#panel-menu ul.page-header-social li
+.slidereveal-panel#panel-menu .page-header-social li
 {
     margin-right: 16px;
 }
-.slidereveal-panel#panel-menu ul.page-header-social li a
+.slidereveal-panel#panel-menu .page-header-social li a
 {
     line-height: 40px;
 
@@ -12040,6 +12001,17 @@ h6
 {
     margin: 20px 0;
 }
+.slidereveal-panel#panel-menu .city-recycling-button
+{
+    font-size: 14px;
+
+    height: 50px;
+    padding: 8px 32px;
+
+    text-align: left;
+
+    border: 0 none;
+}
 .slidereveal-panel#panel-menu .search-container input[type='text']
 {
     color: #26cad3;
@@ -12048,24 +12020,22 @@ h6
 .slidereveal-panel#panel-menu .search-container input[type='text']::-moz-placeholder
 {
     opacity: 1;
-    color: #26cad3;
+    color: #d9d9d9;
 }
 .slidereveal-panel#panel-menu .search-container input[type='text']:-ms-input-placeholder
 {
-    color: #26cad3;
+    color: #d9d9d9;
 }
 .slidereveal-panel#panel-menu .search-container input[type='text']::-webkit-input-placeholder
 {
-    color: #26cad3;
+    color: #d9d9d9;
 }
-.slidereveal-panel#panel-menu .search-container i
+.slidereveal-panel#panel-menu .search-container button
 {
     color: #26cad3;
 }
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * CuyahogaRecycles.org theme
  */
 .slidereveal-panel#panel-community
 {
@@ -12087,7 +12057,11 @@ h6
     margin: 0;
     padding: 0;
 
-    border-bottom: 1px solid #91d100;
+    border-bottom: 1px solid #83bd00;
+}
+.slidereveal-panel#panel-community ul > li:last-child
+{
+    border: 0 none;
 }
 .slidereveal-panel#panel-community ul > li > a
 {
@@ -12096,25 +12070,25 @@ h6
     margin: 5px 0;
     padding: 5px 0;
 
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
     color: #00833e;
 }
 .slidereveal-panel#panel-community ul > li > a:hover,
 .slidereveal-panel#panel-community ul > li > a:focus,
 .slidereveal-panel#panel-community ul > li > a:active,
-.slidereveal-panel#panel-community ul > li > a:active
+.slidereveal-panel#panel-community ul > li > a.active
 {
     text-decoration: none;
 
     color: #fff;
 }
-.slidereveal-panel#panel-community ul > li:last-child
-{
-    border: none;
-}
 .slidereveal-panel#panel-community .btn-hollow-white
 {
     width: 100%;
-    margin: 0 auto 20px;
 
     border-color: rgba(255, 255, 255, .3);
     background: none;
@@ -12126,5 +12100,31 @@ h6
 {
     color: #fff;
     background: rgba(255, 255, 255, .1);
+}
+.slidereveal-panel#panel-community .btn-panel-close
+{
+    color: #00833e;
+}
+.slidereveal-panel#panel-community .search-container input[type='text']
+{
+    color: #00833e;
+    background: #95d600;
+}
+.slidereveal-panel#panel-community .search-container input[type='text']::-moz-placeholder
+{
+    opacity: 1;
+    color: #fff;
+}
+.slidereveal-panel#panel-community .search-container input[type='text']:-ms-input-placeholder
+{
+    color: #fff;
+}
+.slidereveal-panel#panel-community .search-container input[type='text']::-webkit-input-placeholder
+{
+    color: #fff;
+}
+.slidereveal-panel#panel-community .search-container button
+{
+    color: #00833e;
 }
 /*# sourceMappingURL=bootstrap.css.map */

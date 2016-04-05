@@ -1,0 +1,159 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Panel - Mobile Menu
+// --------------------------------------------------
+
+.slidereveal-panel#panel-menu {
+  color: @white;
+  background: @brand-dark;
+
+  .divider {
+    background: darken(@brand-info, 5%);
+    display: block;
+    height: 1px;
+    margin: 10px 0;
+  }
+
+  .nav,
+  .sub-menu {
+    > li {
+      > a {
+        color: @white;
+        text-transform: uppercase;
+
+        .link-effect(@brand-info);
+
+        &:hover,
+        &:focus {
+          background: none;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        &.selected {
+          color: @brand-success;
+
+          .fa {
+            color: @brand-danger;
+
+            .rotateZ(45deg);
+          }
+        }
+
+        .fa {
+          position: relative;
+          top: -3px;
+          margin-left: (@font-size-base / 2);
+          color: darken(@brand-info, 10%);
+          font-size: @font-size-small;
+
+          .transition(all @link-transition-speed);
+        }
+      }
+    }
+  }
+
+  .dropdown {
+
+    > a {
+      font-size: @font-size-h5;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      position: relative;
+      top: 100%;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: 0 none;
+
+      .box-shadow(none);
+    }
+
+    .sub-menu {
+      margin: 0 0 10px;
+
+      > li {
+        padding-left: 15px;
+        margin: 10px 0;
+
+        > a {
+          display: block;
+          padding: 0;
+          font-size: @font-size-base;
+          line-height: 20px;
+          clear: both;
+          white-space: normal;
+
+          .fa {
+            top: 0;
+          }
+        }
+      }
+    }
+
+    &.open {
+      .dropdown-toggle {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .page-header-social {
+    li {
+      margin-right: 16px;
+
+      a {
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        line-height: 40px;
+        text-align: center;
+      }
+    }
+  }
+
+  .newsletter-events {
+    margin: 20px 0;
+  }
+
+  .city-recycling-button {
+    height: 50px;
+    padding: 8px 32px;
+    border: 0 none;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .search-container {
+    input[type="text"] {
+      background: @white;
+      color: @brand-info;
+
+      .placeholder(@gray-light);
+    }
+
+    button {
+      color: @brand-info;
+    }
+  }
+}

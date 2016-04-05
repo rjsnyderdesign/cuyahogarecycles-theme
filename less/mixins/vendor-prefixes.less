@@ -167,6 +167,12 @@
        -o-transform: rotateY(@degrees);
           transform: rotateY(@degrees);
 }
+.rotateZ(@degrees) {
+  -webkit-transform: rotateZ(@degrees);
+      -ms-transform: rotateZ(@degrees); // IE9 only
+       -o-transform: rotateZ(@degrees);
+          transform: rotateZ(@degrees);
+}
 .perspective(@perspective) {
   -webkit-perspective: @perspective;
      -moz-perspective: @perspective;
