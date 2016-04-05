@@ -199,6 +199,28 @@ form {
 
 @social-link-size: (@font-size-base * 1.75);
 
+.social-links {
+  margin-right: 5px;
+
+  > li {
+    margin-right: @font-size-base;
+
+    > a {
+      width: @social-link-size;
+      height: @social-link-size;
+      display: inline-block;
+      border-radius: 50%;
+      border: 2px solid @white;
+      line-height: @social-link-size;
+      text-align: center;
+
+      > .fa.fa-lg {
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
 
 //
 // YouTube play button
@@ -320,6 +342,11 @@ form {
 
 body {
   color: @gray;
+
+  &.noscroll {
+    // padding-right: 15px;
+    overflow: hidden;
+  }
 }
 
 
@@ -359,25 +386,8 @@ body {
 
   .page-header-social {
     float: right;
-    margin-right: 5px;
 
-    > li {
-      margin-right: @font-size-base;
-
-      > a {
-        width: @social-link-size;
-        height: @social-link-size;
-        display: inline-block;
-        border-radius: 50%;
-        border: 2px solid @white;
-        line-height: @social-link-size;
-        text-align: center;
-
-        > .fa.fa-lg {
-          vertical-align: baseline;
-        }
-      }
-    }
+    .social-links;
   }
 }
 

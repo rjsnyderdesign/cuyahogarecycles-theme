@@ -19,26 +19,29 @@
   position: absolute;
   top: 0;
   right: 100%;
+  padding-bottom: (@slidereveal-panel-bar-height * 3);
 
   .panel-head {
-    padding-top: 50px;
+    padding-top: @slidereveal-panel-bar-height;
   }
 
   .panel-body {
-    padding: 32px;
+    height: 100%;
+    margin-bottom: (-@slidereveal-panel-bar-height * 3);
+    padding: @slidereveal-panel-padding-horizontal;
     overflow-y: auto;
   }
 
   .panel-content {
-    padding: 8px 32px;
+    padding: @slidereveal-panel-padding-vertical @slidereveal-panel-padding-horizontal;
   }
 
   .btn-panel-close {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50px;
-    height: 50px;
+    width: @slidereveal-panel-bar-height;
+    height: @slidereveal-panel-bar-height;
     display: block;
     border: 0 none;
     background: none;
@@ -54,7 +57,7 @@
     input[type="text"] {
       width: 100%;
       margin: 0;
-      padding: 15px 50px 15px 20px;
+      padding: 15px @slidereveal-panel-bar-height 15px @slidereveal-panel-padding-horizontal;
       border: 0 none;
       font-size: @font-size-base;
       outline: none;
@@ -63,8 +66,8 @@
     }
 
     button {
-      width: 50px;
-      height: 50px;
+      width: @slidereveal-panel-bar-height;
+      height: @slidereveal-panel-bar-height;
       display: block;
       position: absolute;
       top: 0;

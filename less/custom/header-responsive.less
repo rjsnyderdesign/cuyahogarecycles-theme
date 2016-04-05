@@ -51,21 +51,14 @@
     .navbar-toggle {
       width: (@font-size-large * 2);
       position: absolute;
-      top: (@font-size-base / 2);
-      right: -20px;
+      top: 0;
+      right: (-@font-size-base / 2);
       margin: 0;
       padding: (@font-size-base / 2);
       color: @white;
-      border-color: @white;
-      font-size: @font-size-large;
+      font-size: (@font-size-base * 2);
 
-      &:hover,
-      &:focus,
-      &:active,
-      &.active {
-        background: @white;
-        color: @brand-info;
-      }
+      .link-effect(darken(@brand-info, 15%));
 
       > .fa {
         vertical-align: middle;

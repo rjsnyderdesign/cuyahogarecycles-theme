@@ -18,11 +18,9 @@
   color: @white;
   background: @brand-dark;
 
-  .divider {
-    background: darken(@brand-info, 5%);
-    display: block;
-    height: 1px;
-    margin: 10px 0;
+  hr {
+    margin: @slidereveal-panel-line-spacing 0;
+    border-top: 2px solid @white;
   }
 
   .nav,
@@ -86,17 +84,17 @@
     }
 
     .sub-menu {
-      margin: 0 0 10px;
+      margin: 0 0 @slidereveal-panel-line-spacing;
 
       > li {
-        padding-left: 15px;
-        margin: 10px 0;
+        padding-left: (@slidereveal-panel-padding-horizontal / 2);
+        margin: @slidereveal-panel-line-spacing 0;
 
         > a {
           display: block;
           padding: 0;
           font-size: @font-size-base;
-          line-height: 20px;
+          line-height: 1.25;
           clear: both;
           white-space: normal;
 
@@ -116,29 +114,34 @@
     }
   }
 
-  .page-header-social {
-    li {
-      margin-right: 16px;
+  .panel-social-links {
+    margin-top: 32px;
 
-      a {
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        line-height: 40px;
-        text-align: center;
+    .social-links;
+
+    > li {
+      > a {
+        @social-link-size: 40px;
+        width: @social-link-size;
+        height: @social-link-size;
+        line-height: @social-link-size;
+
+        .transition(border-color @link-transition-speed, color @link-transition-speed;);
+
+        &:focus,
+        &:hover,
+        &:active,
+        &.active {
+          color: @brand-info;
+          border-color: @brand-info;
+        }
       }
     }
   }
 
-  .newsletter-events {
-    margin: 20px 0;
-  }
-
   .city-recycling-button {
-    height: 50px;
-    padding: 8px 32px;
+    height: @slidereveal-panel-bar-height;
+    padding: @slidereveal-panel-padding-vertical @slidereveal-panel-padding-horizontal;
     border: 0 none;
     font-size: 14px;
     text-align: left;

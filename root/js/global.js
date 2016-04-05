@@ -28,10 +28,12 @@
             trigger: $( '.action-open-menu' ),
             push: true,
             overlay: true,
+            show: function () { $( document.body ).addClass( 'noscroll' ); },
             hidden: function ( slider, trigger ) {
                 // Close Sub Menu's when menu is hidden
                 $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
                 $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
+                $( document.body ).removeClass( 'noscroll' );
             },
             hide: function ( slider, trigger ) {
                 $( '#panel-community' ).slideReveal( 'hide' );
@@ -139,7 +141,7 @@
         var megaMenu = {
             init: function () {
                 var that = this;
-                $( '.navbar-primary li a' ).hover(
+                $( '.mega-menu li a' ).hover(
                     function () { that.enter( this ); },
                     function () { that.exit( this ); }
                 );
