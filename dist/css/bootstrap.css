@@ -8922,13 +8922,7 @@ h1
     width: 372px;
     max-width: 100%;
 }
-.small-header
-{
-    font-size: 16px;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
+.small-header,
 form label
 {
     font-size: 16px;
@@ -8939,15 +8933,15 @@ form label
 form .form-control::-moz-placeholder
 {
     opacity: 1;
-    color: #e6e6e6;
+    color: #d9d9d9;
 }
 form .form-control:-ms-input-placeholder
 {
-    color: #e6e6e6;
+    color: #d9d9d9;
 }
 form .form-control::-webkit-input-placeholder
 {
-    color: #e6e6e6;
+    color: #d9d9d9;
 }
 .btn-hollow-white
 {
@@ -9279,6 +9273,14 @@ form .form-control::-webkit-input-placeholder
     height: 100%;
     margin: 0;
 }
+.slidereveal-panel
+{
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    max-width: 480px;
+}
 .item-basics > .item-basics-cat,
 .item-basics > .item-cat-selector
 {
@@ -9286,7 +9288,7 @@ form .form-control::-webkit-input-placeholder
 
     text-align: center;
 }
-.item-basics > .item-basics-cat:not(.active)
+.item-basics > .item-basics-cat[role='tabpanel']:not(.active)
 {
     display: none;
 }
@@ -9428,8 +9430,8 @@ body
 {
     height: 100%;
 }
-.header-infobar .col-main-full-height,
-.header-infobar .col-side-full-height
+.header-infobar.row-sm-full-height > .col-main-full-height,
+.header-infobar.row-sm-full-height > .col-side-full-height
 {
     vertical-align: middle;
     white-space: nowrap;
@@ -9448,6 +9450,7 @@ body
             transition: color 500ms;
 
     color: #00833e;
+    border: 0 none;
     border-left: 2px solid #00833e;
     background: #95d600;
 }
@@ -9648,42 +9651,16 @@ body
 /*!
  * CuyahogaRecycles.org theme
  */
-.container-content-default
+.container-content-default,
+.container-content-newsletter-form,
+.container-content-cta
 {
     width: 100%;
     padding: 40px 0;
 }
 .container-content-newsletter-form
 {
-    width: 100%;
-    padding: 40px 0;
-
     text-align: center;
-}
-.container-content-newsletter-form h1,
-.container-content-newsletter-form h2,
-.container-content-newsletter-form h3,
-.container-content-newsletter-form h4,
-.container-content-newsletter-form h5,
-.container-content-newsletter-form h6
-{
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-.container-content-newsletter-form h1:not(:first-child),
-.container-content-newsletter-form h2:not(:first-child),
-.container-content-newsletter-form h3:not(:first-child),
-.container-content-newsletter-form h4:not(:first-child),
-.container-content-newsletter-form h5:not(:first-child),
-.container-content-newsletter-form h6:not(:first-child)
-{
-    margin-top: 48px;
-    margin-bottom: 8px;
-}
-.container-content-newsletter-form p
-{
-    line-height: 1.5;
 }
 .container-content-newsletter-form a
 {
@@ -9708,37 +9685,9 @@ body
 {
     font-size: 30px;
 
-    width: 100%;
-    padding: 40px 0;
-
     text-align: center;
     letter-spacing: .05em;
     text-transform: uppercase;
-}
-.container-content-cta h1,
-.container-content-cta h2,
-.container-content-cta h3,
-.container-content-cta h4,
-.container-content-cta h5,
-.container-content-cta h6
-{
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-.container-content-cta h1:not(:first-child),
-.container-content-cta h2:not(:first-child),
-.container-content-cta h3:not(:first-child),
-.container-content-cta h4:not(:first-child),
-.container-content-cta h5:not(:first-child),
-.container-content-cta h6:not(:first-child)
-{
-    margin-top: 48px;
-    margin-bottom: 8px;
-}
-.container-content-cta p
-{
-    line-height: 1.5;
 }
 .container-content-article
 {
@@ -9829,89 +9778,6 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
-.row-full-height-default-padding
-{
-    margin-right: -40px;
-    margin-left: -40px;
-}
-.row-full-height-default-padding > .col-main-full-height,
-.row-full-height-default-padding > .col-side-full-height
-{
-    padding-right: 40px;
-    padding-left: 40px;
-}
-.row-full-height-even-padding
-{
-    margin-right: -40px;
-    margin-left: -40px;
-}
-.row-full-height-even-padding > .col-main-full-height,
-.row-full-height-even-padding > .col-side-full-height
-{
-    padding-right: 0;
-    padding-left: 40px;
-}
-.row-full-height-even-padding > .col-main-full-height:first-child,
-.row-full-height-even-padding > .col-side-full-height:first-child
-{
-    padding-left: 40px;
-}
-.row-full-height-even-padding > .col-main-full-height:last-child,
-.row-full-height-even-padding > .col-side-full-height:last-child
-{
-    padding-right: 40px;
-}
-.row-full-height-no-padding
-{
-    margin-right: 0;
-    margin-left: 0;
-}
-.row-full-height-no-padding > .col-main-full-height,
-.row-full-height-no-padding > .col-side-full-height
-{
-    padding-right: 0;
-    padding-left: 0;
-}
-.row-full-height
-{
-    display: table;
-}
-.row-full-height > .col-main-full-height,
-.row-full-height > .col-side-full-height
-{
-    display: table-cell;
-
-    vertical-align: top;
-}
-.row-full-height > .col-main-full-height
-{
-    width: 100%;
-}
-.row-full-height > .col-side-full-height
-{
-    width: 1%;
-}
-.row-full-height.row-full-height-even-padding
-{
-    margin-right: -40px;
-    margin-left: -40px;
-}
-.row-full-height.row-full-height-even-padding > .col-main-full-height,
-.row-full-height.row-full-height-even-padding > .col-side-full-height
-{
-    padding-right: 0;
-    padding-left: 40px;
-}
-.row-full-height.row-full-height-even-padding > .col-main-full-height:first-child,
-.row-full-height.row-full-height-even-padding > .col-side-full-height:first-child
-{
-    padding-left: 40px;
-}
-.row-full-height.row-full-height-even-padding > .col-main-full-height:last-child,
-.row-full-height.row-full-height-even-padding > .col-side-full-height:last-child
-{
-    padding-right: 40px;
-}
 .row-xs-full-height,
 .row-sm-full-height,
 .row-md-full-height,
@@ -10157,7 +10023,7 @@ h6
 {
     display: block;
 }
-.dropdown.open .dropdown-toggle::after
+.dropdown.open .dropdown-toggle:after
 {
     position: absolute;
     bottom: 0;
@@ -10486,6 +10352,8 @@ h6
 
     display: table-cell;
 
+    width: 100%;
+    height: 100%;
     padding: 0 40px;
 
     -webkit-transition: color 500ms;
@@ -10496,6 +10364,8 @@ h6
     white-space: nowrap;
 
     color: #95d600;
+    border: 0 none;
+    background: none;
 }
 @media screen and (min-width: 768px)
 {
@@ -10651,30 +10521,30 @@ h6
     }
     .page-header-upper-content .navbar-toggle
     {
+        font-size: 24px;
+
         position: absolute;
-        top: 11px;
+        top: 8px;
         right: -20px;
 
+        width: 48px;
         margin: 0;
-        padding: 8px 7px;
+        padding: 8px;
 
+        color: #fff;
         border-color: #fff;
-    }
-    .page-header-upper-content .navbar-toggle .icon-bar
-    {
-        background-color: #fff;
     }
     .page-header-upper-content .navbar-toggle:hover,
     .page-header-upper-content .navbar-toggle:focus,
-    .page-header-upper-content .navbar-toggle:active
+    .page-header-upper-content .navbar-toggle:active,
+    .page-header-upper-content .navbar-toggle.active
     {
-        background-color: #fff;
+        color: #26cad3;
+        background: #fff;
     }
-    .page-header-upper-content .navbar-toggle:hover .icon-bar,
-    .page-header-upper-content .navbar-toggle:focus .icon-bar,
-    .page-header-upper-content .navbar-toggle:active .icon-bar
+    .page-header-upper-content .navbar-toggle > .fa
     {
-        background-color: #26cad3;
+        vertical-align: middle;
     }
 }
 /*!
@@ -11403,7 +11273,10 @@ h6
 {
     margin-top: -25%;
 }
-.grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:hover .grid-cell-link-title
+.grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:hover .grid-cell-link-title,
+.grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:focus .grid-cell-link-title,
+.grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:active .grid-cell-link-title,
+.grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff.active .grid-cell-link-title
 {
     margin-top: -100%;
 }
@@ -11785,7 +11658,7 @@ h6
             transition: color 500ms;
 
     color: inherit;
-    border: 0 none transparent;
+    border: 0 none;
     background: inherit;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -11801,7 +11674,7 @@ h6
 }
 .btn-group.open .dropdown-toggle.item-filter-city-button
 {
-    border: 0 none transparent;
+    border: 0 none;
     background: inherit;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -11875,7 +11748,7 @@ h6
 }
 .item-search-result:last-child
 {
-    border-bottom: 0 none transparent;
+    border-bottom: 0 none;
 }
 .item-search-result .col-main-full-height,
 .item-search-result .col-side-full-height
@@ -11932,15 +11805,6 @@ h6
  * CuyahogaRecycles.org theme
  */
 .inline-form .form-control
-{
-    display: inline-block;
-
-    width: auto;
-    min-width: 240px;
-
-    vertical-align: top;
-}
-.inline-form-xs .form-control
 {
     display: inline-block;
 
@@ -12218,15 +12082,14 @@ h6
 
     list-style: none;
 }
-.slidereveal-panel#panel-community ul li
+.slidereveal-panel#panel-community ul > li
 {
     margin: 0;
     padding: 0;
 
     border-bottom: 1px solid #91d100;
 }
-.slidereveal-panel#panel-community ul li a:link,
-.slidereveal-panel#panel-community ul li a:visited
+.slidereveal-panel#panel-community ul > li > a
 {
     display: block;
 
@@ -12235,18 +12098,16 @@ h6
 
     color: #00833e;
 }
-.slidereveal-panel#panel-community ul li a:link:hover,
-.slidereveal-panel#panel-community ul li a:visited:hover,
-.slidereveal-panel#panel-community ul li a:link:focus,
-.slidereveal-panel#panel-community ul li a:visited:focus,
-.slidereveal-panel#panel-community ul li a:link:active,
-.slidereveal-panel#panel-community ul li a:visited:active
+.slidereveal-panel#panel-community ul > li > a:hover,
+.slidereveal-panel#panel-community ul > li > a:focus,
+.slidereveal-panel#panel-community ul > li > a:active,
+.slidereveal-panel#panel-community ul > li > a:active
 {
     text-decoration: none;
 
     color: #fff;
 }
-.slidereveal-panel#panel-community ul li:last-child
+.slidereveal-panel#panel-community ul > li:last-child
 {
     border: none;
 }
@@ -12259,7 +12120,9 @@ h6
     background: none;
 }
 .slidereveal-panel#panel-community .btn-hollow-white:hover,
-.slidereveal-panel#panel-community .btn-hollow-white:focus
+.slidereveal-panel#panel-community .btn-hollow-white:focus,
+.slidereveal-panel#panel-community .btn-hollow-white:active,
+.slidereveal-panel#panel-community .btn-hollow-white.active
 {
     color: #fff;
     background: rgba(255, 255, 255, .1);

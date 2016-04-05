@@ -7,6 +7,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#26cad3" />
 
     <title>CuyahogaRecycles | Home</title>
 
@@ -32,13 +33,20 @@
 
     <header class="page-header bg-blue" role="banner">
 
+      <a href="#page-main" class="sr-only sr-only-focusable">Skip to main content</a>
+
       <div class="container-fluid page-header-upper">
         <div class="page-header-upper-content">
-          <button class="action-open-menu navbar-toggle pull-left" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <button
+            type="button"
+            class="action-open-menu navbar-toggle pull-left"
+            data-toggle="collapse"
+            data-target="#bs-navbar"
+            aria-controls="bs-navbar"
+            aria-expanded="false"
+          >
+            <i class="fa fa-bars"></i>
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
           </button>
           <div class="brand">
             <a href="#">
@@ -53,7 +61,7 @@
           <div class="page-header-upper-right">
             <div class="search-container">
               <label>Search Site</label>
-              <div id="sb-search" class="sb-search">
+              <div id="sb-search" class="sb-search" role="search">
                 <form>
                   <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
                   <input class="sb-search-submit" type="submit" value="">
@@ -238,9 +246,9 @@
 
             <div class="wdidw-wrapper">
               <div class="wdidw-button-wrapper">
-                <a class="wdidw-button wdidw-show" href="#!">
+                <button type="button" class="wdidw-button wdidw-show">
                   What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
-                </a>
+                </button>
               </div>
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
@@ -257,7 +265,7 @@
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
-                        <button class="btn btn-default wdidw-hide"><i class="fa fa-close"></i><span class="sr-only">Cancel search</span></button>
+                        <button type="button" class="btn btn-default wdidw-hide"><i class="fa fa-close"></i><span class="sr-only">Cancel search</span></button>
                       </span>
                     </div><!-- /.input-group -->
                   </form>
@@ -269,7 +277,7 @@
 
           <div class="col-side-full-height hidden-xs">
 
-            <a class="city-recycling-button action-open-community" href="#">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right"></i></a>
+            <button type="button" class="city-recycling-button action-open-community">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right"></i></button>
 
           </div><!-- /.header-infobar-left -->
 
@@ -279,7 +287,7 @@
 
     </header>
 
-    <main role="main">
+    <main role="main" tabindex="-1" id="page-main">
 
       <div class="container-content-default">
         <div class="container-fluid">
@@ -387,9 +395,9 @@
             </section>
 
             <ul class="item-color-key-list item-cat-selector">
-              <li><a href="#!" class="item-cat-selector-opt" aria-controls="item-basics-cat-home-recycling" data-item-key="home-recycling"><span class="item-color-key item-color-key-home-recycling"></span> In-home</a></li>
-              <li><a href="#!" class="item-cat-selector-opt" aria-controls="item-basics-cat-dropoff-recycling" data-item-key="dropoff-recycling"><span class="item-color-key item-color-key-dropoff-recycling"></span> Drop-off</a></li>
-              <li><a href="#!" class="item-cat-selector-opt" aria-controls="item-basics-cat-proper-disposal" data-item-key="proper-disposal"><span class="item-color-key item-color-key-proper-disposal"></span> Proper Disposal</a></li>
+              <li><a href="#item-basics-cat-home-recycling"    class="item-cat-selector-opt" data-item-key="home-recycling"    ><span class="item-color-key item-color-key-home-recycling"    ></span> In-home</a></li>
+              <li><a href="#item-basics-cat-dropoff-recycling" class="item-cat-selector-opt" data-item-key="dropoff-recycling" ><span class="item-color-key item-color-key-dropoff-recycling" ></span> Drop-off</a></li>
+              <li><a href="#item-basics-cat-proper-disposal"   class="item-cat-selector-opt" data-item-key="proper-disposal"   ><span class="item-color-key item-color-key-proper-disposal"   ></span> Proper Disposal</a></li>
             </ul>
 
           </article>
@@ -998,6 +1006,7 @@
 
     <!-- scripts -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
     <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../root/js/jquery.slidereveal.min.js"></script>
     <script type="text/javascript" src="../root/js/classie.js"></script>
@@ -1005,29 +1014,6 @@
     <script type="text/javascript" src="../root/js/typed.min.js"></script>
     <script type="text/javascript" src="../root/js/jquery.responsImg.min.js"></script>
     <script type="text/javascript" src="../root/js/global.js"></script>
-    <script type="text/javascript">
-      // Site Search
-      new UISearch( document.getElementById( 'sb-search' ) );
-    </script>
-    <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
-    <script type="text/javascript">
-      // Custom YouTube Play functionality
-      var player;
-
-      function onYouTubePlayerAPIReady () {
-        // create the global player from the specific iframe (#youtube-video)
-        player = new YT.Player( 'youtube-video', {
-          events: { onReady: onPlayerReady }
-        } );
-      }
-
-      function onPlayerReady ( e ) { // bind events
-        $( '.youtube-video-play-button' ).on( 'click', function () {
-          player.playVideo();
-          $( this ).addClass( 'video-playing' );
-        } );
-      }
-    </script>
     <!-- /scripts -->
 
   </body>

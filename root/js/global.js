@@ -8,12 +8,6 @@
 ;( function ( window, $ ) {
 
     //
-    // Functions
-    //
-
-    function roundUp ( w, cols ) { return w + cols - w % cols; }
-
-    //
     // Init
     //
 
@@ -22,6 +16,9 @@
         //
         // SlidePanel
         //
+
+        var panelMenu,
+            panelMenuBtn;
 
         var sliderPanelMenu = $( '#panel-menu' ).slideReveal( {
             width: 300,
@@ -35,9 +32,9 @@
                 $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
                 $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
                 },
-                hide: function ( slider, trigger ) {
-                    $( '#panel-community' ).slideReveal( 'hide' );
-                }
+            hide: function ( slider, trigger ) {
+                $( '#panel-community' ).slideReveal( 'hide' );
+            }
         } );
 
         if ( window.innerWidth > 767 ) {
@@ -224,28 +221,54 @@
             e.stopPropagation();
         });
 
+        // Site Search
+        new UISearch( document.getElementById( 'sb-search' ) );
+
         //
         // Item basics
         //
 
         $( '.item-basics' ).each( function ( i, elem ) {
+
             var $elem = $( elem );
+
+            // Add roles to sections
+            $elem
+                .find( '.item-basics-cat' )
+                .attr( 'role', 'tabpanel' );
+
+            // Add roles to list
+            $elem
+                .find( '.item-cat-selector' )
+                .attr( 'role', 'tablist' );
+
+            // Add click events to links
             $elem
                 .find( '.item-cat-selector-opt' )
+                .attr( 'role', 'tab' )
+                .each( function () {
+                    var $this = $( this );
+                    $this.attr(
+                        'aria-controls',
+                        $this.attr( 'href' ).substring( 1 )
+                    );
+                } )
                 .on( 'click', function () {
                     var $this = $( this ),
                         itemKey = $this.data( 'item-key' );
                     $elem
                         .find( '.item-cat-selector-opt' )
                         .removeClass( 'active' )
-                        .attr( 'aria-selected', 'false' );
+                        .attr( 'aria-selected', 'false' )
+                        .attr( 'tabindex', '0' );
                     $elem
                         .find( '.item-basics-cat' )
                         .removeClass( 'active' )
                         .attr( 'aria-hidden', 'true' );
                     $( this )
                         .addClass( 'active' )
-                        .attr( 'aria-selected', 'true' );
+                        .attr( 'aria-selected', 'true' )
+                        .attr( 'tabindex', '0' );
                     $elem
                         .find(
                             '.item-basics-cat[data-item-cat="' + itemKey + '"]'
@@ -253,9 +276,12 @@
                         .addClass( 'active' )
                         .attr( 'aria-hidden', 'false' );
                 } );
+
+            // Select first tab by default
             $elem
                 .find( '.item-cat-selector-opt' ).eq( 0 )
                 .trigger( 'click' );
+
         } );
 
         //
@@ -282,3 +308,29 @@
     } );
 
 } )( window, jQuery );
+
+//
+// Custom YouTube Play functionality
+//
+
+;( function () {
+
+    var player;
+
+    function onYouTubePlayerAPIReady () {
+      // create the global player from the specific iframe (#youtube-video)
+      player = new YT.Player( 'youtube-video', {
+        events: { onReady: onPlayerReady }
+      } );
+    }
+
+    function onPlayerReady ( e ) { // bind events
+      $( '.youtube-video-play-button' ).on( 'click', function () {
+        player.playVideo();
+        $( this ).addClass( 'video-playing' );
+      } );
+    }
+
+    window.onYouTubePlayerAPIReady = onYouTubePlayerAPIReady;
+
+} )();

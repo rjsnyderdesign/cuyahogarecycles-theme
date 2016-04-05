@@ -275,9 +275,14 @@
       }
     }
 
-    &.grid-cell-link-staff:hover {
-      .grid-cell-link-title {
-        margin-top: -100%;
+    &.grid-cell-link-staff {
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        .grid-cell-link-title {
+          margin-top: -100%;
+        }
       }
     }
   }

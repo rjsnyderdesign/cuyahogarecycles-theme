@@ -18,22 +18,21 @@
 
 .slidereveal-panel {
   &#panel-community {
+    z-index: 1050 !important;
     overflow: scroll;
     background: @brand-success;
-    z-index: 1050 !important;
 
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
 
-      li {
+      > li {
         margin: 0;
         padding: 0;
         border-bottom: 1px solid darken(@brand-success, 1%);
 
-        a:link,
-        a:visited {
+        > a {
           margin: 5px 0;
           padding: 5px 0;
           color: @brand-primary;
@@ -41,6 +40,7 @@
 
           &:hover,
           &:focus,
+          &:active,
           &:active {
             color: @white;
             text-decoration: none;
@@ -60,7 +60,9 @@
       border-color: fade(@white, 30%);
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:active,
+      &.active {
         background: fade(@white, 10%);
         color: @white;
       }

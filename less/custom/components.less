@@ -100,11 +100,11 @@ h1 {
 
 form {
   label {
-    .small-header
+    &:extend(.small-header);
   }
 
   .form-control {
-    .placeholder( @gray-lighter );
+    .placeholder( @gray-light );
   }
 }
 
@@ -122,7 +122,7 @@ form {
   margin-left: (@font-size-base * 2);
   margin-right: (@font-size-base * 2);
 
-  .transition(@transition: border-color @link-transition-speed, color @link-transition-speed;);
+  .transition(border-color @link-transition-speed, color @link-transition-speed;);
 
   &:focus,
   &:hover,
@@ -230,7 +230,7 @@ form {
     opacity: 0;
     z-index: -1;
 
-    .transition(@transition:opacity @link-transition-speed, z-index 0;);
+    .transition(opacity @link-transition-speed, z-index 0;);
   }
 
   > .video-play-title {
@@ -296,6 +296,17 @@ form {
   }
 }
 
+//
+// SlideReveal panels
+// --------------------------------------------------
+
+.slidereveal-panel {
+  max-width: @screen-xs-min;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
 
 //
 // Item basic 5 Do's and Don'ts
@@ -309,7 +320,7 @@ form {
   }
 
   > .item-basics-cat {
-    &:not(.active) {
+    &[role="tabpanel"]:not(.active) {
       display: none;
     }
   }
@@ -317,7 +328,7 @@ form {
 
 
 //
-// Page globals
+// Body
 // --------------------------------------------------
 
 body {
@@ -432,10 +443,12 @@ body {
 .header-infobar {
   height: 100%;
 
-  .col-main-full-height,
-  .col-side-full-height {
-    white-space: nowrap;
-    vertical-align: middle;
+  &.row-sm-full-height {
+    > .col-main-full-height,
+    > .col-side-full-height {
+      white-space: nowrap;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -445,6 +458,7 @@ body {
   display: block;
   padding: @navbar-padding-vertical (@grid-gutter-width / 2);
   background: @ccswd-green-2;
+  border: 0 none;
   border-left: 2px solid @ccswd-green-1;
   color: @ccswd-green-1;
 

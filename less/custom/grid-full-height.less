@@ -14,7 +14,7 @@
 // Full height grid mixins
 // --------------------------------------------------
 
-.row-full-height-default-padding {
+.row-full-height-default-padding() {
   margin-left:  ceil((@grid-gutter-width / -2));
   margin-right: floor((@grid-gutter-width / -2));
 
@@ -25,7 +25,7 @@
   }
 }
 
-.row-full-height-even-padding {
+.row-full-height-even-padding() {
   margin-left:  ceil((@grid-gutter-width / -2));
   margin-right: floor((@grid-gutter-width / -2));
 
@@ -44,7 +44,7 @@
   }
 }
 
-.row-full-height-no-padding {
+.row-full-height-no-padding() {
   margin-left:  0;
   margin-right: 0;
 
@@ -55,7 +55,7 @@
   }
 }
 
-.row-full-height {
+.row-full-height() {
   display: table;
 
   > .col-main-full-height,

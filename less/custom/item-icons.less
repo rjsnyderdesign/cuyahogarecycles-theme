@@ -105,7 +105,7 @@
         border-radius: @font-size-base;
         color: inherit;
 
-        .transition(@transition: border-color @link-transition-speed, color @link-transition-speed;);
+        .transition(border-color @link-transition-speed, color @link-transition-speed;);
 
         .item-color-key {
           background: none;
@@ -114,8 +114,7 @@
         &:hover,
         &:focus,
         &:active,
-        &.active,
-        &.selected {
+        &.active {
           text-decoration: none;
 
           &[data-item-key="home-recycling"]    { color: @ccswd-blue;    }
@@ -124,8 +123,7 @@
           &[data-item-key="compost"]           { color: @ccswd-green-1; }
         }
 
-        &.active,
-        &.selected {
+        &.active {
           background: none;
 
           .item-color-key.item-color-key-home-recycling    { background: @ccswd-blue;    }

@@ -74,7 +74,7 @@
 
 .btn-group .dropdown-toggle.item-filter-city-button {
   background: inherit;
-  border: 0 none transparent;
+  border: 0 none;
   color: inherit;
   font-size: @font-size-large;
 
@@ -85,7 +85,7 @@
 
 .btn-group.open .dropdown-toggle.item-filter-city-button {
   background: inherit;
-  border: 0 none transparent;
+  border: 0 none;
 
   .box-shadow(none);
 }
@@ -106,7 +106,7 @@
         padding: (@font-size-base / 4) @font-size-base;
         color: inherit;
 
-        .transition(@transition: background-color @link-transition-speed, color @link-transition-speed;);
+        .transition(background-color @link-transition-speed, color @link-transition-speed;);
 
         &:hover,
         &:focus,
@@ -150,7 +150,7 @@
   border-bottom: 2px solid @gray-lighter;
 
   &:last-child {
-    border-bottom: 0 none transparent;
+    border-bottom: 0 none;
   }
 
   .col-main-full-height,
