@@ -5,85 +5,161 @@
  * Global JS
  */
 
-;( function ( window, $ ) {
+;( function ( window, $, undefined ) {
+
+    //
+    // Custom YouTube Play functionality
+    //
+
+    ;( function () {
+
+        var player;
+
+        function onYouTubePlayerAPIReady () {
+          // create the global player from the specific iframe (#youtube-video)
+          player = new YT.Player( 'youtube-video', {
+            events: { onReady: onPlayerReady }
+          } );
+        }
+
+        function onPlayerReady ( e ) { // bind events
+          $( '.youtube-video-play-button' ).on( 'click', function () {
+            player.playVideo();
+            $( this ).addClass( 'video-playing' );
+          } );
+        }
+
+        window.onYouTubePlayerAPIReady = onYouTubePlayerAPIReady;
+
+    } )();
 
     //
     // Init
     //
 
-    $( window.document.body ).ready( function () {
+    var $window = $( window ),
+        $body   = $( window.document.body );
+
+    $body.ready( function () {
 
         //
-        // SlidePanel
+        // SlideReveal panels
         //
 
-        var $panelMenu = $( '#panel-menu' );
+        ( function () {
 
-        var $panelCommunity = $( '#panel-community' );
+            var slideRevealTransitionSpeed = 400,
+                $panelMenu = $( '#panel-menu' ),
+                $panelCommunity = $( '#panel-community' ),
+                $slideRevealShroud = $( '<div/>' ).addClass( 'slidereveal-shroud' ),
+                openedPanels = [],
+                windowSizeBefore = window.innerWidth;
 
-        var sliderPanelMenu = $panelMenu.slideReveal( {
-            width: 300,
-            position: 'right',
-            speed: 300,
-            trigger: $( '.action-open-menu' ),
-            push: true,
-            overlay: true,
-            show: function () { $( document.body ).addClass( 'noscroll' ); },
-            hidden: function ( slider, trigger ) {
-                // Close Sub Menu's when menu is hidden
-                $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
-                $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
-                $( document.body ).removeClass( 'noscroll' );
-            },
-            hide: function ( slider, trigger ) {
-                $( '#panel-community' ).slideReveal( 'hide' );
+            function pushShroud ( $slider, $trigger ) {
+                if ( $slider ) {
+                    $slideRevealShroud.css(
+                        'z-index',
+                        $slider.css( 'z-index' ) - 1
+                    );
+                }
             }
-        } );
 
-        if ( window.innerWidth > 767 ) {
-            var sliderPanelCommunity = $panelCommunity.slideReveal( {
-                width: 300,
+            function onShow ( $slider, $trigger ) {
+                $body.addClass( 'noscroll' );
+                $slideRevealShroud.addClass( 'active' );
+                pushShroud( $slider, $trigger );
+                $slider.addClass( 'active' );
+            }
+
+            function onShown ( $slider, $trigger ) {
+                openedPanels.push( $slider );
+            }
+
+            function onHide ( $slider, $trigger ) {
+                if ( openedPanels.length === 1 ) {
+                    $slideRevealShroud.removeClass( 'active' );
+                }
+                pushShroud( openedPanels[ openedPanels.length - 2 ], $trigger );
+            }
+
+            function onHidden ( $slider, $trigger ) {
+                $slider.removeClass( 'active' );
+                openedPanels.splice( $.inArray( $slider, openedPanels ), 1 );
+                if ( openedPanels.length === 0 ) {
+                    $body.removeClass( 'noscroll' );
+                }
+            }
+
+            $panelMenu.slideReveal( {
+                width: 320,
                 position: 'right',
-                speed: 300,
-                trigger: $( '.action-open-community' ),
-                push: true,
-                overlay: true
+                speed: slideRevealTransitionSpeed,
+                trigger: $( '.action-open-menu' ),
+                push: false,
+                overlay: false,
+                show: onShow,
+                shown: onShown,
+                hide: onHide,
+                hidden: function ( $slider, $trigger ) {
+                    // Close Sub Menu's when menu is hidden
+                    $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
+                    $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
+                    onHidden( $slider, $trigger );
+                }
             } );
-        }
-        else {
-            var sliderPanelMenu = $panelCommunity.slideReveal( {
+
+            $panelCommunity.slideReveal( {
                 width: 300,
                 position: 'right',
-                speed: 300,
+                speed: slideRevealTransitionSpeed,
                 trigger: $( '.action-open-community' ),
                 push: false,
-                overlay: false
+                overlay: false,
+                show: onShow,
+                shown: onShown,
+                hide: onHide,
+                hidden: onHidden
             } );
-        }
 
-        // Close Buttons
-        $panelMenu.find( '.btn-panel-close' ).on( 'click', function () {
-            $panelMenu.slideReveal( 'hide' );
-        } );
-        $panelCommunity.find( '.btn-panel-close' ).on( 'click', function () {
-            $panelCommunity.slideReveal( 'hide' );
-        } );
+            // Close panel
+            $( '.slidereveal-panel' )
+                .find( '.btn-panel-close' )
+                .on( 'click', function () {
+                    $( this ).parents( '.slidereveal-panel' ).slideReveal( 'hide' );
+                } );
 
-        // Remove extra overlays
-        while ( $( '.slide-reveal-overlay' ).length > 1 ) {
-            $( '.slide-reveal-overlay' ).eq( 0 ).remove();
-        }
+            // Add custom overlay
+            $body.append( $slideRevealShroud );
+            $slideRevealShroud.on( 'click', function ( e ) {
+                var $panel = openedPanels[ openedPanels.length - 1 ];
+                if ( $panel ) {
+                    $panel.slideReveal( 'hide' );
+                }
+            } );
+
+            // Window resize event
+            $window.on( 'resize', function () {
+                var windowSizeAfter = window.innerWidth;
+                if ( windowSizeBefore < 768 && windowSizeAfter >= 768 ) {
+                    $panelMenu.slideReveal( 'hide' );
+                }
+                windowSizeBefore = windowSizeAfter;
+            } );
+
+        } )();
 
         //
         // What Do I Do With?
         //
 
+        var $wdidwSearchBar = $( '.wdidw-search-bar' );
+
         $( '.wdidw-show' ).on( 'click', function () {
-            $( '.wdidw-search-bar' ).addClass( 'active' );
+            $wdidwSearchBar.addClass( 'active' );
         } );
 
         $( '.wdidw-hide' ).on( 'click', function () {
-            $( '.wdidw-search-bar' ).removeClass( 'active' );
+            $wdidwSearchBar.removeClass( 'active' );
         } );
 
         // Letter typing animation
@@ -108,117 +184,127 @@
         //
 
         $( '.mega-menu .dropdown-menu a.trigger' ).on( 'click' , function ( e ) {
-            var current = $( this ).next();
-            var grandparent = $( this ).parent().parent();
-            if ( $( this ).hasClass( 'selected' ) ) {
-                $( this ).removeClass( 'selected' );
-                grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
+            var $this        = $( this ),
+                $current     = $this.next(),
+                $grandparent = $this.parent().parent();
+            if ( $this.hasClass( 'selected' ) ) {
+                $this.removeClass( 'selected' );
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
             }
             else {
-                grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
-                $( this ).addClass( 'selected' );
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
+                $this.addClass( 'selected' );
             }
-            grandparent.find( '.sub-menu:visible' ).not( current ).hide();
-            current.toggle();
+            $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
+            $current.toggle();
             e.preventDefault()
             e.stopPropagation();
         } );
 
         $( '.mega-menu .dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
-            var root = $( this ).closest( '.dropdown' );
+            var $root = $( this ).closest( '.dropdown' );
             $( '.trigger' ).removeClass( 'selected' );
-            root.find( '.sub-menu:not(.first)' ).hide();
+            $root.find( '.sub-menu:not(.first)' ).hide();
         });
 
         //
         // New mega menu (hover)
         //
 
-        var $mainMenu = $( '.mega-menu' ),
-            submenuEnterSpeed = 400,
-            submenuExitSpeed  = submenuEnterSpeed / 2;
+        ( function () {
 
-        var megaMenu = {
-            init: function () {
-                var that = this;
-                $( '.mega-menu li a' ).hover(
-                    function () { that.enter( this ); },
-                    function () { that.exit( this ); }
-                );
-            },
-            menu: $mainMenu,
-            currentItem: null,
-            nextItem: null,
-            enter: function ( elem ) {
-                var $elem = $( elem ),
-                    subMenuKey = $elem.data( 'dropdown-controls' ),
-                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
-                $elem.parent().addClass( 'selected' );
+            var $mainMenu = $( '.mega-menu' ),
+                onExit    = null;
+
+            function openMenu ( $subMenu ) {
                 $mainMenu.addClass( 'open' );
                 $subMenu.addClass( 'open' );
-                $subMenu.hover(
-                    function () {
-                        var $this = $( this );
-                        $this.addClass( 'open' );
-                        $mainMenu.addClass( 'open' );
-                    },
-                    function () {
-                        var $this = $( this );
-                        $this.removeClass( 'open' );
-                        $mainMenu.removeClass( 'open' );
-                        $this.find( '.sub-menu:not(.first)' ).hide();
-                        $this.find( 'li > a.trigger' ).removeClass( 'selected' );
-                    }
-                );
-            },
-            exit: function ( elem ) {
-                var $elem = $( elem ),
-                    subMenuKey = $elem.data( 'dropdown-controls' ),
-                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
-                $elem.parent().removeClass( 'selected' );
+            }
+
+            function closeMenu ( $subMenu ) {
                 $mainMenu.removeClass( 'open' );
                 $subMenu.removeClass( 'open' );
                 $subMenu.find( '.sub-menu:not(.first)' ).hide();
                 $subMenu.find( 'li > a.trigger' ).removeClass( 'selected' );
             }
-        };
 
-        megaMenu.init();
+            function enter ( elem ) {
+                var $elem = $( elem ),
+                    subMenuKey = $elem.data( 'dropdown-controls' ),
+                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
+                $elem.parent().addClass( 'selected' );
+                openMenu( $subMenu );
+                $subMenu.hover(
+                    function () {
+                        // Ensures smooth transition when moving from link
+                        // to submenu
+                        onExit = null;
+                        openMenu( $( this ) );
+                    },
+                    function () {
+                        closeMenu( $( this ) );
+                    }
+                );
+            }
+
+            function exit ( elem ) {
+                var $elem = $( elem ),
+                    subMenuKey = $elem.data( 'dropdown-controls' ),
+                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
+                $elem.parent().removeClass( 'selected' );
+                onExit = closeMenu;
+                window.setTimeout( function () {
+                    if ( typeof onExit === 'function' ) {
+                        onExit( $subMenu );
+                    }
+                }, 0 );
+            }
+
+            function init () {
+                $( '.navbar-primary li a' ).hover(
+                    function () { enter( this ); },
+                    function () { exit( this ); }
+                );
+            }
+
+            init();
+
+        } )();
 
         //
         // Mobile menu + Sub menus
         //
 
-        $("#panel-menu .dropdown a.trigger").on("click",function(e){
-            var current = $(this).next();
-            var grandparent = $(this).parent().parent();
-
-            if($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-                if($(this).parent().hasClass('dropdown')) {
-                  grandparent = $(this).parent();
+        $( '#panel-menu .dropdown a.trigger' ).on( 'click', function ( e ) {
+            var $this        = $( this ),
+                $current     = $this.next(),
+                $grandparent = $this.parent().parent();
+            if ( $this.hasClass( 'selected' ) ) {
+                $this.removeClass( 'selected' );
+                if ( $this.parent().hasClass( 'dropdown' ) ) {
+                    $grandparent = $this.parent();
                 }
-                grandparent.find('li > a.trigger').removeClass('selected');
-                grandparent.find(".sub-menu:visible").not(current).slideUp(400);
-                current.slideUp(400);
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
+                $grandparent.find( '.sub-menu:visible' ).not( $current ).slideUp( 400 );
+                $current.slideUp( 400 );
             }
             else {
-                $(this).addClass('selected');
-                current.slideDown(400);
+                $this.addClass( 'selected' );
+                $current.slideDown( 400 );
             }
-
             e.preventDefault()
             e.stopPropagation();
         });
-        $(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
-            var root=$(this).closest('.dropdown');
-            $('.trigger').removeClass('selected');
-            root.find('.sub-menu:not(.first)').slideUp(400);
+
+        $( '.dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
+            var $root = $( this ).closest( '.dropdown' );
+            $( '.trigger' ).removeClass( 'selected' );
+            $root.find( '.sub-menu:not(.first)' ).slideUp( 400 );
         });
 
-        var closeMobileDropdown = function() {
-            $("#panel-menu .dropdown").find('.trigger').removeClass('selected');
-            $("#panel-menu .dropdown").find('.sub-menu').hide();
+        var closeMobileDropdown = function () {
+            $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
+            $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
         };
 
         //
@@ -233,7 +319,7 @@
         });
 
         // Site Search
-        new UISearch( document.getElementById( 'sb-search' ) );
+        new UISearch( window.document.getElementById( 'sb-search' ) );
 
         //
         // Item basics
@@ -329,29 +415,3 @@
     } );
 
 } )( window, jQuery );
-
-//
-// Custom YouTube Play functionality
-//
-
-;( function () {
-
-    var player;
-
-    function onYouTubePlayerAPIReady () {
-      // create the global player from the specific iframe (#youtube-video)
-      player = new YT.Player( 'youtube-video', {
-        events: { onReady: onPlayerReady }
-      } );
-    }
-
-    function onPlayerReady ( e ) { // bind events
-      $( '.youtube-video-play-button' ).on( 'click', function () {
-        player.playVideo();
-        $( this ).addClass( 'video-playing' );
-      } );
-    }
-
-    window.onYouTubePlayerAPIReady = onYouTubePlayerAPIReady;
-
-} )();
