@@ -152,32 +152,36 @@
         // What Do I Do With?
         //
 
-        var $wdidwSearchBar = $( '.wdidw-search-bar' );
+        ( function () {
 
-        $( '.wdidw-show' ).on( 'click', function () {
-            $wdidwSearchBar.addClass( 'active' );
-        } );
+            var $wdidwSearchBar = $( '.wdidw-search-bar' );
 
-        $( '.wdidw-hide' ).on( 'click', function () {
-            $wdidwSearchBar.removeClass( 'active' );
-        } );
+            $( '.wdidw-show' ).on( 'click', function () {
+                $wdidwSearchBar.addClass( 'active' );
+            } );
 
-        // Letter typing animation
-        $( '.wdidw-animated-term' ).typed( {
-            backDelay: 800,
-            backSpeed: 50,
-            loop: true,
-            showCursor: false,
-            startDelay: 800,
-            strings: [
-                'Cans',
-                'Cartons',
-                'Glass',
-                'Paper',
-                'Plastic'
-            ],
-            typeSpeed: 100
-        } );
+            $( '.wdidw-hide' ).on( 'click', function () {
+                $wdidwSearchBar.removeClass( 'active' );
+            } );
+
+            // Letter typing animation
+            $( '.wdidw-animated-term' ).typed( {
+                backDelay: 800,
+                backSpeed: 50,
+                loop: true,
+                showCursor: false,
+                startDelay: 800,
+                strings: [
+                    'Cans',
+                    'Cartons',
+                    'Glass',
+                    'Paper',
+                    'Plastic'
+                ],
+                typeSpeed: 100
+            } );
+
+        } )();
 
         //
         // Header sticky
@@ -262,7 +266,7 @@
         });
 
         //
-        // New mega menu (hover)
+        // Desktop mega menu
         //
 
         ( function () {
@@ -326,7 +330,7 @@
         } )();
 
         //
-        // Mobile menu + Sub menus
+        // Mobile menu
         //
 
         $( '#panel-menu .dropdown a.trigger' ).on( 'click', function ( e ) {
@@ -379,24 +383,66 @@
         // Item basics
         //
 
-        $( '.item-basics' ).each( function ( i, elem ) {
+        ( function () {
 
-            var $elem = $( elem );
+            //
+            // Slideshow select funcitonality
+            //
 
-            // Add roles to sections
-            $elem
-                .find( '.item-basics-cat' )
-                .attr( 'role', 'tabpanel' );
+            var $itemBasics = $( '.item-basics' ),
+                $itemBasicsCats = $itemBasics.find( '.item-basics-cat' ),
+                $itemCatSelectors = $itemBasics.find( '.item-cat-selector' ),
+                $itemCatSelectorOpts = $itemBasics.find( '.item-cat-selector-opt' ),
+                $itemFigures = $itemBasics.find( '.item-figure' ),
+                $itemCoins = $itemFigures.addClass( 'item-coin' );
 
-            // Add roles to list
-            $elem
-                .find( '.item-cat-selector' )
-                .attr( 'role', 'tablist' );
+            var flipInterval = 100,
+                flipDelay = flipInterval * 5;
 
-            // Add click events to links
-            $elem
-                .find( '.item-cat-selector-opt' )
-                .attr( 'role', 'tab' )
+            // Add ARIA roles
+            $itemBasicsCats.attr( 'role', 'tabpanel' );
+            $itemCatSelectors.attr( 'role', 'tablist' );
+            $itemCatSelectorOpts.attr( 'role', 'tab' );
+
+            function flipNext ( $elem ) {
+
+                var itemKey = $elem.data( 'item-key' ),
+                    $itemBasicsCat = $itemBasics.find( '.item-basics-cat[data-item-cat="' + itemKey + '"]' );
+
+                // flip
+                $itemCoins
+                    .addClass( 'item-coin-flip' );
+
+                window.setTimeout( function () {
+
+                    // hide
+                    $itemCatSelectorOpts
+                        .removeClass( 'active' )
+                        .attr( 'aria-selected', 'false' )
+                        .attr( 'tabindex', '0' );
+                    $itemBasicsCats
+                        .removeClass( 'active' )
+                        .attr( 'aria-hidden', 'true' );
+
+                    // show
+                    $elem
+                        .addClass( 'active' )
+                        .attr( 'aria-selected', 'true' )
+                        .attr( 'tabindex', '0' );
+                    $itemBasicsCat
+                        .addClass( 'active' )
+                        .attr( 'aria-hidden', 'false' );
+
+                    // unflip
+                    window.setTimeout( function () {
+                        $itemCoins.removeClass( 'item-coin-flip' );
+                    }, flipInterval );
+
+                }, flipDelay );
+            }
+
+            // Add events to links
+            $itemCatSelectorOpts
                 .each( function () {
                     var $this = $( this );
                     $this.attr(
@@ -405,36 +451,48 @@
                     );
                 } )
                 .on( 'click', function ( e ) {
-                    var $this = $( this ),
-                        itemKey = $this.data( 'item-key' );
+                    flipNext( $( this ) );
+                    stop();
                     e.preventDefault();
-                    $elem
-                        .find( '.item-cat-selector-opt' )
-                        .removeClass( 'active' )
-                        .attr( 'aria-selected', 'false' )
-                        .attr( 'tabindex', '0' );
-                    $elem
-                        .find( '.item-basics-cat' )
-                        .removeClass( 'active' )
-                        .attr( 'aria-hidden', 'true' );
-                    $( this )
-                        .addClass( 'active' )
-                        .attr( 'aria-selected', 'true' )
-                        .attr( 'tabindex', '0' );
-                    $elem
-                        .find(
-                            '.item-basics-cat[data-item-cat="' + itemKey + '"]'
-                        )
-                        .addClass( 'active' )
-                        .attr( 'aria-hidden', 'false' );
+                } )
+                .on( 'blur', function ( e ) {
+                    start();
                 } );
 
             // Select first tab by default
-            $elem
-                .find( '.item-cat-selector-opt' ).eq( 0 )
-                .trigger( 'click' );
+            $itemCatSelectorOpts.eq( 0 ).trigger( 'click' );
 
-        } );
+            //
+            // Automatic slideshow
+            //
+
+            var currentSlide = 0,
+                slideShowLength = 3,
+                slideShowInteval = 5000,
+                slideShowTimeout = null;
+
+            function start () {
+                slideShowTimeout = window.setTimeout( next, slideShowInteval );
+            }
+
+            function stop () { window.clearTimeout( slideShowTimeout ); }
+
+            function next () {
+                currentSlide += 1;
+                if ( currentSlide >= slideShowLength ) { currentSlide = 0; }
+                flipNext( $itemCatSelectorOpts.eq( currentSlide ) );
+                start();
+            }
+
+            start();
+
+        } )();
+
+        //
+        // Item coin flip animations
+        //
+
+        1;
 
         //
         // Responsive images

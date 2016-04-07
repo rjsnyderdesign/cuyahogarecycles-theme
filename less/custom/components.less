@@ -319,6 +319,31 @@ form {
 // Item basic 5 Do's and Don'ts
 // --------------------------------------------------
 
+@item-coin-delay-interval: 100ms;
+
+.item-coin-delay(@i: 1; @length: 5) when (@i <= @length) {
+  @delay: (@item-coin-delay-interval * (@i - 1));
+
+  &:nth-child(@{i}) {
+    .transition-transform(@link-transition-speed ease @delay);
+  }
+
+  .item-coin-delay((@i + 1));
+}
+
+.item-coin {
+  backface-visibility: hidden;
+
+  .transform-origin(center center);
+  .rotateY(0deg);
+
+  .item-coin-delay(1; 5);
+
+  &.item-coin-flip {
+    .rotateY(180deg);
+  }
+}
+
 .item-basics {
   > .item-basics-cat,
   > .item-cat-selector {
