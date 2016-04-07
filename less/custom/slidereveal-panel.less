@@ -16,9 +16,10 @@
 
 .slidereveal-panel {
   max-width: @screen-xs-min;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   top: 0;
-  right: 100%;
+  right: -100%;
   z-index: @slidereveal-z-index-base;
   padding-bottom: (@slidereveal-panel-bar-height * 3);
 
@@ -54,7 +55,7 @@
     background: none;
     font-size: (@font-size-base * 2);
 
-    .link-effect(@brand-danger);
+    .link-fx-nav(@brand-danger; @brand-danger);
   }
 
   .search-container {

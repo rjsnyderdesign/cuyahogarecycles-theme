@@ -6,16 +6,89 @@
 // Links
 // --------------------------------------------------
 
-.link-effect(@color: @brand-info) {
+.link-fx-text(@color-hover: @brand-info; @color-active: @brand-success) {
   cursor: pointer;
+  text-decoration: underline;
 
   .transition(color @link-transition-speed);
 
   &:hover,
-  &:focus,
+  &:focus {
+    color: @color-hover;
+  }
+
   &:active,
   &.active {
-    color: @color;
+    color: @color-active;
+
+    .transition(color 0s);
+  }
+}
+
+.link-fx-color(@color-hover: @brand-info; @color-active: @brand-success) {
+  cursor: pointer;
+  text-decoration: none;
+
+  .transition(color @link-transition-speed);
+
+  &:hover,
+  &:focus {
+    color: @color-hover;
     text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    color: @color-active;
+
+    .transition(color 0s);
+  }
+}
+
+.link-fx-nav(@color-hover: @brand-info; @color-active: @brand-success) {
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  .transition(color @link-transition-speed);
+
+  &:hover,
+  &:focus {
+    background: none;
+    color: @color-hover;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    color: @color-active;
+
+    .transition(color 0s);
+  }
+}
+
+.link-fx-btn(@color-hover: @brand-info; @color-active: @brand-success) {
+  cursor: pointer;
+  text-decoration: none;
+
+  .transition(
+    border-color @link-transition-speed,
+    color @link-transition-speed;
+  );
+
+  &:hover,
+  &:focus {
+    border-color: @color-hover;
+    color: @color-hover;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    border-color: @color-active;
+    color: @color-active;
+
+    .transition(border-color 0s, color 0s;);
   }
 }

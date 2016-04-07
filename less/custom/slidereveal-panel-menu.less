@@ -27,10 +27,9 @@
   .sub-menu {
     > li {
       > a {
-        color: @white;
         text-transform: uppercase;
 
-        .link-effect(@brand-info);
+        .link-fx-nav(@brand-info; @brand-success);
 
         &:hover,
         &:focus {
@@ -117,24 +116,16 @@
   .panel-social-links {
     margin-top: 32px;
 
-    .social-links;
+    &:extend(.social-links all);
 
     > li {
       > a {
         @social-link-size: 40px;
         width: @social-link-size;
         height: @social-link-size;
-        line-height: @social-link-size;
+        line-height: (@social-link-size - 4px);
 
-        .transition(border-color @link-transition-speed, color @link-transition-speed;);
-
-        &:focus,
-        &:hover,
-        &:active,
-        &.active {
-          color: @brand-info;
-          border-color: @brand-info;
-        }
+        .link-fx-btn(@brand-info; @brand-success);
       }
     }
   }

@@ -76,7 +76,7 @@
       background: none;
       border: 0 none;
 
-      .link-effect(@brand-danger);
+      .link-fx-nav(@brand-danger; @brand-danger);
     }
   }
 }
@@ -84,7 +84,7 @@
 .btn-item-filter-clear {
   width: 100%;
 
-  .btn-hollow(@gray, @brand-danger);
+  .btn-hollow(@gray; @brand-danger);
 }
 
 
@@ -95,10 +95,9 @@
 .btn-group .dropdown-toggle.item-filter-city-button {
   background: inherit;
   border: 0 none;
-  color: inherit;
   font-size: @font-size-large;
 
-  .link-effect(@brand-info);
+  .link-fx-nav(@brand-info; @brand-success);
 
   .box-shadow(none);
 }
@@ -126,16 +125,7 @@
         padding: (@font-size-base / 4) @font-size-base;
         color: inherit;
 
-        .transition(background-color @link-transition-speed, color @link-transition-speed;);
-
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          background-color: @gray-lighter;
-          color: @brand-info;
-          text-decoration: none;
-        }
+        .link-fx-nav(@brand-info; @brand-success);
       }
     }
   }
@@ -193,10 +183,9 @@
 }
 
 .item-search-result-link {
-  color: inherit;
   font-size: (@font-size-base * 3);
 
-  .link-effect(@brand-info);
+  .link-fx-nav(@brand-info; @brand-success);
 }
 
 
