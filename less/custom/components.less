@@ -358,33 +358,34 @@ body {
 // --------------------------------------------------
 
 .page-header {
+  width: 100%;
   background: @brand-info;
   color: @white;
 
   .page-header-upper {
     padding-top: (@font-size-base * 2);
+  }
 
-    .page-header-upper-content {
-      width: 100%;
-      position: relative;
-    }
+  .page-header-upper-content {
+    width: 100%;
+    position: relative;
+  }
 
-    .page-header-upper-right {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-    }
+  .page-header-upper-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
 
-    .login-link {
-      font-size: 12px;
-      font-weight: normal;
-      text-transform: uppercase;
-      margin-right: 20px;
-      padding-top: 7px;
+  .login-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-right: 20px;
+    padding-top: 7px;
 
-      .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
-    }
+    .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
   }
 }
 

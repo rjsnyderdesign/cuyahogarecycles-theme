@@ -9439,6 +9439,8 @@ body.noscroll
 }
 .page-header
 {
+    width: 100%;
+
     color: #fff;
     background: #26cad3;
 }
@@ -9446,13 +9448,13 @@ body.noscroll
 {
     padding-top: 32px;
 }
-.page-header .page-header-upper .page-header-upper-content
+.page-header .page-header-upper-content
 {
     position: relative;
 
     width: 100%;
 }
-.page-header .page-header-upper .page-header-upper-right
+.page-header .page-header-upper-right
 {
     position: absolute;
     top: 0;
@@ -9460,7 +9462,7 @@ body.noscroll
 
     width: 100%;
 }
-.page-header .page-header-upper .login-link
+.page-header .login-link
 {
     font-size: 12px;
     font-weight: normal;
@@ -9478,16 +9480,16 @@ body.noscroll
     color: inherit;
     background: none;
 }
-.page-header .page-header-upper .login-link:hover,
-.page-header .page-header-upper .login-link:focus
+.page-header .login-link:hover,
+.page-header .login-link:focus
 {
     text-decoration: none;
 
     color: #1a8c92;
     background: none;
 }
-.page-header .page-header-upper .login-link:active,
-.page-header .page-header-upper .login-link.active
+.page-header .login-link:active,
+.page-header .login-link.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -10316,6 +10318,21 @@ h6
 .main-menu-dropdown img
 {
     max-width: 100%;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.page-header.header-sticky
+{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+.page-header.header-sticky.header-sticky-fixed
+{
+    position: fixed;
+    top: 0;
 }
 /*!
  * CuyahogaRecycles.org theme

@@ -180,6 +180,60 @@
         } );
 
         //
+        // Header sticky
+        //
+
+        ( function () {
+
+            var $pageHeader = $( '.page-header' ),
+                $pageHeaderParent = $pageHeader.parent(),
+                pageHeaderHeight = $pageHeader.height(),
+                scrollTopBefore = $window.scrollTop();
+
+            $pageHeader.addClass( 'header-sticky' );
+            $pageHeaderParent.css( 'padding-top', pageHeaderHeight );
+
+            $window.on( 'scroll', function () {
+
+                var scrollTopAfter = $window.scrollTop(),
+                    headerTop = $pageHeader.offset().top,
+                    isScrollTopAboveHeaderBottom = headerTop + pageHeaderHeight > scrollTopAfter,
+                    isScrollTopAboveHeaderTop = headerTop >= scrollTopAfter;
+
+                if ( scrollTopAfter < scrollTopBefore ) { // on scroll up
+                    if ( isScrollTopAboveHeaderBottom ) {
+                        if ( isScrollTopAboveHeaderTop ) {
+                            $pageHeader.addClass( 'header-sticky-fixed' );
+                            $pageHeader.css( 'top', '' );
+                        }
+                    }
+                    else {
+                        $pageHeader.removeClass( 'header-sticky-fixed' );
+                        $pageHeader.css( 'top', scrollTopAfter - pageHeaderHeight );
+                    }
+
+                }
+                else {  // on scroll down
+                    if ( isScrollTopAboveHeaderBottom ) {
+                        if ( $pageHeader.hasClass( 'header-sticky-fixed' ) ) {
+                            $pageHeader.removeClass( 'header-sticky-fixed' );
+                            $pageHeader.css( 'top', scrollTopAfter );
+                        }
+                    }
+                }
+
+                scrollTopBefore = scrollTopAfter;
+
+            } );
+
+            $window.on( 'resize', function () {
+                pageHeaderHeight = $pageHeader.height();
+                $pageHeaderParent.css( 'padding-top', pageHeaderHeight );
+            } );
+
+        } )();
+
+        //
         // Mega menu + Sub menus
         //
 
