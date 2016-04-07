@@ -10336,11 +10336,11 @@ h6
 
     color: #415e78;
 }
-.main-menu-dropdown .dropdown-menu > li > a.selected
+.main-menu-dropdown .dropdown-menu > li > a.open
 {
     color: #95d600;
 }
-.main-menu-dropdown .dropdown-menu > li > a.selected .fa
+.main-menu-dropdown .dropdown-menu > li > a.open .fa
 {
     color: #5e85a7;
 }
@@ -10379,11 +10379,20 @@ h6
     z-index: 1000;
     top: 0;
     left: 0;
+
+    -webkit-transition: -webkit-box-shadow 400ms;
+         -o-transition:         box-shadow 400ms;
+            transition:         box-shadow 400ms;
 }
 .page-header.header-sticky.header-sticky-fixed
 {
     position: fixed;
     top: 0;
+}
+.page-header.header-sticky.header-sticky-detached
+{
+    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .5);
+            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .5);
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -12376,13 +12385,13 @@ h6
 {
     display: none;
 }
-.slidereveal-panel#panel-menu .nav > li > a.selected,
-.slidereveal-panel#panel-menu .sub-menu > li > a.selected
+.slidereveal-panel#panel-menu .nav > li > a.open,
+.slidereveal-panel#panel-menu .sub-menu > li > a.open
 {
     color: #95d600;
 }
-.slidereveal-panel#panel-menu .nav > li > a.selected .fa,
-.slidereveal-panel#panel-menu .sub-menu > li > a.selected .fa
+.slidereveal-panel#panel-menu .nav > li > a.open .fa,
+.slidereveal-panel#panel-menu .sub-menu > li > a.open .fa
 {
     -webkit-transform: rotateZ(45deg);
         -ms-transform: rotateZ(45deg);

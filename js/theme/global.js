@@ -102,7 +102,7 @@
                 hide: onHide,
                 hidden: function ( $slider, $trigger ) {
                     // Close Sub Menu's when menu is hidden
-                    $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
+                    $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'open' );
                     $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
                     onHidden( $slider, $trigger );
                 }
@@ -204,6 +204,13 @@
                     isScrollTopAboveHeaderBottom = headerTop + pageHeaderHeight > scrollTopAfter,
                     isScrollTopAboveHeaderTop = headerTop >= scrollTopAfter;
 
+                if ( scrollTopAfter > pageHeaderHeight ) {
+                  $pageHeader.addClass( 'header-sticky-detached' );
+                }
+                else {
+                  $pageHeader.removeClass( 'header-sticky-detached' );
+                }
+
                 if ( scrollTopAfter < scrollTopBefore ) { // on scroll up
                     if ( isScrollTopAboveHeaderBottom ) {
                         if ( isScrollTopAboveHeaderTop ) {
@@ -241,29 +248,36 @@
         // Mega menu + Sub menus
         //
 
-        $( '.mega-menu .dropdown-menu a.trigger' ).on( 'click' , function ( e ) {
-            var $this        = $( this ),
-                $current     = $this.next(),
-                $grandparent = $this.parent().parent();
-            if ( $this.hasClass( 'selected' ) ) {
-                $this.removeClass( 'selected' );
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
-            }
-            else {
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
-                $this.addClass( 'selected' );
-            }
-            $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
-            $current.toggle();
-            e.preventDefault()
-            e.stopPropagation();
-        } );
+        ( function () {
 
-        $( '.mega-menu .dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
-            var $root = $( this ).closest( '.dropdown' );
-            $( '.trigger' ).removeClass( 'selected' );
-            $root.find( '.sub-menu:not(.first)' ).hide();
-        });
+            function expand ( e ) {
+                var $this        = $( this ),
+                    $current     = $this.next(),
+                    $grandparent = $this.parent().parent();
+                $grandparent.find( 'li > a.trigger' ).not( $this ).removeClass( 'open' );
+                $this.addClass( 'open' );
+                $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
+                $current.show();
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function collapse ( e ) {
+                var $this        = $( this ),
+                    $grandparent = $this.parent().parent();
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
+                $grandparent.find( '.sub-menu' ).hide();
+            }
+
+            $( '.mega-menu .dropdown-menu a.trigger' )
+                .on( 'mouseover', expand )
+                .on( 'focus', expand );
+
+            $( '.mega-menu .dropdown-menu a:not(.trigger)' )
+                .on( 'mouseover', collapse )
+                .on( 'focus', collapse );
+
+        } )();
 
         //
         // Desktop mega menu
@@ -274,6 +288,11 @@
             var $mainMenu = $( '.mega-menu' ),
                 onExit    = null;
 
+            function getSubMenu ( $elem ) {
+                var subMenuKey = $elem.data( 'dropdown-controls' );
+                return $( '[data-dropdown="' + subMenuKey + '"]' );
+            }
+
             function openMenu ( $subMenu ) {
                 $mainMenu.addClass( 'open' );
                 $subMenu.addClass( 'open' );
@@ -283,14 +302,11 @@
                 $mainMenu.removeClass( 'open' );
                 $subMenu.removeClass( 'open' );
                 $subMenu.find( '.sub-menu:not(.first)' ).hide();
-                $subMenu.find( 'li > a.trigger' ).removeClass( 'selected' );
+                $subMenu.find( 'li > a.trigger' ).removeClass( 'open' );
             }
 
-            function enter ( elem ) {
-                var $elem = $( elem ),
-                    subMenuKey = $elem.data( 'dropdown-controls' ),
-                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
-                $elem.parent().addClass( 'selected' );
+            function enter ( $elem ) {
+                var $subMenu = getSubMenu( $elem );
                 openMenu( $subMenu );
                 $subMenu.hover(
                     function () {
@@ -305,11 +321,8 @@
                 );
             }
 
-            function exit ( elem ) {
-                var $elem = $( elem ),
-                    subMenuKey = $elem.data( 'dropdown-controls' ),
-                    $subMenu = $( '[data-dropdown="' + subMenuKey + '"]' );
-                $elem.parent().removeClass( 'selected' );
+            function exit ( $elem ) {
+                var $subMenu = getSubMenu( $elem );
                 onExit = closeMenu;
                 window.setTimeout( function () {
                     if ( typeof onExit === 'function' ) {
@@ -319,10 +332,28 @@
             }
 
             function init () {
-                $( '.navbar-primary li a' ).hover(
-                    function () { enter( this ); },
-                    function () { exit( this ); }
-                );
+
+                $( '.navbar-primary li a' )
+                    .hover(
+                        function () { enter( $( this ) ); },
+                        function () { exit( $( this ) ); }
+                    )
+                    .focus(
+                        function () { openMenu( getSubMenu( $( this ) ) ); }
+                    )
+                    .blur(
+                        function () { closeMenu( getSubMenu( $( this ) ) ); }
+                    );
+
+                $mainMenu
+                    .find( 'a' )
+                    .focus( function () {
+                        onExit = null;
+                        openMenu( $( this ).closest( '.main-menu-dropdown' ) );
+                    } )
+                    .blur( function () {
+                        closeMenu( $( this ).closest( '.main-menu-dropdown' ) );
+                    } );
             }
 
             init();
@@ -337,17 +368,17 @@
             var $this        = $( this ),
                 $current     = $this.next(),
                 $grandparent = $this.parent().parent();
-            if ( $this.hasClass( 'selected' ) ) {
-                $this.removeClass( 'selected' );
+            if ( $this.hasClass( 'open' ) ) {
+                $this.removeClass( 'open' );
                 if ( $this.parent().hasClass( 'dropdown' ) ) {
                     $grandparent = $this.parent();
                 }
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'selected' );
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
                 $grandparent.find( '.sub-menu:visible' ).not( $current ).slideUp( 400 );
                 $current.slideUp( 400 );
             }
             else {
-                $this.addClass( 'selected' );
+                $this.addClass( 'open' );
                 $current.slideDown( 400 );
             }
             e.preventDefault()
@@ -356,12 +387,12 @@
 
         $( '.dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
             var $root = $( this ).closest( '.dropdown' );
-            $( '.trigger' ).removeClass( 'selected' );
+            $( '.trigger' ).removeClass( 'open' );
             $root.find( '.sub-menu:not(.first)' ).slideUp( 400 );
         });
 
         var closeMobileDropdown = function () {
-            $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'selected' );
+            $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'open' );
             $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
         };
 

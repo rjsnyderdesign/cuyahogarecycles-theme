@@ -23,10 +23,10 @@
   z-index: @slidereveal-z-index-base;
   padding-bottom: (@slidereveal-panel-bar-height * 3);
 
-  .transition(box-shadow @slidereveal-transition-speed);
+  .transition(box-shadow @panel-transition-speed);
 
   &.active {
-    .box-shadow(-15px 0px 30px 0px rgba(0,0,0,0.5));
+    .box-shadow((-@panel-shadow-offset) 0px @panel-shadow-blur @panel-shadow-spread @panel-shadow-color);
   }
 
   .panel-head {
