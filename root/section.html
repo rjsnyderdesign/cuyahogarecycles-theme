@@ -671,35 +671,10 @@
 
     <!-- scripts -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../root/js/jquery.slidereveal.min.js"></script>
-    <script type="text/javascript" src="../root/js/classie.js"></script>
-    <script type="text/javascript" src="../root/js/uisearch.js"></script>
-    <script type="text/javascript" src="../root/js/typed.min.js"></script>
-    <script type="text/javascript" src="../root/js/global.js"></script>
-    <script type="text/javascript">
-      // Site Search
-      new UISearch( document.getElementById( 'sb-search' ) );
-    </script>
     <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
-    <script type="text/javascript">
-      // Custom YouTube Play functionality
-      var player;
-
-      function onYouTubePlayerAPIReady () {
-        // create the global player from the specific iframe (#youtube-video)
-        player = new YT.Player( 'youtube-video', {
-          events: { onReady: onPlayerReady }
-        } );
-      }
-
-      function onPlayerReady ( e ) { // bind events
-        $( '.youtube-video-play-button' ).on( 'click', function () {
-          player.playVideo();
-          $( this ).addClass( 'video-playing' );
-        } );
-      }
-    </script>
+    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../dist/js/libs.bundled.min.js"></script>
+    <script type="text/javascript" src="../dist/js/global.min.js"></script>
     <!-- /scripts -->
 
   </body>

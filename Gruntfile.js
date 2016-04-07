@@ -121,6 +121,22 @@ module.exports = function (grunt) {
           'js/affix.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
+      },
+      libs: {
+        src: [
+          'js/theme/libs/classie.js',
+          'js/theme/libs/jquery.responsImg.min.js',
+          'js/theme/libs/jquery.slidereveal.min.js',
+          'js/theme/libs/typed.min.js',
+          'js/theme/libs/uisearch.js'
+        ],
+        dest: 'dist/js/libs.bundled.js'
+      },
+      global: {
+        src: [
+          'js/theme/global.js'
+        ],
+        dest: 'dist/js/global.js'
       }
     },
 
@@ -135,6 +151,14 @@ module.exports = function (grunt) {
       core: {
         src: '<%= concat.bootstrap.dest %>',
         dest: 'dist/js/<%= pkg.name %>.min.js'
+      },
+      libs: {
+        src: '<%= concat.libs.dest %>',
+        dest: 'dist/js/libs.bundled.min.js'
+      },
+      global: {
+        src: '<%= concat.global.dest %>',
+        dest: 'dist/js/global.min.js'
       },
       customize: {
         src: configBridge.paths.customizerJs,
@@ -473,7 +497,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
+  grunt.registerTask('dist-js', ['concat', 'uglify:core', 'uglify:libs', 'uglify:global', 'commonjs']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
