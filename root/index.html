@@ -474,17 +474,44 @@
 
       <div class="container-fluid pal-inverse bg-dark">
         <div class="container-content-newsletter-form">
-          <h2>Subscribe to our newsletter</h2>
-          <form class="inline-form-sm">
-            <label class="sr-only" for="newsletter-signup-first-name">First Name</label>
-            <input type="text" class="form-control" placeholder="First Name" id="newsletter-signup-first-name" />
-            <label class="sr-only" for="newsletter-signup-last-name">Last Name</label>
-            <input type="text" class="form-control" placeholder="Last Name" id="newsletter-signup-last-name" />
-            <label class="sr-only" for="newsletter-signup-email">Email</label>
-            <input type="email" class="form-control" placeholder="Email" id="newsletter-signup-email" />
-            <input type="submit" class="btn btn-hollow btn-hollow-success" value="Submit" />
-          </form>
-          <a href="#">See Archives</a>
+          <div class="row-lg-full-height row-full-height-even-padding">
+            <div class="col-side-full-height">
+              <h2>Subscribe to our newsletter</h2>
+            </div><!-- /.col-full-height -->
+            <div class="col-main-full-height">
+              <form class="inline-form-sm">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label class="sr-only" for="newsletter-signup-first-name">First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name" id="newsletter-signup-first-name" />
+                    <label class="sr-only" for="newsletter-signup-last-name">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last Name" id="newsletter-signup-last-name" />
+                    <label class="sr-only" for="newsletter-signup-email">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" id="newsletter-signup-email" />
+                  </div><!-- /.col-*-* -->
+                </div><!-- /.row -->
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="subscribe-opts">
+                      <input type="checkbox" id="newsletter-signup-subscribe-1" />
+                      <label for="newsletter-signup-subscribe-1">Talking Trash</label>
+                      <br class="visible-xs" />
+                      <input type="checkbox" id="newsletter-signup-subscribe-2" />
+                      <label for="newsletter-signup-subscribe-2">Recycling Education Resources</label>
+                    </div>
+                  </div><!-- /.col-*-* -->
+                </div><!-- /.row -->
+                <div class="row">
+                  <div class="col-xs-12">
+                    <input type="submit" class="orm-control btn btn-hollow btn-hollow-success" value="Submit" />
+                  </div><!-- /.col-*-* -->
+                </div><!-- /.row -->
+              </form>
+            </div><!-- /.col-full-height -->
+            <div class="col-side-full-height">
+              <a href="#">See Archives</a>
+            </div><!-- /.col-full-height -->
+          </div><!-- /.row-lg-full-height -->
         </div><!-- /.container-content-cta -->
       </div><!-- /.container-fluid -->
 
@@ -808,7 +835,7 @@
     <footer class="page-footer" role="contentinfo">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-12 col-md-12 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <div class="brand">
               <a href="#">
                 <img
@@ -827,7 +854,7 @@
               <dd>4750 East 131 Street<br />Garfield Heights, OH 00000-0000</dd>
             </dl>
           </div><!-- /.col-*-* -->
-          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <h4>Send us a message</h4>
             <form>
               <label for="contact-form-name">Name</label>
@@ -841,7 +868,7 @@
               <input type="submit" class="form-control" />
             </form>
           </div><!-- /.col-*-* -->
-          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
               <li><a href="#">Recycling at Home</a></li>
               <li><a href="#">Programs &amp; Services</a></li>

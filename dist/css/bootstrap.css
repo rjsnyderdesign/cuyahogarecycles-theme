@@ -9698,6 +9698,7 @@ body.noscroll
 }
 .page-footer p
 {
+    max-width: 360px;
     margin: 16px 0;
 }
 .page-footer a
@@ -9739,7 +9740,7 @@ body.noscroll
 {
     margin-bottom: 16px;
 }
-.page-footer .brand-district-logo
+.page-footer .brand .brand-district-logo
 {
     width: auto;
     max-width: auto;
@@ -9786,15 +9787,26 @@ body.noscroll
     letter-spacing: .05em;
     text-transform: uppercase;
 }
-.container-content-cta .btn,
-.container-content-newsletter-form .btn
+.container-content-cta .btn
 {
-    margin-right: 32px;
-    margin-left: 32px;
+    margin-right: 16px;
+    margin-left: 16px;
 }
 .container-content-newsletter-form
 {
     text-align: center;
+}
+@media screen and (min-width: 1200px)
+{
+    .container-content-newsletter-form h2,
+    .container-content-newsletter-form form
+    {
+        text-align: left;
+    }
+    .container-content-newsletter-form h2
+    {
+        width: 220px;
+    }
 }
 .container-content-newsletter-form a
 {
@@ -9802,6 +9814,7 @@ body.noscroll
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
+    white-space: nowrap;
     text-decoration: underline;
     text-transform: uppercase;
 
@@ -9820,6 +9833,30 @@ body.noscroll
             transition: color 0s;
 
     color: #95d600;
+}
+@media screen and (max-width: 1199px)
+{
+    .container-content-newsletter-form .subscribe-opts
+    {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 767px)
+{
+    .container-content-newsletter-form .subscribe-opts
+    {
+        text-align: left;
+    }
+}
+.container-content-newsletter-form .row-lg-full-height .col-main-full-height,
+.container-content-newsletter-form .row-lg-full-height .col-side-full-height
+{
+    vertical-align: middle;
+}
+.container-content-newsletter-form .row-lg-full-height .col-main-full-height
+{
+    padding-top: 32px;
+    padding-bottom: 16px;
 }
 .container-content-article
 {
@@ -9934,11 +9971,13 @@ h6
 {
     width: 516px;
     max-width: 100%;
+    height: auto;
 }
 .brand .brand-district-logo
 {
     width: 372px;
     max-width: 100%;
+    height: auto;
 }
 .brand .brand-logo-main
 {
@@ -9946,21 +9985,21 @@ h6
     height: auto;
     margin: 0;
 }
-@media (min-width: 480px)
+@media screen and (min-width: 480px)
 {
     .brand .brand-logo-main
     {
         width: 344px;
     }
 }
-@media (min-width: 480px) and (min-width: 560px)
+@media screen and (min-width: 480px) and screen and (min-width: 560px)
 {
     .brand .brand-logo-main
     {
         margin: 0 auto;
     }
 }
-@media (min-width: 768px)
+@media screen and (min-width: 768px)
 {
     .brand .brand-logo-main
     {
@@ -9968,21 +10007,21 @@ h6
         margin: 0;
     }
 }
-@media (min-width: 768px) and (min-width: 800px)
+@media screen and (min-width: 768px) and screen and (min-width: 800px)
 {
     .brand .brand-logo-main
     {
         width: 344px;
     }
 }
-@media (min-width: 992px)
+@media screen and (min-width: 992px)
 {
     .brand .brand-logo-main
     {
         width: 387px;
     }
 }
-@media (min-width: 1200px)
+@media screen and (min-width: 1200px)
 {
     .brand .brand-logo-main
     {
@@ -10438,8 +10477,8 @@ h6
 }
 .page-header.header-sticky.header-sticky-detached
 {
-    -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .5);
-            box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -10741,7 +10780,7 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
-@media (max-width: 767px)
+@media screen and (max-width: 767px)
 {
     .navbar-nav
     {
@@ -10810,14 +10849,14 @@ h6
         vertical-align: middle;
     }
 }
-@media (max-width: 767px) and (min-width: 480px)
+@media screen and (max-width: 767px) and screen and (min-width: 480px)
 {
     .page-header .page-header-upper
     {
         height: 90px;
     }
 }
-@media (max-width: 767px) and (min-width: 480px)
+@media screen and (max-width: 767px) and screen and (min-width: 480px)
 {
     .page-header-upper-content .navbar-toggle
     {
@@ -11606,6 +11645,52 @@ h6
     width: 100%;
     height: 100%;
 }
+.tile-grid.tile-grid-flat
+{
+    margin: 1px;
+}
+.tile-grid.tile-grid-flat > .grid-cell
+{
+    overflow: visible;
+}
+.tile-grid.tile-grid-flat > .grid-cell:hover,
+.tile-grid.tile-grid-flat > .grid-cell:focus
+{
+    z-index: 100;
+}
+.link-tile-flat
+{
+    -webkit-transition: background 500ms;
+         -o-transition: background 500ms;
+            transition: background 500ms;
+
+    border: 2px solid transparent;
+    background: #95d600;
+}
+.link-tile-flat:after
+{
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+
+    display: block;
+
+    content: '';
+    -webkit-transition: border-color 500ms;
+         -o-transition: border-color 500ms;
+            transition: border-color 500ms;
+
+    border: 2px solid #fff;
+}
+.link-tile-flat:hover,
+.link-tile-flat:focus,
+.link-tile-flat:active,
+.link-tile-flat.active
+{
+    background: #26cad3;
+}
 .link-img-zoom .img-zoom
 {
     display: block;
@@ -12190,49 +12275,100 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
-.inline-form .form-control
+.inline-form input,
+.inline-form .btn,
+.inline-form .form-control,
+.inline-form label
 {
     display: inline-block;
 
+    margin: 8px;
+
+    vertical-align: baseline;
+}
+.inline-form label
+{
+    text-align: left;
+}
+.inline-form .form-control
+{
     width: auto;
     min-width: 240px;
-
-    vertical-align: top;
+}
+.inline-form-xs input,
+.inline-form-sm input,
+.inline-form-md input,
+.inline-form-lg input
+{
+    margin: 16px;
 }
 @media screen and (min-width: 768px)
 {
-    .inline-form-sm .form-control
+    .inline-form-sm input,
+    .inline-form-sm .btn,
+    .inline-form-sm .form-control,
+    .inline-form-sm label
     {
         display: inline-block;
 
+        margin: 8px;
+
+        vertical-align: baseline;
+    }
+    .inline-form-sm label
+    {
+        text-align: left;
+    }
+    .inline-form-sm .form-control
+    {
         width: auto;
         min-width: 240px;
-
-        vertical-align: top;
     }
 }
 @media screen and (min-width: 992px)
 {
-    .inline-form-md .form-control
+    .inline-form-md input,
+    .inline-form-md .btn,
+    .inline-form-md .form-control,
+    .inline-form-md label
     {
         display: inline-block;
 
+        margin: 8px;
+
+        vertical-align: baseline;
+    }
+    .inline-form-md label
+    {
+        text-align: left;
+    }
+    .inline-form-md .form-control
+    {
         width: auto;
         min-width: 240px;
-
-        vertical-align: top;
     }
 }
 @media screen and (min-width: 1200px)
 {
-    .inline-form-lg .form-control
+    .inline-form-lg input,
+    .inline-form-lg .btn,
+    .inline-form-lg .form-control,
+    .inline-form-lg label
     {
         display: inline-block;
 
+        margin: 8px;
+
+        vertical-align: baseline;
+    }
+    .inline-form-lg label
+    {
+        text-align: left;
+    }
+    .inline-form-lg .form-control
+    {
         width: auto;
         min-width: 240px;
-
-        vertical-align: top;
     }
 }
 /*!
@@ -12255,8 +12391,8 @@ h6
 }
 .slidereveal-panel.active
 {
-    -webkit-box-shadow: -15px 0 30px 0 rgba(0, 0, 0, .5);
-            box-shadow: -15px 0 30px 0 rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
 }
 .slidereveal-panel .panel-head
 {

@@ -18,7 +18,7 @@
 @navbar-height-large-tablet: 90px;
 @navbar-height-enlarged-by: (@navbar-height-large-tablet - @navbar-height);
 
-@media (max-width: @screen-xs-max) {
+@media screen and (max-width: @screen-xs-max) {
 
   .navbar-nav {
     margin: 0;
@@ -43,7 +43,7 @@
       padding-top: 16px;
       padding-bottom: 16px;
 
-      @media (min-width: @screen-xs-min) {
+      @media screen and (min-width: @screen-xs-min) {
         height: @navbar-height-large-tablet;
       }
     }
@@ -59,7 +59,7 @@
       padding: (@font-size-base / 2);
       font-size: (@font-size-base * 2);
 
-      @media (min-width: @screen-xs-min) {
+      @media screen and (min-width: @screen-xs-min) {
         top: 0;
       }
 

@@ -346,6 +346,51 @@
 // Image tile link
 // --------------------------------------------------
 
+@tile-grid-flat-border-width: 2px;
+
+.tile-grid.tile-grid-flat {
+  margin: (@tile-grid-flat-border-width / 2);
+
+  > .grid-cell {
+    overflow: visible;
+
+    &:hover,
+    &:focus {
+      z-index: 100;
+    }
+  }
+}
+
+.link-tile-flat {
+  border: @tile-grid-flat-border-width solid transparent;
+  background: @brand-success;
+
+  .transition(background @link-transition-speed);
+
+  &:after {
+    display: block;
+    position: absolute;
+    top:    (-@tile-grid-flat-border-width / 2);
+    left:   (-@tile-grid-flat-border-width / 2);
+    bottom: (-@tile-grid-flat-border-width / 2);
+    right:  (-@tile-grid-flat-border-width / 2);
+    border: @tile-grid-flat-border-width solid @white;
+    content: '';
+    .transition(border-color @link-transition-speed);
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: @brand-info;
+
+    &:after {
+      // border-color: @brand-dark;
+    }
+  }
+}
+
 .link-img-zoom {
   .img-zoom {
     width: 100%;

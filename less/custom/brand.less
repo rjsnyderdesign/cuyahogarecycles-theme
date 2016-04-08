@@ -27,11 +27,13 @@
   .brand-logo-main-horizontal {
     width: 516px;
     max-width: 100%;
+    height: auto;
   }
 
   .brand-district-logo {
     width: 372px;
     max-width: 100%;
+    height: auto;
   }
 }
 
@@ -53,28 +55,28 @@
     height: auto;
     margin: 0;
 
-    @media (min-width: @screen-xs-min) {
+    @media screen and (min-width: @screen-xs-min) {
       width: @brand-logo-main-sm-width;
 
-      @media (min-width: 560px) {
+      @media screen and (min-width: 560px) {
         margin: 0 auto;
       }
     }
 
-    @media (min-width: @screen-sm-min) {
+    @media screen and (min-width: @screen-sm-min) {
       width: @brand-logo-main-xs-width;
       margin: 0;
 
-      @media (min-width: 800px) {
+      @media screen and (min-width: 800px) {
         width: @brand-logo-main-sm-width;
       }
     }
 
-    @media (min-width: @screen-md-min) {
+    @media screen and (min-width: @screen-md-min) {
       width: @brand-logo-main-md-width;
     }
 
-    @media (min-width: @screen-lg-min) {
+    @media screen and (min-width: @screen-lg-min) {
       width: @brand-logo-main-lg-width;
     }
   }

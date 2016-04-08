@@ -28,8 +28,8 @@
   &:extend(.container-content-default);
 
   .btn {
-    margin-left: (@font-size-base * 2);
-    margin-right: (@font-size-base * 2);
+    margin-left: @font-size-base;
+    margin-right: @font-size-base;
   }
 }
 
@@ -38,15 +38,45 @@
 
   &:extend(.container-content-default);
 
+  @media screen and (min-width: @screen-lg-min) {
+    h2,
+    form {
+      text-align: left;
+    }
+
+    h2 {
+      width: 220px;
+    }
+  }
+
   a {
     color: @white;
     text-transform: uppercase;
+    white-space: nowrap;
 
     .link-fx-text(@brand-info; @brand-success);
   }
 
-  .btn {
-    &:extend(.container-content-cta .btn);
+  .subscribe-opts {
+    @media screen and (max-width: @screen-md-max) {
+      text-align: center;
+    }
+
+    @media screen and (max-width: @screen-xs-max) {
+      text-align: left;
+    }
+  }
+
+  .row-lg-full-height {
+    .col-main-full-height,
+    .col-side-full-height {
+      vertical-align: middle;
+    }
+
+    .col-main-full-height {
+      padding-top: (@font-size-base * 2);
+      padding-bottom: @font-size-base;
+    }
   }
 }
 
