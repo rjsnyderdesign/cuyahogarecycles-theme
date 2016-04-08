@@ -1,0 +1,81 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Logos
+// --------------------------------------------------
+
+.brand {
+  display: block;
+
+  a,
+  img {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .brand-logo-main-horizontal {
+    width: 516px;
+    max-width: 100%;
+  }
+
+  .brand-district-logo {
+    width: 372px;
+    max-width: 100%;
+  }
+}
+
+
+//
+// Responsive logo
+// --------------------------------------------------
+
+@brand-logo-main-width: 516px;
+
+@brand-logo-main-xs-width: (@brand-logo-main-width * 1 / 2);
+@brand-logo-main-sm-width: (@brand-logo-main-width * 2 / 3);
+@brand-logo-main-md-width: (@brand-logo-main-width * 3 / 4);
+@brand-logo-main-lg-width: @brand-logo-main-width;
+
+.brand {
+  .brand-logo-main {
+    width: @brand-logo-main-xs-width;
+    height: auto;
+    margin: 0;
+
+    @media (min-width: @screen-xs-min) {
+      width: @brand-logo-main-sm-width;
+
+      @media (min-width: 560px) {
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: @screen-sm-min) {
+      width: @brand-logo-main-xs-width;
+      margin: 0;
+
+      @media (min-width: 800px) {
+        width: @brand-logo-main-sm-width;
+      }
+    }
+
+    @media (min-width: @screen-md-min) {
+      width: @brand-logo-main-md-width;
+    }
+
+    @media (min-width: @screen-lg-min) {
+      width: @brand-logo-main-lg-width;
+    }
+  }
+}

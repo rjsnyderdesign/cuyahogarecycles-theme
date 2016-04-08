@@ -8919,33 +8919,6 @@ h1
 
     border-bottom: 2px solid #e6e6e6;
 }
-.brand
-{
-    display: block;
-}
-.brand a,
-.brand img
-{
-    display: block;
-
-    margin: 0;
-    padding: 0;
-}
-.brand .brand-logo-main
-{
-    width: 330px;
-    max-width: 100%;
-}
-.brand .brand-logo-main-horizontal
-{
-    width: 516px;
-    max-width: 100%;
-}
-.brand .brand-district-logo
-{
-    width: 372px;
-    max-width: 100%;
-}
 .small-header,
 form label
 {
@@ -9945,6 +9918,80 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+.brand
+{
+    display: block;
+}
+.brand a,
+.brand img
+{
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+.brand .brand-logo-main-horizontal
+{
+    width: 516px;
+    max-width: 100%;
+}
+.brand .brand-district-logo
+{
+    width: 372px;
+    max-width: 100%;
+}
+.brand .brand-logo-main
+{
+    width: 258px;
+    height: auto;
+    margin: 0;
+}
+@media (min-width: 480px)
+{
+    .brand .brand-logo-main
+    {
+        width: 344px;
+    }
+}
+@media (min-width: 480px) and (min-width: 560px)
+{
+    .brand .brand-logo-main
+    {
+        margin: 0 auto;
+    }
+}
+@media (min-width: 768px)
+{
+    .brand .brand-logo-main
+    {
+        width: 258px;
+        margin: 0;
+    }
+}
+@media (min-width: 768px) and (min-width: 800px)
+{
+    .brand .brand-logo-main
+    {
+        width: 344px;
+    }
+}
+@media (min-width: 992px)
+{
+    .brand .brand-logo-main
+    {
+        width: 387px;
+    }
+}
+@media (min-width: 1200px)
+{
+    .brand .brand-logo-main
+    {
+        width: 516px;
+    }
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
 .row-xs-full-height,
 .row-sm-full-height,
 .row-md-full-height,
@@ -10716,21 +10763,16 @@ h6
     {
         position: relative;
 
-        height: 90px;
-        padding-top: 17px;
-    }
-    .brand .brand-logo-main
-    {
-        width: 200px;
-        height: auto;
-        margin: 0 auto;
+        height: 70px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
     .page-header-upper-content .navbar-toggle
     {
         font-size: 32px;
 
         position: absolute;
-        top: 0;
+        top: -10px;
         right: -8px;
 
         width: 48px;
@@ -10766,6 +10808,20 @@ h6
     .page-header-upper-content .navbar-toggle > .fa
     {
         vertical-align: middle;
+    }
+}
+@media (max-width: 767px) and (min-width: 480px)
+{
+    .page-header .page-header-upper
+    {
+        height: 90px;
+    }
+}
+@media (max-width: 767px) and (min-width: 480px)
+{
+    .page-header-upper-content .navbar-toggle
+    {
+        top: 0;
     }
 }
 /*!

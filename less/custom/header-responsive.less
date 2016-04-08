@@ -11,9 +11,12 @@
 
 
 //
-// Mobile Menu and Header Styles
+// Mobile menu and header styles
 // --------------------------------------------------
 
+
+@navbar-height-large-tablet: 90px;
+@navbar-height-enlarged-by: (@navbar-height-large-tablet - @navbar-height);
 
 @media (max-width: @screen-xs-max) {
 
@@ -35,27 +38,30 @@
 
   .page-header {
     .page-header-upper {
-      height: 90px;
+      height: @navbar-height;
       position: relative;
-      padding-top: 17px;
-    }
-  }
+      padding-top: 16px;
+      padding-bottom: 16px;
 
-  .brand .brand-logo-main {
-    margin: 0 auto;
-    width: 200px;
-    height: auto;
+      @media (min-width: @screen-xs-min) {
+        height: @navbar-height-large-tablet;
+      }
+    }
   }
 
   .page-header-upper-content {
     .navbar-toggle {
       width: (@font-size-large * 2);
       position: absolute;
-      top: 0;
+      top: (-@navbar-height-enlarged-by / 2);
       right: (-@font-size-base / 2);
       margin: 0;
       padding: (@font-size-base / 2);
       font-size: (@font-size-base * 2);
+
+      @media (min-width: @screen-xs-min) {
+        top: 0;
+      }
 
       .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
 

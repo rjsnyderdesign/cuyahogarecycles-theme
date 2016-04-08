@@ -266,29 +266,36 @@ if (typeof jQuery === 'undefined') {
         // Mega menu + Sub menus
         //
 
-        $( '.mega-menu .dropdown-menu a.trigger' ).on( 'click' , function ( e ) {
-            var $this        = $( this ),
-                $current     = $this.next(),
-                $grandparent = $this.parent().parent();
-            if ( $this.hasClass( 'open' ) ) {
-                $this.removeClass( 'open' );
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
-            }
-            else {
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
-                $this.addClass( 'open' );
-            }
-            $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
-            $current.toggle();
-            e.preventDefault()
-            e.stopPropagation();
-        } );
+        ( function () {
 
-        $( '.mega-menu .dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
-            var $root = $( this ).closest( '.dropdown' );
-            $( '.trigger' ).removeClass( 'open' );
-            $root.find( '.sub-menu:not(.first)' ).hide();
-        });
+            function expand ( e ) {
+                var $this        = $( this ),
+                    $current     = $this.next(),
+                    $grandparent = $this.parent().parent();
+                $grandparent.find( 'li > a.trigger' ).not( $this ).removeClass( 'open' );
+                $this.addClass( 'open' );
+                $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
+                $current.show();
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function collapse ( e ) {
+                var $this        = $( this ),
+                    $grandparent = $this.parent().parent();
+                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
+                $grandparent.find( '.sub-menu' ).hide();
+            }
+
+            $( '.mega-menu .dropdown-menu a.trigger' )
+                .on( 'mouseover', expand )
+                .on( 'focus', expand );
+
+            $( '.mega-menu .dropdown-menu a:not(.trigger)' )
+                .on( 'mouseover', collapse )
+                .on( 'focus', collapse );
+
+        } )();
 
         //
         // Desktop mega menu
@@ -343,6 +350,7 @@ if (typeof jQuery === 'undefined') {
             }
 
             function init () {
+
                 $( '.navbar-primary li a' )
                     .hover(
                         function () { enter( $( this ) ); },
@@ -354,20 +362,16 @@ if (typeof jQuery === 'undefined') {
                     .blur(
                         function () { closeMenu( getSubMenu( $( this ) ) ); }
                     );
+
                 $mainMenu
                     .find( 'a' )
-                    .focus(
-                        function () {
-                            var $subMenu = $( this ).closest( '.main-menu-dropdown' );
-                            openMenu( $subMenu );
-                        }
-                    )
-                    .blur(
-                        function () {
-                            // var $subMenu = $( this ).closest( '.main-menu-dropdown' );
-                            // closeMenu( $subMenu );
-                        }
-                    );
+                    .focus( function () {
+                        onExit = null;
+                        openMenu( $( this ).closest( '.main-menu-dropdown' ) );
+                    } )
+                    .blur( function () {
+                        closeMenu( $( this ).closest( '.main-menu-dropdown' ) );
+                    } );
             }
 
             init();
