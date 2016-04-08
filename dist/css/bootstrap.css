@@ -9620,15 +9620,9 @@ body.noscroll
 .navbar-nav.navbar-primary > li > a:active:before,
 .navbar-nav.navbar-primary > li > a.active:before
 {
-    -webkit-transition: height 0s, background-color 0s;
-         -o-transition: height 0s, background-color 0s;
-            transition: height 0s, background-color 0s;
-
-    background-color: #263746;
-}
-.header-infobar
-{
-    height: 100%;
+    -webkit-transition: height 0s;
+         -o-transition: height 0s;
+            transition: height 0s;
 }
 .header-infobar.row-sm-full-height > .col-main-full-height,
 .header-infobar.row-sm-full-height > .col-side-full-height
@@ -9641,8 +9635,8 @@ body.noscroll
     display: block;
 
     width: 100%;
-    height: 100%;
-    padding: 25px 40px;
+    height: 70px;
+    padding: 0 40px;
 
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -9707,18 +9701,12 @@ body.noscroll
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
-    text-decoration: none;
-
-    color: inherit;
-    background: none;
+    text-decoration: underline;
 }
 .page-footer a:hover,
 .page-footer a:focus
 {
-    text-decoration: none;
-
     color: #26cad3;
-    background: none;
 }
 .page-footer a:active,
 .page-footer a.active
@@ -9747,6 +9735,39 @@ body.noscroll
     height: auto;
     max-height: 80px;
     margin-top: -80px;
+}
+.page-footer .page-footer-nav > li > a,
+.page-footer .page-footer-nav-siteinfo > li > a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.page-footer .page-footer-nav > li > a:hover,
+.page-footer .page-footer-nav-siteinfo > li > a:hover,
+.page-footer .page-footer-nav > li > a:focus,
+.page-footer .page-footer-nav-siteinfo > li > a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.page-footer .page-footer-nav > li > a:active,
+.page-footer .page-footer-nav-siteinfo > li > a:active,
+.page-footer .page-footer-nav > li > a.active,
+.page-footer .page-footer-nav-siteinfo > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
 }
 .page-footer .page-footer-nav
 {
@@ -9992,7 +10013,7 @@ h6
         width: 344px;
     }
 }
-@media screen and (min-width: 480px) and screen and (min-width: 560px)
+@media screen and (min-width: 480px) and (min-width: 560px)
 {
     .brand .brand-logo-main
     {
@@ -10007,7 +10028,7 @@ h6
         margin: 0;
     }
 }
-@media screen and (min-width: 768px) and screen and (min-width: 800px)
+@media screen and (min-width: 768px) and (min-width: 800px)
 {
     .brand .brand-logo-main
     {
@@ -10363,6 +10384,20 @@ h6
     -webkit-box-shadow: none;
             box-shadow: none;
 }
+@media screen and (min-width: 992px)
+{
+    .main-menu-dropdown .dropdown-menu
+    {
+        width: 240px;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .main-menu-dropdown .dropdown-menu
+    {
+        width: 240px;
+    }
+}
 .main-menu-dropdown .dropdown-menu.first
 {
     top: inherit;
@@ -10500,13 +10535,32 @@ h6
     position: absolute;
     top: 7px;
     right: 30px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
 }
 .search-container label:hover,
 .search-container label:focus
 {
-    cursor: pointer;
+    text-decoration: none;
 
     color: #1a8c92;
+    background: none;
+}
+.search-container label:active,
+.search-container label.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #263746;
 }
 .sb-search
 {
@@ -10731,6 +10785,8 @@ h6
     width: 100%;
     height: 100%;
     padding: 8px 0;
+
+    color: #00833e;
 }
 .wdidw-search-form .input-group
 {
@@ -10767,14 +10823,70 @@ h6
 .wdidw-search-form .input-group input[type='text']::-moz-placeholder
 {
     opacity: 1;
-    color: #fff;
+    color: rgba(255, 255, 255, .4);
 }
 .wdidw-search-form .input-group input[type='text']:-ms-input-placeholder
 {
-    color: #fff;
+    color: rgba(255, 255, 255, .4);
 }
 .wdidw-search-form .input-group input[type='text']::-webkit-input-placeholder
 {
+    color: rgba(255, 255, 255, .4);
+}
+.wdidw-search-form .input-group button
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.wdidw-search-form .input-group button:hover,
+.wdidw-search-form .input-group button:focus
+{
+    text-decoration: none;
+
+    color: #e84b37;
+    background: none;
+}
+.wdidw-search-form .input-group button:active,
+.wdidw-search-form .input-group button.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #e84b37;
+}
+.wdidw-search-form .input-group button[type='submit']
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.wdidw-search-form .input-group button[type='submit']:hover,
+.wdidw-search-form .input-group button[type='submit']:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.wdidw-search-form .input-group button[type='submit']:active,
+.wdidw-search-form .input-group button[type='submit'].active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
     color: #fff;
 }
 /*!
@@ -10849,14 +10961,14 @@ h6
         vertical-align: middle;
     }
 }
-@media screen and (max-width: 767px) and screen and (min-width: 480px)
+@media screen and (max-width: 767px) and (min-width: 480px)
 {
     .page-header .page-header-upper
     {
         height: 90px;
     }
 }
-@media screen and (max-width: 767px) and screen and (min-width: 480px)
+@media screen and (max-width: 767px) and (min-width: 480px)
 {
     .page-header-upper-content .navbar-toggle
     {

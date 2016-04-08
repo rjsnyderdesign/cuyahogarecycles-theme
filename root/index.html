@@ -25,7 +25,7 @@
 
     <!-- Typekit font kit -->
     <script src="https://use.typekit.net/nrs3tja.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try{Typekit.load({ async: true, active: function(){ window.isTypekitLoaded = true; } });}catch(e){}</script>
 
   </head>
 
@@ -257,11 +257,11 @@
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i><span class="sr-only">Search</span></button>
                       </span>
-                      <label class="sr-only" for="wdidw-search-field">Enter items here to get recycling information</label>
+                      <label class="sr-only" for="wdidw-search-field">Enter items for recycling information</label>
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Enter items here to get recycling information"
+                        placeholder="Enter items"
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
@@ -849,9 +849,9 @@
             <p>The Cuyahoga County Solid Waste District is the leading resource in Cuyahoga County for information, expertise and programs that support sustainable materials management and reduce the environmental impact of waste.</p>
             <dl>
               <dt>Phone</dt>
-              <dd>000.000.0000</dd>
+              <dd><a href="tel:216-443-3749">216.443.3749</a></dd>
               <dt>Address</dt>
-              <dd>4750 East 131 Street<br />Garfield Heights, OH 00000-0000</dd>
+              <dd>4750 East 131 Street<br />Garfield Heights, OH 44105-7130</dd>
             </dl>
           </div><!-- /.col-*-* -->
           <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">

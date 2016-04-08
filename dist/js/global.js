@@ -25,6 +25,31 @@ if (typeof jQuery === 'undefined') {
 
 ;( function ( window, $, undefined ) {
 
+    var $window = $( window ),
+        $body   = $( window.document.body );
+
+    //
+    // Check if Typekit is loaded
+    //
+
+    var typekitTimeout;
+
+    function onTypekitLoaded () {
+        console.log( 'Typekit loaded succesfully.' );
+    };
+
+    function checkIfTypekitLoaded () {
+        if ( window.isTypekitLoaded ) {
+            onTypekitLoaded();
+        }
+        else {
+            console.log( 'Waiting for Typekit fonts.' );
+            typekitTimeout = window.setTimeout( checkIfTypekitLoaded, 100 );
+        }
+    }
+
+    typekitTimeout = window.setTimeout( checkIfTypekitLoaded, 100 );
+
     //
     // Custom YouTube Play functionality
     //
@@ -54,9 +79,6 @@ if (typeof jQuery === 'undefined') {
     //
     // Init
     //
-
-    var $window = $( window ),
-        $body   = $( window.document.body );
 
     $body.ready( function () {
 
@@ -284,7 +306,7 @@ if (typeof jQuery === 'undefined') {
                 var $this        = $( this ),
                     $grandparent = $this.parent().parent();
                 $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
-                $grandparent.find( '.sub-menu' ).hide();
+                // $grandparent.find( '.sub-menu' ).hide();
             }
 
             $( '.mega-menu .dropdown-menu a.trigger' )

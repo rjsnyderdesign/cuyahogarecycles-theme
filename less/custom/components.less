@@ -449,12 +449,7 @@ body {
         .transition(color 0s);
 
         &:before {
-          background-color: @brand-dark;
-
-          .transition(
-            height 0s,
-            background-color 0s;
-          );
+          .transition(height 0s);
         }
       }
     }
@@ -462,8 +457,6 @@ body {
 }
 
 .header-infobar {
-  height: 100%;
-
   &.row-sm-full-height {
     > .col-main-full-height,
     > .col-side-full-height {
@@ -475,9 +468,9 @@ body {
 
 .city-recycling-button {
   width: 100%;
-  height: 100%;
+  height: @navbar-height;
   display: block;
-  padding: @navbar-padding-vertical (@grid-gutter-width / 2);
+  padding: 0 (@grid-gutter-width / 2);
   background: @brand-success;
   border: 0 none;
   border-left: 2px solid @brand-primary;
@@ -520,7 +513,7 @@ body {
   }
 
   a {
-    .link-fx-nav(@brand-info; @brand-success);
+    .link-fx-text(@brand-info; @brand-success);
   }
 
   dt {
@@ -537,6 +530,13 @@ body {
     height: auto;
     max-height: @page-footer-padding-top;
     margin-top: (-@page-footer-padding-top);
+  }
+
+  .page-footer-nav,
+  .page-footer-nav-siteinfo {
+    > li > a {
+      .link-fx-nav(@brand-info; @brand-success);
+    }
   }
 
   .page-footer-nav {
