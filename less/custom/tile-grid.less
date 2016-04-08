@@ -358,6 +358,12 @@
     &:focus {
       z-index: 100;
     }
+
+    &.grid-cell-placeholder {
+      &:after {
+        &:extend(.link-tile-flat:after);
+      }
+    }
   }
 }
 

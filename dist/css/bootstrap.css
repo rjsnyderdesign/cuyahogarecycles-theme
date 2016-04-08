@@ -9468,6 +9468,10 @@ body.noscroll
     color: #fff;
     background: #26cad3;
 }
+.noscroll .page-header
+{
+    padding-right: 15px;
+}
 .page-header .page-header-upper
 {
     padding-top: 32px;
@@ -10385,13 +10389,6 @@ h6
             box-shadow: none;
 }
 @media screen and (min-width: 992px)
-{
-    .main-menu-dropdown .dropdown-menu
-    {
-        width: 240px;
-    }
-}
-@media screen and (min-width: 1200px)
 {
     .main-menu-dropdown .dropdown-menu
     {
@@ -11779,7 +11776,8 @@ h6
     border: 2px solid transparent;
     background: #95d600;
 }
-.link-tile-flat:after
+.link-tile-flat:after,
+.tile-grid.tile-grid-flat > .grid-cell.grid-cell-placeholder:after
 {
     position: absolute;
     top: -1px;
