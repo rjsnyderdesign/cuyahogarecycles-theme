@@ -430,47 +430,80 @@
             var flipInterval = 100,
                 flipDelay = flipInterval * 5;
 
-            // Add ARIA roles
-            $itemBasicsCats.attr( 'role', 'tabpanel' );
-            $itemCatSelectors.attr( 'role', 'tablist' );
-            $itemCatSelectorOpts.attr( 'role', 'tab' );
+            var slideShowLength = 3,
+                slideShowInterval = 8000,
+                slideShowTimeout = null,
+                swapTimeout = null,
+                flipTimeout = null,
+                isSwapping = false,
+                currentSlide;
 
-            function flipNext ( $elem ) {
+            function start () {
+                slideShowTimeout = window.setTimeout( next, slideShowInterval );
+            }
+
+            function stop () { window.clearTimeout( slideShowTimeout ); }
+
+            function next () {
+                var nextSlide = currentSlide + 1;
+                if ( nextSlide >= slideShowLength ) { nextSlide = 0; }
+                flipTo( $itemCatSelectorOpts.eq( nextSlide ) );
+                start();
+            }
+
+            function flipTo ( $elem ) {
 
                 var itemKey = $elem.data( 'item-key' ),
                     $itemBasicsCat = $itemBasics.find( '.item-basics-cat[data-item-cat="' + itemKey + '"]' );
+
+                if ( currentSlide === $itemBasicsCat.index() && !isSwapping ) {
+                    return;
+                }
+
+                isSwapping = true;
 
                 // flip
                 $itemCoins
                     .addClass( 'item-coin-flip' );
 
-                window.setTimeout( function () {
+                window.clearTimeout( swapTimeout );
+                window.clearTimeout( flipTimeout );
 
-                    // hide
+                swapTimeout = window.setTimeout( function () {
+
+                    // swap button states
                     $itemCatSelectorOpts
                         .removeClass( 'active' )
                         .attr( 'aria-selected', 'false' )
                         .attr( 'tabindex', '0' );
-                    $itemBasicsCats
-                        .removeClass( 'active' )
-                        .attr( 'aria-hidden', 'true' );
-
-                    // show
                     $elem
                         .addClass( 'active' )
                         .attr( 'aria-selected', 'true' )
                         .attr( 'tabindex', '0' );
+
+                    // swap slides
+                    $itemBasicsCats
+                        .removeClass( 'active' )
+                        .attr( 'aria-hidden', 'true' );
                     $itemBasicsCat
                         .addClass( 'active' )
                         .attr( 'aria-hidden', 'false' );
 
+                    isSwapping = false;
+
                     // unflip
-                    window.setTimeout( function () {
+                    flipTimeout = window.setTimeout( function () {
                         $itemCoins.removeClass( 'item-coin-flip' );
+                        currentSlide = $itemBasicsCat.index();
                     }, flipInterval );
 
                 }, flipDelay );
             }
+
+            // Add ARIA roles
+            $itemBasicsCats.attr( 'role', 'tabpanel' );
+            $itemCatSelectors.attr( 'role', 'tablist' );
+            $itemCatSelectorOpts.attr( 'role', 'tab' );
 
             // Add events to links
             $itemCatSelectorOpts
@@ -482,7 +515,16 @@
                     );
                 } )
                 .on( 'click', function ( e ) {
-                    flipNext( $( this ) );
+                    var $this = $( this );
+                    $itemCatSelectorOpts
+                        .removeClass( 'active' )
+                        .attr( 'aria-selected', 'false' )
+                        .attr( 'tabindex', '0' );
+                    $this
+                        .addClass( 'active' )
+                        .attr( 'aria-selected', 'true' )
+                        .attr( 'tabindex', '0' );
+                    flipTo( $this );
                     stop();
                     e.preventDefault();
                 } )
@@ -496,24 +538,6 @@
             //
             // Automatic slideshow
             //
-
-            var currentSlide = 0,
-                slideShowLength = 3,
-                slideShowInteval = 5000,
-                slideShowTimeout = null;
-
-            function start () {
-                slideShowTimeout = window.setTimeout( next, slideShowInteval );
-            }
-
-            function stop () { window.clearTimeout( slideShowTimeout ); }
-
-            function next () {
-                currentSlide += 1;
-                if ( currentSlide >= slideShowLength ) { currentSlide = 0; }
-                flipNext( $itemCatSelectorOpts.eq( currentSlide ) );
-                start();
-            }
 
             start();
 
