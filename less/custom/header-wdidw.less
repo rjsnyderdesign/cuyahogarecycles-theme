@@ -25,13 +25,13 @@
 .wdidw-button-wrapper {
   width: 100%;
   height: 100%;
-  display: table;
+  display: block;
 }
 
 .wdidw-button {
   width: 100%;
   height: 100%;
-  display: table-cell;
+  display: block;
   padding: 0 (@grid-gutter-width / 2);
   background: none;
   border: 0 none;
@@ -39,7 +39,6 @@
   font-size: @font-size-large;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
 
   .transition(color @link-transition-speed);
 
@@ -60,7 +59,7 @@
   }
 
   > .wdidw-animated-term {
-    width: 10ex;
+    width: 5em;
     height: (@font-size-base * 1.75);
     display: inline-block;
     border-bottom: 2px solid @brand-success;
@@ -112,6 +111,9 @@
       background: none;
       color: @brand-primary;
       outline: none;
+
+      // Force firefox to display inputs as full-height
+      line-height: (@navbar-height - @font-size-base);
 
       .box-shadow(none);
 
