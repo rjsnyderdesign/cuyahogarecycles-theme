@@ -137,3 +137,54 @@
     }
   }
 }
+
+.wdidw-search-results-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  padding: 0 (@grid-gutter-width / 2);
+}
+
+.wdidw-search-results-inner-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.wdidw-search-results-list {
+  width: 100%;
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  background: @white;
+  border: 1px solid @gray-light;
+  border-top: 0 none;
+  color: @gray;
+  text-transform: none;
+
+  .box-shadow(0px 0px @panel-shadow-blur @panel-shadow-spread @panel-shadow-color);
+
+  &:empty {
+    display: none;
+  }
+
+  &:not(.active) {
+    display: none;
+  }
+
+  > li {
+    display: block;
+
+    > a {
+      display: block;
+      padding: (@font-size-base / 2) (@grid-gutter-width / 2);
+
+      .link-fx-nav(@brand-info; @brand-success);
+    }
+
+    &:not(:last-child) {
+      > a {
+        border-bottom: 1px solid @gray-lighter;
+      }
+    }
+  }
+}

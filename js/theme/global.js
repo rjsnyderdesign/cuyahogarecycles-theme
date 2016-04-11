@@ -7,6 +7,11 @@
 
 ;( function ( window, $, undefined ) {
 
+    var KEYBOARD = {
+        BACKSPACE: 8, TAB: 9, ENTER: 13, ESCAPE: 27, SPACE: 32,
+        LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40
+    };
+
     var $window = $( window ),
         $body   = $( window.document.body );
 
@@ -176,7 +181,14 @@
 
         ( function () {
 
-            var $wdidwSearchBar = $( '.wdidw-search-bar' );
+            var $wdidwSearchBar = $( '.wdidw-search-bar' ),
+                $wdidwSearchField = $( '#wdidw-search-field' ),
+                $wdidwSearchResultsList = $( '#wdidw-search-results-list' ),
+                $wdidwSearchResultsListLinks;
+
+            //
+            // Show and hide
+            //
 
             $( '.wdidw-show' ).on( 'click', function () {
                 $wdidwSearchBar.addClass( 'active' );
@@ -186,7 +198,10 @@
                 $wdidwSearchBar.removeClass( 'active' );
             } );
 
+            //
             // Letter typing animation
+            //
+
             $( '.wdidw-animated-term' ).typed( {
                 backDelay: 800,
                 backSpeed: 50,
@@ -201,6 +216,49 @@
                     'Plastic'
                 ],
                 typeSpeed: 100
+            } );
+
+            //
+            // Autocomplete suggestions list
+            //
+
+            function getResultsLinks () {
+                return $wdidwSearchResultsList.find( '> li > a' );
+            }
+
+            $wdidwSearchField.on( 'keydown', function ( e ) {
+                var $this = $( this );
+                if ( $this.val() && $wdidwSearchResultsList.children().length ) {
+                    $wdidwSearchResultsList.addClass( 'active' );
+                }
+                else {
+                    $wdidwSearchResultsList.removeClass( 'active' );
+                }
+                if ( e.which === KEYBOARD.UP || e.which === KEYBOARD.DOWN ) {
+                    e.preventDefault();
+                    if ( e.which === KEYBOARD.DOWN ) {
+                        getResultsLinks().eq( 0 ).focus();
+                    }
+                }
+            } );
+
+            getResultsLinks().on( 'keydown', function ( e ) {
+                var $this = $( this ),
+                    $li = $this.parent();
+                if ( e.which === KEYBOARD.UP || e.which === KEYBOARD.DOWN ) {
+                    e.preventDefault();
+                    if ( e.which === KEYBOARD.UP ) {
+                        if ( $li.prev().length ) {
+                            $li.prev().find( '> a' ).focus();
+                        }
+                        else {
+                            $wdidwSearchField.focus();
+                        }
+                    }
+                    else {
+                        $li.next().find( '> a' ).focus();
+                    }
+                }
             } );
 
         } )();

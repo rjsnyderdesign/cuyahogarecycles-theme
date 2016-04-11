@@ -10886,6 +10886,86 @@ h6
 
     color: #fff;
 }
+.wdidw-search-results-wrapper
+{
+    position: relative;
+    z-index: -1;
+
+    width: 100%;
+    padding: 0 40px;
+}
+.wdidw-search-results-inner-wrapper
+{
+    position: relative;
+
+    width: 100%;
+}
+.wdidw-search-results-list
+{
+    position: absolute;
+
+    width: 100%;
+    padding: 0;
+
+    list-style: none;
+
+    text-transform: none;
+
+    color: #666;
+    border: 1px solid #d9d9d9;
+    border-top: 0 none;
+    background: #fff;
+    -webkit-box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
+}
+.wdidw-search-results-list:empty
+{
+    display: none;
+}
+.wdidw-search-results-list:not(.active)
+{
+    display: none;
+}
+.wdidw-search-results-list > li
+{
+    display: block;
+}
+.wdidw-search-results-list > li > a
+{
+    display: block;
+
+    padding: 8px 40px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.wdidw-search-results-list > li > a:hover,
+.wdidw-search-results-list > li > a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.wdidw-search-results-list > li > a:active,
+.wdidw-search-results-list > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
+.wdidw-search-results-list > li:not(:last-child) > a
+{
+    border-bottom: 1px solid #e6e6e6;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
