@@ -25,6 +25,8 @@ if (typeof jQuery === 'undefined') {
 
 ;( function ( window, $, undefined ) {
 
+    var SCROLLBAR_WIDTH = window.innerWidth - window.document.documentElement.clientWidth;
+
     var KEYBOARD = {
         BACKSPACE: 8, TAB: 9, ENTER: 13, ESCAPE: 27, SPACE: 32,
         LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40
@@ -642,40 +644,33 @@ if (typeof jQuery === 'undefined') {
         } )();
 
         //
-        // Item coin flip animations
-        //
-
-        1;
-
-        //
         // Responsive images
         //
 
-        $( '.responsive-image.img-tile' ).responsImg( {
-            elementQuery: true,
-            breakpoints: {
-                brk400: 400,
-                brk800: 800
-            }
-        } );
+        ( function () {
 
-        $( '.responsive-image.img-event' ).responsImg( {
-            elementQuery: false,
-            breakpoints: {
-                brk400: 400,
-                brk800: 800,
-                brk1200: 1200
-            }
-        } );
+            var BREAKPOINTS = {
+                    brk400: 400,
+                    brk800: 800,
+                    brk1200: 1200
+                };
 
-        $( '.responsive-image.img-banner' ).responsImg( {
-            elementQuery: false,
-            breakpoints: {
-                brk400: 400,
-                brk800: 800,
-                brk1200: 1200
-            }
-        } );
+            $( '.responsive-image.img-tile' ).responsImg( {
+                elementQuery: true,
+                breakpoints: BREAKPOINTS
+            } );
+
+            $( '.responsive-image.img-event' ).responsImg( {
+                elementQuery: false,
+                breakpoints: BREAKPOINTS
+            } );
+
+            $( '.responsive-image.img-banner' ).responsImg( {
+                elementQuery: false,
+                breakpoints: BREAKPOINTS
+            } );
+
+        } )();
 
     } );
 

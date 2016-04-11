@@ -127,6 +127,7 @@ module.exports = function (grunt) {
           'js/theme/libs/classie.js',
           'js/theme/libs/jquery.responsImg.min.js',
           'js/theme/libs/jquery.slidereveal.min.js',
+          'js/theme/libs/mq.genie.js',
           'js/theme/libs/typed.min.js',
           'js/theme/libs/uisearch.js'
         ],

@@ -102,6 +102,175 @@ jQuery.responsImg=function(e,n){var r,i,t,o,a,s,u,c,l,d,w,f,p,g,v,m,h;return i={
 * https://github.com/nnattawat/slidereveal
 * Copyright (c) 2016 Nattawat Nonsung; Licensed MIT */
 !function(a){var b=function(a,b){var c=a.css("padding-"+b);return c?+c.substring(0,c.length-2):0},c=function(a){var c=b(a,"left"),d=b(a,"right");return a.width()+c+d+"px"},d=function(b,c){var d={width:250,push:!0,position:"left",speed:300,trigger:void 0,autoEscape:!0,show:function(){},shown:function(){},hidden:function(){},hide:function(){},top:0,overlay:!1,zIndex:1049,overlayColor:"rgba(0,0,0,0.5)"};this.setting=a.extend(d,c),this.element=b,this.init()};a.extend(d.prototype,{init:function(){var b=this,d=this.setting,e=this.element,f="all ease "+d.speed+"ms";e.css({position:"fixed",width:d.width,transition:f,height:"100%",top:d.top}).css(d.position,"-"+c(e)),d.overlay&&(e.css("z-index",d.zIndex),a("body").prepend("<div class='slide-reveal-overlay'></div>"),a(".slide-reveal-overlay").hide().css({position:"fixed",top:0,left:0,height:"100%",width:"100%","z-index":d.zIndex-1,"background-color":d.overlayColor}).click(function(){b.hide()})),e.data("slide-reveal",!1),d.push&&a("body").css({position:"relative","overflow-x":"hidden",transition:f,left:"0px"}),d.trigger&&d.trigger.length>0&&d.trigger.on("click.slideReveal",function(){e.data("slide-reveal")?b.hide():b.show()}),d.autoEscape&&a(document).on("keydown.slideReveal",function(c){0===a("input:focus, textarea:focus").length&&27===c.keyCode&&e.data("slide-reveal")&&b.hide()})},show:function(b){var d=this.setting,e=this.element;(void 0===b||b)&&d.show(e),d.overlay&&a(".slide-reveal-overlay").show(),e.css(d.position,"0px"),d.push&&("left"===d.position?a("body").css("left",c(e)):a("body").css("left","-"+c(e))),e.data("slide-reveal",!0),(void 0===b||b)&&setTimeout(function(){d.shown(e)},d.speed)},hide:function(b){var d=this.setting,e=this.element;(void 0===b||b)&&d.hide(e),d.push&&a("body").css("left","0px"),e.css(d.position,"-"+c(e)),e.data("slide-reveal",!1),(void 0===b||b)&&setTimeout(function(){d.overlay&&a(".slide-reveal-overlay").hide(),d.hidden(e)},d.speed)},toggle:function(a){var b=this.element;b.data("slide-reveal")?this.hide(a):this.show(a)}}),a.fn.slideReveal=function(b,c){return void 0!==b&&"string"==typeof b?this.each(function(){var d=a(this).data("slide-reveal-model");"show"===b?d.show(c):"hide"===b?d.hide(c):"toggle"===b&&d.toggle(c)}):this.each(function(){a(this).data("slide-reveal-model")&&a(this).data("slide-reveal-model").remove(),a(this).data("slide-reveal-model",new d(a(this),b))}),this}}(jQuery);
+/*!
+* mqGenie v0.5.0
+*
+* Adjusts CSS media queries in browsers that include the scrollbar's width in the viewport width so they fire at the intended size
+*
+* Returns the mqGenie object containing .adjusted, .width & fontSize for use in re-calculating media queries in JavaScript with mqAdjust(string)
+*
+* Copyright (c) 2014 Matt Stow
+*
+* http://mattstow.com
+*
+* Licensed under the MIT license
+*/
+;(function(window, document) {
+	if (!document.addEventListener) {
+		window.mqGenie = {
+			adjustMediaQuery: function(mediaQuery) {
+				return mediaQuery;
+			}
+		}
+		
+		return;
+	}
+	
+	function processRules(stylesheet, processor) {
+		var rules = stylesheet.cssRules ? stylesheet.cssRules : stylesheet.media,
+			rule,
+			processed = [],
+			i = 0,
+			length = rules.length;
+		
+		for (i; i < length; i ++) {
+			rule = rules[i];
+			
+			if (processor(rule))
+				processed.push(rule);
+		}
+		
+		return processed;
+	}
+	
+	function getMediaQueries(stylesheet) {
+		return processRules(stylesheet, function (rule) {
+			return rule.constructor === CSSMediaRule;
+		});
+	}
+	
+	function sameOrigin(url) {
+		var loc = window.location,
+			a = document.createElement('a');
+		
+		a.href = url;
+		
+		return a.hostname === loc.hostname && a.protocol === loc.protocol;
+	}
+	
+	function isInline(stylesheet) {
+		return stylesheet.ownerNode.constructor === HTMLStyleElement;
+	}
+	
+	function isValidExternal(stylesheet) {
+		return stylesheet.href && sameOrigin(stylesheet.href);
+	}
+	
+	function getStylesheets() {
+		var sheets = document.styleSheets,
+			sheet,
+			length = sheets.length,
+			i = 0,
+			valid = [];
+		
+		for (i; i < length; i++) {
+			sheet = sheets[i];
+			
+			if (isValidExternal(sheet) || isInline(sheet))
+				valid.push(sheet);
+		}
+		
+		return valid;
+	}
+	
+	document.addEventListener('DOMContentLoaded', function() {
+		window.mqGenie = (function() {
+			var html = document.documentElement;
+			
+			html.style.overflowY = 'scroll';
+			
+			var width = window.innerWidth - html.clientWidth,
+				props = {
+					adjusted: width > 0,
+					fontSize: parseFloat(window.getComputedStyle(html).getPropertyValue('font-size')),
+					width: width,
+					adjustMediaQuery: function(mediaQuery) {
+						if (!mqGenie.adjusted)
+							return mediaQuery;
+
+						var mq = mediaQuery.replace(/\d+px/gi, function(c) {
+							return parseInt(c, 10) + mqGenie.width + 'px';
+						});
+
+						mq = mq.replace(/\d.+?em/gi, function(c) {
+							return ((parseFloat(c) * mqGenie.fontSize) + mqGenie.width) / mqGenie.fontSize + 'em';
+						});
+
+						return mq;
+					}
+				};
+			
+			if (props.adjusted) {
+				if ('WebkitAppearance' in html.style) {
+					var chromeRX = /Chrome\/(\d*?\.\d*?\.\d*?\.\d*?)\s/g,
+						chrome = navigator.userAgent.match(chromeRX),
+						chromeVersion;
+					
+					if (chrome) {
+						chrome = chrome[0].replace(chromeRX, '$1');
+						chromeVersion = chrome.split('.');
+						chromeVersion[0] = parseInt(chromeVersion[0]);
+						chromeVersion[2] = parseInt(chromeVersion[2]);
+						chromeVersion[3] = parseInt(chromeVersion[3]);
+						
+						if (chromeVersion[0] <= 29) {
+							if (chromeVersion[0] === 29 && chromeVersion[2] < 1548 && chromeVersion[3] < 57) {
+								props.adjusted = false;
+							}
+							else if (chromeVersion[0] < 29) {
+								props.adjusted = false;
+							}
+						}
+					}
+					else {
+						props.adjusted = false;
+					}
+					
+					if (!props.adjusted)
+						return props;
+				}
+				
+				var stylesheets = getStylesheets(),
+					stylesheetsLength = stylesheets.length,
+					i = 0,
+					mediaQueries,
+					mediaQueriesLength;
+				
+				for (i; i < stylesheetsLength; i++) {
+					mediaQueries = getMediaQueries(stylesheets[i]);
+					mediaQueriesLength = mediaQueries.length;
+					
+					for (var j = 0; j < mediaQueriesLength; j++) {
+						mediaQueries[j].media.mediaText = mediaQueries[j].media.mediaText.replace(/m(in|ax)-width:\s*(\d|\.)+(px|em)/gi, function(strA) {
+							if (strA.match('px')) {
+								return strA.replace(/\d+px/gi, function(strB) {
+									return parseInt(strB, 10) + props.width + 'px';
+								});
+							}
+							else {
+								return strA.replace(/\d.+?em/gi, function(strB) {
+									return ((parseFloat(strB) * props.fontSize) + props.width) / props.fontSize + 'em';
+								});
+							}
+						});
+					}
+				}
+			}
+			
+			return props;
+		})();
+	});
+})(window, document);
 !function(t){"use strict";var s=function(s,e){this.el=t(s),this.options=t.extend({},t.fn.typed.defaults,e),this.isInput=this.el.is("input"),this.attr=this.options.attr,this.showCursor=this.isInput?!1:this.options.showCursor,this.elContent=this.attr?this.el.attr(this.attr):this.el.text(),this.contentType=this.options.contentType,this.typeSpeed=this.options.typeSpeed,this.startDelay=this.options.startDelay,this.backSpeed=this.options.backSpeed,this.backDelay=this.options.backDelay,this.stringsElement=this.options.stringsElement,this.strings=this.options.strings,this.strPos=0,this.arrayPos=0,this.stopNum=0,this.loop=this.options.loop,this.loopCount=this.options.loopCount,this.curLoop=0,this.stop=!1,this.cursorChar=this.options.cursorChar,this.shuffle=this.options.shuffle,this.sequence=[],this.build()};s.prototype={constructor:s,init:function(){var t=this;t.timeout=setTimeout(function(){for(var s=0;s<t.strings.length;++s)t.sequence[s]=s;t.shuffle&&(t.sequence=t.shuffleArray(t.sequence)),t.typewrite(t.strings[t.sequence[t.arrayPos]],t.strPos)},t.startDelay)},build:function(){var s=this;if(this.showCursor===!0&&(this.cursor=t('<span class="typed-cursor">'+this.cursorChar+"</span>"),this.el.after(this.cursor)),this.stringsElement){s.strings=[],this.stringsElement.hide();var e=this.stringsElement.find("p");t.each(e,function(e,i){s.strings.push(t(i).html())})}this.init()},typewrite:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.typeSpeed,i=this;i.timeout=setTimeout(function(){var e=0,r=t.substr(s);if("^"===r.charAt(0)){var o=1;/^\^\d+/.test(r)&&(r=/\d+/.exec(r)[0],o+=r.length,e=parseInt(r)),t=t.substring(0,s)+t.substring(s+o)}if("html"===i.contentType){var n=t.substr(s).charAt(0);if("<"===n||"&"===n){var a="",h="";for(h="<"===n?">":";";t.substr(s).charAt(0)!==h;)a+=t.substr(s).charAt(0),s++;s++,a+=h}}i.timeout=setTimeout(function(){if(s===t.length){if(i.options.onStringTyped(i.arrayPos),i.arrayPos===i.strings.length-1&&(i.options.callback(),i.curLoop++,i.loop===!1||i.curLoop===i.loopCount))return;i.timeout=setTimeout(function(){i.backspace(t,s)},i.backDelay)}else{0===s&&i.options.preStringTyped(i.arrayPos);var e=t.substr(0,s+1);i.attr?i.el.attr(i.attr,e):i.isInput?i.el.val(e):"html"===i.contentType?i.el.html(e):i.el.text(e),s++,i.typewrite(t,s)}},e)},e)}},backspace:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.backSpeed,i=this;i.timeout=setTimeout(function(){if("html"===i.contentType&&">"===t.substr(s).charAt(0)){for(var e="";"<"!==t.substr(s).charAt(0);)e-=t.substr(s).charAt(0),s--;s--,e+="<"}var r=t.substr(0,s);i.attr?i.el.attr(i.attr,r):i.isInput?i.el.val(r):"html"===i.contentType?i.el.html(r):i.el.text(r),s>i.stopNum?(s--,i.backspace(t,s)):s<=i.stopNum&&(i.arrayPos++,i.arrayPos===i.strings.length?(i.arrayPos=0,i.shuffle&&(i.sequence=i.shuffleArray(i.sequence)),i.init()):i.typewrite(i.strings[i.sequence[i.arrayPos]],s))},e)}},shuffleArray:function(t){var s,e,i=t.length;if(i)for(;--i;)e=Math.floor(Math.random()*(i+1)),s=t[e],t[e]=t[i],t[i]=s;return t},reset:function(){var t=this;clearInterval(t.timeout);var s=this.el.attr("id");this.el.after('<span id="'+s+'"/>'),this.el.remove(),"undefined"!=typeof this.cursor&&this.cursor.remove(),t.options.resetCallback()}},t.fn.typed=function(e){return this.each(function(){var i=t(this),r=i.data("typed"),o="object"==typeof e&&e;r||i.data("typed",r=new s(this,o)),"string"==typeof e&&r[e]()})},t.fn.typed.defaults={strings:["These are the default values...","You know what you should do?","Use your own!","Have a great day!"],stringsElement:null,typeSpeed:0,startDelay:0,backSpeed:0,shuffle:!1,backDelay:500,loop:!1,loopCount:!1,showCursor:!0,cursorChar:"|",attr:null,contentType:"html",callback:function(){},preStringTyped:function(){},onStringTyped:function(){},resetCallback:function(){}}}(window.jQuery);
 /**
  * uisearch.js v1.0.0
