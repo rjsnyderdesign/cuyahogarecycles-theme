@@ -9451,15 +9451,17 @@ body
     color: #666;
     background: #26cad3;
 }
-body.noscroll
-{
-    overflow: hidden;
-
-    padding-right: 15px;
-}
 .page-main
 {
     background: #fff;
+}
+.noscroll
+{
+    overflow: hidden;
+}
+body:not(.noscroll)
+{
+    overflow-y: scroll;
 }
 .page-header
 {
@@ -9467,10 +9469,6 @@ body.noscroll
 
     color: #fff;
     background: #26cad3;
-}
-.noscroll .page-header
-{
-    padding-right: 15px;
 }
 .page-header .page-header-upper
 {

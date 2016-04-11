@@ -33,6 +33,7 @@ if (typeof jQuery === 'undefined') {
     };
 
     var $window = $( window ),
+        $html   = $( window.document.documentElement ),
         $body   = $( window.document.body );
 
     //
@@ -66,17 +67,17 @@ if (typeof jQuery === 'undefined') {
         var player;
 
         function onYouTubePlayerAPIReady () {
-          // create the global player from the specific iframe (#youtube-video)
-          player = new YT.Player( 'youtube-video', {
-            events: { onReady: onPlayerReady }
-          } );
+            // create the global player from the specific iframe (#youtube-video)
+            player = new YT.Player( 'youtube-video', {
+                events: { onReady: onPlayerReady }
+            } );
         }
 
         function onPlayerReady ( e ) { // bind events
-          $( '.youtube-video-play-button' ).on( 'click', function () {
-            player.playVideo();
-            $( this ).addClass( 'video-playing' );
-          } );
+            $( '.youtube-video-play-button' ).on( 'click', function () {
+                player.playVideo();
+                $( this ).addClass( 'video-playing' );
+            } );
         }
 
         window.onYouTubePlayerAPIReady = onYouTubePlayerAPIReady;
@@ -90,12 +91,29 @@ if (typeof jQuery === 'undefined') {
     $body.ready( function () {
 
         //
+        // No scroll offset
+        //
+
+        $body.append( $( '<style/>' ).attr( 'type', 'text/css' ).text(
+            '.noscroll.noscroll-v{padding-right:' + SCROLLBAR_WIDTH + 'px;}' +
+            '.noscroll.noscroll-h{padding-bottom:' + SCROLLBAR_WIDTH + 'px;}'
+        ) );
+
+        $body.ready( function () {
+            // Override mq.genie.js document overflow property
+            window.setTimeout( function () {
+                $html.css( 'overflow-y', 'visible' );
+            }, 0 );
+        } );
+
+        //
         // SlideReveal panels
         //
 
         ( function () {
 
             var slideRevealTransitionSpeed = 400,
+                $pageScrollFreezable = $( '.page-scroll-freezable' ),
                 $panelMenu = $( '#panel-menu' ),
                 $panelCommunity = $( '#panel-community' ),
                 $slideRevealShroud = $( '<div/>' ).addClass( 'slidereveal-shroud' ),
@@ -112,7 +130,7 @@ if (typeof jQuery === 'undefined') {
             }
 
             function onShow ( $slider, $trigger ) {
-                $body.addClass( 'noscroll' );
+                $pageScrollFreezable.addClass( 'noscroll noscroll-v' );
                 $slideRevealShroud.addClass( 'active' );
                 pushShroud( $slider, $trigger );
                 $slider.addClass( 'active' );
@@ -133,7 +151,7 @@ if (typeof jQuery === 'undefined') {
                 $slider.removeClass( 'active' );
                 openedPanels.splice( $.inArray( $slider, openedPanels ), 1 );
                 if ( openedPanels.length === 0 ) {
-                    $body.removeClass( 'noscroll' );
+                    $pageScrollFreezable.removeClass( 'noscroll noscroll-v' );
                 }
             }
 

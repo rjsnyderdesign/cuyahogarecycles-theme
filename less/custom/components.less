@@ -335,15 +335,18 @@ form {
 body {
   background: @brand-info;
   color: @gray;
-
-  &.noscroll {
-    padding-right: 15px;
-    overflow: hidden;
-  }
 }
 
 .page-main {
   background: @white;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+body:not(.noscroll) {
+  overflow-y: scroll;
 }
 
 
@@ -355,10 +358,6 @@ body {
   width: 100%;
   background: @brand-info;
   color: @white;
-
-  .noscroll & {
-    padding-right: 15px;
-  }
 
   .page-header-upper {
     padding-top: (@font-size-base * 2);
