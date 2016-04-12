@@ -92,7 +92,7 @@ form {
 .btn-hollow(@color-default; @color-hover: @color-default; @color-active: @color-hover) {
   background: none;
   color: @color-default;
-  border-color: @color-default;
+  border: 2px solid @color-default;
   padding-left: (@font-size-base * 2.5);
   padding-right: (@font-size-base * 2.5);
 
@@ -100,12 +100,18 @@ form {
 }
 
 .btn-hollow-white   {
-  background: rgba(0,0,0,0.3);
-  .btn-hollow(@white; @brand-success);
+  .btn-hollow(@white; @brand-success; @brand-info);
+  background: rgba(0,0,0,0.25);
 }
 
-.btn-hollow-primary { .btn-hollow( @brand-primary ; @white ); }
-.btn-hollow-success { .btn-hollow( @brand-success ; @white ); }
+.btn-hollow-gray-primary { .btn-hollow(@gray; @brand-primary); }
+.btn-hollow-gray-success { .btn-hollow(@gray; @brand-success); }
+.btn-hollow-gray-info    { .btn-hollow(@gray; @brand-info);    }
+.btn-hollow-gray-warning { .btn-hollow(@gray; @brand-warning); }
+.btn-hollow-gray-danger  { .btn-hollow(@gray; @brand-danger);  }
+
+.btn-hollow-primary { .btn-hollow( @brand-primary ; @white; @brand-info ); }
+.btn-hollow-success { .btn-hollow( @brand-success ; @white; @brand-info ); }
 .btn-hollow-info    { .btn-hollow( @brand-info    ; @white ); }
 .btn-hollow-warning { .btn-hollow( @brand-warning ; @white ); }
 .btn-hollow-danger  { .btn-hollow( @brand-danger  ; @white ); }
