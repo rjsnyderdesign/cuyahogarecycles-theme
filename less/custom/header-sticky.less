@@ -14,6 +14,8 @@
 // Header sticky
 // --------------------------------------------------
 
+@header-sticky-navbar-height: 50px;
+
 .page-header.header-sticky {
   position: absolute;
   top: 0;
@@ -29,9 +31,33 @@
 
   &.header-sticky-detached {
     .box-shadow(0px 0px @panel-shadow-blur @panel-shadow-spread @panel-shadow-color);
-  }
 
-  .page-header-upper-right {
-    // display: none;
+    @media screen and (min-width: @screen-sm-min) {
+      .page-header-upper {
+        display: none;
+      }
+    }
+
+    .navbar {
+      min-height: @header-sticky-navbar-height;
+    }
+
+    .navbar-nav > li > a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .wdidw-wrapper,
+    .city-recycling-button {
+      height: @header-sticky-navbar-height;
+    }
+  }
+}
+
+.col-side-full-height.brand-sticky {
+  vertical-align: middle;
+
+  .page-header.header-sticky:not(.header-sticky-detached) & {
+    display: none;
   }
 }

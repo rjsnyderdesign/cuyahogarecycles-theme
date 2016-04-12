@@ -81,13 +81,6 @@
             '.noscroll.noscroll-h{padding-bottom:' + SCROLLBAR_WIDTH + 'px;}'
         ) );
 
-        $body.ready( function () {
-            // Override mq.genie.js document overflow property
-            window.setTimeout( function () {
-                $html.css( 'overflow-y', 'visible' );
-            }, 0 );
-        } );
-
         //
         // SlideReveal panels
         //
@@ -291,24 +284,39 @@
 
             var $pageHeader = $( '.page-header' ),
                 $pageHeaderParent = $pageHeader.parent(),
-                pageHeaderHeight = $pageHeader.height(),
-                scrollTopBefore = $window.scrollTop();
+                $pageHeaderUpper = $pageHeader.find( '.page-header-upper' ),
+                scrollTopBefore = $window.scrollTop(),
+                needsUpdateOffset = true;
+
+            function setTopOffset () {
+                var pageHeaderOffset = $pageHeader.height();
+                if ( !$pageHeaderUpper.is( ':visible' ) ) {
+                    pageHeaderOffset += $pageHeaderUpper.height();
+                }
+                $pageHeaderParent.css( 'padding-top', pageHeaderOffset );
+                needsUpdateOffset = false;
+            }
+
+            setTopOffset();
 
             $pageHeader.addClass( 'header-sticky' );
-            $pageHeaderParent.css( 'padding-top', pageHeaderHeight );
 
             $window.on( 'scroll', function () {
 
                 var scrollTopAfter = $window.scrollTop(),
                     headerTop = $pageHeader.offset().top,
+                    pageHeaderHeight = $pageHeader.height(),
                     isScrollTopAboveHeaderBottom = headerTop + pageHeaderHeight > scrollTopAfter,
                     isScrollTopAboveHeaderTop = headerTop >= scrollTopAfter;
 
                 if ( scrollTopAfter > pageHeaderHeight ) {
-                  $pageHeader.addClass( 'header-sticky-detached' );
+                    $pageHeader.addClass( 'header-sticky-detached' );
                 }
                 else {
-                  $pageHeader.removeClass( 'header-sticky-detached' );
+                    $pageHeader.removeClass( 'header-sticky-detached' );
+                    if ( needsUpdateOffset ) {
+                        setTopOffset();
+                    }
                 }
 
                 if ( scrollTopAfter < scrollTopBefore ) { // on scroll up
@@ -338,8 +346,8 @@
             } );
 
             $window.on( 'resize', function () {
-                pageHeaderHeight = $pageHeader.height();
-                $pageHeaderParent.css( 'padding-top', pageHeaderHeight );
+                setTopOffset();
+                needsUpdateOffset = true;
             } );
 
         } )();

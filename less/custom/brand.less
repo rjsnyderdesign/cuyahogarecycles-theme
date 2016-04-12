@@ -49,6 +49,8 @@
 @brand-logo-main-md-width: (@brand-logo-main-width * 3 / 4);
 @brand-logo-main-lg-width: @brand-logo-main-width;
 
+@brand-logo-main-icon-width: 78px;
+
 .brand {
   .brand-logo-main {
     width: @brand-logo-main-xs-width;
@@ -79,5 +81,11 @@
     @media screen and (min-width: @screen-lg-min) {
       width: @brand-logo-main-lg-width;
     }
+  }
+
+  .brand-logo-main-icon {
+    width: (@brand-logo-main-icon-width / 2);
+    height: auto;
+    margin: 0;
   }
 }

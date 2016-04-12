@@ -9649,6 +9649,10 @@ body:not(.noscroll)
     color: #fff;
     background: #26cad3;
 }
+.page-header .page-header-skip
+{
+    position: absolute;
+}
 .page-header .page-header-upper
 {
     padding-top: 32px;
@@ -10313,6 +10317,12 @@ h6
         width: 516px;
     }
 }
+.brand .brand-logo-main-icon
+{
+    width: 39px;
+    height: auto;
+    margin: 0;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -10772,6 +10782,35 @@ h6
     -webkit-box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
 }
+@media screen and (min-width: 768px)
+{
+    .page-header.header-sticky.header-sticky-detached .page-header-upper
+    {
+        display: none;
+    }
+}
+.page-header.header-sticky.header-sticky-detached .navbar
+{
+    min-height: 50px;
+}
+.page-header.header-sticky.header-sticky-detached .navbar-nav > li > a
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
+.page-header.header-sticky.header-sticky-detached .city-recycling-button
+{
+    height: 50px;
+}
+.col-side-full-height.brand-sticky
+{
+    vertical-align: middle;
+}
+.page-header.header-sticky:not(.header-sticky-detached) .col-side-full-height.brand-sticky
+{
+    display: none;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -10951,7 +10990,7 @@ h6
 }
 .wdidw-button
 {
-    font-size: 24px;
+    font-size: 18px;
 
     width: 100%;
     height: 100%;
@@ -10966,6 +11005,13 @@ h6
     color: #95d600;
     border: 0 none;
     background: none;
+}
+@media screen and (min-width: 480px)
+{
+    .wdidw-button
+    {
+        font-size: 24px;
+    }
 }
 @media screen and (min-width: 768px)
 {
@@ -10992,16 +11038,17 @@ h6
 }
 .wdidw-button .wdidw-animated-term
 {
-    font-size: 24px;
+    font-size: 18px;
 
     display: inline-block;
 
     width: 5em;
-    height: 28px;
+    height: 20px;
 
     -webkit-transition: border-bottom-color 500ms;
          -o-transition: border-bottom-color 500ms;
             transition: border-bottom-color 500ms;
+    text-align: center;
     vertical-align: top;
     text-transform: none;
 
@@ -11010,9 +11057,11 @@ h6
 }
 @media screen and (min-width: 480px)
 {
-    .wdidw-button .wdidw-button-break
+    .wdidw-button .wdidw-animated-term
     {
-        display: none;
+        font-size: 24px;
+
+        height: 28px;
     }
 }
 .wdidw-search-bar

@@ -35,11 +35,15 @@
   background: none;
   border: 0 none;
   color: @brand-success;
-  font-size: @font-size-large;
+  font-size: (@font-size-base * 1.125);
   text-align: center;
   white-space: nowrap;
 
   .transition(color @link-transition-speed);
+
+  @media screen and (min-width: @screen-xs-min) {
+    font-size: (@font-size-base * 1.5);
+  }
 
   @media screen and (min-width: @screen-sm-min) {
     text-align: left;
@@ -59,20 +63,20 @@
 
   .wdidw-animated-term {
     width: 5em;
-    height: (@font-size-base * 1.75);
+    height: (@font-size-base * 1.25);
     display: inline-block;
     border-bottom: 2px solid @brand-success;
     color: @white;
-    font-size: (@font-size-base * 1.5);
+    font-size: (@font-size-base * 1.125);
+    text-align: center;
     text-transform: none;
     vertical-align: top;
 
     .transition(border-bottom-color @link-transition-speed);
-  }
 
-  .wdidw-button-break {
     @media screen and (min-width: @screen-xs-min) {
-      display: none;
+      height: (@font-size-base * 1.75);
+      font-size: (@font-size-base * 1.5);
     }
   }
 }
