@@ -7409,7 +7409,9 @@ button.close
 .modal-header:before,
 .modal-header:after,
 .modal-footer:before,
-.modal-footer:after
+.modal-footer:after,
+.item-row:before,
+.item-row:after
 {
     display: table;
 
@@ -7430,7 +7432,8 @@ button.close
 .pager:after,
 .panel-body:after,
 .modal-header:after,
-.modal-footer:after
+.modal-footer:after,
+.item-row:after
 {
     clear: both;
 }
@@ -8908,7 +8911,8 @@ body:not(.noscroll)
  */
 .container-content-default,
 .container-content-cta,
-.container-content-newsletter-form
+.container-content-newsletter-form,
+.container-content-item-results
 {
     width: 100%;
     padding: 40px 0;
@@ -9106,6 +9110,21 @@ body:not(.noscroll)
     width: 100%;
     height: auto;
 }
+.container-content-item-results h1,
+.container-content-item-results h2,
+.container-content-item-results h3,
+.container-content-item-results h4,
+.container-content-item-results h5,
+.container-content-item-results h6
+{
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.container-content-item-results p
+{
+    margin-top: 0;
+    margin-bottom: 16px;
+}
 .container-breadcrumbs
 {
     font-size: 16px;
@@ -9165,7 +9184,7 @@ h6
 .container-content-default h5:not(:first-child),
 .container-content-default h6:not(:first-child)
 {
-    margin-top: 48px;
+    margin-top: 32px;
     margin-bottom: 8px;
 }
 .container-content-default p
@@ -9203,10 +9222,17 @@ h6
 {
     position: relative;
     z-index: 1;
+
+    display: block;
 }
 .brand a .brand-logo-main,
-.brand a .brand-logo-main-icon
+.brand-logo-main-icon
 {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
     -webkit-transition: -webkit-transform 500ms ease;
          -o-transition:      -o-transform 500ms ease;
             transition:         transform 500ms ease;
@@ -9220,18 +9246,18 @@ h6
             transform-origin: center center;
 }
 .brand a:hover .brand-logo-main,
+.brand-logo-main-icon,
 .brand a:focus .brand-logo-main,
+.brand-logo-main-icon,
 .brand a:active .brand-logo-main,
+.brand-logo-main-icon,
 .brand a.active .brand-logo-main,
-.brand a:hover .brand-logo-main-icon,
-.brand a:focus .brand-logo-main-icon,
-.brand a:active .brand-logo-main-icon,
-.brand a.active .brand-logo-main-icon
+.brand-logo-main-icon
 {
-    -webkit-transform: scale(1.125);
-        -ms-transform: scale(1.125);
-         -o-transform: scale(1.125);
-            transform: scale(1.125);
+    -webkit-transform: scale(1.124);
+        -ms-transform: scale(1.124);
+         -o-transform: scale(1.124);
+            transform: scale(1.124);
 }
 .brand .brand-logo-main
 {
@@ -9945,6 +9971,8 @@ h6
 
     width: 100%;
     height: 70px;
+
+    background: #00833e;
 }
 .wdidw-btn-wrapper
 {
@@ -11156,12 +11184,14 @@ h6
 {
     background: #26cad3;
 }
+.link-img-zoom
+{
+    display: block;
+}
 .link-img-zoom .img-zoom
 {
     display: block;
 
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 
@@ -11187,6 +11217,11 @@ h6
          -o-transform: scale(1.25);
             transform: scale(1.25);
 }
+.link-img-zoom .img-zoom
+{
+    width: 100%;
+    height: 100%;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -11197,6 +11232,11 @@ h6
 
     width: 278px;
     height: 278px;
+
+    -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+         -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
 
     border: 4px solid #666;
     border-radius: 50%;
@@ -11245,6 +11285,50 @@ h6
     width: 100%;
     height: 100%;
     margin: 0;
+}
+.item-row
+{
+    margin-top: 24px;
+}
+.item-row .item-icon
+{
+    float: left;
+
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+.item-link
+{
+    display: block;
+}
+.item-link img
+{
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-transition: -webkit-transform 500ms ease;
+         -o-transition:      -o-transform 500ms ease;
+            transition:         transform 500ms ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+}
+.item-link:hover img,
+.item-link:focus img,
+.item-link:active img,
+.item-link.active img
+{
+    -webkit-transform: scale(1.125);
+        -ms-transform: scale(1.125);
+         -o-transform: scale(1.125);
+            transform: scale(1.125);
 }
 .item-figure
 {
@@ -11458,7 +11542,6 @@ h6
 {
     font-size: 16px;
 
-    padding-top: 32px;
     padding-bottom: 16px;
 
     border-bottom: 2px solid #e6e6e6;
@@ -11470,6 +11553,15 @@ h6
 .item-filter-section
 {
     margin-bottom: 24px;
+}
+.item-filter-section h1:first-child,
+.item-filter-section h2:first-child,
+.item-filter-section h3:first-child,
+.item-filter-section h4:first-child,
+.item-filter-section h5:first-child,
+.item-filter-section h6:first-child
+{
+    margin-top: 0;
 }
 .item-filter-list
 {
@@ -11629,6 +11721,16 @@ h6
 .item-filter-city-zip-wrapper > .form-control
 {
     margin: 0;
+}
+.item-search-row
+{
+    padding: 40px 0;
+
+    border-bottom: 2px solid #e6e6e6;
+}
+.item-search-row a
+{
+    display: block;
 }
 .item-search-results
 {
@@ -12097,10 +12199,10 @@ h6
 .slidereveal-panel#panel-menu .nav > li > a.open .fa,
 .slidereveal-panel#panel-menu .sub-menu > li > a.open .fa
 {
-    -webkit-transform: rotateZ(45deg);
-        -ms-transform: rotateZ(45deg);
-         -o-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
 
     color: #e84b37;
 }

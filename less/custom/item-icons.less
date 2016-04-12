@@ -28,6 +28,9 @@
   border-radius: 50%;
   overflow: hidden;
 
+  // HACK: Use 3d transform to force clipping
+  .rotateZ(0deg);
+
   .item-icon-size(270px);
 
   &.item-icon-size-4 { .item-icon-size(270px); }
@@ -46,6 +49,32 @@
     display: block;
     margin: 0;
   }
+}
+
+
+//
+// Item row
+// --------------------------------------------------
+
+.item-row {
+  margin-top: (@font-size-large);
+
+  &:extend(.clearfix all);
+
+  .item-icon {
+    float: left;
+    margin-right: (@grid-gutter-width / 2);
+    margin-bottom: (@grid-gutter-width / 2);
+  }
+}
+
+
+//
+// Item link
+// --------------------------------------------------
+
+.item-link {
+  .link-fx-zoom(~'img'; 1.125);
 }
 
 

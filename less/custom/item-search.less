@@ -35,7 +35,6 @@
 // --------------------------------------------------
 
 .item-search-query {
-  padding-top: (@font-size-base * 2);
   padding-bottom: @font-size-base;
   border-bottom: 2px solid @gray-lighter;
   font-size: @font-size-base;
@@ -52,6 +51,12 @@
 
 .item-filter-section {
   margin-bottom: @font-size-large;
+
+  h1, h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 .item-filter-list {
@@ -138,6 +143,20 @@
 
   > .form-control {
     margin: 0;
+  }
+}
+
+
+//
+// Item row
+// --------------------------------------------------
+
+.item-search-row {
+  padding: (@grid-gutter-width / 2) 0;
+  border-bottom: 2px solid @gray-lighter;
+
+  a {
+    display: block;
   }
 }
 

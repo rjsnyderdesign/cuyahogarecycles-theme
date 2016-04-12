@@ -92,3 +92,26 @@
     .transition(border-color 0s, color 0s;);
   }
 }
+
+.link-fx-zoom(@child; @scale) {
+  display: block;
+
+  @{child} {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    .transition-transform(@link-transition-speed ease);
+    .transform-origin(center center);
+    .scale(1);
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    @{child} {
+      .scale(@scale);
+    }
+  }
+}

@@ -141,6 +141,22 @@
   }
 }
 
+.container-content-item-results {
+
+  &:extend(.container-content-default);
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: @font-size-base;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: @font-size-base;
+  }
+
+}
+
 .container-breadcrumbs {
   padding-top: (@font-size-base * 3);
   padding-bottom: @font-size-base;
