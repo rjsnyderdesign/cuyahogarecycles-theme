@@ -161,12 +161,17 @@
                 hidden: onHidden
             } );
 
-            // Close panel
+            // Add close buttons
             $( '.slidereveal-panel' )
                 .find( '.btn-panel-close' )
                 .on( 'click', function () {
                     $( this ).parents( '.slidereveal-panel' ).slideReveal( 'hide' );
                 } );
+
+            // Set panel position on load
+            // THIS IS FOR YOU SAFARI !!!
+            $panelMenu.css( 'right', -320 );
+            $panelCommunity.css( 'right', -300 );
 
             // Add custom overlay
             $body.append( $slideRevealShroud );
@@ -297,13 +302,12 @@
                 needsUpdateOffset = false;
             }
 
-            setTopOffset();
-
             $pageHeader.addClass( 'header-sticky' );
 
             $window.on( 'scroll', function () {
 
-                var scrollTopAfter = $window.scrollTop(),
+                var scrollPosY = $window.scrollTop(),
+                    scrollTopAfter = ( scrollPosY >= 0 )? scrollPosY : 0,
                     headerTop = $pageHeader.offset().top,
                     pageHeaderHeight = $pageHeader.height(),
                     isScrollTopAboveHeaderBottom = headerTop + pageHeaderHeight > scrollTopAfter,
@@ -348,7 +352,7 @@
             $window.on( 'resize', function () {
                 setTopOffset();
                 needsUpdateOffset = true;
-            } );
+            } ).trigger( 'resize' );
 
         } )();
 
@@ -685,7 +689,7 @@
         //
 
         ( function () {
-            $( '.tile-grid.tile-grid-staff > tile-grid a' ).on( 'touchstart', function () {
+            $( '.tile-grid.tile-grid-staff > .tile-grid a' ).on( 'touchstart', function () {
                 $( this ).focus();
             } );
         } )();
