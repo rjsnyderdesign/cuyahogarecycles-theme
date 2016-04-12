@@ -16,8 +16,13 @@
 
 .slidereveal-panel#panel-community {
   z-index: (@slidereveal-z-index-base + 2);
+  padding-bottom: (@slidereveal-panel-bar-height * 2);
   background: @brand-success;
   color: @brand-primary;
+
+  .panel-body {
+    margin-bottom: (-@slidereveal-panel-bar-height * 2);
+  }
 
   ul {
     list-style: none;

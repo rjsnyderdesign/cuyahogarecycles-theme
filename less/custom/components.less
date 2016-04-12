@@ -429,9 +429,10 @@ body:not(.noscroll) {
   > li {
 
     @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      max-width: 140px;
+      max-width: 125px;
       display: inline-block;
       float: none;
+      font-size: (@font-size-base * 0.875);
       vertical-align: bottom;
     }
 
@@ -489,7 +490,7 @@ body:not(.noscroll) {
   }
 }
 
-.city-recycling-button {
+.city-recycling-btn {
   height: @navbar-height;
   padding: 0 (@grid-gutter-width / 2);
   background: @brand-success;

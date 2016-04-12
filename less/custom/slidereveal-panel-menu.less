@@ -15,8 +15,13 @@
 // --------------------------------------------------
 
 .slidereveal-panel#panel-menu {
+  padding-bottom: (@slidereveal-panel-bar-height * 3);
   color: @white;
   background: @brand-dark;
+
+  .panel-body {
+    margin-bottom: (-@slidereveal-panel-bar-height * 3);
+  }
 
   hr {
     margin: @slidereveal-panel-line-spacing 0;
@@ -130,7 +135,7 @@
     }
   }
 
-  .city-recycling-button {
+  .city-recycling-btn {
     width: 100%;
     height: @slidereveal-panel-bar-height;
     padding: @slidereveal-panel-padding-vertical @slidereveal-panel-padding-horizontal;

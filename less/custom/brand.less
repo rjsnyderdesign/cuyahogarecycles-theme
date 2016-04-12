@@ -52,6 +52,28 @@
 @brand-logo-main-icon-width: 78px;
 
 .brand {
+  a {
+    position: relative;
+    z-index: 1;
+
+    .brand-logo-main,
+    .brand-logo-main-icon {
+      .transition-transform(@link-transition-speed ease);
+      .transform-origin(center center);
+      .scale(1);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      .brand-logo-main,
+      .brand-logo-main-icon {
+        .scale(1.125);
+      }
+    }
+  }
+
   .brand-logo-main {
     width: @brand-logo-main-xs-width;
     height: auto;

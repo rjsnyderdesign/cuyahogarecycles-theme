@@ -9749,10 +9749,12 @@ body:not(.noscroll)
 {
     .navbar-nav.navbar-primary > li
     {
+        font-size: 14px;
+
         display: inline-block;
         float: none;
 
-        max-width: 140px;
+        max-width: 125px;
 
         vertical-align: bottom;
     }
@@ -9815,7 +9817,7 @@ body:not(.noscroll)
     vertical-align: middle;
     white-space: nowrap;
 }
-.city-recycling-button
+.city-recycling-btn
 {
     height: 70px;
     padding: 0 40px;
@@ -9831,15 +9833,15 @@ body:not(.noscroll)
     border-left: 2px solid #00833e;
     background: #95d600;
 }
-.city-recycling-button:hover,
-.city-recycling-button:focus
+.city-recycling-btn:hover,
+.city-recycling-btn:focus
 {
     text-decoration: none;
 
     color: #fff;
 }
-.city-recycling-button:active,
-.city-recycling-button.active
+.city-recycling-btn:active,
+.city-recycling-btn.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -10267,6 +10269,40 @@ h6
     width: 372px;
     max-width: 100%;
     height: auto;
+}
+.brand a
+{
+    position: relative;
+    z-index: 1;
+}
+.brand a .brand-logo-main,
+.brand a .brand-logo-main-icon
+{
+    -webkit-transition: -webkit-transform 500ms ease;
+         -o-transition:      -o-transform 500ms ease;
+            transition:         transform 500ms ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+}
+.brand a:hover .brand-logo-main,
+.brand a:focus .brand-logo-main,
+.brand a:active .brand-logo-main,
+.brand a.active .brand-logo-main,
+.brand a:hover .brand-logo-main-icon,
+.brand a:focus .brand-logo-main-icon,
+.brand a:active .brand-logo-main-icon,
+.brand a.active .brand-logo-main-icon
+{
+    -webkit-transform: scale(1.125);
+        -ms-transform: scale(1.125);
+         -o-transform: scale(1.125);
+            transform: scale(1.125);
 }
 .brand .brand-logo-main
 {
@@ -10799,7 +10835,7 @@ h6
     padding-bottom: 15px;
 }
 .page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
-.page-header.header-sticky.header-sticky-detached .city-recycling-button
+.page-header.header-sticky.header-sticky-detached .city-recycling-btn
 {
     height: 50px;
 }
@@ -10981,14 +11017,14 @@ h6
     width: 100%;
     height: 70px;
 }
-.wdidw-button-wrapper
+.wdidw-btn-wrapper
 {
     display: block;
 
     width: 100%;
     height: 100%;
 }
-.wdidw-button
+.wdidw-btn
 {
     font-size: 18px;
 
@@ -11008,35 +11044,35 @@ h6
 }
 @media screen and (min-width: 480px)
 {
-    .wdidw-button
+    .wdidw-btn
     {
         font-size: 24px;
     }
 }
 @media screen and (min-width: 768px)
 {
-    .wdidw-button
+    .wdidw-btn
     {
         text-align: left;
     }
 }
-.wdidw-button:hover,
-.wdidw-button:focus,
-.wdidw-button:active,
-.wdidw-button.active
+.wdidw-btn:hover,
+.wdidw-btn:focus,
+.wdidw-btn:active,
+.wdidw-btn.active
 {
     text-decoration: none;
 
     color: #fff;
 }
-.wdidw-button:hover .wdidw-animated-term,
-.wdidw-button:focus .wdidw-animated-term,
-.wdidw-button:active .wdidw-animated-term,
-.wdidw-button.active .wdidw-animated-term
+.wdidw-btn:hover .wdidw-animated-term,
+.wdidw-btn:focus .wdidw-animated-term,
+.wdidw-btn:active .wdidw-animated-term,
+.wdidw-btn.active .wdidw-animated-term
 {
     border-bottom-color: #fff;
 }
-.wdidw-button .wdidw-animated-term
+.wdidw-btn .wdidw-animated-term
 {
     font-size: 18px;
 
@@ -11057,7 +11093,7 @@ h6
 }
 @media screen and (min-width: 480px)
 {
-    .wdidw-button .wdidw-animated-term
+    .wdidw-btn .wdidw-animated-term
     {
         font-size: 24px;
 
@@ -12559,7 +12595,7 @@ h6
 {
     width: 100%;
 }
-.btn-group .dropdown-toggle.item-filter-city-button
+.btn-group .dropdown-toggle.item-filter-city-btn
 {
     font-size: 24px;
 
@@ -12576,16 +12612,16 @@ h6
     -webkit-box-shadow: none;
             box-shadow: none;
 }
-.btn-group .dropdown-toggle.item-filter-city-button:hover,
-.btn-group .dropdown-toggle.item-filter-city-button:focus
+.btn-group .dropdown-toggle.item-filter-city-btn:hover,
+.btn-group .dropdown-toggle.item-filter-city-btn:focus
 {
     text-decoration: none;
 
     color: #26cad3;
     background: none;
 }
-.btn-group .dropdown-toggle.item-filter-city-button:active,
-.btn-group .dropdown-toggle.item-filter-city-button.active
+.btn-group .dropdown-toggle.item-filter-city-btn:active,
+.btn-group .dropdown-toggle.item-filter-city-btn.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -12593,7 +12629,7 @@ h6
 
     color: #95d600;
 }
-.btn-group.open .dropdown-toggle.item-filter-city-button
+.btn-group.open .dropdown-toggle.item-filter-city-btn
 {
     border: 0 none;
     background: inherit;
@@ -12900,7 +12936,6 @@ h6
 
     max-width: 480px;
     height: 100%;
-    padding-bottom: 150px;
 
     -webkit-transition: -webkit-box-shadow 400ms;
          -o-transition:         box-shadow 400ms;
@@ -12920,7 +12955,6 @@ h6
     overflow-y: auto;
 
     height: 100%;
-    margin-bottom: -150px;
     padding: 32px;
 }
 .slidereveal-panel .panel-content
@@ -13063,8 +13097,14 @@ h6
  */
 .slidereveal-panel#panel-menu
 {
+    padding-bottom: 150px;
+
     color: #fff;
     background: #263746;
+}
+.slidereveal-panel#panel-menu .panel-body
+{
+    margin-bottom: -150px;
 }
 .slidereveal-panel#panel-menu hr
 {
@@ -13234,7 +13274,7 @@ h6
     color: #95d600;
     border-color: #95d600;
 }
-.slidereveal-panel#panel-menu .city-recycling-button
+.slidereveal-panel#panel-menu .city-recycling-btn
 {
     font-size: 14px;
 
@@ -13303,8 +13343,14 @@ h6
 {
     z-index: 1052;
 
+    padding-bottom: 100px;
+
     color: #00833e;
     background: #95d600;
+}
+.slidereveal-panel#panel-community .panel-body
+{
+    margin-bottom: -100px;
 }
 .slidereveal-panel#panel-community ul
 {
