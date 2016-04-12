@@ -7,12 +7,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#26cad3" />
 
     <title>CuyahogaRecycles | Home</title>
 
     <!-- stylesheets -->
-    <link type="text/css" href="../dist/css/bootstrap.css" rel="stylesheet" />
-    <link type="text/css" href="../dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link type="text/css" href="../dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link type="text/css" href="../root/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,21 +25,28 @@
 
     <!-- Typekit font kit -->
     <script src="https://use.typekit.net/nrs3tja.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script>try{Typekit.load({ async: true, active: function(){ window.isTypekitLoaded = true; } });}catch(e){}</script>
 
   </head>
 
-  <body>
+  <body class="page-scroll-freezable">
 
-    <header class="page-header" role="banner">
+    <header class="page-header page-scroll-freezable" role="banner">
+
+      <a class="page-header-skip" href="#page-main" class="sr-only sr-only-focusable">Skip to main content</a>
 
       <div class="container-fluid page-header-upper">
         <div class="page-header-upper-content">
-          <a class="action-open-menu navbar-toggle pull-left" href="#panel-menu" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <a
+            class="action-open-menu navbar-toggle pull-left"
+            href="#panel-menu"
+            data-toggle="collapse"
+            data-target="#bs-navbar"
+            aria-controls="bs-navbar"
+            aria-expanded="false"
+          >
+            <i class="fa fa-bars" aria-hidden="true"></i>
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
           </a>
           <div class="brand">
             <a href="#">
@@ -53,7 +61,7 @@
           <div class="page-header-upper-right">
             <div class="search-container">
               <label>Search Site</label>
-              <div id="sb-search" class="sb-search">
+              <div id="sb-search" class="sb-search" role="search">
                 <div class="form">
                   <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
                   <input class="sb-search-submit" type="submit" value="">
@@ -75,130 +83,173 @@
 
         <div class="container-fluid">
 
-          <ul class="nav navbar-nav navbar-left navbar-primary">
-            <li class="dropdown"><a href="#" data-dropdown-controls="rfh" data-toggle="dropdown">Recycling for Home</a></li>
-            <li class="dropdown"><a href="#" data-dropdown-controls="ps"  data-toggle="dropdown">Programs &amp; Services</a></li>
-            <li class="dropdown"><a href="#" data-dropdown-controls="hrw" data-toggle="dropdown">How Recycling Works</a></li>
-            <li class="dropdown"><a href="#" data-dropdown-controls="au"  data-toggle="dropdown">About Us</a></li>
-          </ul>
+          <div class="row-sm-full-height row-full-height-even-padding">
+            <div class="col-side-full-height brand-sticky">
+              <div class="brand">
+                <a href="#">
+                  <img
+                    class="brand-logo-main-icon"
+                    alt="CuyahogaRecycles.org"
+                    title="CuyahogaRecycles.org"
+                    src="../root/img/logos/Campaign_Icon_CCSWD.png"
+                  /><span class="sr-only">CuyhahogaRecycles.org</span>
+                </a>
+              </div>
+            </div><!-- /.col-main-full-height -->
+            <div class="col-main-full-height">
+              <ul class="nav navbar-nav navbar-left navbar-primary">
+                <li class="dropdown"><a href="#" data-dropdown-controls="rfh" data-toggle="dropdown">Recycling at Home</a></li>
+                <li class="dropdown"><a href="#" data-dropdown-controls="ps"  data-toggle="dropdown">Programs &amp; Services</a></li>
+                <li class="dropdown"><a href="#" data-dropdown-controls="hrw" data-toggle="dropdown">How Recycling Works</a></li>
+                <li class="dropdown"><a href="#" data-dropdown-controls="au"  data-toggle="dropdown">About Us</a></li>
+              </ul>
+            </div><!-- /.col-main-full-height -->
+          </div><!-- /.row-sm-full-height -->
 
         </div><!-- /.container-fluid -->
 
         <div class="mega-menu bg-dark"><!-- .mega-menu -->
-          <!-- .rfh-sub -->
+
           <div class="main-menu-dropdown clearfix" data-dropdown="rfh">
-            <ul class="col-sm-4 dropdown-menu sub-menu first">
-              <li><a href="#">Recycling in Your Comunity</a></li>
-              <li><a href="#">Composting</a></li>
-              <li><a href="#" class="trigger">Household Hazardous Waste<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Fluorescent Bulbs</a></li>
-                  <li><a href="#">Latex Paint Disposal</a></li>
-                  <li><a href="#">Medicine &amp; Needles</a></li>
-                </ul>
-              </li>
-              <li><a href="#" class="trigger">Special Recycling Programs<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Paper Recycling Drop-Offs</a></li>
-                  <li><a href="#">Retail Store Recycling Programs</a></li>
-                  <li><a href="#">Mother Recycling Programs</a></li>
-                </ul>
-              </li>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">Recycling in Your Community</a></li>
+              <li><a href="#">Backyard Composting &amp; Bins</a></li>
+              <li><a href="#">Household Hazardous Waste Disposal</a></li>
+              <li><a href="#">Latex Paint Disposal</a></li>
+              <li><a href="#">Recycling at the District</a></li>
               <li><a href="#">Computer Recycling</a></li>
-              <li><a href="#">How to Stop Unwanted Mail</a></li>
               <li><a href="#">Greening the Holidays</a></li>
               <li><a href="#">What Do I Do With?</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
               <h2><span>Change Starts</span><br />in your home.</h2>
             </div>
-          </div><!-- /.rfh-sub -->
-          <!-- .ps-sub -->
+          </div><!-- /.main-menu-dropdown -->
+
           <div class="main-menu-dropdown clearfix" data-dropdown="ps">
-            <ul class="col-sm-4 dropdown-menu sub-menu first">
-              <li><a href="#" class="trigger">Community Programs<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">Event Calendar</a></li>
+              <li><a href="#" class="trigger">Presentations &amp; Workshops<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Event Calendar</a></li>
-                  <li><a href="#">Composting</a></li>
-                  <li><a href="#">Household Hazardous Waste</a></li>
+                  <li><a href="#">General Recycling Presentations</a></li>
+                  <li><a href="#">Composting Workshops &amp; Bin Sales</a></li>
+                  <li><a href="#">Business Recycling Seminars</a></li>
+                  <li><a href="#">Classroom Presentations</a></li>
+                  <li><a href="#">Teacher Workshops</a></li>
+                  <li><a href="#">Day Camp and Scout Programs</a></li>
                 </ul>
               </li>
-              <li><a href="#">Master Recycler Program</a></li>
               <li><a href="#" class="trigger">Business Services<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Seminars &amp; Events</a></li>
+                  <li><a href="#">Business Recycling Seminars</a></li>
                   <li><a href="#">Business Recycling Directory</a></li>
-                  <li><a href="#">Resources</a></li>
+                  <li><a href="#" class="trigger">Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Tips to Green Your Office</a></li>
+                      <li><a href="#">Paper Shredding &amp; Doc. Decon.</a></li>
+                      <li><a href="#">Deconstruction</a></li>
+                      <li><a href="#">Food Donation</a></li>
+                      <li><a href="#">Recycling Equipment &amp; Labels</a></li>
+                      <li><a href="#">Helpful Links</a></li>
+                    </ul>
+                  </li>
                   <li><a href="#">Zero Waste Goals</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="trigger">School Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Contests</a></li>
-                  <li><a href="#">Recycling Grants for Schools</a></li>
-                  <li><a href="#">For Teachers</a></li>
-                  <li><a href="#">Recycling at School</a></li>
-                  <li><a href="#">For Students</a></li>
-                </ul>
-              </li>
+              <li><a href="#">Grants</a></li>
               <li><a href="#" class="trigger">Municipal Support<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Services for Local Governments</a></li>
                   <li><a href="#">Community Awareness Toolkit</a></li>
-                  <li><a href="#">Community Contracts &amp; Practices</a></li>
                   <li><a href="#">Facilities &amp; Maps</a></li>
                   <li><a href="#">Municipal HHW Guidelines</a></li>
+                  <li><a href="#">Residential Recycling Report</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Household Hazardous Waste</a></li>
+              <li><a href="#">Master Recycler Program</a></li>
+              <li><a href="#" class="trigger">Classroom Programming<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#" class="trigger">Teacher Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Classroom Presentations</a></li>
+                      <li><a href="#">Educators' E-Newsletter</a></li>
+                      <li><a href="#" class="trigger">Lesson Plans &amp; Activities<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu sub-menu second">
+                          <li><a href="#">Composting</a></li>
+                          <li><a href="#">Recycling</a></li>
+                          <li><a href="#">Pollution</a></li>
+                          <li><a href="#">Municipal Solid Waste</a></li>
+                          <li><a href="#">Litter Prevention</a></li>
+                          <li><a href="#">Earth Day Ideas</a></li>
+                          <li><a href="#">Schoolyear Planning</a></li>
+                          <li><a href="#">Storybooks</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Professional Development</a></li>
+                      <li><a href="#">Links for Teachers</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="trigger">Recycling at School<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Let the Carton Live On</a></li>
+                      <li><a href="#">Grants for Schools</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="trigger">Students<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Homework Helpers</a></li>
+                      <li><a href="#">Scholarships</a></li>
+                      <li><a href="#">Links for Students</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Contests</a></li>
                 </ul>
               </li>
               <li><a href="#" class="trigger">Youth Programs<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Clean Up Cuyagoga</a></li>
-                  <li><a href="#">Day Camp &amp; Summer Programs</a></li>
-                  <li><a href="#">Scouts &amp; Youth Groups</a></li>
-                  <li><a href="#">Reduce Reuse Recycle PatchProgram</a></li>
-                  <li><a href="#">Request a Recycling Fundana</a></li>
+                  <li><a href="#">Reduce Reuse Recycle Patch Program</a></li>
                 </ul>
               </li>
             </ul>
-            <div class="call-out col-sm-4 pull-right">
-              <h2><span>Change Starts</span><br />in your home.</h2>
-            </div>
-          </div><!-- /.ps-sub -->
-          <!-- .hrw-sub -->
+          </div><!-- /.main-menu-dropdown -->
+
           <div class="main-menu-dropdown clearfix" data-dropdown="hrw">
-            <ul class="col-sm-4 dropdown-menu sub-menu first">
-              <li><a href="#">The Recycling Process: Reduce,Reuse, Recycle</a></li>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">How to Recycle</a></li>
+              <li><a href="#">The Recycling Process</a></li>
+              <li><a href="#">Reduce, Reuse, Recycle</a></li>
               <li><a href="#">Environment &amp; Recycling Facts</a></li>
               <li><a href="#">Learn About Landfills</a></li>
-              <li><a href="#" class="trigger">Links &amp; Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#">Recycling in Your Community</a></li>
-                </ul>
-              </li>
+              <li><a href="#">Links &amp; Resources</a></li>
+              <li><a href="#">Recycling in Your Community</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
               <h2><span>Change Starts</span><br />in your home.</h2>
             </div>
-          </div><!-- /.hrw-sub -->
-          <!-- .au-sub -->
+          </div><!-- /.main-menu-dropdown -->
+
           <div class="main-menu-dropdown clearfix" data-dropdown="au">
-            <ul class="col-sm-4 dropdown-menu sub-menu first">
-              <li><a href="#">Annual Residential Recycling Report</a></li>
+            <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Solid Waste Management Plan</a></li>
               <li><a href="#" class="trigger">Publications<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">Annual Residential Recycling Report</a></li>
                   <li><a href="#">Pass It On Book</a></li>
                   <li><a href="#">Publication Request Form</a></li>
+                  <li><a href="#">Order a Recycling Fundana</a></li>
                 </ul>
               </li>
-              <li><a href="#">Enewsletters</a></li>
+              <li><a href="#">E-newsletters</a></li>
               <li><a href="#">Social Media Hub</a></li>
               <li><a href="#">Videos</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
               <h2><span>Change Starts</span><br />in your home.</h2>
             </div>
-          </div><!-- /.au-sub -->
+          </div><!-- /.main-menu-dropdown -->
+
         </div><!-- /.mega-menu -->
 
       </nav>
@@ -210,23 +261,27 @@
           <div class="col-main-full-height">
 
             <div class="wdidw-wrapper">
+
               <div class="wdidw-btn-wrapper">
-                <a class="wdidw-btn wdidw-show" href="#!">
-                  What Do I <br class="wdidw-btn-break" />Do With <span class="wdidw-animated-term"></span>?
+                <a class="wdidw-btn wdidw-show btn-center-outer" href="#!">
+                  <div class="btn-center-inner">
+                    What Do I Do With <span class="wdidw-animated-term"></span>?
+                  </div>
                 </a>
               </div>
+
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
                   <div class="form wdidw-search-form">
                     <div class="input-group">
                       <span class="input-group-btn">
-                        <a class="btn btn-default" href="#"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></a>
+                        <a class="btn btn-default wdidw-search-form-submit" href="#"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></a>
                       </span>
-                      <label class="sr-only" for="wdidw-search-field">Enter items here to get recycling information</label>
+                      <label class="sr-only" for="wdidw-search-field">Enter items for recycling information</label>
                       <input
                         type="text"
                         class="form-control"
-                        placeholder="Enter items here to get recycling information"
+                        placeholder="Enter items"
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
@@ -236,13 +291,30 @@
                   </div>
                 </div><!-- /.container-fluid -->
               </div><!-- /.wdidw-search-bar -->
+
             </div><!-- /.wdidw-wrapper -->
+
+            <div class="wdidw-search-results-wrapper">
+              <div class="wdidw-search-results-inner-wrapper">
+                <ul class="wdidw-search-results-list" id="wdidw-search-results-list">
+                  <li><a href="#"><strong>Ca</strong>ns</a></li>
+                  <li><a href="#"><strong>Ca</strong>rdboard</a></li>
+                  <li><a href="#"><strong>Ca</strong>rtons</a></li>
+                </ul>
+              </div>
+            </div>
 
           </div><!-- /.header-infobar-right -->
 
           <div class="col-side-full-height hidden-xs">
 
-            <a class="city-recycling-btn action-open-community" href="#">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+            <div class="pal-primary">
+              <a class="city-recycling-btn action-open-community btn-center-outer" href="#panel-community">
+                <div class="btn-center-inner">
+                  Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+                </div>
+              </a>
+            </div>
 
           </div><!-- /.header-infobar-left -->
 
@@ -252,7 +324,7 @@
 
     </header>
 
-    <main class="page-main" role="main">
+    <main class="page-main" role="main" tabindex="-1" id="page-main">
 
       <div class="container-breadcrumbs">
         <div class="container-fluid">
@@ -295,42 +367,42 @@
     <footer class="page-footer" role="contentinfo">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-xs-12 col-md-12 col-lg-4 page-footer-col">
-            <p>
-              <div class="brand">
-                <a href="#">
-                  <img
-                    class="brand-district-logo"
-                    alt="Cuyahoga County Solid Waste District - CuyahogaRecycles.org"
-                    title="Cuyahoga County Solid Waste District - CuyahogaRecycles.org"
-                    src="../root/img/logos/SWDN_Logos_District_Horizontal_wURL.png"
-                  />
-                </a>
-              </div><!-- /.brand -->
-            </p>
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
+            <div class="brand">
+              <a href="#">
+                <img
+                  class="brand-district-logo"
+                  alt="Cuyahoga County Solid Waste District - CuyahogaRecycles.org"
+                  title="Cuyahoga County Solid Waste District - CuyahogaRecycles.org"
+                  src="../root/img/logos/SWDN_Logos_District_Horizontal_wURL.png"
+                />
+              </a>
+            </div><!-- /.brand -->
             <p>The Cuyahoga County Solid Waste District is the leading resource in Cuyahoga County for information, expertise and programs that support sustainable materials management and reduce the environmental impact of waste.</p>
             <dl>
               <dt>Phone</dt>
-              <dd>000.000.0000</dd>
+              <dd><a href="tel:216-443-3749">216.443.3749</a></dd>
               <dt>Address</dt>
-              <dd>4750 East 131 Street<br />Garfield Heights, OH 00000-0000</dd>
+              <dd>4750 East 131 Street<br />Garfield Heights, OH 44105-7130</dd>
             </dl>
           </div><!-- /.col-*-* -->
-          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
-            <h2>Send us a message</h2>
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
+            <h4>Send us a message</h4>
             <div class="form">
               <label for="contact-form-name">Name</label>
-              <input type="text" class="form-control" />
+              <input type="text" class="form-control" id="contact-form-name" />
               <label for="contact-form-email">E-mail</label>
-              <input type="email" class="form-control" />
+              <input type="email" class="form-control" id="contact-form-email" />
+              <label for="contact-form-city">City of Residence</label>
+              <input type="text" class="form-control" id="contact-form-city" />
               <label for="contact-form-msg">Message</label>
-              <textarea class="form-control"></textarea>
-              <input type="submit" class="form-control" />
+              <textarea class="form-control" id="contact-form-msg"></textarea>
+              <input type="submit" class="btn btn-hollow btn-hollow-gray-success" />
             </div>
           </div><!-- /.col-*-* -->
-          <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
+          <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
-              <li><a href="#">Recycling for Home</a></li>
+              <li><a href="#">Recycling at Home</a></li>
               <li><a href="#">Programs &amp; Services</a></li>
               <li><a href="#">How Recycling Works</a></li>
               <li><a href="#">About Us</a></li>
@@ -360,147 +432,273 @@
 
     <!-- slider panels -->
 
-    <div class="slidereveal-panel" id="panel-calendar">
-      <h2>Events</h2>
-    </div><!-- /.slidereveal-panel -->
-
-    <div class="slidereveal-panel" id="panel-newsletters">
-      <h2>Newsletters</h2>
-    </div><!-- /.slidereveal-panel -->
-
     <div class="slidereveal-panel" id="panel-community">
-      <div class="search-container">
-        <input type="text" placeholder="Enter City or Zip Code" />
-        <i class="fa fa-search" aria-hidden="true"></i>
+
+      <div class="panel-head">
+
+        <a class="btn btn-panel-close" href="#!">
+          <i class="fa fa-close" aria-hidden="true"></i>
+          <span class="sr-only">Close</span>
+        </a>
+
+        <div class="search-container">
+          <label class="sr-only" for="panel-search-city">Enter City or Zip Code</label>
+          <input
+            type="text"
+            placeholder="Enter City or Zip Code"
+            id="panel-search-city"
+          />
+          <a class="search-btn" href="#">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </a>
+        </div>
+
       </div>
-      <a class="btn btn-hollow btn-hollow-white action-open-community" href="#panel-community">Close</a>
-      <ul class="city-list">
-        <li><a href="#">Bay Village</a></li>
-        <li><a href="#">Beachwood</a></li>
-        <li><a href="#">Bedford</a></li>
-        <li><a href="#">Bedford Heights</a></li>
-        <li><a href="#">Brecksville</a></li>
-        <li><a href="#">Cleveland</a></li>
-      </ul>
+
+      <div class="panel-body">
+
+        <ul class="city-list">
+          <li><a href="#">Bay Village</a></li>
+          <li><a href="#">Beachwood</a></li>
+          <li><a href="#">Bedford</a></li>
+          <li><a href="#">Bedford Heights</a></li>
+          <li><a href="#">Bentleyville</a></li>
+          <li><a href="#">Berea</a></li>
+          <li><a href="#">Bratenahl</a></li>
+          <li><a href="#">Brecksville</a></li>
+          <li><a href="#">Broadview Heights</a></li>
+          <li><a href="#">Brook Park</a></li>
+          <li><a href="#">Brooklyn</a></li>
+          <li><a href="#">Brooklyn Heights</a></li>
+          <li><a href="#">Chagrin Falls</a></li>
+          <li><a href="#">Chagrin Falls Township</a></li>
+          <li><a href="#">Cleveland</a></li>
+          <li><a href="#">Cleveland Heights</a></li>
+          <li><a href="#">Cuyahoga Heights</a></li>
+          <li><a href="#">East Cleveland</a></li>
+          <li><a href="#">Euclid</a></li>
+          <li><a href="#">Fairview Park</a></li>
+          <li><a href="#">Garfield Heights</a></li>
+          <li><a href="#">Gates Mills</a></li>
+          <li><a href="#">Glenwillow</a></li>
+          <li><a href="#">Highland Heights</a></li>
+          <li><a href="#">Highland Hills</a></li>
+          <li><a href="#">Hunting Valley</a></li>
+          <li><a href="#">Independence</a></li>
+          <li><a href="#">Lakewood</a></li>
+          <li><a href="#">Linndale</a></li>
+          <li><a href="#">Lyndhurst</a></li>
+          <li><a href="#">Maple Heights</a></li>
+          <li><a href="#">Mayfield</a></li>
+          <li><a href="#">Mayfield Heights</a></li>
+          <li><a href="#">Middleburg Heights</a></li>
+          <li><a href="#">Moreland Hills</a></li>
+          <li><a href="#">Newburgh Heights</a></li>
+          <li><a href="#">North Olmsted</a></li>
+          <li><a href="#">North Randall</a></li>
+          <li><a href="#">North Royalton</a></li>
+          <li><a href="#">Oakwood</a></li>
+          <li><a href="#">Olmsted Falls</a></li>
+          <li><a href="#">Olmsted Township</a></li>
+          <li><a href="#">Orange</a></li>
+          <li><a href="#">Parma</a></li>
+          <li><a href="#">Parma Heights</a></li>
+          <li><a href="#">Pepper Pike</a></li>
+          <li><a href="#">Richmond Heights</a></li>
+          <li><a href="#">Rocky River</a></li>
+          <li><a href="#">Seven Hills</a></li>
+          <li><a href="#">Shaker Heights</a></li>
+          <li><a href="#">Solon</a></li>
+          <li><a href="#">South Euclid</a></li>
+          <li><a href="#">Strongsville</a></li>
+          <li><a href="#">University Heights</a></li>
+          <li><a href="#">Valley View</a></li>
+          <li><a href="#">Walton Hills</a></li>
+          <li><a href="#">Warrensville Heights</a></li>
+          <li><a href="#">Westlake</a></li>
+          <li><a href="#">Woodmere</a></li>
+        </ul>
+
+      </div>
+
     </div><!-- /.slidereveal-panel -->
 
     <div class="slidereveal-panel" id="panel-menu">
-      <div class="search-container">
-        <input type="text" placeholder="Search" />
-        <i class="fa fa-search" aria-hidden="true"></i>
+
+      <div class="panel-head">
+
+        <a class="btn btn-panel-close" href="#!">
+          <i class="fa fa-close" aria-hidden="true"></i>
+          <span class="sr-only">Close</span>
+        </a>
+
+        <div class="search-container">
+          <label class="sr-only" for="panel-search-site">Search</label>
+          <input
+            type="text"
+            placeholder="Search"
+            id="panel-search-site"
+          />
+          <a class="search-btn" href="#">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span class="sr-only">Search</span>
+          </a>
+        </div>
+
+        <a class="city-recycling-btn action-open-community btn-center-outer" href="#panel-community">
+          <div class="btn-center-inner">
+            Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+          </div>
+        </a>
+
       </div>
-      <div>
-        <a href="#" class="action-open-community">Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i><a>
+
+      <div class="panel-body">
+
+        <ul class="nav">
+
+          <li class="dropdown"><a href="#" class="trigger">Recycling at Home<i class="fa fa-plus" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">Recycling in Your Community</a></li>
+              <li><a href="#">Backyard Composting &amp; Bins</a></li>
+              <li><a href="#">Household Hazardous Waste Disposal</a></li>
+              <li><a href="#">Latex Paint Disposal</a></li>
+              <li><a href="#">Recycling at the District</a></li>
+              <li><a href="#">Computer Recycling</a></li>
+              <li><a href="#">Greening the Holidays</a></li>
+              <li><a href="#">What Do I Do With?</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#" class="trigger">Programs &amp; Services<i class="fa fa-plus" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">Event Calendar</a></li>
+              <li><a href="#" class="trigger">Presentations &amp; Workshops<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">General Recycling Presentations</a></li>
+                  <li><a href="#">Composting Workshops &amp; Bin Sales</a></li>
+                  <li><a href="#">Business Recycling Seminars</a></li>
+                  <li><a href="#">Classroom Presentations</a></li>
+                  <li><a href="#">Teacher Workshops</a></li>
+                  <li><a href="#">Day Camp and Scout Programs</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="trigger">Business Services<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">Business Recycling Seminars</a></li>
+                  <li><a href="#">Business Recycling Directory</a></li>
+                  <li><a href="#" class="trigger">Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Tips to Green Your Office</a></li>
+                      <li><a href="#">Paper Shredding &amp; Doc. Decon.</a></li>
+                      <li><a href="#">Deconstruction</a></li>
+                      <li><a href="#">Food Donation</a></li>
+                      <li><a href="#">Recycling Equipment &amp; Labels</a></li>
+                      <li><a href="#">Helpful Links</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Zero Waste Goals</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Grants</a></li>
+              <li><a href="#" class="trigger">Municipal Support<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">Services for Local Governments</a></li>
+                  <li><a href="#">Community Awareness Toolkit</a></li>
+                  <li><a href="#">Facilities &amp; Maps</a></li>
+                  <li><a href="#">Municipal HHW Guidelines</a></li>
+                  <li><a href="#">Residential Recycling Report</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Household Hazardous Waste</a></li>
+              <li><a href="#">Master Recycler Program</a></li>
+              <li><a href="#" class="trigger">Classroom Programming<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#" class="trigger">Teacher Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Classroom Presentations</a></li>
+                      <li><a href="#">Educators' E-Newsletter</a></li>
+                      <li><a href="#" class="trigger">Lesson Plans &amp; Activities<i class="fa fa-plus" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu sub-menu second">
+                          <li><a href="#">Composting</a></li>
+                          <li><a href="#">Recycling</a></li>
+                          <li><a href="#">Pollution</a></li>
+                          <li><a href="#">Municipal Solid Waste</a></li>
+                          <li><a href="#">Litter Prevention</a></li>
+                          <li><a href="#">Earth Day Ideas</a></li>
+                          <li><a href="#">Schoolyear Planning</a></li>
+                          <li><a href="#">Storybooks</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Professional Development</a></li>
+                      <li><a href="#">Links for Teachers</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="trigger">Recycling at School<i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Let the Carton Live On</a></li>
+                      <li><a href="#">Grants for Schools</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#" class="trigger">Students<i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu sub-menu second">
+                      <li><a href="#">Homework Helpers</a></li>
+                      <li><a href="#">Scholarships</a></li>
+                      <li><a href="#">Links for Students</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Contests</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="trigger">Youth Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">Clean Up Cuyagoga</a></li>
+                  <li><a href="#">Reduce Reuse Recycle Patch Program</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#" class="trigger">How Recycling Works<i class="fa fa-plus" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">How to Recycle</a></li>
+              <li><a href="#">The Recycling Process</a></li>
+              <li><a href="#">Reduce, Reuse, Recycle</a></li>
+              <li><a href="#">Environment &amp; Recycling Facts</a></li>
+              <li><a href="#">Learn About Landfills</a></li>
+              <li><a href="#">Links &amp; Resources</a></li>
+              <li><a href="#">Recycling in Your Community</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="#" class="trigger">About Us<i class="fa fa-plus" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu sub-menu first">
+              <li><a href="#">Solid Waste Management Plan</a></li>
+              <li><a href="#" class="trigger">Publications<i class="fa fa-plus" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu sub-menu second">
+                  <li><a href="#">Annual Residential Recycling Report</a></li>
+                  <li><a href="#">Pass It On Book</a></li>
+                  <li><a href="#">Publication Request Form</a></li>
+                  <li><a href="#">Order a Recycling Fundana</a></li>
+                </ul>
+              </li>
+              <li><a href="#">E-newsletters</a></li>
+              <li><a href="#">Social Media Hub</a></li>
+              <li><a href="#">Videos</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="inline-link-list panel-social-links">
+          <li><a href="#"><i class="fa fa-lg fa-facebook"     aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
+             ><a href="#"><i class="fa fa-lg fa-twitter"      aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
+             ><a href="#"><i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
+        </ul><!-- /Social -->
+
       </div>
-      <ul class="nav navbar-nav navbar-primary">
-        <li class="dropdown"><a href="#" class="trigger">Recycling for Home<i class="fa fa-plus" aria-hidden="true"></i></a>
-          <ul class="col-sm-4 dropdown-menu sub-menu first">
-            <li><a href="#">Recycling in Your Comunity</a></li>
-            <li><a href="#">Composting</a></li>
-            <li><a href="#" class="trigger">Household Hazardous Waste<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Fluorescent Bulbs</a></li>
-                <li><a href="#">Latex Paint Disposal</a></li>
-                <li><a href="#">Medicine &amp; Needles</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="trigger">Special Recycling Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Paper Recycling Drop-Offs</a></li>
-                <li><a href="#">Retail Store Recycling Programs</a></li>
-                <li><a href="#">Mother Recycling Programs</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Computer Recycling</a></li>
-            <li><a href="#">How to Stop Unwanted Mail</a></li>
-            <li><a href="#">Greening the Holidays</a></li>
-            <li><a href="#">What Do I Do With?</a></li>
-          </ul>
-        </li><!-- / Recycling for Home -->
-        <li class="dropdown"><a href="#" class="trigger">Programs &amp; Services<i class="fa fa-plus" aria-hidden="true"></i></a>
-          <ul class="col-sm-4 dropdown-menu sub-menu first">
-            <li><a href="#" class="trigger">Community Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Event Calendar</a></li>
-                <li><a href="#">Composting</a></li>
-                <li><a href="#">Household Hazardous Waste</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Master Recycler Program</a></li>
-            <li><a href="#" class="trigger">Business Services<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Seminars &amp; Events</a></li>
-                <li><a href="#">Business Recycling Directory</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Zero Waste Goals</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="trigger">School Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Contests</a></li>
-                <li><a href="#">Recycling Grants for Schools</a></li>
-                <li><a href="#">For Teachers</a></li>
-                <li><a href="#">Recycling at School</a></li>
-                <li><a href="#">For Students</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="trigger">Municipal Support<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Services for Local Governments</a></li>
-                <li><a href="#">Community Awareness Toolkit</a></li>
-                <li><a href="#">Community Contracts &amp; Practices</a></li>
-                <li><a href="#">Facilities &amp; Maps</a></li>
-                <li><a href="#">Municipal HHW Guidelines</a></li>
-              </ul>
-            </li>
-            <li><a href="#" class="trigger">Youth Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Clean Up Cuyagoga</a></li>
-                <li><a href="#">Day Camp &amp; Summer Programs</a></li>
-                <li><a href="#">Scouts &amp; Youth Groups</a></li>
-                <li><a href="#">Reduce Reuse Recycle PatchProgram</a></li>
-                <li><a href="#">Request a Recycling Fundana</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li><!-- / Programs & Services -->
-        <li class="dropdown"><a href="#" class="trigger">How Recycling Works<i class="fa fa-plus" aria-hidden="true"></i></a>
-          <ul class="col-sm-4 dropdown-menu sub-menu first">
-            <li><a href="#">The Recycling Process: Reduce,Reuse, Recycle</a></li>
-            <li><a href="#">Environment &amp; Recycling Facts</a></li>
-            <li><a href="#">Learn About Landfills</a></li>
-            <li><a href="#" class="trigger">Links &amp; Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Recycling in Your Community</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li><!-- / How Recycling Works -->
-        <li class="dropdown"><a href="#" class="trigger">About Us<i class="fa fa-plus" aria-hidden="true"></i></a>
-          <ul class="col-sm-4 dropdown-menu sub-menu first">
-            <li><a href="#">Annual Residential Recycling Report</a></li>
-            <li><a href="#">Solid Waste Management Plan</a></li>
-            <li><a href="#" class="trigger">Publications<i class="fa fa-plus" aria-hidden="true"></i></a>
-              <ul class="dropdown-menu sub-menu second">
-                <li><a href="#">Pass It On Book</a></li>
-                <li><a href="#">Publication Request Form</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Enewsletters</a></li>
-            <li><a href="#">Social Media Hub</a></li>
-            <li><a href="#">Videos</a></li>
-          </ul>
-        </li><!-- / About Us -->
-      </ul>
-      <ul class="nav navbar-nav navbar-primary newsletter-events">
-        <li><a class="action-open-newsletters" href="#">Newsletters <i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></li>
-        <li><a class="action-open-calendar" href="#!">Events <i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></li>
-      </ul><!-- /Newsletter Events -->
-      <ul class="inline-link-list page-header-social-links">
-        <li><a href="#"><i class="fa fa-lg fa-facebook"     aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Facebook</span></a></li><li
-           ><a href="#"><i class="fa fa-lg fa-twitter"      aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Twitter</span></a></li><li
-           ><a href="#"><i class="fa fa-lg fa-youtube-play" aria-hidden="true"></i><span class="sr-only">CuyhahogaRecycles.org on Youtube</span></a></li>
-      </ul><!-- /Social -->
+
     </div><!-- /.slidereveal-panel -->
 
     <!-- /slider panels -->
