@@ -7410,6 +7410,8 @@ button.close
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after,
+.tile-grid:before,
+.tile-grid:after,
 .item-row:before,
 .item-row:after
 {
@@ -7433,6 +7435,7 @@ button.close
 .panel-body:after,
 .modal-header:after,
 .modal-footer:after,
+.tile-grid:after,
 .item-row:after
 {
     clear: both;
@@ -7773,7 +7776,8 @@ button.close
 {
     color: #666;
 }
-.pal-inverse
+.pal-inverse,
+.tile-grid > .grid-cell > .grid-cell-container
 {
     color: #fff;
 }
@@ -9244,6 +9248,8 @@ h6
         -ms-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center;
+
+    -webkit-backface-visibility: hidden;
 }
 .brand a:hover .brand-logo-main,
 .brand-logo-main-icon,
@@ -9254,10 +9260,10 @@ h6
 .brand a.active .brand-logo-main,
 .brand-logo-main-icon
 {
-    -webkit-transform: scale(1.124);
-        -ms-transform: scale(1.124);
-         -o-transform: scale(1.124);
-            transform: scale(1.124);
+    -webkit-transform: scale(1.125);
+        -ms-transform: scale(1.125);
+         -o-transform: scale(1.125);
+            transform: scale(1.125);
 }
 .brand .brand-logo-main
 {
@@ -10365,28 +10371,6 @@ h6
 
     list-style: none;
 }
-.tile-grid:before,
-.tile-grid:after
-{
-    display: table;
-
-    content: ' ';
-}
-.tile-grid:after
-{
-    clear: both;
-}
-.tile-grid:before,
-.tile-grid:after
-{
-    display: table;
-
-    content: ' ';
-}
-.tile-grid:after
-{
-    clear: both;
-}
 .tile-grid > .grid-cell
 {
     position: relative;
@@ -11122,7 +11106,7 @@ h6
 }
 .grid-cell-link.grid-cell-link-staff > .grid-cell-link-caption > .grid-cell-content-outer > .grid-cell-content-inner
 {
-    vertical-align: baseline;
+    vertical-align: bottom;
 }
 .grid-cell-video-player
 {
@@ -11206,6 +11190,8 @@ h6
         -ms-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center;
+
+    -webkit-backface-visibility: hidden;
 }
 .link-img-zoom:hover .img-zoom,
 .link-img-zoom:focus .img-zoom,
@@ -11221,6 +11207,35 @@ h6
 {
     width: 100%;
     height: 100%;
+}
+.tile-grid.tile-grid-staff > .grid-cell
+{
+    width: 100%;
+    padding-bottom: 100%;
+}
+@media screen and (min-width: 400px)
+{
+    .tile-grid.tile-grid-staff > .grid-cell
+    {
+        width: 50%;
+        padding-bottom: 50%;
+    }
+}
+@media screen and (min-width: 800px)
+{
+    .tile-grid.tile-grid-staff > .grid-cell
+    {
+        width: 33.33333333%;
+        padding-bottom: 33.33333333%;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .tile-grid.tile-grid-staff > .grid-cell
+    {
+        width: 16.66666667%;
+        padding-bottom: 16.66666667%;
+    }
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11319,6 +11334,8 @@ h6
         -ms-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center;
+
+    -webkit-backface-visibility: hidden;
 }
 .item-link:hover img,
 .item-link:focus img,

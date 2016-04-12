@@ -680,6 +680,16 @@
 
         } )();
 
+        //
+        // Tile grid touch events
+        //
+
+        ( function () {
+            $( '.tile-grid.tile-grid-staff > tile-grid a' ).on( 'touchstart', function () {
+                $( this ).focus();
+            } );
+        } )();
+
     } );
 
 } )( window, jQuery );
