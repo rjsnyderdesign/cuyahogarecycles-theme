@@ -37,9 +37,9 @@
 
       <div class="container-fluid page-header-upper">
         <div class="page-header-upper-content">
-          <button
-            type="button"
+          <a
             class="action-open-menu navbar-toggle pull-left"
+            href="#panel-menu"
             data-toggle="collapse"
             data-target="#bs-navbar"
             aria-controls="bs-navbar"
@@ -47,7 +47,7 @@
           >
             <i class="fa fa-bars" aria-hidden="true"></i>
             <span class="sr-only">Toggle navigation</span>
-          </button>
+          </a>
           <div class="brand">
             <a href="#">
               <img
@@ -62,11 +62,11 @@
             <div class="search-container">
               <label>Search Site</label>
               <div id="sb-search" class="sb-search" role="search">
-                <form>
+                <div class="form">
                   <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
                   <input class="sb-search-submit" type="submit" value="">
                   <span class="sb-icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
-                </form>
+                </div>
               </div>
             </div>
             <ul class="inline-link-list page-header-social-links">
@@ -247,17 +247,19 @@
             <div class="wdidw-wrapper">
 
               <div class="wdidw-button-wrapper">
-                <button type="button" class="wdidw-button wdidw-show">
-                  What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
-                </button>
+                <a class="wdidw-button wdidw-show btn-center-outer" href="#!">
+                  <div class="btn-center-inner">
+                    What Do I <br class="wdidw-button-break" />Do With <span class="wdidw-animated-term"></span>?
+                  </div>
+                </a>
               </div>
 
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
-                  <form class="wdidw-search-form">
+                  <div class="form wdidw-search-form">
                     <div class="input-group">
                       <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+                        <a class="btn btn-default wdidw-search-form-submit" href="#"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></a>
                       </span>
                       <label class="sr-only" for="wdidw-search-field">Enter items for recycling information</label>
                       <input
@@ -267,10 +269,10 @@
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
-                        <button type="button" class="btn btn-default wdidw-hide"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></button>
+                        <a class="btn btn-default wdidw-hide" href="#!"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></a>
                       </span>
                     </div><!-- /.input-group -->
-                  </form>
+                  </div>
                 </div><!-- /.container-fluid -->
               </div><!-- /.wdidw-search-bar -->
 
@@ -291,7 +293,11 @@
           <div class="col-side-full-height hidden-xs">
 
             <div class="pal-primary">
-              <button type="button" class="city-recycling-button action-open-community">Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i></button>
+              <a class="city-recycling-button action-open-community btn-center-outer" href="#panel-community">
+                <div class="btn-center-inner">
+                  Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+                </div>
+              </a>
             </div>
 
           </div><!-- /.header-infobar-left -->
@@ -494,7 +500,7 @@
           </div><!-- /.row -->
           <div class="row">
             <div class="col-xs-12">
-              <form class="inline-form-md">
+              <div class="form inline-form-md">
                 <div class="row">
                   <div class="col-xs-12">
                     <label class="sr-only" for="newsletter-signup-first-name">First Name</label>
@@ -517,7 +523,7 @@
                     <input type="submit" class="btn btn-hollow btn-hollow-success" value="Submit" />
                   </div><!-- /.col-*-* -->
                 </div><!-- /.row -->
-              </form>
+              </div>
             </div><!-- /.col-*-* -->
           </div><!-- /.row -->
           <div class="row">
@@ -709,9 +715,9 @@
       <div class="container-fluid pal-inverse bg-dark">
         <div class="container-content-cta">
           View our Calendar of Events
-          <button type="button" class="btn btn-hollow btn-hollow-success">
+          <a class="btn btn-hollow btn-hollow-success" href="#">
             <i class="fa fa-calendar" aria-hidden="true"></i> Events
-          </button>
+          </a>
         </div><!-- /.container-content-cta -->
       </div><!-- /.container-fluid -->
 
@@ -871,7 +877,7 @@
           </div><!-- /.col-*-* -->
           <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <h4>Send us a message</h4>
-            <form>
+            <div class="form">
               <label for="contact-form-name">Name</label>
               <input type="text" class="form-control" id="contact-form-name" />
               <label for="contact-form-email">E-mail</label>
@@ -881,7 +887,7 @@
               <label for="contact-form-msg">Message</label>
               <textarea class="form-control" id="contact-form-msg"></textarea>
               <input type="submit" class="btn btn-hollow btn-hollow-gray-success" />
-            </form>
+            </div>
           </div><!-- /.col-*-* -->
           <div class="col-xs-12 col-sm-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
@@ -919,10 +925,10 @@
 
       <div class="panel-head">
 
-        <button type="button" class="btn btn-panel-close">
+        <a class="btn btn-panel-close" href="#!">
           <i class="fa fa-close" aria-hidden="true"></i>
           <span class="sr-only">Close</span>
-        </button>
+        </a>
 
         <div class="search-container">
           <label class="sr-only" for="panel-search-city">Enter City or Zip Code</label>
@@ -931,14 +937,14 @@
             placeholder="Enter City or Zip Code"
             id="panel-search-city"
           />
-          <button type="button">
+          <a class="search-btn" href="#">
             <i class="fa fa-search" aria-hidden="true"></i>
             <span class="sr-only">Search</span>
-          </button>
+          </a>
         </div>
 
         <div class="panel-content">
-          <button type="button" class="btn btn-hollow btn-hollow-white action-open-community">Search</button>
+          <a class="btn btn-hollow btn-hollow-white action-open-community" href="#panel-community">Search</a>
         </div>
 
       </div>
@@ -1015,10 +1021,10 @@
 
       <div class="panel-head">
 
-        <button type="button" class="btn btn-panel-close">
+        <a class="btn btn-panel-close" href="#!">
           <i class="fa fa-close" aria-hidden="true"></i>
           <span class="sr-only">Close</span>
-        </button>
+        </a>
 
         <div class="search-container">
           <label class="sr-only" for="panel-search-site">Search</label>
@@ -1027,15 +1033,17 @@
             placeholder="Search"
             id="panel-search-site"
           />
-          <button type="button">
+          <a class="search-btn" href="#">
             <i class="fa fa-search" aria-hidden="true"></i>
             <span class="sr-only">Search</span>
-          </button>
+          </a>
         </div>
 
-        <button type="button" class="city-recycling-button action-open-community">
-          Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
-        </button>
+        <a class="city-recycling-button action-open-community btn-center-outer" href="#panel-community">
+          <div class="btn-center-inner">
+            Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+          </div>
+        </a>
 
       </div>
 

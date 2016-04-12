@@ -74,7 +74,8 @@ h1 {
   text-transform: uppercase;
 }
 
-form {
+form,
+.form {
   label {
     &:extend(.small-header);
   }
@@ -116,6 +117,15 @@ form {
 .btn-hollow-warning { .btn-hollow( @brand-warning ; @white ); }
 .btn-hollow-danger  { .btn-hollow( @brand-danger  ; @white ); }
 .btn-hollow-dark    { .btn-hollow( @brand-dark    ; @white ); }
+
+.btn-center-outer {
+  display: table;
+}
+
+.btn-center-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 
 //
@@ -477,8 +487,6 @@ body:not(.noscroll) {
 
 .city-recycling-button {
   height: @navbar-height;
-  display: block;
-  float: right;
   padding: 0 (@grid-gutter-width / 2);
   background: @brand-success;
   border: 0 none;

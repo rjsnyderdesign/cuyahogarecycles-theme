@@ -58,6 +58,8 @@
   }
 
   .search-container {
+    color: @brand-primary;
+
     input[type="text"] {
       background: @white;
       color: @brand-primary;
@@ -65,8 +67,8 @@
       .placeholder(@gray-light);
     }
 
-    button {
-      color: @brand-primary;
+    .search-btn {
+      .link-fx-nav(@brand-success; @brand-success);
     }
   }
 }

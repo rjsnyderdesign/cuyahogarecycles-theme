@@ -31,7 +31,6 @@
 .wdidw-button {
   width: 100%;
   height: 100%;
-  display: block;
   padding: 0 (@grid-gutter-width / 2);
   background: none;
   border: 0 none;
@@ -53,12 +52,12 @@
     color: @white;
     text-decoration: none;
 
-    > .wdidw-animated-term {
+    .wdidw-animated-term {
       border-bottom-color: @white;
     }
   }
 
-  > .wdidw-animated-term {
+  .wdidw-animated-term {
     width: 5em;
     height: (@font-size-base * 1.75);
     display: inline-block;
@@ -71,7 +70,7 @@
     .transition(border-bottom-color @link-transition-speed);
   }
 
-  > .wdidw-button-break {
+  .wdidw-button-break {
     @media screen and (min-width: @screen-xs-min) {
       display: none;
     }
@@ -105,7 +104,8 @@
     input,
     .form-control,
     .btn {
-      height: 100%;
+      height: (@navbar-height - @font-size-base);
+      display: block;
       padding: 4px 0;
       border: 0 none;
       background: none;
@@ -130,10 +130,10 @@
       .placeholder(rgba(255,255,255,0.4));
     }
 
-    button {
+    .btn {
       .link-fx-nav(@brand-danger; @brand-danger);
 
-      &[type="submit"] {
+      &.wdidw-search-form-submit {
         .link-fx-nav(@brand-info; @white);
       }
     }

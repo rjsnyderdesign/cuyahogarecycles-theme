@@ -73,16 +73,20 @@
       .box-shadow(none);
     }
 
-    button {
+    .search-btn {
       width: @slidereveal-panel-bar-height;
       height: @slidereveal-panel-bar-height;
       display: block;
       position: absolute;
       top: 0;
       right: 0;
+      padding: 10px;
       background: none;
       border: 0 none;
       font-size: @font-size-large;
+      text-align: center;
+
+      .link-fx-nav(@brand-info; @brand-info);
     }
   }
 }

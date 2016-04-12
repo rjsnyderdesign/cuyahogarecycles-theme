@@ -8920,23 +8920,27 @@ h1
     border-top: 2px solid #e6e6e6;
 }
 .small-header,
-form label
+form label,
+.form label
 {
     font-size: 16px;
     font-weight: bold;
 
     text-transform: uppercase;
 }
-form .form-control::-moz-placeholder
+form .form-control::-moz-placeholder,
+.form .form-control::-moz-placeholder
 {
     opacity: 1;
     color: #d9d9d9;
 }
-form .form-control:-ms-input-placeholder
+form .form-control:-ms-input-placeholder,
+.form .form-control:-ms-input-placeholder
 {
     color: #d9d9d9;
 }
-form .form-control::-webkit-input-placeholder
+form .form-control::-webkit-input-placeholder,
+.form .form-control::-webkit-input-placeholder
 {
     color: #d9d9d9;
 }
@@ -9336,6 +9340,16 @@ form .form-control::-webkit-input-placeholder
 
     color: #fff;
     border-color: #fff;
+}
+.btn-center-outer
+{
+    display: table;
+}
+.btn-center-inner
+{
+    display: table-cell;
+
+    vertical-align: middle;
 }
 .content-v-align-outer
 {
@@ -9799,9 +9813,6 @@ body:not(.noscroll)
 }
 .city-recycling-button
 {
-    display: block;
-    float: right;
-
     height: 70px;
     padding: 0 40px;
 
@@ -9984,7 +9995,8 @@ body:not(.noscroll)
 {
     text-align: center;
 }
-.container-content-newsletter-form form
+.container-content-newsletter-form form,
+.container-content-newsletter-form .form
 {
     margin: 16px 0;
     padding: 16px 0;
@@ -9993,7 +10005,8 @@ body:not(.noscroll)
 }
 @media screen and (min-width: 768px)
 {
-    .container-content-newsletter-form form
+    .container-content-newsletter-form form,
+    .container-content-newsletter-form .form
     {
         display: inline-block;
 
@@ -10098,7 +10111,7 @@ body:not(.noscroll)
 {
     border-color: #95d600;
 }
-.container-content-newsletter-form [type='submit']
+.container-content-newsletter-form input[type='submit']
 {
     float: right;
 }
@@ -10940,8 +10953,6 @@ h6
 {
     font-size: 24px;
 
-    display: block;
-
     width: 100%;
     height: 100%;
     padding: 0 40px;
@@ -10972,14 +10983,14 @@ h6
 
     color: #fff;
 }
-.wdidw-button:hover > .wdidw-animated-term,
-.wdidw-button:focus > .wdidw-animated-term,
-.wdidw-button:active > .wdidw-animated-term,
-.wdidw-button.active > .wdidw-animated-term
+.wdidw-button:hover .wdidw-animated-term,
+.wdidw-button:focus .wdidw-animated-term,
+.wdidw-button:active .wdidw-animated-term,
+.wdidw-button.active .wdidw-animated-term
 {
     border-bottom-color: #fff;
 }
-.wdidw-button > .wdidw-animated-term
+.wdidw-button .wdidw-animated-term
 {
     font-size: 24px;
 
@@ -10999,7 +11010,7 @@ h6
 }
 @media screen and (min-width: 480px)
 {
-    .wdidw-button > .wdidw-button-break
+    .wdidw-button .wdidw-button-break
     {
         display: none;
     }
@@ -11041,7 +11052,9 @@ h6
 {
     line-height: 54px;
 
-    height: 100%;
+    display: block;
+
+    height: 54px;
     padding: 4px 0;
 
     color: #00833e;
@@ -11078,7 +11091,7 @@ h6
 {
     color: rgba(255, 255, 255, .4);
 }
-.wdidw-search-form .input-group button
+.wdidw-search-form .input-group .btn
 {
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -11089,16 +11102,16 @@ h6
     color: inherit;
     background: none;
 }
-.wdidw-search-form .input-group button:hover,
-.wdidw-search-form .input-group button:focus
+.wdidw-search-form .input-group .btn:hover,
+.wdidw-search-form .input-group .btn:focus
 {
     text-decoration: none;
 
     color: #e84b37;
     background: none;
 }
-.wdidw-search-form .input-group button:active,
-.wdidw-search-form .input-group button.active
+.wdidw-search-form .input-group .btn:active,
+.wdidw-search-form .input-group .btn.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -11106,7 +11119,7 @@ h6
 
     color: #e84b37;
 }
-.wdidw-search-form .input-group button[type='submit']
+.wdidw-search-form .input-group .btn.wdidw-search-form-submit
 {
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -11117,16 +11130,16 @@ h6
     color: inherit;
     background: none;
 }
-.wdidw-search-form .input-group button[type='submit']:hover,
-.wdidw-search-form .input-group button[type='submit']:focus
+.wdidw-search-form .input-group .btn.wdidw-search-form-submit:hover,
+.wdidw-search-form .input-group .btn.wdidw-search-form-submit:focus
 {
     text-decoration: none;
 
     color: #26cad3;
     background: none;
 }
-.wdidw-search-form .input-group button[type='submit']:active,
-.wdidw-search-form .input-group button[type='submit'].active
+.wdidw-search-form .input-group .btn.wdidw-search-form-submit:active,
+.wdidw-search-form .input-group .btn.wdidw-search-form-submit.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -12462,7 +12475,7 @@ h6
 {
     margin-top: 16px;
 }
-.item-filter-list > dd > button
+.item-filter-clear
 {
     padding: 0 4px;
 
@@ -12476,16 +12489,16 @@ h6
     border: 0 none;
     background: none;
 }
-.item-filter-list > dd > button:hover,
-.item-filter-list > dd > button:focus
+.item-filter-clear:hover,
+.item-filter-clear:focus
 {
     text-decoration: none;
 
     color: #e84b37;
     background: none;
 }
-.item-filter-list > dd > button:active,
-.item-filter-list > dd > button.active
+.item-filter-clear:active,
+.item-filter-clear.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -12924,7 +12937,7 @@ h6
     -webkit-box-shadow: none;
             box-shadow: none;
 }
-.slidereveal-panel .search-container button
+.slidereveal-panel .search-container .search-btn
 {
     font-size: 24px;
 
@@ -12936,9 +12949,35 @@ h6
 
     width: 50px;
     height: 50px;
+    padding: 10px;
 
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-align: center;
+    text-decoration: none;
+
+    color: inherit;
     border: 0 none;
     background: none;
+}
+.slidereveal-panel .search-container .search-btn:hover,
+.slidereveal-panel .search-container .search-btn:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.slidereveal-panel .search-container .search-btn:active,
+.slidereveal-panel .search-container .search-btn.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #26cad3;
 }
 .slidereveal-shroud
 {
@@ -13158,6 +13197,10 @@ h6
 
     border: 0 none;
 }
+.slidereveal-panel#panel-menu .search-container
+{
+    color: #263746;
+}
 .slidereveal-panel#panel-menu .search-container input[type='text']
 {
     color: #26cad3;
@@ -13176,9 +13219,33 @@ h6
 {
     color: #d9d9d9;
 }
-.slidereveal-panel#panel-menu .search-container button
+.slidereveal-panel#panel-menu .search-container .search-btn
 {
-    color: #26cad3;
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.slidereveal-panel#panel-menu .search-container .search-btn:hover,
+.slidereveal-panel#panel-menu .search-container .search-btn:focus
+{
+    text-decoration: none;
+
+    color: #95d600;
+    background: none;
+}
+.slidereveal-panel#panel-menu .search-container .search-btn:active,
+.slidereveal-panel#panel-menu .search-container .search-btn.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -13256,6 +13323,10 @@ h6
     color: #fff;
     background: rgba(255, 255, 255, .1);
 }
+.slidereveal-panel#panel-community .search-container
+{
+    color: #00833e;
+}
 .slidereveal-panel#panel-community .search-container input[type='text']
 {
     color: #00833e;
@@ -13274,8 +13345,32 @@ h6
 {
     color: #d9d9d9;
 }
-.slidereveal-panel#panel-community .search-container button
+.slidereveal-panel#panel-community .search-container .search-btn
 {
-    color: #00833e;
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.slidereveal-panel#panel-community .search-container .search-btn:hover,
+.slidereveal-panel#panel-community .search-container .search-btn:focus
+{
+    text-decoration: none;
+
+    color: #95d600;
+    background: none;
+}
+.slidereveal-panel#panel-community .search-container .search-btn:active,
+.slidereveal-panel#panel-community .search-container .search-btn.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
 }
 /*# sourceMappingURL=bootstrap.css.map */

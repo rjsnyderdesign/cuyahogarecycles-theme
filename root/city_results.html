@@ -34,12 +34,12 @@
 
       <div class="container-fluid page-header-upper">
         <div class="page-header-upper-content">
-          <button class="action-open-menu navbar-toggle pull-left" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <a class="action-open-menu navbar-toggle pull-left" href="#panel-menu" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </a>
           <div class="brand">
             <a href="#">
               <img
@@ -54,11 +54,11 @@
             <div class="search-container">
               <label>Search Site</label>
               <div id="sb-search" class="sb-search">
-                <form>
+                <div class="form">
                   <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
                   <input class="sb-search-submit" type="submit" value="">
                   <span class="sb-icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
-                </form>
+                </div>
               </div>
             </div>
             <ul class="inline-link-list page-header-social-links">
@@ -217,10 +217,10 @@
               </div>
               <div class="wdidw-search-bar">
                 <div class="container-fluid full-height">
-                  <form class="wdidw-search-form">
+                  <div class="form wdidw-search-form">
                     <div class="input-group">
                       <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+                        <a class="btn btn-default" href="#"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></a>
                       </span>
                       <label class="sr-only" for="wdidw-search-field">Enter items here to get recycling information</label>
                       <input
@@ -230,10 +230,10 @@
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
-                        <button class="btn btn-default wdidw-hide"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></button>
+                        <a class="btn btn-default wdidw-hide" href="#!"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></a>
                       </span>
                     </div><!-- /.input-group -->
-                  </form>
+                  </div>
                 </div><!-- /.container-fluid -->
               </div><!-- /.wdidw-search-bar -->
             </div><!-- /.wdidw-wrapper -->
@@ -266,12 +266,12 @@
 
               <dl class="item-filter-list">
                 <dt>City</dt>
-                <dd><button type="button"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></button> Bay Village</dd>
+                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> Bay Village</dd>
                 <dt>Recycling Programs</dt>
-                <dd><button type="button"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></button> In-home</dd>
-                <dd><button type="button"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></button> Other</dd>
+                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> In-home</dd>
+                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> Other</dd>
                 <dt>Item Categories</dt>
-                <dd><button type="button"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></button> Paper</dd>
+                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> Paper</dd>
               </dl>
 
               <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#">
@@ -287,15 +287,15 @@
               <h6>Recycling In</h6>
 
               <div class="btn-group">
-                <button
-                  type="button"
+                <a
                   class="btn dropdown-toggle item-filter-city-button"
+                  href="#!"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
                   Select a City <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                </button>
+                </a>
                 <div class="dropdown-menu item-filter-city-list">
                   <div class="item-filter-city-zip-wrapper">
                     <label for="item-filter-city-zip">Zip code</label>
@@ -807,7 +807,7 @@
           </div><!-- /.col-*-* -->
           <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
             <h2>Send us a message</h2>
-            <form>
+            <div class="form">
               <label for="contact-form-name">Name</label>
               <input type="text" class="form-control" />
               <label for="contact-form-email">E-mail</label>
@@ -815,7 +815,7 @@
               <label for="contact-form-msg">Message</label>
               <textarea class="form-control"></textarea>
               <input type="submit" class="form-control" />
-            </form>
+            </div>
           </div><!-- /.col-*-* -->
           <div class="col-xs-12 col-md-6 col-lg-4 page-footer-col">
             <ul class="page-footer-nav">
@@ -862,7 +862,7 @@
         <input type="text" placeholder="Enter City or Zip Code" />
         <i class="fa fa-search" aria-hidden="true"></i>
       </div>
-      <button type="button" class="btn btn-hollow btn-hollow-white action-open-community">Close</button>
+      <a class="btn btn-hollow btn-hollow-white action-open-community" href="#panel-community">Close</a>
       <ul class="city-list">
         <li><a href="#">Bay Village</a></li>
         <li><a href="#">Beachwood</a></li>

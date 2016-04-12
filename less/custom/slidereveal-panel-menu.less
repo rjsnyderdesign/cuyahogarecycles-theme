@@ -140,6 +140,8 @@
   }
 
   .search-container {
+    color: @brand-dark;
+
     input[type="text"] {
       background: @white;
       color: @brand-info;
@@ -147,8 +149,8 @@
       .placeholder(@gray-light);
     }
 
-    button {
-      color: @brand-info;
+    .search-btn {
+      .link-fx-nav(@brand-success; @brand-success);
     }
   }
 }
