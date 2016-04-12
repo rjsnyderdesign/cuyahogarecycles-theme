@@ -707,7 +707,7 @@ if (typeof jQuery === 'undefined') {
         //
 
         ( function () {
-            $( '.tile-grid.tile-grid-staff > .tile-grid a' ).on( 'touchstart', function () {
+            $( '.tile-grid.tile-grid-staff > .grid-cell a' ).on( 'touchstart', function () {
                 $( this ).focus();
             } );
         } )();
