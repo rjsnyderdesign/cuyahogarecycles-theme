@@ -9201,6 +9201,7 @@ h6
 .brand
 {
     display: block;
+    float: left;
 }
 .brand a,
 .brand img
