@@ -409,23 +409,24 @@
 // --------------------------------------------------
 
 @tile-grid-staff-cell-width: 100%;
+@tile-grid-staff-cell-max-width: 400px;
 
 .tile-grid.tile-grid-staff {
   > .grid-cell {
-    width: @tile-grid-staff-cell-width;
-    padding-bottom: @tile-grid-staff-cell-width;
+    width: (@tile-grid-staff-cell-width / 1);
+    padding-bottom: (@tile-grid-staff-cell-width / 1);
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: (@tile-grid-staff-cell-max-width * 1)) {
       width: (@tile-grid-staff-cell-width / 2);
       padding-bottom: (@tile-grid-staff-cell-width / 2);
     }
 
-    @media screen and (min-width: 800px) {
+    @media screen and (min-width: (@tile-grid-staff-cell-max-width * 2)) {
       width: (@tile-grid-staff-cell-width / 3);
       padding-bottom: (@tile-grid-staff-cell-width / 3);
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: (@tile-grid-staff-cell-max-width * 3)) {
       width: (@tile-grid-staff-cell-width / 6);
       padding-bottom: (@tile-grid-staff-cell-width / 6);
     }
