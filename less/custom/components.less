@@ -81,7 +81,21 @@ form,
   }
 
   .form-control {
+    border-width: 2px;
+
     .placeholder(@gray-light);
+  }
+
+  .form-required {
+    position: relative;
+
+    &:before {
+      position: absolute;
+      right: 100%;
+      padding-right: 0.125em;
+      color: @brand-danger;
+      content: '*';
+    }
   }
 }
 

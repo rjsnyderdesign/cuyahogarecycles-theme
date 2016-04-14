@@ -7864,6 +7864,11 @@ form label,
 
     text-transform: uppercase;
 }
+form .form-control,
+.form .form-control
+{
+    border-width: 2px;
+}
 form .form-control::-moz-placeholder,
 .form .form-control::-moz-placeholder
 {
@@ -7879,6 +7884,23 @@ form .form-control::-webkit-input-placeholder,
 .form .form-control::-webkit-input-placeholder
 {
     color: #d9d9d9;
+}
+form .form-required,
+.form .form-required
+{
+    position: relative;
+}
+form .form-required:before,
+.form .form-required:before
+{
+    position: absolute;
+    right: 100%;
+
+    padding-right: .125em;
+
+    content: '*';
+
+    color: #e84b37;
 }
 .btn-hollow-white
 {
