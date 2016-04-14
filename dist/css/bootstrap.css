@@ -12565,58 +12565,92 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+.item-coin
+{
+    -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+         -o-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+
+    opacity: 1;
+
+            backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.item-coin:nth-child(1)
+{
+    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 50ms;
+         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 50ms;
+            transition:         transform 500ms ease 0ms, opacity 0s ease 50ms;
+}
+.item-coin.item-coin-flip:nth-child(1)
+{
+    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 150ms;
+         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 150ms;
+            transition:         transform 500ms ease 0ms, opacity 0s ease 150ms;
+}
+.item-coin:nth-child(2)
+{
+    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 150ms;
+         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 150ms;
+            transition:         transform 500ms ease 100ms, opacity 0s ease 150ms;
+}
+.item-coin.item-coin-flip:nth-child(2)
+{
+    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 250ms;
+         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 250ms;
+            transition:         transform 500ms ease 100ms, opacity 0s ease 250ms;
+}
+.item-coin:nth-child(3)
+{
+    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 250ms;
+         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 250ms;
+            transition:         transform 500ms ease 200ms, opacity 0s ease 250ms;
+}
+.item-coin.item-coin-flip:nth-child(3)
+{
+    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 350ms;
+         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 350ms;
+            transition:         transform 500ms ease 200ms, opacity 0s ease 350ms;
+}
+.item-coin:nth-child(4)
+{
+    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 350ms;
+         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 350ms;
+            transition:         transform 500ms ease 300ms, opacity 0s ease 350ms;
+}
+.item-coin.item-coin-flip:nth-child(4)
+{
+    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 450ms;
+         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 450ms;
+            transition:         transform 500ms ease 300ms, opacity 0s ease 450ms;
+}
+.item-coin:nth-child(5)
+{
+    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 450ms;
+         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 450ms;
+            transition:         transform 500ms ease 400ms, opacity 0s ease 450ms;
+}
+.item-coin.item-coin-flip:nth-child(5)
+{
+    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 550ms;
+         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 550ms;
+            transition:         transform 500ms ease 400ms, opacity 0s ease 550ms;
+}
 @media screen and (min-width: 900px)
 {
-    .item-coin
-    {
-        -webkit-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-             -o-transform: rotateY(0deg);
-                transform: rotateY(0deg);
-        -webkit-transform-origin: center center;
-            -ms-transform-origin: center center;
-             -o-transform-origin: center center;
-                transform-origin: center center;
-
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-    }
-    .item-coin:nth-child(1)
-    {
-        -webkit-transition: -webkit-transform 500ms ease 0ms;
-             -o-transition:      -o-transform 500ms ease 0ms;
-                transition:         transform 500ms ease 0ms;
-    }
-    .item-coin:nth-child(2)
-    {
-        -webkit-transition: -webkit-transform 500ms ease 100ms;
-             -o-transition:      -o-transform 500ms ease 100ms;
-                transition:         transform 500ms ease 100ms;
-    }
-    .item-coin:nth-child(3)
-    {
-        -webkit-transition: -webkit-transform 500ms ease 200ms;
-             -o-transition:      -o-transform 500ms ease 200ms;
-                transition:         transform 500ms ease 200ms;
-    }
-    .item-coin:nth-child(4)
-    {
-        -webkit-transition: -webkit-transform 500ms ease 300ms;
-             -o-transition:      -o-transform 500ms ease 300ms;
-                transition:         transform 500ms ease 300ms;
-    }
-    .item-coin:nth-child(5)
-    {
-        -webkit-transition: -webkit-transform 500ms ease 400ms;
-             -o-transition:      -o-transform 500ms ease 400ms;
-                transition:         transform 500ms ease 400ms;
-    }
     .item-coin.item-coin-flip
     {
         -webkit-transform: rotateY(180deg);
             -ms-transform: rotateY(180deg);
              -o-transform: rotateY(180deg);
                 transform: rotateY(180deg);
+
+        opacity: 0;
     }
 }
 .item-basics .item-figure

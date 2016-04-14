@@ -127,10 +127,10 @@ if (typeof jQuery === 'undefined') {
                 $slideRevealShroud.addClass( 'active' );
                 pushShroud( $slider, $trigger );
                 $slider.addClass( 'active' );
+                openedPanels.push( $slider );
             }
 
             function onShown ( $slider, $trigger ) {
-                openedPanels.push( $slider );
             }
 
             function onHide ( $slider, $trigger ) {
@@ -138,11 +138,11 @@ if (typeof jQuery === 'undefined') {
                     $slideRevealShroud.removeClass( 'active' );
                 }
                 pushShroud( openedPanels[ openedPanels.length - 2 ], $trigger );
+                $slider.removeClass( 'active' );
+                openedPanels.splice( $.inArray( $slider, openedPanels ), 1 );
             }
 
             function onHidden ( $slider, $trigger ) {
-                $slider.removeClass( 'active' );
-                openedPanels.splice( $.inArray( $slider, openedPanels ), 1 );
                 if ( openedPanels.length === 0 ) {
                     $pageScrollFreezable.removeClass( 'noscroll noscroll-v' );
                 }
@@ -535,7 +535,7 @@ if (typeof jQuery === 'undefined') {
                 $itemBasicsCats = $itemBasics.find( '.item-basics-cat' ),
                 $itemCatSelectors = $itemBasics.find( '.item-cat-selector' ),
                 $itemCatSelectorOpts = $itemBasics.find( '.item-cat-selector-opt' ),
-                $itemFigures = $itemBasics.find( '.item-figure' ),
+                $itemFigures = $itemBasics.find( '.item-basics-cat-dk .item-figure' ),
                 $itemCoins = $itemFigures.addClass( 'item-coin' );
 
             var flipInterval = 100,
@@ -550,6 +550,7 @@ if (typeof jQuery === 'undefined') {
                 currentSlide;
 
             function start () {
+                window.clearTimeout( slideShowTimeout );
                 slideShowTimeout = window.setTimeout( next, slideShowInterval );
             }
 
@@ -562,7 +563,7 @@ if (typeof jQuery === 'undefined') {
                 start();
             }
 
-            function flipTo ( $elem ) {
+            function flipTo ( $elem, isManual ) {
 
                 var itemKey = $elem.data( 'item-key' ),
                     $itemBasicsCat = $itemBasics.find( '.item-basics-cat[data-item-cat="' + itemKey + '"]' );
@@ -578,7 +579,7 @@ if (typeof jQuery === 'undefined') {
                     .addClass( 'item-coin-flip' );
 
                 window.clearTimeout( swapTimeout );
-                window.clearTimeout( flipTimeout );
+                if ( !isManual ) window.clearTimeout( flipTimeout );
 
                 swapTimeout = window.setTimeout( function () {
 
@@ -603,6 +604,7 @@ if (typeof jQuery === 'undefined') {
                     isSwapping = false;
 
                     // unflip
+                    window.clearTimeout( flipTimeout );
                     flipTimeout = window.setTimeout( function () {
                         $itemCoins.removeClass( 'item-coin-flip' );
                         currentSlide = $itemBasicsCat.index();
@@ -635,7 +637,7 @@ if (typeof jQuery === 'undefined') {
                         .addClass( 'active' )
                         .attr( 'aria-selected', 'true' )
                         .attr( 'tabindex', '0' );
-                    flipTo( $this );
+                    flipTo( $this, true );
                     stop();
                     e.preventDefault();
                 } )
