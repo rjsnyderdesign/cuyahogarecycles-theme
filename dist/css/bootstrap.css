@@ -9290,6 +9290,124 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+@-webkit-keyframes spin-y
+{
+    0%
+    {
+        -webkit-transform: rotateY(0);
+            -ms-transform: rotateY(0);
+             -o-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+    100%
+    {
+        -webkit-transform: rotateY(360deg);
+            -ms-transform: rotateY(360deg);
+             -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+}
+@-o-keyframes spin-y
+{
+    0%
+    {
+        -webkit-transform: rotateY(0);
+            -ms-transform: rotateY(0);
+             -o-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+    100%
+    {
+        -webkit-transform: rotateY(360deg);
+            -ms-transform: rotateY(360deg);
+             -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+}
+@keyframes spin-y
+{
+    0%
+    {
+        -webkit-transform: rotateY(0);
+            -ms-transform: rotateY(0);
+             -o-transform: rotateY(0);
+                transform: rotateY(0);
+    }
+    100%
+    {
+        -webkit-transform: rotateY(360deg);
+            -ms-transform: rotateY(360deg);
+             -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+    }
+}
+.loading-overlay
+{
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: table;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    background: rgba(255, 255, 255, .75);
+}
+.loading-overlay:not(.active)
+{
+    display: none;
+}
+.loading-overlay > .loading-inner
+{
+    display: table-cell;
+
+    text-align: center;
+    vertical-align: middle;
+}
+.loading-overlay > .loading-inner:before
+{
+    display: inline-block;
+
+    width: 96px;
+    height: 96px;
+    margin: 0;
+    padding: 0;
+
+    content: '';
+    -webkit-transform: rotateY(0);
+        -ms-transform: rotateY(0);
+         -o-transform: rotateY(0);
+            transform: rotateY(0);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation: spin-y 3000ms linear infinite normal;
+         -o-animation: spin-y 3000ms linear infinite normal;
+            animation: spin-y 3000ms linear infinite normal;
+
+    background-image: url('../../root/img/symbols/loading-moebius.png');
+}
+.loading-overlay > .loading-inner:after
+{
+    display: inline-block;
+
+    width: 100%;
+    padding-left: .75em;
+
+    content: 'Loading...';
+
+    color: #666;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
 .row-xs-full-height,
 .row-sm-full-height,
 .row-md-full-height,

@@ -1,0 +1,64 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Loading
+// --------------------------------------------------
+
+@keyframes spin-y { 0% { .rotateY(0); } 100% { .rotateY(360deg); } }
+
+.loading-overlay {
+  width: 100%;
+  height: 100%;
+  display: table;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+  margin: 0;
+  padding: 0;
+  background: rgba(255,255,255,0.75);
+
+  &:not(.active) {
+    display: none;
+  }
+
+  > .loading-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    &:before {
+      width: 96px;
+      height: 96px;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      background-image: url('../../root/img/symbols/loading-moebius.png');
+      content: '';
+
+      .transform-origin(center center);
+      .rotateY(0);
+      .animation(spin-y (@link-transition-speed * 6) linear infinite normal);
+    }
+
+    &:after {
+      width: 100%;
+      display: inline-block;
+      padding-left: 0.75em;
+      color: @gray;
+      content: 'Loading...';
+    }
+  }
+}

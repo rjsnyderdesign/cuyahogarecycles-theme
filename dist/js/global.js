@@ -712,6 +712,31 @@ if (typeof jQuery === 'undefined') {
             } );
         } )();
 
+        //
+        // Loading moebius
+        //
+
+        ( function () {
+
+            var $itemFilters = $( '.item-filter-section' ),
+                $loadingOverlay = $( '<div/>' ).addClass( 'loading-overlay' ).append(
+                    $( '<div/>' ).addClass( 'loading-inner' )
+                );
+
+            $( 'body' ).eq( 0 ).append( $loadingOverlay );
+
+            function loading () { $loadingOverlay.addClass( 'active' ); }
+
+            function loaded () { $loadingOverlay.removeClass( 'active' ); }
+
+            $itemFilters.find( '.item-filter-clear' ).on( 'click', loading );
+            $itemFilters.find( '.btn-item-filter-clear' ).on( 'click', loading );
+            $itemFilters.find( '.item-filter-city-list a' ).on( 'click', loading );
+            $itemFilters.find( '[type="checkbox"]' ).on( 'change', loading );
+            $itemFilters.find( '.item-filter-list > li > a' ).on( 'click', loading );
+
+        } )();
+
     } );
 
 } )( window, jQuery );
