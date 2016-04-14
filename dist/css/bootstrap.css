@@ -9073,6 +9073,10 @@ h6
 
     letter-spacing: .05em;
 }
+.container-link > a
+{
+    white-space: nowrap;
+}
 .text-home-recycling
 {
     color: #26cad3;
@@ -12325,6 +12329,15 @@ h6
 .item-type-label.item-type-compost
 {
     color: #00833e;
+}
+.city-contact .city-contact-title,
+.city-contact .city-contact-info
+{
+    line-height: 1.75;
+}
+.city-contact .city-contact-title
+{
+    margin: 0;
 }
 /*!
  * CuyahogaRecycles.org theme
