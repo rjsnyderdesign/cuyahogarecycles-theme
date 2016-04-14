@@ -29,6 +29,18 @@
   padding: (@grid-gutter-width) 0;
 
   &:extend(.container-content);
+
+  .article-section {
+    padding: (@grid-gutter-width) 0;
+
+    &:first-child {
+      margin-top: (-@grid-gutter-width);
+    }
+
+    &:last-child {
+      margin-bottom: (-@grid-gutter-width);
+    }
+  }
 }
 
 

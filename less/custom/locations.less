@@ -1,0 +1,44 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Locations
+// --------------------------------------------------
+
+.locations {
+  padding: 0 (@grid-gutter-width / 4);
+  list-style: none;
+
+  > li {
+    display: block;
+    padding: 0 (@grid-gutter-width / 4);
+  }
+}
+
+.location {
+  font-size: 0.85em;
+
+  .location-title,
+  .location-address {
+    line-height: 1.75;
+  }
+
+  .location-title {
+    margin: 0;
+    font-weight: bold;
+    text-transform: none;
+  }
+
+  .location-desc {
+    line-height: 1.5;
+  }
+}
