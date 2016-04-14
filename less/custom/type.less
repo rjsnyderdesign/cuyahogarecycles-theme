@@ -52,12 +52,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.5;
   }
 
-  hr {
-    margin-top: (@font-size-base * 1.5);
-    margin-bottom: (@font-size-base * 2);
-    border-top: 2px solid @gray;
-  }
-
   img {
     width: 100%;
     height: auto;
@@ -69,6 +63,17 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+
+  .article-divider {
+    margin-top: (@font-size-base * 1.5);
+    margin-bottom: (@font-size-base * 2);
+    border-top: 2px solid @gray;
+  }
+
+  .block-divider {
+    margin: 0;
+    border-top: 2px solid @gray-lighter;
   }
 
   .col-main-full-height,
