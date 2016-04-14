@@ -8913,15 +8913,22 @@ body:not(.noscroll)
 /*!
  * CuyahogaRecycles.org theme
  */
+.container-content,
 .container-content-default,
-.container-content-cta,
-.container-content-newsletter-form,
-.container-content-item-results
+.container-content-article,
+.block-cta,
+.block-newsletter-form
 {
     width: 100%;
     padding: 40px 0;
 }
-.container-content-cta
+.container-content-article
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+.block-cta
 {
     font-size: 30px;
 
@@ -8929,17 +8936,17 @@ body:not(.noscroll)
     letter-spacing: .05em;
     text-transform: uppercase;
 }
-.container-content-cta .btn
+.block-cta .btn
 {
     margin-right: 16px;
     margin-left: 16px;
 }
-.container-content-newsletter-form
+.block-newsletter-form
 {
     text-align: center;
 }
-.container-content-newsletter-form form,
-.container-content-newsletter-form .form
+.block-newsletter-form form,
+.block-newsletter-form .form
 {
     margin: 16px 0;
     padding: 16px 0;
@@ -8948,8 +8955,8 @@ body:not(.noscroll)
 }
 @media screen and (min-width: 768px)
 {
-    .container-content-newsletter-form form,
-    .container-content-newsletter-form .form
+    .block-newsletter-form form,
+    .block-newsletter-form .form
     {
         display: inline-block;
 
@@ -8957,15 +8964,15 @@ body:not(.noscroll)
         border-bottom: 2px solid rgba(255, 255, 255, .25);
     }
 }
-.container-content-newsletter-form a,
-.container-content-newsletter-form label
+.block-newsletter-form a,
+.block-newsletter-form label
 {
     white-space: nowrap;
     text-transform: uppercase;
 
     color: #fff;
 }
-.container-content-newsletter-form a
+.block-newsletter-form a
 {
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -8973,13 +8980,13 @@ body:not(.noscroll)
             transition: color 500ms;
     text-decoration: underline;
 }
-.container-content-newsletter-form a:hover,
-.container-content-newsletter-form a:focus
+.block-newsletter-form a:hover,
+.block-newsletter-form a:focus
 {
     color: #26cad3;
 }
-.container-content-newsletter-form a:active,
-.container-content-newsletter-form a.active
+.block-newsletter-form a:active,
+.block-newsletter-form a.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -8987,7 +8994,7 @@ body:not(.noscroll)
 
     color: #95d600;
 }
-.container-content-newsletter-form label
+.block-newsletter-form label
 {
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -8998,16 +9005,16 @@ body:not(.noscroll)
     color: inherit;
     background: none;
 }
-.container-content-newsletter-form label:hover,
-.container-content-newsletter-form label:focus
+.block-newsletter-form label:hover,
+.block-newsletter-form label:focus
 {
     text-decoration: none;
 
     color: #26cad3;
     background: none;
 }
-.container-content-newsletter-form label:active,
-.container-content-newsletter-form label.active
+.block-newsletter-form label:active,
+.block-newsletter-form label.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -9015,7 +9022,7 @@ body:not(.noscroll)
 
     color: #95d600;
 }
-.container-content-newsletter-form .form-control
+.block-newsletter-form .form-control
 {
     padding-left: 8px;
 
@@ -9028,108 +9035,54 @@ body:not(.noscroll)
     border-bottom: 2px solid #fff;
     background: rgba(255, 255, 255, .25);
 }
-.container-content-newsletter-form .form-control:focus
+.block-newsletter-form .form-control:focus
 {
     border-color: #fff;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 255, 255, .6);
             box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 255, 255, .6);
 }
-.container-content-newsletter-form .form-control::-moz-placeholder
+.block-newsletter-form .form-control::-moz-placeholder
 {
     opacity: 1;
     color: #263746;
 }
-.container-content-newsletter-form .form-control:-ms-input-placeholder
+.block-newsletter-form .form-control:-ms-input-placeholder
 {
     color: #263746;
 }
-.container-content-newsletter-form .form-control::-webkit-input-placeholder
+.block-newsletter-form .form-control::-webkit-input-placeholder
 {
     color: #263746;
 }
-.container-content-newsletter-form .form-control:focus,
-.container-content-newsletter-form .form-control:active,
-.container-content-newsletter-form .form-control.active
+.block-newsletter-form .form-control:focus,
+.block-newsletter-form .form-control:active,
+.block-newsletter-form .form-control.active
 {
     border-color: #95d600;
 }
-.container-content-newsletter-form input[type='submit']
+.block-newsletter-form input[type='submit']
 {
     float: right;
 }
-.container-content-newsletter-form .subscribe-opts
+.block-newsletter-form .subscribe-opts
 {
     display: block;
 }
 @media screen and (min-width: 768px)
 {
-    .container-content-newsletter-form .subscribe-opts
+    .block-newsletter-form .subscribe-opts
     {
         display: inline-block;
     }
 }
-.container-content-newsletter-form .subscribe-opts label
+.block-newsletter-form .subscribe-opts label
 {
     line-height: 2;
 
     margin-right: 16px;
 }
-.container-content-article
-{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 0;
-}
-.container-content-article .col-main-full-height,
-.container-content-article .col-side-full-height
-{
-    vertical-align: top;
-}
-.container-content-article .item-icon
-{
-    margin: 32px 0;
-}
-.container-content-article h2
-{
-    font-weight: normal;
-
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-.container-content-article hr
-{
-    margin-top: 24px;
-    margin-bottom: 32px;
-
-    border-top: 2px solid #666;
-}
-.container-content-article p
-{
-    line-height: 1.5;
-}
-.container-content-article img
-{
-    width: 100%;
-    height: auto;
-}
-.container-content-item-results h1,
-.container-content-item-results h2,
-.container-content-item-results h3,
-.container-content-item-results h4,
-.container-content-item-results h5,
-.container-content-item-results h6
-{
-    margin-top: 0;
-    margin-bottom: 16px;
-}
-.container-content-item-results p
-{
-    margin-top: 0;
-    margin-bottom: 16px;
-}
-.container-breadcrumbs
+.block-breadcrumbs
 {
     font-size: 16px;
 
@@ -9139,7 +9092,7 @@ body:not(.noscroll)
     color: #fff;
     background: #263746;
 }
-.container-img-banner .img-banner
+.block-banner .img-banner
 {
     display: block;
 
@@ -9170,30 +9123,67 @@ h6
 
     letter-spacing: .05em;
 }
-.container-content-default h1,
-.container-content-default h2,
-.container-content-default h3,
-.container-content-default h4,
-.container-content-default h5,
-.container-content-default h6
+.block-content h1,
+.block-content h2,
+.block-content h3,
+.block-content h4,
+.block-content h5,
+.block-content h6
 {
     font-weight: bold;
 
+    margin-top: 32px;
+    margin-bottom: 16px;
+
     text-transform: uppercase;
 }
-.container-content-default h1:not(:first-child),
-.container-content-default h2:not(:first-child),
-.container-content-default h3:not(:first-child),
-.container-content-default h4:not(:first-child),
-.container-content-default h5:not(:first-child),
-.container-content-default h6:not(:first-child)
+.block-content h1:first-child,
+.block-content h2:first-child,
+.block-content h3:first-child,
+.block-content h4:first-child,
+.block-content h5:first-child,
+.block-content h6:first-child
 {
-    margin-top: 32px;
-    margin-bottom: 8px;
+    margin-top: 0;
 }
-.container-content-default p
+.block-content p
 {
     line-height: 1.5;
+
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.block-content hr
+{
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    border-top: 2px solid #666;
+}
+.block-content img
+{
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+.block-content .article-title
+{
+    font-weight: normal;
+
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.block-content .col-main-full-height,
+.block-content .col-side-full-height
+{
+    vertical-align: top;
+}
+.block-content .item-icon,
+.block-content .item-link
+{
+    margin-top: 16px;
+    margin-bottom: 32px;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -9581,7 +9571,7 @@ h6
     height: 0;
     margin-left: -12px;
 
-    content: ' ';
+    content: '';
 
     border-width: 12px;
     border-style: solid;
@@ -10004,7 +9994,7 @@ h6
 
     color: #95d600;
     border: 0 none;
-    background: none;
+    background: #00833e;
 }
 @media screen and (min-width: 480px)
 {
@@ -10036,7 +10026,7 @@ h6
 {
     border-bottom-color: #fff;
 }
-.wdidw-btn .wdidw-animated-term
+.wdidw-animated-term
 {
     font-size: 18px;
 
@@ -10048,7 +10038,7 @@ h6
     -webkit-transition: border-bottom-color 500ms;
          -o-transition: border-bottom-color 500ms;
             transition: border-bottom-color 500ms;
-    text-align: center;
+    text-align: left;
     vertical-align: top;
     text-transform: none;
 
@@ -10057,7 +10047,7 @@ h6
 }
 @media screen and (min-width: 480px)
 {
-    .wdidw-btn .wdidw-animated-term
+    .wdidw-animated-term
     {
         font-size: 24px;
 
@@ -11016,15 +11006,10 @@ h6
 {
     display: block;
 
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-.grid-cell-container-inner.grid-cell-link-bg.grid-cell-link-event-bg > img
-{
-    width: auto;
+    width: 100.5%;
+    height: 100.5%;
     margin: 0 auto;
+    padding: 0;
 }
 .grid-cell-container-inner.grid-cell-info-box
 {
@@ -11082,13 +11067,6 @@ h6
     -webkit-transition: margin 500ms;
          -o-transition: margin 500ms;
             transition: margin 500ms;
-}
-.grid-cell-link.grid-cell-link-reveal:hover .grid-cell-link-title,
-.grid-cell-link.grid-cell-link-reveal:focus .grid-cell-link-title,
-.grid-cell-link.grid-cell-link-reveal:active .grid-cell-link-title,
-.grid-cell-link.grid-cell-link-reveal.active .grid-cell-link-title
-{
-    margin-top: -25%;
 }
 .grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:hover .grid-cell-link-title,
 .grid-cell-link.grid-cell-link-reveal.grid-cell-link-staff:focus .grid-cell-link-title,
@@ -11204,11 +11182,6 @@ h6
          -o-transform: scale(1.25);
             transform: scale(1.25);
 }
-.link-img-zoom .img-zoom
-{
-    width: 100%;
-    height: 100%;
-}
 .tile-grid.tile-grid-staff > .grid-cell
 {
     width: 100%;
@@ -11306,16 +11279,17 @@ h6
 {
     margin-top: 24px;
 }
-.item-row .item-icon
+.item-row > .item-icon,
+.item-row > .item-link
 {
     float: left;
 
-    margin-right: 40px;
-    margin-bottom: 40px;
+    margin: 0 40px 40px 0;
 }
 .item-link
 {
     display: block;
+    display: inline-block;
 }
 .item-link img
 {
@@ -11347,6 +11321,10 @@ h6
         -ms-transform: scale(1.125);
          -o-transform: scale(1.125);
             transform: scale(1.125);
+}
+.item-link > .item-icon
+{
+    margin: 0;
 }
 .item-figure
 {

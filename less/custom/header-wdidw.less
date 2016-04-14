@@ -33,7 +33,7 @@
   width: 100%;
   height: 100%;
   padding: 0 (@grid-gutter-width / 2);
-  background: none;
+  background: @brand-primary;
   border: 0 none;
   color: @brand-success;
   font-size: (@font-size-base * 1.125);
@@ -61,24 +61,24 @@
       border-bottom-color: @white;
     }
   }
+}
 
-  .wdidw-animated-term {
-    width: 5em;
-    height: (@font-size-base * 1.25);
-    display: inline-block;
-    border-bottom: 2px solid @brand-success;
-    color: @white;
-    font-size: (@font-size-base * 1.125);
-    text-align: center;
-    text-transform: none;
-    vertical-align: top;
+.wdidw-animated-term {
+  width: 5em;
+  height: (@font-size-base * 1.25);
+  display: inline-block;
+  border-bottom: 2px solid @brand-success;
+  color: @white;
+  font-size: (@font-size-base * 1.125);
+  text-align: left;
+  text-transform: none;
+  vertical-align: top;
 
-    .transition(border-bottom-color @link-transition-speed);
+  .transition(border-bottom-color @link-transition-speed);
 
-    @media screen and (min-width: @screen-xs-min) {
-      height: (@font-size-base * 1.75);
-      font-size: (@font-size-base * 1.5);
-    }
+  @media screen and (min-width: @screen-xs-min) {
+    height: (@font-size-base * 1.75);
+    font-size: (@font-size-base * 1.5);
   }
 }
 
@@ -109,7 +109,6 @@
     input,
     .form-control,
     .btn {
-      height: (@navbar-height - @font-size-base);
       display: block;
       padding: 4px 0;
       border: 0 none;
@@ -117,7 +116,8 @@
       color: @brand-primary;
       outline: none;
 
-      // Force firefox to display inputs as full-height
+      // Force firefox and chrome to display correct input height
+      height: (@navbar-height - @font-size-base);
       line-height: (@navbar-height - @font-size-base);
 
       .box-shadow(none);

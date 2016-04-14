@@ -20,6 +20,9 @@
   position: absolute;
   top: 0;
   left: 0;
+
+  // Ensure z-index is greater than bootstrap dropdowns
+  // and less than slideReveal panels
   z-index: 1020;
 
   .transition(box-shadow @panel-transition-speed);

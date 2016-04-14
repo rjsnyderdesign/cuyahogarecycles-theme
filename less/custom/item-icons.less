@@ -61,10 +61,10 @@
 
   &:extend(.clearfix all);
 
-  .item-icon {
+  > .item-icon,
+  > .item-link {
     float: left;
-    margin-right: (@grid-gutter-width / 2);
-    margin-bottom: (@grid-gutter-width / 2);
+    margin: 0 (@grid-gutter-width / 2) (@grid-gutter-width / 2) 0;
   }
 }
 
@@ -75,6 +75,12 @@
 
 .item-link {
   .link-fx-zoom(~'img'; 1.125);
+
+  display: inline-block;
+
+  > .item-icon {
+    margin: 0;
+  }
 }
 
 

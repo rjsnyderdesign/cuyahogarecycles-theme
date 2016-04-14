@@ -14,18 +14,35 @@
 // Containers
 // --------------------------------------------------
 
-.container-content-default {
+.container-content {
   width: 100%;
   padding: (@grid-gutter-width / 2) 0;
 }
 
-.container-content-cta {
+.container-content-default {
+  &:extend(.container-content);
+}
+
+.container-content-article {
+  max-width: @screen-lg-min;
+  margin: 0 auto;
+  padding: (@grid-gutter-width) 0;
+
+  &:extend(.container-content);
+}
+
+
+//
+// Blocks
+// --------------------------------------------------
+
+.block-cta {
   font-size: 30px;
   letter-spacing: @letter-spacing;
   text-align: center;
   text-transform: uppercase;
 
-  &:extend(.container-content-default);
+  &:extend(.container-content);
 
   .btn {
     margin-left: @font-size-base;
@@ -33,10 +50,10 @@
   }
 }
 
-.container-content-newsletter-form {
+.block-newsletter-form {
   text-align: center;
 
-  &:extend(.container-content-default);
+  &:extend(.container-content);
 
   form,
   .form {
@@ -104,60 +121,7 @@
   }
 }
 
-.container-content-article {
-  width: 100%;
-  max-width: @screen-lg-min;
-  margin: 0 auto;
-  padding: (@grid-gutter-width) 0;
-
-  .col-main-full-height,
-  .col-side-full-height {
-    vertical-align: top;
-  }
-
-  .item-icon {
-    margin: (@font-size-base * 2) 0;
-  }
-
-  h2 {
-    font-weight: normal;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  hr {
-    margin-top: (@font-size-base * 1.5);
-    margin-bottom: (@font-size-base * 2);
-    border-top: 2px solid @gray;
-  }
-
-  p {
-    line-height: 1.5;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-.container-content-item-results {
-
-  &:extend(.container-content-default);
-
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: @font-size-base;
-  }
-
-  p {
-    margin-top: 0;
-    margin-bottom: @font-size-base;
-  }
-
-}
-
-.container-breadcrumbs {
+.block-breadcrumbs {
   padding-top: (@font-size-base * 3);
   padding-bottom: @font-size-base;
   background: @brand-dark;
@@ -165,7 +129,7 @@
   font-size: @font-size-base;
 }
 
-.container-img-banner {
+.block-banner {
   .img-banner {
     width: 100%;
     height: auto;
