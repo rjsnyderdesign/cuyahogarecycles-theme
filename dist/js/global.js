@@ -316,6 +316,7 @@ if (typeof jQuery === 'undefined') {
                 if ( !$pageHeaderUpper.is( ':visible' ) ) {
                     pageHeaderOffset += $pageHeaderUpper.height();
                 }
+                pageHeaderOffset -= $( 'mega-menu' ).height();
                 $pageHeaderParent.css( 'padding-top', pageHeaderOffset );
                 needsUpdateOffset = false;
             }
@@ -329,6 +330,13 @@ if (typeof jQuery === 'undefined') {
                     pageHeaderHeight = $pageHeader.height();
 
                 if ( scrollTopAfter > pageHeaderHeight ) {
+                    if ( !$pageHeader.hasClass( 'header-sticky-detached' ) ) {
+                        $pageHeader
+                            .css( { 'top': '-100%' } )
+                            .animate( { 'top': '0' }, 500, function () {
+                                $pageHeader.css( { 'top': '' } );
+                            } );
+                    }
                     $pageHeader.addClass( 'header-sticky-detached' );
                 }
                 else {
