@@ -157,6 +157,74 @@
 
   a {
     display: block;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .item-figure {
+    height: 125%;
+    margin-right: 1em;
+    margin-bottom: 2em;
+    font-size: 0.75em;
+    vertical-align: top;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: @screen-md-max) {
+      margin-right: 2em;
+
+      .item-basics-figure-size(60px);
+    }
+
+    @media screen and (min-width: @screen-sm-min) {
+      margin-right: 1em;
+
+      .item-basics-figure-size(90px);
+    }
+
+    @media screen and (min-width: @screen-lg-min) {
+      font-size: 1em;
+
+      .item-basics-figure-size(120px);
+    }
+
+    .item-icon,
+    .item-link {
+      margin: 0;
+    }
+
+    .item-icon {
+      @media screen and (max-width: @screen-md-max) {
+        border-width: 2px;
+      }
+
+      @media screen and (min-width: @screen-sm-min) {
+        border-width: 2px;
+      }
+
+      @media screen and (min-width: @screen-lg-min) {
+        border-width: 4px;
+      }
+    }
+  }
+
+  .item-icon-size-search-row {
+    @media screen and (max-width: @screen-md-max) {
+      .item-icon-size(60px);
+    }
+
+    @media screen and (min-width: @screen-sm-min) {
+      .item-icon.item-icon-size-1;
+    }
+
+    @media screen and (min-width: @screen-lg-min) {
+      .item-icon.item-icon-size-2;
+    }
   }
 }
 

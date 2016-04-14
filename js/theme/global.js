@@ -308,10 +308,7 @@
 
                 var scrollPosY = $window.scrollTop(),
                     scrollTopAfter = ( scrollPosY >= 0 )? scrollPosY : 0,
-                    headerTop = $pageHeader.offset().top,
-                    pageHeaderHeight = $pageHeader.height(),
-                    isScrollTopAboveHeaderBottom = headerTop + pageHeaderHeight > scrollTopAfter,
-                    isScrollTopAboveHeaderTop = headerTop >= scrollTopAfter;
+                    pageHeaderHeight = $pageHeader.height();
 
                 if ( scrollTopAfter > pageHeaderHeight ) {
                     $pageHeader.addClass( 'header-sticky-detached' );
@@ -322,30 +319,6 @@
                         setTopOffset();
                     }
                 }
-
-                if ( scrollTopAfter < scrollTopBefore ) { // on scroll up
-                    if ( isScrollTopAboveHeaderBottom ) {
-                        if ( isScrollTopAboveHeaderTop ) {
-                            $pageHeader.addClass( 'header-sticky-fixed' );
-                            $pageHeader.css( 'top', '' );
-                        }
-                    }
-                    else {
-                        $pageHeader.removeClass( 'header-sticky-fixed' );
-                        $pageHeader.css( 'top', scrollTopAfter - pageHeaderHeight );
-                    }
-
-                }
-                else {  // on scroll down
-                    if ( isScrollTopAboveHeaderBottom ) {
-                        if ( $pageHeader.hasClass( 'header-sticky-fixed' ) ) {
-                            $pageHeader.removeClass( 'header-sticky-fixed' );
-                            $pageHeader.css( 'top', scrollTopAfter );
-                        }
-                    }
-                }
-
-                scrollTopBefore = scrollTopAfter;
 
             } );
 
