@@ -8499,68 +8499,6 @@ form .form-control::-webkit-input-placeholder,
     height: 100%;
     margin: 0;
 }
-.item-coin
-{
-    -webkit-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-         -o-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center;
-
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-}
-.item-coin:nth-child(1)
-{
-    -webkit-transition: -webkit-transform 500ms ease 0ms;
-         -o-transition:      -o-transform 500ms ease 0ms;
-            transition:         transform 500ms ease 0ms;
-}
-.item-coin:nth-child(2)
-{
-    -webkit-transition: -webkit-transform 500ms ease 100ms;
-         -o-transition:      -o-transform 500ms ease 100ms;
-            transition:         transform 500ms ease 100ms;
-}
-.item-coin:nth-child(3)
-{
-    -webkit-transition: -webkit-transform 500ms ease 200ms;
-         -o-transition:      -o-transform 500ms ease 200ms;
-            transition:         transform 500ms ease 200ms;
-}
-.item-coin:nth-child(4)
-{
-    -webkit-transition: -webkit-transform 500ms ease 300ms;
-         -o-transition:      -o-transform 500ms ease 300ms;
-            transition:         transform 500ms ease 300ms;
-}
-.item-coin:nth-child(5)
-{
-    -webkit-transition: -webkit-transform 500ms ease 400ms;
-         -o-transition:      -o-transform 500ms ease 400ms;
-            transition:         transform 500ms ease 400ms;
-}
-.item-coin.item-coin-flip
-{
-    -webkit-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-         -o-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-}
-.item-basics > .item-basics-cat,
-.item-basics > .item-cat-selector
-{
-    margin: 0 auto;
-
-    text-align: center;
-}
-.item-basics > .item-basics-cat[role='tabpanel']:not(.active)
-{
-    display: none;
-}
 body
 {
     color: #666;
@@ -9134,6 +9072,22 @@ h6
     font-weight: bold;
 
     letter-spacing: .05em;
+}
+.text-home-recycling
+{
+    color: #26cad3;
+}
+.text-dropoff-recycling
+{
+    color: #f6b221;
+}
+.text-proper-disposal
+{
+    color: #e84b37;
+}
+.text-compost
+{
+    color: #00833e;
 }
 .block-content h1,
 .block-content h2,
@@ -11793,15 +11747,20 @@ h6
     border-radius: 50%;
     background: #fff;
 }
-.item-icon.item-icon-size-4
+.item-icon.item-icon-size-5
 {
     width: 278px;
     height: 278px;
 }
-.item-icon.item-icon-size-3
+.item-icon.item-icon-size-4
 {
     width: 218px;
     height: 218px;
+}
+.item-icon.item-icon-size-3
+{
+    width: 188px;
+    height: 188px;
 }
 .item-icon.item-icon-size-2
 {
@@ -12366,6 +12325,252 @@ h6
 .item-type-label.item-type-compost
 {
     color: #00833e;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+@media screen and (min-width: 900px)
+{
+    .item-coin
+    {
+        -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+             -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+        -webkit-transform-origin: center center;
+            -ms-transform-origin: center center;
+             -o-transform-origin: center center;
+                transform-origin: center center;
+
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+    }
+    .item-coin:nth-child(1)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 0ms;
+             -o-transition:      -o-transform 500ms ease 0ms;
+                transition:         transform 500ms ease 0ms;
+    }
+    .item-coin:nth-child(2)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 100ms;
+             -o-transition:      -o-transform 500ms ease 100ms;
+                transition:         transform 500ms ease 100ms;
+    }
+    .item-coin:nth-child(3)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 200ms;
+             -o-transition:      -o-transform 500ms ease 200ms;
+                transition:         transform 500ms ease 200ms;
+    }
+    .item-coin:nth-child(4)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 300ms;
+             -o-transition:      -o-transform 500ms ease 300ms;
+                transition:         transform 500ms ease 300ms;
+    }
+    .item-coin:nth-child(5)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 400ms;
+             -o-transition:      -o-transform 500ms ease 400ms;
+                transition:         transform 500ms ease 400ms;
+    }
+    .item-coin.item-coin-flip
+    {
+        -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+             -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+    }
+}
+.item-basics .item-figure
+{
+    width: 98px;
+    height: 125%;
+    margin-right: 2em;
+    margin-bottom: 2em;
+
+    vertical-align: top;
+}
+.item-basics .item-figure:last-child
+{
+    margin-right: 0;
+}
+@media screen and (min-width: 900px)
+{
+    .item-basics .item-figure
+    {
+        width: 128px;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .item-basics .item-figure
+    {
+        width: 188px;
+    }
+}
+@media screen and (min-width: 1200px) and (min-width: 1400px)
+{
+    .item-basics .item-figure
+    {
+        width: 218px;
+    }
+}
+@media screen and (min-width: 1680px)
+{
+    .item-basics .item-figure
+    {
+        width: 278px;
+    }
+}
+.item-basics .item-icon,
+.item-basics .item-link
+{
+    margin: 0;
+}
+.item-basics .item-icon.item-icon-size-basics
+{
+    width: 98px;
+    height: 98px;
+}
+@media screen and (min-width: 900px)
+{
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 128px;
+        height: 128px;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 188px;
+        height: 188px;
+    }
+}
+@media screen and (min-width: 1200px) and (min-width: 1400px)
+{
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 218px;
+        height: 218px;
+    }
+}
+@media screen and (min-width: 1680px)
+{
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 278px;
+        height: 278px;
+    }
+}
+.item-basics
+{
+    font-size: .75em;
+}
+@media screen and (min-width: 900px)
+{
+    .item-basics
+    {
+        font-size: .85em;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .item-basics
+    {
+        font-size: 1em;
+    }
+}
+.item-basics .item-basics-title
+{
+    text-transform: none;
+}
+.item-basics .item-basics-subtitle
+{
+    font-size: 1.5em;
+}
+.item-basics
+{
+    text-align: center;
+}
+.item-basics-alignment
+{
+    display: inline-block;
+}
+.item-basics-cat,
+.item-cat-selector
+{
+    margin: 0 auto;
+
+    text-align: center;
+}
+.item-basics-cat[role='tabpanel']:not(.active)
+{
+    display: none;
+}
+.item-basics-cat > .item-basics-cat-row
+{
+    display: inline-block;
+
+    text-align: left;
+}
+.item-cat-selector
+{
+    margin-top: 2em;
+}
+.item-cat-selector > li
+{
+    float: left;
+    clear: both;
+
+    width: 20em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    text-align: left;
+}
+@media screen and (min-width: 900px)
+{
+    .item-cat-selector > li
+    {
+        float: none;
+
+        width: auto;
+    }
+}
+.item-basics-cat-row.item-basics-cat-mb
+{
+    display: inline-block;
+}
+@media screen and (min-width: 900px)
+{
+    .item-basics-cat-row.item-basics-cat-mb
+    {
+        display: none;
+    }
+}
+.item-basics-cat-row.item-basics-cat-dk
+{
+    display: none;
+}
+@media screen and (min-width: 900px)
+{
+    .item-basics-cat-row.item-basics-cat-dk
+    {
+        display: inline-block;
+    }
+}
+.item-basics-cat-link
+{
+    display: inline-block;
+}
+.item-basics-cat-link:hover,
+.item-basics-cat-link:focus
+{
+    text-decoration: none;
 }
 /*!
  * CuyahogaRecycles.org theme

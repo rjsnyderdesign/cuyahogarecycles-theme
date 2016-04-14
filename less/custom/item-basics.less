@@ -1,0 +1,217 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Item basic 5 Do's and Don'ts
+// --------------------------------------------------
+
+@item-basics-xs-min: 600px;
+@item-basics-sm-min: 900px;
+@item-basics-md-min: 1200px;
+@item-basics-lg-min: 1680px;
+
+
+//
+// Item basics flip animation
+// --------------------------------------------------
+
+@item-coin-delay-interval: 100ms;
+
+@media screen and (min-width: @item-basics-sm-min) {
+  .item-coin-delay(@i: 1; @length: 5) when (@i <= @length) {
+    @delay: (@item-coin-delay-interval * (@i - 1));
+
+    &:nth-child(@{i}) {
+      .transition-transform(@link-transition-speed ease @delay);
+    }
+
+    .item-coin-delay((@i + 1));
+  }
+
+  .item-coin {
+    backface-visibility: hidden;
+
+    .transform-origin(center center);
+    .rotateY(0deg);
+
+    .item-coin-delay(1; 5);
+
+    &.item-coin-flip {
+      .rotateY(180deg);
+    }
+  }
+}
+
+//
+// Item basics icon and text sizes
+// --------------------------------------------------
+
+.item-basics-figure-size(@size) {
+  width: (@size + 2 * @item-icon-border-width);
+}
+
+.item-basics {
+  .item-figure {
+    height: 125%;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    vertical-align: top;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .item-basics-figure-size(90px);
+
+    @media screen and (min-width: @item-basics-sm-min) {
+      .item-basics-figure-size(120px);
+    }
+
+    @media screen and (min-width: @item-basics-md-min) {
+      .item-basics-figure-size(180px);
+
+      @media (min-width: (@item-basics-md-min + 200)) {
+        .item-basics-figure-size(210px);
+      }
+    }
+
+    @media screen and (min-width: @item-basics-lg-min) {
+      .item-basics-figure-size(270px);
+    }
+  }
+
+  .item-icon,
+  .item-link {
+    margin: 0;
+  }
+
+  .item-icon.item-icon-size-basics {
+    .item-icon.item-icon-size-1;
+
+    @media screen and (min-width: @item-basics-sm-min) {
+      .item-icon.item-icon-size-2;
+    }
+
+    @media screen and (min-width: @item-basics-md-min) {
+      .item-icon.item-icon-size-3;
+
+      @media (min-width: (@item-basics-md-min + 200)) {
+        .item-icon.item-icon-size-4;
+      }
+    }
+
+    @media screen and (min-width: @item-basics-lg-min) {
+      .item-icon.item-icon-size-5;
+    }
+  }
+}
+
+
+//
+// Item basics typography
+// --------------------------------------------------
+
+.item-basics {
+  font-size: 0.75em;
+
+  @media screen and (min-width: @item-basics-sm-min) {
+    font-size: 0.85em;
+  }
+
+  @media screen and (min-width: @item-basics-md-min) {
+    font-size: 1em;
+  }
+
+  .item-basics-title {
+    text-transform: none;
+  }
+
+  .item-basics-subtitle {
+    font-size: 1.5em;
+  }
+}
+
+
+//
+// Item basics alignments
+// --------------------------------------------------
+
+.item-basics {
+  text-align: center;
+}
+
+.item-basics-alignment {
+  display: inline-block;
+}
+
+.item-basics-cat,
+.item-cat-selector {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.item-basics-cat {
+  &[role="tabpanel"]:not(.active) {
+    display: none;
+  }
+
+  > .item-basics-cat-row {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+.item-cat-selector {
+  margin-top: 2em;
+
+  > li {
+    width: 20em;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+    clear: both;
+
+    @media screen and (min-width: @item-basics-sm-min) {
+      width: auto;
+      float: none;
+    }
+  }
+}
+
+
+//
+// Item basics mobile
+// --------------------------------------------------
+
+.item-basics-cat-row.item-basics-cat-mb {
+  display: inline-block;
+  @media screen and (min-width: @item-basics-sm-min) {
+    display: none;
+  }
+}
+
+.item-basics-cat-row.item-basics-cat-dk {
+  display: none;
+  @media screen and (min-width: @item-basics-sm-min) {
+    display: inline-block;
+  }
+}
+
+.item-basics-cat-link {
+  display: inline-block;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
