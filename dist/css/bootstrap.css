@@ -9218,8 +9218,7 @@ h6
 
     display: block;
 }
-.brand a .brand-logo-main,
-.brand-logo-main-icon
+.brand a .brand-logo-main
 {
     display: block;
 
@@ -9241,18 +9240,45 @@ h6
     -webkit-backface-visibility: hidden;
 }
 .brand a:hover .brand-logo-main,
-.brand-logo-main-icon,
 .brand a:focus .brand-logo-main,
-.brand-logo-main-icon,
 .brand a:active .brand-logo-main,
-.brand-logo-main-icon,
-.brand a.active .brand-logo-main,
-.brand-logo-main-icon
+.brand a.active .brand-logo-main
 {
-    -webkit-transform: scale(1.125);
-        -ms-transform: scale(1.125);
-         -o-transform: scale(1.125);
-            transform: scale(1.125);
+    -webkit-transform: scale(1.03125);
+        -ms-transform: scale(1.03125);
+         -o-transform: scale(1.03125);
+            transform: scale(1.03125);
+}
+.brand a .brand-logo-main-icon
+{
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    -webkit-transition: -webkit-transform 500ms ease;
+         -o-transition:      -o-transform 500ms ease;
+            transition:         transform 500ms ease;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+         -o-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+
+    -webkit-backface-visibility: hidden;
+}
+.brand a:hover .brand-logo-main-icon,
+.brand a:focus .brand-logo-main-icon,
+.brand a:active .brand-logo-main-icon,
+.brand a.active .brand-logo-main-icon
+{
+    -webkit-transform: scale(1.0625);
+        -ms-transform: scale(1.0625);
+         -o-transform: scale(1.0625);
+            transform: scale(1.0625);
 }
 .brand .brand-logo-main
 {
@@ -9305,7 +9331,7 @@ h6
 }
 .brand .brand-logo-main-icon
 {
-    width: 39px;
+    width: 65px;
     height: auto;
     margin: 0;
 }
@@ -9691,10 +9717,23 @@ h6
 {
     min-height: 50px;
 }
+.page-header.header-sticky.header-sticky-detached .navbar-primary
+{
+    min-height: 100px;
+}
+.page-header.header-sticky.header-sticky-detached .navbar-nav
+{
+    height: 100%;
+}
+.page-header.header-sticky.header-sticky-detached .navbar-nav > li
+{
+    height: 100%;
+}
 .page-header.header-sticky.header-sticky-detached .navbar-nav > li > a
 {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 .page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
 .page-header.header-sticky.header-sticky-detached .city-recycling-btn

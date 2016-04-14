@@ -45,9 +45,22 @@
       min-height: @header-sticky-navbar-height;
     }
 
-    .navbar-nav > li > a {
-      padding-top: 15px;
-      padding-bottom: 15px;
+    .navbar-primary {
+      min-height: (@header-sticky-navbar-height * 2);
+    }
+
+    .navbar-nav {
+      height: 100%;
+
+      > li {
+        height: 100%;
+
+        > a {
+          height: 100%;
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+      }
     }
 
     .wdidw-wrapper,
