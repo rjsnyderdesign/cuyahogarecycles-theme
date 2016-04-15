@@ -361,10 +361,21 @@ if (typeof jQuery === 'undefined') {
 
         ( function () {
 
+            var $mainMenu = $( '.mega-menu' ),
+                $callOuts = $mainMenu.find( '.call-out' ),
+                onExit    = null;
+
             function expand ( e ) {
                 var $this        = $( this ),
                     $current     = $this.next(),
-                    $grandparent = $this.parent().parent();
+                    $grandparent = $this.parent().parent(),
+                    depth        = $current.parents( '.sub-menu' ).length;
+                if ( depth >= 2 ) {
+                    $callOuts.addClass( 'call-out-hidden' );
+                }
+                else {
+                    $callOuts.removeClass( 'call-out-hidden' );
+                }
                 $grandparent.find( 'li > a.trigger' ).not( $this ).removeClass( 'open' );
                 $this.addClass( 'open' );
                 $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
@@ -388,16 +399,9 @@ if (typeof jQuery === 'undefined') {
                 .on( 'mouseover', collapse )
                 .on( 'focus', collapse );
 
-        } )();
-
-        //
-        // Desktop mega menu
-        //
-
-        ( function () {
-
-            var $mainMenu = $( '.mega-menu' ),
-                onExit    = null;
+            //
+            // Desktop mega menu
+            //
 
             function getSubMenu ( $elem ) {
                 var subMenuKey = $elem.data( 'dropdown-controls' );
@@ -414,6 +418,7 @@ if (typeof jQuery === 'undefined') {
                 $subMenu.removeClass( 'open' );
                 $subMenu.find( '.sub-menu:not(.first)' ).hide();
                 $subMenu.find( 'li > a.trigger' ).removeClass( 'open' );
+                $callOuts.removeClass( 'call-out-hidden' );
             }
 
             function enter ( $elem ) {

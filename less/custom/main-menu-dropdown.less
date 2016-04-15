@@ -162,13 +162,31 @@
 
   .call-out {
     margin-top: -3px;
+    opacity: 1;
+
+    .transition(opacity @link-transition-speed);
+
+    &.call-out-hidden {
+      opacity: 0;
+    }
 
     h2 {
       margin: 0;
+      font-size: (@font-size-base * 1.125);
+      font-weight: normal;
       text-transform: none;
 
       span {
-        font-weight: normal;
+        font-size: (@font-size-base * 1.25);
+        font-weight: bold;
+      }
+
+      @media screen and (min-width: @screen-md-min) {
+        font-size: (@font-size-base * 1.25);
+
+        span {
+          font-size: @font-size-large;
+        }
       }
     }
   }

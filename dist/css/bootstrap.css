@@ -10442,16 +10442,41 @@ h6
 .main-menu-dropdown .call-out
 {
     margin-top: -3px;
+
+    -webkit-transition: opacity 500ms;
+         -o-transition: opacity 500ms;
+            transition: opacity 500ms;
+
+    opacity: 1;
+}
+.main-menu-dropdown .call-out.call-out-hidden
+{
+    opacity: 0;
 }
 .main-menu-dropdown .call-out h2
 {
+    font-size: 18px;
+    font-weight: normal;
+
     margin: 0;
 
     text-transform: none;
 }
 .main-menu-dropdown .call-out h2 span
 {
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: bold;
+}
+@media screen and (min-width: 992px)
+{
+    .main-menu-dropdown .call-out h2
+    {
+        font-size: 20px;
+    }
+    .main-menu-dropdown .call-out h2 span
+    {
+        font-size: 24px;
+    }
 }
 .main-menu-dropdown img
 {
