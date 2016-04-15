@@ -7885,6 +7885,13 @@ form .form-control::-webkit-input-placeholder,
 {
     color: #d9d9d9;
 }
+form .form-control.form-control-small-num,
+.form .form-control.form-control-small-num
+{
+    float: right;
+
+    min-width: 80px;
+}
 form .form-required,
 .form .form-required
 {
@@ -7901,6 +7908,26 @@ form .form-required:before,
     content: '*';
 
     color: #e84b37;
+}
+form .form-desc,
+.form .form-desc
+{
+    font-size: .875em;
+    line-height: 1.25;
+}
+form .form-subhead,
+.form .form-subhead
+{
+    font-size: 1.25em;
+
+    margin-bottom: 1.5em;
+}
+form .form-subhead,
+.form .form-subhead,
+form .form-subhead:first-child,
+.form .form-subhead:first-child
+{
+    margin-top: -.125em;
 }
 .btn-hollow-white
 {
