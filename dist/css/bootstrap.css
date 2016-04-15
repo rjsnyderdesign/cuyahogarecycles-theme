@@ -8548,6 +8548,8 @@ body:not(.noscroll)
 .page-header .page-header-skip
 {
     position: absolute;
+    top: .25em;
+    left: 40px;
 }
 .page-header .page-header-upper
 {
