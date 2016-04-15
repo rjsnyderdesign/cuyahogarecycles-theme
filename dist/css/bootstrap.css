@@ -7929,6 +7929,47 @@ form .form-subhead:first-child,
 {
     margin-top: -.125em;
 }
+.form-feedback
+{
+    font-size: 1.125em;
+
+    margin: 1em 0;
+    padding: .5em 1em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    border: .5em solid transparent;
+}
+.form-feedback .text-primary
+{
+    color: #00833e;
+}
+.form-feedback .text-success
+{
+    color: #95d600;
+}
+.form-feedback .text-info
+{
+    color: #26cad3;
+}
+.form-feedback .text-warning
+{
+    color: #f6b221;
+}
+.form-feedback .text-danger
+{
+    color: #e84b37;
+}
+.pal-default > .form-feedback
+{
+    border-color: rgba(0, 0, 0, .0625);
+    background: #fff;
+}
+.pal-inverse > .form-feedback
+{
+    background: rgba(0, 0, 0, .25);
+}
 .btn-hollow-white
 {
     padding-right: 40px;

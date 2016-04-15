@@ -119,6 +119,24 @@ form,
   }
 }
 
+.form-feedback {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  font-size: 1.125em;
+  border: 0.5em solid transparent;
+  text-align: center;
+  text-transform: uppercase;
+
+  .text-primary { color: @brand-primary; }
+  .text-success { color: @brand-success; }
+  .text-info    { color: @brand-info;    }
+  .text-warning { color: @brand-warning; }
+  .text-danger  { color: @brand-danger;  }
+
+  .pal-default > & { background: @white; border-color: rgba(0,0,0,0.0625); }
+  .pal-inverse > & { background: rgba(0,0,0,0.25); }
+}
+
 
 //
 // Buttons
