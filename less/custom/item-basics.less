@@ -34,8 +34,6 @@
   @transition2: 0s ease (@delay + @item-coin-delay-interval / 2); // show
 
   &:nth-child(@{i}) {
-    // .transition-transform(@link-transition-speed ease @delay);
-
     -webkit-transition: -webkit-transform @transition1, opacity @transition2;
        -moz-transition: -moz-transform @transition1, opacity @transition2;
          -o-transition: -o-transform @transition1, opacity @transition2;
@@ -156,6 +154,7 @@
   }
 
   .item-basics-subtitle {
+    height: 3em;
     font-size: 1.5em;
   }
 }

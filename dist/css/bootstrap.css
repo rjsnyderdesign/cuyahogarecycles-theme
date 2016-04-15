@@ -12103,6 +12103,7 @@ h6
 .item-figure > .item-caption
 {
     width: 100%;
+    height: 1.5em;
     margin-top: 12px;
 
     text-align: center;
@@ -12870,6 +12871,8 @@ h6
 .item-basics .item-basics-subtitle
 {
     font-size: 1.5em;
+
+    height: 3em;
 }
 .item-basics
 {

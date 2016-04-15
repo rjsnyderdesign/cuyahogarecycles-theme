@@ -572,8 +572,8 @@
                 $itemFigures = $itemBasics.find( '.item-basics-cat-dk .item-figure' ),
                 $itemCoins = $itemFigures.addClass( 'item-coin' );
 
-            var flipInterval = 100,
-                flipDelay = flipInterval * 5;
+            var flipIntervalDefault = 100,
+                flipDelayDefault = flipIntervalDefault * 5;
 
             var slideShowLength = 3,
                 slideShowInterval = 8000,
@@ -582,6 +582,8 @@
                 flipTimeout = null,
                 isSwapping = false,
                 currentSlide;
+
+            function isScreenModeDesktop () { return $body.width() >= 900; }
 
             function start () {
                 window.clearTimeout( slideShowTimeout );
@@ -599,11 +601,20 @@
 
             function flipTo ( $elem, isManual ) {
 
-                var itemKey = $elem.data( 'item-key' ),
-                    $itemBasicsCat = $itemBasics.find( '.item-basics-cat[data-item-cat="' + itemKey + '"]' );
+                var flipInterval = flipIntervalDefault,
+                    flipDelay = flipDelayDefault,
+                    itemKey = $elem.data( 'item-key' ),
+                    $itemBasicsCat = $itemBasics.find(
+                        '.item-basics-cat[data-item-cat="' + itemKey + '"]'
+                    );
 
                 if ( currentSlide === $itemBasicsCat.index() && !isSwapping ) {
                     return;
+                }
+
+                if ( !isScreenModeDesktop() ) {
+                    flipInterval = 0;
+                    flipDelay = 0;
                 }
 
                 isSwapping = true;
