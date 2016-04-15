@@ -240,11 +240,11 @@
             //
 
             $( '.wdidw-animated-term' ).typed( {
-                backDelay: 800,
-                backSpeed: 50,
+                backDelay: 5000,
+                backSpeed: 100,
                 loop: true,
                 showCursor: false,
-                startDelay: 800,
+                startDelay: 1000,
                 strings: [
                     'Cans',
                     'Cartons',
