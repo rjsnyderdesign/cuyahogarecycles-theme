@@ -12461,6 +12461,14 @@ h6
 
     color: #95d600;
 }
+.item-entry .item-entry-subhead,
+.item-group-entry .item-entry-subhead
+{
+    font-size: 1em;
+    font-weight: bold;
+
+    margin-bottom: 1.75em;
+}
 .item-type-label.item-type-home-recycling
 {
     color: #26cad3;
@@ -13196,13 +13204,17 @@ h6
 }
 .locations > li
 {
-    display: block;
+    display: inline-block;
+    float: none;
 
+    margin-right: -.25em;
     padding: 0 20px;
+
+    vertical-align: top;
 }
 .location
 {
-    font-size: .85em;
+    font-size: .875em;
 }
 .location .location-title,
 .location .location-address
@@ -13220,5 +13232,15 @@ h6
 .location .location-desc
 {
     line-height: 1.5;
+}
+.locations.locations-dropoffs > li
+{
+    width: 240px;
+}
+.location .location-dropoff
+{
+    line-height: 1.25em;
+
+    margin-bottom: 1.25em;
 }
 /*# sourceMappingURL=bootstrap.css.map */

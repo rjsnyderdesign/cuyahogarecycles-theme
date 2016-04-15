@@ -19,13 +19,16 @@
   list-style: none;
 
   > li {
-    display: block;
+    display: inline-block;
+    float: none;
+    margin-right: -0.25em; // Ignore spaces between blocks
     padding: 0 (@grid-gutter-width / 4);
+    vertical-align: top;
   }
 }
 
 .location {
-  font-size: 0.85em;
+  font-size: 0.875em;
 
   .location-title,
   .location-address {
@@ -40,5 +43,23 @@
 
   .location-desc {
     line-height: 1.5;
+  }
+}
+
+
+//
+// Drop-offs
+// --------------------------------------------------
+
+.locations.locations-dropoffs {
+  > li {
+    width: 240px;
+  }
+}
+
+.location {
+  .location-dropoff {
+    line-height: 1.25em;
+    margin-bottom: 1.25em;
   }
 }
