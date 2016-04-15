@@ -65,6 +65,28 @@
     .city-recycling-btn {
       height: @header-sticky-navbar-height;
     }
+
+    .wdidw-search-form {
+      .input-group {
+        input,
+        .form-control,
+        .btn {
+          font-size: @font-size-large;
+
+          // Force firefox and chrome to display correct input height
+          height: (@header-sticky-navbar-height - @font-size-base);
+          line-height: (@header-sticky-navbar-height - @font-size-base);
+        }
+
+        .btn {
+          padding: 0;
+
+          .fa {
+            font-size: @font-size-large;
+          }
+        }
+      }
+    }
   }
 }
 

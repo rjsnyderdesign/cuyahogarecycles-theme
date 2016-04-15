@@ -9690,6 +9690,23 @@ h6
 {
     height: 50px;
 }
+.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group input,
+.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .form-control,
+.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn
+{
+    font-size: 24px;
+    line-height: 34px;
+
+    height: 34px;
+}
+.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn
+{
+    padding: 0;
+}
+.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn .fa
+{
+    font-size: 24px;
+}
 .col-side-full-height.brand-sticky
 {
     vertical-align: middle;
@@ -10085,7 +10102,7 @@ h6
 
     color: #fff;
 }
-.wdidw-search-results-wrapper
+.wdidw-search-results-alignment-outer
 {
     position: relative;
     z-index: -1;
@@ -10093,20 +10110,18 @@ h6
     width: 100%;
     padding: 0 40px;
 }
-.wdidw-search-results-inner-wrapper
+.wdidw-search-results-alignment-inner
 {
     position: relative;
 
     width: 100%;
 }
-.wdidw-search-results-list
+.wdidw-search-results-wrapper
 {
     position: absolute;
 
     width: 100%;
-    padding: 0;
-
-    list-style: none;
+    padding: 1.5em;
 
     text-transform: none;
 
@@ -10117,23 +10132,47 @@ h6
     -webkit-box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
             box-shadow: 0 0 30px 15px rgba(0, 0, 0, .5);
 }
-.wdidw-search-results-list:empty
+.wdidw-search-results-wrapper:not(.active)
 {
     display: none;
 }
-.wdidw-search-results-list:not(.active)
+.wdidw-search-results-wrapper hr
+{
+    border-top: 1px solid #666;
+}
+.wdidw-search-results-wrapper p
+{
+    margin: .5em 0;
+
+    color: #d9d9d9;
+}
+.wdidw-search-results-wrapper p:first-child
+{
+    margin-top: 0;
+}
+.wdidw-search-results-list,
+.wdidw-search-quick-links-list
+{
+    padding: 0;
+
+    list-style: none;
+}
+.wdidw-search-results-list:empty,
+.wdidw-search-quick-links-list:empty
 {
     display: none;
 }
-.wdidw-search-results-list > li
+.wdidw-search-results-list > li,
+.wdidw-search-quick-links-list > li
 {
     display: block;
 }
-.wdidw-search-results-list > li > a
+.wdidw-search-results-list > li > a,
+.wdidw-search-quick-links-list > li > a
 {
     display: block;
 
-    padding: 8px 40px;
+    padding: 0 1.5em;
 
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -10145,7 +10184,9 @@ h6
     background: none;
 }
 .wdidw-search-results-list > li > a:hover,
-.wdidw-search-results-list > li > a:focus
+.wdidw-search-quick-links-list > li > a:hover,
+.wdidw-search-results-list > li > a:focus,
+.wdidw-search-quick-links-list > li > a:focus
 {
     text-decoration: none;
 
@@ -10153,7 +10194,9 @@ h6
     background: none;
 }
 .wdidw-search-results-list > li > a:active,
-.wdidw-search-results-list > li > a.active
+.wdidw-search-quick-links-list > li > a:active,
+.wdidw-search-results-list > li > a.active,
+.wdidw-search-quick-links-list > li > a.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
@@ -10161,9 +10204,48 @@ h6
 
     color: #95d600;
 }
-.wdidw-search-results-list > li:not(:last-child) > a
+.wdidw-search-results-list > li > a
 {
-    border-bottom: 1px solid #e6e6e6;
+    line-height: 1.75em;
+
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.wdidw-search-results-list > li > a,
+.wdidw-search-results-list > li > a > strong
+{
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+}
+.wdidw-search-results-list > li > a > strong
+{
+    color: #000;
+}
+.wdidw-search-results-list > li > a:hover,
+.wdidw-search-results-list > li > a:focus,
+.wdidw-search-results-list > li > a:hover > strong,
+.wdidw-search-results-list > li > a:focus > strong
+{
+    text-decoration: none;
+
+    color: #26cad3;
+}
+.wdidw-search-results-list > li > a:active,
+.wdidw-search-results-list > li > a.active,
+.wdidw-search-results-list > li > a:active > strong,
+.wdidw-search-results-list > li > a.active > strong
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
+.wdidw-search-quick-links-list > li > a
+{
+    line-height: 1.5em;
 }
 /*!
  * CuyahogaRecycles.org theme

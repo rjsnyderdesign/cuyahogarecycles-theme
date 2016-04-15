@@ -145,23 +145,22 @@
   }
 }
 
-.wdidw-search-results-wrapper {
+.wdidw-search-results-alignment-outer {
   width: 100%;
   position: relative;
   z-index: -1;
   padding: 0 (@grid-gutter-width / 2);
 }
 
-.wdidw-search-results-inner-wrapper {
+.wdidw-search-results-alignment-inner {
   width: 100%;
   position: relative;
 }
 
-.wdidw-search-results-list {
+.wdidw-search-results-wrapper {
   width: 100%;
   position: absolute;
-  padding: 0;
-  list-style: none;
+  padding: 1.5em;
   background: @white;
   border: 1px solid @gray-light;
   border-top: 0 none;
@@ -170,11 +169,30 @@
 
   .box-shadow(0px 0px @panel-shadow-blur @panel-shadow-spread @panel-shadow-color);
 
-  &:empty {
+  &:not(.active) {
     display: none;
   }
 
-  &:not(.active) {
+  hr {
+    border-top: 1px solid @gray;
+  }
+
+  p {
+    margin: 0.5em 0;
+    color: @gray-light;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.wdidw-search-results-list,
+.wdidw-search-quick-links-list {
+  padding: 0;
+  list-style: none;
+
+  &:empty {
     display: none;
   }
 
@@ -183,15 +201,56 @@
 
     > a {
       display: block;
-      padding: (@font-size-base / 2) (@grid-gutter-width / 2);
+      padding: 0 1.5em;
 
       .link-fx-nav(@brand-info; @brand-success);
     }
+  }
+}
 
-    &:not(:last-child) {
-      > a {
-        border-bottom: 1px solid @gray-lighter;
+.wdidw-search-results-list {
+  > li {
+    > a {
+      cursor: pointer;
+      line-height: 1.75em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &,
+      & > strong {
+        .transition(color @link-transition-speed);
       }
+
+      > strong {
+        color: @black;
+      }
+
+      &:hover,
+      &:focus {
+        &,
+        & > strong {
+          color: @brand-info;
+          text-decoration: none;
+        }
+      }
+
+      &:active,
+      &.active {
+        &,
+        & > strong {
+          color: @brand-success;
+
+          .transition(color 0s);
+        }
+      }
+    }
+  }
+}
+
+.wdidw-search-quick-links-list {
+  > li {
+    > a {
+      line-height: 1.5em;
     }
   }
 }
