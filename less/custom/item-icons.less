@@ -54,6 +54,21 @@
 
 
 //
+// Item link
+// --------------------------------------------------
+
+.item-link {
+  .link-fx-zoom(~'img'; 1.125);
+
+  display: inline-block;
+
+  > .item-icon {
+    margin: 0;
+  }
+}
+
+
+//
 // Item row
 // --------------------------------------------------
 
@@ -66,21 +81,6 @@
   > .item-link {
     float: left;
     margin: 0 (@grid-gutter-width / 2) (@grid-gutter-width / 2) 0;
-  }
-}
-
-
-//
-// Item link
-// --------------------------------------------------
-
-.item-link {
-  .link-fx-zoom(~'img'; 1.125);
-
-  display: inline-block;
-
-  > .item-icon {
-    margin: 0;
   }
 }
 

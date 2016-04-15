@@ -148,21 +148,23 @@
 
 
 //
-// Item row
+// Item groups
 // --------------------------------------------------
 
-.item-search-row {
-  padding: (@grid-gutter-width / 2) 0;
-  border-bottom: 2px solid @gray-lighter;
+.item-group-entry {
+  &:extend(.item-entry all);
+}
 
-  a {
-    display: block;
+.item-group-entry-link {
+  &:extend(.item-entry-link all);
+}
 
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
+
+//
+// Item group responsive sizes
+// --------------------------------------------------
+
+.item-group-entry {
 
   .item-figure {
     height: 125%;
@@ -175,112 +177,59 @@
       margin-right: 0;
     }
 
-    @media screen and (max-width: @screen-md-max) {
-      margin-right: 2em;
-
-      .item-basics-figure-size(60px);
-    }
-
-    @media screen and (min-width: @screen-sm-min) {
-      margin-right: 1em;
-
-      .item-basics-figure-size(90px);
-    }
-
-    @media screen and (min-width: @screen-lg-min) {
-      font-size: 1em;
-
-      .item-basics-figure-size(120px);
-    }
-
     .item-icon,
     .item-link {
       margin: 0;
     }
+  }
 
-    .item-icon {
-      @media screen and (max-width: @screen-md-max) {
+  @media screen and (max-width: @screen-md-max) {
+    .item-figure {
+      margin-right: 2em;
+
+      .item-basics-figure-size(60px);
+
+      .item-icon {
         border-width: 2px;
       }
+    }
 
-      @media screen and (min-width: @screen-sm-min) {
+    .item-icon-size-search-row {
+      .item-icon-size(60px);
+    }
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    .item-figure {
+      margin-right: 1em;
+
+      .item-basics-figure-size(90px);
+
+      .item-icon {
         border-width: 2px;
       }
+    }
 
-      @media screen and (min-width: @screen-lg-min) {
+    .item-icon-size-search-row {
+      .item-icon.item-icon-size-1;
+    }
+  }
+
+  @media screen and (min-width: @screen-lg-min) {
+    .item-figure {
+      font-size: 1em;
+
+      .item-basics-figure-size(120px);
+
+      .item-icon {
         border-width: 4px;
       }
     }
-  }
 
-  .item-icon-size-search-row {
-    @media screen and (max-width: @screen-md-max) {
-      .item-icon-size(60px);
-    }
-
-    @media screen and (min-width: @screen-sm-min) {
-      .item-icon.item-icon-size-1;
-    }
-
-    @media screen and (min-width: @screen-lg-min) {
+    .item-icon-size-search-row {
       .item-icon.item-icon-size-2;
     }
   }
-}
-
-
-//
-// Item search results
-// --------------------------------------------------
-
-.item-search-results {
-  padding: 0;
-  list-style: none;
-}
-
-.item-search-result {
-  padding: (@grid-gutter-width / 2) 0;
-  border-bottom: 2px solid @gray-lighter;
-
-  &:last-child {
-    border-bottom: 0 none;
-  }
-
-  .col-main-full-height,
-  .col-side-full-height {
-    vertical-align: middle;
-  }
-}
-
-.item-search-result-info {
-  > .item-search-result-title {
-    text-transform: uppercase;
-  }
-
-  > .item-search-result-types {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  > .item-search-result-desc {}
-}
-
-.item-search-result-link {
-  font-size: (@font-size-base * 3);
-
-  .link-fx-nav(@brand-info; @brand-success);
-}
-
-
-//
-// Item types
-// --------------------------------------------------
-
-.item-type-label {
-  &.item-type-home-recycling    { color: @ccswd-blue;    }
-  &.item-type-dropoff-recycling { color: @ccswd-yellow;  }
-  &.item-type-proper-disposal   { color: @ccswd-red;     }
-  &.item-type-compost           { color: @ccswd-green-1; }
 }
 
 
