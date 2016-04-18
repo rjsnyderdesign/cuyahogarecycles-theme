@@ -14,18 +14,29 @@
 // Item search page
 // --------------------------------------------------
 
-.item-search {}
+.item-search {
+  @media screen and (min-width: @screen-lg-min) {
+    padding-left: 0;
+    padding-right: 0;
 
-.item-search-col-left,
-.item-search-col-right {
-  padding: (@grid-gutter-width / 2);
+    .row-md-full-height {
+      width: 100%;
+      margin: 0;
+      table-layout: fixed;
+
+      > .item-search-col-left  { width: percentage(( 2 / 12)); }
+      > .item-search-col-right { width: percentage((10 / 12)); }
+    }
+  }
 }
 
 .item-search-col-left  {
+  padding: (@grid-gutter-width / 2);
   background: @gray-lighter;
 }
 
 .item-search-col-right {
+  padding: 0 (@grid-gutter-width / 2);
   background: @white;
 }
 
@@ -49,13 +60,26 @@
 // Item filter list
 // --------------------------------------------------
 
+@item-filter-section-width-min: (200px - @grid-gutter-width);
+@item-filter-label-offset: 2em;
+
 .item-filter-section {
+  min-width: @item-filter-section-width-min;
   margin-bottom: @font-size-large;
+
+  @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    width: @item-filter-section-width-min;
+  }
 
   h1, h2, h3, h4, h5, h6 {
     &:first-child {
       margin-top: 0;
     }
+  }
+
+  h6 {
+    font-size: 0.875em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -64,15 +88,45 @@
   list-style: none;
 
   > li {
-    white-space: nowrap;
-
     > input[type="checkbox"] {
       margin-right: (@font-size-base / 2);
     }
   }
 
   > dt {
-    margin-top: @font-size-base;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  > li,
+  > dd {
+    > label {
+      display: inline-block;
+      margin-left: (-@item-filter-label-offset);
+      padding-left: @item-filter-label-offset;
+      vertical-align: top;
+    }
+  }
+
+  @media screen and (min-width: @screen-md-min) {
+    font-size:     0.875em;
+    line-height:   1.125em;
+
+    > li,
+    > dd {
+      > a,
+      > label {
+        display: inline-block;
+        margin-top:    0.375em;
+        margin-bottom: 0.375em;
+      }
+    }
+
+    > li > input[type="checkbox"],
+    > dd > a {
+      position: relative;
+      z-index: 1;
+    }
   }
 }
 
@@ -86,6 +140,8 @@
 
 .btn-item-filter-clear {
   width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
@@ -94,9 +150,14 @@
 // --------------------------------------------------
 
 .btn-group .dropdown-toggle.item-filter-city-btn {
+  padding: 0.25em 0;
   background: inherit;
   border: 0 none;
-  font-size: @font-size-large;
+  font-size: 1.5em;
+
+  @media screen and (min-width: @screen-md-min) {
+    font-size: 1.25em;
+  }
 
   .link-fx-nav(@brand-info; @brand-success);
 
@@ -165,6 +226,34 @@
 // --------------------------------------------------
 
 .item-group-entry {
+  .item-cats {
+    margin: 0 (-@grid-gutter-width / 2);
+    padding: 0 (@grid-gutter-width / 2);
+  }
+
+  .item-cat {
+    display: inline-block;
+    margin-right: (@grid-gutter-width / 2);
+  }
+
+  @media screen and (min-width: @screen-lg-min) {
+    .item-cats {
+      border-left: 2px solid @gray-lighter;
+    }
+
+    .item-cat {
+      margin-right: 0;
+    }
+  }
+
+  h6 {
+    margin-bottom: 0.5em;
+  }
+
+  .item-row {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
 
   .item-figure {
     height: 125%;
@@ -183,52 +272,19 @@
     }
   }
 
-  @media screen and (max-width: @screen-md-max) {
-    .item-figure {
-      margin-right: 2em;
+  .item-figure {
+    margin-right: 0.25em;
+    font-size: 0.55em;
 
-      .item-basics-figure-size(60px);
+    .item-basics-figure-size(52px);
 
-      .item-icon {
-        border-width: 2px;
-      }
-    }
-
-    .item-icon-size-search-row {
-      .item-icon-size(60px);
+    .item-icon {
+      border-width: 2px;
     }
   }
 
-  @media screen and (min-width: @screen-sm-min) {
-    .item-figure {
-      margin-right: 1em;
-
-      .item-basics-figure-size(90px);
-
-      .item-icon {
-        border-width: 2px;
-      }
-    }
-
-    .item-icon-size-search-row {
-      .item-icon.item-icon-size-1;
-    }
-  }
-
-  @media screen and (min-width: @screen-lg-min) {
-    .item-figure {
-      font-size: 1em;
-
-      .item-basics-figure-size(120px);
-
-      .item-icon {
-        border-width: 4px;
-      }
-    }
-
-    .item-icon-size-search-row {
-      .item-icon.item-icon-size-2;
-    }
+  .item-icon-size-search-row {
+    .item-icon-size(52px);
   }
 }
 
@@ -238,6 +294,8 @@
 // --------------------------------------------------
 
 .city-contact {
+  margin: 2em 0;
+
   .city-contact-title,
   .city-contact-info {
     line-height: 1.75;

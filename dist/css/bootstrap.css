@@ -12488,17 +12488,39 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
-.item-search-col-left,
-.item-search-col-right
+@media screen and (min-width: 1200px)
 {
-    padding: 40px;
+    .item-search
+    {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .item-search .row-md-full-height
+    {
+        width: 100%;
+        margin: 0;
+
+        table-layout: fixed;
+    }
+    .item-search .row-md-full-height > .item-search-col-left
+    {
+        width: 16.66666667%;
+    }
+    .item-search .row-md-full-height > .item-search-col-right
+    {
+        width: 83.33333333%;
+    }
 }
 .item-search-col-left
 {
+    padding: 40px;
+
     background: #e6e6e6;
 }
 .item-search-col-right
 {
+    padding: 0 40px;
+
     background: #fff;
 }
 .item-search-query
@@ -12515,7 +12537,15 @@ h6
 }
 .item-filter-section
 {
+    min-width: 120px;
     margin-bottom: 24px;
+}
+@media screen and (min-width: 992px) and (max-width: 1199px)
+{
+    .item-filter-section
+    {
+        width: 120px;
+    }
 }
 .item-filter-section h1:first-child,
 .item-filter-section h2:first-child,
@@ -12526,15 +12556,17 @@ h6
 {
     margin-top: 0;
 }
+.item-filter-section h6
+{
+    font-size: .875em;
+
+    margin-bottom: .5em;
+}
 .item-filter-list
 {
     padding: 0;
 
     list-style: none;
-}
-.item-filter-list > li
-{
-    white-space: nowrap;
 }
 .item-filter-list > li > input[type='checkbox']
 {
@@ -12542,7 +12574,42 @@ h6
 }
 .item-filter-list > dt
 {
-    margin-top: 16px;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+.item-filter-list > li > label,
+.item-filter-list > dd > label
+{
+    display: inline-block;
+
+    margin-left: -2em;
+    padding-left: 2em;
+
+    vertical-align: top;
+}
+@media screen and (min-width: 992px)
+{
+    .item-filter-list
+    {
+        font-size: .875em;
+        line-height: 1.125em;
+    }
+    .item-filter-list > li > a,
+    .item-filter-list > dd > a,
+    .item-filter-list > li > label,
+    .item-filter-list > dd > label
+    {
+        display: inline-block;
+
+        margin-top: .375em;
+        margin-bottom: .375em;
+    }
+    .item-filter-list > li > input[type='checkbox'],
+    .item-filter-list > dd > a
+    {
+        position: relative;
+        z-index: 1;
+    }
 }
 .item-filter-clear
 {
@@ -12578,10 +12645,14 @@ h6
 .btn-item-filter-clear
 {
     width: 100%;
+    padding-right: 0;
+    padding-left: 0;
 }
 .btn-group .dropdown-toggle.item-filter-city-btn
 {
-    font-size: 24px;
+    font-size: 1.5em;
+
+    padding: .25em 0;
 
     cursor: pointer;
     -webkit-transition: color 500ms;
@@ -12595,6 +12666,13 @@ h6
     background: none;
     -webkit-box-shadow: none;
             box-shadow: none;
+}
+@media screen and (min-width: 992px)
+{
+    .btn-group .dropdown-toggle.item-filter-city-btn
+    {
+        font-size: 1.25em;
+    }
 }
 .btn-group .dropdown-toggle.item-filter-city-btn:hover,
 .btn-group .dropdown-toggle.item-filter-city-btn:focus
@@ -12685,6 +12763,37 @@ h6
 {
     margin: 0;
 }
+.item-group-entry .item-cats
+{
+    margin: 0 -40px;
+    padding: 0 40px;
+}
+.item-group-entry .item-cat
+{
+    display: inline-block;
+
+    margin-right: 40px;
+}
+@media screen and (min-width: 1200px)
+{
+    .item-group-entry .item-cats
+    {
+        border-left: 2px solid #e6e6e6;
+    }
+    .item-group-entry .item-cat
+    {
+        margin-right: 0;
+    }
+}
+.item-group-entry h6
+{
+    margin-bottom: .5em;
+}
+.item-group-entry .item-row
+{
+    margin-top: 0;
+    margin-bottom: 1em;
+}
 .item-group-entry .item-figure
 {
     font-size: .75em;
@@ -12704,57 +12813,25 @@ h6
 {
     margin: 0;
 }
-@media screen and (max-width: 1199px)
+.item-group-entry .item-figure
 {
-    .item-group-entry .item-figure
-    {
-        width: 68px;
-        margin-right: 2em;
-    }
-    .item-group-entry .item-figure .item-icon
-    {
-        border-width: 2px;
-    }
-    .item-group-entry .item-icon-size-search-row
-    {
-        width: 68px;
-        height: 68px;
-    }
-}
-@media screen and (min-width: 768px)
-{
-    .item-group-entry .item-figure
-    {
-        width: 98px;
-        margin-right: 1em;
-    }
-    .item-group-entry .item-figure .item-icon
-    {
-        border-width: 2px;
-    }
-    .item-group-entry .item-icon-size-search-row
-    {
-        width: 98px;
-        height: 98px;
-    }
-}
-@media screen and (min-width: 1200px)
-{
-    .item-group-entry .item-figure
-    {
-        font-size: 1em;
+    font-size: .55em;
 
-        width: 128px;
-    }
-    .item-group-entry .item-figure .item-icon
-    {
-        border-width: 4px;
-    }
-    .item-group-entry .item-icon-size-search-row
-    {
-        width: 128px;
-        height: 128px;
-    }
+    width: 60px;
+    margin-right: .25em;
+}
+.item-group-entry .item-figure .item-icon
+{
+    border-width: 2px;
+}
+.item-group-entry .item-icon-size-search-row
+{
+    width: 60px;
+    height: 60px;
+}
+.city-contact
+{
+    margin: 2em 0;
 }
 .city-contact .city-contact-title,
 .city-contact .city-contact-info
