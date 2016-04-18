@@ -43,11 +43,12 @@ if (typeof jQuery === 'undefined') {
     var typekitTimeout;
 
     function onTypekitLoaded () {
-        console.log( 'Typekit loaded succesfully.' );
+        $window.trigger( 'resize' );
     };
 
     function checkIfTypekitLoaded () {
         if ( window.isTypekitLoaded ) {
+            console.log( 'Typekit fonts loaded successfully.' );
             onTypekitLoaded();
         }
         else {
