@@ -12580,12 +12580,15 @@ h6
 .item-filter-list > li > label,
 .item-filter-list > dd > label
 {
+    font-weight: normal;
+
     display: inline-block;
 
     margin-left: -2em;
     padding-left: 2em;
 
     vertical-align: top;
+    text-transform: none;
 }
 @media screen and (min-width: 992px)
 {
