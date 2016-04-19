@@ -382,7 +382,7 @@ fieldset[disabled] .btn-danger.active
 {
     border-radius: 0;
 }
-@media (max-width: 767px)
+@media (max-width: 991px)
 {
     .navbar .navbar-nav .open .dropdown-menu > .active > a,
     .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,

@@ -814,7 +814,7 @@ dd
 {
     margin-left: 0;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .dl-horizontal dt
     {
@@ -3691,7 +3691,7 @@ tbody.collapse.in
 
     margin-bottom: 2px;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-right .dropdown-menu
     {
@@ -4395,14 +4395,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     min-height: 70px;
     margin-bottom: 0;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar
     {
         border-radius: 0;
     }
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-header
     {
@@ -4426,7 +4426,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     overflow-y: auto;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-collapse
     {
@@ -4477,7 +4477,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     margin-right: -40px;
     margin-left: -40px;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .container > .navbar-header,
     .container-fluid > .navbar-header,
@@ -4494,7 +4494,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 
     border-width: 0 0 1px;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-static-top
     {
@@ -4509,7 +4509,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     right: 0;
     left: 0;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-fixed-top,
     .navbar-fixed-bottom
@@ -4550,7 +4550,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     display: block;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar > .container .navbar-brand,
     .navbar > .container-fluid .navbar-brand
@@ -4591,7 +4591,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     margin-top: 4px;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-toggle
     {
@@ -4609,7 +4609,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     padding-top: 10px;
     padding-bottom: 10px;
 }
-@media (max-width: 767px)
+@media (max-width: 991px)
 {
     .navbar-nav .open .dropdown-menu
     {
@@ -4640,7 +4640,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
         background-image: none;
     }
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-nav
     {
@@ -4742,7 +4742,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
         top: 0;
     }
 }
-@media (max-width: 767px)
+@media (max-width: 991px)
 {
     .navbar-form .form-group
     {
@@ -4753,7 +4753,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
         margin-bottom: 0;
     }
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-form
     {
@@ -4804,7 +4804,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     margin-top: 34.375px;
     margin-bottom: 34.375px;
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-text
     {
@@ -4814,7 +4814,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
         margin-left: 40px;
     }
 }
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
     .navbar-left
     {
@@ -4913,7 +4913,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     color: #fff;
     background-color: #26cad3;
 }
-@media (max-width: 767px)
+@media (max-width: 991px)
 {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a
     {
@@ -5032,7 +5032,7 @@ fieldset[disabled] .navbar-default .btn-link:focus
     color: #fff;
     background-color: #263746;
 }
-@media (max-width: 767px)
+@media (max-width: 991px)
 {
     .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header
     {
@@ -9768,6 +9768,10 @@ h6
     padding-top: 40px;
     padding-bottom: 40px;
 }
+.page-header.header-sticky.header-sticky-detached .col-side-full-height.brand-sticky .brand
+{
+    display: block;
+}
 .page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
 .page-header.header-sticky.header-sticky-detached .city-recycling-btn
 {
@@ -9795,6 +9799,10 @@ h6
     vertical-align: middle;
 }
 .page-header.header-sticky:not(.header-sticky-detached) .col-side-full-height.brand-sticky
+{
+    display: none;
+}
+.col-side-full-height.brand-sticky .brand
 {
     display: none;
 }
@@ -10324,12 +10332,13 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
-@media screen and (max-width: 767px)
+@media screen and (max-width: 991px)
 {
     .navbar-nav
     {
         margin: 0;
     }
+    .navbar-first,
     .navbar-left,
     .navbar-right,
     .page-header-upper-right,
@@ -10393,14 +10402,14 @@ h6
         vertical-align: middle;
     }
 }
-@media screen and (max-width: 767px) and (min-width: 480px)
+@media screen and (max-width: 991px) and (min-width: 480px)
 {
     .page-header .page-header-upper
     {
         height: 90px;
     }
 }
-@media screen and (max-width: 767px) and (min-width: 480px)
+@media screen and (max-width: 991px) and (min-width: 480px)
 {
     .page-header-upper-content .navbar-toggle
     {

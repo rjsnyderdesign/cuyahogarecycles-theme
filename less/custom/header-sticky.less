@@ -61,6 +61,12 @@
       }
     }
 
+    .col-side-full-height.brand-sticky {
+      .brand {
+        display: block;
+      }
+    }
+
     .wdidw-wrapper,
     .city-recycling-btn {
       height: @header-sticky-navbar-height;
@@ -94,6 +100,10 @@
   vertical-align: middle;
 
   .page-header.header-sticky:not(.header-sticky-detached) & {
+    display: none;
+  }
+
+  .brand {
     display: none;
   }
 }
