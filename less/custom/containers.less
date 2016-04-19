@@ -48,8 +48,10 @@
 // Blocks
 // --------------------------------------------------
 
+@block-cta-font-ratio: 2;
+
 .block-cta {
-  font-size: 30px;
+  font-size: (@font-size-base * @block-cta-font-ratio);
   letter-spacing: @letter-spacing;
   text-align: center;
   text-transform: uppercase;
@@ -57,6 +59,7 @@
   &:extend(.container-content);
 
   .btn {
+    font-size: (@font-size-base / @block-cta-font-ratio);
     margin-left: @font-size-base;
     margin-right: @font-size-base;
   }

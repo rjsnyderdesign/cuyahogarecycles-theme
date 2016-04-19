@@ -233,7 +233,7 @@ form,
 // Social media
 // --------------------------------------------------
 
-@social-link-size: (@font-size-base * 1.75);
+@social-link-size: 28px;
 
 .social-links {
   margin-right: 5px;
@@ -247,6 +247,7 @@ form,
       display: inline-block;
       border-radius: 50%;
       border: 2px solid @white;
+      font-size: @em-base;
       line-height: (@social-link-size - 4px);
       text-align: center;
 
@@ -385,7 +386,7 @@ body:not(.noscroll) {
 
   .page-header-skip {
     position: absolute;
-    top: 0.25em;
+    top: (@font-size-base / 4);
     left: (@grid-gutter-width / 2);
   }
 
@@ -406,7 +407,7 @@ body:not(.noscroll) {
   }
 
   .login-link {
-    font-size: 12px;
+    font-size: @font-size-small;
     font-weight: normal;
     text-transform: uppercase;
     margin-right: 20px;
@@ -430,7 +431,7 @@ body:not(.noscroll) {
 
 .navbar {
   min-height: @navbar-height;
-  font-size: 16px;
+  font-size: @em-base;
   letter-spacing: @letter-spacing;
   text-transform: uppercase;
 }
@@ -580,8 +581,10 @@ body:not(.noscroll) {
   }
 
   .page-footer-social {
+    margin-top: (@font-size-base / 2);
+
     > li {
-      margin-right: (@font-size-base / 2);
+      margin-right: @font-size-base;
     }
   }
 

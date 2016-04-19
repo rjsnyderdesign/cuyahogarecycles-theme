@@ -14,6 +14,7 @@
 // Mobile menu and header styles
 // --------------------------------------------------
 
+@navbar-toggle-size: 32px;
 @navbar-height-large-tablet: 90px;
 @navbar-height-enlarged-by: (@navbar-height-large-tablet - @navbar-height);
 
@@ -50,13 +51,13 @@
 
   .page-header-upper-content {
     .navbar-toggle {
-      width: (@font-size-large * 2);
+      width: (@navbar-toggle-size * 1.5);
       position: absolute;
-      top: (-@navbar-height-enlarged-by / 2);
-      right: (-@font-size-base / 2);
+      top: (-@navbar-toggle-size / 4);
+      right: (-@navbar-toggle-size / 4);
       margin: 0;
-      padding: (@font-size-base / 2);
-      font-size: (@font-size-base * 2);
+      padding: (@navbar-toggle-size / 4);
+      font-size: @navbar-toggle-size;
 
       @media (min-width: @screen-xs-min) {
         top: 0;

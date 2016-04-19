@@ -36,14 +36,14 @@
   background: @brand-primary;
   border: 0 none;
   color: @brand-success;
-  font-size: (@font-size-base * 1.125);
+  font-size: (@em-base * 1.125);
   text-align: center;
   white-space: nowrap;
 
   .transition(color @link-transition-speed);
 
   @media screen and (min-width: @screen-xs-min) {
-    font-size: (@font-size-base * 1.5);
+    font-size: @em-large;
   }
 
   @media screen and (min-width: @screen-sm-min) {
@@ -65,21 +65,16 @@
 
 .wdidw-animated-term {
   width: 5em;
-  height: (@font-size-base * 1.25);
+  height: 1.25em;
   display: inline-block;
   border-bottom: 2px solid @brand-success;
   color: @white;
-  font-size: (@font-size-base * 1.125);
+  font-size: 1em;
   text-align: left;
   text-transform: none;
   vertical-align: top;
 
   .transition(border-bottom-color @link-transition-speed);
-
-  @media screen and (min-width: @screen-xs-min) {
-    height: (@font-size-base * 1.75);
-    font-size: (@font-size-base * 1.5);
-  }
 }
 
 .wdidw-search-bar {
@@ -100,7 +95,7 @@
 .wdidw-search-form {
   width: 100%;
   height: 100%;
-  padding: (@font-size-base / 2) 0;
+  padding: (@em-base / 2) 0;
   color: @brand-primary;
 
   .input-group {
@@ -110,27 +105,27 @@
     .form-control,
     .btn {
       display: block;
-      padding: 4px 0;
+      padding: (@em-base / 2) 0;
       border: 0 none;
       background: none;
       color: @brand-primary;
       outline: none;
 
       // Force firefox and chrome to display correct input height
-      height: (@navbar-height - @font-size-base);
-      line-height: (@navbar-height - @font-size-base);
+      height: (@navbar-height - @em-base);
+      line-height: (@navbar-height - @em-base);
 
       .box-shadow(none);
 
       .fa {
-        font-size: (@font-size-base * 2);
+        font-size: (@em-base * 2);
         padding: 2px 0;
       }
     }
 
     input[type="text"] {
-      font-size: @font-size-large;
-      padding: 0 @font-size-base;
+      font-size: @em-large;
+      padding: 0 @em-base;
 
       .placeholder(rgba(255,255,255,0.4));
     }
@@ -250,7 +245,7 @@
 .wdidw-search-quick-links-list {
   > li {
     > a {
-      line-height: 1.5em;
+      line-height: 1.5;
     }
   }
 }
