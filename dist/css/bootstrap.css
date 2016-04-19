@@ -12048,10 +12048,10 @@ h6
     width: 278px;
     height: 278px;
 
-    -webkit-transform: rotateZ(0deg);
-        -ms-transform: rotateZ(0deg);
-         -o-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(.000001deg);
+        -ms-transform: rotateZ(.000001deg);
+         -o-transform: rotateZ(.000001deg);
+            transform: rotateZ(.000001deg);
 
     border: 4px solid #666;
     border-radius: 50%;
@@ -13063,6 +13063,8 @@ h6
 {
     display: inline-block;
 
+    -webkit-transform: translate3d(0, 0, -9999px);
+            transform: translate3d(0, 0, -9999px);
     text-align: left;
 }
 .item-cat-selector
