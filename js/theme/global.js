@@ -736,9 +736,24 @@
         //
 
         ( function () {
-            $( '.tile-grid.tile-grid-staff > .grid-cell a' ).on( 'touchstart', function () {
-                $( this ).focus();
+
+            var $staffTiles = $( '.tile-grid.tile-grid-staff > .grid-cell a' );
+
+            $staffTiles.data( 'touch-count', '0' );
+
+            $staffTiles.on( 'touchstart', function ( e ) {
+                var $this = $( this );
+                if ( $this.data( 'touch-count' ) === '0' ) {
+                    $this.focus().data( 'touch-count', '1' );
+                    e.preventDefault();
+                    return false;
+                }
+                else if ( $this.data( 'touch-count' ) === '1' ) {
+                    $this.data( 'touch-count', '2' );
+                    return true;
+                }
             } );
+
         } )();
 
         //
