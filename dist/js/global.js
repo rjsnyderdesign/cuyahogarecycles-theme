@@ -418,7 +418,7 @@ if (typeof jQuery === 'undefined') {
                     $current     = $this.next(),
                     $grandparent = $this.parent().parent(),
                     depth        = $current.parents( '.sub-menu' ).length;
-                if ( depth >= 2 ) {
+                if ( depth >= 1 ) {
                     $callOuts.addClass( 'call-out-hidden' );
                 }
                 else {

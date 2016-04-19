@@ -10599,42 +10599,42 @@ h6
 }
 .main-menu-dropdown .call-out
 {
-    margin-top: -3px;
+    font-size: 1.25em;
+    font-weight: normal;
+
+    position: absolute;
+    top: 80px;
+    right: 80px;
+
+    display: block;
+
+    width: 15em;
+    margin-top: -.15em;
 
     -webkit-transition: opacity 500ms;
          -o-transition: opacity 500ms;
             transition: opacity 500ms;
+    text-transform: none;
 
     opacity: 1;
+}
+@media screen and (min-width: 992px)
+{
+    .main-menu-dropdown .call-out
+    {
+        font-size: 1.5em;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .main-menu-dropdown .call-out
+    {
+        font-size: 1.75em;
+    }
 }
 .main-menu-dropdown .call-out.call-out-hidden
 {
     opacity: 0;
-}
-.main-menu-dropdown .call-out h2
-{
-    font-size: 1.125em;
-    font-weight: normal;
-
-    margin: 0;
-
-    text-transform: none;
-}
-.main-menu-dropdown .call-out h2 span
-{
-    font-size: 1.25em;
-    font-weight: bold;
-}
-@media screen and (min-width: 992px)
-{
-    .main-menu-dropdown .call-out h2
-    {
-        font-size: 1.25em;
-    }
-    .main-menu-dropdown .call-out h2 span
-    {
-        font-size: 1.5em;
-    }
 }
 .main-menu-dropdown img
 {

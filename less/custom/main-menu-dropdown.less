@@ -161,33 +161,29 @@
   }
 
   .call-out {
-    margin-top: -3px;
+    width: 15em;
+    display: block;
+    position: absolute;
+    top: (@grid-gutter-width);
+    right: (@grid-gutter-width);
+    margin-top: -0.15em;
+    font-size: (@font-size-base * 1.25);
+    font-weight: normal;
+    text-transform: none;
     opacity: 1;
+
+    @media screen and (min-width: @screen-md-min) {
+      font-size: (@font-size-base * 1.5);
+    }
+
+    @media screen and (min-width: @screen-lg-min) {
+      font-size: (@font-size-base * 1.75);
+    }
 
     .transition(opacity @link-transition-speed);
 
     &.call-out-hidden {
       opacity: 0;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: (@font-size-base * 1.125);
-      font-weight: normal;
-      text-transform: none;
-
-      span {
-        font-size: (@font-size-base * 1.25);
-        font-weight: bold;
-      }
-
-      @media screen and (min-width: @screen-md-min) {
-        font-size: (@font-size-base * 1.25);
-
-        span {
-          font-size: @font-size-large;
-        }
-      }
     }
   }
 
