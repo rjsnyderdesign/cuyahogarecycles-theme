@@ -12538,7 +12538,7 @@ h6
 .item-filter-section
 {
     min-width: 120px;
-    margin-bottom: 24px;
+    margin-bottom: 1.5em;
 }
 @media screen and (min-width: 992px) and (max-width: 1199px)
 {
@@ -12570,7 +12570,7 @@ h6
 }
 .item-filter-list > li > input[type='checkbox']
 {
-    margin-right: 8px;
+    margin-right: .5em;
 }
 .item-filter-list > dt
 {
@@ -12600,7 +12600,9 @@ h6
     .item-filter-list > li > a,
     .item-filter-list > dd > a,
     .item-filter-list > li > label,
-    .item-filter-list > dd > label
+    .item-filter-list > dd > label,
+    .item-filter-list > li > input[type='checkbox'],
+    .item-filter-list > dd > input[type='checkbox']
     {
         display: inline-block;
 

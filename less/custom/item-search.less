@@ -65,7 +65,7 @@
 
 .item-filter-section {
   min-width: @item-filter-section-width-min;
-  margin-bottom: @font-size-large;
+  margin-bottom: 1.5em;
 
   @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     width: @item-filter-section-width-min;
@@ -89,7 +89,7 @@
 
   > li {
     > input[type="checkbox"] {
-      margin-right: (@font-size-base / 2);
+      margin-right: 0.5em;
     }
   }
 
@@ -117,7 +117,8 @@
     > li,
     > dd {
       > a,
-      > label {
+      > label,
+      > input[type="checkbox"] {
         display: inline-block;
         margin-top:    0.375em;
         margin-bottom: 0.375em;
