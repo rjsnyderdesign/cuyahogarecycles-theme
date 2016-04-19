@@ -1,0 +1,67 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Item grid entries
+// --------------------------------------------------
+
+.item-grid-entries {
+  margin: 0 (-@grid-gutter-width / 2);
+  padding: 0;
+  list-style: none;
+}
+
+.item-grid-entry,
+.item-grid-entry-link {
+  display: inline-block;
+  padding: (@grid-gutter-width / 2);
+
+  & > & {
+    margin: (-@grid-gutter-width / 2);
+  }
+}
+
+.item-grid-entry {
+  width: 240px;
+  float: none;
+  margin-right: -0.25em; // Ignore spaces between blocks
+  vertical-align: top;
+
+  .item-icon {
+    margin-bottom: 1em;
+  }
+
+  .item-entry-info {
+    font-size: 0.875em;
+    line-height: 1.25;
+
+    > .item-entry-title {
+      margin-bottom: 0;
+    }
+
+    > .item-entry-types {
+      margin-bottom: 0.5em;
+    }
+
+    > .item-entry-desc {
+      line-height: 1.125;
+    }
+  }
+}
+
+.item-grid-entry-link {
+  &:extend(.item-entry-link all);
+}
+
+.item-grid-entry-content {
+  margin-right: -1.5em;
+}
