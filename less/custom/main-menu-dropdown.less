@@ -15,6 +15,7 @@
 // --------------------------------------------------
 
 @mega-menu-dropdown-height: 270px;
+@mega-menu-top-padding: (@grid-gutter-width * 3 / 4);
 @mega-menu-enter-speed: @link-transition-speed;
 @mega-menu-exit-speed: (@mega-menu-enter-speed / 2);
 
@@ -88,7 +89,7 @@
   z-index: 0;
   opacity: 0;
   padding: (@grid-gutter-width / 2);
-  padding-top: @grid-gutter-width;
+  padding-top: @mega-menu-top-padding;
 
   .transition(opacity @mega-menu-exit-speed);
 
@@ -126,11 +127,11 @@
       list-style: none;
 
       > a {
+        display: inline-block;
+        padding: 0;
         color: @white;
-        font-size: 12px;
-        line-height: 15px;
-        display: block;
-        padding: 0 0 4px;
+        font-size: @font-size-small;
+        line-height: 1.25;
         clear: both;
         white-space: normal;
 
@@ -164,9 +165,9 @@
     width: 15em;
     display: block;
     position: absolute;
-    top: (@grid-gutter-width);
+    top: @mega-menu-top-padding;
     right: (@grid-gutter-width);
-    margin-top: -0.15em;
+    margin-top: -0.125em;
     font-size: (@font-size-base * 1.25);
     font-weight: normal;
     text-transform: none;

@@ -414,7 +414,7 @@ if (typeof jQuery === 'undefined') {
                 $prevLink = null,
                 onExit    = null;
 
-            function expand ( e ) {
+            function hoverTrigger ( e ) {
                 var $this        = $( this ),
                     $current     = $this.next(),
                     $grandparent = $this.parent().parent(),
@@ -433,20 +433,20 @@ if (typeof jQuery === 'undefined') {
                 e.stopPropagation();
             }
 
-            function collapse ( e ) {
+            function hoverDefault ( e ) {
                 var $this        = $( this ),
                     $grandparent = $this.parent().parent();
                 $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
-                // $grandparent.find( '.sub-menu' ).hide();
+                $grandparent.find( '.dropdown-menu' ).hide();
             }
 
             $( '.mega-menu .dropdown-menu a.trigger' )
-                .on( 'mouseover', expand )
-                .on( 'focus', expand );
+                .on( 'mouseover', hoverTrigger )
+                .on( 'focus', hoverTrigger );
 
             $( '.mega-menu .dropdown-menu a:not(.trigger)' )
-                .on( 'mouseover', collapse )
-                .on( 'focus', collapse );
+                .on( 'mouseover', hoverDefault )
+                .on( 'focus', hoverDefault );
 
             //
             // Desktop mega menu
