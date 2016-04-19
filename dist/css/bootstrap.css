@@ -8945,6 +8945,12 @@ body:not(.noscroll)
 
     content: '|';
 }
+.page-footer .page-footer-siteinfo
+{
+    display: inline-block;
+
+    margin-bottom: 1em;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
