@@ -739,7 +739,9 @@
 
             var $staffTiles = $( '.tile-grid.tile-grid-staff > .grid-cell a' );
 
-            $staffTiles.data( 'touch-count', '0' );
+            $staffTiles.each( function () {
+                $( this ).data( 'touch-count', '0' );
+            } );
 
             $staffTiles.on( 'touchstart', function ( e ) {
                 var $this = $( this );
