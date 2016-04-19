@@ -11845,13 +11845,13 @@ h6
 }
 .grid-cell-container-inner.grid-cell-info-box
 {
-    font-size: 1.5em;
+    font-size: 1.25em;
 
-    text-align: center;
+    text-align: left;
 }
 .grid-cell-container-inner.grid-cell-info-box > .grid-cell-content-outer > .grid-cell-content-inner
 {
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 .grid-cell-container-inner.grid-cell-info-box h4
 {
