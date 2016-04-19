@@ -46,6 +46,7 @@
 // --------------------------------------------------
 
 .item-search-query {
+  padding-top: (@grid-gutter-width / 2);
   padding-bottom: @font-size-base;
   border-bottom: 2px solid @gray-lighter;
   font-size: @font-size-base;
@@ -232,21 +233,13 @@
   .item-cats {
     margin: 0 (-@grid-gutter-width / 2);
     padding: 0 (@grid-gutter-width / 2);
+    // text-align: center;
   }
 
   .item-cat {
     display: inline-block;
-    margin-right: (@grid-gutter-width / 2);
-  }
-
-  @media screen and (min-width: @screen-lg-min) {
-    .item-cats {
-      border-left: 2px solid @gray-lighter;
-    }
-
-    .item-cat {
-      margin-right: 0;
-    }
+    padding: 0 (@grid-gutter-width / 4);
+    text-align: left;
   }
 
   h6 {
@@ -276,18 +269,19 @@
   }
 
   .item-figure {
-    margin-right: 0.25em;
-    font-size: 0.55em;
+    margin-right: 1em;
+    font-size: 0.625em;
 
-    .item-basics-figure-size(52px);
+    .item-basics-figure-size(60px);
 
     .item-icon {
+      margin: 0 auto;
       border-width: 2px;
     }
   }
 
   .item-icon-size-search-row {
-    .item-icon-size(52px);
+    .item-icon-size(60px);
   }
 }
 
@@ -297,8 +291,6 @@
 // --------------------------------------------------
 
 .city-contact {
-  margin: 2em 0;
-
   .city-contact-title,
   .city-contact-info {
     line-height: 1.75;
