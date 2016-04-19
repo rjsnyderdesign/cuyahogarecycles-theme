@@ -12773,15 +12773,25 @@ h6
 .item-group-entry .item-cats
 {
     margin: 0 -40px;
+    margin-right: -80px;
     padding: 0 40px;
 }
 .item-group-entry .item-cat
 {
     display: inline-block;
 
-    padding: 0 20px;
-
-    text-align: left;
+    margin-right: 40px;
+}
+@media screen and (min-width: 1200px)
+{
+    .item-group-entry .item-cats
+    {
+        border-left: 2px solid #e6e6e6;
+    }
+    .item-group-entry .item-cat
+    {
+        margin-right: 0;
+    }
 }
 .item-group-entry h6
 {
@@ -12813,10 +12823,10 @@ h6
 }
 .item-group-entry .item-figure
 {
-    font-size: .625em;
+    font-size: .55em;
 
-    width: 68px;
-    margin-right: 1em;
+    width: 60px;
+    margin-right: .25em;
 }
 .item-group-entry .item-figure .item-icon
 {
@@ -12826,8 +12836,8 @@ h6
 }
 .item-group-entry .item-icon-size-search-row
 {
-    width: 68px;
-    height: 68px;
+    width: 60px;
+    height: 60px;
 }
 .city-contact .city-contact-title,
 .city-contact .city-contact-info
