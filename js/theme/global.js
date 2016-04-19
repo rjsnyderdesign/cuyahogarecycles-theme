@@ -393,6 +393,7 @@
 
             var $mainMenu = $( '.mega-menu' ),
                 $callOuts = $mainMenu.find( '.call-out' ),
+                $prevLink = null,
                 onExit    = null;
 
             function expand ( e ) {
@@ -438,6 +439,13 @@
                 return $( '[data-dropdown="' + subMenuKey + '"]' );
             }
 
+            function closeSubMenu ( $subMenu ) {
+                $subMenu.removeClass( 'open' );
+                $subMenu.find( '.sub-menu:not(.first)' ).hide();
+                $subMenu.find( 'li > a.trigger' ).removeClass( 'open' );
+                $callOuts.removeClass( 'call-out-hidden' );
+            }
+
             function openMenu ( $subMenu ) {
                 $mainMenu.addClass( 'open' );
                 $subMenu.addClass( 'open' );
@@ -445,10 +453,7 @@
 
             function closeMenu ( $subMenu ) {
                 $mainMenu.removeClass( 'open' );
-                $subMenu.removeClass( 'open' );
-                $subMenu.find( '.sub-menu:not(.first)' ).hide();
-                $subMenu.find( 'li > a.trigger' ).removeClass( 'open' );
-                $callOuts.removeClass( 'call-out-hidden' );
+                closeSubMenu( $subMenu );
             }
 
             function enter ( $elem ) {
@@ -483,23 +488,25 @@
                     .hover(
                         function () { enter( $( this ) ); },
                         function () { exit( $( this ) ); }
-                    )
-                    .focus(
-                        function () { openMenu( getSubMenu( $( this ) ) ); }
-                    )
-                    .blur(
-                        function () { closeMenu( getSubMenu( $( this ) ) ); }
                     );
 
                 $mainMenu
                     .find( 'a' )
                     .focus( function () {
+                        var $this = $( this ),
+                            $subMenu = $this.closest( '.main-menu-dropdown' ),
+                            $prevSubMenu;
                         onExit = null;
-                        openMenu( $( this ).closest( '.main-menu-dropdown' ) );
-                    } )
-                    .blur( function () {
-                        closeMenu( $( this ).closest( '.main-menu-dropdown' ) );
+                        openMenu( $subMenu );
+                        if ( $prevLink ) {
+                            $prevSubMenu = $prevLink.closest( '.main-menu-dropdown' );
+                            if ( $prevSubMenu.data( 'dropdown' ) !== $subMenu.data( 'dropdown' ) ) {
+                                closeSubMenu( $prevSubMenu );
+                            }
+                        }
+                        $prevLink = $this;
                     } );
+
             }
 
             init();
