@@ -756,6 +756,10 @@
                 }
             } );
 
+            $staffTiles.blur( function ( e ) {
+                $( this ).data( 'touch-count', '0' );
+            } );
+
         } )();
 
         //
