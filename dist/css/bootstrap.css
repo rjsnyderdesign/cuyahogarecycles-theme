@@ -12764,7 +12764,6 @@ h6
 .item-group-entry .item-cats
 {
     margin: 0 -40px;
-    margin-right: -80px;
     padding: 0 40px;
 }
 .item-group-entry .item-cat
@@ -12816,7 +12815,7 @@ h6
 {
     font-size: .55em;
 
-    width: 60px;
+    width: 58px;
     margin-right: .25em;
 }
 .item-group-entry .item-figure .item-icon
@@ -12827,8 +12826,8 @@ h6
 }
 .item-group-entry .item-icon-size-search-row
 {
-    width: 60px;
-    height: 60px;
+    width: 58px;
+    height: 58px;
 }
 .city-contact .city-contact-title,
 .city-contact .city-contact-info
