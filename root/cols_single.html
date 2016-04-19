@@ -11,6 +11,28 @@
 
     <title>CuyahogaRecycles | Home</title>
 
+    <!-- icons -->
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" />
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+
     <!-- stylesheets -->
     <link type="text/css" href="../dist/css/bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" />
@@ -122,7 +144,7 @@
               <li><a href="#">What Do I Do With?</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
-              <h2><span>Change Starts</span><br />in your home.</h2>
+              <h2><span>Did You Know: </span><br />Items 2&#8221;x2&#8221; or smaller should not go in your home recycling bin. They’re too tiny to process.</h2>
             </div>
           </div><!-- /.main-menu-dropdown -->
 
@@ -213,6 +235,9 @@
                 </ul>
               </li>
             </ul>
+            <div class="call-out col-sm-4 pull-right">
+              <h2><span>BYOBags: </span><br />Be a green shopper and bring your own bags to the supermarket and other stores.</h2>
+            </div>
           </div><!-- /.main-menu-dropdown -->
 
           <div class="main-menu-dropdown clearfix" data-dropdown="hrw">
@@ -226,7 +251,7 @@
               <li><a href="#">Recycling in Your Community</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
-              <h2><span>Change Starts</span><br />in your home.</h2>
+              <h2><span>Did You Know: </span><br />Where does your home recycling go? To a nearby MRF (materials recovery facility) for processing.</h2>
             </div>
           </div><!-- /.main-menu-dropdown -->
 
@@ -246,7 +271,7 @@
               <li><a href="#">Videos</a></li>
             </ul>
             <div class="call-out col-sm-4 pull-right">
-              <h2><span>Change Starts</span><br />in your home.</h2>
+              <h2><span>Put a Lid On It: </span><br />Replace the lids on bottles and containers before putting them in your bin.</h2>
             </div>
           </div><!-- /.main-menu-dropdown -->
 
@@ -258,7 +283,7 @@
 
         <div class="row-sm-full-height row-full-height-no-padding header-infobar">
 
-          <div class="col-main-full-height">
+          <div class="col-main-full-height wdidw-col">
 
             <div class="wdidw-wrapper">
 
@@ -296,11 +321,21 @@
 
             <div class="wdidw-search-results-alignment-outer">
               <div class="wdidw-search-results-alignment-inner">
-                <ul class="wdidw-search-results-list" id="wdidw-search-results-list">
-                  <li><a href="#"><strong>Ca</strong>ns</a></li>
-                  <li><a href="#"><strong>Ca</strong>rdboard</a></li>
-                  <li><a href="#"><strong>Ca</strong>rtons</a></li>
-                </ul>
+                <div class="wdidw-search-results-wrapper" id="wdidw-search-results">
+                  <p class="wdidw-search-results-heading">Suggested Searches</p>
+                  <ul class="wdidw-search-results-list" id="wdidw-search-results-list">
+                    <li><a href="#"><strong>Ca</strong>ns</a></li>
+                    <li><a href="#"><strong>Ca</strong>rdboard</a></li>
+                    <li><a href="#"><strong>Ca</strong>rtons</a></li>
+                  </ul>
+                  <hr />
+                  <p class="wdidw-search-results-heading">Quick Links</p>
+                  <ul class="wdidw-search-quick-links-list" id="wdidw-search-quick-links-list">
+                    <li><a href="#">5 Do’s and Dont’s</a></li>
+                    <li><a href="#">Household Hazardous Waste</a></li>
+                    <li><a href="#">Office Equipment</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -383,7 +418,67 @@
               <label class="form-required" for="contact-form-email">Email</label>
               <input type="email" class="form-control" id="contact-form-email" />
               <label class="form-required" for="contact-form-city">City of Residence</label>
-              <input type="text" class="form-control" id="contact-form-city" />
+              <select class="form-control" id="contact-form-city">
+                <option value="01">Bay Village</option>
+                <option value="02">Beachwood</option>
+                <option value="03">Bedford</option>
+                <option value="04">Bedford Heights</option>
+                <option value="05">Bentleyville</option>
+                <option value="06">Berea</option>
+                <option value="07">Bratenahl</option>
+                <option value="08">Brecksville</option>
+                <option value="09">Broadview Heights</option>
+                <option value="10">Brook Park</option>
+                <option value="11">Brooklyn</option>
+                <option value="12">Brooklyn Heights</option>
+                <option value="13">Chagrin Falls</option>
+                <option value="14">Chagrin Falls Township</option>
+                <option value="15">Cleveland</option>
+                <option value="16">Cleveland Heights</option>
+                <option value="17">Cuyahoga Heights</option>
+                <option value="18">East Cleveland</option>
+                <option value="19">Euclid</option>
+                <option value="20">Fairview Park</option>
+                <option value="21">Garfield Heights</option>
+                <option value="22">Gates Mills</option>
+                <option value="23">Glenwillow</option>
+                <option value="24">Highland Heights</option>
+                <option value="25">Highland Hills</option>
+                <option value="26">Hunting Valley</option>
+                <option value="27">Independence</option>
+                <option value="28">Lakewood</option>
+                <option value="29">Linndale</option>
+                <option value="30">Lyndhurst</option>
+                <option value="31">Maple Heights</option>
+                <option value="32">Mayfield</option>
+                <option value="33">Mayfield Heights</option>
+                <option value="34">Middleburg Heights</option>
+                <option value="35">Moreland Hills</option>
+                <option value="36">Newburgh Heights</option>
+                <option value="37">North Olmsted</option>
+                <option value="38">North Randall</option>
+                <option value="39">North Royalton</option>
+                <option value="40">Oakwood</option>
+                <option value="41">Olmsted Falls</option>
+                <option value="42">Olmsted Township</option>
+                <option value="43">Orange</option>
+                <option value="44">Parma</option>
+                <option value="45">Parma Heights</option>
+                <option value="46">Pepper Pike</option>
+                <option value="47">Richmond Heights</option>
+                <option value="48">Rocky River</option>
+                <option value="49">Seven Hills</option>
+                <option value="50">Shaker Heights</option>
+                <option value="51">Solon</option>
+                <option value="52">South Euclid</option>
+                <option value="53">Strongsville</option>
+                <option value="54">University Heights</option>
+                <option value="55">Valley View</option>
+                <option value="56">Walton Hills</option>
+                <option value="57">Warrensville Heights</option>
+                <option value="58">Westlake</option>
+                <option value="59">Woodmere</option>
+              </select>
               <label class="form-required" for="contact-form-msg">Message</label>
               <textarea class="form-control" id="contact-form-msg"></textarea>
               <input type="submit" class="btn btn-hollow btn-hollow-gray-success" />
