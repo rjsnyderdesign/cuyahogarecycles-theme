@@ -26,6 +26,7 @@
 
     function onTypekitLoaded () {
         $window.trigger( 'resize' );
+        $window.trigger( 'scroll' );
     };
 
     function checkIfTypekitLoaded () {
@@ -338,28 +339,41 @@
             var $pageHeader = $( '.page-header' ),
                 $pageHeaderParent = $pageHeader.parent(),
                 $pageHeaderUpper = $pageHeader.find( '.page-header-upper' ),
-                scrollTopBefore = $window.scrollTop(),
-                needsUpdateOffset = true;
+                $pageHeaderNavbar1 = $pageHeader.find( '.navbar.navbar-default' ).eq( 0 ).find( '.container-fluid' ),
+                $pageHeaderNavbar2 = $pageHeader.find( '.navbar.navbar-default' ).eq( 1 ),
+                pageHeaderTopOffset;
 
-            function setTopOffset () {
-                var pageHeaderOffset = $pageHeader.height();
-                if ( !$pageHeaderUpper.is( ':visible' ) ) {
-                    pageHeaderOffset += $pageHeaderUpper.height();
+            function getTopOffset () {
+                var isDetached = $pageHeader.hasClass( 'header-sticky-detached' ),
+                    h = 0;
+                $pageHeader.removeClass( 'header-sticky-detached' );
+                if ( $pageHeaderUpper.is( ':visible' ) ) {
+                    h += $pageHeaderUpper.outerHeight();
                 }
-                pageHeaderOffset -= $( 'mega-menu' ).height();
-                $pageHeaderParent.css( 'padding-top', pageHeaderOffset );
-                needsUpdateOffset = false;
+                if ( $pageHeaderNavbar1.is( ':visible' ) ) {
+                    h += $pageHeaderNavbar1.outerHeight();
+                }
+                if ( $pageHeaderNavbar2.is( ':visible' ) ) {
+                    h += $pageHeaderNavbar2.outerHeight();
+                }
+                if ( isDetached ) {
+                    $pageHeader.addClass( 'header-sticky-detached' );
+                }
+                return h;
             }
 
-            $pageHeader.addClass( 'header-sticky' );
+            function setTopOffset () {
+                pageHeaderTopOffset = getTopOffset();
+                $pageHeaderParent.css( 'padding-top', pageHeaderTopOffset );
+            }
 
             $window.on( 'scroll', function () {
 
-                var scrollPosY = $window.scrollTop(),
-                    scrollTopAfter = ( scrollPosY >= 0 )? scrollPosY : 0,
-                    pageHeaderHeight = $pageHeader.height();
+                // Check against negative scroll positions because Safari
+                var scrollTopPos = $window.scrollTop();
+                if ( scrollTopPos < 0 ) { scrollTopPos = 0; }
 
-                if ( scrollTopAfter > pageHeaderHeight ) {
+                if ( scrollTopPos > pageHeaderTopOffset ) {
                     if ( !$pageHeader.hasClass( 'header-sticky-detached' ) ) {
                         $pageHeader
                             .css( { 'top': '-100%' } )
@@ -371,17 +385,15 @@
                 }
                 else {
                     $pageHeader.removeClass( 'header-sticky-detached' );
-                    if ( needsUpdateOffset ) {
-                        setTopOffset();
-                    }
                 }
 
             } );
 
-            $window.on( 'resize', function () {
-                setTopOffset();
-                needsUpdateOffset = true;
-            } ).trigger( 'resize' );
+            $window.on( 'resize', setTopOffset );
+
+            // Init
+            $pageHeader.addClass( 'header-sticky' );
+            setTopOffset();
 
         } )();
 

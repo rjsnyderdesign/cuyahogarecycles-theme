@@ -14,7 +14,7 @@
 // Loading
 // --------------------------------------------------
 
-@keyframes spin-y { 0% { .rotateY(0); } 100% { .rotateY(360deg); } }
+@keyframes spin-y { 0% { .rotate(0); } 100% { .rotate(360deg); } }
 
 .loading-overlay {
   width: 100%;
@@ -49,7 +49,7 @@
       content: '';
 
       .transform-origin(center center);
-      .rotateY(0);
+      .rotate(0);
       .animation(spin-y (@link-transition-speed * 6) linear infinite normal);
     }
 
