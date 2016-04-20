@@ -60,8 +60,9 @@
       <div class="container-fluid page-header-upper">
         <div class="page-header-upper-content">
           <a
-            class="action-open-menu navbar-toggle pull-left"
+            class="navbar-toggle"
             href="#panel-menu"
+            data-action="menu-open"
             data-toggle="collapse"
             data-target="#bs-navbar"
             aria-controls="bs-navbar"
@@ -82,7 +83,7 @@
           </div><!-- /.brand -->
           <div class="page-header-upper-right">
             <div class="search-container">
-              <label>Search Site</label>
+              <label data-action="toggle-sb">Search Site</label>
               <div id="sb-search" class="sb-search" role="search">
                 <div class="form">
                   <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
@@ -151,7 +152,7 @@
           <div class="main-menu-dropdown clearfix" data-dropdown="ps">
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Event Calendar</a></li>
-              <li><a href="#" class="trigger">Presentations &amp; Workshops<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Presentations &amp; Workshops<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">General Recycling Presentations</a></li>
                   <li><a href="#">Composting Workshops &amp; Bin Sales</a></li>
@@ -161,11 +162,11 @@
                   <li><a href="#">Day Camp and Scout Programs</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="trigger">Business Services<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Business Services<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Business Recycling Seminars</a></li>
                   <li><a href="#">Business Recycling Directory</a></li>
-                  <li><a href="#" class="trigger">Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Tips to Green Your Office</a></li>
                       <li><a href="#">Paper Shredding &amp; Doc. Decon.</a></li>
@@ -179,7 +180,7 @@
                 </ul>
               </li>
               <li><a href="#">Grants</a></li>
-              <li><a href="#" class="trigger">Municipal Support<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Municipal Support<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Services for Local Governments</a></li>
                   <li><a href="#">Community Awareness Toolkit</a></li>
@@ -190,13 +191,13 @@
               </li>
               <li><a href="#">Household Hazardous Waste</a></li>
               <li><a href="#">Master Recycler Program</a></li>
-              <li><a href="#" class="trigger">Classroom Programming<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Classroom Programming<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#" class="trigger">Teacher Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Teacher Resources<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Classroom Presentations</a></li>
                       <li><a href="#">Educators' E-Newsletter</a></li>
-                      <li><a href="#" class="trigger">Lesson Plans &amp; Activities<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                      <li><a href="#" data-action="sub-menu-toggle">Lesson Plans &amp; Activities<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu sub-menu second">
                           <li><a href="#">Composting</a></li>
                           <li><a href="#">Recycling</a></li>
@@ -212,13 +213,13 @@
                       <li><a href="#">Links for Teachers</a></li>
                     </ul>
                   </li>
-                  <li><a href="#" class="trigger">Recycling at School<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Recycling at School<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Let the Carton Live On</a></li>
                       <li><a href="#">Grants for Schools</a></li>
                     </ul>
                   </li>
-                  <li><a href="#" class="trigger">Students<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Students<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Homework Helpers</a></li>
                       <li><a href="#">Scholarships</a></li>
@@ -228,7 +229,7 @@
                   <li><a href="#">Contests</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="trigger">Youth Programs<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Youth Programs<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Clean Up Cuyagoga</a></li>
                   <li><a href="#">Reduce Reuse Recycle Patch Program</a></li>
@@ -258,7 +259,7 @@
           <div class="main-menu-dropdown clearfix" data-dropdown="au">
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Solid Waste Management Plan</a></li>
-              <li><a href="#" class="trigger">Publications<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Publications<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Annual Residential Recycling Report</a></li>
                   <li><a href="#">Pass It On Book</a></li>
@@ -288,7 +289,7 @@
             <div class="wdidw-wrapper">
 
               <div class="wdidw-btn-wrapper">
-                <a class="wdidw-btn wdidw-show btn-center-outer" href="#!">
+                <a class="wdidw-btn btn-center-outer" href="#!" data-action="wdidw-show">
                   <div class="btn-center-inner">
                     What Do I Do With <span class="wdidw-animated-term"></span>?
                   </div>
@@ -310,7 +311,7 @@
                         id="wdidw-search-field"
                       />
                       <span class="input-group-btn">
-                        <a class="btn btn-default wdidw-hide" href="#!"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></a>
+                        <a class="btn btn-default" href="#!" data-action="wdidw-hide"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Cancel search</span></a>
                       </span>
                     </div><!-- /.input-group -->
                   </div>
@@ -344,7 +345,7 @@
           <div class="col-side-full-height hidden-xs">
 
             <div class="pal-primary">
-              <a class="city-recycling-btn action-open-community btn-center-outer" href="#panel-community">
+              <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="community-open">
                 <div class="btn-center-inner">
                   Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
                 </div>
@@ -373,15 +374,15 @@
 
               <dl class="item-filter-list">
                 <dt>City</dt>
-                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Bay Village</label></dd>
+                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Bay Village</label></dd>
                 <dt>Recycling Programs</dt>
-                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>In-home Recycling</label></dd>
-                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Other Recycling</label></dd>
+                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>In-home Recycling</label></dd>
+                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Other Recycling</label></dd>
                 <dt>Item Categories</dt>
-                <dd><a class="item-filter-clear" href="#"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Paper &amp; Boxes</label></dd>
+                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Paper &amp; Boxes</label></dd>
               </dl>
 
-              <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#">
+              <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#" data-action="filter-update">
                 <i class="fa fa-close" aria-hidden="true"></i> Clear all
               </a>
 
@@ -415,65 +416,65 @@
                     />
                   </div>
                   <ul>
-                    <li><a href="#">Bay Village</a></li>
-                    <li><a href="#">Beachwood</a></li>
-                    <li><a href="#">Bedford</a></li>
-                    <li><a href="#">Bedford Heights</a></li>
-                    <li><a href="#">Bentleyville</a></li>
-                    <li><a href="#">Berea</a></li>
-                    <li><a href="#">Bratenahl</a></li>
-                    <li><a href="#">Brecksville</a></li>
-                    <li><a href="#">Broadview Heights</a></li>
-                    <li><a href="#">Brook Park</a></li>
-                    <li><a href="#">Brooklyn</a></li>
-                    <li><a href="#">Brooklyn Heights</a></li>
-                    <li><a href="#">Chagrin Falls</a></li>
-                    <li><a href="#">Chagrin Falls Township</a></li>
-                    <li><a href="#">Cleveland</a></li>
-                    <li><a href="#">Cleveland Heights</a></li>
-                    <li><a href="#">Cuyahoga Heights</a></li>
-                    <li><a href="#">East Cleveland</a></li>
-                    <li><a href="#">Euclid</a></li>
-                    <li><a href="#">Fairview Park</a></li>
-                    <li><a href="#">Garfield Heights</a></li>
-                    <li><a href="#">Gates Mills</a></li>
-                    <li><a href="#">Glenwillow</a></li>
-                    <li><a href="#">Highland Heights</a></li>
-                    <li><a href="#">Highland Hills</a></li>
-                    <li><a href="#">Hunting Valley</a></li>
-                    <li><a href="#">Independence</a></li>
-                    <li><a href="#">Lakewood</a></li>
-                    <li><a href="#">Linndale</a></li>
-                    <li><a href="#">Lyndhurst</a></li>
-                    <li><a href="#">Maple Heights</a></li>
-                    <li><a href="#">Mayfield</a></li>
-                    <li><a href="#">Mayfield Heights</a></li>
-                    <li><a href="#">Middleburg Heights</a></li>
-                    <li><a href="#">Moreland Hills</a></li>
-                    <li><a href="#">Newburgh Heights</a></li>
-                    <li><a href="#">North Olmsted</a></li>
-                    <li><a href="#">North Randall</a></li>
-                    <li><a href="#">North Royalton</a></li>
-                    <li><a href="#">Oakwood</a></li>
-                    <li><a href="#">Olmsted Falls</a></li>
-                    <li><a href="#">Olmsted Township</a></li>
-                    <li><a href="#">Orange</a></li>
-                    <li><a href="#">Parma</a></li>
-                    <li><a href="#">Parma Heights</a></li>
-                    <li><a href="#">Pepper Pike</a></li>
-                    <li><a href="#">Richmond Heights</a></li>
-                    <li><a href="#">Rocky River</a></li>
-                    <li><a href="#">Seven Hills</a></li>
-                    <li><a href="#">Shaker Heights</a></li>
-                    <li><a href="#">Solon</a></li>
-                    <li><a href="#">South Euclid</a></li>
-                    <li><a href="#">Strongsville</a></li>
-                    <li><a href="#">University Heights</a></li>
-                    <li><a href="#">Valley View</a></li>
-                    <li><a href="#">Walton Hills</a></li>
-                    <li><a href="#">Warrensville Heights</a></li>
-                    <li><a href="#">Westlake</a></li>
-                    <li><a href="#">Woodmere</a></li>
+                    <li><a href="#" data-action="filter-update">Bay Village</a></li>
+                    <li><a href="#" data-action="filter-update">Beachwood</a></li>
+                    <li><a href="#" data-action="filter-update">Bedford</a></li>
+                    <li><a href="#" data-action="filter-update">Bedford Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Bentleyville</a></li>
+                    <li><a href="#" data-action="filter-update">Berea</a></li>
+                    <li><a href="#" data-action="filter-update">Bratenahl</a></li>
+                    <li><a href="#" data-action="filter-update">Brecksville</a></li>
+                    <li><a href="#" data-action="filter-update">Broadview Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Brook Park</a></li>
+                    <li><a href="#" data-action="filter-update">Brooklyn</a></li>
+                    <li><a href="#" data-action="filter-update">Brooklyn Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Chagrin Falls</a></li>
+                    <li><a href="#" data-action="filter-update">Chagrin Falls Township</a></li>
+                    <li><a href="#" data-action="filter-update">Cleveland</a></li>
+                    <li><a href="#" data-action="filter-update">Cleveland Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Cuyahoga Heights</a></li>
+                    <li><a href="#" data-action="filter-update">East Cleveland</a></li>
+                    <li><a href="#" data-action="filter-update">Euclid</a></li>
+                    <li><a href="#" data-action="filter-update">Fairview Park</a></li>
+                    <li><a href="#" data-action="filter-update">Garfield Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Gates Mills</a></li>
+                    <li><a href="#" data-action="filter-update">Glenwillow</a></li>
+                    <li><a href="#" data-action="filter-update">Highland Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Highland Hills</a></li>
+                    <li><a href="#" data-action="filter-update">Hunting Valley</a></li>
+                    <li><a href="#" data-action="filter-update">Independence</a></li>
+                    <li><a href="#" data-action="filter-update">Lakewood</a></li>
+                    <li><a href="#" data-action="filter-update">Linndale</a></li>
+                    <li><a href="#" data-action="filter-update">Lyndhurst</a></li>
+                    <li><a href="#" data-action="filter-update">Maple Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Mayfield</a></li>
+                    <li><a href="#" data-action="filter-update">Mayfield Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Middleburg Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Moreland Hills</a></li>
+                    <li><a href="#" data-action="filter-update">Newburgh Heights</a></li>
+                    <li><a href="#" data-action="filter-update">North Olmsted</a></li>
+                    <li><a href="#" data-action="filter-update">North Randall</a></li>
+                    <li><a href="#" data-action="filter-update">North Royalton</a></li>
+                    <li><a href="#" data-action="filter-update">Oakwood</a></li>
+                    <li><a href="#" data-action="filter-update">Olmsted Falls</a></li>
+                    <li><a href="#" data-action="filter-update">Olmsted Township</a></li>
+                    <li><a href="#" data-action="filter-update">Orange</a></li>
+                    <li><a href="#" data-action="filter-update">Parma</a></li>
+                    <li><a href="#" data-action="filter-update">Parma Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Pepper Pike</a></li>
+                    <li><a href="#" data-action="filter-update">Richmond Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Rocky River</a></li>
+                    <li><a href="#" data-action="filter-update">Seven Hills</a></li>
+                    <li><a href="#" data-action="filter-update">Shaker Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Solon</a></li>
+                    <li><a href="#" data-action="filter-update">South Euclid</a></li>
+                    <li><a href="#" data-action="filter-update">Strongsville</a></li>
+                    <li><a href="#" data-action="filter-update">University Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Valley View</a></li>
+                    <li><a href="#" data-action="filter-update">Walton Hills</a></li>
+                    <li><a href="#" data-action="filter-update">Warrensville Heights</a></li>
+                    <li><a href="#" data-action="filter-update">Westlake</a></li>
+                    <li><a href="#" data-action="filter-update">Woodmere</a></li>
                   </ul>
                 </div>
               </div>
@@ -485,9 +486,9 @@
               <h6>Recycling Programs</h6>
 
               <ul class="item-filter-list">
-                <li><input type="checkbox" id="item-filter-program-1" /><label for="item-filter-program-1">In-Home Recycling</label></li>
-                <li><input type="checkbox" id="item-filter-program-2" /><label for="item-filter-program-2">Other Recycling</label></li>
-                <li><input type="checkbox" id="item-filter-program-3" /><label for="item-filter-program-3">Proper Disposal</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-1" /><label for="item-filter-program-1">In-Home Recycling</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-2" /><label for="item-filter-program-2">Other Recycling</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-3" /><label for="item-filter-program-3">Proper Disposal</label></li>
               </ul>
 
             </section>
@@ -497,14 +498,14 @@
               <h6>Item Categories</h6>
 
               <ul class="item-filter-list">
-                <li><input type="checkbox" id="item-filter-cat-1" /><label for="item-filter-cat-1">All</label></li>
-                <li><input type="checkbox" id="item-filter-cat-2" /><label for="item-filter-cat-2">Paper &amp; Boxes</label></li>
-                <li><input type="checkbox" id="item-filter-cat-3" /><label for="item-filter-cat-3">Fiber</label></li>
-                <li><input type="checkbox" id="item-filter-cat-4" /><label for="item-filter-cat-4">Glass</label></li>
-                <li><input type="checkbox" id="item-filter-cat-5" /><label for="item-filter-cat-5">Aluminum</label></li>
-                <li><input type="checkbox" id="item-filter-cat-6" /><label for="item-filter-cat-6">Steel</label></li>
-                <li><input type="checkbox" id="item-filter-cat-7" /><label for="item-filter-cat-7">Plastic Bottles &amp; Containers</label></li>
-                <li><input type="checkbox" id="item-filter-cat-8" /><label for="item-filter-cat-8">Prohibitive Item</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-1" /><label for="item-filter-cat-1">All</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-2" /><label for="item-filter-cat-2">Paper &amp; Boxes</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-3" /><label for="item-filter-cat-3">Fiber</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-4" /><label for="item-filter-cat-4">Glass</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-5" /><label for="item-filter-cat-5">Aluminum</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-6" /><label for="item-filter-cat-6">Steel</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-7" /><label for="item-filter-cat-7">Plastic Bottles &amp; Containers</label></li>
+                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-8" /><label for="item-filter-cat-8">Prohibitive Item</label></li>
               </ul>
 
             </section>
@@ -514,15 +515,15 @@
               <h6>Quick Search</h6>
 
               <ul class="item-filter-list">
-                <li><a href="#">5 Do's &amp; Dont's</a></li>
-                <li><a href="#">Construction Materials</a></li>
-                <li><a href="#">Donation Centers</a></li>
-                <li><a href="#">Electronics</a></li>
-                <li><a href="#">Household Hazardous Waste</a></li>
-                <li><a href="#">Household Goods</a></li>
-                <li><a href="#">Office Equipment</a></li>
-                <li><a href="#">Scrap Metal</a></li>
-                <li><a href="#">Tanglers</a></li>
+                <li><a href="#" data-action="filter-update">5 Do's &amp; Dont's</a></li>
+                <li><a href="#" data-action="filter-update">Construction Materials</a></li>
+                <li><a href="#" data-action="filter-update">Donation Centers</a></li>
+                <li><a href="#" data-action="filter-update">Electronics</a></li>
+                <li><a href="#" data-action="filter-update">Household Hazardous Waste</a></li>
+                <li><a href="#" data-action="filter-update">Household Goods</a></li>
+                <li><a href="#" data-action="filter-update">Office Equipment</a></li>
+                <li><a href="#" data-action="filter-update">Scrap Metal</a></li>
+                <li><a href="#" data-action="filter-update">Tanglers</a></li>
               </ul>
 
             </section>
@@ -753,7 +754,7 @@
 
       <div class="panel-head">
 
-        <a class="btn btn-panel-close" href="#!">
+        <a class="btn btn-panel-close" href="#!" data-action="panel-close">
           <i class="fa fa-close" aria-hidden="true"></i>
           <span class="sr-only">Close</span>
         </a>
@@ -845,7 +846,7 @@
 
       <div class="panel-head">
 
-        <a class="btn btn-panel-close" href="#!">
+        <a class="btn btn-panel-close" href="#!" data-action="panel-close">
           <i class="fa fa-close" aria-hidden="true"></i>
           <span class="sr-only">Close</span>
         </a>
@@ -863,7 +864,7 @@
           </a>
         </div>
 
-        <a class="city-recycling-btn action-open-community btn-center-outer" href="#panel-community">
+        <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="community-open">
           <div class="btn-center-inner">
             Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
           </div>
@@ -875,7 +876,7 @@
 
         <ul class="nav">
 
-          <li class="dropdown"><a href="#" class="trigger">Recycling at Home<i class="fa fa-plus" aria-hidden="true"></i></a>
+          <li class="dropdown"><a href="#" data-action="sub-menu-toggle">Recycling at Home<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Recycling in Your Community</a></li>
               <li><a href="#">Backyard Composting &amp; Bins</a></li>
@@ -888,10 +889,10 @@
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#" class="trigger">Programs &amp; Services<i class="fa fa-plus" aria-hidden="true"></i></a>
+          <li class="dropdown"><a href="#" data-action="sub-menu-toggle">Programs &amp; Services<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Event Calendar</a></li>
-              <li><a href="#" class="trigger">Presentations &amp; Workshops<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Presentations &amp; Workshops<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">General Recycling Presentations</a></li>
                   <li><a href="#">Composting Workshops &amp; Bin Sales</a></li>
@@ -901,11 +902,11 @@
                   <li><a href="#">Day Camp and Scout Programs</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="trigger">Business Services<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Business Services<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Business Recycling Seminars</a></li>
                   <li><a href="#">Business Recycling Directory</a></li>
-                  <li><a href="#" class="trigger">Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Tips to Green Your Office</a></li>
                       <li><a href="#">Paper Shredding &amp; Doc. Decon.</a></li>
@@ -919,7 +920,7 @@
                 </ul>
               </li>
               <li><a href="#">Grants</a></li>
-              <li><a href="#" class="trigger">Municipal Support<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Municipal Support<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Services for Local Governments</a></li>
                   <li><a href="#">Community Awareness Toolkit</a></li>
@@ -930,13 +931,13 @@
               </li>
               <li><a href="#">Household Hazardous Waste</a></li>
               <li><a href="#">Master Recycler Program</a></li>
-              <li><a href="#" class="trigger">Classroom Programming<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Classroom Programming<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
-                  <li><a href="#" class="trigger">Teacher Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Teacher Resources<i class="fa fa-plus" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Classroom Presentations</a></li>
                       <li><a href="#">Educators' E-Newsletter</a></li>
-                      <li><a href="#" class="trigger">Lesson Plans &amp; Activities<i class="fa fa-plus" aria-hidden="true"></i></a>
+                      <li><a href="#" data-action="sub-menu-toggle">Lesson Plans &amp; Activities<i class="fa fa-plus" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu sub-menu second">
                           <li><a href="#">Composting</a></li>
                           <li><a href="#">Recycling</a></li>
@@ -952,13 +953,13 @@
                       <li><a href="#">Links for Teachers</a></li>
                     </ul>
                   </li>
-                  <li><a href="#" class="trigger">Recycling at School<i class="fa fa-plus" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Recycling at School<i class="fa fa-plus" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Let the Carton Live On</a></li>
                       <li><a href="#">Grants for Schools</a></li>
                     </ul>
                   </li>
-                  <li><a href="#" class="trigger">Students<i class="fa fa-plus" aria-hidden="true"></i></a>
+                  <li><a href="#" data-action="sub-menu-toggle">Students<i class="fa fa-plus" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu sub-menu second">
                       <li><a href="#">Homework Helpers</a></li>
                       <li><a href="#">Scholarships</a></li>
@@ -968,7 +969,7 @@
                   <li><a href="#">Contests</a></li>
                 </ul>
               </li>
-              <li><a href="#" class="trigger">Youth Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Youth Programs<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Clean Up Cuyagoga</a></li>
                   <li><a href="#">Reduce Reuse Recycle Patch Program</a></li>
@@ -977,7 +978,7 @@
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#" class="trigger">How Recycling Works<i class="fa fa-plus" aria-hidden="true"></i></a>
+          <li class="dropdown"><a href="#" data-action="sub-menu-toggle">How Recycling Works<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">How to Recycle</a></li>
               <li><a href="#">The Recycling Process</a></li>
@@ -989,10 +990,10 @@
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#" class="trigger">About Us<i class="fa fa-plus" aria-hidden="true"></i></a>
+          <li class="dropdown"><a href="#" data-action="sub-menu-toggle">About Us<i class="fa fa-plus" aria-hidden="true"></i></a>
             <ul class="dropdown-menu sub-menu first">
               <li><a href="#">Solid Waste Management Plan</a></li>
-              <li><a href="#" class="trigger">Publications<i class="fa fa-plus" aria-hidden="true"></i></a>
+              <li><a href="#" data-action="sub-menu-toggle">Publications<i class="fa fa-plus" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu sub-menu second">
                   <li><a href="#">Annual Residential Recycling Report</a></li>
                   <li><a href="#">Pass It On Book</a></li>

@@ -154,7 +154,7 @@ if (typeof jQuery === 'undefined') {
                 width: 320,
                 position: 'right',
                 speed: slideRevealTransitionSpeed,
-                trigger: $( '.action-open-menu' ),
+                trigger: $( '[data-action="menu-open"]' ),
                 push: false,
                 overlay: false,
                 show: onShow,
@@ -162,7 +162,7 @@ if (typeof jQuery === 'undefined') {
                 hide: onHide,
                 hidden: function ( $slider, $trigger ) {
                     // Close Sub Menu's when menu is hidden
-                    $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'open' );
+                    $( '#panel-menu .dropdown' ).find( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
                     $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
                     onHidden( $slider, $trigger );
                 }
@@ -172,7 +172,7 @@ if (typeof jQuery === 'undefined') {
                 width: 300,
                 position: 'right',
                 speed: slideRevealTransitionSpeed,
-                trigger: $( '.action-open-community' ),
+                trigger: $( '[data-action="community-open"]' ),
                 push: false,
                 overlay: false,
                 show: onShow,
@@ -183,7 +183,7 @@ if (typeof jQuery === 'undefined') {
 
             // Add close buttons
             $( '.slidereveal-panel' )
-                .find( '.btn-panel-close' )
+                .find( '[data-action="panel-close"]' )
                 .on( 'click', function () {
                     $( this ).parents( '.slidereveal-panel' ).slideReveal( 'hide' );
                 } );
@@ -232,11 +232,11 @@ if (typeof jQuery === 'undefined') {
             // Show and hide
             //
 
-            $( '.wdidw-show' ).on( 'click', function () {
+            $( '[data-action="wdidw-show"]' ).on( 'click', function () {
                 $wdidwSearchBar.addClass( 'active' );
             } );
 
-            $( '.wdidw-hide' ).on( 'click', function () {
+            $( '[data-action="wdidw-hide"]' ).on( 'click', function () {
                 $wdidwSearchBar.removeClass( 'active' );
                 $wdidwSearchResults.removeClass( 'active' );
             } );
@@ -437,7 +437,7 @@ if (typeof jQuery === 'undefined') {
                 else {
                     $callOuts.removeClass( 'call-out-hidden' );
                 }
-                $grandparent.find( 'li > a.trigger' ).not( $this ).removeClass( 'open' );
+                $grandparent.find( 'li > a[data-action="sub-menu-toggle"]' ).not( $this ).removeClass( 'open' );
                 $this.addClass( 'open' );
                 $grandparent.find( '.sub-menu:visible' ).not( $current ).hide();
                 $current.show();
@@ -448,15 +448,15 @@ if (typeof jQuery === 'undefined') {
             function hoverDefault ( e ) {
                 var $this        = $( this ),
                     $grandparent = $this.parent().parent();
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
+                $grandparent.find( 'li > a[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
                 $grandparent.find( '.dropdown-menu' ).hide();
             }
 
-            $( '.mega-menu .dropdown-menu a.trigger' )
+            $( '.mega-menu .dropdown-menu a[data-action="sub-menu-toggle"]' )
                 .on( 'mouseover', hoverTrigger )
                 .on( 'focus', hoverTrigger );
 
-            $( '.mega-menu .dropdown-menu a:not(.trigger)' )
+            $( '.mega-menu .dropdown-menu a:not([data-action="sub-menu-toggle"])' )
                 .on( 'mouseover', hoverDefault )
                 .on( 'focus', hoverDefault );
 
@@ -472,7 +472,7 @@ if (typeof jQuery === 'undefined') {
             function closeSubMenu ( $subMenu ) {
                 $subMenu.removeClass( 'open' );
                 $subMenu.find( '.sub-menu:not(.first)' ).hide();
-                $subMenu.find( 'li > a.trigger' ).removeClass( 'open' );
+                $subMenu.find( 'li > a[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
                 $callOuts.removeClass( 'call-out-hidden' );
             }
 
@@ -547,7 +547,7 @@ if (typeof jQuery === 'undefined') {
         // Mobile menu
         //
 
-        $( '#panel-menu .dropdown a.trigger' ).on( 'click', function ( e ) {
+        $( '#panel-menu .dropdown a[data-action="sub-menu-toggle"]' ).on( 'click', function ( e ) {
             var $this        = $( this ),
                 $current     = $this.next(),
                 $grandparent = $this.parent().parent();
@@ -556,7 +556,7 @@ if (typeof jQuery === 'undefined') {
                 if ( $this.parent().hasClass( 'dropdown' ) ) {
                     $grandparent = $this.parent();
                 }
-                $grandparent.find( 'li > a.trigger' ).removeClass( 'open' );
+                $grandparent.find( 'li > a[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
                 $grandparent.find( '.sub-menu:visible' ).not( $current ).slideUp( 400 );
                 $current.slideUp( 400 );
             }
@@ -568,14 +568,14 @@ if (typeof jQuery === 'undefined') {
             e.stopPropagation();
         });
 
-        $( '.dropdown-menu > li > a:not(.trigger)' ).on( 'click', function () {
+        $( '.dropdown-menu > li > a:not([data-action="sub-menu-toggle"])' ).on( 'click', function () {
             var $root = $( this ).closest( '.dropdown' );
-            $( '.trigger' ).removeClass( 'open' );
+            $( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
             $root.find( '.sub-menu:not(.first)' ).slideUp( 400 );
         });
 
         var closeMobileDropdown = function () {
-            $( '#panel-menu .dropdown' ).find( '.trigger' ).removeClass( 'open' );
+            $( '#panel-menu .dropdown' ).find( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
             $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
         };
 
@@ -583,7 +583,7 @@ if (typeof jQuery === 'undefined') {
         // Header search
         //
 
-        $( '.search-container label' ).on( 'click', function ( e ) {
+        $( '[data-action="toggle-sb"]' ).on( 'click', function ( e ) {
             $( '.sb-search' ).addClass( 'sb-search-open' );
             $( '.sb-search-input' ).focus();
             e.preventDefault()
@@ -600,7 +600,7 @@ if (typeof jQuery === 'undefined') {
         ( function () {
 
             //
-            // Slideshow select funcitonality
+            // Slideshow select functionality
             //
 
             var $itemBasics = $( '.item-basics' ),
@@ -816,11 +816,7 @@ if (typeof jQuery === 'undefined') {
 
             function loaded () { $loadingOverlay.removeClass( 'active' ); }
 
-            $itemFilters.find( '.item-filter-clear' ).on( 'click', loading );
-            $itemFilters.find( '.btn-item-filter-clear' ).on( 'click', loading );
-            $itemFilters.find( '.item-filter-city-list a' ).on( 'click', loading );
-            $itemFilters.find( '[type="checkbox"]' ).on( 'change', loading );
-            $itemFilters.find( '.item-filter-list > li > a' ).on( 'click', loading );
+            $itemFilters.find( '[data-action="filter-update"]' ).on( 'click', loading );
 
         } )();
 
