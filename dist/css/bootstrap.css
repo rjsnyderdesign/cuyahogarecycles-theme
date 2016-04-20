@@ -12400,11 +12400,12 @@ h6
     padding-right: 40px;
     padding-left: 40px;
 
-    -webkit-transition: background-color 500ms;
-         -o-transition: background-color 500ms;
-            transition: background-color 500ms;
+    -webkit-transition: background-color 500ms, border-color 500ms;
+         -o-transition: background-color 500ms, border-color 500ms;
+            transition: background-color 500ms, border-color 500ms;
 
     color: inherit;
+    border: 2px solid #fff;
     background: #fff;
 }
 .item-entry-link:hover,
@@ -12417,6 +12418,12 @@ h6
     text-decoration: none;
 
     color: inherit;
+    border-color: #e4f9fa;
+}
+.item-entry-link:hover,
+.item-grid-entry-link:hover,
+.item-group-entry-link:hover
+{
     background-color: #e4f9fa;
 }
 .item-entry-link:active,
@@ -12426,10 +12433,11 @@ h6
 .item-group-entry-link:active,
 .item-group-entry-link.active
 {
-    -webkit-transition: background-color 0s;
-         -o-transition: background-color 0s;
-            transition: background-color 0s;
+    -webkit-transition: background-color 0s, border-color 0s;
+         -o-transition: background-color 0s, border-color 0s;
+            transition: background-color 0s, border-color 0s;
 
+    border-color: #ebffbd;
     background-color: #ebffbd;
 }
 .item-entry-info > .item-entry-title
@@ -12503,6 +12511,9 @@ h6
 {
     margin: 0 -40px;
     padding: 0;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 20px;
 
     list-style: none;
 }
@@ -12511,14 +12522,16 @@ h6
 {
     display: inline-block;
 
-    padding: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 20px;
 }
 .item-grid-entry > .item-grid-entry,
 .item-grid-entry > .item-grid-entry-link,
 .item-grid-entry-link > .item-grid-entry,
 .item-grid-entry-link > .item-grid-entry-link
 {
-    margin: -40px;
+    margin: -20px;
 }
 .item-grid-entry
 {
@@ -12531,7 +12544,7 @@ h6
 }
 .item-grid-entry .item-icon
 {
-    margin-bottom: 1em;
+    margin: 0 -.125em 1.5em 0;
 }
 .item-grid-entry .item-entry-info
 {
@@ -12544,15 +12557,13 @@ h6
 }
 .item-grid-entry .item-entry-info > .item-entry-types
 {
+    line-height: 1.25;
+
     margin-bottom: .5em;
 }
 .item-grid-entry .item-entry-info > .item-entry-desc
 {
     line-height: 1.125;
-}
-.item-grid-entry-content
-{
-    margin-right: -1.5em;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -12892,6 +12903,55 @@ h6
 {
     width: 58px;
     height: 58px;
+}
+.item-entries-view-mode-opts
+{
+    padding-top: 40px;
+    padding-bottom: .5em;
+
+    text-align: right;
+
+    border-bottom: 2px solid #e6e6e6;
+}
+.item-entries-view-mode-opts > li > a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.item-entries-view-mode-opts > li > a:hover,
+.item-entries-view-mode-opts > li > a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.item-entries-view-mode-opts > li > a:active,
+.item-entries-view-mode-opts > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
+.item-entries-view-mode-opts > li > a > .fa
+{
+    vertical-align: middle;
+}
+.item-entries-view-mode-opts > li:not(:first-child):before
+{
+    margin: 0 1em;
+
+    content: '';
+
+    border-left: 2px solid #e6e6e6;
 }
 .city-contact .city-contact-title,
 .city-contact .city-contact-info

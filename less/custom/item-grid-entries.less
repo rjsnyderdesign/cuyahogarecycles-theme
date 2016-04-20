@@ -14,19 +14,27 @@
 // Item grid entries
 // --------------------------------------------------
 
+@item-grid-spacing: (@grid-gutter-width / 4); // ~20px
+@item-grid-padding: @item-grid-spacing;
+
 .item-grid-entries {
   margin: 0 (-@grid-gutter-width / 2);
   padding: 0;
+  padding-left: ((@grid-gutter-width / 2) - @item-grid-spacing);
+  padding-right: (@grid-gutter-width / 2);
+  padding-bottom: @item-grid-spacing;
   list-style: none;
 }
 
 .item-grid-entry,
 .item-grid-entry-link {
   display: inline-block;
-  padding: (@grid-gutter-width / 2);
+  margin-top: @item-grid-spacing;
+  margin-left: @item-grid-spacing;
+  padding: @item-grid-padding;
 
   & > & {
-    margin: (-@grid-gutter-width / 2);
+    margin: -@item-grid-padding;
   }
 }
 
@@ -37,7 +45,7 @@
   vertical-align: top;
 
   .item-icon {
-    margin-bottom: 1em;
+    margin: 0 -0.125em 1.5em 0;
   }
 
   .item-entry-info {
@@ -50,6 +58,7 @@
 
     > .item-entry-types {
       margin-bottom: 0.5em;
+      line-height: 1.25;
     }
 
     > .item-entry-desc {
@@ -62,6 +71,4 @@
   &:extend(.item-entry-link all);
 }
 
-.item-grid-entry-content {
-  margin-right: -1.5em;
-}
+.item-grid-entry-content {}

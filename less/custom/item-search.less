@@ -279,6 +279,34 @@
 
 
 //
+// Item view mode links
+// --------------------------------------------------
+
+.item-entries-view-mode-opts {
+  padding-top: (@grid-gutter-width / 2);
+  padding-bottom: (@font-size-base / 2);
+  border-bottom: 2px solid @gray-lighter;
+  text-align: right;
+
+  > li {
+    > a {
+      .link-fx-nav(@brand-info; @brand-success);
+
+      > .fa {
+        vertical-align: middle;
+      }
+    }
+
+    &:not(:first-child):before {
+      margin: 0 1em;
+      border-left: 2px solid @gray-lighter;
+      content: '';
+    }
+  }
+}
+
+
+//
 // City info
 // --------------------------------------------------
 
