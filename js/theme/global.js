@@ -341,6 +341,7 @@
                 $pageHeaderUpper = $pageHeader.find( '.page-header-upper' ),
                 $pageHeaderNavbar1 = $pageHeader.find( '.navbar.navbar-default' ).eq( 0 ).find( '.container-fluid' ),
                 $pageHeaderNavbar2 = $pageHeader.find( '.navbar.navbar-default' ).eq( 1 ),
+                $pageBreadcrumbs = $( 'main .block-breadcrumbs' ),
                 $htmlBody = $( 'html, body' ),
                 $gotoTopWrapper = $( '.goto-top-wrapper' ),
                 pageHeaderTopOffset;
@@ -372,10 +373,15 @@
             $window.on( 'scroll', function () {
 
                 // Check against negative scroll positions because Safari
-                var scrollTopPos = $window.scrollTop();
-                if ( scrollTopPos < 0 ) { scrollTopPos = 0; }
+                var scrollTopPos = $window.scrollTop(),
+                    breadcrumbsOffset;
 
-                if ( scrollTopPos > pageHeaderTopOffset ) {
+                if ( scrollTopPos < 0 ) { scrollTopPos = 0; }
+                if ($pageBreadcrumbs.is( ':visible' )) {
+                    breadcrumbsOffset = $pageBreadcrumbs.outerHeight();
+                }
+
+                if ( scrollTopPos > pageHeaderTopOffset + breadcrumbsOffset ) {
                     if ( !$pageHeader.hasClass( 'header-sticky-detached' ) ) {
                         $pageHeader
                             .css( { 'top': '-100%' } )
@@ -384,11 +390,11 @@
                             } );
                     }
                     $pageHeader.addClass( 'header-sticky-detached' );
-                    $gotoTopWrapper.removeClass( 'goto-top-hidden' );
+                    $gotoTopWrapper.show().removeClass( 'goto-top-hidden' );
                 }
                 else {
                     $pageHeader.removeClass( 'header-sticky-detached' );
-                    $gotoTopWrapper.addClass( 'goto-top-hidden' );
+                    $gotoTopWrapper.show().addClass( 'goto-top-hidden' );
                 }
 
             } );
@@ -407,6 +413,9 @@
             // Init
             $pageHeader.addClass( 'header-sticky' );
             setTopOffset();
+            if ( $window.scrollTop() <= pageHeaderTopOffset ) {
+                $gotoTopWrapper.hide();
+            }
 
         } )();
 
