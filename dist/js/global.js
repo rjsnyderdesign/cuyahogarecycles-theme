@@ -392,10 +392,10 @@ if (typeof jQuery === 'undefined') {
 
                 // Check against negative scroll positions because Safari
                 var scrollTopPos = $window.scrollTop(),
-                    breadcrumbsOffset;
+                    breadcrumbsOffset = 0;
 
                 if ( scrollTopPos < 0 ) { scrollTopPos = 0; }
-                if ($pageBreadcrumbs.is( ':visible' )) {
+                if ( $pageBreadcrumbs && $pageBreadcrumbs.is( ':visible' ) ) {
                     breadcrumbsOffset = $pageBreadcrumbs.outerHeight();
                 }
 
