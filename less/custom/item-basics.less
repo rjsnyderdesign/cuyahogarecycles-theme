@@ -14,10 +14,69 @@
 // Item basic 5 Do's and Don'ts
 // --------------------------------------------------
 
-@item-basics-xs-min: 600px;
-@item-basics-sm-min: 900px;
-@item-basics-md-min: 1200px;
-@item-basics-lg-min: 1680px;
+@item-basics-xs-min: 480px;
+@item-basics-sm-min: 720px;
+@item-basics-md-min: 900px;
+@item-basics-lg-min: 1200px;
+@item-basics-xl-min: 1680px;
+
+
+//
+// Item basics alignments
+// --------------------------------------------------
+
+.item-basics {
+  text-align: center;
+}
+
+.item-basics-alignment {
+  display: inline-block;
+}
+
+.item-basics-cat,
+.item-cat-selector {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.item-basics-cat {
+  &[role="tabpanel"]:not(.active) {
+    display: none;
+  }
+
+  > .item-basics-cat-row {
+    display: inline-block;
+    text-align: left;
+
+    .translate3d(0; 0; -9999px);
+  }
+}
+
+
+//
+// Item basics typography
+// --------------------------------------------------
+
+.item-basics {
+  font-size: 0.75em;
+
+  @media screen and (min-width: @item-basics-md-min) {
+    font-size: 0.875em;
+  }
+
+  @media screen and (min-width: @item-basics-lg-min) {
+    font-size: 1em;
+  }
+
+  .item-basics-title {
+    text-transform: none;
+  }
+
+  .item-basics-subtitle {
+    height: 3em;
+    font-size: 1.5em;
+  }
+}
 
 
 //
@@ -62,7 +121,7 @@
   .item-coin-delay(1; 5);
 
   &.item-coin-flip {
-    @media screen and (min-width: @item-basics-sm-min) {
+    @media screen and (min-width: @item-basics-md-min) {
       opacity: 0;
 
       .rotateY(180deg);
@@ -72,7 +131,7 @@
 
 
 //
-// Item basics icon and text sizes
+// Item basics
 // --------------------------------------------------
 
 .item-basics-figure-size(@size) {
@@ -89,124 +148,84 @@
     &:last-child {
       margin-right: 0;
     }
-
-    .item-basics-figure-size(90px);
-
-    @media screen and (min-width: @item-basics-sm-min) {
-      .item-basics-figure-size(120px);
-    }
-
-    @media screen and (min-width: @item-basics-md-min) {
-      .item-basics-figure-size(180px);
-
-      @media (min-width: (@item-basics-md-min + 200)) {
-        .item-basics-figure-size(210px);
-      }
-    }
-
-    @media screen and (min-width: @item-basics-lg-min) {
-      .item-basics-figure-size(270px);
-    }
   }
 
   .item-icon,
   .item-link {
     margin: 0;
   }
-
-  .item-icon.item-icon-size-basics {
-    .item-icon.item-icon-size-1;
-
-    @media screen and (min-width: @item-basics-sm-min) {
-      .item-icon.item-icon-size-2;
-    }
-
-    @media screen and (min-width: @item-basics-md-min) {
-      .item-icon.item-icon-size-3;
-
-      @media (min-width: (@item-basics-md-min + 200)) {
-        .item-icon.item-icon-size-4;
-      }
-    }
-
-    @media screen and (min-width: @item-basics-lg-min) {
-      .item-icon.item-icon-size-5;
-    }
-  }
 }
 
 
 //
-// Item basics typography
+// Item basics breakpoints
 // --------------------------------------------------
 
-.item-basics {
-  font-size: 0.75em;
-
-  @media screen and (min-width: @item-basics-sm-min) {
-    font-size: 0.875em;
-  }
-
-  @media screen and (min-width: @item-basics-md-min) {
-    font-size: 1em;
-  }
-
-  .item-basics-title {
-    text-transform: none;
-  }
-
-  .item-basics-subtitle {
-    height: 3em;
-    font-size: 1.5em;
-  }
+.item-basics.item-basics-mb {
+  display: block;
 }
 
-
-//
-// Item basics alignments
-// --------------------------------------------------
-
-.item-basics {
-  text-align: center;
+.item-basics.item-basics-dk {
+  display: none;
 }
 
-.item-basics-alignment {
-  display: inline-block;
-}
-
-.item-basics-cat,
-.item-cat-selector {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.item-basics-cat {
-  &[role="tabpanel"]:not(.active) {
+@media screen and (min-width: @item-basics-sm-min) {
+  .item-basics.item-basics-mb {
     display: none;
   }
 
-  > .item-basics-cat-row {
-    display: inline-block;
-    text-align: left;
-
-    .translate3d(0; 0; -9999px);
+  .item-basics.item-basics-dk {
+    display: block;
   }
 }
 
-.item-cat-selector {
-  margin-top: 2em;
 
-  > li {
-    width: 20em;
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    text-align: left;
-    clear: both;
+//
+// Item basics desktop
+// --------------------------------------------------
 
-    @media screen and (min-width: @item-basics-sm-min) {
-      width: auto;
-      float: none;
+.item-basics.item-basics-dk {
+  .item-figure,
+  .item-icon.item-icon-size-basics {
+    width: 94px;
+  }
+
+  .item-icon.item-icon-size-basics {
+    height: 94px;
+    border-width: 2px;
+  }
+
+  @media screen and (min-width: @item-basics-md-min) {
+    .item-figure { .item-basics-figure-size(120px); }
+    .item-icon.item-icon-size-basics { .item-icon.item-icon-size-2; }
+    .item-icon.item-icon-size-basics { border-width: 4px; }
+  }
+
+  @media screen and (min-width: @item-basics-lg-min) {
+    .item-figure { .item-basics-figure-size(180px); }
+    .item-icon.item-icon-size-basics { .item-icon.item-icon-size-3; }
+
+    @media (min-width: (@item-basics-lg-min + 200)) {
+      .item-figure { .item-basics-figure-size(210px); }
+      .item-icon.item-icon-size-basics { .item-icon.item-icon-size-4; }
+    }
+  }
+
+  @media screen and (min-width: @item-basics-xl-min) {
+    .item-figure { .item-basics-figure-size(270px); }
+    .item-icon.item-icon-size-basics { .item-icon.item-icon-size-5; }
+  }
+
+  .item-cat-selector {
+    .item-cat-selector-opt {
+      display: block;
+      padding-right: (@font-size-base / 2);
+      background: @gray-lighter;
+      border: 2px solid transparent;
+      border-radius: @font-size-base;
+      color: inherit;
+
+      .transition(border-color @link-transition-speed, color @link-transition-speed;);
     }
   }
 }
@@ -216,17 +235,93 @@
 // Item basics mobile
 // --------------------------------------------------
 
-.item-basics-cat-row.item-basics-cat-mb {
-  display: inline-block;
-  @media screen and (min-width: @item-basics-sm-min) {
-    display: none;
+.get-trig-padding(@trig-height) {
+  @trig-padding: (@trig-height * (2 / sqrt(3) - 1) / 2);
+}
+
+.item-basics.item-basics-mb {
+
+  .item-basics-cat-row {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+  }
+
+  @height: 64px;
+  .get-trig-padding(@height);
+
+  .item-basics-cat-row {
+    padding: (@trig-padding * 2) 0;
+  }
+
+  .item-icon.item-icon-size-basics {
+    width: @height;
+    height: @height;
+  }
+
+  .item-figure {
+    margin: 0;
+    padding: 0 @trig-padding;
+  }
+
+  @media screen and (min-width: @item-basics-xs-min) {
+
+    @height: 94px;
+    .get-trig-padding(@height);
+
+    .item-basics-cat-row {
+      padding: (@trig-padding * 2) 0;
+    }
+
+    .item-icon.item-icon-size-basics {
+      width: @height;
+      height: @height;
+    }
+
+    .item-figure {
+      margin: 0;
+      padding: 0 @trig-padding;
+    }
+  }
+
+  .item-figure {
+    display: inline-block;
+    margin: (@font-size-base / 4);
+  }
+
+  .item-icon.item-icon-size-basics {
+    border-width: 2px;
+  }
+
+  .item-cat-selector {
+    .item-cat-selector-opt {
+      display: inline-block;
+    }
   }
 }
 
-.item-basics-cat-row.item-basics-cat-dk {
-  display: none;
-  @media screen and (min-width: @item-basics-sm-min) {
-    display: inline-block;
+
+//
+// Item basics selectors
+// --------------------------------------------------
+
+.item-cat-selector {
+  margin-top: 2em;
+
+  > li {
+    @media screen and (min-width: @item-basics-sm-min) {
+      width: 20em;
+      float: left;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      text-align: left;
+      clear: both;;
+    }
+
+    @media screen and (min-width: @item-basics-md-min) {
+      width: auto;
+      float: none;
+    }
   }
 }
 
@@ -236,5 +331,44 @@
   &:hover,
   &:focus {
     text-decoration: none;
+  }
+}
+
+
+//
+// Item color key
+// --------------------------------------------------
+
+.item-cat-selector {
+  .item-cat-selector-opt {
+    .item-color-key {
+      background: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      text-decoration: none;
+
+      &[data-item-key="home-recycling"]    { color: @ccswd-blue;    }
+      &[data-item-key="dropoff-recycling"] { color: @ccswd-yellow;  }
+      &[data-item-key="proper-disposal"]   { color: @ccswd-red;     }
+      &[data-item-key="compost"]           { color: @ccswd-green-1; }
+    }
+
+    &.active {
+      background: none;
+
+      .item-color-key.item-color-key-home-recycling    { background: @ccswd-blue;    }
+      .item-color-key.item-color-key-dropoff-recycling { background: @ccswd-yellow;  }
+      .item-color-key.item-color-key-proper-disposal   { background: @ccswd-red;     }
+      .item-color-key.item-color-key-compost           { background: @ccswd-green-1; }
+
+      &[data-item-key="home-recycling"]    { border-color: @ccswd-blue;    }
+      &[data-item-key="dropoff-recycling"] { border-color: @ccswd-yellow;  }
+      &[data-item-key="proper-disposal"]   { border-color: @ccswd-red;     }
+      &[data-item-key="compost"]           { border-color: @ccswd-green-1; }
+    }
   }
 }

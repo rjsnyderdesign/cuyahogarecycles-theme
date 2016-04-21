@@ -132,51 +132,6 @@
     margin-right: @font-size-base;
     vertical-align: middle;
   }
-
-  &.item-cat-selector {
-    > li {
-      > .item-cat-selector-opt {
-        display: block;
-        padding-right: (@font-size-base / 2);
-        background: @gray-lighter;
-        border: 2px solid transparent;
-        border-radius: @font-size-base;
-        color: inherit;
-
-        .transition(border-color @link-transition-speed, color @link-transition-speed;);
-
-        .item-color-key {
-          background: none;
-        }
-
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          text-decoration: none;
-
-          &[data-item-key="home-recycling"]    { color: @ccswd-blue;    }
-          &[data-item-key="dropoff-recycling"] { color: @ccswd-yellow;  }
-          &[data-item-key="proper-disposal"]   { color: @ccswd-red;     }
-          &[data-item-key="compost"]           { color: @ccswd-green-1; }
-        }
-
-        &.active {
-          background: none;
-
-          .item-color-key.item-color-key-home-recycling    { background: @ccswd-blue;    }
-          .item-color-key.item-color-key-dropoff-recycling { background: @ccswd-yellow;  }
-          .item-color-key.item-color-key-proper-disposal   { background: @ccswd-red;     }
-          .item-color-key.item-color-key-compost           { background: @ccswd-green-1; }
-
-          &[data-item-key="home-recycling"]    { border-color: @ccswd-blue;    }
-          &[data-item-key="dropoff-recycling"] { border-color: @ccswd-yellow;  }
-          &[data-item-key="proper-disposal"]   { border-color: @ccswd-red;     }
-          &[data-item-key="compost"]           { border-color: @ccswd-green-1; }
-        }
-      }
-    }
-  }
 }
 
 .item-color-key {
