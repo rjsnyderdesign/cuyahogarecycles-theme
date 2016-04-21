@@ -238,6 +238,7 @@ if (typeof jQuery === 'undefined') {
         ( function () {
 
             var $wdidwCol = $( '.wdidw-col' ),
+                $wdidwBtn = $( '.wdidw-btn' ),
                 $wdidwSearchBar = $( '.wdidw-search-bar' ),
                 $wdidwSearchFormInputs = $( '.btn, .form-control', '.wdidw-search-form' ),
                 $wdidwSearchField = $( '#wdidw-search-field' ),
@@ -253,12 +254,14 @@ if (typeof jQuery === 'undefined') {
 
             $( '[data-action="wdidw-show"]' ).on( 'click', function () {
                 $wdidwSearchBar.addClass( 'active' );
+                $wdidwBtn.attr( 'tabindex', '-1' );
                 $wdidwSearchFormInputs.attr( 'tabindex', '0' );
             } );
 
             $( '[data-action="wdidw-hide"]' ).on( 'click', function () {
                 $wdidwSearchBar.removeClass( 'active' );
                 $wdidwSearchResults.removeClass( 'active' );
+                $wdidwBtn.attr( 'tabindex', '0' );
                 $wdidwSearchFormInputs.attr( 'tabindex', '-1' );
             } );
 
