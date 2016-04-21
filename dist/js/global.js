@@ -102,6 +102,17 @@ if (typeof jQuery === 'undefined') {
         ) );
 
         //
+        // Focusable targets
+        //
+
+        var $pageFirst = $( '<a/>' ),
+            $pageLast = $( '<a/>' );
+        $pageFirst.attr( { 'tabindex': '-1', 'href': '#' } ).hide();
+        $pageLast.attr( { 'tabindex': '-1', 'href': '#' } ).hide();
+        $body.prepend( $pageFirst );
+        $body.append( $pageLast );
+
+        //
         // SlideReveal panels
         //
 
@@ -133,6 +144,7 @@ if (typeof jQuery === 'undefined') {
             }
 
             function onShown ( $slider, $trigger ) {
+                $slider.find( 'a, input' ).attr( 'tabindex', '0' );
             }
 
             function onHide ( $slider, $trigger ) {
@@ -148,6 +160,8 @@ if (typeof jQuery === 'undefined') {
                 if ( openedPanels.length === 0 ) {
                     $pageScrollFreezable.removeClass( 'noscroll noscroll-v' );
                 }
+                $slider.find( 'a, input' ).attr( 'tabindex', '-1' );
+                $pageFirst.focus().blur();
             }
 
             $panelMenu.slideReveal( {
@@ -202,6 +216,10 @@ if (typeof jQuery === 'undefined') {
                 }
             } );
 
+            // Tabindex focus
+            $panelMenu.find( 'a, input' ).attr( 'tabindex', '-1' );
+            $panelCommunity.find( 'a, input' ).attr( 'tabindex', '-1' );
+
             // Window resize event
             $window.on( 'resize', function () {
                 var windowSizeAfter = window.innerWidth;
@@ -221,6 +239,7 @@ if (typeof jQuery === 'undefined') {
 
             var $wdidwCol = $( '.wdidw-col' ),
                 $wdidwSearchBar = $( '.wdidw-search-bar' ),
+                $wdidwSearchFormInputs = $( '.btn, .form-control', '.wdidw-search-form' ),
                 $wdidwSearchField = $( '#wdidw-search-field' ),
                 $wdidwSearchResults = $( '#wdidw-search-results' ),
                 $wdidwSearchResultsList = $( '#wdidw-search-results-list' ),
@@ -234,11 +253,13 @@ if (typeof jQuery === 'undefined') {
 
             $( '[data-action="wdidw-show"]' ).on( 'click', function () {
                 $wdidwSearchBar.addClass( 'active' );
+                $wdidwSearchFormInputs.attr( 'tabindex', '0' );
             } );
 
             $( '[data-action="wdidw-hide"]' ).on( 'click', function () {
                 $wdidwSearchBar.removeClass( 'active' );
                 $wdidwSearchResults.removeClass( 'active' );
+                $wdidwSearchFormInputs.attr( 'tabindex', '-1' );
             } );
 
             $wdidwCol
@@ -423,6 +444,7 @@ if (typeof jQuery === 'undefined') {
                 $this = $( this );
                 $htmlBody.animate( { scrollTop: 0 }, 'slow', function () {
                     $this.blur();
+                    $pageFirst.focus().blur();
                 } );
                 e.preventDefault();
                 return false;

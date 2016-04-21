@@ -5111,7 +5111,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus
 
     content: '/\00a0';
 
-    color: #fff;
+    color: #415e78;
 }
 .breadcrumb > .active
 {
@@ -8752,6 +8752,8 @@ body:not(.noscroll)
 .block-newsletter-form a:hover,
 .block-newsletter-form a:focus
 {
+    text-decoration: underline;
+
     color: #26cad3;
 }
 .block-newsletter-form a:active,
@@ -8861,6 +8863,38 @@ body:not(.noscroll)
     color: #fff;
     background: #263746;
 }
+.block-breadcrumbs .breadcrumb > li:before
+{
+    font-weight: bold;
+}
+.block-breadcrumbs .breadcrumb > li > a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.block-breadcrumbs .breadcrumb > li > a:hover,
+.block-breadcrumbs .breadcrumb > li > a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.block-breadcrumbs .breadcrumb > li > a:active,
+.block-breadcrumbs .breadcrumb > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
 .block-banner .img-banner
 {
     display: block;
@@ -8956,6 +8990,31 @@ h6
     height: auto;
     margin-top: 0;
     margin-bottom: 1em;
+}
+.block-content a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: underline;
+    text-decoration: none;
+}
+.block-content a:hover,
+.block-content a:focus
+{
+    text-decoration: underline;
+
+    color: #1a8c92;
+}
+.block-content a:active,
+.block-content a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #263746;
 }
 .block-content .article-title
 {
@@ -11183,7 +11242,9 @@ h6
 .page-footer a:hover,
 .page-footer a:focus
 {
-    color: #26cad3;
+    text-decoration: underline;
+
+    color: #1a8c92;
 }
 .page-footer a:active,
 .page-footer a.active
@@ -11192,7 +11253,7 @@ h6
          -o-transition: color 0s;
             transition: color 0s;
 
-    color: #95d600;
+    color: #263746;
 }
 .page-footer dt
 {
@@ -11977,6 +12038,26 @@ h6
     text-decoration: none;
 
     color: #fff;
+}
+.grid-cell-link:after
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    border: 0 none;
+}
+.grid-cell-link:focus:after
+{
+    border: 2px solid #fff;
 }
 .grid-cell-link.grid-cell-link-large > .grid-cell-link-title
 {

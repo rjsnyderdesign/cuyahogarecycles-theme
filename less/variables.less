@@ -46,6 +46,7 @@
 @link-color:            @brand-info;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
+@link-active-color:      @brand-dark;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -810,7 +811,7 @@
 //** Breadcrumb background color
 @breadcrumb-bg:                 @brand-dark;
 //** Breadcrumb text color
-@breadcrumb-color:              @white;
+@breadcrumb-color:              lighten(@brand-dark, 15%);
 //** Text color of current page in the breadcrumb
 @breadcrumb-active-color:       @brand-success;
 //** Textual separator for between breadcrumb elements

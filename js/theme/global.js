@@ -84,6 +84,17 @@
         ) );
 
         //
+        // Focusable targets
+        //
+
+        var $pageFirst = $( '<a/>' ),
+            $pageLast = $( '<a/>' );
+        $pageFirst.attr( { 'tabindex': '-1', 'href': '#' } ).hide();
+        $pageLast.attr( { 'tabindex': '-1', 'href': '#' } ).hide();
+        $body.prepend( $pageFirst );
+        $body.append( $pageLast );
+
+        //
         // SlideReveal panels
         //
 
@@ -115,6 +126,7 @@
             }
 
             function onShown ( $slider, $trigger ) {
+                $slider.find( 'a, input' ).attr( 'tabindex', '0' );
             }
 
             function onHide ( $slider, $trigger ) {
@@ -130,6 +142,8 @@
                 if ( openedPanels.length === 0 ) {
                     $pageScrollFreezable.removeClass( 'noscroll noscroll-v' );
                 }
+                $slider.find( 'a, input' ).attr( 'tabindex', '-1' );
+                $pageFirst.focus().blur();
             }
 
             $panelMenu.slideReveal( {
@@ -184,6 +198,10 @@
                 }
             } );
 
+            // Tabindex focus
+            $panelMenu.find( 'a, input' ).attr( 'tabindex', '-1' );
+            $panelCommunity.find( 'a, input' ).attr( 'tabindex', '-1' );
+
             // Window resize event
             $window.on( 'resize', function () {
                 var windowSizeAfter = window.innerWidth;
@@ -203,6 +221,7 @@
 
             var $wdidwCol = $( '.wdidw-col' ),
                 $wdidwSearchBar = $( '.wdidw-search-bar' ),
+                $wdidwSearchFormInputs = $( '.btn, .form-control', '.wdidw-search-form' ),
                 $wdidwSearchField = $( '#wdidw-search-field' ),
                 $wdidwSearchResults = $( '#wdidw-search-results' ),
                 $wdidwSearchResultsList = $( '#wdidw-search-results-list' ),
@@ -216,11 +235,13 @@
 
             $( '[data-action="wdidw-show"]' ).on( 'click', function () {
                 $wdidwSearchBar.addClass( 'active' );
+                $wdidwSearchFormInputs.attr( 'tabindex', '0' );
             } );
 
             $( '[data-action="wdidw-hide"]' ).on( 'click', function () {
                 $wdidwSearchBar.removeClass( 'active' );
                 $wdidwSearchResults.removeClass( 'active' );
+                $wdidwSearchFormInputs.attr( 'tabindex', '-1' );
             } );
 
             $wdidwCol
@@ -405,6 +426,7 @@
                 $this = $( this );
                 $htmlBody.animate( { scrollTop: 0 }, 'slow', function () {
                     $this.blur();
+                    $pageFirst.focus().blur();
                 } );
                 e.preventDefault();
                 return false;
