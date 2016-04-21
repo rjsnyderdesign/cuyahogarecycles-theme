@@ -1,0 +1,103 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Footer
+// --------------------------------------------------
+
+@page-footer-padding-top: 80px;
+
+.page-footer {
+  background: @white;
+
+  .page-footer-col {
+    padding-top: (@page-footer-padding-top + @grid-gutter-width / 2);
+    padding-bottom: @grid-gutter-width;
+  }
+
+  .page-footer-col-siteinfo {
+    padding-top: @font-size-base;
+    padding-bottom: @font-size-base;
+    background: @gray-light;
+  }
+
+  h4 {
+    margin: @font-size-base 0;
+    font-weight: normal;
+    letter-spacing: @letter-spacing;
+    text-transform: uppercase;
+  }
+
+  p {
+    max-width: 360px;
+    margin: @font-size-base 0;
+  }
+
+  a {
+    .link-fx-text(@brand-info; @brand-success);
+  }
+
+  dt {
+    .small-header;
+  }
+
+  dd {
+    margin-bottom: @font-size-base;
+  }
+
+  .brand .brand-district-logo {
+    width: auto;
+    max-width: auto;
+    height: auto;
+    max-height: @page-footer-padding-top;
+    margin-top: (-@page-footer-padding-top);
+  }
+
+  .page-footer-nav,
+  .page-footer-nav-siteinfo {
+    > li > a {
+      .link-fx-nav(@brand-info; @brand-success);
+    }
+  }
+
+  .page-footer-nav {
+    margin: (@font-size-base / 2) 0;
+    padding-left: 0;
+    line-height: 2;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  .page-footer-social {
+    margin-top: (@font-size-base / 2);
+
+    > li {
+      margin-right: @font-size-base;
+    }
+  }
+
+  .page-footer-siteinfo,
+  .page-footer-nav-siteinfo {
+    margin-top: 1em;
+  }
+
+  .page-footer-nav-siteinfo {
+    > li:not(:last-child):after {
+      content: '|';
+      margin: 0 (@font-size-base / 2);
+    }
+  }
+
+  .page-footer-siteinfo {
+    display: inline-block;
+  }
+}

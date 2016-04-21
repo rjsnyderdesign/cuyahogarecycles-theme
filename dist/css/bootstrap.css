@@ -7833,18 +7833,6 @@ button.close
 {
     background-color: #263746;
 }
-h1
-{
-    font-weight: bold;
-}
-.text-small
-{
-    font-size: .75em;
-}
-.text-large
-{
-    font-size: 1.5em;
-}
 .full-height
 {
     height: 100%;
@@ -8607,289 +8595,46 @@ body:not(.noscroll)
 {
     overflow-y: scroll;
 }
-.page-header
+.goto-top-wrapper
 {
-    width: 100%;
+    position: fixed;
+    z-index: 1020;
+    right: 40px;
+    bottom: 3em;
 
-    color: #fff;
-    background: #26cad3;
+    display: block;
+
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    -webkit-transition: opacity 500ms, z-index 0s;
+         -o-transition: opacity 500ms, z-index 0s;
+            transition: opacity 500ms, z-index 0s;
+
+    opacity: 1;
 }
-.page-header .page-header-skip
+.goto-top-wrapper.goto-top-hidden
 {
-    position: absolute;
-    top: .25em;
-    left: 40px;
+    z-index: -9999;
+
+    -webkit-transition: opacity 500ms, z-index 0s 500ms;
+         -o-transition: opacity 500ms, z-index 0s 500ms;
+            transition: opacity 500ms, z-index 0s 500ms;
+
+    opacity: 0;
 }
-.page-header .page-header-upper
+.goto-top-wrapper > .goto-top-btn
 {
-    padding-top: 2em;
-}
-.page-header .page-header-upper-content
-{
-    position: relative;
-
-    width: 100%;
-}
-.page-header .page-header-upper-right
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    width: 100%;
-}
-.page-header .login-link
-{
-    font-size: .75em;
-    font-weight: normal;
-
-    margin-right: 20px;
-    padding-top: 7px;
-
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    color: inherit;
-    background: none;
-}
-.page-header .login-link:hover,
-.page-header .login-link:focus
-{
-    text-decoration: none;
-
-    color: #1a8c92;
-    background: none;
-}
-.page-header .login-link:active,
-.page-header .login-link.active
-{
-    -webkit-transition: color 0s;
-         -o-transition: color 0s;
-            transition: color 0s;
-
-    color: #263746;
-}
-.page-header-social-links
-{
-    float: right;
-}
-.page-header-social-links > li > a
-{
-    cursor: pointer;
-    -webkit-transition: border-color 500ms, color 500ms;
-         -o-transition: border-color 500ms, color 500ms;
-            transition: border-color 500ms, color 500ms;
-    text-decoration: none;
-}
-.page-header-social-links > li > a:hover,
-.page-header-social-links > li > a:focus
-{
-    text-decoration: none;
-
-    color: #1a8c92;
-    border-color: #1a8c92;
-}
-.page-header-social-links > li > a:active,
-.page-header-social-links > li > a.active
-{
-    -webkit-transition: border-color 0s, color 0s;
-         -o-transition: border-color 0s, color 0s;
-            transition: border-color 0s, color 0s;
-
-    color: #263746;
-    border-color: #263746;
-}
-.navbar
-{
-    font-size: 16px;
-
-    min-height: 70px;
-
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-@media screen and (min-width: 768px) and (max-width: 991px)
-{
-    .navbar-nav.navbar-primary > li
-    {
-        font-size: .875em;
-
-        display: inline-block;
-        float: none;
-
-        max-width: 125px;
-
-        vertical-align: bottom;
-    }
-}
-.navbar-nav.navbar-primary > li > a
-{
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-
-    color: #fff;
-}
-.navbar-nav.navbar-primary > li > a:before
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    font-size: 36px;
+    line-height: 36px;
 
     display: block;
 
     width: 100%;
-    height: 0;
+    height: 100%;
+    padding: 12px;
 
-    content: '';
-    -webkit-transition: height 500ms, background-color 500ms;
-         -o-transition: height 500ms, background-color 500ms;
-            transition: height 500ms, background-color 500ms;
-
-    background: #fff;
-}
-.navbar-nav.navbar-primary > li > a:hover,
-.navbar-nav.navbar-primary > li > a:focus
-{
-    color: #fff;
-}
-.navbar-nav.navbar-primary > li > a:hover:before,
-.navbar-nav.navbar-primary > li > a:focus:before
-{
-    height: .5em;
-}
-.navbar-nav.navbar-primary > li > a:active,
-.navbar-nav.navbar-primary > li > a.active
-{
-    -webkit-transition: color 0s;
-         -o-transition: color 0s;
-            transition: color 0s;
-
-    color: #263746;
-}
-.navbar-nav.navbar-primary > li > a:active:before,
-.navbar-nav.navbar-primary > li > a.active:before
-{
-    -webkit-transition: height 0s;
-         -o-transition: height 0s;
-            transition: height 0s;
-}
-.header-infobar.row-sm-full-height > .col-main-full-height,
-.header-infobar.row-sm-full-height > .col-side-full-height
-{
-    vertical-align: middle;
-    white-space: nowrap;
-}
-.city-recycling-btn
-{
-    height: 70px;
-    padding: 0 40px;
-
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-    text-decoration: none;
-
-    color: #00833e;
-    border: 0 none;
-    border-left: 2px solid #00833e;
-    background: #95d600;
-}
-.city-recycling-btn:hover,
-.city-recycling-btn:focus
-{
-    text-decoration: none;
-
-    color: #fff;
-}
-.city-recycling-btn:active,
-.city-recycling-btn.active
-{
-    -webkit-transition: color 0s;
-         -o-transition: color 0s;
-            transition: color 0s;
-
-    color: #fff;
-}
-.page-footer
-{
-    background: #fff;
-}
-.page-footer .page-footer-col
-{
-    padding-top: 120px;
-    padding-bottom: 80px;
-}
-.page-footer .page-footer-col-siteinfo
-{
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-    background: #d9d9d9;
-}
-.page-footer h4
-{
-    font-weight: normal;
-
-    margin: 1em 0;
-
-    letter-spacing: .05em;
-    text-transform: uppercase;
-}
-.page-footer p
-{
-    max-width: 360px;
-    margin: 1em 0;
-}
-.page-footer a
-{
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-    text-decoration: underline;
-}
-.page-footer a:hover,
-.page-footer a:focus
-{
-    color: #26cad3;
-}
-.page-footer a:active,
-.page-footer a.active
-{
-    -webkit-transition: color 0s;
-         -o-transition: color 0s;
-            transition: color 0s;
-
-    color: #95d600;
-}
-.page-footer dt
-{
-    font-size: 1em;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-.page-footer dd
-{
-    margin-bottom: 1em;
-}
-.page-footer .brand .brand-district-logo
-{
-    width: auto;
-    max-width: auto;
-    height: auto;
-    max-height: 80px;
-    margin-top: -80px;
-}
-.page-footer .page-footer-nav > li > a,
-.page-footer .page-footer-nav-siteinfo > li > a
-{
     cursor: pointer;
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
@@ -8898,58 +8643,24 @@ body:not(.noscroll)
 
     color: inherit;
     background: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 }
-.page-footer .page-footer-nav > li > a:hover,
-.page-footer .page-footer-nav-siteinfo > li > a:hover,
-.page-footer .page-footer-nav > li > a:focus,
-.page-footer .page-footer-nav-siteinfo > li > a:focus
+.goto-top-wrapper > .goto-top-btn:hover,
+.goto-top-wrapper > .goto-top-btn:focus
 {
     text-decoration: none;
 
     color: #26cad3;
     background: none;
 }
-.page-footer .page-footer-nav > li > a:active,
-.page-footer .page-footer-nav-siteinfo > li > a:active,
-.page-footer .page-footer-nav > li > a.active,
-.page-footer .page-footer-nav-siteinfo > li > a.active
+.goto-top-wrapper > .goto-top-btn:active,
+.goto-top-wrapper > .goto-top-btn.active
 {
     -webkit-transition: color 0s;
          -o-transition: color 0s;
             transition: color 0s;
 
     color: #95d600;
-}
-.page-footer .page-footer-nav
-{
-    line-height: 2;
-
-    margin: .5em 0;
-    padding-left: 0;
-
-    list-style: none;
-
-    text-transform: uppercase;
-}
-.page-footer .page-footer-social
-{
-    margin-top: .5em;
-}
-.page-footer .page-footer-social > li
-{
-    margin-right: 1em;
-}
-.page-footer .page-footer-nav-siteinfo > li:not(:last-child):after
-{
-    margin: 0 .5em;
-
-    content: '|';
-}
-.page-footer .page-footer-siteinfo
-{
-    display: inline-block;
-
-    margin-bottom: 1em;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -9166,6 +8877,14 @@ select,
 button
 {
     letter-spacing: .035em;
+}
+.text-small
+{
+    font-size: .75em;
+}
+.text-large
+{
+    font-size: 1.5em;
 }
 h1,
 h2,
@@ -9713,6 +9432,296 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+.page-header
+{
+    font-size: 16px;
+
+    width: 100%;
+
+    letter-spacing: .56px;
+
+    color: #fff;
+    background: #26cad3;
+}
+.page-header .page-header-skip
+{
+    position: absolute;
+    top: .25em;
+    left: 40px;
+}
+.page-header .page-header-upper
+{
+    height: 70px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+@media screen and (min-width: 480px)
+{
+    .page-header .page-header-upper
+    {
+        height: 90px;
+    }
+}
+@media screen and (min-width: 992px)
+{
+    .page-header .page-header-upper
+    {
+        height: auto;
+        padding-top: 32px;
+        padding-bottom: 0;
+    }
+}
+.page-header .page-header-upper-content
+{
+    position: relative;
+
+    width: 100%;
+}
+.page-header .page-header-upper-right
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: none;
+
+    width: 100%;
+}
+.page-header .navbar-first
+{
+    display: none;
+}
+.page-header .login-link
+{
+    font-size: 12px;
+    font-weight: normal;
+
+    margin-right: 20px;
+    padding-top: 7px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: inherit;
+    background: none;
+}
+.page-header .login-link:hover,
+.page-header .login-link:focus
+{
+    text-decoration: none;
+
+    color: #1a8c92;
+    background: none;
+}
+.page-header .login-link:active,
+.page-header .login-link.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #263746;
+}
+@media screen and (min-width: 992px)
+{
+    .page-header .page-header-upper-right,
+    .page-header .navbar-first
+    {
+        display: block;
+    }
+}
+.page-header-social-links
+{
+    float: right;
+}
+.page-header-social-links > li > a
+{
+    cursor: pointer;
+    -webkit-transition: border-color 500ms, color 500ms;
+         -o-transition: border-color 500ms, color 500ms;
+            transition: border-color 500ms, color 500ms;
+    text-decoration: none;
+}
+.page-header-social-links > li > a:hover,
+.page-header-social-links > li > a:focus
+{
+    text-decoration: none;
+
+    color: #1a8c92;
+    border-color: #1a8c92;
+}
+.page-header-social-links > li > a:active,
+.page-header-social-links > li > a.active
+{
+    -webkit-transition: border-color 0s, color 0s;
+         -o-transition: border-color 0s, color 0s;
+            transition: border-color 0s, color 0s;
+
+    color: #263746;
+    border-color: #263746;
+}
+.navbar
+{
+    font-size: 16px;
+
+    min-height: 70px;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+@media screen and (min-width: 768px) and (max-width: 991px)
+{
+    .navbar-nav.navbar-primary > li
+    {
+        font-size: .875em;
+
+        display: inline-block;
+        float: none;
+
+        max-width: 125px;
+
+        vertical-align: bottom;
+    }
+}
+.navbar-nav.navbar-primary > li > a
+{
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #fff;
+}
+.navbar-nav.navbar-primary > li > a:before
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 0;
+
+    content: '';
+    -webkit-transition: height 500ms, background-color 500ms;
+         -o-transition: height 500ms, background-color 500ms;
+            transition: height 500ms, background-color 500ms;
+
+    background: #fff;
+}
+.navbar-nav.navbar-primary > li > a:hover,
+.navbar-nav.navbar-primary > li > a:focus
+{
+    color: #fff;
+}
+.navbar-nav.navbar-primary > li > a:hover:before,
+.navbar-nav.navbar-primary > li > a:focus:before
+{
+    height: .5em;
+}
+.navbar-nav.navbar-primary > li > a:active,
+.navbar-nav.navbar-primary > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #263746;
+}
+.navbar-toggle
+{
+    font-size: 32px;
+    line-height: 32px;
+
+    position: absolute;
+    top: -5px;
+    right: -8px;
+
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 8px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-align: center;
+    text-decoration: none;
+
+    color: inherit;
+    border: 0 none;
+    background: none;
+}
+.navbar-toggle:hover,
+.navbar-toggle:focus
+{
+    text-decoration: none;
+
+    color: #1a8c92;
+    background: none;
+}
+.navbar-toggle:active,
+.navbar-toggle.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #263746;
+}
+@media (min-width: 480px)
+{
+    .navbar-toggle
+    {
+        top: 5px;
+    }
+}
+.header-infobar.row-sm-full-height > .col-main-full-height,
+.header-infobar.row-sm-full-height > .col-side-full-height
+{
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.city-recycling-btn
+{
+    height: 70px;
+    padding: 0 40px;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: #00833e;
+    border: 0 none;
+    border-left: 2px solid #00833e;
+    background: #95d600;
+}
+.city-recycling-btn:hover,
+.city-recycling-btn:focus
+{
+    text-decoration: none;
+
+    color: #fff;
+}
+.city-recycling-btn:active,
+.city-recycling-btn.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #fff;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
 .page-header.header-sticky
 {
     position: absolute;
@@ -9736,7 +9745,22 @@ h6
 {
     .page-header.header-sticky.header-sticky-detached .page-header-upper
     {
+        height: 90px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .page-header.header-sticky.header-sticky-detached .page-header-upper-right,
+    .page-header.header-sticky.header-sticky-detached .navbar-first
+    {
         display: none;
+    }
+    .page-header.header-sticky.header-sticky-detached .navbar-toggle
+    {
+        display: block;
+    }
+    .page-header.header-sticky.header-sticky-detached .brand .brand-logo-main
+    {
+        width: 344px;
     }
 }
 .page-header.header-sticky.header-sticky-detached .navbar
@@ -9948,6 +9972,8 @@ h6
 }
 .sb-icon-search
 {
+    font-size: 12px;
+
     z-index: 90;
 
     -webkit-transition: width .3s;
@@ -10321,93 +10347,6 @@ h6
 .wdidw-search-quick-links-list > li > a
 {
     line-height: 1.5;
-}
-/*!
- * CuyahogaRecycles.org theme
- */
-@media screen and (max-width: 991px)
-{
-    .navbar-nav
-    {
-        margin: 0;
-    }
-    .navbar-first,
-    .navbar-left,
-    .navbar-right,
-    .page-header-upper-right,
-    .navbar-globals,
-    .mega-menu
-    {
-        display: none;
-    }
-    .mega-menu
-    {
-        overflow: hidden;
-    }
-    .page-header .page-header-upper
-    {
-        position: relative;
-
-        height: 70px;
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-    .page-header-upper-content .navbar-toggle
-    {
-        font-size: 32px;
-
-        position: absolute;
-        top: -8px;
-        right: -8px;
-
-        width: 48px;
-        margin: 0;
-        padding: 8px;
-
-        cursor: pointer;
-        -webkit-transition: color 500ms;
-             -o-transition: color 500ms;
-                transition: color 500ms;
-        text-decoration: none;
-
-        color: inherit;
-        background: none;
-    }
-    .page-header-upper-content .navbar-toggle:hover,
-    .page-header-upper-content .navbar-toggle:focus
-    {
-        text-decoration: none;
-
-        color: #1a8c92;
-        background: none;
-    }
-    .page-header-upper-content .navbar-toggle:active,
-    .page-header-upper-content .navbar-toggle.active
-    {
-        -webkit-transition: color 0s;
-             -o-transition: color 0s;
-                transition: color 0s;
-
-        color: #263746;
-    }
-    .page-header-upper-content .navbar-toggle > .fa
-    {
-        vertical-align: middle;
-    }
-}
-@media screen and (max-width: 991px) and (min-width: 480px)
-{
-    .page-header .page-header-upper
-    {
-        height: 90px;
-    }
-}
-@media screen and (max-width: 991px) and (min-width: 480px)
-{
-    .page-header-upper-content .navbar-toggle
-    {
-        top: 0;
-    }
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11183,6 +11122,147 @@ h6
             transition: color 0s;
 
     color: #95d600;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.page-footer
+{
+    background: #fff;
+}
+.page-footer .page-footer-col
+{
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.page-footer .page-footer-col-siteinfo
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    background: #d9d9d9;
+}
+.page-footer h4
+{
+    font-weight: normal;
+
+    margin: 1em 0;
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.page-footer p
+{
+    max-width: 360px;
+    margin: 1em 0;
+}
+.page-footer a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: underline;
+}
+.page-footer a:hover,
+.page-footer a:focus
+{
+    color: #26cad3;
+}
+.page-footer a:active,
+.page-footer a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
+.page-footer dt
+{
+    font-size: 1em;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+.page-footer dd
+{
+    margin-bottom: 1em;
+}
+.page-footer .brand .brand-district-logo
+{
+    width: auto;
+    max-width: auto;
+    height: auto;
+    max-height: 80px;
+    margin-top: -80px;
+}
+.page-footer .page-footer-nav > li > a,
+.page-footer .page-footer-nav-siteinfo > li > a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.page-footer .page-footer-nav > li > a:hover,
+.page-footer .page-footer-nav-siteinfo > li > a:hover,
+.page-footer .page-footer-nav > li > a:focus,
+.page-footer .page-footer-nav-siteinfo > li > a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.page-footer .page-footer-nav > li > a:active,
+.page-footer .page-footer-nav-siteinfo > li > a:active,
+.page-footer .page-footer-nav > li > a.active,
+.page-footer .page-footer-nav-siteinfo > li > a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
+.page-footer .page-footer-nav
+{
+    line-height: 2;
+
+    margin: .5em 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    text-transform: uppercase;
+}
+.page-footer .page-footer-social
+{
+    margin-top: .5em;
+}
+.page-footer .page-footer-social > li
+{
+    margin-right: 1em;
+}
+.page-footer .page-footer-siteinfo,
+.page-footer .page-footer-nav-siteinfo
+{
+    margin-top: 1em;
+}
+.page-footer .page-footer-nav-siteinfo > li:not(:last-child):after
+{
+    margin: 0 .5em;
+
+    content: '|';
+}
+.page-footer .page-footer-siteinfo
+{
+    display: inline-block;
 }
 /*!
  * CuyahogaRecycles.org theme

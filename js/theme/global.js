@@ -136,7 +136,7 @@
                 width: 320,
                 position: 'right',
                 speed: slideRevealTransitionSpeed,
-                trigger: $( '[data-action="menu-open"]' ),
+                trigger: $( '[data-action="panel-menu-open"]' ),
                 push: false,
                 overlay: false,
                 show: onShow,
@@ -154,7 +154,7 @@
                 width: 300,
                 position: 'right',
                 speed: slideRevealTransitionSpeed,
-                trigger: $( '[data-action="community-open"]' ),
+                trigger: $( '[data-action="panel-community-open"]' ),
                 push: false,
                 overlay: false,
                 show: onShow,
@@ -331,7 +331,7 @@
         } )();
 
         //
-        // Header sticky
+        // Header sticky & Goto top link
         //
 
         ( function () {
@@ -341,6 +341,8 @@
                 $pageHeaderUpper = $pageHeader.find( '.page-header-upper' ),
                 $pageHeaderNavbar1 = $pageHeader.find( '.navbar.navbar-default' ).eq( 0 ).find( '.container-fluid' ),
                 $pageHeaderNavbar2 = $pageHeader.find( '.navbar.navbar-default' ).eq( 1 ),
+                $htmlBody = $( 'html, body' ),
+                $gotoTopWrapper = $( '.goto-top-wrapper' ),
                 pageHeaderTopOffset;
 
             function getTopOffset () {
@@ -382,14 +384,25 @@
                             } );
                     }
                     $pageHeader.addClass( 'header-sticky-detached' );
+                    $gotoTopWrapper.removeClass( 'goto-top-hidden' );
                 }
                 else {
                     $pageHeader.removeClass( 'header-sticky-detached' );
+                    $gotoTopWrapper.addClass( 'goto-top-hidden' );
                 }
 
             } );
 
             $window.on( 'resize', setTopOffset );
+
+            $( '[data-action="goto-top"]' ).on( 'click', function ( e ) {
+                $this = $( this );
+                $htmlBody.animate( { scrollTop: 0 }, 'slow', function () {
+                    $this.blur();
+                } );
+                e.preventDefault();
+                return false;
+            } );
 
             // Init
             $pageHeader.addClass( 'header-sticky' );
@@ -565,7 +578,7 @@
         // Header search
         //
 
-        $( '[data-action="toggle-sb"]' ).on( 'click', function ( e ) {
+        $( '[data-action="sb-toggle"]' ).on( 'click', function ( e ) {
             $( '.sb-search' ).addClass( 'sb-search-open' );
             $( '.sb-search-input' ).focus();
             e.preventDefault()

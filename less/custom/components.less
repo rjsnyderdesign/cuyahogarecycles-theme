@@ -34,23 +34,6 @@
 
 
 //
-// Type
-// --------------------------------------------------
-
-h1 {
-  font-weight: bold;
-}
-
-.text-small {
-  font-size: @font-size-small;
-}
-
-.text-large {
-  font-size: @font-size-large;
-}
-
-
-//
 // Layout
 // --------------------------------------------------
 
@@ -376,227 +359,41 @@ body:not(.noscroll) {
 
 
 //
-// Header
+// Return to top button
 // --------------------------------------------------
 
-.page-header {
-  width: 100%;
-  background: @brand-info;
-  color: @white;
+@btn-goto-top-size: 48px;
+@btn-goto-top-spacing: (@btn-goto-top-size / 4);
 
-  .page-header-skip {
-    position: absolute;
-    top: (@font-size-base / 4);
-    left: (@grid-gutter-width / 2);
+.goto-top-wrapper {
+  width: @btn-goto-top-size;
+  height: @btn-goto-top-size;
+  display: block;
+  position: fixed;
+  bottom: (@font-size-base * 3);
+  right: (@grid-gutter-width / 2);
+  z-index: 1020;
+  padding: 0;
+  opacity: 1;
+
+  .transition(opacity @link-transition-speed, z-index 0s;);
+
+  &.goto-top-hidden {
+    opacity: 0;
+    z-index: -9999;
+
+    .transition(opacity @link-transition-speed, z-index 0s @link-transition-speed;);
   }
 
-  .page-header-upper {
-    padding-top: (@font-size-base * 2);
-  }
-
-  .page-header-upper-content {
+  > .goto-top-btn {
     width: 100%;
-    position: relative;
-  }
+    height: 100%;
+    display: block;
+    padding: @btn-goto-top-spacing;
+    font-size: (@btn-goto-top-size - @btn-goto-top-spacing);
+    line-height: (@btn-goto-top-size - @btn-goto-top-spacing);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
 
-  .page-header-upper-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
-
-  .login-link {
-    font-size: @font-size-small;
-    font-weight: normal;
-    text-transform: uppercase;
-    margin-right: 20px;
-    padding-top: 7px;
-
-    .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
-  }
-}
-
-.page-header-social-links {
-  float: right;
-
-  &:extend(.social-links all);
-
-  > li {
-    > a {
-      .link-fx-btn(darken(@brand-info, 15%); @brand-dark);
-    }
-  }
-}
-
-.navbar {
-  min-height: @navbar-height;
-  font-size: @em-base;
-  letter-spacing: @letter-spacing;
-  text-transform: uppercase;
-}
-
-.navbar-nav.navbar-primary {
-  > li {
-
-    @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      max-width: 125px;
-      display: inline-block;
-      float: none;
-      font-size: (@font-size-base * 0.875);
-      vertical-align: bottom;
-    }
-
-    > a {
-      color: @white;
-
-      .transition(color @link-transition-speed);
-
-      &:before {
-        width: 100%;
-        height: 0;
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background: @white;
-        content: '';
-
-        .transition(
-          height @link-transition-speed,
-          background-color @link-transition-speed;
-        );
-      }
-
-      &:hover,
-      &:focus {
-        color: @white;
-
-        &:before {
-          height: (@font-size-base / 2);
-        }
-      }
-
-      &:active,
-      &.active {
-        color: @brand-dark;
-
-        .transition(color 0s);
-
-        &:before {
-          .transition(height 0s);
-        }
-      }
-    }
-  }
-}
-
-.header-infobar {
-  &.row-sm-full-height {
-    > .col-main-full-height,
-    > .col-side-full-height {
-      white-space: nowrap;
-      vertical-align: middle;
-    }
-  }
-}
-
-.city-recycling-btn {
-  height: @navbar-height;
-  padding: 0 (@grid-gutter-width / 2);
-  background: @brand-success;
-  border: 0 none;
-  border-left: 2px solid @brand-primary;
-  color: @brand-primary;
-
-  .link-fx-color(@white; @white);
-}
-
-
-//
-// Footer
-// --------------------------------------------------
-
-@page-footer-padding-top: 80px;
-
-.page-footer {
-  background: @white;
-
-  .page-footer-col {
-    padding-top: (@page-footer-padding-top + @grid-gutter-width / 2);
-    padding-bottom: @grid-gutter-width;
-  }
-
-  .page-footer-col-siteinfo {
-    padding-top: @font-size-base;
-    padding-bottom: @font-size-base;
-    background: @gray-light;
-  }
-
-  h4 {
-    margin: @font-size-base 0;
-    font-weight: normal;
-    letter-spacing: @letter-spacing;
-    text-transform: uppercase;
-  }
-
-  p {
-    max-width: 360px;
-    margin: @font-size-base 0;
-  }
-
-  a {
-    .link-fx-text(@brand-info; @brand-success);
-  }
-
-  dt {
-    .small-header;
-  }
-
-  dd {
-    margin-bottom: @font-size-base;
-  }
-
-  .brand .brand-district-logo {
-    width: auto;
-    max-width: auto;
-    height: auto;
-    max-height: @page-footer-padding-top;
-    margin-top: (-@page-footer-padding-top);
-  }
-
-  .page-footer-nav,
-  .page-footer-nav-siteinfo {
-    > li > a {
-      .link-fx-nav(@brand-info; @brand-success);
-    }
-  }
-
-  .page-footer-nav {
-    margin: (@font-size-base / 2) 0;
-    padding-left: 0;
-    line-height: 2;
-    list-style: none;
-    text-transform: uppercase;
-  }
-
-  .page-footer-social {
-    margin-top: (@font-size-base / 2);
-
-    > li {
-      margin-right: @font-size-base;
-    }
-  }
-
-  .page-footer-nav-siteinfo {
-    > li:not(:last-child):after {
-      content: '|';
-      margin: 0 (@font-size-base / 2);
-    }
-  }
-
-  .page-footer-siteinfo {
-    display: inline-block;
-    margin-bottom: 1em;
+    .link-fx-nav(@brand-info; @brand-success);
   }
 }

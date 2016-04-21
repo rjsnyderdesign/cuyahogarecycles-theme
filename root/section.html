@@ -15,23 +15,23 @@
     <link type="image/x-icon" href="/favicon.ico" rel="icon" />
     <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 
     <!-- stylesheets -->
     <link type="text/css" href="../dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -62,7 +62,7 @@
           <a
             class="navbar-toggle"
             href="#panel-menu"
-            data-action="menu-open"
+            data-action="panel-menu-open"
             data-toggle="collapse"
             data-target="#bs-navbar"
             aria-controls="bs-navbar"
@@ -83,11 +83,11 @@
           </div><!-- /.brand -->
           <div class="page-header-upper-right">
             <div class="search-container">
-              <label data-action="toggle-sb">Search Site</label>
+              <label data-action="sb-toggle">Search Site</label>
               <div id="sb-search" class="sb-search" role="search">
                 <div class="form">
-                  <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search">
-                  <input class="sb-search-submit" type="submit" value="">
+                  <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search" />
+                  <input class="sb-search-submit" type="submit" value="Search" />
                   <span class="sb-icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
                 </div>
               </div>
@@ -345,7 +345,7 @@
           <div class="col-side-full-height hidden-xs">
 
             <div class="pal-primary">
-              <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="community-open">
+              <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="panel-community-open">
                 <div class="btn-center-inner">
                   Recycling in <br class="visible-sm" />my Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
                 </div>
@@ -594,6 +594,13 @@
       </div><!-- /.container-fluid -->
     </footer>
 
+    <aside class="goto-top-wrapper">
+      <a class="goto-top-btn" title="Return to top" href="." data-action="goto-top">
+        <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>
+        <span class="sr-only">Return to top</span>
+      </a>
+    </aside>
+
     <!-- slider panels -->
 
     <div class="slidereveal-panel" id="panel-community">
@@ -710,7 +717,7 @@
           </a>
         </div>
 
-        <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="community-open">
+        <a class="city-recycling-btn btn-center-outer" href="#panel-community" data-action="panel-community-open">
           <div class="btn-center-inner">
             Recycling In My Community <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
           </div>

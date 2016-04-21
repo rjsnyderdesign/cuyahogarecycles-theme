@@ -35,7 +35,24 @@
 
     @media screen and (min-width: @grid-float-breakpoint) {
       .page-header-upper {
+        height: @navbar-sm-height;
+        padding-top: @font-size-base;
+        padding-bottom: @font-size-base;
+      }
+
+      .page-header-upper-right,
+      .navbar-first {
         display: none;
+      }
+
+      .navbar-toggle {
+        display: block;
+      }
+
+      .brand {
+        .brand-logo-main {
+          width: @brand-logo-main-sm-width;
+        }
       }
     }
 

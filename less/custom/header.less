@@ -1,0 +1,210 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Header
+// --------------------------------------------------
+
+@navbar-toggle-size: 32px;
+@navbar-toggle-spacing: (@navbar-toggle-size / 4);
+@navbar-sm-height: 90px;
+@navbar-height-enlarged-by: (@navbar-sm-height - @navbar-height);
+
+
+//
+// Header basic
+// --------------------------------------------------
+
+.page-header {
+  width: 100%;
+  background: @brand-info;
+  color: @white;
+  font-size: @em-base;
+  letter-spacing: (@em-base * 0.035);
+
+  .page-header-skip {
+    position: absolute;
+    top: (@font-size-base / 4);
+    left: (@grid-gutter-width / 2);
+  }
+
+  .page-header-upper {
+    height: @navbar-height;
+    padding-top: @em-base;
+    padding-bottom: @em-base;
+
+    @media screen and (min-width: @screen-xs-min) {
+      height: @navbar-sm-height;
+    }
+
+    @media screen and (min-width: @grid-float-breakpoint) {
+      height: auto;
+      padding-top: (@em-base * 2);
+      padding-bottom: 0;
+    }
+  }
+
+  .page-header-upper-content {
+    width: 100%;
+    position: relative;
+  }
+
+  .page-header-upper-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar-first {
+    display: none;
+  }
+
+  .login-link {
+    font-size: @em-small;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-right: 20px;
+    padding-top: 7px;
+
+    .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
+  }
+
+  @media screen and (min-width: @grid-float-breakpoint) {
+    .page-header-upper-right,
+    .navbar-first {
+      display: block;
+    }
+  }
+}
+
+.page-header-social-links {
+  float: right;
+
+  &:extend(.social-links all);
+
+  > li {
+    > a {
+      .link-fx-btn(darken(@brand-info, 15%); @brand-dark);
+    }
+  }
+}
+
+
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar {
+  min-height: @navbar-height;
+  font-size: @em-base;
+  letter-spacing: @letter-spacing;
+  text-transform: uppercase;
+}
+
+.navbar-nav.navbar-primary {
+  > li {
+
+    @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      max-width: 125px;
+      display: inline-block;
+      float: none;
+      font-size: 0.875em;
+      vertical-align: bottom;
+    }
+
+    > a {
+      color: @white;
+
+      .transition(color @link-transition-speed);
+
+      &:before {
+        width: 100%;
+        height: 0;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: @white;
+        content: '';
+
+        .transition(
+          height @link-transition-speed,
+          background-color @link-transition-speed;
+        );
+      }
+
+      &:hover,
+      &:focus {
+        color: @white;
+
+        &:before {
+          height: 0.5em;
+        }
+      }
+
+      &:active,
+      &.active {
+        color: @brand-dark;
+
+        .transition(color 0s);
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  width: (@navbar-toggle-size * 1.5);
+  height: (@navbar-toggle-size * 1.5);
+  position: absolute;
+  top: ((@navbar-height - @navbar-toggle-size * 1.5) / 2 - @em-base);
+  right: -@navbar-toggle-spacing;
+  margin: 0;
+  padding: @navbar-toggle-spacing;
+  border: 0 none;
+  font-size: @navbar-toggle-size;
+  line-height: @navbar-toggle-size;
+  text-align: center;
+
+  .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
+
+  @media (min-width: @screen-xs-min) {
+    top: ((@navbar-sm-height - @navbar-toggle-size * 1.5) / 2 - @em-base);
+  }
+}
+
+
+//
+// WDIDW & Recycling in My Community
+// --------------------------------------------------
+
+.header-infobar {
+  &.row-sm-full-height {
+    > .col-main-full-height,
+    > .col-side-full-height {
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+  }
+}
+
+.city-recycling-btn {
+  height: @navbar-height;
+  padding: 0 (@grid-gutter-width / 2);
+  background: @brand-success;
+  border: 0 none;
+  border-left: 2px solid @brand-primary;
+  color: @brand-primary;
+
+  .link-fx-color(@white; @white);
+}
