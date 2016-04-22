@@ -12186,6 +12186,19 @@ h6
          -o-transform: scale(1.25);
             transform: scale(1.25);
 }
+.tile-grid.tile-grid-events > .grid-cell
+{
+    width: 50%;
+    padding-bottom: 50%;
+}
+@media screen and (min-width: 800px)
+{
+    .tile-grid.tile-grid-events > .grid-cell
+    {
+        width: 37.5%;
+        padding-bottom: 37.5%;
+    }
+}
 .tile-grid.tile-grid-staff > .grid-cell
 {
     width: 100%;
