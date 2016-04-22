@@ -933,11 +933,15 @@
                 $( this ).data( 'touch-count', 0 );
             } );
 
-            $staffTiles.on( 'tap', function ( e ) {
+            $staffTiles.on( 'tapstart', function ( e ) {
                 var $this = $( this );
                 $staffTiles.not( $this ).each( function () {
                     $( this ).data( 'touch-count', 0 );
                 } );
+            } );
+
+            $staffTiles.on( 'tap', function ( e ) {
+                var $this = $( this );
                 $this.data( 'touch-count', $this.data( 'touch-count' ) + 1 );
                 if ( $this.data( 'touch-count' ) === 1 ) {
                     $this.focus();
