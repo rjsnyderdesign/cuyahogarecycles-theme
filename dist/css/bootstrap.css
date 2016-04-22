@@ -13055,16 +13055,10 @@ h6
 {
     text-align: center;
 }
-.item-basics-alignment
-{
-    display: inline-block;
-}
 .item-basics-cat,
 .item-cat-selector
 {
     margin: 0 auto;
-
-    text-align: center;
 }
 .item-basics-cat[role='tabpanel']:not(.active)
 {
@@ -13072,15 +13066,31 @@ h6
 }
 .item-basics-cat > .item-basics-cat-row
 {
-    display: inline-block;
-
     -webkit-transform: translate3d(0, 0, -9999px);
             transform: translate3d(0, 0, -9999px);
-    text-align: left;
 }
 .item-basics
 {
     font-size: .75em;
+}
+.item-basics .item-basics-title
+{
+    text-transform: none;
+}
+.item-basics .item-basics-subtitle
+{
+    font-size: 1.25em;
+
+    height: 2em;
+}
+@media screen and (min-width: 720px)
+{
+    .item-basics .item-basics-subtitle
+    {
+        font-size: 1.5em;
+
+        height: 3em;
+    }
 }
 @media screen and (min-width: 900px)
 {
@@ -13094,104 +13104,6 @@ h6
     .item-basics
     {
         font-size: 1em;
-    }
-}
-.item-basics .item-basics-title
-{
-    text-transform: none;
-}
-.item-basics .item-basics-subtitle
-{
-    font-size: 1.5em;
-
-    height: 3em;
-}
-.item-coin
-{
-    -webkit-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-         -o-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center;
-
-    opacity: 1;
-
-            backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-.item-coin:nth-child(1)
-{
-    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 50ms;
-         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 50ms;
-            transition:         transform 500ms ease 0ms, opacity 0s ease 50ms;
-}
-.item-coin.item-coin-flip:nth-child(1)
-{
-    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 150ms;
-         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 150ms;
-            transition:         transform 500ms ease 0ms, opacity 0s ease 150ms;
-}
-.item-coin:nth-child(2)
-{
-    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 150ms;
-         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 150ms;
-            transition:         transform 500ms ease 100ms, opacity 0s ease 150ms;
-}
-.item-coin.item-coin-flip:nth-child(2)
-{
-    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 250ms;
-         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 250ms;
-            transition:         transform 500ms ease 100ms, opacity 0s ease 250ms;
-}
-.item-coin:nth-child(3)
-{
-    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 250ms;
-         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 250ms;
-            transition:         transform 500ms ease 200ms, opacity 0s ease 250ms;
-}
-.item-coin.item-coin-flip:nth-child(3)
-{
-    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 350ms;
-         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 350ms;
-            transition:         transform 500ms ease 200ms, opacity 0s ease 350ms;
-}
-.item-coin:nth-child(4)
-{
-    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 350ms;
-         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 350ms;
-            transition:         transform 500ms ease 300ms, opacity 0s ease 350ms;
-}
-.item-coin.item-coin-flip:nth-child(4)
-{
-    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 450ms;
-         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 450ms;
-            transition:         transform 500ms ease 300ms, opacity 0s ease 450ms;
-}
-.item-coin:nth-child(5)
-{
-    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 450ms;
-         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 450ms;
-            transition:         transform 500ms ease 400ms, opacity 0s ease 450ms;
-}
-.item-coin.item-coin-flip:nth-child(5)
-{
-    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 550ms;
-         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 550ms;
-            transition:         transform 500ms ease 400ms, opacity 0s ease 550ms;
-}
-@media screen and (min-width: 900px)
-{
-    .item-coin.item-coin-flip
-    {
-        -webkit-transform: rotateY(180deg);
-            -ms-transform: rotateY(180deg);
-             -o-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-
-        opacity: 0;
     }
 }
 .item-basics .item-figure
@@ -13210,6 +13122,96 @@ h6
 .item-basics .item-link
 {
     margin: 0;
+}
+.item-basics .item-cat-selector
+{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.item-basics .item-cat-selector > li
+{
+    margin: 0 .5em ;
+}
+.item-basics .item-cat-selector-opt
+{
+    display: block;
+
+    color: inherit;
+}
+.item-basics .item-cat-selector-opt .item-color-key
+{
+    background: none;
+}
+.item-basics .item-cat-selector-opt:hover,
+.item-basics .item-cat-selector-opt:focus,
+.item-basics .item-cat-selector-opt:active,
+.item-basics .item-cat-selector-opt.active
+{
+    text-decoration: none;
+}
+.item-basics .item-cat-selector-opt:hover[data-item-key='home-recycling'],
+.item-basics .item-cat-selector-opt:focus[data-item-key='home-recycling'],
+.item-basics .item-cat-selector-opt:active[data-item-key='home-recycling'],
+.item-basics .item-cat-selector-opt.active[data-item-key='home-recycling']
+{
+    color: #26cad3;
+}
+.item-basics .item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
+.item-basics .item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
+.item-basics .item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
+.item-basics .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
+{
+    color: #f6b221;
+}
+.item-basics .item-cat-selector-opt:hover[data-item-key='proper-disposal'],
+.item-basics .item-cat-selector-opt:focus[data-item-key='proper-disposal'],
+.item-basics .item-cat-selector-opt:active[data-item-key='proper-disposal'],
+.item-basics .item-cat-selector-opt.active[data-item-key='proper-disposal']
+{
+    color: #e84b37;
+}
+.item-basics .item-cat-selector-opt:hover[data-item-key='compost'],
+.item-basics .item-cat-selector-opt:focus[data-item-key='compost'],
+.item-basics .item-cat-selector-opt:active[data-item-key='compost'],
+.item-basics .item-cat-selector-opt.active[data-item-key='compost']
+{
+    color: #00833e;
+}
+.item-basics .item-cat-selector-opt.active
+{
+    background: none;
+}
+.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling
+{
+    background: #26cad3;
+}
+.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling
+{
+    background: #f6b221;
+}
+.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal
+{
+    background: #e84b37;
+}
+.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-compost
+{
+    background: #00833e;
+}
+.item-basics .item-cat-selector-opt.active[data-item-key='home-recycling']
+{
+    border-color: #26cad3;
+}
+.item-basics .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
+{
+    border-color: #f6b221;
+}
+.item-basics .item-cat-selector-opt.active[data-item-key='proper-disposal']
+{
+    border-color: #e84b37;
+}
+.item-basics .item-cat-selector-opt.active[data-item-key='compost']
+{
+    border-color: #00833e;
 }
 .item-basics.item-basics-mb
 {
@@ -13293,20 +13295,20 @@ h6
         height: 278px;
     }
 }
-.item-basics.item-basics-dk .item-cat-selector .item-cat-selector-opt
+.item-basics.item-basics-dk .item-cat-selector > li
 {
-    display: block;
+    width: 15em;
 
-    padding-right: .5em;
-
+    text-align: left;
+}
+.item-basics.item-basics-dk .item-cat-selector-opt
+{
     -webkit-transition: border-color 500ms, color 500ms;
          -o-transition: border-color 500ms, color 500ms;
             transition: border-color 500ms, color 500ms;
 
-    color: inherit;
-    border: 2px solid transparent;
-    border-radius: 1em;
-    background: #e6e6e6;
+    border: 2px solid #e6e6e6;
+    border-radius: 1.5em;
 }
 .item-basics.item-basics-mb .item-basics-cat-row
 {
@@ -13352,125 +13354,109 @@ h6
     display: inline-block;
 
     margin: .25em;
+
+    -webkit-transition: opacity 500ms;
+         -o-transition: opacity 500ms;
+            transition: opacity 500ms;
+
+    opacity: 1;
+}
+.item-basics.item-basics-mb .item-figure.item-fade
+{
+    opacity: 0;
 }
 .item-basics.item-basics-mb .item-icon.item-icon-size-basics
 {
     border-width: 2px;
 }
-.item-basics.item-basics-mb .item-cat-selector .item-cat-selector-opt
+.item-basics.item-basics-mb .item-cat-selector-opt
 {
-    display: inline-block;
+    margin-top: 0;
 }
-.item-cat-selector
+.item-coin
 {
-    margin-top: 2em;
-}
-@media screen and (min-width: 720px)
-{
-    .item-cat-selector > li
-    {
-        float: left;
-        clear: both;
+    -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+         -o-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
 
-        width: 20em;
-        margin-right: 1em;
-        margin-bottom: 1em;
+    opacity: 1;
 
-        text-align: left;
-    }
+            backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
-@media screen and (min-width: 900px)
+.item-coin:nth-child(1)
 {
-    .item-cat-selector > li
-    {
-        float: none;
+    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 50ms;
+         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 50ms;
+            transition:         transform 500ms ease 0ms, opacity 0s ease 50ms;
+}
+.item-coin.item-coin-flip:nth-child(1)
+{
+    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 150ms;
+         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 150ms;
+            transition:         transform 500ms ease 0ms, opacity 0s ease 150ms;
+}
+.item-coin:nth-child(2)
+{
+    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 150ms;
+         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 150ms;
+            transition:         transform 500ms ease 100ms, opacity 0s ease 150ms;
+}
+.item-coin.item-coin-flip:nth-child(2)
+{
+    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 250ms;
+         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 250ms;
+            transition:         transform 500ms ease 100ms, opacity 0s ease 250ms;
+}
+.item-coin:nth-child(3)
+{
+    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 250ms;
+         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 250ms;
+            transition:         transform 500ms ease 200ms, opacity 0s ease 250ms;
+}
+.item-coin.item-coin-flip:nth-child(3)
+{
+    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 350ms;
+         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 350ms;
+            transition:         transform 500ms ease 200ms, opacity 0s ease 350ms;
+}
+.item-coin:nth-child(4)
+{
+    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 350ms;
+         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 350ms;
+            transition:         transform 500ms ease 300ms, opacity 0s ease 350ms;
+}
+.item-coin.item-coin-flip:nth-child(4)
+{
+    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 450ms;
+         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 450ms;
+            transition:         transform 500ms ease 300ms, opacity 0s ease 450ms;
+}
+.item-coin:nth-child(5)
+{
+    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 450ms;
+         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 450ms;
+            transition:         transform 500ms ease 400ms, opacity 0s ease 450ms;
+}
+.item-coin.item-coin-flip:nth-child(5)
+{
+    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 550ms;
+         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 550ms;
+            transition:         transform 500ms ease 400ms, opacity 0s ease 550ms;
+}
+.item-coin.item-coin-flip
+{
+    -webkit-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+         -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 
-        width: auto;
-    }
-}
-.item-basics-cat-link
-{
-    display: inline-block;
-}
-.item-basics-cat-link:hover,
-.item-basics-cat-link:focus
-{
-    text-decoration: none;
-}
-.item-cat-selector .item-cat-selector-opt .item-color-key
-{
-    background: none;
-}
-.item-cat-selector .item-cat-selector-opt:hover,
-.item-cat-selector .item-cat-selector-opt:focus,
-.item-cat-selector .item-cat-selector-opt:active,
-.item-cat-selector .item-cat-selector-opt.active
-{
-    text-decoration: none;
-}
-.item-cat-selector .item-cat-selector-opt:hover[data-item-key='home-recycling'],
-.item-cat-selector .item-cat-selector-opt:focus[data-item-key='home-recycling'],
-.item-cat-selector .item-cat-selector-opt:active[data-item-key='home-recycling'],
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='home-recycling']
-{
-    color: #26cad3;
-}
-.item-cat-selector .item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
-.item-cat-selector .item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
-.item-cat-selector .item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
-{
-    color: #f6b221;
-}
-.item-cat-selector .item-cat-selector-opt:hover[data-item-key='proper-disposal'],
-.item-cat-selector .item-cat-selector-opt:focus[data-item-key='proper-disposal'],
-.item-cat-selector .item-cat-selector-opt:active[data-item-key='proper-disposal'],
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='proper-disposal']
-{
-    color: #e84b37;
-}
-.item-cat-selector .item-cat-selector-opt:hover[data-item-key='compost'],
-.item-cat-selector .item-cat-selector-opt:focus[data-item-key='compost'],
-.item-cat-selector .item-cat-selector-opt:active[data-item-key='compost'],
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='compost']
-{
-    color: #00833e;
-}
-.item-cat-selector .item-cat-selector-opt.active
-{
-    background: none;
-}
-.item-cat-selector .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling
-{
-    background: #26cad3;
-}
-.item-cat-selector .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling
-{
-    background: #f6b221;
-}
-.item-cat-selector .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal
-{
-    background: #e84b37;
-}
-.item-cat-selector .item-cat-selector-opt.active .item-color-key.item-color-key-compost
-{
-    background: #00833e;
-}
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='home-recycling']
-{
-    border-color: #26cad3;
-}
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
-{
-    border-color: #f6b221;
-}
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='proper-disposal']
-{
-    border-color: #e84b37;
-}
-.item-cat-selector .item-cat-selector-opt.active[data-item-key='compost']
-{
-    border-color: #00833e;
+    opacity: 0;
 }
 /*!
  * CuyahogaRecycles.org theme

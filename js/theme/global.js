@@ -812,6 +812,8 @@
 
                 isSwapping = true;
 
+                $itemFigures.addClass( 'item-fade' );
+
                 window.clearTimeout( swapTimeout );
                 if ( !isManual ) window.clearTimeout( flipTimeout );
 
@@ -836,7 +838,13 @@
                         .attr( 'aria-hidden', 'false' );
 
                     isSwapping = false;
-                    currentSlide = $itemBasicsCat.index();
+
+                    // unflip
+                    window.clearTimeout( flipTimeout );
+                    flipTimeout = window.setTimeout( function () {
+                        $itemFigures.removeClass( 'item-fade' );
+                        currentSlide = $itemBasicsCat.index();
+                    }, 100 );
 
                 }, flipDelay );
             }
