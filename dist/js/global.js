@@ -951,21 +951,19 @@ if (typeof jQuery === 'undefined') {
                 $( this ).data( 'touch-count', 0 );
             } );
 
-            $staffTiles.on( 'touchstart', function ( e ) {
-                var $this = $( this );
-                $staffTiles.not( $this ).each( function () {
-                    $( this ).data( 'touch-count', 0 );
-                } );
-            } );
-
-            $staffTiles.on( 'touchend', function ( e ) {
+            $staffTiles.on( 'tap', function ( e ) {
                 var $this = $( this );
                 $staffTiles.not( $this ).each( function () {
                     $( this ).data( 'touch-count', 0 );
                 } );
                 $this.data( 'touch-count', $this.data( 'touch-count' ) + 1 );
-                if ( $this.data( 'touch-count' ) === 0 ) { return false; }
-                else if ( $this.data( 'touch-count' ) === 1 ) { return true; }
+                if ( $this.data( 'touch-count' ) === 1 ) {
+                    $this.focus();
+                    return false;
+                }
+                else if ( $this.data( 'touch-count' ) === 2 ) {
+                    return true;
+                }
             } );
 
             $staffTiles.blur( function ( e ) {

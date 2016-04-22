@@ -125,6 +125,7 @@ module.exports = function (grunt) {
       libs: {
         src: [
           'js/theme/libs/classie.js',
+          'js/theme/libs/jquery.mobile-events.js',
           'js/theme/libs/jquery.responsImg.min.js',
           'js/theme/libs/jquery.slidereveal.min.js',
           'js/theme/libs/mq.genie.js',
