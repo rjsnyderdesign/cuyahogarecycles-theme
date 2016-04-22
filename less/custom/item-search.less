@@ -15,6 +15,12 @@
 // --------------------------------------------------
 
 .item-search {
+  @media screen and (max-width: @screen-md-min) {
+    .row-md-full-height > .item-search-col-left {
+      display: none;
+    }
+  }
+
   @media screen and (min-width: @screen-lg-min) {
     padding-left: 0;
     padding-right: 0;
@@ -38,6 +44,25 @@
 .item-search-col-right {
   padding: 0 (@grid-gutter-width / 2);
   background: @white;
+}
+
+
+//
+// Item filter bar
+// --------------------------------------------------
+
+.item-filter-bar {
+  margin: 0 (-@grid-gutter-width / 2);
+  padding: 1em (@grid-gutter-width / 2);
+  background: @gray-lighter;
+
+  @media screen and (min-width: @screen-md-min) {
+    display: none;
+  }
+
+  .item-filter-panel-open {
+    .link-fx-nav(@brand-info; @brand-success);
+  }
 }
 
 

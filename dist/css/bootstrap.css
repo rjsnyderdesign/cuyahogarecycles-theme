@@ -12673,6 +12673,13 @@ h6
 /*!
  * CuyahogaRecycles.org theme
  */
+@media screen and (max-width: 992px)
+{
+    .item-search .row-md-full-height > .item-search-col-left
+    {
+        display: none;
+    }
+}
 @media screen and (min-width: 1200px)
 {
     .item-search
@@ -12707,6 +12714,48 @@ h6
     padding: 0 40px;
 
     background: #fff;
+}
+.item-filter-bar
+{
+    margin: 0 -40px;
+    padding: 1em 40px;
+
+    background: #e6e6e6;
+}
+@media screen and (min-width: 992px)
+{
+    .item-filter-bar
+    {
+        display: none;
+    }
+}
+.item-filter-bar .item-filter-panel-open
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.item-filter-bar .item-filter-panel-open:hover,
+.item-filter-bar .item-filter-panel-open:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.item-filter-bar .item-filter-panel-open:active,
+.item-filter-bar .item-filter-panel-open.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
 }
 .item-filter-section
 {
