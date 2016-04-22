@@ -933,6 +933,13 @@
                 $( this ).data( 'touch-count', 0 );
             } );
 
+            $staffTiles.on( 'touchstart', function ( e ) {
+                var $this = $( this );
+                $staffTiles.not( $this ).each( function () {
+                    $( this ).data( 'touch-count', 0 );
+                } );
+            } );
+
             $staffTiles.on( 'touchend', function ( e ) {
                 var $this = $( this );
                 $staffTiles.not( $this ).each( function () {
