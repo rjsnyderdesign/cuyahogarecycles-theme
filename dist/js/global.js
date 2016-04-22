@@ -25,6 +25,11 @@ if (typeof jQuery === 'undefined') {
 
 ;( function ( window, $, undefined ) {
 
+    var MQ_xs = 480,
+        MQ_sm = 768,
+        MQ_md = 992,
+        MQ_lg = 1200;
+
     var SCROLLBAR_WIDTH = window.innerWidth - window.document.documentElement.clientWidth;
 
     var KEYBOARD = {
@@ -122,6 +127,7 @@ if (typeof jQuery === 'undefined') {
                 $pageScrollFreezable = $( '.page-scroll-freezable' ),
                 $panelMenu = $( '#panel-menu' ),
                 $panelCommunity = $( '#panel-community' ),
+                $panelItemFilter = $( '#panel-item-filter' ),
                 $slideRevealShroud = $( '<div/>' ).addClass( 'slidereveal-shroud' ),
                 openedPanels = [],
                 windowSizeBefore = window.innerWidth;
@@ -164,36 +170,58 @@ if (typeof jQuery === 'undefined') {
                 $pageFirst.focus().blur();
             }
 
-            $panelMenu.slideReveal( {
-                width: 320,
-                position: 'right',
-                speed: slideRevealTransitionSpeed,
-                trigger: $( '[data-action="panel-menu-open"]' ),
-                push: false,
-                overlay: false,
-                show: onShow,
-                shown: onShown,
-                hide: onHide,
-                hidden: function ( $slider, $trigger ) {
-                    // Close Sub Menu's when menu is hidden
-                    $( '#panel-menu .dropdown' ).find( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
-                    $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
-                    onHidden( $slider, $trigger );
-                }
-            } );
+            if ( $panelMenu ) {
+                $panelMenu.slideReveal( {
+                    width: 320,
+                    position: 'right',
+                    speed: slideRevealTransitionSpeed,
+                    trigger: $( '[data-action="panel-menu-open"]' ),
+                    push: false,
+                    overlay: false,
+                    show: onShow,
+                    shown: onShown,
+                    hide: onHide,
+                    hidden: function ( $slider, $trigger ) {
+                        // Close Sub Menu's when menu is hidden
+                        $( '#panel-menu .dropdown' ).find( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
+                        $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
+                        onHidden( $slider, $trigger );
+                    }
+                } );
+                $panelMenu.css( 'right', -320 );
+            }
 
-            $panelCommunity.slideReveal( {
-                width: 300,
-                position: 'right',
-                speed: slideRevealTransitionSpeed,
-                trigger: $( '[data-action="panel-community-open"]' ),
-                push: false,
-                overlay: false,
-                show: onShow,
-                shown: onShown,
-                hide: onHide,
-                hidden: onHidden
-            } );
+            if ( $panelCommunity ) {
+                $panelCommunity.slideReveal( {
+                    width: 300,
+                    position: 'right',
+                    speed: slideRevealTransitionSpeed,
+                    trigger: $( '[data-action="panel-community-open"]' ),
+                    push: false,
+                    overlay: false,
+                    show: onShow,
+                    shown: onShown,
+                    hide: onHide,
+                    hidden: onHidden
+                } );
+                $panelCommunity.css( 'right', -300 );
+            }
+
+            if ( $panelItemFilter ) {
+                $panelItemFilter.slideReveal( {
+                    width: 320,
+                    position: 'left',
+                    speed: slideRevealTransitionSpeed,
+                    trigger: $( '[data-action="panel-item-filter-open"]' ),
+                    push: false,
+                    overlay: false,
+                    show: onShow,
+                    shown: onShown,
+                    hide: onHide,
+                    hidden: onHidden
+                } );
+                $panelItemFilter.css( 'right', 0 );
+            }
 
             // Add close buttons
             $( '.slidereveal-panel' )
@@ -201,11 +229,6 @@ if (typeof jQuery === 'undefined') {
                 .on( 'click', function () {
                     $( this ).parents( '.slidereveal-panel' ).slideReveal( 'hide' );
                 } );
-
-            // Set panel position on load
-            // THIS IS FOR YOU SAFARI !!!
-            $panelMenu.css( 'right', -320 );
-            $panelCommunity.css( 'right', -300 );
 
             // Add custom overlay
             $body.append( $slideRevealShroud );
@@ -223,8 +246,8 @@ if (typeof jQuery === 'undefined') {
             // Window resize event
             $window.on( 'resize', function () {
                 var windowSizeAfter = window.innerWidth;
-                if ( windowSizeBefore < 768 && windowSizeAfter >= 768 ) {
-                    $panelMenu.slideReveal( 'hide' );
+                if ( windowSizeBefore < MQ_md && windowSizeAfter >= MQ_md && $panelItemFilter ) {
+                    $panelItemFilter.slideReveal( 'hide' );
                 }
                 windowSizeBefore = windowSizeAfter;
             } );

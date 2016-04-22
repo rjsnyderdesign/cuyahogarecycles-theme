@@ -1,0 +1,24 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "mixins.less";
+
+
+//
+// Panel - Item filter
+// --------------------------------------------------
+
+.slidereveal-panel#panel-item-filter {
+  padding-bottom: (@slidereveal-panel-bar-height * 1);
+  background: @gray-lighter;
+
+  .panel-body {
+    margin-bottom: (-@slidereveal-panel-bar-height * 1);
+  }
+}
