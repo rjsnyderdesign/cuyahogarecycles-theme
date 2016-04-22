@@ -13083,7 +13083,11 @@ h6
 {
     display: none;
 }
-.item-basics-cat > .item-basics-cat-row
+.item-basics-cat .item-basics-cat-link
+{
+    display: inline-block;
+}
+.item-basics-cat .item-basics-cat-row
 {
     -webkit-transform: translate3d(0, 0, -9999px);
             transform: translate3d(0, 0, -9999px);
