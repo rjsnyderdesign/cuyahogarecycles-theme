@@ -12878,6 +12878,14 @@ h6
     margin-top: 1em;
     margin-bottom: .5em;
 }
+.item-filter-list > li > a,
+.item-filter-list > dd > a,
+.item-filter-list > li > input[type='checkbox'],
+.item-filter-list > dd > input[type='checkbox']
+{
+    position: relative;
+    z-index: 1;
+}
 .item-filter-list > li > label,
 .item-filter-list > dd > label
 {
@@ -12911,12 +12919,6 @@ h6
 
         margin-top: .375em;
         margin-bottom: .375em;
-    }
-    .item-filter-list > li > input[type='checkbox'],
-    .item-filter-list > dd > a
-    {
-        position: relative;
-        z-index: 1;
     }
 }
 .item-filter-clear

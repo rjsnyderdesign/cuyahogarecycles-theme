@@ -110,6 +110,12 @@
 
   > li,
   > dd {
+    > a,
+    > input[type="checkbox"] {
+      position: relative;
+      z-index: 1;
+    }
+
     > label {
       display: inline-block;
       margin-left: (-@item-filter-label-offset);
@@ -133,12 +139,6 @@
         margin-bottom: 0.375em;
         font-size:     0.875em;
       }
-    }
-
-    > li > input[type="checkbox"],
-    > dd > a {
-      position: relative;
-      z-index: 1;
     }
   }
 }
