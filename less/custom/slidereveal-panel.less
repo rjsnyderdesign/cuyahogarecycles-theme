@@ -43,7 +43,7 @@
       > h2 {
         height: @slidereveal-panel-bar-height;
         margin: 0;
-        padding-left: (@grid-gutter-width / 2);
+        padding-left: @slidereveal-panel-padding-horizontal;
         font-size: @em-large;
         line-height: @slidereveal-panel-bar-height;
         text-transform: uppercase;
@@ -123,6 +123,7 @@
   left: 0;
   z-index: (@slidereveal-z-index-base - 2);
   background: rgba(0,0,0,0.5);
+  border: 0 solid #808080;
   opacity: 0;
   cursor: pointer;
 

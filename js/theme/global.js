@@ -85,7 +85,8 @@
 
         $body.append( $( '<style/>' ).attr( 'type', 'text/css' ).text(
             '.noscroll.noscroll-v{padding-right:' + SCROLLBAR_WIDTH + 'px;}' +
-            '.noscroll.noscroll-h{padding-bottom:' + SCROLLBAR_WIDTH + 'px;}'
+            '.noscroll.noscroll-h{padding-bottom:' + SCROLLBAR_WIDTH + 'px;}' +
+            '.slidereveal-shroud{border-right-width:' + SCROLLBAR_WIDTH + 'px;}'
         ) );
 
         //

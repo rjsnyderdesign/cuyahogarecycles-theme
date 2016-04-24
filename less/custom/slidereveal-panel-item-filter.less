@@ -18,7 +18,18 @@
   padding-bottom: (@slidereveal-panel-bar-height * 1);
   background: @gray-lighter;
 
+  .panel-head {
+    background: @gray-light;
+  }
+
   .panel-body {
     margin-bottom: (-@slidereveal-panel-bar-height * 1);
+  }
+
+  .item-filter-list {
+    > li,
+    > dd {
+      line-height: 2;
+    }
   }
 }
