@@ -91,9 +91,15 @@
   }
 
   .page-footer-nav-siteinfo {
-    > li:not(:last-child):after {
-      content: '|';
-      margin: 0 (@font-size-base / 2);
+    > li {
+      display: inline-block;
+      float: left;
+
+      &:not(:last-child):after {
+        content: '';
+        margin: 0 (@font-size-base / 2);
+        border-left: 2px solid @gray;
+      }
     }
   }
 

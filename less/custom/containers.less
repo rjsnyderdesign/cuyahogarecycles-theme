@@ -95,7 +95,7 @@
   label {
     color: @white;
     text-transform: uppercase;
-    white-space: nowrap;
+    vertical-align: top;
   }
 
   a {
@@ -138,8 +138,16 @@
     }
 
     label {
-      margin-right: @font-size-base;
-      line-height: 2;
+      margin-top: 0.5em;
+      margin-left: -2em;
+      padding-left: 2em;
+      padding-right: @font-size-base;
+      line-height: 1.25;
+    }
+
+    input[type="checkbox"] {
+      width: 1em;
+      margin: 0.625em 0.5em 0.5em 0;
     }
   }
 }
