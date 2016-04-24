@@ -4392,7 +4392,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     position: relative;
 
-    min-height: 70px;
+    min-height: 60px;
     margin-bottom: 0;
 }
 @media (min-width: 992px)
@@ -4538,8 +4538,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 
     float: left;
 
-    height: 70px;
-    padding: 34.375px 40px;
+    height: 60px;
+    padding: 29.375px 40px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus
@@ -4564,9 +4564,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 
     float: right;
 
-    margin-top: 18px;
+    margin-top: 13px;
     margin-right: 40px;
-    margin-bottom: 18px;
+    margin-bottom: 13px;
     padding: 9px 10px;
 
     border: 1px solid transparent;
@@ -4600,7 +4600,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-nav
 {
-    margin: 17.1875px -40px;
+    margin: 14.6875px -40px;
 }
 .navbar-nav > li > a
 {
@@ -4654,15 +4654,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     }
     .navbar-nav > li > a
     {
-        padding-top: 34.375px;
-        padding-bottom: 34.375px;
+        padding-top: 29.375px;
+        padding-bottom: 29.375px;
     }
 }
 .navbar-form
 {
-    margin-top: 33.75px;
+    margin-top: 28.75px;
     margin-right: -40px;
-    margin-bottom: 33.75px;
+    margin-bottom: 28.75px;
     margin-left: -40px;
     padding: 10px 40px;
 
@@ -4786,23 +4786,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-btn
 {
-    margin-top: 33.75px;
-    margin-bottom: 33.75px;
+    margin-top: 28.75px;
+    margin-bottom: 28.75px;
 }
 .navbar-btn.btn-sm
 {
-    margin-top: 28.5px;
-    margin-bottom: 28.5px;
+    margin-top: 23.5px;
+    margin-bottom: 23.5px;
 }
 .navbar-btn.btn-xs
 {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: 19px;
+    margin-bottom: 19px;
 }
 .navbar-text
 {
-    margin-top: 34.375px;
-    margin-bottom: 34.375px;
+    margin-top: 29.375px;
+    margin-bottom: 29.375px;
 }
 @media (min-width: 992px)
 {
@@ -9525,15 +9525,15 @@ h6
 }
 .page-header .page-header-upper
 {
-    height: 70px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    height: 60px;
+    padding: 8px;
 }
 @media screen and (min-width: 480px)
 {
     .page-header .page-header-upper
     {
         height: 90px;
+        padding: 16px 40px;
     }
 }
 @media screen and (min-width: 992px)
@@ -9648,7 +9648,7 @@ h6
 {
     font-size: 16px;
 
-    min-height: 70px;
+    min-height: 60px;
 
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -9718,7 +9718,7 @@ h6
     line-height: 32px;
 
     position: absolute;
-    top: -5px;
+    top: -2px;
     right: -8px;
 
     width: 48px;
@@ -9769,7 +9769,7 @@ h6
 }
 .city-recycling-btn
 {
-    height: 70px;
+    height: 60px;
     padding: 0 40px;
 
     cursor: pointer;
@@ -10080,7 +10080,7 @@ h6
     overflow: hidden;
 
     width: 100%;
-    height: 70px;
+    height: 60px;
 
     background: #00833e;
 }
@@ -10097,7 +10097,7 @@ h6
 
     width: 100%;
     height: 100%;
-    padding: 0 40px;
+    padding: 0 8px;
 
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
@@ -10114,6 +10114,8 @@ h6
     .wdidw-btn
     {
         font-size: 24px;
+
+        padding: 0 40px;
     }
 }
 @media screen and (min-width: 768px)
@@ -10193,11 +10195,11 @@ h6
 .wdidw-search-form .input-group .form-control,
 .wdidw-search-form .input-group .btn
 {
-    line-height: 54px;
+    line-height: 44px;
 
     display: block;
 
-    height: 54px;
+    height: 44px;
     padding: 8px 0;
 
     color: #00833e;

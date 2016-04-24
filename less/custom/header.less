@@ -17,6 +17,8 @@
 @navbar-toggle-size: 32px;
 @navbar-toggle-spacing: (@navbar-toggle-size / 4);
 @navbar-sm-height: 90px;
+@navbar-xs-padding-horizontal: (@em-base / 2);
+@navbar-sm-padding-horizontal: (@grid-gutter-width / 2);
 @navbar-height-enlarged-by: (@navbar-sm-height - @navbar-height);
 
 
@@ -34,16 +36,16 @@
   .page-header-skip {
     position: absolute;
     top: (@font-size-base / 4);
-    left: (@grid-gutter-width / 2);
+    left: @navbar-sm-padding-horizontal;
   }
 
   .page-header-upper {
     height: @navbar-height;
-    padding-top: @em-base;
-    padding-bottom: @em-base;
+    padding: @navbar-xs-padding-horizontal;
 
     @media screen and (min-width: @screen-xs-min) {
       height: @navbar-sm-height;
+      padding: @em-base @navbar-sm-padding-horizontal;
     }
 
     @media screen and (min-width: @grid-float-breakpoint) {
@@ -172,7 +174,7 @@
   width: (@navbar-toggle-size * 1.5);
   height: (@navbar-toggle-size * 1.5);
   position: absolute;
-  top: ((@navbar-height - @navbar-toggle-size * 1.5) / 2 - @em-base);
+  top: ((@navbar-height - @navbar-toggle-size * 1.5) / 2 - @navbar-xs-padding-horizontal);
   right: -@navbar-toggle-spacing;
   margin: 0;
   padding: @navbar-toggle-spacing;
@@ -205,7 +207,7 @@
 
 .city-recycling-btn {
   height: @navbar-height;
-  padding: 0 (@grid-gutter-width / 2);
+  padding: 0 @navbar-sm-padding-horizontal;
   background: @brand-success;
   border: 0 none;
   border-left: 2px solid @brand-primary;

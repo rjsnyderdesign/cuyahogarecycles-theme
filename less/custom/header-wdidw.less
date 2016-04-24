@@ -32,7 +32,7 @@
 .wdidw-btn {
   width: 100%;
   height: 100%;
-  padding: 0 (@grid-gutter-width / 2);
+  padding: 0 @navbar-xs-padding-horizontal;
   background: @brand-primary;
   border: 0 none;
   color: @brand-success;
@@ -43,6 +43,7 @@
   .transition(color @link-transition-speed);
 
   @media screen and (min-width: @screen-xs-min) {
+    padding: 0 @navbar-sm-padding-horizontal;
     font-size: @em-large;
   }
 
