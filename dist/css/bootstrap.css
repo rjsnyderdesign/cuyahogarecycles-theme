@@ -8697,18 +8697,30 @@ body:not(.noscroll)
 }
 .block-cta
 {
-    font-size: 2em;
-
     text-align: center;
+}
+.block-cta .text-cta,
+.block-cta .btn
+{
+    vertical-align: middle;
+}
+.block-cta .text-cta
+{
+    font-size: 1.5em;
+
     letter-spacing: .05em;
     text-transform: uppercase;
 }
+@media screen and (min-width: 768px)
+{
+    .block-cta .text-cta
+    {
+        font-size: 2em;
+    }
+}
 .block-cta .btn
 {
-    font-size: .5em;
-
-    margin-right: 1em;
-    margin-left: 1em;
+    margin: .5em 1em;
 }
 .block-newsletter-form
 {

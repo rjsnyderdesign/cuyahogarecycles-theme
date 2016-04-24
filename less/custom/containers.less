@@ -48,20 +48,28 @@
 // Blocks
 // --------------------------------------------------
 
-@block-cta-font-ratio: 2;
-
 .block-cta {
-  font-size: (@font-size-base * @block-cta-font-ratio);
-  letter-spacing: @letter-spacing;
   text-align: center;
-  text-transform: uppercase;
 
   &:extend(.container-content);
 
+  .text-cta,
   .btn {
-    font-size: (@font-size-base / @block-cta-font-ratio);
-    margin-left: @font-size-base;
-    margin-right: @font-size-base;
+    vertical-align: middle;
+  }
+
+  .text-cta {
+    font-size: (@font-size-base * 1.5);
+    letter-spacing: @letter-spacing;
+    text-transform: uppercase;
+
+    @media screen and (min-width: @screen-sm-min) {
+      font-size: (@font-size-base * 2);
+    }
+  }
+
+  .btn {
+    margin: (@font-size-base / 2) @font-size-base;
   }
 }
 
