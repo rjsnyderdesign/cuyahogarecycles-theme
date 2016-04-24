@@ -111,6 +111,9 @@
                 $panelMenu = $( '#panel-menu' ),
                 $panelCommunity = $( '#panel-community' ),
                 $panelItemFilter = $( '#panel-item-filter' ),
+                $itemFilterMenuDk = $( '#item-filter-menu-dk' ),
+                $itemFilterMenuMb = $( '#item-filter-menu-mb' ),
+                $itemFilterMenu   = $( '#item-filter-menu' ),
                 $slideRevealShroud = $( '<div/>' ).addClass( 'slidereveal-shroud' ),
                 openedPanels = [],
                 windowSizeBefore = window.innerWidth;
@@ -198,7 +201,10 @@
                     trigger: $( '[data-action="panel-item-filter-open"]' ),
                     push: false,
                     overlay: false,
-                    show: onShow,
+                    show: function ( $slider, $trigger ) {
+                        onShow( $slider, $trigger );
+                        $itemFilterMenuMb.append( $itemFilterMenu );
+                    },
                     shown: onShown,
                     hide: onHide,
                     hidden: onHidden
@@ -231,6 +237,7 @@
                 var windowSizeAfter = window.innerWidth;
                 if ( windowSizeBefore < MQ_md && windowSizeAfter >= MQ_md && $panelItemFilter ) {
                     $panelItemFilter.slideReveal( 'hide' );
+                    $itemFilterMenuDk.append( $itemFilterMenu );
                 }
                 windowSizeBefore = windowSizeAfter;
             } );

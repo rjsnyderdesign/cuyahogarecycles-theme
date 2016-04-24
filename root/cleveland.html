@@ -370,167 +370,171 @@
 
         <div class="row-md-full-height">
 
-          <aside class="col-side-full-height item-search-col-left">
+          <aside class="col-side-full-height item-search-col-left" id="item-filter-menu-dk">
 
-            <section class="item-filter-section">
+            <div class="item-filter-menu" id="item-filter-menu">
 
-              <h4>Your Search</h4>
+              <section class="item-filter-section">
 
-              <dl class="item-filter-list">
-                <dt><h6>City</h6></dt>
-                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Bay Village</label></dd>
-                <dt><h6>Recycling Programs</h6></dt>
-                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>In-home Recycling</label></dd>
-                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Other Recycling</label></dd>
-                <dt><h6>Item Categories</h6></dt>
-                <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Paper &amp; Boxes</label></dd>
-              </dl>
+                <h4>Your Search</h4>
 
-              <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#" data-action="filter-update">
-                <i class="fa fa-close" aria-hidden="true"></i> Clear all
-              </a>
+                <dl class="item-filter-list">
+                  <dt><h6>City</h6></dt>
+                  <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Bay Village</label></dd>
+                  <dt><h6>Recycling Programs</h6></dt>
+                  <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>In-home Recycling</label></dd>
+                  <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Other Recycling</label></dd>
+                  <dt><h6>Item Categories</h6></dt>
+                  <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Paper &amp; Boxes</label></dd>
+                </dl>
 
-              <hr />
-
-            </section>
-
-            <section class="item-filter-section">
-
-              <h6>Recycling In</h6>
-
-              <div class="btn-group">
-                <a
-                  class="btn dropdown-toggle item-filter-city-btn"
-                  href="#!"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Select a City <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#" data-action="filter-update">
+                  <i class="fa fa-close" aria-hidden="true"></i> Clear all
                 </a>
-                <div class="dropdown-menu item-filter-city-list">
-                  <div class="item-filter-city-zip-wrapper">
-                    <label for="item-filter-city-zip">Zip code</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Zip code"
-                      maxlength="5"
-                      id="item-filter-city-zip"
-                    />
+
+                <hr />
+
+              </section>
+
+              <section class="item-filter-section">
+
+                <h6>Recycling In</h6>
+
+                <div class="btn-group">
+                  <a
+                    class="btn dropdown-toggle item-filter-city-btn"
+                    href="#!"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Select a City <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-menu item-filter-city-list">
+                    <div class="item-filter-city-zip-wrapper">
+                      <label for="item-filter-city-zip">Zip code</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Zip code"
+                        maxlength="5"
+                        id="item-filter-city-zip"
+                      />
+                    </div>
+                    <ul>
+                      <li><a href="#" data-action="filter-update">Bay Village</a></li>
+                      <li><a href="#" data-action="filter-update">Beachwood</a></li>
+                      <li><a href="#" data-action="filter-update">Bedford</a></li>
+                      <li><a href="#" data-action="filter-update">Bedford Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Bentleyville</a></li>
+                      <li><a href="#" data-action="filter-update">Berea</a></li>
+                      <li><a href="#" data-action="filter-update">Bratenahl</a></li>
+                      <li><a href="#" data-action="filter-update">Brecksville</a></li>
+                      <li><a href="#" data-action="filter-update">Broadview Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Brook Park</a></li>
+                      <li><a href="#" data-action="filter-update">Brooklyn</a></li>
+                      <li><a href="#" data-action="filter-update">Brooklyn Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Chagrin Falls</a></li>
+                      <li><a href="#" data-action="filter-update">Chagrin Falls Township</a></li>
+                      <li><a href="#" data-action="filter-update">Cleveland</a></li>
+                      <li><a href="#" data-action="filter-update">Cleveland Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Cuyahoga Heights</a></li>
+                      <li><a href="#" data-action="filter-update">East Cleveland</a></li>
+                      <li><a href="#" data-action="filter-update">Euclid</a></li>
+                      <li><a href="#" data-action="filter-update">Fairview Park</a></li>
+                      <li><a href="#" data-action="filter-update">Garfield Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Gates Mills</a></li>
+                      <li><a href="#" data-action="filter-update">Glenwillow</a></li>
+                      <li><a href="#" data-action="filter-update">Highland Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Highland Hills</a></li>
+                      <li><a href="#" data-action="filter-update">Hunting Valley</a></li>
+                      <li><a href="#" data-action="filter-update">Independence</a></li>
+                      <li><a href="#" data-action="filter-update">Lakewood</a></li>
+                      <li><a href="#" data-action="filter-update">Linndale</a></li>
+                      <li><a href="#" data-action="filter-update">Lyndhurst</a></li>
+                      <li><a href="#" data-action="filter-update">Maple Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Mayfield</a></li>
+                      <li><a href="#" data-action="filter-update">Mayfield Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Middleburg Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Moreland Hills</a></li>
+                      <li><a href="#" data-action="filter-update">Newburgh Heights</a></li>
+                      <li><a href="#" data-action="filter-update">North Olmsted</a></li>
+                      <li><a href="#" data-action="filter-update">North Randall</a></li>
+                      <li><a href="#" data-action="filter-update">North Royalton</a></li>
+                      <li><a href="#" data-action="filter-update">Oakwood</a></li>
+                      <li><a href="#" data-action="filter-update">Olmsted Falls</a></li>
+                      <li><a href="#" data-action="filter-update">Olmsted Township</a></li>
+                      <li><a href="#" data-action="filter-update">Orange</a></li>
+                      <li><a href="#" data-action="filter-update">Parma</a></li>
+                      <li><a href="#" data-action="filter-update">Parma Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Pepper Pike</a></li>
+                      <li><a href="#" data-action="filter-update">Richmond Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Rocky River</a></li>
+                      <li><a href="#" data-action="filter-update">Seven Hills</a></li>
+                      <li><a href="#" data-action="filter-update">Shaker Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Solon</a></li>
+                      <li><a href="#" data-action="filter-update">South Euclid</a></li>
+                      <li><a href="#" data-action="filter-update">Strongsville</a></li>
+                      <li><a href="#" data-action="filter-update">University Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Valley View</a></li>
+                      <li><a href="#" data-action="filter-update">Walton Hills</a></li>
+                      <li><a href="#" data-action="filter-update">Warrensville Heights</a></li>
+                      <li><a href="#" data-action="filter-update">Westlake</a></li>
+                      <li><a href="#" data-action="filter-update">Woodmere</a></li>
+                    </ul>
                   </div>
-                  <ul>
-                    <li><a href="#" data-action="filter-update">Bay Village</a></li>
-                    <li><a href="#" data-action="filter-update">Beachwood</a></li>
-                    <li><a href="#" data-action="filter-update">Bedford</a></li>
-                    <li><a href="#" data-action="filter-update">Bedford Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Bentleyville</a></li>
-                    <li><a href="#" data-action="filter-update">Berea</a></li>
-                    <li><a href="#" data-action="filter-update">Bratenahl</a></li>
-                    <li><a href="#" data-action="filter-update">Brecksville</a></li>
-                    <li><a href="#" data-action="filter-update">Broadview Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Brook Park</a></li>
-                    <li><a href="#" data-action="filter-update">Brooklyn</a></li>
-                    <li><a href="#" data-action="filter-update">Brooklyn Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Chagrin Falls</a></li>
-                    <li><a href="#" data-action="filter-update">Chagrin Falls Township</a></li>
-                    <li><a href="#" data-action="filter-update">Cleveland</a></li>
-                    <li><a href="#" data-action="filter-update">Cleveland Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Cuyahoga Heights</a></li>
-                    <li><a href="#" data-action="filter-update">East Cleveland</a></li>
-                    <li><a href="#" data-action="filter-update">Euclid</a></li>
-                    <li><a href="#" data-action="filter-update">Fairview Park</a></li>
-                    <li><a href="#" data-action="filter-update">Garfield Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Gates Mills</a></li>
-                    <li><a href="#" data-action="filter-update">Glenwillow</a></li>
-                    <li><a href="#" data-action="filter-update">Highland Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Highland Hills</a></li>
-                    <li><a href="#" data-action="filter-update">Hunting Valley</a></li>
-                    <li><a href="#" data-action="filter-update">Independence</a></li>
-                    <li><a href="#" data-action="filter-update">Lakewood</a></li>
-                    <li><a href="#" data-action="filter-update">Linndale</a></li>
-                    <li><a href="#" data-action="filter-update">Lyndhurst</a></li>
-                    <li><a href="#" data-action="filter-update">Maple Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Mayfield</a></li>
-                    <li><a href="#" data-action="filter-update">Mayfield Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Middleburg Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Moreland Hills</a></li>
-                    <li><a href="#" data-action="filter-update">Newburgh Heights</a></li>
-                    <li><a href="#" data-action="filter-update">North Olmsted</a></li>
-                    <li><a href="#" data-action="filter-update">North Randall</a></li>
-                    <li><a href="#" data-action="filter-update">North Royalton</a></li>
-                    <li><a href="#" data-action="filter-update">Oakwood</a></li>
-                    <li><a href="#" data-action="filter-update">Olmsted Falls</a></li>
-                    <li><a href="#" data-action="filter-update">Olmsted Township</a></li>
-                    <li><a href="#" data-action="filter-update">Orange</a></li>
-                    <li><a href="#" data-action="filter-update">Parma</a></li>
-                    <li><a href="#" data-action="filter-update">Parma Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Pepper Pike</a></li>
-                    <li><a href="#" data-action="filter-update">Richmond Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Rocky River</a></li>
-                    <li><a href="#" data-action="filter-update">Seven Hills</a></li>
-                    <li><a href="#" data-action="filter-update">Shaker Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Solon</a></li>
-                    <li><a href="#" data-action="filter-update">South Euclid</a></li>
-                    <li><a href="#" data-action="filter-update">Strongsville</a></li>
-                    <li><a href="#" data-action="filter-update">University Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Valley View</a></li>
-                    <li><a href="#" data-action="filter-update">Walton Hills</a></li>
-                    <li><a href="#" data-action="filter-update">Warrensville Heights</a></li>
-                    <li><a href="#" data-action="filter-update">Westlake</a></li>
-                    <li><a href="#" data-action="filter-update">Woodmere</a></li>
-                  </ul>
                 </div>
-              </div>
 
-            </section>
+              </section>
 
-            <section class="item-filter-section">
+              <section class="item-filter-section">
 
-              <h6>Recycling Programs</h6>
+                <h6>Recycling Programs</h6>
 
-              <ul class="item-filter-list">
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-1" /><label for="item-filter-program-1">In-Home Recycling</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-2" /><label for="item-filter-program-2">Other Recycling</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-program-3" /><label for="item-filter-program-3">Proper Disposal</label></li>
-              </ul>
+                <ul class="item-filter-list">
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-program-1" /><label for="item-filter-program-1">In-Home Recycling</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-program-2" /><label for="item-filter-program-2">Other Recycling</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-program-3" /><label for="item-filter-program-3">Proper Disposal</label></li>
+                </ul>
 
-            </section>
+              </section>
 
-            <section class="item-filter-section">
+              <section class="item-filter-section">
 
-              <h6>Item Categories</h6>
+                <h6>Item Categories</h6>
 
-              <ul class="item-filter-list">
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-1" /><label for="item-filter-cat-1">All</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-2" /><label for="item-filter-cat-2">Paper &amp; Boxes</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-3" /><label for="item-filter-cat-3">Fiber</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-4" /><label for="item-filter-cat-4">Glass</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-5" /><label for="item-filter-cat-5">Aluminum</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-6" /><label for="item-filter-cat-6">Steel</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-7" /><label for="item-filter-cat-7">Plastic Bottles &amp; Containers</label></li>
-                <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-8" /><label for="item-filter-cat-8">Prohibitive Item</label></li>
-              </ul>
+                <ul class="item-filter-list">
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-1" /><label for="item-filter-cat-1">All</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-2" /><label for="item-filter-cat-2">Paper &amp; Boxes</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-3" /><label for="item-filter-cat-3">Fiber</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-4" /><label for="item-filter-cat-4">Glass</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-5" /><label for="item-filter-cat-5">Aluminum</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-6" /><label for="item-filter-cat-6">Steel</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-7" /><label for="item-filter-cat-7">Plastic Bottles &amp; Containers</label></li>
+                  <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-8" /><label for="item-filter-cat-8">Prohibitive Item</label></li>
+                </ul>
 
-            </section>
+              </section>
 
-            <section class="item-filter-section">
+              <section class="item-filter-section">
 
-              <h6>Quick Search</h6>
+                <h6>Quick Search</h6>
 
-              <ul class="item-filter-list">
-                <li><a href="#" data-action="filter-update">5 Do's &amp; Dont's</a></li>
-                <li><a href="#" data-action="filter-update">Construction Materials</a></li>
-                <li><a href="#" data-action="filter-update">Donation Centers</a></li>
-                <li><a href="#" data-action="filter-update">Electronics</a></li>
-                <li><a href="#" data-action="filter-update">Household Hazardous Waste</a></li>
-                <li><a href="#" data-action="filter-update">Household Goods</a></li>
-                <li><a href="#" data-action="filter-update">Office Equipment</a></li>
-                <li><a href="#" data-action="filter-update">Scrap Metal</a></li>
-                <li><a href="#" data-action="filter-update">Tanglers</a></li>
-              </ul>
+                <ul class="item-filter-list">
+                  <li><a href="#" data-action="filter-update">5 Do's &amp; Dont's</a></li>
+                  <li><a href="#" data-action="filter-update">Construction Materials</a></li>
+                  <li><a href="#" data-action="filter-update">Donation Centers</a></li>
+                  <li><a href="#" data-action="filter-update">Electronics</a></li>
+                  <li><a href="#" data-action="filter-update">Household Hazardous Waste</a></li>
+                  <li><a href="#" data-action="filter-update">Household Goods</a></li>
+                  <li><a href="#" data-action="filter-update">Office Equipment</a></li>
+                  <li><a href="#" data-action="filter-update">Scrap Metal</a></li>
+                  <li><a href="#" data-action="filter-update">Tanglers</a></li>
+                </ul>
 
-            </section>
+              </section>
+
+            </div>
 
           </aside><!-- /.col-side-full-height -->
 
@@ -1520,169 +1524,7 @@
         </a>
       </div>
 
-      <div class="panel-body">
-
-        <section class="item-filter-section">
-
-          <h4>Your Search</h4>
-
-          <dl class="item-filter-list">
-            <dt><h6>City</h6></dt>
-            <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Bay Village</label></dd>
-            <dt><h6>Recycling Programs</h6></dt>
-            <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>In-home Recycling</label></dd>
-            <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Other Recycling</label></dd>
-            <dt><h6>Item Categories</h6></dt>
-            <dd><a class="item-filter-clear" href="#" data-action="filter-update"><i class="fa fa-close" aria-hidden="true"></i><span class="sr-only">Clear</span></a> <label>Paper</label></dd>
-          </dl>
-
-          <a class="btn btn-hollow-gray-danger btn-item-filter-clear" href="#" data-action="filter-update">
-            <i class="fa fa-close" aria-hidden="true"></i> Clear all
-          </a>
-
-          <hr />
-
-        </section>
-
-        <section class="item-filter-section">
-
-          <h6>Recycling In</h6>
-
-          <div class="btn-group">
-            <a
-              class="btn dropdown-toggle item-filter-city-btn"
-              href="#!"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Select a City <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </a>
-            <div class="dropdown-menu item-filter-city-list">
-              <div class="item-filter-city-zip-wrapper">
-                <label for="item-filter-city-zip">Zip code</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  placeholder="Zip code"
-                  maxlength="5"
-                  id="item-filter-city-zip"
-                />
-              </div>
-              <ul>
-                <li><a href="#" data-action="filter-update">Bay Village</a></li>
-                <li><a href="#" data-action="filter-update">Beachwood</a></li>
-                <li><a href="#" data-action="filter-update">Bedford</a></li>
-                <li><a href="#" data-action="filter-update">Bedford Heights</a></li>
-                <li><a href="#" data-action="filter-update">Bentleyville</a></li>
-                <li><a href="#" data-action="filter-update">Berea</a></li>
-                <li><a href="#" data-action="filter-update">Bratenahl</a></li>
-                <li><a href="#" data-action="filter-update">Brecksville</a></li>
-                <li><a href="#" data-action="filter-update">Broadview Heights</a></li>
-                <li><a href="#" data-action="filter-update">Brook Park</a></li>
-                <li><a href="#" data-action="filter-update">Brooklyn</a></li>
-                <li><a href="#" data-action="filter-update">Brooklyn Heights</a></li>
-                <li><a href="#" data-action="filter-update">Chagrin Falls</a></li>
-                <li><a href="#" data-action="filter-update">Chagrin Falls Township</a></li>
-                <li><a href="#" data-action="filter-update">Cleveland</a></li>
-                <li><a href="#" data-action="filter-update">Cleveland Heights</a></li>
-                <li><a href="#" data-action="filter-update">Cuyahoga Heights</a></li>
-                <li><a href="#" data-action="filter-update">East Cleveland</a></li>
-                <li><a href="#" data-action="filter-update">Euclid</a></li>
-                <li><a href="#" data-action="filter-update">Fairview Park</a></li>
-                <li><a href="#" data-action="filter-update">Garfield Heights</a></li>
-                <li><a href="#" data-action="filter-update">Gates Mills</a></li>
-                <li><a href="#" data-action="filter-update">Glenwillow</a></li>
-                <li><a href="#" data-action="filter-update">Highland Heights</a></li>
-                <li><a href="#" data-action="filter-update">Highland Hills</a></li>
-                <li><a href="#" data-action="filter-update">Hunting Valley</a></li>
-                <li><a href="#" data-action="filter-update">Independence</a></li>
-                <li><a href="#" data-action="filter-update">Lakewood</a></li>
-                <li><a href="#" data-action="filter-update">Linndale</a></li>
-                <li><a href="#" data-action="filter-update">Lyndhurst</a></li>
-                <li><a href="#" data-action="filter-update">Maple Heights</a></li>
-                <li><a href="#" data-action="filter-update">Mayfield</a></li>
-                <li><a href="#" data-action="filter-update">Mayfield Heights</a></li>
-                <li><a href="#" data-action="filter-update">Middleburg Heights</a></li>
-                <li><a href="#" data-action="filter-update">Moreland Hills</a></li>
-                <li><a href="#" data-action="filter-update">Newburgh Heights</a></li>
-                <li><a href="#" data-action="filter-update">North Olmsted</a></li>
-                <li><a href="#" data-action="filter-update">North Randall</a></li>
-                <li><a href="#" data-action="filter-update">North Royalton</a></li>
-                <li><a href="#" data-action="filter-update">Oakwood</a></li>
-                <li><a href="#" data-action="filter-update">Olmsted Falls</a></li>
-                <li><a href="#" data-action="filter-update">Olmsted Township</a></li>
-                <li><a href="#" data-action="filter-update">Orange</a></li>
-                <li><a href="#" data-action="filter-update">Parma</a></li>
-                <li><a href="#" data-action="filter-update">Parma Heights</a></li>
-                <li><a href="#" data-action="filter-update">Pepper Pike</a></li>
-                <li><a href="#" data-action="filter-update">Richmond Heights</a></li>
-                <li><a href="#" data-action="filter-update">Rocky River</a></li>
-                <li><a href="#" data-action="filter-update">Seven Hills</a></li>
-                <li><a href="#" data-action="filter-update">Shaker Heights</a></li>
-                <li><a href="#" data-action="filter-update">Solon</a></li>
-                <li><a href="#" data-action="filter-update">South Euclid</a></li>
-                <li><a href="#" data-action="filter-update">Strongsville</a></li>
-                <li><a href="#" data-action="filter-update">University Heights</a></li>
-                <li><a href="#" data-action="filter-update">Valley View</a></li>
-                <li><a href="#" data-action="filter-update">Walton Hills</a></li>
-                <li><a href="#" data-action="filter-update">Warrensville Heights</a></li>
-                <li><a href="#" data-action="filter-update">Westlake</a></li>
-                <li><a href="#" data-action="filter-update">Woodmere</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </section>
-
-        <section class="item-filter-section">
-
-          <h6>Recycling Programs</h6>
-
-          <ul class="item-filter-list">
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-program-1" /><label for="item-filter-program-1">In-Home Recycling</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-program-2" /><label for="item-filter-program-2">Other Recycling</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-program-3" /><label for="item-filter-program-3">Proper Disposal</label></li>
-          </ul>
-
-        </section>
-
-        <section class="item-filter-section">
-
-          <h6>Item Categories</h6>
-
-          <ul class="item-filter-list">
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-1" /><label for="item-filter-cat-1">All</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-2" /><label for="item-filter-cat-2">Paper &amp; Boxes</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-3" /><label for="item-filter-cat-3">Fiber</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-4" /><label for="item-filter-cat-4">Glass</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-5" /><label for="item-filter-cat-5">Aluminum</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-6" /><label for="item-filter-cat-6">Steel</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-7" /><label for="item-filter-cat-7">Plastic Bottles &amp; Containers</label></li>
-            <li><input type="checkbox" data-action="filter-update" id="item-filter-cat-8" /><label for="item-filter-cat-8">Prohibitive Item</label></li>
-          </ul>
-
-        </section>
-
-        <section class="item-filter-section">
-
-            <h6>Quick Search</h6>
-
-            <ul class="item-filter-list">
-              <li><a href="#" data-action="filter-update">5 Do's &amp; Dont's</a></li>
-              <li><a href="#" data-action="filter-update">Construction Materials</a></li>
-              <li><a href="#" data-action="filter-update">Donation Centers</a></li>
-              <li><a href="#" data-action="filter-update">Electronics</a></li>
-              <li><a href="#" data-action="filter-update">Household Hazardous Waste</a></li>
-              <li><a href="#" data-action="filter-update">Household Goods</a></li>
-              <li><a href="#" data-action="filter-update">Office Equipment</a></li>
-              <li><a href="#" data-action="filter-update">Scrap Metal</a></li>
-              <li><a href="#" data-action="filter-update">Tanglers</a></li>
-            </ul>
-
-          </section>
-
-      </div>
+      <div class="panel-body" id="item-filter-menu-mb"></div>
 
     </div><!-- /.slidereveal-panel -->
 
