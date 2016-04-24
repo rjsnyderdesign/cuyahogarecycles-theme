@@ -13181,14 +13181,23 @@ h6
 {
     display: none;
 }
-.item-basics-cat .item-basics-cat-link
+.item-basics-cat-box
 {
+    position: relative;
+
     display: inline-block;
 }
-.item-basics-cat .item-basics-cat-row
+.item-basics-cat-link
 {
-    -webkit-transform: translate3d(0, 0, -9999px);
-            transform: translate3d(0, 0, -9999px);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
 }
 .item-basics
 {
@@ -13244,340 +13253,379 @@ h6
 {
     margin: 0;
 }
-.item-basics .item-cat-selector
+.item-cat-selector
 {
     margin-top: 2em;
     margin-bottom: 2em;
 }
-.item-basics .item-cat-selector > li
+.item-cat-selector > li
 {
-    margin: 0 .5em ;
+    margin: 0 1em;
 }
-.item-basics .item-cat-selector-opt
+.item-cat-selector > li > a:hover,
+.item-cat-selector > li > a:focus
+{
+    text-decoration: none;
+}
+.item-cat-selector-opt
 {
     display: block;
 
     color: inherit;
 }
-.item-basics .item-cat-selector-opt .item-color-key
+.item-cat-selector-opt .item-color-key
 {
     background: none;
 }
-.item-basics .item-cat-selector-opt:hover,
-.item-basics .item-cat-selector-opt:focus,
-.item-basics .item-cat-selector-opt:active,
-.item-basics .item-cat-selector-opt.active
-{
-    text-decoration: none;
-}
-.item-basics .item-cat-selector-opt:hover[data-item-key='home-recycling'],
-.item-basics .item-cat-selector-opt:focus[data-item-key='home-recycling'],
-.item-basics .item-cat-selector-opt:active[data-item-key='home-recycling'],
-.item-basics .item-cat-selector-opt.active[data-item-key='home-recycling']
+.item-cat-selector-opt:hover[data-item-key='home-recycling'],
+.item-cat-selector-opt:focus[data-item-key='home-recycling'],
+.item-cat-selector-opt:active[data-item-key='home-recycling'],
+.item-cat-selector-opt.active[data-item-key='home-recycling']
 {
     color: #26cad3;
 }
-.item-basics .item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
-.item-basics .item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
-.item-basics .item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
-.item-basics .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
+.item-cat-selector-opt:hover[data-item-key='dropoff-recycling'],
+.item-cat-selector-opt:focus[data-item-key='dropoff-recycling'],
+.item-cat-selector-opt:active[data-item-key='dropoff-recycling'],
+.item-cat-selector-opt.active[data-item-key='dropoff-recycling']
 {
     color: #f6b221;
 }
-.item-basics .item-cat-selector-opt:hover[data-item-key='proper-disposal'],
-.item-basics .item-cat-selector-opt:focus[data-item-key='proper-disposal'],
-.item-basics .item-cat-selector-opt:active[data-item-key='proper-disposal'],
-.item-basics .item-cat-selector-opt.active[data-item-key='proper-disposal']
+.item-cat-selector-opt:hover[data-item-key='proper-disposal'],
+.item-cat-selector-opt:focus[data-item-key='proper-disposal'],
+.item-cat-selector-opt:active[data-item-key='proper-disposal'],
+.item-cat-selector-opt.active[data-item-key='proper-disposal']
 {
     color: #e84b37;
 }
-.item-basics .item-cat-selector-opt:hover[data-item-key='compost'],
-.item-basics .item-cat-selector-opt:focus[data-item-key='compost'],
-.item-basics .item-cat-selector-opt:active[data-item-key='compost'],
-.item-basics .item-cat-selector-opt.active[data-item-key='compost']
+.item-cat-selector-opt:hover[data-item-key='compost'],
+.item-cat-selector-opt:focus[data-item-key='compost'],
+.item-cat-selector-opt:active[data-item-key='compost'],
+.item-cat-selector-opt.active[data-item-key='compost']
 {
     color: #00833e;
 }
-.item-basics .item-cat-selector-opt.active
+.item-cat-selector-opt.active
 {
     background: none;
 }
-.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling
+.item-cat-selector-opt.active .item-color-key.item-color-key-home-recycling
 {
     background: #26cad3;
 }
-.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling
+.item-cat-selector-opt.active .item-color-key.item-color-key-dropoff-recycling
 {
     background: #f6b221;
 }
-.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal
+.item-cat-selector-opt.active .item-color-key.item-color-key-proper-disposal
 {
     background: #e84b37;
 }
-.item-basics .item-cat-selector-opt.active .item-color-key.item-color-key-compost
+.item-cat-selector-opt.active .item-color-key.item-color-key-compost
 {
     background: #00833e;
 }
-.item-basics .item-cat-selector-opt.active[data-item-key='home-recycling']
+.item-cat-selector-opt.active[data-item-key='home-recycling']
 {
     border-color: #26cad3;
 }
-.item-basics .item-cat-selector-opt.active[data-item-key='dropoff-recycling']
+.item-cat-selector-opt.active[data-item-key='dropoff-recycling']
 {
     border-color: #f6b221;
 }
-.item-basics .item-cat-selector-opt.active[data-item-key='proper-disposal']
+.item-cat-selector-opt.active[data-item-key='proper-disposal']
 {
     border-color: #e84b37;
 }
-.item-basics .item-cat-selector-opt.active[data-item-key='compost']
+.item-cat-selector-opt.active[data-item-key='compost']
 {
     border-color: #00833e;
 }
-.item-basics.item-basics-mb
-{
-    display: block;
-}
-.item-basics.item-basics-dk
-{
-    display: none;
-}
 @media screen and (min-width: 720px)
 {
-    .item-basics.item-basics-mb
+    .item-basics-visible-mb,
+    .item-basics-hidden-dk
     {
         display: none;
     }
-    .item-basics.item-basics-dk
+}
+@media screen and (max-width: 719px)
+{
+    .item-basics-visible-dk,
+    .item-basics-hidden-mb
     {
-        display: block;
+        display: none;
     }
 }
-.item-basics.item-basics-dk .item-figure,
-.item-basics.item-basics-dk .item-icon.item-icon-size-basics
+@media screen and (min-width: 720px)
 {
-    width: 94px;
-}
-.item-basics.item-basics-dk .item-icon.item-icon-size-basics
-{
-    height: 94px;
+    .item-basics .item-figure,
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 94px;
+    }
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        height: 94px;
 
-    border-width: 2px;
+        border-width: 2px;
+    }
+    .item-basics-body
+    {
+        margin-top: 3em;
+    }
+    .item-basics-footer
+    {
+        margin-bottom: 3em;
+    }
+    .item-basics-cat-link
+    {
+        display: none;
+    }
+    .item-cat-selector > li
+    {
+        width: 15em;
+
+        text-align: left;
+    }
+    .item-cat-selector-opt
+    {
+        -webkit-transition: border-color 500ms, color 500ms;
+             -o-transition: border-color 500ms, color 500ms;
+                transition: border-color 500ms, color 500ms;
+
+        border: 2px solid #e6e6e6;
+        border-radius: 1.5em;
+    }
 }
-@media screen and (min-width: 900px)
+@media screen and (min-width: 720px) and (min-width: 900px)
 {
-    .item-basics.item-basics-dk .item-figure
+    .item-basics .item-figure
     {
         width: 128px;
     }
-    .item-basics.item-basics-dk .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         width: 128px;
         height: 128px;
     }
-    .item-basics.item-basics-dk .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         border-width: 4px;
     }
 }
-@media screen and (min-width: 1200px)
+@media screen and (min-width: 720px) and (min-width: 1200px)
 {
-    .item-basics.item-basics-dk .item-figure
+    .item-basics .item-figure
     {
         width: 188px;
     }
-    .item-basics.item-basics-dk .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         width: 188px;
         height: 188px;
     }
 }
-@media screen and (min-width: 1200px) and (min-width: 1400px)
+@media screen and (min-width: 720px) and (min-width: 1200px) and (min-width: 1400px)
 {
-    .item-basics.item-basics-dk .item-figure
+    .item-basics .item-figure
     {
         width: 218px;
     }
-    .item-basics.item-basics-dk .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         width: 218px;
         height: 218px;
     }
 }
-@media screen and (min-width: 1680px)
+@media screen and (min-width: 720px) and (min-width: 1680px)
 {
-    .item-basics.item-basics-dk .item-figure
+    .item-basics .item-figure
     {
         width: 278px;
     }
-    .item-basics.item-basics-dk .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         width: 278px;
         height: 278px;
     }
 }
-.item-basics.item-basics-dk .item-cat-selector > li
+@media screen and (max-width: 719px)
 {
-    width: 15em;
-
-    text-align: left;
-}
-.item-basics.item-basics-dk .item-cat-selector-opt
-{
-    -webkit-transition: border-color 500ms, color 500ms;
-         -o-transition: border-color 500ms, color 500ms;
-            transition: border-color 500ms, color 500ms;
-
-    border: 2px solid #e6e6e6;
-    border-radius: 1.5em;
-}
-.item-basics.item-basics-mb .item-basics-cat-row
-{
-    font-size: 0;
-
-    width: 100%;
-
-    text-align: center;
-}
-.item-basics.item-basics-mb .item-basics-cat-row
-{
-    padding: 9.90083446px 0;
-}
-.item-basics.item-basics-mb .item-icon.item-icon-size-basics
-{
-    width: 64px;
-    height: 64px;
-}
-.item-basics.item-basics-mb .item-figure
-{
-    margin: 0;
-    padding: 0 4.95041723px;
-}
-@media screen and (min-width: 480px)
-{
-    .item-basics.item-basics-mb .item-basics-cat-row
+    .item-basics .item-basics-cat-row
     {
+        font-size: 0;
+
+        width: 100%;
+        max-width: 240px;
+
+        text-align: center;
+    }
+    .item-basics .item-basics-cat-row
+    {
+        padding: 9.90083446px 0;
+    }
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        width: 64px;
+        height: 64px;
+    }
+    .item-basics .item-figure
+    {
+        margin: 0;
+        padding: 0 4.95041723px;
+    }
+    .item-basics .item-figure
+    {
+        display: inline-block;
+
+        margin: .25em;
+
+        -webkit-transition: opacity 500ms;
+             -o-transition: opacity 500ms;
+                transition: opacity 500ms;
+
+        opacity: 1;
+    }
+    .item-basics .item-figure.item-fade
+    {
+        opacity: 0;
+    }
+    .item-basics .item-icon.item-icon-size-basics
+    {
+        border-width: 2px;
+    }
+    .item-basics-body
+    {
+        margin: 3em 0 2em;
+    }
+    .item-basics-footer
+    {
+        margin: 0;
+    }
+    .item-cat-selector-opt
+    {
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 719px) and (min-width: 480px)
+{
+    .item-basics .item-basics-cat-row
+    {
+        max-width: 360px;
         padding: 14.54185061px 0;
     }
-    .item-basics.item-basics-mb .item-icon.item-icon-size-basics
+    .item-basics .item-icon.item-icon-size-basics
     {
         width: 94px;
         height: 94px;
     }
-    .item-basics.item-basics-mb .item-figure
+    .item-basics .item-figure
     {
         margin: 0;
         padding: 0 7.2709253px;
     }
 }
-.item-basics.item-basics-mb .item-figure
-{
-    display: inline-block;
-
-    margin: .25em;
-
-    -webkit-transition: opacity 500ms;
-         -o-transition: opacity 500ms;
-            transition: opacity 500ms;
-
-    opacity: 1;
-}
-.item-basics.item-basics-mb .item-figure.item-fade
-{
-    opacity: 0;
-}
-.item-basics.item-basics-mb .item-icon.item-icon-size-basics
-{
-    border-width: 2px;
-}
-.item-basics.item-basics-mb .item-cat-selector-opt
-{
-    margin-top: 0;
-}
 .item-coin
 {
-    -webkit-transform: rotateY(0deg);
-        -ms-transform: rotateY(0deg);
-         -o-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center;
-
     opacity: 1;
-
-            backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-.item-coin:nth-child(1)
-{
-    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 50ms;
-         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 50ms;
-            transition:         transform 500ms ease 0ms, opacity 0s ease 50ms;
-}
-.item-coin.item-coin-flip:nth-child(1)
-{
-    -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 150ms;
-         -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 150ms;
-            transition:         transform 500ms ease 0ms, opacity 0s ease 150ms;
-}
-.item-coin:nth-child(2)
-{
-    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 150ms;
-         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 150ms;
-            transition:         transform 500ms ease 100ms, opacity 0s ease 150ms;
-}
-.item-coin.item-coin-flip:nth-child(2)
-{
-    -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 250ms;
-         -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 250ms;
-            transition:         transform 500ms ease 100ms, opacity 0s ease 250ms;
-}
-.item-coin:nth-child(3)
-{
-    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 250ms;
-         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 250ms;
-            transition:         transform 500ms ease 200ms, opacity 0s ease 250ms;
-}
-.item-coin.item-coin-flip:nth-child(3)
-{
-    -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 350ms;
-         -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 350ms;
-            transition:         transform 500ms ease 200ms, opacity 0s ease 350ms;
-}
-.item-coin:nth-child(4)
-{
-    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 350ms;
-         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 350ms;
-            transition:         transform 500ms ease 300ms, opacity 0s ease 350ms;
-}
-.item-coin.item-coin-flip:nth-child(4)
-{
-    -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 450ms;
-         -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 450ms;
-            transition:         transform 500ms ease 300ms, opacity 0s ease 450ms;
-}
-.item-coin:nth-child(5)
-{
-    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 450ms;
-         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 450ms;
-            transition:         transform 500ms ease 400ms, opacity 0s ease 450ms;
-}
-.item-coin.item-coin-flip:nth-child(5)
-{
-    -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 550ms;
-         -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 550ms;
-            transition:         transform 500ms ease 400ms, opacity 0s ease 550ms;
 }
 .item-coin.item-coin-flip
 {
-    -webkit-transform: rotateY(180deg);
-        -ms-transform: rotateY(180deg);
-         -o-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-
     opacity: 0;
+}
+@media screen and (min-width: 720px)
+{
+    .item-coin
+    {
+        -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+             -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+        -webkit-transform-origin: center center;
+            -ms-transform-origin: center center;
+             -o-transform-origin: center center;
+                transform-origin: center center;
+
+                backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    .item-coin:nth-child(1)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 50ms;
+             -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 50ms;
+                transition:         transform 500ms ease 0ms, opacity 0s ease 50ms;
+    }
+    .item-coin.item-coin-flip:nth-child(1)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 0ms, opacity 0s ease 150ms;
+             -o-transition:      -o-transform 500ms ease 0ms, opacity 0s ease 150ms;
+                transition:         transform 500ms ease 0ms, opacity 0s ease 150ms;
+    }
+    .item-coin:nth-child(2)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 150ms;
+             -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 150ms;
+                transition:         transform 500ms ease 100ms, opacity 0s ease 150ms;
+    }
+    .item-coin.item-coin-flip:nth-child(2)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 100ms, opacity 0s ease 250ms;
+             -o-transition:      -o-transform 500ms ease 100ms, opacity 0s ease 250ms;
+                transition:         transform 500ms ease 100ms, opacity 0s ease 250ms;
+    }
+    .item-coin:nth-child(3)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 250ms;
+             -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 250ms;
+                transition:         transform 500ms ease 200ms, opacity 0s ease 250ms;
+    }
+    .item-coin.item-coin-flip:nth-child(3)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 200ms, opacity 0s ease 350ms;
+             -o-transition:      -o-transform 500ms ease 200ms, opacity 0s ease 350ms;
+                transition:         transform 500ms ease 200ms, opacity 0s ease 350ms;
+    }
+    .item-coin:nth-child(4)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 350ms;
+             -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 350ms;
+                transition:         transform 500ms ease 300ms, opacity 0s ease 350ms;
+    }
+    .item-coin.item-coin-flip:nth-child(4)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 300ms, opacity 0s ease 450ms;
+             -o-transition:      -o-transform 500ms ease 300ms, opacity 0s ease 450ms;
+                transition:         transform 500ms ease 300ms, opacity 0s ease 450ms;
+    }
+    .item-coin:nth-child(5)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 450ms;
+             -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 450ms;
+                transition:         transform 500ms ease 400ms, opacity 0s ease 450ms;
+    }
+    .item-coin.item-coin-flip:nth-child(5)
+    {
+        -webkit-transition: -webkit-transform 500ms ease 400ms, opacity 0s ease 550ms;
+             -o-transition:      -o-transform 500ms ease 400ms, opacity 0s ease 550ms;
+                transition:         transform 500ms ease 400ms, opacity 0s ease 550ms;
+    }
+    .item-coin.item-coin-flip
+    {
+        -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+             -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+    }
+}
+@media screen and (max-width: 719px)
+{
+    .item-coin
+    {
+        -webkit-transition: opacity 500ms;
+             -o-transition: opacity 500ms;
+                transition: opacity 500ms;
+    }
 }
 /*!
  * CuyahogaRecycles.org theme

@@ -674,7 +674,7 @@ if (typeof jQuery === 'undefined') {
             // Slideshow select functionality
             //
 
-            var $itemBasics = $( '.item-basics-dk' ),
+            var $itemBasics = $( '.item-basics' ),
                 $itemBasicsCats = $itemBasics.find( '.item-basics-cat' ),
                 $itemCatSelectors = $itemBasics.find( '.item-cat-selector' ),
                 $itemCatSelectorOpts = $itemBasics.find( '.item-cat-selector-opt' ),
@@ -754,139 +754,6 @@ if (typeof jQuery === 'undefined') {
                         $itemCoins.removeClass( 'item-coin-flip' );
                         currentSlide = $itemBasicsCat.index();
                     }, flipInterval );
-
-                }, flipDelay );
-            }
-
-            // Add ARIA roles
-            $itemBasicsCats.attr( 'role', 'tabpanel' );
-            $itemCatSelectors.attr( 'role', 'tablist' );
-            $itemCatSelectorOpts.attr( 'role', 'tab' );
-
-            // Add events to links
-            $itemCatSelectorOpts
-                .each( function () {
-                    var $this = $( this );
-                    $this.attr(
-                        'aria-controls',
-                        $this.attr( 'href' ).substring( 1 )
-                    );
-                } )
-                .on( 'click', function ( e ) {
-                    var $this = $( this );
-                    $itemCatSelectorOpts
-                        .removeClass( 'active' )
-                        .attr( 'aria-selected', 'false' )
-                        .attr( 'tabindex', '0' );
-                    $this
-                        .addClass( 'active' )
-                        .attr( 'aria-selected', 'true' )
-                        .attr( 'tabindex', '0' );
-                    flipTo( $this, true );
-                    stop();
-                    e.preventDefault();
-                } )
-                .on( 'blur', function ( e ) {
-                    start();
-                } );
-
-            // Select first tab by default
-            $itemCatSelectorOpts.eq( 0 ).trigger( 'click' );
-
-            //
-            // Automatic slideshow
-            //
-
-            start();
-
-        } )();
-
-        //
-        // Item mobile
-        //
-
-        ( function () {
-
-            //
-            // Slideshow select functionality
-            //
-
-            var $itemBasics = $( '.item-basics-mb' ),
-                $itemBasicsCats = $itemBasics.find( '.item-basics-cat' ),
-                $itemCatSelectors = $itemBasics.find( '.item-cat-selector' ),
-                $itemCatSelectorOpts = $itemBasics.find( '.item-cat-selector-opt' ),
-                $itemFigures = $itemBasics.find( '.item-figure' );
-
-            var flipDelay = 500;
-
-            var slideShowLength = 3,
-                slideShowInterval = 8000,
-                slideShowTimeout = null,
-                swapTimeout = null,
-                flipTimeout = null,
-                isSwapping = false,
-                currentSlide;
-
-            function start () {
-                window.clearTimeout( slideShowTimeout );
-                slideShowTimeout = window.setTimeout( next, slideShowInterval );
-            }
-
-            function stop () { window.clearTimeout( slideShowTimeout ); }
-
-            function next () {
-                var nextSlide = currentSlide + 1;
-                if ( nextSlide >= slideShowLength ) { nextSlide = 0; }
-                flipTo( $itemCatSelectorOpts.eq( nextSlide ) );
-                start();
-            }
-
-            function flipTo ( $elem, isManual ) {
-
-                var itemKey = $elem.data( 'item-key' ),
-                    $itemBasicsCat = $itemBasics.find(
-                        '.item-basics-cat[data-item-cat="' + itemKey + '"]'
-                    );
-
-                if ( currentSlide === $itemBasicsCat.index() && !isSwapping ) {
-                    return;
-                }
-
-                isSwapping = true;
-
-                $itemFigures.addClass( 'item-fade' );
-
-                window.clearTimeout( swapTimeout );
-                if ( !isManual ) window.clearTimeout( flipTimeout );
-
-                swapTimeout = window.setTimeout( function () {
-
-                    // swap button states
-                    $itemCatSelectorOpts
-                        .removeClass( 'active' )
-                        .attr( 'aria-selected', 'false' )
-                        .attr( 'tabindex', '0' );
-                    $elem
-                        .addClass( 'active' )
-                        .attr( 'aria-selected', 'true' )
-                        .attr( 'tabindex', '0' );
-
-                    // swap slides
-                    $itemBasicsCats
-                        .removeClass( 'active' )
-                        .attr( 'aria-hidden', 'true' );
-                    $itemBasicsCat
-                        .addClass( 'active' )
-                        .attr( 'aria-hidden', 'false' );
-
-                    isSwapping = false;
-
-                    // unflip
-                    window.clearTimeout( flipTimeout );
-                    flipTimeout = window.setTimeout( function () {
-                        $itemFigures.removeClass( 'item-fade' );
-                        currentSlide = $itemBasicsCat.index();
-                    }, 100 );
 
                 }, flipDelay );
             }
