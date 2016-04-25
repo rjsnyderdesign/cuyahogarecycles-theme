@@ -9776,6 +9776,7 @@ h6
          -o-transition: color 500ms;
             transition: color 500ms;
     text-decoration: none;
+    text-transform: uppercase;
 
     color: #00833e;
     border: 0 none;
@@ -10890,7 +10891,6 @@ h6
          -o-transition: color 500ms;
             transition: color 500ms;
     text-decoration: none;
-    text-transform: uppercase;
 
     color: inherit;
     background: none;
@@ -10960,6 +10960,10 @@ h6
             transition: all 500ms;
 
     color: #1ea1a8;
+}
+.slidereveal-panel#panel-menu .nav > li > a
+{
+    text-transform: uppercase;
 }
 .slidereveal-panel#panel-menu .dropdown > a
 {
@@ -12804,6 +12808,7 @@ h6
          -o-transition: color 500ms;
             transition: color 500ms;
     text-decoration: none;
+    text-transform: uppercase;
 
     color: inherit;
     background: none;
