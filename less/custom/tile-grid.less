@@ -279,6 +279,27 @@
     > .grid-cell-link-title {
       text-align: center;
 
+      h4 {
+        margin-top: 0;
+        font-size: @font-size-base;
+      }
+
+      .symbol {
+        width: 30px;
+        height: 30px;
+      }
+
+      @media screen and (min-width: @screen-xs-min) {
+        h4 {
+          font-size: (@font-size-base * 1.25);
+        }
+
+        .symbol {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
       > .grid-cell-content-outer {
         > .grid-cell-content-inner {
           vertical-align: middle;

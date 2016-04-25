@@ -12145,6 +12145,29 @@ h6
 {
     text-align: center;
 }
+.grid-cell-link.grid-cell-link-large > .grid-cell-link-title h4
+{
+    font-size: 1em;
+
+    margin-top: 0;
+}
+.grid-cell-link.grid-cell-link-large > .grid-cell-link-title .symbol
+{
+    width: 30px;
+    height: 30px;
+}
+@media screen and (min-width: 480px)
+{
+    .grid-cell-link.grid-cell-link-large > .grid-cell-link-title h4
+    {
+        font-size: 1.25em;
+    }
+    .grid-cell-link.grid-cell-link-large > .grid-cell-link-title .symbol
+    {
+        width: 60px;
+        height: 60px;
+    }
+}
 .grid-cell-link.grid-cell-link-large > .grid-cell-link-title > .grid-cell-content-outer > .grid-cell-content-inner
 {
     vertical-align: middle;
