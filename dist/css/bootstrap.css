@@ -7923,6 +7923,14 @@ form .form-subhead:first-child,
 {
     margin-top: -.125em;
 }
+@media screen and (max-width: 767px)
+{
+    form .btn,
+    .form .btn
+    {
+        width: 100%;
+    }
+}
 .form-feedback
 {
     font-size: 1.125em;
@@ -11281,15 +11289,19 @@ h6
 {
     background: #fff;
 }
-.page-footer .page-footer-col
+.page-footer .page-footer-upper
 {
     padding-top: 120px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
+}
+.page-footer .page-footer-col
+{
+    padding-bottom: 40px;
 }
 .page-footer .page-footer-col-siteinfo
 {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
 
     background: #d9d9d9;
 }
@@ -11411,10 +11423,12 @@ h6
 {
     display: inline-block;
     float: left;
+
+    margin: .5em 0;
 }
 .page-footer .page-footer-nav-siteinfo > li:not(:last-child):after
 {
-    margin: 0 .5em;
+    margin: 0 1em;
 
     content: '';
 
@@ -11423,6 +11437,8 @@ h6
 .page-footer .page-footer-siteinfo
 {
     display: inline-block;
+
+    margin: 1.5em 0 .5em;
 }
 /*!
  * CuyahogaRecycles.org theme
