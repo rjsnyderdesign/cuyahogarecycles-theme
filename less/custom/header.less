@@ -152,12 +152,17 @@
       }
 
       &:hover,
-      &:focus {
-        color: @white;
-
+      &:focus,
+      &:active,
+      &.active {
         &:before {
           height: 0.5em;
         }
+      }
+
+      &:hover,
+      &:focus {
+        color: @white;
       }
 
       &:active,

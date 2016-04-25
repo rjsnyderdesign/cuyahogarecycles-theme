@@ -9704,15 +9704,17 @@ h6
 
     background: #fff;
 }
+.navbar-nav.navbar-primary > li > a:hover:before,
+.navbar-nav.navbar-primary > li > a:focus:before,
+.navbar-nav.navbar-primary > li > a:active:before,
+.navbar-nav.navbar-primary > li > a.active:before
+{
+    height: .5em;
+}
 .navbar-nav.navbar-primary > li > a:hover,
 .navbar-nav.navbar-primary > li > a:focus
 {
     color: #fff;
-}
-.navbar-nav.navbar-primary > li > a:hover:before,
-.navbar-nav.navbar-primary > li > a:focus:before
-{
-    height: .5em;
 }
 .navbar-nav.navbar-primary > li > a:active,
 .navbar-nav.navbar-primary > li > a.active
