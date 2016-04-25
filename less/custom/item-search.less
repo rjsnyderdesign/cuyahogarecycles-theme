@@ -60,12 +60,12 @@
   @media screen and (min-width: @screen-md-min) {
     display: none;
   }
+}
 
-  .item-filter-panel-open {
-    text-transform: uppercase;
+.item-filter-panel-open {
+  text-transform: uppercase;
 
-    .link-fx-nav(@brand-info; @brand-success);
-  }
+  &:extend(.link-fx-nav-default all);
 }
 
 
@@ -175,9 +175,9 @@
     font-size: 1.25em;
   }
 
-  .link-fx-nav(@brand-info; @brand-success);
-
   .box-shadow(none);
+
+  &:extend(.link-fx-nav-default all);
 }
 
 .btn-group.open .dropdown-toggle.item-filter-city-btn {
@@ -203,7 +203,7 @@
         padding: (@font-size-base / 4) @font-size-base;
         color: inherit;
 
-        .link-fx-nav(@brand-info; @brand-success);
+        &:extend(.link-fx-nav-default all);
       }
     }
   }
@@ -318,7 +318,7 @@
 
   > li {
     > a {
-      .link-fx-nav(@brand-info; @brand-success);
+      &:extend(.link-fx-nav-default all);
 
       > .fa {
         vertical-align: middle;

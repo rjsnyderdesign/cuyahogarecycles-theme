@@ -29,25 +29,25 @@
 
   .panel-head {
     padding-top: @slidereveal-panel-bar-height;
+  }
 
-    .panel-title {
-      width: 100%;
+  .panel-title {
+    width: 100%;
+    height: @slidereveal-panel-bar-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-right: @slidereveal-panel-bar-height;
+    font-size: @font-size-base;
+
+    > h2 {
       height: @slidereveal-panel-bar-height;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding-right: @slidereveal-panel-bar-height;
-      font-size: @font-size-base;
-
-      > h2 {
-        height: @slidereveal-panel-bar-height;
-        margin: 0;
-        padding-left: @slidereveal-panel-padding-horizontal;
-        font-size: @em-large;
-        line-height: @slidereveal-panel-bar-height;
-        text-transform: uppercase;
-        vertical-align: middle;
-      }
+      margin: 0;
+      padding-left: @slidereveal-panel-padding-horizontal;
+      font-size: @em-large;
+      line-height: @slidereveal-panel-bar-height;
+      text-transform: uppercase;
+      vertical-align: middle;
     }
   }
 

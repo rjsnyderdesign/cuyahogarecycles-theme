@@ -135,9 +135,9 @@
         clear: both;
         white-space: normal;
 
-        .link-fx-nav(@brand-info; @brand-success);
+        &:extend(.link-fx-nav-default all);
 
-        .fa {
+        > .fa {
           font-size: 10px;
           padding-left: 3px;
           color: lighten(@brand-dark, 15%);
@@ -146,7 +146,7 @@
         &.open {
           color: @brand-success;
 
-          .fa {
+          > .fa {
             color: lighten(@brand-dark, 30%);
           }
         }
@@ -186,9 +186,5 @@
     &.call-out-hidden {
       opacity: 0;
     }
-  }
-
-  img {
-    max-width: 100%;
   }
 }

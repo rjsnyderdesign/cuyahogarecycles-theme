@@ -138,18 +138,20 @@
   display: block;
   margin: 0;
   padding: 0;
+  vertical-align: bottom;
 
   > .grid-cell-content-outer {
     width: 100%;
     height: 100%;
     display: table;
     padding: (@grid-gutter-width * 3 / 8) (@grid-gutter-width * 1 / 2);
+    vertical-align: inherit;
 
     > .grid-cell-content-inner {
       width: 100%;
       height: 100%;
       display: table-cell;
-      vertical-align: bottom;
+      vertical-align: inherit;
     }
   }
 
@@ -160,36 +162,23 @@
     font-size: @font-size-large;
     letter-spacing: @letter-spacing;
     text-transform: uppercase;
-
-    > .grid-cell-content-outer {
-      > .grid-cell-content-inner {
-        vertical-align: bottom;
-      }
-    }
+    vertical-align: bottom;
   }
 
   &.grid-cell-link-caption {
     position: relative;
     z-index: 1;
+    vertical-align: baseline;
 
     > .grid-cell-content-outer {
       padding: 0 (@grid-gutter-width * 1 / 2);
-
-      > .grid-cell-content-inner {
-        vertical-align: baseline;
-      }
     }
   }
 
   &.grid-cell-link-event {
     position: relative;
     z-index: 1;
-
-    > .grid-cell-content-outer {
-      > .grid-cell-content-inner {
-        vertical-align: bottom;
-      }
-    }
+    vertical-align: bottom;
 
     h2 {
       margin-top: (@font-size-base / 2);
@@ -227,12 +216,7 @@
   &.grid-cell-info-box {
     font-size: (@font-size-base * 1.25);
     text-align: left;
-
-    > .grid-cell-content-outer {
-      > .grid-cell-content-inner {
-        vertical-align: bottom;
-      }
-    }
+    vertical-align: bottom;
 
     h4 {
       font-size: (@font-size-base * 2.5);
@@ -259,19 +243,18 @@
     text-decoration: none;
   }
 
-  &:after {
+  .grid-cell-link-bg:after {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 1;
     border: 0 none;
     content: '';
   }
 
-  &:focus:after {
+  &:focus .grid-cell-link-bg:after {
     border: 2px solid @white;
   }
 
@@ -290,6 +273,8 @@
       }
 
       @media screen and (min-width: @screen-xs-min) {
+        vertical-align: middle;
+
         h4 {
           font-size: (@font-size-base * 1.25);
         }
@@ -297,12 +282,6 @@
         .symbol {
           width: 60px;
           height: 60px;
-        }
-      }
-
-      > .grid-cell-content-outer {
-        > .grid-cell-content-inner {
-          vertical-align: middle;
         }
       }
     }
@@ -329,14 +308,15 @@
   &.grid-cell-link-staff {
     > .grid-cell-link-caption {
       background: rgba(0,0,0,0.4);
+      vertical-align: bottom;
 
       > .grid-cell-content-outer {
         padding: (@grid-gutter-width * 3 / 8) (@grid-gutter-width * 1 / 2);
-
-        > .grid-cell-content-inner {
-          vertical-align: bottom;
-        }
       }
+    }
+
+    > .grid-cell-link-bg:after {
+      z-index: 1;
     }
   }
 }

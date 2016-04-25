@@ -6,6 +6,34 @@
 /*!
  * CuyahogaRecycles.org theme
  */
+.link-fx-nav-default
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.link-fx-nav-default:hover,
+.link-fx-nav-default:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.link-fx-nav-default:active,
+.link-fx-nav-default.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
+}
 .btn-default,
 .btn-primary,
 .btn-success,

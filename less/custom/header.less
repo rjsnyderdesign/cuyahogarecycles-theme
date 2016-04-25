@@ -35,44 +35,6 @@
   font-size: @em-base;
   letter-spacing: (@em-base * 0.035);
 
-  .page-header-skip {
-    position: absolute;
-    top: (@font-size-base / 4);
-    left: @navbar-sm-padding-horizontal;
-  }
-
-  .page-header-upper {
-    height: @navbar-height-upper;
-    padding: @navbar-xs-padding-horizontal;
-
-    @media screen and (min-width: @screen-xs-min) {
-      height: @navbar-sm-height;
-      padding: @em-base @navbar-sm-padding-horizontal;
-    }
-
-    @media screen and (min-width: @grid-float-breakpoint) {
-      height: auto;
-      padding-bottom: (@em-base / 2);
-    }
-  }
-
-  .page-header-upper-content {
-    width: 100%;
-    position: relative;
-  }
-
-  .page-header-upper-right {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
-
-  .navbar-first {
-    display: none;
-  }
-
   .login-link {
     font-size: @em-small;
     font-weight: normal;
@@ -82,17 +44,50 @@
 
     .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
   }
+}
 
-  .block-breadcrumbs {
-    display: none;
-    font-size: initial;
+.page-header-skip {
+  position: absolute;
+  top: (@font-size-base / 4);
+  left: @navbar-sm-padding-horizontal;
+}
+
+.page-header-upper {
+  height: @navbar-height-upper;
+  padding: @navbar-xs-padding-horizontal;
+
+  @media screen and (min-width: @screen-xs-min) {
+    height: @navbar-sm-height;
+    padding: @em-base @navbar-sm-padding-horizontal;
   }
 
   @media screen and (min-width: @grid-float-breakpoint) {
-    .page-header-upper-right,
-    .navbar-first {
-      display: block;
-    }
+    height: auto;
+    padding-bottom: (@em-base / 2);
+  }
+}
+
+.page-header-upper-content {
+  width: 100%;
+  position: relative;
+}
+
+.page-header-upper-right {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.navbar-first {
+  display: none;
+}
+
+@media screen and (min-width: @grid-float-breakpoint) {
+  .page-header-upper-right,
+  .navbar-first {
+    display: block;
   }
 }
 

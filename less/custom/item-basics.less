@@ -65,28 +65,28 @@
 .item-basics {
   font-size: 0.75em;
 
-  .item-basics-title {
-    text-transform: none;
-  }
-
-  .item-basics-subtitle {
-    height: 2em;
-    font-size: 1.25em;
-  }
-
-  @media screen and (min-width: @item-basics-sm-min) {
-    .item-basics-subtitle {
-      height: 3em;
-      font-size: 1.5em;
-    }
-  }
-
   @media screen and (min-width: @item-basics-md-min) {
     font-size: 0.875em;
   }
 
   @media screen and (min-width: @item-basics-lg-min) {
     font-size: 1em;
+  }
+}
+
+.item-basics-title {
+  text-transform: none;
+}
+
+.item-basics-subtitle {
+  height: 2em;
+  font-size: 1.25em;
+}
+
+@media screen and (min-width: @item-basics-sm-min) {
+  .item-basics-subtitle {
+    height: 3em;
+    font-size: 1.5em;
   }
 }
 
@@ -265,22 +265,10 @@
   @trig-padding: (@trig-height * (2 / sqrt(3) - 1) / 2);
 }
 
-@media screen and (max-width: @item-basics-breakpoint-max) {
+.set-trig-padding(@height) {
+  .get-trig-padding(@height);
+
   .item-basics {
-    .item-basics-cat-row {
-      width: 100%;
-      font-size: 0;
-      text-align: center;
-      max-width: 240px;
-    }
-
-    @height: 64px;
-    .get-trig-padding(@height);
-
-    .item-basics-cat-row {
-      padding: (@trig-padding * 2) 0;
-    }
-
     .item-icon.item-icon-size-basics {
       width: @height;
       height: @height;
@@ -290,28 +278,15 @@
       margin: 0;
       padding: 0 @trig-padding;
     }
+  }
 
-    @media (min-width: @item-basics-xs-min) {
+  .item-basics-cat-row {
+    padding: (@trig-padding * 2) 0;
+  }
+}
 
-      @height: 94px;
-      .get-trig-padding(@height);
-
-      .item-basics-cat-row {
-        padding: (@trig-padding * 2) 0;
-        max-width: 360px;
-      }
-
-      .item-icon.item-icon-size-basics {
-        width: @height;
-        height: @height;
-      }
-
-      .item-figure {
-        margin: 0;
-        padding: 0 @trig-padding;
-      }
-    }
-
+@media screen and (max-width: @item-basics-breakpoint-max) {
+  .item-basics {
     .item-figure {
       display: inline-block;
       margin: (@font-size-base / 4);
@@ -326,6 +301,23 @@
 
     .item-icon.item-icon-size-basics {
       border-width: 2px;
+    }
+  }
+
+  .set-trig-padding(64px);
+
+  .item-basics-cat-row {
+    width: 100%;
+    font-size: 0;
+    text-align: center;
+    max-width: 240px;
+  }
+
+  @media (min-width: @item-basics-xs-min) {
+    .set-trig-padding(94px);
+
+    .item-basics-cat-row {
+      max-width: 360px;
     }
   }
 
