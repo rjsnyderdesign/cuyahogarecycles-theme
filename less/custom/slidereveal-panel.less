@@ -52,7 +52,30 @@
     }
   }
 
+  .panel-bar {
+    height: @slidereveal-panel-bar-height;
+  }
+
   .panel-body {
+    height: 100%;
+    padding: 0;
+
+    .panel-body-v-shift(@bars) {
+      @bar-pos: (@bars + 1);
+      &:nth-child(@{bar-pos}) {
+        margin-bottom: (-@slidereveal-panel-bar-height * @bars);
+        padding-bottom: (@slidereveal-panel-bar-height * @bars);
+      }
+    }
+
+    .panel-body-v-shift(1);
+    .panel-body-v-shift(2);
+    .panel-body-v-shift(3);
+    .panel-body-v-shift(4);
+    .panel-body-v-shift(5);
+  }
+
+  .panel-body-main {
     height: 100%;
     padding: @slidereveal-panel-padding-horizontal;
     overflow-y: auto;

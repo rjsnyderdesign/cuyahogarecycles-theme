@@ -15,13 +15,8 @@
 // --------------------------------------------------
 
 .slidereveal-panel#panel-menu {
-  padding-bottom: (@slidereveal-panel-bar-height * 3);
   color: @white;
   background: @brand-dark;
-
-  .panel-body {
-    margin-bottom: (-@slidereveal-panel-bar-height * 3);
-  }
 
   hr {
     margin: @slidereveal-panel-line-spacing 0;
@@ -135,15 +130,6 @@
     }
   }
 
-  .city-recycling-btn {
-    width: 100%;
-    height: @slidereveal-panel-bar-height;
-    padding: @slidereveal-panel-padding-vertical @slidereveal-panel-padding-horizontal;
-    border: 0 none;
-    font-size: 14px;
-    text-align: left;
-  }
-
   .search-container {
     color: @brand-dark;
 
@@ -157,5 +143,24 @@
     .search-btn {
       .link-fx-nav(@brand-success; @brand-success);
     }
+  }
+
+  .city-recycling-btn,
+  .item-filter-bar {
+    width: 100%;
+    height: @slidereveal-panel-bar-height;
+    margin: 0;
+    padding: @slidereveal-panel-padding-vertical @slidereveal-panel-padding-horizontal;
+    border: 0 none;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .item-filter-bar {
+    color: @gray;
+  }
+
+  .item-filter-panel-open {
+    height: 100%;
   }
 }

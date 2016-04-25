@@ -10748,7 +10748,41 @@ h6
     vertical-align: middle;
     text-transform: uppercase;
 }
+.slidereveal-panel .panel-bar
+{
+    height: 50px;
+}
 .slidereveal-panel .panel-body
+{
+    height: 100%;
+    padding: 0;
+}
+.slidereveal-panel .panel-body:nth-child(2)
+{
+    margin-bottom: -50px;
+    padding-bottom: 50px;
+}
+.slidereveal-panel .panel-body:nth-child(3)
+{
+    margin-bottom: -100px;
+    padding-bottom: 100px;
+}
+.slidereveal-panel .panel-body:nth-child(4)
+{
+    margin-bottom: -150px;
+    padding-bottom: 150px;
+}
+.slidereveal-panel .panel-body:nth-child(5)
+{
+    margin-bottom: -200px;
+    padding-bottom: 200px;
+}
+.slidereveal-panel .panel-body:nth-child(6)
+{
+    margin-bottom: -250px;
+    padding-bottom: 250px;
+}
+.slidereveal-panel .panel-body-main
 {
     overflow-y: auto;
 
@@ -10896,14 +10930,8 @@ h6
  */
 .slidereveal-panel#panel-menu
 {
-    padding-bottom: 150px;
-
     color: #fff;
     background: #263746;
-}
-.slidereveal-panel#panel-menu .panel-body
-{
-    margin-bottom: -150px;
 }
 .slidereveal-panel#panel-menu hr
 {
@@ -11073,18 +11101,6 @@ h6
     color: #95d600;
     border-color: #95d600;
 }
-.slidereveal-panel#panel-menu .city-recycling-btn
-{
-    font-size: 14px;
-
-    width: 100%;
-    height: 50px;
-    padding: 8px 32px;
-
-    text-align: left;
-
-    border: 0 none;
-}
 .slidereveal-panel#panel-menu .search-container
 {
     color: #263746;
@@ -11135,6 +11151,28 @@ h6
 
     color: #95d600;
 }
+.slidereveal-panel#panel-menu .city-recycling-btn,
+.slidereveal-panel#panel-menu .item-filter-bar
+{
+    font-size: 14px;
+
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 8px 32px;
+
+    text-align: left;
+
+    border: 0 none;
+}
+.slidereveal-panel#panel-menu .item-filter-bar
+{
+    color: #666;
+}
+.slidereveal-panel#panel-menu .item-filter-panel-open
+{
+    height: 100%;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -11142,14 +11180,8 @@ h6
 {
     z-index: 1052;
 
-    padding-bottom: 100px;
-
     color: #00833e;
     background: #95d600;
-}
-.slidereveal-panel#panel-community .panel-body
-{
-    margin-bottom: -100px;
 }
 .slidereveal-panel#panel-community ul
 {
@@ -11272,17 +11304,11 @@ h6
  */
 .slidereveal-panel#panel-item-filter
 {
-    padding-bottom: 50px;
-
     background: #e6e6e6;
 }
 .slidereveal-panel#panel-item-filter .panel-head
 {
     background: #d9d9d9;
-}
-.slidereveal-panel#panel-item-filter .panel-body
-{
-    margin-bottom: -50px;
 }
 .slidereveal-panel#panel-item-filter .item-filter-list > li,
 .slidereveal-panel#panel-item-filter .item-filter-list > dd
