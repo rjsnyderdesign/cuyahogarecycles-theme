@@ -10656,7 +10656,6 @@ h6
     position: fixed;
     z-index: 1050;
     top: 0;
-    right: -100%;
 
     max-width: 480px;
     height: 100%;
@@ -10880,6 +10879,8 @@ h6
  */
 .slidereveal-panel#panel-menu
 {
+    right: -100%;
+
     color: #fff;
     background: #263746;
 }
@@ -11134,6 +11135,7 @@ h6
 .slidereveal-panel#panel-community
 {
     z-index: 1052;
+    right: -100%;
 
     color: #00833e;
     background: #95d600;
@@ -11259,6 +11261,8 @@ h6
  */
 .slidereveal-panel#panel-item-filter
 {
+    left: -100%;
+
     background: #e6e6e6;
 }
 .slidereveal-panel#panel-item-filter .panel-head

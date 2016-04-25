@@ -209,7 +209,7 @@
                     hide: onHide,
                     hidden: onHidden
                 } );
-                $panelItemFilter.css( 'right', 0 );
+                $panelItemFilter.css( 'left', -320 );
             }
 
             // Add close buttons
