@@ -530,11 +530,11 @@ if (typeof jQuery === 'undefined') {
                 $grandparent.find( '.dropdown-menu' ).hide();
             }
 
-            $( '.mega-menu .dropdown-menu a[data-action="sub-menu-toggle"]' )
+            $mainMenu.find( '.dropdown-menu a[data-action="sub-menu-toggle"]' )
                 .on( 'mouseover', hoverTrigger )
                 .on( 'focus', hoverTrigger );
 
-            $( '.mega-menu .dropdown-menu a:not([data-action="sub-menu-toggle"])' )
+            $mainMenu.find( '.dropdown-menu a:not([data-action="sub-menu-toggle"])' )
                 .on( 'mouseover', hoverDefault )
                 .on( 'focus', hoverDefault );
 
@@ -627,7 +627,7 @@ if (typeof jQuery === 'undefined') {
 
         $( '#panel-menu .dropdown a[data-action="sub-menu-toggle"]' ).on( 'click', function ( e ) {
             var $this        = $( this ),
-                $current     = $this.next(),
+                $current     = $this.parent().find( '> .dropdown-menu' ),
                 $grandparent = $this.parent().parent();
             if ( $this.hasClass( 'open' ) ) {
                 $this.removeClass( 'open' );
@@ -645,17 +645,6 @@ if (typeof jQuery === 'undefined') {
             e.preventDefault()
             e.stopPropagation();
         });
-
-        $( '.dropdown-menu > li > a:not([data-action="sub-menu-toggle"])' ).on( 'click', function () {
-            var $root = $( this ).closest( '.dropdown' );
-            $( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
-            $root.find( '.sub-menu:not(.first)' ).slideUp( 400 );
-        });
-
-        var closeMobileDropdown = function () {
-            $( '#panel-menu .dropdown' ).find( '[data-action="sub-menu-toggle"]' ).removeClass( 'open' );
-            $( '#panel-menu .dropdown' ).find( '.sub-menu' ).hide();
-        };
 
         //
         // Header search

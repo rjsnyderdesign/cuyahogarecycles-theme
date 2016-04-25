@@ -18,15 +18,28 @@
   color: @white;
   background: @brand-dark;
 
+  .panel-body-main {
+    overflow-y: scroll;
+  }
+
   hr {
     margin: @slidereveal-panel-line-spacing 0;
     border-top: 2px solid @white;
   }
 
   .nav,
-  .sub-menu {
+  .dropdown-menu {
     > li {
+      position: relative;
+
+      &:extend(.clearfix all);
+
       > a {
+        margin: 0.75em 0;
+        padding: 0;
+        margin-left: (@em-base * 1.5);
+        display: inline-block;
+        white-space: normal;
 
         .link-fx-nav(@brand-info; @brand-success);
 
@@ -39,41 +52,45 @@
           }
         }
 
-        &.open {
-          color: @brand-success;
+        &.sub-menu-toggle {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          margin-left: 0;
+
+          &.open {
+            color: @brand-success;
+
+            .fa {
+              color: @brand-danger;
+
+              .rotate(45deg);
+            }
+          }
 
           .fa {
-            color: @brand-danger;
+            position: relative;
+            top: -0.0125em;
+            color: darken(@brand-info, 10%);
+            font-size: 0.75em;
 
-            .rotate(45deg);
+            .transition(all @link-transition-speed);
           }
-        }
-
-        .fa {
-          position: relative;
-          top: -3px;
-          margin-left: (@em-base / 2);
-          color: darken(@brand-info, 10%);
-          font-size: @em-small;
-
-          .transition(all @link-transition-speed);
         }
       }
     }
   }
 
   .nav {
-    > li {
-      > a {
-        text-transform: uppercase;
-      }
-    }
+    // Make room for scroll bar
+    margin-right: -17px;
   }
 
   .dropdown {
-
     > a {
       font-size: @font-size-h5;
+      text-transform: uppercase;
     }
 
     .dropdown-menu {
@@ -81,34 +98,13 @@
       position: relative;
       top: 100%;
       left: 0;
-      margin: 0;
+      margin: 0 0 @slidereveal-panel-line-spacing;
       padding: 0;
+      padding-left: (@em-base * 1.25);
       background: none;
       border: 0 none;
 
       .box-shadow(none);
-    }
-
-    .sub-menu {
-      margin: 0 0 @slidereveal-panel-line-spacing;
-
-      > li {
-        padding-left: (@slidereveal-panel-padding-horizontal / 2);
-        margin: @slidereveal-panel-line-spacing 0;
-
-        > a {
-          display: block;
-          padding: 0;
-          font-size: @font-size-base;
-          line-height: 1.25;
-          clear: both;
-          white-space: normal;
-
-          .fa {
-            top: 0;
-          }
-        }
-      }
     }
 
     &.open {
@@ -121,7 +117,7 @@
   }
 
   .panel-social-links {
-    margin-top: 32px;
+    margin: (@em-base * 2) 0;
 
     &:extend(.social-links all);
 
