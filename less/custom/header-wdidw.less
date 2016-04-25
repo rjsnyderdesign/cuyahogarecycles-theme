@@ -111,10 +111,11 @@
     .form-control,
     .btn {
       display: block;
-      padding: (@em-base / 2) 0;
+      padding: 0;
       border: 0 none;
       background: none;
       color: @brand-primary;
+      font-size: @em-large;
       outline: none;
 
       // Force firefox and chrome to display correct input height
@@ -124,16 +125,20 @@
       .box-shadow(none);
 
       .fa {
-        font-size: (@em-base * 2);
-        padding: 2px 0;
+        font-size: @em-large;
+        padding: 0;
       }
     }
 
     input[type="text"] {
-      font-size: @em-large;
+      font-size: (@em-base * 1.125);
       padding: 0 @em-base;
 
       .placeholder(rgba(255,255,255,0.4));
+
+      @media screen and (min-width: @screen-xs-min) {
+        font-size: @em-large;
+      }
     }
 
     .btn {

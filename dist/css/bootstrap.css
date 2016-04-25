@@ -4392,7 +4392,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     position: relative;
 
-    min-height: 60px;
+    min-height: 50px;
     margin-bottom: 0;
 }
 @media (min-width: 992px)
@@ -4538,8 +4538,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 
     float: left;
 
-    height: 60px;
-    padding: 29.375px 40px;
+    height: 50px;
+    padding: 1em 40px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus
@@ -4564,9 +4564,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 
     float: right;
 
-    margin-top: 13px;
+    margin-top: 8px;
     margin-right: 40px;
-    margin-bottom: 13px;
+    margin-bottom: 8px;
     padding: 9px 10px;
 
     border: 1px solid transparent;
@@ -4600,7 +4600,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-nav
 {
-    margin: 14.6875px -40px;
+    margin: .5em -40px;
 }
 .navbar-nav > li > a
 {
@@ -4654,15 +4654,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     }
     .navbar-nav > li > a
     {
-        padding-top: 29.375px;
-        padding-bottom: 29.375px;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
 }
 .navbar-form
 {
-    margin-top: 28.75px;
+    margin-top: 23.75px;
     margin-right: -40px;
-    margin-bottom: 28.75px;
+    margin-bottom: 23.75px;
     margin-left: -40px;
     padding: 10px 40px;
 
@@ -4786,23 +4786,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-btn
 {
-    margin-top: 28.75px;
-    margin-bottom: 28.75px;
+    margin-top: 23.75px;
+    margin-bottom: 23.75px;
 }
 .navbar-btn.btn-sm
 {
-    margin-top: 23.5px;
-    margin-bottom: 23.5px;
+    margin-top: 18.5px;
+    margin-bottom: 18.5px;
 }
 .navbar-btn.btn-xs
 {
-    margin-top: 19px;
-    margin-bottom: 19px;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 .navbar-text
 {
-    margin-top: 29.375px;
-    margin-bottom: 29.375px;
+    margin-top: 24.375px;
+    margin-bottom: 24.375px;
 }
 @media (min-width: 992px)
 {
@@ -8598,7 +8598,7 @@ body:not(.noscroll)
 .goto-top-wrapper
 {
     position: fixed;
-    z-index: 1020;
+    z-index: 1030;
     right: 40px;
     bottom: 3em;
 
@@ -9154,19 +9154,6 @@ h6
         width: 387px;
     }
 }
-@media screen and (min-width: 1200px)
-{
-    .brand .brand-logo-main
-    {
-        width: 516px;
-    }
-}
-.brand .brand-logo-main-icon
-{
-    width: 65px;
-    height: auto;
-    margin: 0;
-}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -9552,8 +9539,7 @@ h6
     .page-header .page-header-upper
     {
         height: auto;
-        padding-top: 32px;
-        padding-bottom: 0;
+        padding-bottom: 8px;
     }
 }
 .page-header .page-header-upper-content
@@ -9659,7 +9645,7 @@ h6
 {
     font-size: 16px;
 
-    min-height: 60px;
+    min-height: 50px;
 
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -9782,7 +9768,7 @@ h6
 }
 .city-recycling-btn
 {
-    height: 60px;
+    height: 50px;
     padding: 0 40px;
 
     cursor: pointer;
@@ -9818,7 +9804,7 @@ h6
 .page-header.header-sticky
 {
     position: absolute;
-    z-index: 1020;
+    z-index: 1030;
     top: 0;
     left: 0;
 
@@ -9860,49 +9846,10 @@ h6
 {
     min-height: 50px;
 }
-.page-header.header-sticky.header-sticky-detached .navbar-primary
-{
-    min-height: 100px;
-}
-.page-header.header-sticky.header-sticky-detached .navbar-nav
-{
-    height: 100%;
-}
-.page-header.header-sticky.header-sticky-detached .navbar-nav > li
-{
-    height: 100%;
-}
-.page-header.header-sticky.header-sticky-detached .navbar-nav > li > a
-{
-    height: 100%;
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-.page-header.header-sticky.header-sticky-detached .col-side-full-height.brand-sticky .brand
-{
-    display: block;
-}
 .page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
 .page-header.header-sticky.header-sticky-detached .city-recycling-btn
 {
     height: 50px;
-}
-.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group input,
-.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .form-control,
-.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn
-{
-    font-size: 1.5em;
-    line-height: 49px;
-
-    height: 49px;
-}
-.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn
-{
-    padding: 0;
-}
-.page-header.header-sticky.header-sticky-detached .wdidw-search-form .input-group .btn .fa
-{
-    font-size: 1.5em;
 }
 .page-header.header-sticky.header-sticky-detached .block-breadcrumbs
 {
@@ -9910,18 +9857,6 @@ h6
 
     padding-top: 1em;
     padding-bottom: 1em;
-}
-.col-side-full-height.brand-sticky
-{
-    vertical-align: middle;
-}
-.page-header.header-sticky:not(.header-sticky-detached) .col-side-full-height.brand-sticky
-{
-    display: none;
-}
-.col-side-full-height.brand-sticky .brand
-{
-    display: none;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -10093,7 +10028,7 @@ h6
     overflow: hidden;
 
     width: 100%;
-    height: 60px;
+    height: 50px;
 
     background: #00833e;
 }
@@ -10215,12 +10150,13 @@ h6
 .wdidw-search-form .input-group .form-control,
 .wdidw-search-form .input-group .btn
 {
-    line-height: 44px;
+    font-size: 24px;
+    line-height: 34px;
 
     display: block;
 
-    height: 44px;
-    padding: 8px 0;
+    height: 34px;
+    padding: 0;
 
     color: #00833e;
     border: 0 none;
@@ -10233,13 +10169,13 @@ h6
 .wdidw-search-form .input-group .form-control .fa,
 .wdidw-search-form .input-group .btn .fa
 {
-    font-size: 32px;
+    font-size: 24px;
 
-    padding: 2px 0;
+    padding: 0;
 }
 .wdidw-search-form .input-group input[type='text']
 {
-    font-size: 24px;
+    font-size: 18px;
 
     padding: 0 16px;
 }
@@ -10255,6 +10191,13 @@ h6
 .wdidw-search-form .input-group input[type='text']::-webkit-input-placeholder
 {
     color: rgba(255, 255, 255, .4);
+}
+@media screen and (min-width: 480px)
+{
+    .wdidw-search-form .input-group input[type='text']
+    {
+        font-size: 24px;
+    }
 }
 .wdidw-search-form .input-group .btn
 {
@@ -12841,8 +12784,9 @@ h6
 }
 .item-filter-bar
 {
+    height: 50px;
     margin: 0 -40px;
-    padding: 1em 40px;
+    padding: .875em 40px;
 
     background: #e6e6e6;
 }

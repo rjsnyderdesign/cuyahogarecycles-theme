@@ -14,7 +14,7 @@
 // Header sticky
 // --------------------------------------------------
 
-@header-sticky-navbar-height: 50px;
+@header-sticky-navbar-height: @navbar-height;
 
 .page-header.header-sticky {
   position: absolute;
@@ -23,7 +23,7 @@
 
   // Ensure z-index is greater than bootstrap dropdowns
   // and less than slideReveal panels
-  z-index: 1020;
+  z-index: @zindex-navbar-fixed;
 
   .transition(box-shadow @panel-transition-speed);
 
@@ -60,55 +60,9 @@
       min-height: @header-sticky-navbar-height;
     }
 
-    .navbar-primary {
-      min-height: (@header-sticky-navbar-height * 2);
-    }
-
-    .navbar-nav {
-      height: 100%;
-
-      > li {
-        height: 100%;
-
-        > a {
-          height: 100%;
-          padding-top: 40px;
-          padding-bottom: 40px;
-        }
-      }
-    }
-
-    .col-side-full-height.brand-sticky {
-      .brand {
-        display: block;
-      }
-    }
-
     .wdidw-wrapper,
     .city-recycling-btn {
       height: @header-sticky-navbar-height;
-    }
-
-    .wdidw-search-form {
-      .input-group {
-        input,
-        .form-control,
-        .btn {
-          font-size: @font-size-large;
-
-          // Force firefox and chrome to display correct input height
-          height: (@header-sticky-navbar-height - @font-size-base);
-          line-height: (@header-sticky-navbar-height - @font-size-base);
-        }
-
-        .btn {
-          padding: 0;
-
-          .fa {
-            font-size: @font-size-large;
-          }
-        }
-      }
     }
 
     .block-breadcrumbs {
@@ -116,17 +70,5 @@
       padding-top: @font-size-base;
       padding-bottom: @font-size-base;
     }
-  }
-}
-
-.col-side-full-height.brand-sticky {
-  vertical-align: middle;
-
-  .page-header.header-sticky:not(.header-sticky-detached) & {
-    display: none;
-  }
-
-  .brand {
-    display: none;
   }
 }

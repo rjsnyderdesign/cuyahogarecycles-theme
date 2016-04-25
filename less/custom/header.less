@@ -21,6 +21,8 @@
 @navbar-sm-padding-horizontal: (@grid-gutter-width / 2);
 @navbar-height-enlarged-by: (@navbar-sm-height - @navbar-height);
 
+@navbar-height-upper: (@navbar-height + 10px);
+
 
 //
 // Header basic
@@ -40,7 +42,7 @@
   }
 
   .page-header-upper {
-    height: @navbar-height;
+    height: @navbar-height-upper;
     padding: @navbar-xs-padding-horizontal;
 
     @media screen and (min-width: @screen-xs-min) {
@@ -50,8 +52,7 @@
 
     @media screen and (min-width: @grid-float-breakpoint) {
       height: auto;
-      padding-top: (@em-base * 2);
-      padding-bottom: 0;
+      padding-bottom: (@em-base / 2);
     }
   }
 
@@ -179,7 +180,7 @@
   width: (@navbar-toggle-size * 1.5);
   height: (@navbar-toggle-size * 1.5);
   position: absolute;
-  top: ((@navbar-height - @navbar-toggle-size * 1.5) / 2 - @navbar-xs-padding-horizontal);
+  top: ((@navbar-height-upper - @navbar-toggle-size * 1.5) / 2 - @navbar-xs-padding-horizontal);
   right: -@navbar-toggle-spacing;
   margin: 0;
   padding: @navbar-toggle-spacing;

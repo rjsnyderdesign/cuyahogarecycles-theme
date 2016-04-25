@@ -52,15 +52,10 @@
 @brand-logo-main-md-width: (@brand-logo-main-width * 3 / 4);
 @brand-logo-main-lg-width: @brand-logo-main-width;
 
-@brand-logo-main-icon-width: 78px;
-
 .brand {
   a {
     position: relative;
     z-index: 1;
-
-    // .link-fx-zoom(~'.brand-logo-main', 1.03125);
-    // .link-fx-zoom(~'.brand-logo-main-icon', 1.0625);
   }
 
   .brand-logo-main {
@@ -84,15 +79,5 @@
     @media screen and (min-width: @screen-md-min) {
       width: @brand-logo-main-md-width;
     }
-
-    @media screen and (min-width: @screen-lg-min) {
-      width: @brand-logo-main-lg-width;
-    }
-  }
-
-  .brand-logo-main-icon {
-    width: (@brand-logo-main-icon-width * 5 / 6);
-    height: auto;
-    margin: 0;
   }
 }
