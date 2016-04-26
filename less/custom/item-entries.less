@@ -97,6 +97,24 @@
   &:extend(.link-fx-nav-default all);
 }
 
+.item-entry-detail-link {
+  display: inline-block;
+  margin: 1em 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &:extend(.link-fx-nav-default all);
+
+  > .item-entry-detail-link-name,
+  > .detail-arrow {
+    vertical-align: middle;
+  }
+
+  > .detail-arrow {
+    font-size: 1.5em;
+  }
+}
+
 .item-entry .item-entry-subhead {
   margin-bottom: 1.75em;
   font-size: 1em;

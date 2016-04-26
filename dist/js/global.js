@@ -642,7 +642,7 @@ if (typeof jQuery === 'undefined') {
                 $this.addClass( 'open' );
                 $current.slideDown( 400 );
             }
-            e.preventDefault()
+            e.preventDefault();
             e.stopPropagation();
         });
 
@@ -883,6 +883,14 @@ if (typeof jQuery === 'undefined') {
             $itemFilters.find( '[data-action="filter-update"]' ).on( 'click', loading );
 
         } )();
+
+        //
+        // Override default Bootstrap behavior
+        //
+
+        $( '.locations-toggle' ).on( 'click', function ( e ) {
+            e.preventDefault();
+        } );
 
     } );
 

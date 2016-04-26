@@ -9,6 +9,7 @@
 .link-fx-nav-default,
 .youtube-video-play-button,
 .goto-top-btn,
+.link-toggle,
 .block-newsletter-form label,
 .block-breadcrumbs .breadcrumb > li > a,
 .wdidw-search-results-list > li > a,
@@ -20,6 +21,7 @@
 .page-footer-nav-siteinfo > li > a,
 .page-footer-social > li > a,
 .item-entry-arrow,
+.item-entry-detail-link,
 .item-filter-panel-open,
 .btn-group .dropdown-toggle.item-filter-city-btn,
 .dropdown-menu.item-filter-city-list ul > li > a,
@@ -40,6 +42,8 @@
 .youtube-video-play-button:focus,
 .goto-top-btn:hover,
 .goto-top-btn:focus,
+.link-toggle:hover,
+.link-toggle:focus,
 .block-newsletter-form label:hover,
 .block-newsletter-form label:focus,
 .block-breadcrumbs .breadcrumb > li > a:hover,
@@ -62,6 +66,8 @@
 .page-footer-social > li > a:focus,
 .item-entry-arrow:hover,
 .item-entry-arrow:focus,
+.item-entry-detail-link:hover,
+.item-entry-detail-link:focus,
 .item-filter-panel-open:hover,
 .item-filter-panel-open:focus,
 .btn-group .dropdown-toggle.item-filter-city-btn:hover,
@@ -82,6 +88,8 @@
 .youtube-video-play-button.active,
 .goto-top-btn:active,
 .goto-top-btn.active,
+.link-toggle:active,
+.link-toggle.active,
 .block-newsletter-form label:active,
 .block-newsletter-form label.active,
 .block-breadcrumbs .breadcrumb > li > a:active,
@@ -104,6 +112,8 @@
 .page-footer-social > li > a.active,
 .item-entry-arrow:active,
 .item-entry-arrow.active,
+.item-entry-detail-link:active,
+.item-entry-detail-link.active,
 .item-filter-panel-open:active,
 .item-filter-panel-open.active,
 .btn-group .dropdown-toggle.item-filter-city-btn:active,
@@ -8743,6 +8753,81 @@ body:not(.noscroll)
 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
 }
+.detail-arrow
+{
+    font-size: 1em;
+
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 1em;
+    height: 1em;
+    padding: .14644661em;
+}
+.detail-arrow:after
+{
+    position: relative;
+    right: 25%;
+
+    display: block;
+
+    width: .70710678em;
+    height: .70710678em;
+
+    content: '';
+    -webkit-transition: border-color 500ms;
+         -o-transition: border-color 500ms;
+            transition: border-color 500ms;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+         -o-transform-origin: center center;
+            transform-origin: center center;
+
+    border-color: #666;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+}
+a:hover .detail-arrow:after,
+a:focus .detail-arrow:after
+{
+    border-color: #26cad3;
+}
+a:active .detail-arrow:after,
+a.active .detail-arrow:after
+{
+    -webkit-transition: border-color 0s;
+         -o-transition: border-color 0s;
+            transition: border-color 0s;
+
+    border-color: #95d600;
+}
+.link-toggle > .fa
+{
+    margin-right: .375em;
+
+    -webkit-transition: all 500ms;
+         -o-transition: all 500ms;
+            transition: all 500ms;
+
+    color: #1a8c92;
+}
+.link-toggle:not(.collapsed) > .fa
+{
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+    color: #e84b37;
+}
 /*!
  * CuyahogaRecycles.org theme
  */
@@ -9057,31 +9142,6 @@ a.active
     height: auto;
     margin-top: 0;
     margin-bottom: 1em;
-}
-.block-content a
-{
-    cursor: pointer;
-    -webkit-transition: color 500ms;
-         -o-transition: color 500ms;
-            transition: color 500ms;
-    text-decoration: underline;
-    text-decoration: none;
-}
-.block-content a:hover,
-.block-content a:focus
-{
-    text-decoration: underline;
-
-    color: #1a8c92;
-}
-.block-content a:active,
-.block-content a.active
-{
-    -webkit-transition: color 0s;
-         -o-transition: color 0s;
-            transition: color 0s;
-
-    color: #263746;
 }
 .block-content .article-title
 {
@@ -12583,6 +12643,24 @@ a.active
 .item-entry-arrow
 {
     font-size: 3em;
+}
+.item-entry-detail-link
+{
+    display: inline-block;
+
+    margin: 1em 0;
+
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+.item-entry-detail-link > .item-entry-detail-link-name,
+.item-entry-detail-link > .detail-arrow
+{
+    vertical-align: middle;
+}
+.item-entry-detail-link > .detail-arrow
+{
+    font-size: 1.5em;
 }
 .item-entry .item-entry-subhead,
 .item-group-entry .item-entry-subhead

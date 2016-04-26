@@ -406,3 +406,75 @@ body:not(.noscroll) {
 
   &:extend(.link-fx-nav-default all);
 }
+
+
+//
+// Detail arrow
+// --------------------------------------------------
+
+@arrow-size-base: 1em;
+@arrow-size-inner: ((@arrow-size-base * sqrt(2)) / 2);
+
+.detail-arrow {
+  width: @arrow-size-base;
+  height: @arrow-size-base;
+  display: inline-block;
+  position: relative;
+  padding: ((@arrow-size-base - @arrow-size-inner) / 2);
+  overflow: hidden;
+  font-size: 1em;
+
+  &:after {
+    width: @arrow-size-inner;
+    height: @arrow-size-inner;
+    display: block;
+    position: relative;
+    right: 25%;
+    border-color: @gray;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    content: '';
+
+    .transition(border-color @link-transition-speed);
+
+    .transform-origin(center center);
+
+    .rotate(45deg);
+
+    a:hover &,
+    a:focus & {
+      border-color: @brand-info;
+    }
+
+    a:active &,
+    a.active & {
+      border-color: @brand-success;
+
+      .transition(border-color 0s);
+    }
+  }
+}
+
+
+//
+// Collapse link
+// --------------------------------------------------
+
+.link-toggle {
+  &:extend(.link-fx-nav-default all);
+
+  > .fa {
+    margin-right: 0.375em;
+    color: darken(@brand-info, 15%);
+
+    .transition(all @link-transition-speed);
+  }
+
+  &:not(.collapsed) > .fa {
+    color: @brand-danger;
+
+    .rotate(45deg);
+  }
+}
