@@ -10941,8 +10941,8 @@ a.active
 {
     display: inline-block;
 
-    margin: .75em 0;
-    margin-left: 24px;
+    margin: .875em 0;
+    margin-left: 48px;
     padding: 0;
 
     white-space: normal;
@@ -10964,17 +10964,47 @@ a.active
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle
 {
+    font-size: 18px;
+
     position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
 
+    overflow: hidden;
+
+    width: 28px;
+    height: 28px;
+    margin: 10px;
     margin-left: 0;
+
+    -webkit-transition: border-color 500ms;
+         -o-transition: border-color 500ms;
+            transition: border-color 500ms;
+    text-align: center;
+
+    color: #415e78;
+    border: 2px solid #415e78;
+    border-radius: 50%;
+}
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle .fa
+{
+    line-height: 24px;
+
+    width: 24px;
+    height: 24px;
+
+    -webkit-transition: all 500ms;
+         -o-transition: all 500ms;
+            transition: all 500ms;
+    vertical-align: middle;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle.open,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open
 {
-    color: #95d600;
+    color: #e84b37;
+    border-color: #e84b37;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle.open .fa,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open .fa
@@ -10983,22 +11013,6 @@ a.active
         -ms-transform: rotate(45deg);
          -o-transform: rotate(45deg);
             transform: rotate(45deg);
-
-    color: #e84b37;
-}
-.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle .fa,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle .fa
-{
-    font-size: .75em;
-
-    position: relative;
-    top: -.0125em;
-
-    -webkit-transition: all 500ms;
-         -o-transition: all 500ms;
-            transition: all 500ms;
-
-    color: #1ea1a8;
 }
 .slidereveal-panel#panel-menu .nav
 {
@@ -11006,7 +11020,7 @@ a.active
 }
 .slidereveal-panel#panel-menu .dropdown > a
 {
-    font-size: 1.125em;
+    font-size: 1em;
 
     text-transform: uppercase;
 }

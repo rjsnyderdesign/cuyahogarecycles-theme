@@ -14,6 +14,11 @@
 // Panel - Mobile Menu
 // --------------------------------------------------
 
+@sub-menu-toggle-border-width:  2px;
+@sub-menu-toggle-size:          (24px + 2 * @sub-menu-toggle-border-width);
+@sub-menu-toggle-color-default: lighten(@brand-dark, 15%);
+@sub-menu-toggle-color-active:  @brand-danger;
+
 .slidereveal-panel#panel-menu {
   right: -100%;
   color: @white;
@@ -36,9 +41,9 @@
       &:extend(.clearfix all);
 
       > a {
-        margin: 0.75em 0;
+        margin: 0.875em 0;
         padding: 0;
-        margin-left: (@em-base * 1.5);
+        margin-left: (@em-base * 3);
         display: inline-block;
         white-space: normal;
 
@@ -54,29 +59,40 @@
         }
 
         &.sub-menu-toggle {
+
+          width: @sub-menu-toggle-size;
+          height: @sub-menu-toggle-size;
           position: absolute;
           top: 0;
           left: 0;
           z-index: 1;
+          margin: 10px;
           margin-left: 0;
+          overflow: hidden;
+          border: @sub-menu-toggle-border-width solid @sub-menu-toggle-color-default;
+          border-radius: 50%;
+          color: @sub-menu-toggle-color-default;
+          font-size: 18px;
+          text-align: center;
 
-          &.open {
-            color: @brand-success;
-
-            .fa {
-              color: @brand-danger;
-
-              .rotate(45deg);
-            }
-          }
+          .transition(border-color @link-transition-speed);
 
           .fa {
-            position: relative;
-            top: -0.0125em;
-            color: darken(@brand-info, 10%);
-            font-size: 0.75em;
+             width: (@sub-menu-toggle-size - 2 * @sub-menu-toggle-border-width);
+             height: (@sub-menu-toggle-size - 2 * @sub-menu-toggle-border-width);
+             line-height: (@sub-menu-toggle-size - 2 * @sub-menu-toggle-border-width);
+             vertical-align: middle;
 
             .transition(all @link-transition-speed);
+          }
+
+          &.open {
+            border-color: @sub-menu-toggle-color-active;
+            color: @sub-menu-toggle-color-active;
+
+            .fa {
+              .rotate(45deg);
+            }
           }
         }
       }
@@ -90,7 +106,7 @@
 
   .dropdown {
     > a {
-      font-size: @font-size-h5;
+      font-size: @font-size-base;
       text-transform: uppercase;
     }
 
