@@ -159,10 +159,26 @@
     position: relative;
     z-index: 1;
     font-weight: bold;
-    font-size: @font-size-large;
+    font-size: @font-size-small;
     letter-spacing: @letter-spacing;
     text-transform: uppercase;
     vertical-align: bottom;
+
+    > .grid-cell-content-outer {
+      padding: (@em-base / 2);
+    }
+
+    @media screen and (min-width: @screen-xs-min) {
+        font-size: @font-size-base;
+
+        > .grid-cell-content-outer {
+          padding: (@grid-gutter-width * 3 / 8) (@grid-gutter-width * 1 / 2);
+        }
+    }
+
+    @media screen and (min-width: @screen-sm-min) {
+        font-size: @font-size-large;
+    }
   }
 
   &.grid-cell-link-caption {
@@ -345,6 +361,11 @@
 
   > .grid-cell {
     overflow: visible;
+
+    @media screen and (max-width: @screen-sm-max) {
+        width: 50%;
+        padding-bottom: 25%;
+    }
 
     &:hover,
     &:focus {

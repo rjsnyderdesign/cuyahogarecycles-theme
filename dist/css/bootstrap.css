@@ -12014,7 +12014,7 @@ a.active
 }
 .grid-cell-container-inner.grid-cell-link-title
 {
-    font-size: 1.5em;
+    font-size: .75em;
     font-weight: bold;
 
     position: relative;
@@ -12023,6 +12023,28 @@ a.active
     vertical-align: bottom;
     letter-spacing: .05em;
     text-transform: uppercase;
+}
+.grid-cell-container-inner.grid-cell-link-title > .grid-cell-content-outer
+{
+    padding: 8px;
+}
+@media screen and (min-width: 480px)
+{
+    .grid-cell-container-inner.grid-cell-link-title
+    {
+        font-size: 1em;
+    }
+    .grid-cell-container-inner.grid-cell-link-title > .grid-cell-content-outer
+    {
+        padding: 30px 40px;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    .grid-cell-container-inner.grid-cell-link-title
+    {
+        font-size: 1.5em;
+    }
 }
 .grid-cell-container-inner.grid-cell-link-caption
 {
@@ -12210,6 +12232,14 @@ a.active
 .tile-grid.tile-grid-flat > .grid-cell
 {
     overflow: visible;
+}
+@media screen and (max-width: 991px)
+{
+    .tile-grid.tile-grid-flat > .grid-cell
+    {
+        width: 50%;
+        padding-bottom: 25%;
+    }
 }
 .tile-grid.tile-grid-flat > .grid-cell:hover,
 .tile-grid.tile-grid-flat > .grid-cell:focus
