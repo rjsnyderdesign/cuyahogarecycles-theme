@@ -12470,7 +12470,15 @@ a.active
          -o-transform: scale(1.125);
             transform: scale(1.125);
 }
-.item-link > .item-icon
+.item-icon,
+.item-link
+{
+    position: relative;
+}
+.item-icon > .item-icon,
+.item-icon > .item-link,
+.item-link > .item-icon,
+.item-link > .item-link
 {
     margin: 0;
 }
@@ -12587,6 +12595,45 @@ a.active
 .item-color-key.item-color-key-compost.item-color-key-hollow
 {
     background: none;
+}
+.item-donatable
+{
+    position: absolute;
+    z-index: 1;
+    right: -2px;
+    bottom: -2px;
+
+    display: inline-block;
+
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #666;
+    border-radius: 50%;
+    background-color: #666;
+    background-image: url('../../root/img/symbols/donatable-item.png');
+    background-repeat: no-repeat;
+}
+.item-donatable:hover:after,
+.item-donatable:focus:after
+{
+    font-size: .75em;
+
+    position: absolute;
+    top: 4px;
+    left: 125%;
+
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    content: 'This item can be donated.';
+    white-space: nowrap;
+
+    color: #fff;
+    border-radius: 4px;
+    background: #666;
+    background: rgba(0, 0, 0, .6);
 }
 /*!
  * CuyahogaRecycles.org theme

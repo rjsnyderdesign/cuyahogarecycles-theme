@@ -62,8 +62,13 @@
   .link-fx-zoom(~'img'; 1.125);
 
   display: inline-block;
+}
 
-  > .item-icon {
+.item-icon,
+.item-link {
+  position: relative;
+
+  & > & {
     margin: 0;
   }
 }
@@ -147,4 +152,45 @@
   &.item-color-key-dropoff-recycling { .item-color-key-states(@ccswd-yellow);  }
   &.item-color-key-proper-disposal   { .item-color-key-states(@ccswd-red);     }
   &.item-color-key-compost           { .item-color-key-states(@ccswd-green-1); }
+}
+
+//
+// Donation icon
+// --------------------------------------------------
+
+@item-donatable-size:         30px;
+@item-donatable-border-width: 1px;
+@item-donatable-bg-color:     @gray;
+
+.item-donatable {
+  width: (@item-donatable-size + 2 * @item-donatable-border-width);
+  height: (@item-donatable-size + 2 * @item-donatable-border-width);
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  z-index: 1;
+  background-color: @item-donatable-bg-color;
+  background-image: url('../../root/img/symbols/donatable-item.png');
+  background-repeat: no-repeat;
+  border: @item-donatable-border-width solid @item-donatable-bg-color;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    &:after {
+      display: inline-block;
+      position: absolute;
+      top: 4px;
+      left: 125%;
+      padding: 4px 8px;
+      background: @gray;
+      background: rgba(0,0,0,0.6);
+      border-radius: 4px;
+      color: @white;
+      font-size: @font-size-small;
+      white-space: nowrap;
+      content: 'This item can be donated.';
+    }
+  }
 }
