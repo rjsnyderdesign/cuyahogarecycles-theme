@@ -12014,7 +12014,7 @@ a.active
 }
 .grid-cell-container-inner.grid-cell-link-title
 {
-    font-size: .75em;
+    font-size: 1.5em;
     font-weight: bold;
 
     position: relative;
@@ -12023,28 +12023,6 @@ a.active
     vertical-align: bottom;
     letter-spacing: .05em;
     text-transform: uppercase;
-}
-.grid-cell-container-inner.grid-cell-link-title > .grid-cell-content-outer
-{
-    padding: 8px;
-}
-@media screen and (min-width: 480px)
-{
-    .grid-cell-container-inner.grid-cell-link-title
-    {
-        font-size: 1em;
-    }
-    .grid-cell-container-inner.grid-cell-link-title > .grid-cell-content-outer
-    {
-        padding: 30px 40px;
-    }
-}
-@media screen and (min-width: 768px)
-{
-    .grid-cell-container-inner.grid-cell-link-title
-    {
-        font-size: 1.5em;
-    }
 }
 .grid-cell-container-inner.grid-cell-link-caption
 {
@@ -12279,6 +12257,32 @@ a.active
 .link-tile-flat.active
 {
     background: #26cad3;
+}
+.link-tile-flat .grid-cell-link-title
+{
+    font-size: .75em;
+}
+.link-tile-flat .grid-cell-link-title > .grid-cell-content-outer
+{
+    padding: 8px;
+}
+@media screen and (min-width: 480px)
+{
+    .link-tile-flat .grid-cell-link-title
+    {
+        font-size: 1em;
+    }
+    .link-tile-flat .grid-cell-link-title > .grid-cell-content-outer
+    {
+        padding: 30px 40px;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    .link-tile-flat .grid-cell-link-title
+    {
+        font-size: 1.5em;
+    }
 }
 .link-img-zoom
 {
