@@ -874,6 +874,18 @@
             e.preventDefault();
         } );
 
+        //
+        // Twitter feed embed
+        //
+
+        ( function () {
+
+            CustomizeTwitterWidget( {
+                url: '../dist/css/social-hub-tw.min.css'
+            } );
+
+        } )();
+
     } );
 
 } )( window, jQuery );

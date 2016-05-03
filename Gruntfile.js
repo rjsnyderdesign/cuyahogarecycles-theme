@@ -125,6 +125,7 @@ module.exports = function (grunt) {
       libs: {
         src: [
           'js/theme/libs/classie.js',
+          'js/theme/libs/customize-twitter-1.1.js',
           'js/theme/libs/jquery.mobile-events.js',
           'js/theme/libs/jquery.responsImg.min.js',
           'js/theme/libs/jquery.slidereveal.min.js',
@@ -201,6 +202,17 @@ module.exports = function (grunt) {
         },
         src: 'less/theme.less',
         dest: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      compileSocialHubTw: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: 'social-hub-tw.css.map',
+          sourceMapFilename: 'dist/css/social-hub-tw.css.map'
+        },
+        src: 'less/custom/social-hub-tw.less',
+        dest: 'dist/css/social-hub-tw.css'
       }
     },
 
@@ -219,6 +231,12 @@ module.exports = function (grunt) {
           map: true
         },
         src: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      socialHubTw: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/social-hub-tw.css'
       },
       docs: {
         src: ['docs/assets/css/src/docs.css']
@@ -267,6 +285,10 @@ module.exports = function (grunt) {
       minifyTheme: {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+      },
+      minifySocialHubTw: {
+        src: 'dist/css/social-hub-tw.css',
+        dest: 'dist/css/social-hub-tw.min.css'
       },
       docs: {
         src: [
@@ -502,8 +524,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'uglify:libs', 'uglify:global', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme', 'less:compileSocialHubTw']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'autoprefixer:socialHubTw', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'cssmin:minifySocialHubTw']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);

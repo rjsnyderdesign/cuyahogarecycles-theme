@@ -1,0 +1,126 @@
+/*!
+ * CuyahogaRecycles.org theme
+ */
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "../variables.less";
+@import "../mixins.less";
+
+
+//
+// Custom Twitter feed
+// --------------------------------------------------
+
+* {
+  .box-sizing(border-box);
+}
+
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+.SandboxRoot .timeline-Tweet-text {
+  font-size: 1em !important;
+  line-height: 1.5em !important;
+}
+
+body {
+  font-size: 16px;
+}
+
+body > .timeline-Widget {
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+}
+
+.timeline-Widget > .timeline-Header,
+.timeline-Widget > .timeline-Footer {
+  padding: (@font-size-base) (@grid-gutter-width / 2);
+}
+
+.timeline-TweetList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > .timeline-TweetList-tweet {
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50%;
+    overflow: hidden;
+    border: 0 none;
+    color: inherit;
+
+    @media screen and (min-width: 800px) and (max-width: 1199px) {
+      width: (100% / 2);
+      padding-bottom: (50% / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: (100% / 3);
+      padding-bottom: (50% / 3);
+    }
+
+    > .timeline-Tweet {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      padding: (@font-size-base) (@grid-gutter-width / 2);
+    }
+  }
+}
+
+.timeline-Tweet {
+  .Avatar {
+    border: 1px solid @gray-lighter;
+  }
+
+  > .timeline-Tweet-media {
+    .MediaCard-media {
+      height: 24px;
+      background: none;
+    }
+
+    .MediaCard-mediaContainer {
+      display: none;
+    }
+
+    .MediaCard-borderOverlay {
+      border: 0 none;
+
+      > .u-hiddenVisually {
+        width: 100% !important;
+        height: 100% !important;
+        clip: initial !important;
+      }
+    }
+
+    .TwitterCard {
+      display: none;
+    }
+  }
+
+  > .timeline-Tweet-actions,
+  > .timeline-Tweet-metadata {
+    position: absolute;
+    bottom: (@font-size-base);
+  }
+
+  > .timeline-Tweet-actions {
+    left: 0;
+  }
+
+  > .timeline-Tweet-metadata {
+    right: (@grid-gutter-width / 2);
+  }
+}
