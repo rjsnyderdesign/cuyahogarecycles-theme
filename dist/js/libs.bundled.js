@@ -143,13 +143,11 @@ var CustomizeTwitterWidget = function(data) {
         for (var i = 0; i < frames.length; i++) {
             try {
                 if (isTwitterFrame(frames[i]) &&
-                    !contains(framesWithStyles, frames[i].name)
+                    !contains(framesWithStyles, frames[i].name) &&
+                    frames[i].document.readyState == 'complete' // BUGFIX
                 ) {
-                    // FIX
-                    frames[i].document.addEventListener("DOMContentLoaded", function(e) {
-                      embedCss(frames[i].document, data.url);
-                      framesWithStyles.push(i);
-                    });
+                    embedCss(frames[i].document, data.url);
+                    framesWithStyles.push(i);
                 }
             } catch(e) {
                 console.log("caught an error");
