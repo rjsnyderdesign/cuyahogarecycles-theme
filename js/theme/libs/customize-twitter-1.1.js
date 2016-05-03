@@ -46,8 +46,11 @@ var CustomizeTwitterWidget = function(data) {
                 if (isTwitterFrame(frames[i]) &&
                     !contains(framesWithStyles, frames[i].name)
                 ) {
-                    embedCss(frames[i].document, data.url);
-                    framesWithStyles.push(i);
+                    // FIX
+                    frames[i].document.addEventListener("DOMContentLoaded", function(e) {
+                        embedCss(frames[i].document, data.url);
+                        framesWithStyles.push(i);
+                    });
                 }
             } catch(e) {
                 console.log("caught an error");
@@ -83,4 +86,3 @@ var CustomizeTwitterWidget = function(data) {
         evaluate([], widgetCount, timeoutLength);
     }, timeoutLength);
 }
-
