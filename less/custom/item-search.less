@@ -250,6 +250,18 @@
   .item-cat {
     display: inline-block;
     margin-right: (@grid-gutter-width / 2);
+
+    &:not(:last-child) {
+      margin-bottom: @font-size-base;
+    }
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    .item-cat {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   @media screen and (min-width: @screen-lg-min) {

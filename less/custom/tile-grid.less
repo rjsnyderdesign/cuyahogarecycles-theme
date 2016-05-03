@@ -159,10 +159,14 @@
     position: relative;
     z-index: 1;
     font-weight: bold;
-    font-size: @font-size-large;
+    font-size: (@font-size-base * 1.25);
     letter-spacing: @letter-spacing;
     text-transform: uppercase;
     vertical-align: bottom;
+
+    @media screen and (min-width: @screen-xs-min) {
+      font-size: @font-size-large;
+    }
   }
 
   &.grid-cell-link-caption {
@@ -178,16 +182,30 @@
   &.grid-cell-link-event {
     position: relative;
     z-index: 1;
-    vertical-align: bottom;
+    vertical-align: middle;
+    text-align: center;
 
     h2 {
-      margin-top: (@font-size-base / 2);
-      font-size: (@font-size-base * 2.5);
+      margin-top: (@font-size-base / 8);
+      font-size: (@font-size-base * 1.5);
     }
 
     h4 {
       margin: 0;
-      font-size: (@font-size-base * 1.5);
+      font-size: (@font-size-base);
+    }
+
+    @media screen and (min-width: @screen-xs-min) {
+      text-align: left;
+      vertical-align: bottom;
+
+      h2 {
+        font-size: (@font-size-base * 2.5);
+      }
+
+      h4 {
+        font-size: (@font-size-base * 1.5);
+      }
     }
 
     .btn.btn-hollow {
@@ -261,6 +279,7 @@
   &.grid-cell-link-large {
     > .grid-cell-link-title {
       text-align: center;
+      vertical-align: middle;
 
       h4 {
         margin-top: 0;
@@ -273,8 +292,6 @@
       }
 
       @media screen and (min-width: @screen-xs-min) {
-        vertical-align: middle;
-
         h4 {
           font-size: (@font-size-base * 1.25);
         }

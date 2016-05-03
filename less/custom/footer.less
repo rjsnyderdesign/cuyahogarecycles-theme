@@ -104,15 +104,28 @@
 }
 
 .page-footer-nav-siteinfo {
+  width: 100%;
+
   > li {
-    display: inline-block;
-    float: left;
+    display: list-item;
     margin: 0.5em 0;
 
     &:not(:last-child):after {
-      content: '';
       margin: 0 @font-size-base;
       border-left: 2px solid @gray;
+    }
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
+    width: auto;
+
+    > li {
+      display: inline-block;
+      float: left;
+
+      &:not(:last-child):after {
+        content: '';
+      }
     }
   }
 }
