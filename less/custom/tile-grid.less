@@ -88,17 +88,17 @@
     overflow: hidden;
     color: inherit;
 
-    &:nth-child(4n)   { background-color: @brand-dark;    }
-    &:nth-child(4n+1) { background-color: @brand-info;    }
-    &:nth-child(4n+2) { background-color: @brand-primary; }
-    &:nth-child(4n+3) { background-color: @brand-warning; }
-
     &.grid-cell-full-width {
       width: 100% !important;
     }
 
     &.grid-cell-placeholder {
       display: none;
+
+      &:nth-child(4n)   { background-color: @brand-dark;    }
+      &:nth-child(4n+1) { background-color: @brand-info;    }
+      &:nth-child(4n+2) { background-color: @brand-primary; }
+      &:nth-child(4n+3) { background-color: @brand-warning; }
     }
 
     // 1 column grid
@@ -223,11 +223,12 @@
     left: 0;
 
     > img {
-      width: 100.5%; // Prevent 1px gaps caused by CSS transforms
-      height: 100.5%;
+      width: 100%;
       display: block;
       margin: 0 auto;
       padding: 0;
+
+      .scale(1.01); // Prevent 1px gaps caused by CSS transforms
     }
   }
 
