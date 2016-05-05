@@ -13349,15 +13349,13 @@ a.active
 {
     font-size: 1.25em;
 
-    height: 2em;
+    height: 3em;
 }
 @media screen and (min-width: 720px)
 {
     .item-basics-subtitle
     {
         font-size: 1.5em;
-
-        height: 3em;
     }
 }
 .item-basics .item-figure
