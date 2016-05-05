@@ -7901,7 +7901,8 @@ button.close
 /*!
  * CuyahogaRecycles.org theme
  */
-input
+input,
+.form-control
 {
     border-radius: 0;
 
