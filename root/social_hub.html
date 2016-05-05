@@ -86,7 +86,8 @@
               <label data-action="sb-toggle">Search Site</label>
               <div id="sb-search" class="sb-search" role="search">
                 <div class="form">
-                  <input class="sb-search-input" placeholder="Search Site" type="text" value="" name="search" id="search" />
+                  <label class="sr-only" for="search">Search Site</label>
+                  <input type="text" class="sb-search-input" placeholder="Search Site" value="" autocomplete="off" name="search" id="search" />
                   <input class="sb-search-submit" type="submit" value="Search" />
                   <span class="sb-icon-search"><i class="fa fa-search" aria-hidden="true"></i></span>
                 </div>
@@ -291,6 +292,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Enter items"
+                      autocomplete="off"
                       id="wdidw-search-field"
                     />
                     <span class="input-group-btn">
