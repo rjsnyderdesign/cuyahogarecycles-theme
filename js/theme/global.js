@@ -212,11 +212,17 @@
                 $panelItemFilter.css( 'left', -320 );
             }
 
+            // Override default open actions
+            $( '[data-action^="panel"][data-action$="open"]' ).click(
+                function () { return false; }
+            );
+
             // Add close buttons
             $( '.slidereveal-panel' )
                 .find( '[data-action="panel-close"]' )
                 .on( 'click', function () {
                     $( this ).parents( '.slidereveal-panel' ).slideReveal( 'hide' );
+                    return false;
                 } );
 
             // Add custom overlay
@@ -269,6 +275,7 @@
                 $wdidwSearchBar.addClass( 'active' );
                 $wdidwBtn.attr( 'tabindex', '-1' );
                 $wdidwSearchFormInputs.attr( 'tabindex', '0' );
+                return false;
             } );
 
             $( '[data-action="wdidw-hide"]' ).on( 'click', function () {
@@ -276,6 +283,7 @@
                 $wdidwSearchResults.removeClass( 'active' );
                 $wdidwBtn.attr( 'tabindex', '0' );
                 $wdidwSearchFormInputs.attr( 'tabindex', '-1' );
+                return false;
             } );
 
             $wdidwCol
