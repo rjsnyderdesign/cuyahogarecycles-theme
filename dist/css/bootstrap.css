@@ -7901,6 +7901,12 @@ button.close
 /*!
  * CuyahogaRecycles.org theme
  */
+input
+{
+    border-radius: 0;
+
+    -webkit-appearance: none;
+}
 .pal-default
 {
     color: #666;
