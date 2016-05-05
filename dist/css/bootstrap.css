@@ -9086,6 +9086,17 @@ h6
 
     letter-spacing: .05em;
 }
+h2
+{
+    font-size: 1.75em;
+}
+@media screen and (min-width: 480px)
+{
+    h2
+    {
+        font-size: 2em;
+    }
+}
 a
 {
     cursor: pointer;
