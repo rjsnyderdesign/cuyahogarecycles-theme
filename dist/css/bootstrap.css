@@ -8717,8 +8717,8 @@ body:not(.noscroll)
 {
     position: fixed;
     z-index: 1030;
-    right: 40px;
-    bottom: 3em;
+    right: 8px;
+    bottom: 0;
 
     display: block;
 
@@ -8731,6 +8731,14 @@ body:not(.noscroll)
             transition: opacity 500ms, z-index 0s;
 
     opacity: 1;
+}
+@media screen and (min-width: 480px)
+{
+    .goto-top-wrapper
+    {
+        right: 40px;
+        bottom: 3em;
+    }
 }
 .goto-top-wrapper.goto-top-hidden
 {

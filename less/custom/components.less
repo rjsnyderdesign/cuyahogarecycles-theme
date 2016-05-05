@@ -387,13 +387,18 @@ body:not(.noscroll) {
   height: @btn-goto-top-size;
   display: block;
   position: fixed;
-  bottom: (@font-size-base * 3);
-  right: (@grid-gutter-width / 2);
+  bottom: 0;
+  right: (@em-base / 2);
   z-index: @zindex-navbar-fixed;
   padding: 0;
   opacity: 1;
 
   .transition(opacity @link-transition-speed, z-index 0s;);
+
+  @media screen and (min-width: @screen-xs-min) {
+    bottom: (@font-size-base * 3);
+    right: (@grid-gutter-width / 2);
+  }
 
   &.goto-top-hidden {
     opacity: 0;
