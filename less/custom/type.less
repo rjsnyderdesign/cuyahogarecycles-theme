@@ -74,18 +74,25 @@ a {
 .block-content {
   h1, h2, h3, h4, h5, h6 {
     margin-top: (@font-size-base * 2);
-    margin-bottom: @font-size-base;
+    margin-bottom: (@font-size-base / 2);
     font-weight: bold;
-    text-transform: uppercase;
 
     &:first-child {
       margin-top: 0;
     }
   }
 
+  h1, h2, h3 {
+    text-transform: uppercase;
+  }
+
+  h4, h5, h6 {
+    text-transform: none;
+  }
+
   p {
     margin-top: 0;
-    margin-bottom: @font-size-base;
+    margin-bottom: 0.75em;
     line-height: 1.5;
   }
 
@@ -97,14 +104,12 @@ a {
   }
 
   .article-title {
-    font-weight: normal;
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 
   .article-divider {
-    margin-top: (@font-size-base * 1.5);
-    margin-bottom: (@font-size-base * 2);
+    margin: @font-size-base 0;
     border-top: 2px solid @gray;
   }
 
