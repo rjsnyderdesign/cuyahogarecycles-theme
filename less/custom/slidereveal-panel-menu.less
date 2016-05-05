@@ -136,15 +136,10 @@
   .panel-social-links {
     margin: (@em-base * 2) 0;
 
-    &:extend(.social-links all);
+    .social-links(40px);
 
     > li {
       > a {
-        @social-link-size: 40px;
-        width: @social-link-size;
-        height: @social-link-size;
-        line-height: (@social-link-size - 4px);
-
         .link-fx-btn(@brand-info; @brand-success);
       }
     }

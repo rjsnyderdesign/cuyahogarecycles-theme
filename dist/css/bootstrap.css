@@ -8555,41 +8555,6 @@ form .form-subhead:first-child,
 
     height: 60px;
 }
-.social-links,
-.page-header-social-links,
-.slidereveal-panel#panel-menu .panel-social-links
-{
-    margin-right: 5px;
-}
-.social-links > li,
-.page-header-social-links > li,
-.slidereveal-panel#panel-menu .panel-social-links > li
-{
-    margin-right: 1em;
-}
-.social-links > li > a,
-.page-header-social-links > li > a,
-.slidereveal-panel#panel-menu .panel-social-links > li > a
-{
-    font-size: 16px;
-    line-height: 24px;
-
-    display: inline-block;
-
-    width: 28px;
-    height: 28px;
-
-    text-align: center;
-
-    border: 2px solid #fff;
-    border-radius: 50%;
-}
-.social-links > li > a > .fa,
-.page-header-social-links > li > a > .fa,
-.slidereveal-panel#panel-menu .panel-social-links > li > a > .fa
-{
-    vertical-align: middle;
-}
 .youtube-video-play-button
 {
     position: absolute;
@@ -9759,6 +9724,40 @@ a.active
 .page-header-social-links
 {
     float: right;
+
+    margin-right: 5px;
+}
+.page-header-social-links > li
+{
+    margin-right: 1em;
+}
+.page-header-social-links > li > a
+{
+    font-size: 17px;
+
+    position: relative;
+
+    display: inline-block;
+
+    width: 28px;
+    height: 28px;
+
+    text-align: center;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.page-header-social-links > li > a > .fa
+{
+    line-height: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    margin-top: -12px;
 }
 .page-header-social-links > li > a
 {
@@ -11093,14 +11092,42 @@ a.active
 .slidereveal-panel#panel-menu .panel-social-links
 {
     margin: 32px 0;
+    margin-right: 5px;
+}
+.slidereveal-panel#panel-menu .panel-social-links > li
+{
+    margin-right: 1em;
 }
 .slidereveal-panel#panel-menu .panel-social-links > li > a
 {
-    line-height: 36px;
+    font-size: 16px;
+
+    position: relative;
+
+    display: inline-block;
 
     width: 40px;
     height: 40px;
 
+    text-align: center;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.slidereveal-panel#panel-menu .panel-social-links > li > a > .fa
+{
+    line-height: 36px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    margin-top: -18px;
+}
+.slidereveal-panel#panel-menu .panel-social-links > li > a
+{
     cursor: pointer;
     -webkit-transition: border-color 500ms, color 500ms;
          -o-transition: border-color 500ms, color 500ms;
