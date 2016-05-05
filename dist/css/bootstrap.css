@@ -13285,6 +13285,11 @@ a.active
 {
     margin: 0 auto;
 }
+.item-basics-cat
+{
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+}
 .item-basics-cat[role='tabpanel']:not(.active)
 {
     display: none;
