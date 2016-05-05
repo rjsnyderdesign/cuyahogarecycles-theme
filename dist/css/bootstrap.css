@@ -10806,6 +10806,8 @@ a.active
 
     height: 100%;
     padding: 32px;
+
+    -webkit-overflow-scrolling: touch;
 }
 .slidereveal-panel .panel-content
 {
@@ -13136,6 +13138,8 @@ a.active
     padding: 0;
 
     list-style: none;
+
+    -webkit-overflow-scrolling: touch;
 }
 .dropdown-menu.item-filter-city-list ul > li > a
 {
