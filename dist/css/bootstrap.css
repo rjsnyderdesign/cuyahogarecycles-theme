@@ -11100,7 +11100,7 @@ a.active
 }
 .slidereveal-panel#panel-menu .panel-social-links > li > a
 {
-    font-size: 16px;
+    font-size: 23px;
 
     position: relative;
 
@@ -11463,11 +11463,17 @@ a.active
 }
 .page-footer-social
 {
+    font-size: 1.25em;
+
     margin-top: .5em;
 }
 .page-footer-social > li
 {
     margin-right: 1em;
+}
+.page-footer-social > li > a
+{
+    width: 1em;
 }
 .page-footer-nav-siteinfo,
 .page-footer-siteinfo

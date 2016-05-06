@@ -129,6 +129,40 @@
 
 
 //
+// Social media
+// --------------------------------------------------
+
+.social-links(@size: 28px; @icon-size: @em-base; @border-width: 2px) {
+  margin-right: 5px;
+
+  > li {
+    margin-right: @font-size-base;
+
+    > a {
+      width: @size;
+      height: @size;
+      display: inline-block;
+      position: relative;
+      border-radius: 50%;
+      border: @border-width solid @white;
+      font-size: @icon-size;
+      text-align: center;
+
+      > .fa {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: (-(@size / 2 - @border-width));
+        line-height: (@size - 2 * @border-width);
+      }
+    }
+  }
+}
+
+
+//
 // Misc
 // --------------------------------------------------
 
