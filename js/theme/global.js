@@ -794,6 +794,7 @@
         ( function () {
 
             var BREAKPOINTS = {
+                    brk320:  320,
                     brk400:  400,
                     brk480:  480,
                     brk800:  800,
@@ -803,6 +804,11 @@
                 };
 
             $( '.brand-logo-main' ).responsImg( {
+                elementQuery: false,
+                breakpoints: BREAKPOINTS
+            } );
+
+            $( '.brand-district-logo' ).responsImg( {
                 elementQuery: false,
                 breakpoints: BREAKPOINTS
             } );
