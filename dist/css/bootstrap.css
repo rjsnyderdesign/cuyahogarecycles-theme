@@ -9254,26 +9254,11 @@ a.active
     height: auto;
     margin: 0;
 }
-@media screen and (min-width: 480px)
-{
-    .brand .brand-logo-main
-    {
-        width: 344px;
-    }
-}
-@media screen and (min-width: 480px) and (min-width: 560px)
-{
-    .brand .brand-logo-main
-    {
-        margin: 0 auto;
-    }
-}
 @media screen and (min-width: 768px)
 {
     .brand .brand-logo-main
     {
         width: 344px;
-        margin: 0;
     }
 }
 @media screen and (min-width: 992px)
@@ -9694,6 +9679,13 @@ a.active
 {
     .page-header-upper
     {
+        padding: 8px 40px;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    .page-header-upper
+    {
         height: 90px;
         padding: 16px 40px;
     }
@@ -9910,7 +9902,7 @@ a.active
 
     color: #263746;
 }
-@media (min-width: 480px)
+@media (min-width: 768px)
 {
     .navbar-toggle
     {

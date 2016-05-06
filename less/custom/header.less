@@ -14,14 +14,14 @@
 // Header
 // --------------------------------------------------
 
-@navbar-toggle-size: 32px;
-@navbar-toggle-spacing: (@navbar-toggle-size / 4);
-@navbar-sm-height: 90px;
+@navbar-toggle-size:           32px;
+@navbar-toggle-spacing:        (@navbar-toggle-size / 4);
+@navbar-sm-height:             90px;
 @navbar-xs-padding-horizontal: (@em-base / 2);
 @navbar-sm-padding-horizontal: (@grid-gutter-width / 2);
-@navbar-height-enlarged-by: (@navbar-sm-height - @navbar-height);
+@navbar-height-enlarged-by:    (@navbar-sm-height - @navbar-height);
 
-@navbar-height-upper: (@navbar-height + 10px);
+@navbar-height-upper:          (@navbar-height + 10px);
 
 
 //
@@ -57,6 +57,10 @@
   padding: @navbar-xs-padding-horizontal;
 
   @media screen and (min-width: @screen-xs-min) {
+    padding: @navbar-xs-padding-horizontal @navbar-sm-padding-horizontal;
+  }
+
+  @media screen and (min-width: @screen-sm-min) {
     height: @navbar-sm-height;
     padding: @em-base @navbar-sm-padding-horizontal;
   }
@@ -186,7 +190,7 @@
 
   .link-fx-nav(darken(@brand-info, 15%); @brand-dark);
 
-  @media (min-width: @screen-xs-min) {
+  @media (min-width: @screen-sm-min) {
     top: ((@navbar-sm-height - @navbar-toggle-size * 1.5) / 2 - @em-base);
   }
 }
