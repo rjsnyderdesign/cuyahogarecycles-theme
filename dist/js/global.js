@@ -812,10 +812,18 @@ if (typeof jQuery === 'undefined') {
         ( function () {
 
             var BREAKPOINTS = {
-                    brk400: 400,
-                    brk800: 800,
+                    brk400:  400,
+                    brk480:  480,
+                    brk800:  800,
+                    brk768:  768,
+                    brk992:  992,
                     brk1200: 1200
                 };
+
+            $( '.brand-logo-main' ).responsImg( {
+                elementQuery: false,
+                breakpoints: BREAKPOINTS
+            } );
 
             $( '.responsive-image.img-tile' ).responsImg( {
                 elementQuery: true,
