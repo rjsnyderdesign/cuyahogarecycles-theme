@@ -9199,6 +9199,19 @@ a.active
 
     margin: 0;
 }
+.col-side-full-height > .item-icon-size-4
+{
+    margin-right: auto;
+    margin-left: auto;
+}
+@media screen and (min-width: 480px)
+{
+    .col-side-full-height > .item-icon-size-4
+    {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
 /*!
  * CuyahogaRecycles.org theme
  */
