@@ -12744,7 +12744,9 @@ a.active
     padding: .25em 0;
 }
 .item-additional-icon,
-.item-additional-label
+.item-additional-label,
+.item-additional-icon span,
+.item-additional-label span
 {
     vertical-align: middle;
 }
