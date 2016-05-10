@@ -15,11 +15,17 @@
 // --------------------------------------------------
 
 // Remove rounded corners from inputs on iOS
+
 input,
 .form-control {
-  -webkit-appearance: none;
   -webkit-border-radius: 0px;
   border-radius: 0;
+}
+
+input[type="text"],
+input[type="search"],
+.form-control {
+  -webkit-appearance: none;
 }
 
 
