@@ -155,42 +155,58 @@
 }
 
 //
-// Donation icon
+// Additional icons
 // --------------------------------------------------
 
-@item-donatable-size:         30px;
-@item-donatable-border-width: 1px;
-@item-donatable-bg-color:     @gray;
+@item-additional-size:         30px;
+@item-additional-border-width: 1px;
+@item-additional-size-outer:   (@item-additional-size + 2 * @item-additional-border-width);
+@item-additional-bg-color:     @gray;
 
-.item-donatable {
-  width: (@item-donatable-size + 2 * @item-donatable-border-width);
-  height: (@item-donatable-size + 2 * @item-donatable-border-width);
-  display: inline-block;
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  z-index: 1;
-  background-color: @item-donatable-bg-color;
-  background-image: url('../../root/img/symbols/donatable-item.png');
-  background-repeat: no-repeat;
-  border: @item-donatable-border-width solid @item-donatable-bg-color;
-  border-radius: 50%;
+.item-additionals {
+  list-style: none;
+  padding: 0;
 
-  &:hover,
-  &:focus {
-    &:after {
-      display: inline-block;
-      position: absolute;
-      top: 4px;
-      left: 125%;
-      padding: 4px 8px;
-      background: @gray;
-      background: rgba(0,0,0,0.6);
-      border-radius: 4px;
-      color: @white;
-      font-size: @font-size-small;
-      white-space: nowrap;
-      content: 'This item can be donated.';
+  > li {
+    padding: 0.25em 0;
+
+    > a {
+      &:extend(.link-fx-nav-default all);
     }
   }
+}
+
+.item-additional-icon,
+.item-additional-label {
+  vertical-align: middle;
+}
+
+.item-additional-icon {
+  width: @item-additional-size-outer;
+  height: @item-additional-size-outer;
+  display: inline-block;
+  background-color: @item-additional-bg-color;
+  background-repeat: no-repeat;
+  border: @item-additional-border-width solid @item-additional-bg-color;
+  border-radius: 50%;
+
+  &.item-donatable {
+    background: url('../../root/img/symbols/item-donatable.png');
+    background-color: @item-additional-bg-color;
+    background-image: url('../../root/img/symbols/item-donatable.svg'), none;
+  }
+
+  &.item-business {
+    background: url('../../root/img/symbols/item-business.png');
+    background-color: @item-additional-bg-color;
+    background-image: url('../../root/img/symbols/item-business.svg'), none;
+  }
+}
+
+.item-additional-label {
+  width: 100%;
+  display: inline-block;
+  margin-left: -@item-additional-size-outer;
+  padding-left: (@item-additional-size-outer + 8px);
+  text-transform: uppercase;
 }

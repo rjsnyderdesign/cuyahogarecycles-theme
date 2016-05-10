@@ -20,6 +20,7 @@
 .page-footer-nav > li > a,
 .page-footer-nav-siteinfo > li > a,
 .page-footer-social > li > a,
+.item-additionals > li > a,
 .item-entry-arrow,
 .item-entry-detail-link,
 .item-filter-panel-open,
@@ -64,6 +65,8 @@
 .page-footer-nav-siteinfo > li > a:focus,
 .page-footer-social > li > a:hover,
 .page-footer-social > li > a:focus,
+.item-additionals > li > a:hover,
+.item-additionals > li > a:focus,
 .item-entry-arrow:hover,
 .item-entry-arrow:focus,
 .item-entry-detail-link:hover,
@@ -110,6 +113,8 @@
 .page-footer-nav-siteinfo > li > a.active,
 .page-footer-social > li > a:active,
 .page-footer-social > li > a.active,
+.item-additionals > li > a:active,
+.item-additionals > li > a.active,
 .item-entry-arrow:active,
 .item-entry-arrow.active,
 .item-entry-detail-link:active,
@@ -8745,6 +8750,8 @@ body:not(.noscroll)
     width: 1em;
     height: 1em;
     padding: .14644661em;
+
+    vertical-align: middle;
 }
 .detail-arrow:after
 {
@@ -12726,13 +12733,23 @@ a.active
 {
     background: none;
 }
-.item-donatable
+.item-additionals
 {
-    position: absolute;
-    z-index: 1;
-    right: -2px;
-    bottom: -2px;
+    padding: 0;
 
+    list-style: none;
+}
+.item-additionals > li
+{
+    padding: .25em 0;
+}
+.item-additional-icon,
+.item-additional-label
+{
+    vertical-align: middle;
+}
+.item-additional-icon
+{
     display: inline-block;
 
     width: 32px;
@@ -12741,29 +12758,29 @@ a.active
     border: 1px solid #666;
     border-radius: 50%;
     background-color: #666;
-    background-image: url('../../root/img/symbols/donatable-item.png');
     background-repeat: no-repeat;
 }
-.item-donatable:hover:after,
-.item-donatable:focus:after
+.item-additional-icon.item-donatable
 {
-    font-size: .75em;
-
-    position: absolute;
-    top: 4px;
-    left: 125%;
-
+    background: url('../../root/img/symbols/item-donatable.png');
+    background-color: #666;
+    background-image: url('../../root/img/symbols/item-donatable.svg'), none;
+}
+.item-additional-icon.item-business
+{
+    background: url('../../root/img/symbols/item-business.png');
+    background-color: #666;
+    background-image: url('../../root/img/symbols/item-business.svg'), none;
+}
+.item-additional-label
+{
     display: inline-block;
 
-    padding: 4px 8px;
+    width: 100%;
+    margin-left: -32px;
+    padding-left: 40px;
 
-    content: 'This item can be donated.';
-    white-space: nowrap;
-
-    color: #fff;
-    border-radius: 4px;
-    background: #666;
-    background: rgba(0, 0, 0, .6);
+    text-transform: uppercase;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -12890,6 +12907,13 @@ a.active
     font-weight: bold;
 
     margin-bottom: 1.75em;
+}
+@media screen and (min-width: 768px)
+{
+    .item-entry-extra
+    {
+        padding-left: 170px;
+    }
 }
 .item-type-label.item-type-home-recycling
 {
