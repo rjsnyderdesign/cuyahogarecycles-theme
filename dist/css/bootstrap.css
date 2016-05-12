@@ -8692,6 +8692,47 @@ body:not(.noscroll)
 {
     overflow-y: scroll;
 }
+.callout-bar .callout-bar-row > .callout-bar-side
+{
+    border-top: 2px solid #fff;
+}
+@media screen and (min-width: 1500px)
+{
+    .callout-bar
+    {
+        padding: 40px 0;
+    }
+    .callout-bar .callout-bar-row
+    {
+        display: table;
+
+        table-layout: fixed;
+    }
+    .callout-bar .callout-bar-row > .callout-bar-side,
+    .callout-bar .callout-bar-row > .callout-bar-main
+    {
+        position: relative;
+
+        display: table-cell;
+
+        vertical-align: middle;
+    }
+    .callout-bar .callout-bar-row > .callout-bar-side
+    {
+        left: -66.66666667%;
+
+        width: 33.33333333%;
+
+        border: 0 none;
+        border-right: 2px solid rgba(255, 255, 255, .25);
+    }
+    .callout-bar .callout-bar-row > .callout-bar-main
+    {
+        left: 33.33333333%;
+
+        width: 66.66666667%;
+    }
+}
 .goto-top-wrapper
 {
     position: fixed;
@@ -9008,8 +9049,8 @@ a.active .detail-arrow:after
     font-size: .75em;
     line-height: 2;
 
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: .75em;
+    padding-bottom: .75em;
 
     color: #fff;
     background: #263746;
@@ -9020,8 +9061,6 @@ a.active .detail-arrow:after
     {
         font-size: 1em;
         line-height: 1.5;
-
-        padding-top: 3em;
     }
 }
 .block-breadcrumbs .breadcrumb > li:before
