@@ -12354,6 +12354,26 @@ a.active
 
     text-transform: uppercase;
 }
+.grid-cell-container-inner.grid-cell-quote-box
+{
+    text-align: left;
+    vertical-align: middle;
+}
+.grid-cell-container-inner.grid-cell-quote-box blockquote
+{
+    font-size: 1em;
+
+    margin: 0;
+    padding: 0;
+    padding-left: 1em;
+
+    border: 0 none;
+    border-left: 3px solid #fff;
+}
+.grid-cell-container-inner.grid-cell-quote-box blockquote cite:before
+{
+    content: '– ';
+}
 .grid-cell-link
 {
     display: block;

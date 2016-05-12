@@ -243,6 +243,24 @@
       text-transform: uppercase;
     }
   }
+
+  &.grid-cell-quote-box {
+    text-align: left;
+    vertical-align: middle;
+
+    blockquote {
+      margin: 0;
+      padding: 0;
+      padding-left: @font-size-base;
+      border: 0 none;
+      border-left: 3px solid @white;
+      font-size: @font-size-base;
+
+      cite:before {
+        content: '– ';
+      }
+    }
+  }
 }
 
 .grid-cell-link {
