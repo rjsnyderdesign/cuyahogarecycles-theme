@@ -831,6 +831,42 @@
         } )();
 
         //
+        // Lightbox
+        //
+
+        ( function () {
+
+            var $lightbox    = $( '#lightbox' ),
+                $lightboxImg = $lightbox.find( 'img' ),
+                margin       = ( 40 + 15 ) * 2;
+
+            function resizeLightboxImg () {
+                $lightboxImg.css( {
+                    'maxWidth'  : $window.width() - margin,
+                    'maxHeight' : $window.height() - margin
+                } );
+            }
+
+            $( '[data-target="#lightbox"]' ).on( 'click' , function ( e ) {
+                var $targetImg = $( this ).find( 'img' );
+                $lightboxImg.attr( {
+                    'alt'   : $targetImg.attr( 'alt' )   || '',
+                    'src'   : $targetImg.attr( 'src' )   || '',
+                    'title' : $targetImg.attr( 'title' ) || ''
+                } );
+                resizeLightboxImg();
+            } );
+
+            $( '[data-action="lightbox-close"]' ).on( 'click' , function ( e ) {
+                $lightbox.modal( 'hide' );
+                return false;
+            } );
+
+            $window.resize( resizeLightboxImg );
+
+        } )();
+
+        //
         // Tile grid touch events
         //
 

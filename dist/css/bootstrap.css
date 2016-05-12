@@ -7917,6 +7917,10 @@ input[type='search'],
 {
     -webkit-appearance: none;
 }
+.thumbnail
+{
+    border-width: 2px;
+}
 .pal-default
 {
     color: #666;
@@ -10961,7 +10965,7 @@ a.active
 
     opacity: 0;
     border: 0 solid #808080;
-    background: rgba(0, 0, 0, .5);
+    background: #000;
 }
 .slidereveal-shroud.active
 {
@@ -10971,7 +10975,7 @@ a.active
          -o-transition: top 0s, opacity 400ms;
             transition: top 0s, opacity 400ms;
 
-    opacity: 1;
+    opacity: .5;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -11534,6 +11538,123 @@ a.active
     display: inline-block;
 
     margin: 1.5em 0 .5em;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.modal#lightbox
+{
+    padding: 40px;
+
+    text-align: center;
+}
+.modal#lightbox .modal-dialog,
+.modal#lightbox .modal-content
+{
+    display: inline-block;
+
+    width: auto;
+    margin: 0;
+
+    border: 0 none;
+}
+.modal#lightbox .modal-content
+{
+    position: relative;
+}
+.modal#lightbox .btn-modal-close
+{
+    font-size: 32px;
+
+    position: absolute;
+    top: -16px;
+    left: 100%;
+
+    display: block;
+
+    width: 40px;
+    height: 50px;
+    padding-right: 0;
+    padding-left: 0;
+
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    color: #e84b37;
+    border: 0 none;
+    background: none;
+}
+.modal#lightbox .btn-modal-close:hover,
+.modal#lightbox .btn-modal-close:focus
+{
+    text-decoration: none;
+
+    color: #e84b37;
+    background: none;
+}
+.modal#lightbox .btn-modal-close:active,
+.modal#lightbox .btn-modal-close.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #bd2916;
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.gallery
+{
+    margin: 0 -40px;
+    padding: 20px;
+
+    list-style: none;
+}
+.gallery > li
+{
+    display: block;
+    float: left;
+
+    margin: 0;
+    padding: 20px;
+}
+@media screen and (min-width: 400px) and (max-width: 799px)
+{
+    .gallery > li
+    {
+        width: 50%;
+    }
+    .gallery > li:nth-child(2n+1)
+    {
+        clear: left;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 1199px)
+{
+    .gallery > li
+    {
+        width: 33.33333333%;
+    }
+    .gallery > li:nth-child(3n+1)
+    {
+        clear: left;
+    }
+}
+@media screen and (min-width: 1200px)
+{
+    .gallery > li
+    {
+        width: 25%;
+    }
+    .gallery > li:nth-child(4n+1)
+    {
+        clear: left;
+    }
 }
 /*!
  * CuyahogaRecycles.org theme
