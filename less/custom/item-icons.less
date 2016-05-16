@@ -159,9 +159,9 @@
 // --------------------------------------------------
 
 @item-additional-size:         30px;
-@item-additional-border-width: 1px;
+@item-additional-border-width: 2px;
 @item-additional-size-outer:   (@item-additional-size + 2 * @item-additional-border-width);
-@item-additional-bg-color:     @gray;
+@item-additional-bg-color:     none;
 
 .item-additionals {
   list-style: none;
@@ -190,19 +190,19 @@
   display: inline-block;
   background-color: @item-additional-bg-color;
   background-repeat: no-repeat;
-  border: @item-additional-border-width solid @item-additional-bg-color;
+  border: @item-additional-border-width solid;
   border-radius: 50%;
 
   &.item-donatable {
     background: url('../../root/img/symbols/item-donatable.png');
-    background-color: @item-additional-bg-color;
     background-image: url('../../root/img/symbols/item-donatable.svg'), none;
+    border-color: @gray;
   }
 
   &.item-business {
     background: url('../../root/img/symbols/item-business.png');
-    background-color: @item-additional-bg-color;
     background-image: url('../../root/img/symbols/item-business.svg'), none;
+    border-color: @gray;
   }
 }
 

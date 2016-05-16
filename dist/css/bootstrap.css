@@ -12939,24 +12939,24 @@ a.active
 {
     display: inline-block;
 
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
 
-    border: 1px solid #666;
+    border: 2px solid;
     border-radius: 50%;
-    background-color: #666;
+    background-color: none;
     background-repeat: no-repeat;
 }
 .item-additional-icon.item-donatable
 {
+    border-color: #666;
     background: url('../../root/img/symbols/item-donatable.png');
-    background-color: #666;
     background-image: url('../../root/img/symbols/item-donatable.svg'), none;
 }
 .item-additional-icon.item-business
 {
+    border-color: #666;
     background: url('../../root/img/symbols/item-business.png');
-    background-color: #666;
     background-image: url('../../root/img/symbols/item-business.svg'), none;
 }
 .item-additional-label
@@ -12964,8 +12964,8 @@ a.active
     display: inline-block;
 
     width: 100%;
-    margin-left: -32px;
-    padding-left: 40px;
+    margin-left: -34px;
+    padding-left: 42px;
 
     text-transform: uppercase;
 }
