@@ -17,6 +17,8 @@
 .main-menu-dropdown .dropdown-menu > li > a,
 .slidereveal-panel#panel-menu .nav > li > a,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label,
 .page-footer-nav > li > a,
 .page-footer-nav-siteinfo > li > a,
 .page-footer-social > li > a,
@@ -59,6 +61,10 @@
 .slidereveal-panel#panel-menu .nav > li > a:focus,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a:hover,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a:focus,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:hover,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:focus,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:hover,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:focus,
 .page-footer-nav > li > a:hover,
 .page-footer-nav > li > a:focus,
 .page-footer-nav-siteinfo > li > a:hover,
@@ -107,6 +113,10 @@
 .slidereveal-panel#panel-menu .nav > li > a.active,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a:active,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a.active,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:active,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.active,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:active,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.active,
 .page-footer-nav > li > a:active,
 .page-footer-nav > li > a.active,
 .page-footer-nav-siteinfo > li > a:active,
@@ -9281,15 +9291,8 @@ a.active
 {
     display: block;
 
-    max-width: 100%;
     margin: 0;
     padding: 0;
-}
-.brand .brand-logo-main-horizontal
-{
-    width: 516px;
-    max-width: 100%;
-    height: auto;
 }
 .brand .brand-district-logo
 {
@@ -9321,6 +9324,12 @@ a.active
     {
         width: 387px;
     }
+}
+.brand .brand-logo-main-icon
+{
+    width: 63px;
+    height: auto;
+    margin: 0;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -10006,6 +10015,11 @@ a.active
 /*!
  * CuyahogaRecycles.org theme
  */
+.page-header:not(.header-sticky-detached) .navbar-first .col-side-full-height,
+.page-header:not(.header-sticky-detached) .navbar-first .brand
+{
+    display: none;
+}
 .page-header.header-sticky
 {
     position: absolute;
@@ -10029,39 +10043,27 @@ a.active
 {
     .page-header.header-sticky.header-sticky-detached .page-header-upper
     {
-        height: 90px;
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-    .page-header.header-sticky.header-sticky-detached .page-header-upper-right,
-    .page-header.header-sticky.header-sticky-detached .navbar-first
-    {
         display: none;
-    }
-    .page-header.header-sticky.header-sticky-detached .navbar-toggle
-    {
-        display: block;
-    }
-    .page-header.header-sticky.header-sticky-detached .brand .brand-logo-main
-    {
-        width: 344px;
     }
 }
 .page-header.header-sticky.header-sticky-detached .navbar
 {
     min-height: 50px;
 }
+.page-header.header-sticky.header-sticky-detached .navbar-first .row-xs-full-height > .col-main-full-height,
+.page-header.header-sticky.header-sticky-detached .navbar-first .row-xs-full-height > .col-side-full-height
+{
+    vertical-align: middle;
+}
+.page-header.header-sticky.header-sticky-detached .navbar-first .navbar-nav > li > a
+{
+    height: 90px;
+    padding: 35px 0;
+}
 .page-header.header-sticky.header-sticky-detached .wdidw-wrapper,
 .page-header.header-sticky.header-sticky-detached .city-recycling-btn
 {
     height: 50px;
-}
-.page-header.header-sticky.header-sticky-detached .block-breadcrumbs
-{
-    display: block;
-
-    padding-top: 1em;
-    padding-bottom: 1em;
 }
 /*!
  * CuyahogaRecycles.org theme
@@ -10634,9 +10636,9 @@ a.active
     width: 100%;
     height: 0;
 
-    -webkit-transition: height 250ms 500ms;
-         -o-transition: height 250ms 500ms;
-            transition: height 250ms 500ms;
+    -webkit-transition: height 250ms;
+         -o-transition: height 250ms;
+            transition: height 250ms;
 }
 .mega-menu.open
 {
@@ -10669,9 +10671,9 @@ a.active
 {
     z-index: 1;
 
-    -webkit-transition: opacity 500ms 250ms;
-         -o-transition: opacity 500ms 250ms;
-            transition: opacity 500ms 250ms;
+    -webkit-transition: opacity 500ms;
+         -o-transition: opacity 500ms;
+            transition: opacity 500ms;
 
     opacity: 1;
 }
@@ -11042,7 +11044,9 @@ a.active
     position: relative;
 }
 .slidereveal-panel#panel-menu .nav > li > a,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a
+.slidereveal-panel#panel-menu .dropdown-menu > li > a,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label
 {
     display: inline-block;
 
@@ -11052,22 +11056,39 @@ a.active
 
     white-space: normal;
 }
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle-top,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle-top,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle-top,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle-top
+{
+    margin-left: 0;
+}
 .slidereveal-panel#panel-menu .nav > li > a:hover,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a:hover,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:hover,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:hover,
 .slidereveal-panel#panel-menu .nav > li > a:focus,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a:focus
+.slidereveal-panel#panel-menu .dropdown-menu > li > a:focus,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:focus,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:focus
 {
     background: none;
 }
 .slidereveal-panel#panel-menu .nav > li > a:hover:before,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a:hover:before,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:hover:before,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:hover:before,
 .slidereveal-panel#panel-menu .nav > li > a:focus:before,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a:focus:before
+.slidereveal-panel#panel-menu .dropdown-menu > li > a:focus:before,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label:focus:before,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label:focus:before
 {
     display: none;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle
 {
     font-size: 18px;
 
@@ -11093,7 +11114,9 @@ a.active
     border-radius: 50%;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle .fa,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle .fa
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle .fa,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle .fa
 {
     line-height: 24px;
 
@@ -11106,13 +11129,78 @@ a.active
     vertical-align: middle;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle.open,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle.open,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle.open
 {
     color: #e84b37;
     border-color: #e84b37;
 }
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle.open .fa,
-.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open .fa
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open .fa,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle.open .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle.open .fa
+{
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle-top .trigger-toggle,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle-top .trigger-toggle,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle-top .trigger-toggle,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle-top .trigger-toggle
+{
+    font-size: 18px;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 28px;
+    height: 28px;
+    margin: 10px;
+    margin-left: 0;
+
+    -webkit-transition: border-color 500ms;
+         -o-transition: border-color 500ms;
+            transition: border-color 500ms;
+    text-align: center;
+
+    color: #1a8c92;
+    border: 2px solid #1a8c92;
+    border-radius: 50%;
+}
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle-top .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle-top .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle-top .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle-top .trigger-toggle .fa
+{
+    line-height: 24px;
+
+    width: 24px;
+    height: 24px;
+
+    -webkit-transition: all 500ms;
+         -o-transition: all 500ms;
+            transition: all 500ms;
+    vertical-align: middle;
+}
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle-top.open .trigger-toggle,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle-top.open .trigger-toggle,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle-top.open .trigger-toggle,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle-top.open .trigger-toggle
+{
+    color: #e84b37;
+    border-color: #e84b37;
+}
+.slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle-top.open .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle-top.open .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .nav > li > a .trigger-label.sub-menu-toggle-top.open .trigger-toggle .fa,
+.slidereveal-panel#panel-menu .dropdown-menu > li > a .trigger-label.sub-menu-toggle-top.open .trigger-toggle .fa
 {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);

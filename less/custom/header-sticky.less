@@ -16,6 +16,15 @@
 
 @header-sticky-navbar-height: @navbar-height;
 
+.page-header:not(.header-sticky-detached) {
+  .navbar-first {
+    .col-side-full-height,
+    .brand {
+      display: none;
+    }
+  }
+}
+
 .page-header.header-sticky {
   position: absolute;
   top: 0;
@@ -35,24 +44,7 @@
 
     @media screen and (min-width: @grid-float-breakpoint) {
       .page-header-upper {
-        height: @navbar-sm-height;
-        padding-top: @font-size-base;
-        padding-bottom: @font-size-base;
-      }
-
-      .page-header-upper-right,
-      .navbar-first {
         display: none;
-      }
-
-      .navbar-toggle {
-        display: block;
-      }
-
-      .brand {
-        .brand-logo-main {
-          width: @brand-logo-main-sm-width;
-        }
       }
     }
 
@@ -60,15 +52,23 @@
       min-height: @header-sticky-navbar-height;
     }
 
+    .navbar-first {
+      .row-xs-full-height {
+        > .col-main-full-height,
+        > .col-side-full-height {
+          vertical-align: middle;
+        }
+      }
+
+      .navbar-nav > li > a {
+        height: (@header-sticky-navbar-height + 40px);
+        padding: 35px 0;
+      }
+    }
+
     .wdidw-wrapper,
     .city-recycling-btn {
       height: @header-sticky-navbar-height;
-    }
-
-    .block-breadcrumbs {
-      display: block;
-      padding-top: @font-size-base;
-      padding-bottom: @font-size-base;
     }
   }
 }

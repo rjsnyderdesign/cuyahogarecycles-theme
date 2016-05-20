@@ -21,16 +21,9 @@
 
   a,
   img {
-    max-width: 100%;
     display: block;
     margin: 0;
     padding: 0;
-  }
-
-  .brand-logo-main-horizontal {
-    width: 516px;
-    max-width: 100%;
-    height: auto;
   }
 
   .brand-district-logo {
@@ -45,12 +38,14 @@
 // Responsive logo
 // --------------------------------------------------
 
-@brand-logo-main-width: 516px;
-
+@brand-logo-main-width:    516px;
 @brand-logo-main-xs-width: (@brand-logo-main-width * 1 / 2);
 @brand-logo-main-sm-width: (@brand-logo-main-width * 2 / 3);
 @brand-logo-main-md-width: (@brand-logo-main-width * 3 / 4);
 @brand-logo-main-lg-width: @brand-logo-main-width;
+
+@brand-logo-main-icon-width:      84px;
+@brand-logo-main-icon-md-width:   (@brand-logo-main-icon-width * 3 / 4);
 
 .brand {
   a {
@@ -70,5 +65,11 @@
     @media screen and (min-width: @screen-md-min) {
       width: @brand-logo-main-md-width;
     }
+  }
+
+  .brand-logo-main-icon {
+    width: @brand-logo-main-icon-md-width;
+    height: auto;
+    margin: 0;
   }
 }

@@ -70,7 +70,7 @@
   position: relative;
   overflow: hidden;
 
-  .transition(height @mega-menu-exit-speed @mega-menu-enter-speed);
+  .transition(height @mega-menu-exit-speed);
 
   &.open {
     height: @mega-menu-dropdown-height;
@@ -97,7 +97,7 @@
     z-index: 1;
     opacity: 1;
 
-    .transition(opacity @mega-menu-enter-speed @mega-menu-exit-speed);
+    .transition(opacity @mega-menu-enter-speed);
   }
 
   .dropdown-menu {

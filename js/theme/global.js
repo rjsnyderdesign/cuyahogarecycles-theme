@@ -404,7 +404,6 @@
                 $pageHeaderUpper = $pageHeader.find( '.page-header-upper' ),
                 $pageHeaderNavbar1 = $pageHeader.find( '.navbar.navbar-default' ).eq( 0 ).find( '.container-fluid' ),
                 $pageHeaderNavbar2 = $pageHeader.find( '.navbar.navbar-default' ).eq( 1 ),
-                $pageBreadcrumbs = $( 'main .block-breadcrumbs' ),
                 $htmlBody = $( 'html, body' ),
                 $gotoTopWrapper = $( '.goto-top-wrapper' ),
                 pageHeaderTopOffset;
@@ -436,15 +435,11 @@
             $window.on( 'scroll', function () {
 
                 // Check against negative scroll positions because Safari
-                var scrollTopPos = $window.scrollTop(),
-                    breadcrumbsOffset = 0;
+                var scrollTopPos = $window.scrollTop();
 
                 if ( scrollTopPos < 0 ) { scrollTopPos = 0; }
-                if ( $pageBreadcrumbs && $pageBreadcrumbs.is( ':visible' ) ) {
-                    breadcrumbsOffset = $pageBreadcrumbs.outerHeight();
-                }
 
-                if ( scrollTopPos > pageHeaderTopOffset + breadcrumbsOffset ) {
+                if ( scrollTopPos > pageHeaderTopOffset ) {
                     if ( !$pageHeader.hasClass( 'header-sticky-detached' ) ) {
                         $pageHeader
                             .css( { 'top': '-100%' } )
@@ -489,10 +484,10 @@
 
         ( function () {
 
-            var $mainMenu = $( '.mega-menu' ),
-                $callOuts = $mainMenu.find( '.call-out' ),
-                $prevLink = null,
-                onExit    = null;
+            var $mainMenu       = $( '.mega-menu' ),
+                $callOuts       = $mainMenu.find( '.call-out' ),
+                $prevLink       = null,
+                $subMenuCurrent = null;
 
             function hoverTrigger ( e ) {
                 var $this        = $( this ),
@@ -554,39 +549,31 @@
                 closeSubMenu( $subMenu );
             }
 
-            function enter ( $elem ) {
-                var $subMenu = getSubMenu( $elem );
-                openMenu( $subMenu );
-                $subMenu.hover(
-                    function () {
-                        // Ensures smooth transition when moving from link
-                        // to submenu
-                        onExit = null;
-                        openMenu( $( this ) );
-                    },
-                    function () {
-                        closeMenu( $( this ) );
-                    }
-                );
-            }
-
-            function exit ( $elem ) {
-                var $subMenu = getSubMenu( $elem );
-                onExit = closeMenu;
-                window.setTimeout( function () {
-                    if ( typeof onExit === 'function' ) {
-                        onExit( $subMenu );
-                    }
-                }, 0 );
+            function onOut ( e ) {
+                if ( $( e.target ).closest( '.navbar-first' ).length === 0 ) {
+                    if ( $subMenuCurrent ) { closeMenu( $subMenuCurrent ); }
+                }
             }
 
             function init () {
 
                 $( '.navbar-primary li a' )
-                    .hover(
-                        function () { enter( $( this ) ); },
-                        function () { exit( $( this ) ); }
-                    );
+                    .on( 'click', function () {
+                        var $subMenuLast = $subMenuCurrent,
+                            wasOpen      = false;
+                        if ( $subMenuLast ) { wasOpen = $subMenuLast.hasClass( 'open' ); }
+                        if ( $subMenuCurrent ) { closeMenu( $subMenuCurrent ); }
+                        $subMenuCurrent = getSubMenu( $( this ) );
+                        if ( !$subMenuLast || $subMenuCurrent.data( 'dropdown' ) !== $subMenuLast.data( 'dropdown' ) || !wasOpen ) {
+                            openMenu( $subMenuCurrent );
+                        }
+                        return false;
+                    } );
+
+                $body
+                    .on( 'click', onOut )
+                    .on( 'mouseover', onOut )
+                    .on( 'focusin', onOut );
 
                 $mainMenu
                     .find( 'a' )
@@ -594,7 +581,6 @@
                         var $this = $( this ),
                             $subMenu = $this.closest( '.main-menu-dropdown' ),
                             $prevSubMenu;
-                        onExit = null;
                         openMenu( $subMenu );
                         if ( $prevLink ) {
                             $prevSubMenu = $prevLink.closest( '.main-menu-dropdown' );
