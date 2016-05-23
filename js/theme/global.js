@@ -260,7 +260,7 @@
                 $wdidwBtn = $( '.wdidw-btn' ),
                 $wdidwSearchBar = $( '.wdidw-search-bar' ),
                 $wdidwSearchFormInputs = $( '.btn, .form-control', '.wdidw-search-form' ),
-                $wdidwSearchField = $( '#wdidw-search-field' ),
+                $wdidwSearchField = $( '#wdidwsearchfield' ),
                 $wdidwSearchResults = $( '#wdidw-search-results' ),
                 $wdidwSearchResultsList = $( '#wdidw-search-results-list' ),
                 $wdidwSearchQuickLinksList = $( '#wdidw-search-quick-links-list' ),
@@ -648,7 +648,7 @@
         });
 
         // Site Search
-        new UISearch( window.document.getElementById( 'sb-search' ) );
+        new UISearch( window.document.getElementById( 'pnlsitesearch' ) );
 
         //
         // Item basics
@@ -900,27 +900,6 @@
             $staffTiles.blur( function ( e ) {
                 $( this ).data( 'touch-count', 0 );
             } );
-
-        } )();
-
-        //
-        // Loading moebius
-        //
-
-        ( function () {
-
-            var $itemFilters = $( '.item-filter-section' ),
-                $loadingOverlay = $( '<div/>' ).addClass( 'loading-overlay' ).append(
-                    $( '<div/>' ).addClass( 'loading-inner' )
-                );
-
-            $( 'body' ).eq( 0 ).append( $loadingOverlay );
-
-            function loading () { $loadingOverlay.addClass( 'active' ); }
-
-            function loaded () { $loadingOverlay.removeClass( 'active' ); }
-
-            $itemFilters.find( '[data-action="filter-update"]' ).on( 'click', loading );
 
         } )();
 
