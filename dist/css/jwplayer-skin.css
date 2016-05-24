@@ -52,6 +52,38 @@
             font-feature-settings: 'liga';
     -moz-osx-font-smoothing: grayscale;
 }
+.jw-skin-ccswd .jw-title
+{
+    height: 50%;
+    padding-bottom: 27px;
+
+    background: transparent;
+}
+.jw-skin-ccswd .jw-title .jw-title-primary,
+.jw-skin-ccswd .jw-title .jw-title-secondary
+{
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    line-height: 1.25;
+
+    position: absolute;
+
+    min-height: initial;
+    margin: 0;
+    padding: 0 1.5em;
+
+    text-align: center;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.jw-skin-ccswd .jw-title .jw-title-primary
+{
+    bottom: 50%;
+}
+.jw-skin-ccswd .jw-title .jw-title-secondary
+{
+    top: 50%;
+}
 .jw-skin-ccswd .jw-background-color
 {
     background: #000;
@@ -60,7 +92,7 @@
 {
     height: 2.5em;
 
-    border-top: #333 1px solid;
+    border-top: 1px solid #666;
 }
 .jw-skin-ccswd .jw-group
 {
@@ -83,11 +115,11 @@
 .jw-skin-ccswd .jw-playlist-container .jw-option:hover,
 .jw-skin-ccswd .jw-playlist-container .jw-option.jw-active-option
 {
-    background-color: black;
+    background-color: #000;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-option:hover .jw-label
 {
-    color: #ff0046;
+    color: #26cad3;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-icon-playlist
 {
@@ -95,7 +127,7 @@
 }
 .jw-skin-ccswd .jw-playlist-container .jw-label .jw-icon-play
 {
-    color: #ff0046;
+    color: #26cad3;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-label .jw-icon-play:before
 {
@@ -116,11 +148,19 @@
 }
 .jw-skin-ccswd .jw-button-color:hover
 {
-    color: #ff0046;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #26cad3;
 }
 .jw-skin-ccswd .jw-toggle
 {
-    color: #ff0046;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+
+    color: #26cad3;
 }
 .jw-skin-ccswd .jw-toggle.jw-off
 {
@@ -167,7 +207,7 @@
 }
 .jw-skin-ccswd .jw-display-icon-container
 {
-    border: 1px solid #333;
+    border: 1px solid #666;
     border-radius: 50%;
 }
 .jw-skin-ccswd .jw-rail
@@ -182,7 +222,7 @@
 }
 .jw-skin-ccswd .jw-progress
 {
-    background: #ff0046;
+    background: #26cad3;
 }
 .jw-skin-ccswd .jw-knob
 {
@@ -252,7 +292,7 @@
 }
 .jw-skin-ccswd .jw-dock .jw-dock-button
 {
-    border: 1px solid #333;
+    border: 1px solid #666;
     border-radius: 50%;
 }
 .jw-skin-ccswd .jw-dock .jw-overlay
@@ -261,8 +301,8 @@
 }
 .jw-skin-ccswd .jw-icon-tooltip .jw-active-option
 {
-    color: #fff;
-    background-color: #ff0046;
+    color: #000;
+    background-color: #26cad3;
 }
 .jw-skin-ccswd .jw-icon-volume
 {
@@ -273,7 +313,7 @@
 .jw-skin-ccswd .jw-volume-tip,
 .jw-skin-ccswd .jw-skip
 {
-    border: 1px solid #333;
+    border: 1px solid #666;
 }
 .jw-skin-ccswd .jw-time-tip
 {
@@ -302,7 +342,7 @@
 .jw-skin-ccswd .jw-skip.jw-skippable:hover .jw-text,
 .jw-skin-ccswd .jw-skip.jw-skippable:hover .jw-icon-inline
 {
-    color: #ff0046;
+    color: #26cad3;
 }
 .jw-skin-ccswd.jw-flag-touch .jw-controlbar .jw-icon:before,
 .jw-skin-ccswd.jw-flag-touch .jw-text-elapsed,
