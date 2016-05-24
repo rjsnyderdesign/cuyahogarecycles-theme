@@ -7,7 +7,6 @@
  * CuyahogaRecycles.org theme
  */
 .link-fx-nav-default,
-.youtube-video-play-button,
 .goto-top-btn,
 .link-toggle,
 .block-newsletter-form label,
@@ -20,6 +19,7 @@
 .page-footer-nav > li > a,
 .page-footer-nav-siteinfo > li > a,
 .page-footer-social > li > a,
+.youtube-video-play-button,
 .item-additionals > li > a,
 .item-entry-arrow,
 .item-entry-detail-link,
@@ -39,8 +39,6 @@
 }
 .link-fx-nav-default:hover,
 .link-fx-nav-default:focus,
-.youtube-video-play-button:hover,
-.youtube-video-play-button:focus,
 .goto-top-btn:hover,
 .goto-top-btn:focus,
 .link-toggle:hover,
@@ -65,6 +63,8 @@
 .page-footer-nav-siteinfo > li > a:focus,
 .page-footer-social > li > a:hover,
 .page-footer-social > li > a:focus,
+.youtube-video-play-button:hover,
+.youtube-video-play-button:focus,
 .item-additionals > li > a:hover,
 .item-additionals > li > a:focus,
 .item-entry-arrow:hover,
@@ -87,8 +87,6 @@
 }
 .link-fx-nav-default:active,
 .link-fx-nav-default.active,
-.youtube-video-play-button:active,
-.youtube-video-play-button.active,
 .goto-top-btn:active,
 .goto-top-btn.active,
 .link-toggle:active,
@@ -113,6 +111,8 @@
 .page-footer-nav-siteinfo > li > a.active,
 .page-footer-social > li > a:active,
 .page-footer-social > li > a.active,
+.youtube-video-play-button:active,
+.youtube-video-play-button.active,
 .item-additionals > li > a:active,
 .item-additionals > li > a.active,
 .item-entry-arrow:active,
@@ -8568,113 +8568,6 @@ form .form-subhead:first-child,
 
     height: 60px;
 }
-.youtube-video-play-button
-{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    opacity: 1;
-    background: #d9d9d9;
-    background: rgba(0, 0, 0, .6);
-}
-.youtube-video-play-button.video-playing
-{
-    z-index: -1;
-
-    -webkit-transition: opacity 500ms, z-index 0;
-         -o-transition: opacity 500ms, z-index 0;
-            transition: opacity 500ms, z-index 0;
-
-    opacity: 0;
-}
-.youtube-video-play-button > .video-play-title
-{
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 50%;
-    padding-bottom: 2em;
-
-    text-align: center;
-}
-@media screen and (min-width: 768px)
-{
-    .youtube-video-play-button > .video-play-title
-    {
-        padding-bottom: 4em;
-    }
-}
-.youtube-video-play-button > .video-play-title h4
-{
-    font-size: 1.5em;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-@media screen and (min-width: 768px)
-{
-    .youtube-video-play-button > .video-play-title h4
-    {
-        font-size: 2.25em;
-    }
-}
-.youtube-video-play-button > .video-play-icon-box
-{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    text-align: center;
-}
-.youtube-video-play-button > .video-play-icon-box .fa
-{
-    font-size: 4em;
-}
-@media screen and (min-width: 768px)
-{
-    .youtube-video-play-button > .video-play-icon-box .fa
-    {
-        font-size: 8em;
-    }
-}
-.youtube-video-play-button > .video-play-cover-img
-{
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-}
-.youtube-video-play-button > .video-play-cover-img > img
-{
-    display: block;
-
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
 body
 {
     color: #666;
@@ -11694,6 +11587,116 @@ a.active
     {
         clear: left;
     }
+}
+/*!
+ * CuyahogaRecycles.org theme
+ */
+.youtube-video-play-button
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+    background: #d9d9d9;
+    background: rgba(0, 0, 0, .6);
+}
+.youtube-video-play-button.video-playing
+{
+    z-index: -1;
+
+    -webkit-transition: opacity 500ms, z-index 0;
+         -o-transition: opacity 500ms, z-index 0;
+            transition: opacity 500ms, z-index 0;
+
+    opacity: 0;
+}
+.youtube-video-play-button > .video-play-title
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 50%;
+    padding-bottom: 2em;
+
+    text-align: center;
+}
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-title
+    {
+        padding-bottom: 4em;
+    }
+}
+.youtube-video-play-button > .video-play-title h4
+{
+    font-size: 1.5em;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-title h4
+    {
+        font-size: 2.25em;
+    }
+}
+.youtube-video-play-button > .video-play-icon-box
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+}
+.youtube-video-play-button > .video-play-icon-box .fa
+{
+    font-size: 4em;
+}
+@media screen and (min-width: 768px)
+{
+    .youtube-video-play-button > .video-play-icon-box .fa
+    {
+        font-size: 8em;
+    }
+}
+.youtube-video-play-button > .video-play-cover-img
+{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+.youtube-video-play-button > .video-play-cover-img > img
+{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 /*!
  * CuyahogaRecycles.org theme
