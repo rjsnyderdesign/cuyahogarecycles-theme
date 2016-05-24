@@ -811,12 +811,60 @@
           <li class="grid-cell grid-cell-4-4">
             <div class="grid-cell-container">
 
+              <!-- Include custom JW Player skin -->
               <link rel="stylesheet" type="text/css" href="../dist/css/jwplayer-skin.min.css" />
 
-              <script src="../root/js/jwplayer/jwplayer.js"></script>
-              <script>jwplayer.key="ABCdeFG123456SeVenABCdeFG123456SeVen==";</script>
+              <!-- Embed custom JW Player library -->
+              <script src="https://content.jwplatform.com/libraries/5b3f2EFK.js"></script>
 
-              <script src="https://content.jwplatform.com/players/DXilXWTu-yUiF6otI.js"></script>
+              <div id="container-video-featured"></div>
+
+              <script>
+                  ;( function () {
+                      var playerInstance = jwplayer( 'container-video-featured' );
+                      playerInstance.setup( {
+
+                          title       : 'Recycling Rules',
+                          description : 'The Do\'s and Don\'ts',
+                          image       : '../root/img/tiles/videos/Video_Tile_1200x600.jpg',
+
+                          sources : [
+                              {
+                                  label : '180p',
+                                  type  : 'mp4',
+                                  file  : 'http://content.jwplatform.com/videos/DXilXWTu-yYSYVcCp.mp4'
+                              },
+                              {
+                                  label : '270p',
+                                  type  : 'mp4',
+                                  file  : 'http://content.jwplatform.com/videos/DXilXWTu-rOuehe56.mp4'
+                              },
+                              {
+                                  default : true,
+                                  label : '406p',
+                                  type  : 'mp4',
+                                  file  : 'http://content.jwplatform.com/videos/DXilXWTu-4wHdejBQ.mp4'
+                              },
+                              {
+                                  label : 'AAC Audio',
+                                  type  : 'mp4',
+                                  file  : 'http://content.jwplatform.com/videos/DXilXWTu-OybnO3UW.m4a'
+                              }
+                          ],
+
+                          autostart   : false,
+                          aspectratio : '2:1',
+
+                          visualplaylist     : false,
+                          displaytitle       : false,
+                          displaydescription : false,
+                          stretching         : 'fill',
+
+                          skin : { name : 'ccswd' }
+
+                      } );
+                  } )();
+              </script>
 
             </div><!-- /.grid-cell-container -->
           </li><!-- /.grid-cell -->
