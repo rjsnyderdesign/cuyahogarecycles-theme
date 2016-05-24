@@ -213,6 +213,17 @@ module.exports = function (grunt) {
         },
         src: 'less/custom/social-hub-tw.less',
         dest: 'dist/css/social-hub-tw.css'
+      },
+      compileJwplayerSkin: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: 'jwplayer-skin.css.map',
+          sourceMapFilename: 'dist/css/jwplayer-skin.css.map'
+        },
+        src: 'less/custom/jwplayer-skin.less',
+        dest: 'dist/css/jwplayer-skin.css'
       }
     },
 
@@ -237,6 +248,12 @@ module.exports = function (grunt) {
           map: true
         },
         src: 'dist/css/social-hub-tw.css'
+      },
+      jwplayerSkin: {
+        options: {
+          map: true
+        },
+        src: 'dist/css/jwplayer-skin.css'
       },
       docs: {
         src: ['docs/assets/css/src/docs.css']
@@ -289,6 +306,10 @@ module.exports = function (grunt) {
       minifySocialHubTw: {
         src: 'dist/css/social-hub-tw.css',
         dest: 'dist/css/social-hub-tw.min.css'
+      },
+      minifyJwplayerSkin: {
+        src: 'dist/css/jwplayer-skin.css',
+        dest: 'dist/css/jwplayer-skin.min.css'
       },
       docs: {
         src: [
@@ -524,8 +545,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'uglify:libs', 'uglify:global', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme', 'less:compileSocialHubTw']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'autoprefixer:socialHubTw', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'cssmin:minifySocialHubTw']);
+  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme', 'less:compileSocialHubTw', 'less:compileJwplayerSkin']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'autoprefixer:socialHubTw', 'autoprefixer:jwplayerSkin', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'cssmin:minifySocialHubTw', 'cssmin:minifyJwplayerSkin']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
