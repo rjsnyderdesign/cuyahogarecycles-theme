@@ -170,7 +170,8 @@
     color: #95d600;
     background-color: #00833e;
 }
-.jw-skin-ccswd .jw-text
+.jw-skin-ccswd .jw-text,
+.jw-skin-ccswd .jw-controlbar .jw-option
 {
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
 
@@ -280,7 +281,7 @@
     }
 }
 .jw-skin-ccswd .jw-display-icon-container,
-.jw-skin-ccswd:hover .jw-display-icon-container
+.jw-skin-ccswd.jwplayer:hover .jw-display-icon-container
 {
     background: rgba(0, 0, 0, .4);
 }
@@ -429,6 +430,61 @@
 .jw-skin-ccswd .jw-skip.jw-skippable:hover .jw-icon-inline
 {
     color: #fff;
+}
+.jw-skin-ccswd .jw-rightclick ul
+{
+    border: 1px solid #006a32;
+    border-radius: 0;
+    background-color: #00833e;
+}
+.jw-skin-ccswd .jw-rightclick li
+{
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+
+    border-bottom: 1px solid #006a32;
+}
+.jw-skin-ccswd .jw-rightclick li,
+.jw-skin-ccswd .jw-rightclick li:hover
+{
+    background-color: inherit;
+}
+.jw-skin-ccswd .jw-rightclick .jw-featured,
+.jw-skin-ccswd .jw-rightclick .jw-featured:hover
+{
+    background-color: #009c4a;
+}
+.jw-skin-ccswd .jw-rightclick a,
+.jw-skin-ccswd .jw-rightclick .jw-featured a
+{
+    cursor: pointer;
+    -webkit-transition: color 500ms;
+         -o-transition: color 500ms;
+            transition: color 500ms;
+    text-decoration: none;
+
+    color: inherit;
+    background: none;
+}
+.jw-skin-ccswd .jw-rightclick a:hover,
+.jw-skin-ccswd .jw-rightclick .jw-featured a:hover,
+.jw-skin-ccswd .jw-rightclick a:focus,
+.jw-skin-ccswd .jw-rightclick .jw-featured a:focus
+{
+    text-decoration: none;
+
+    color: #26cad3;
+    background: none;
+}
+.jw-skin-ccswd .jw-rightclick a:active,
+.jw-skin-ccswd .jw-rightclick .jw-featured a:active,
+.jw-skin-ccswd .jw-rightclick a.active,
+.jw-skin-ccswd .jw-rightclick .jw-featured a.active
+{
+    -webkit-transition: color 0s;
+         -o-transition: color 0s;
+            transition: color 0s;
+
+    color: #95d600;
 }
 .jw-skin-ccswd.jw-flag-touch .jw-controlbar .jw-icon:before,
 .jw-skin-ccswd.jw-flag-touch .jw-text-elapsed,

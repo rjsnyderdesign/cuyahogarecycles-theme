@@ -49,6 +49,12 @@
     <script src="https://use.typekit.net/nrs3tja.js"></script>
     <script>try{Typekit.load({ async: true, active: function(){ window.isTypekitLoaded = true; } });}catch(e){}</script>
 
+    <!-- Include custom JW Player skin -->
+    <link rel="stylesheet" type="text/css" href="../dist/css/jwplayer-skin.min.css" />
+
+    <!-- Embed custom JW Player library -->
+    <script src="https://content.jwplatform.com/libraries/5b3f2EFK.js"></script>
+
   </head>
 
   <body class="page-scroll-freezable">
@@ -742,14 +748,14 @@
               <a class="grid-cell-link link-img-zoom" href="#">
                 <div class="grid-cell-container-inner grid-cell-link-title">
                   <div class="grid-cell-content-outer">
-                    <div class="grid-cell-content-inner">Recycle Your Computer</div>
+                    <div class="grid-cell-content-inner">Household Hazardous Waste Disposal</div>
                   </div>
                 </div>
                 <div class="grid-cell-container-inner grid-cell-link-bg">
                   <img
                     class="responsive-image img-tile img-zoom"
-                    src="../root/img/tiles/400x200/ComputerRecycling_400x200.jpg"
-                    data-responsimg-brk400="../root/img/tiles/800x400/ComputerRecycling_800x400.jpg"
+                    src="../root/img/tiles/400x200/HHW_400x200.jpg"
+                    data-responsimg-brk400="../root/img/tiles/800x400/HHW_800x400.jpg"
                   />
                 </div>
               </a>
@@ -761,14 +767,14 @@
               <a class="grid-cell-link link-img-zoom" href="#">
                 <div class="grid-cell-container-inner grid-cell-link-title">
                   <div class="grid-cell-content-outer">
-                    <div class="grid-cell-content-inner">Household Hazardous Waste Disposal</div>
+                    <div class="grid-cell-content-inner">Recycle Your Computer</div>
                   </div>
                 </div>
                 <div class="grid-cell-container-inner grid-cell-link-bg">
                   <img
                     class="responsive-image img-tile img-zoom"
-                    src="../root/img/tiles/400x200/HHW_400x200.jpg"
-                    data-responsimg-brk400="../root/img/tiles/800x400/HHW_800x400.jpg"
+                    src="../root/img/tiles/400x200/ComputerRecycling_400x200.jpg"
+                    data-responsimg-brk400="../root/img/tiles/800x400/ComputerRecycling_800x400.jpg"
                   />
                 </div>
               </a>
@@ -811,16 +817,10 @@
           <li class="grid-cell grid-cell-4-4">
             <div class="grid-cell-container">
 
-              <!-- Include custom JW Player skin -->
-              <link rel="stylesheet" type="text/css" href="../dist/css/jwplayer-skin.min.css" />
-
-              <!-- Embed custom JW Player library -->
-              <script src="https://content.jwplatform.com/libraries/5b3f2EFK.js"></script>
-
               <div id="container-video-featured"></div>
 
               <!-- Preview image -->
-              <style>
+              <style type="text/css">
                 .jw-preview {
                   background-image: url('../root/img/tiles/videos/Video_Tile_400x200.jpg');
                 }
@@ -836,7 +836,7 @@
                 }
               </style>
 
-              <script>
+              <script type="text/javascript">
                   ;( function () {
                       var playerInstance = jwplayer( 'container-video-featured' );
                       playerInstance.setup( {
@@ -869,6 +869,9 @@
                           ],
 
                           autostart   : false,
+                          abouttext   : 'Posted by CuyahogaRecycles.org',
+                          aboutlink   : '/',
+
                           aspectratio : '2:1',
 
                           visualplaylist     : false,

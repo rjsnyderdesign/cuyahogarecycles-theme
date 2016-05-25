@@ -17,8 +17,8 @@
 @jw-color-bg:           @brand-primary;
 @jw-color-primary:      @brand-success;
 @jw-color-secondary:    @white;
-@jw-color-rail-light:   lighten(@brand-primary,15%);
-@jw-color-rail-dark:    lighten(@brand-primary,5%);
+@jw-color-rail-light:   lighten(@jw-color-bg,15%);
+@jw-color-rail-dark:    lighten(@jw-color-bg,5%);
 @jw-color-icon-default: @white;
 @jw-color-icon-hover:   @brand-info;
 
@@ -147,7 +147,8 @@
     color: @jw-color-primary;
   }
 
-  .jw-text {
+  .jw-text,
+  .jw-controlbar .jw-option {
     color: @jw-color-primary;
     font-family: @font-family-sans-serif;
   }
@@ -250,7 +251,7 @@
   }
 
   .jw-display-icon-container,
-  &:hover .jw-display-icon-container {
+  &.jwplayer:hover .jw-display-icon-container {
     background: @black-transparent;
   }
 
@@ -390,6 +391,36 @@
     &.jw-skippable:hover .jw-text,
     &.jw-skippable:hover .jw-icon-inline {
       color: @jw-color-secondary;
+    }
+  }
+
+  .jw-rightclick {
+    ul {
+      background-color: @jw-color-bg;
+      border: @jw-border-secondary;
+      border-radius: 0;
+    }
+
+    li {
+      border-bottom: @jw-border-secondary;
+      font-family: @font-family-sans-serif;
+
+      &,
+      &:hover {
+        background-color: inherit;
+      }
+    }
+
+    .jw-featured {
+      &,
+      &:hover {
+        background-color: lighten(@jw-color-bg,5%);
+      }
+    }
+
+    a,
+    .jw-featured a {
+      .link-fx-nav-default;
     }
   }
 
