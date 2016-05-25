@@ -12405,12 +12405,24 @@ a.active
 {
     font-size: 1em;
 
-    margin: 0;
+    margin: -30px -20px;
     padding: 0;
     padding-left: 1em;
 
     border: 0 none;
     border-left: 3px solid #fff;
+    border-left: 3px solid rgba(255, 255, 255, .25);
+}
+@media screen and (min-width: 480px)
+{
+    .grid-cell-container-inner.grid-cell-quote-box blockquote
+    {
+        margin: 0;
+    }
+}
+.grid-cell-container-inner.grid-cell-quote-box blockquote p
+{
+    margin-top: 0;
 }
 .grid-cell-container-inner.grid-cell-quote-box blockquote cite:before
 {

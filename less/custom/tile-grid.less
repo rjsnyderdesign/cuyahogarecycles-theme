@@ -249,12 +249,21 @@
     vertical-align: middle;
 
     blockquote {
-      margin: 0;
+      margin: (-@grid-gutter-width * 3 / 8) (-@grid-gutter-width * 1 / 4);
       padding: 0;
       padding-left: @font-size-base;
       border: 0 none;
       border-left: 3px solid @white;
+      border-left: 3px solid @white-transparent;
       font-size: @font-size-base;
+
+      @media screen and (min-width: @screen-xs-min) {
+        margin: 0;
+      }
+
+      p {
+        margin-top: 0;
+      }
 
       cite:before {
         content: '– ';
@@ -343,7 +352,7 @@
 
   &.grid-cell-link-staff {
     > .grid-cell-link-caption {
-      background: rgba(0,0,0,0.4);
+      background: @black-transparent;
       vertical-align: bottom;
 
       > .grid-cell-content-outer {
