@@ -819,6 +819,23 @@
 
               <div id="container-video-featured"></div>
 
+              <!-- Preview image -->
+              <style>
+                .jw-preview {
+                  background-image: url('../root/img/tiles/videos/Video_Tile_400x200.jpg');
+                }
+                @media screen and (min-width: 400px) {
+                  .jw-preview {
+                    background-image: url('../root/img/tiles/videos/Video_Tile_800x400.jpg');
+                  }
+                }
+                @media screen and (min-width: 600px) {
+                  .jw-preview {
+                    background-image: url('../root/img/tiles/videos/Video_Tile_1200x600.jpg');
+                  }
+                }
+              </style>
+
               <script>
                   ;( function () {
                       var playerInstance = jwplayer( 'container-video-featured' );
@@ -826,7 +843,6 @@
 
                           title       : 'Recycling Rules',
                           description : 'The Do\'s and Don\'ts',
-                          image       : '../root/img/tiles/videos/Video_Tile_1200x600.jpg',
 
                           sources : [
                               {
