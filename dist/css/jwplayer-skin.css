@@ -54,17 +54,32 @@
 }
 .jw-skin-ccswd .jw-title
 {
+    top: -.5em;
+
     height: 50%;
-    padding-bottom: 27px;
 
     background: transparent;
+}
+@media (min-width: 400px)
+{
+    .jw-skin-ccswd .jw-title
+    {
+        top: -.75em;
+    }
+}
+@media (min-width: 540px)
+{
+    .jw-skin-ccswd .jw-title
+    {
+        top: -1em;
+    }
 }
 .jw-skin-ccswd .jw-title .jw-title-primary,
 .jw-skin-ccswd .jw-title .jw-title-secondary
 {
     font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
-    font-size: 2em;
-    line-height: 1.25;
+    font-size: 1.25em;
+    line-height: 1.125;
 
     position: absolute;
 
@@ -76,6 +91,23 @@
     letter-spacing: .05em;
     text-transform: uppercase;
 }
+@media (min-width: 400px)
+{
+    .jw-skin-ccswd .jw-title .jw-title-primary,
+    .jw-skin-ccswd .jw-title .jw-title-secondary
+    {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 540px)
+{
+    .jw-skin-ccswd .jw-title .jw-title-primary,
+    .jw-skin-ccswd .jw-title .jw-title-secondary
+    {
+        font-size: 2em;
+        line-height: 1.25;
+    }
+}
 .jw-skin-ccswd .jw-title .jw-title-primary
 {
     bottom: 50%;
@@ -86,13 +118,13 @@
 }
 .jw-skin-ccswd .jw-background-color
 {
-    background: #000;
+    background: #00833e;
 }
 .jw-skin-ccswd .jw-controlbar
 {
     height: 2.5em;
 
-    border-top: 1px solid #666;
+    border-top: 1px solid #006a32;
 }
 .jw-skin-ccswd .jw-group
 {
@@ -115,11 +147,11 @@
 .jw-skin-ccswd .jw-playlist-container .jw-option:hover,
 .jw-skin-ccswd .jw-playlist-container .jw-option.jw-active-option
 {
-    background-color: #000;
+    background-color: #00833e;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-option:hover .jw-label
 {
-    color: #26cad3;
+    color: #fff;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-icon-playlist
 {
@@ -127,7 +159,7 @@
 }
 .jw-skin-ccswd .jw-playlist-container .jw-label .jw-icon-play
 {
-    color: #26cad3;
+    color: #fff;
 }
 .jw-skin-ccswd .jw-playlist-container .jw-label .jw-icon-play:before
 {
@@ -135,24 +167,26 @@
 }
 .jw-skin-ccswd .jw-tooltip-title
 {
-    color: #fff;
-    background-color: #000;
+    color: #95d600;
+    background-color: #00833e;
 }
 .jw-skin-ccswd .jw-text
 {
-    color: #fff;
+    font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+
+    color: #95d600;
 }
 .jw-skin-ccswd .jw-button-color
-{
-    color: #fff;
-}
-.jw-skin-ccswd .jw-button-color:hover
 {
     -webkit-transition: color 500ms;
          -o-transition: color 500ms;
             transition: color 500ms;
 
-    color: #26cad3;
+    color: #95d600;
+}
+.jw-skin-ccswd .jw-button-color:hover
+{
+    color: #fff;
 }
 .jw-skin-ccswd .jw-toggle
 {
@@ -160,11 +194,11 @@
          -o-transition: color 500ms;
             transition: color 500ms;
 
-    color: #26cad3;
+    color: #fff;
 }
 .jw-skin-ccswd .jw-toggle.jw-off
 {
-    color: #fff;
+    color: #95d600;
 }
 .jw-skin-ccswd .jw-controlbar .jw-icon:before,
 .jw-skin-ccswd .jw-text-elapsed,
@@ -191,15 +225,21 @@
 }
 .jw-skin-ccswd .jw-icon-prev:before
 {
-    border-left: 1px solid #666;
+    border-left: 1px solid #95d600;
 }
 .jw-skin-ccswd .jw-icon-next:before
 {
-    border-right: 1px solid #666;
+    border-right: 1px solid #95d600;
 }
 .jw-skin-ccswd .jw-icon-display
 {
+    font-size: 1em;
+
     color: #fff;
+}
+.jw-skin-ccswd .jw-icon-display:hover
+{
+    color: #26cad3;
 }
 .jw-skin-ccswd .jw-icon-display:before
 {
@@ -207,22 +247,56 @@
 }
 .jw-skin-ccswd .jw-display-icon-container
 {
-    border: 1px solid #666;
+    width: 2em;
+    height: 2em;
+    margin-top: -1em;
+
     border-radius: 50%;
+}
+@media (min-width: 400px)
+{
+    .jw-skin-ccswd .jw-icon-display
+    {
+        font-size: 1.5em;
+    }
+    .jw-skin-ccswd .jw-display-icon-container
+    {
+        width: 3em;
+        height: 3em;
+        margin-top: -1.5em;
+    }
+}
+@media (min-width: 540px)
+{
+    .jw-skin-ccswd .jw-icon-display
+    {
+        font-size: 2em;
+    }
+    .jw-skin-ccswd .jw-display-icon-container
+    {
+        width: 4em;
+        height: 4em;
+        margin-top: -2em;
+    }
+}
+.jw-skin-ccswd .jw-display-icon-container,
+.jw-skin-ccswd:hover .jw-display-icon-container
+{
+    background: rgba(0, 0, 0, .4);
 }
 .jw-skin-ccswd .jw-rail
 {
-    background-color: #384154;
+    background-color: #009c4a;
     -webkit-box-shadow: none;
             box-shadow: none;
 }
 .jw-skin-ccswd .jw-buffer
 {
-    background-color: #666f82;
+    background-color: #00d062;
 }
 .jw-skin-ccswd .jw-progress
 {
-    background: #26cad3;
+    background: #fff;
 }
 .jw-skin-ccswd .jw-knob
 {
@@ -230,9 +304,9 @@
     height: .6em;
 
     border-radius: 1em;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 0 1px #000;
-            box-shadow: 0 0 0 1px #000;
+    background-color: #95d600;
+    -webkit-box-shadow: 0 0 0 1px #006a32;
+            box-shadow: 0 0 0 1px #006a32;
 }
 .jw-skin-ccswd .jw-slider-horizontal .jw-slider-container
 {
@@ -258,7 +332,7 @@
     height: .3em;
 
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #95d600;
 }
 .jw-skin-ccswd .jw-slider-vertical .jw-rail,
 .jw-skin-ccswd .jw-slider-vertical .jw-buffer,
@@ -279,12 +353,12 @@
 }
 .jw-skin-ccswd .jw-text-duration
 {
-    color: #666f82;
+    color: #00d062;
 }
 .jw-skin-ccswd .jw-controlbar-right-group .jw-icon-tooltip:before,
 .jw-skin-ccswd .jw-controlbar-right-group .jw-icon-inline:before
 {
-    border-left: 1px solid #666;
+    border-left: 1px solid #95d600;
 }
 .jw-skin-ccswd .jw-controlbar-right-group .jw-icon-inline:first-child:before
 {
@@ -292,7 +366,7 @@
 }
 .jw-skin-ccswd .jw-dock .jw-dock-button
 {
-    border: 1px solid #666;
+    border: 1px solid #006a32;
     border-radius: 50%;
 }
 .jw-skin-ccswd .jw-dock .jw-overlay
@@ -301,8 +375,8 @@
 }
 .jw-skin-ccswd .jw-icon-tooltip .jw-active-option
 {
-    color: #000;
-    background-color: #26cad3;
+    color: #00833e;
+    background-color: #95d600;
 }
 .jw-skin-ccswd .jw-icon-volume
 {
@@ -313,18 +387,30 @@
 .jw-skin-ccswd .jw-volume-tip,
 .jw-skin-ccswd .jw-skip
 {
-    border: 1px solid #666;
+    border: 1px solid #006a32;
 }
 .jw-skin-ccswd .jw-time-tip
 {
     bottom: 1.3em;
 
-    padding: .2em;
+    padding: .2em .4em;
+
+    border: 1px solid #a7f000;
+    background: #95d600;
+}
+.jw-skin-ccswd .jw-time-tip,
+.jw-skin-ccswd .jw-time-tip .jw-text
+{
+    font-weight: bold;
+
+    color: #00833e;
 }
 .jw-skin-ccswd .jw-menu,
 .jw-skin-ccswd .jw-volume-tip
 {
     bottom: .24em;
+
+    border-bottom: 0;
 }
 .jw-skin-ccswd .jw-skip
 {
@@ -337,12 +423,12 @@
 {
     line-height: 1.75em;
 
-    color: #fff;
+    color: #95d600;
 }
 .jw-skin-ccswd .jw-skip.jw-skippable:hover .jw-text,
 .jw-skin-ccswd .jw-skip.jw-skippable:hover .jw-icon-inline
 {
-    color: #26cad3;
+    color: #fff;
 }
 .jw-skin-ccswd.jw-flag-touch .jw-controlbar .jw-icon:before,
 .jw-skin-ccswd.jw-flag-touch .jw-text-elapsed,
