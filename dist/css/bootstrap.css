@@ -9095,6 +9095,10 @@ a.active
     margin-top: 0;
     margin-bottom: .75em;
 }
+.block-content ul > li
+{
+    margin-bottom: 1em;
+}
 .block-content img
 {
     width: 100%;
@@ -13295,21 +13299,21 @@ a.active
 {
     margin-right: .5em;
 }
-.item-filter-list > dt
+.item-filter-list dt
 {
     margin-top: 1em;
     margin-bottom: .5em;
 }
 .item-filter-list > li > a,
-.item-filter-list > dd > a,
+.item-filter-list dd > a,
 .item-filter-list > li > input[type='checkbox'],
-.item-filter-list > dd > input[type='checkbox']
+.item-filter-list dd > input[type='checkbox']
 {
     position: relative;
     z-index: 1;
 }
 .item-filter-list > li > label,
-.item-filter-list > dd > label
+.item-filter-list dd > label
 {
     font-weight: normal;
 
@@ -13324,16 +13328,16 @@ a.active
 @media screen and (min-width: 992px)
 {
     .item-filter-list > li,
-    .item-filter-list > dd
+    .item-filter-list dd
     {
         line-height: 1.125;
     }
     .item-filter-list > li > a,
-    .item-filter-list > dd > a,
+    .item-filter-list dd > a,
     .item-filter-list > li > label,
-    .item-filter-list > dd > label,
+    .item-filter-list dd > label,
     .item-filter-list > li > input[type='checkbox'],
-    .item-filter-list > dd > input[type='checkbox']
+    .item-filter-list dd > input[type='checkbox']
     {
         font-size: .875em;
 
