@@ -8908,7 +8908,7 @@ a.active .detail-arrow:after
 {
     border-color: #95d600;
 }
-.block-newsletter-form input[type='submit']
+.block-newsletter-form .btn.btn-submit
 {
     float: right;
 }
