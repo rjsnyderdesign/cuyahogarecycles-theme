@@ -11038,10 +11038,10 @@ a.active
 .slidereveal-panel#panel-menu .nav > li > a.sub-menu-toggle.open .fa,
 .slidereveal-panel#panel-menu .dropdown-menu > li > a.sub-menu-toggle.open .fa
 {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+         -o-transform: rotateX(180deg);
+            transform: rotateX(180deg);
 }
 .slidereveal-panel#panel-menu .nav
 {
