@@ -349,33 +349,103 @@
 
     <main class="page-main" role="main" id="page-main">
 
-      <!-- twitter -->
-      <a
-        class="twitter-timeline"
-        href="https://twitter.com/RecycleCuyahoga"
-        data-chrome="nofooter"
-        data-dnt="true"
-        data-tweet-limit="12"
-        data-widget-id="722516717692461056"
-      >Tweets by @RecycleCuyahoga</a>
-      <script>
-        function onTwitterReady () {
-            ( function ( $ ) {
-                $( '#twitter-widget-0' ).css( {
-                    'width': '100%'
-                } );
-            } )( jQuery );
+      <div class="container-content-article block-content">
+        <div class="container-fluid">
+          <article>
+            <h2 class="article-title">Social Media Hub</h2>
+            <hr class="article-divider" />
+            <p>Follow us on <a href="https://www.facebook.com/solidwastedistrict" target="_blank" ><strong>Facebook</strong></a> and <a href="https://twitter.com/RecycleCuyahoga" target="_blank" ><strong>Twitter</strong></a> for regular tips on recycling, composting, green living and more.</p>
+          </article>
+        </div><!-- /.container-fluid -->
+      </div><!-- /.container-content-article block-content -->
+
+      <style>
+
+        .social-hub-row {
+          width: 100%;
         }
-      </script>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";js.setAttribute('onload', "twttr.events.bind('rendered',function(e) {onTwitterReady()});");fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <!-- /twitter -->
 
-      <!-- facebook -->
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+        .social-hub-col-left,
+        .social-hub-col-right {
+          float: left;
+          width: 100%;
+        }
 
-      <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div></div>
-      <!-- /facebook -->
+        .social-feed-inner {
+          width: auto;
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        @media (min-width: 800px) {
+          .social-hub-row {
+            padding-left: 400px;
+          }
+
+          .social-hub-col-left,
+          .social-hub-col-right {
+            position: relative;
+          }
+
+          .social-hub-col-left {
+            left: -100%;
+            width: 400px;
+            margin-left: -400px;
+          }
+        }
+
+      </style>
+
+      <div class="social-hub-row clearfix">
+
+        <div class="social-hub-col-right">
+
+          <!-- twitter -->
+          <a
+            class="twitter-timeline"
+            href="https://twitter.com/RecycleCuyahoga"
+            data-chrome="nofooter"
+            data-dnt="true"
+            data-tweet-limit="12"
+            data-widget-id="722516717692461056"
+          >Tweets by @RecycleCuyahoga</a>
+          <script>
+            function onTwitterReady () {
+                ( function ( $ ) {
+                    $( '#twitter-widget-0' ).css( { 'width': '100%' } );
+                } )( jQuery );
+            }
+          </script>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";js.setAttribute('onload', "twttr.events.bind('rendered',function(e) {onTwitterReady()});");fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <!-- /twitter -->
+
+        </div>
+
+        <div class="social-hub-col-left">
+
+          <div class="social-feed-inner">
+
+            <!-- facebook -->
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/solidwastedistrict"
+              data-tabs="timeline"
+              data-small-header="true"
+              data-width="400"
+              data-adapt-container-width="true"
+              data-height="800"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            ><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/solidwastedistrict"><a href="https://www.facebook.com/solidwastedistrict">Facebook</a></blockquote></div></div>
+            <!-- /facebook -->
+
+          </div>
+
+        </div>
+
+      </div>
 
     </main>
 
