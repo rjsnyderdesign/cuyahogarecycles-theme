@@ -8777,10 +8777,10 @@ a.active .detail-arrow:after
 }
 .link-toggle:not(.collapsed) > .fa
 {
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+         -o-transform: rotateX(180deg);
+            transform: rotateX(180deg);
 
     color: #e84b37;
 }
