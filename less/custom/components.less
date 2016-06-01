@@ -361,6 +361,7 @@ body:not(.noscroll) {
 
 @arrow-size-base: 1em;
 @arrow-size-inner: ((@arrow-size-base * sqrt(2)) / 2);
+@arrow-thickness: 2px;
 
 .detail-arrow {
   width: @arrow-size-base;
@@ -377,12 +378,7 @@ body:not(.noscroll) {
     height: @arrow-size-inner;
     display: block;
     position: relative;
-    right: 25%;
     border-color: @gray;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-top-width: 2px;
-    border-right-width: 2px;
     content: '';
 
     .transition(border-color @link-transition-speed);
@@ -402,6 +398,38 @@ body:not(.noscroll) {
 
       .transition(border-color 0s);
     }
+  }
+
+  &.detail-arrow-inverse {
+    border-color: @white;
+  }
+
+  &.detail-arrow-up:after {
+    border-top-style: solid;
+    border-left-style: solid;
+    border-top-width: @arrow-thickness;
+    border-left-width: @arrow-thickness;
+  }
+
+  &.detail-arrow-left:after {
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-left-width: @arrow-thickness;
+    border-bottom-width: @arrow-thickness;
+  }
+
+  &.detail-arrow-down:after {
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-bottom-width: @arrow-thickness;
+    border-right-width: @arrow-thickness;
+  }
+
+  &.detail-arrow-right:after {
+    border-top-style: solid;
+    border-right-style: solid;
+    border-top-width: @arrow-thickness;
+    border-right-width: @arrow-thickness;
   }
 }
 
