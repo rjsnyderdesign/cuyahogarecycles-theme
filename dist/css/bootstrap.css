@@ -12411,7 +12411,7 @@ a.active
 {
     display: block;
 
-    width: 100%;
+    height: 100%;
     margin: 0 auto;
     padding: 0;
 
@@ -13003,14 +13003,14 @@ a.active
 .item-additional-icon.item-donatable
 {
     border-color: #666;
-    background: url('../../root/img/symbols/item-donatable.png');
-    background-image: url('../../root/img/symbols/item-donatable.svg'), none;
+    background: url('/img/symbols/item-donatable.png');
+    background-image: url('/img/symbols/item-donatable.svg'), none;
 }
 .item-additional-icon.item-business
 {
     border-color: #666;
-    background: url('../../root/img/symbols/item-business.png');
-    background-image: url('../../root/img/symbols/item-business.svg'), none;
+    background: url('/img/symbols/item-business.png');
+    background-image: url('/img/symbols/item-business.svg'), none;
 }
 .item-additional-label
 {
