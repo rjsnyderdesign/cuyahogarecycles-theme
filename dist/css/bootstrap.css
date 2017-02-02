@@ -9351,8 +9351,8 @@ a.active
          -o-animation: spin-y 3000ms linear infinite normal;
             animation: spin-y 3000ms linear infinite normal;
 
-    background: url('../../img/symbols/loading-moebius.png');
-    background-image: url('../../img/symbols/loading-moebius.svg'), none;
+    background: url('/img/symbols/loading-moebius.png');
+    background-image: url('/img/symbols/loading-moebius.svg'), none;
 }
 .loading-inner:after
 {
