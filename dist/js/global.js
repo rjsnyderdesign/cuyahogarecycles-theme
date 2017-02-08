@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2016 [object Object]
+ * Copyright 2011-2017 [object Object]
  * Licensed under the MIT license
  */
 

@@ -11110,6 +11110,10 @@ a.active
     height: 100%;
     margin-top: -18px;
 }
+.slidereveal-panel#panel-menu .panel-social-links > li
+{
+    margin-right: .5em;
+}
 .slidereveal-panel#panel-menu .panel-social-links > li > a
 {
     cursor: pointer;
