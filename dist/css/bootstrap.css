@@ -9351,8 +9351,8 @@ a.active
          -o-animation: spin-y 3000ms linear infinite normal;
             animation: spin-y 3000ms linear infinite normal;
 
-    background: url('../../img/symbols/loading-moebius.png');
-    background-image: url('../../img/symbols/loading-moebius.svg'), none;
+    background: url('/img/symbols/loading-moebius.png');
+    background-image: url('/img/symbols/loading-moebius.svg'), none;
 }
 .loading-inner:after
 {
@@ -11749,6 +11749,8 @@ a.active
     padding: 0;
 
     list-style: none;
+
+    background-color: #333;
 }
 .tile-grid > .grid-cell
 {
@@ -11768,10 +11770,6 @@ a.active
 .tile-grid > .grid-cell.grid-cell-full-width
 {
     width: 100% !important;
-}
-.tile-grid > .grid-cell.grid-cell-placeholder
-{
-    display: none;
 }
 .tile-grid > .grid-cell.grid-cell-placeholder:nth-child(4n)
 {
@@ -12031,10 +12029,6 @@ a.active
         width: 100%;
         padding-bottom: 50%;
     }
-    .tile-grid > .grid-cell.grid-cell-placeholder.grid-cell-placeholder-2.grid-cell-placeholder-pos-2:nth-child(2n)
-    {
-        display: block;
-    }
 }
 @media screen and (min-width: 1200px)
 {
@@ -12277,18 +12271,6 @@ a.active
     {
         width: 100%;
         padding-bottom: 33.33333333%;
-    }
-    .tile-grid > .grid-cell.grid-cell-placeholder.grid-cell-placeholder-2:nth-child(n)
-    {
-        display: none;
-    }
-    .tile-grid > .grid-cell.grid-cell-placeholder.grid-cell-placeholder-3.grid-cell-placeholder-pos-2:nth-child(3n + 2)
-    {
-        display: block;
-    }
-    .tile-grid > .grid-cell.grid-cell-placeholder.grid-cell-placeholder-3.grid-cell-placeholder-pos-3:nth-child(3n)
-    {
-        display: block;
     }
 }
 .tile-grid > .grid-cell > .grid-cell-container
