@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2016 [object Object]
+ * Copyright 2011-2017 [object Object]
  * Licensed under the MIT license
  */
 
@@ -881,6 +881,59 @@ if (typeof jQuery === 'undefined') {
             } );
 
             $window.resize( resizeLightboxImg );
+
+        } )();
+
+        //
+        // Perfect grid
+        //
+
+        ( function () {
+
+            $( '.tile-grid.perfect-grid' ).perfectgrid( {
+                itemSelector: '.grid-cell',
+                placeholderSelector: '.grid-cell-placeholder',
+                columns: [
+                    [    0, 2 ],
+                    [  800, 4 ],
+                    [ 1200, 6 ]
+                ],
+                cellRatio: 2,
+                getBlockSize: function ( $element ) {
+
+                    var gridCols = this.getCols(),
+                        result = {
+                            cols: 2,
+                            rows: 2
+                        };
+
+                    $element = $( $element );
+
+                    $.each(
+                        $element.attr( 'class' ).split( /\s+/ ),
+                        function ( i, className ) {
+                            var classMatch = className.match(
+                                /grid\-cell\-([0-9])\-([0-9])/
+                            );
+                            if ( classMatch ) {
+                                result = {
+                                    cols: parseInt( classMatch[ 1 ] ),
+                                    rows: parseInt( classMatch[ 2 ] )
+                                };
+                            }
+                        }
+                    );
+
+                    if ( result.cols > gridCols ) {
+                        // Adjust rows first, then cols.
+                        result.rows = Math.floor( result.rows * gridCols / result.cols );
+                        result.cols = Math.floor( result.cols * gridCols / result.cols );
+                    }
+
+                    return result;
+
+                }
+            } );
 
         } )();
 

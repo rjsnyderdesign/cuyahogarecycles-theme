@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2016 [object Object]
+ * Copyright 2011-2017 [object Object]
  * Licensed under the MIT license
  */
 
@@ -1228,6 +1228,449 @@ jQuery.responsImg=function(e,n){var r,i,t,o,a,s,u,c,l,d,w,f,p,g,v,m,h;return i={
 		})();
 	});
 })(window, document);
+
+/*!
+ * PerfectGrid
+ * Author: Ken Sugiura
+ * Version: 0.1
+ * License: MIT
+ *
+ * Copyright (c) 2017 TRAIT
+ *
+ * This is a jQuery plugin for creating responsive grid layouts
+ * based on a predefined set of grid units.
+ */
+
+;( function ( $ ) {
+
+    var debugModeOn = false;
+
+    var $window = $( window );
+
+    var defaults = {
+        itemSelector: '',        // selector
+        placeholderSelector: '', // selector
+        columns:      1,         // int|array
+        cellRatio:    1          // float
+    };
+
+    /**
+     * @class PerfectGrid
+     */
+
+    function PerfectGrid ( container, options ) {
+
+        options = $.extend( {}, defaults, options );
+
+        this.$container = $( container );
+
+        this.$placeholders = this.$container
+            .find( options.placeholderSelector )
+            .remove();
+
+        this.$elements = this.$container
+            .find( options.itemSelector );
+
+        this.columns = options.columns;
+        if ( this.columns instanceof Array ) {
+            this.columns = this.columns.sort( function ( a, b ) {
+                return a[ 0 ] - b[ 0 ];
+            } );
+        } else {
+            this.columns = parseInt( this.columns );
+        }
+
+        this.cellRatio = parseInt( options.cellRatio );
+
+        if ( typeof options.getBlockSize === 'function' ) {
+            this.getBlockSize = options.getBlockSize;
+        }
+
+        this.cols              = 1;
+        this.cellWidth         = 1;
+        this.cellHeight        = 1;
+        this.colIntervals      = [];
+        this.matrix            = [];
+        this.blocks            = [];
+        this.placeholderBlocks = [];
+
+        $window.on( 'resize', this.reset.bind( this ) );
+        this.reset();
+
+    }
+
+    PerfectGrid.prototype.getCols = function () {
+
+        /**
+         * Since `this.columns` may be an integer or an array of
+         * responsive column-breakpoint pairs, this function will
+         * always return a valid integer column count.
+         */
+
+        var width, result, i;
+
+        if ( this.columns instanceof Array ) {
+            width = window.innerWidth;
+            for ( i = 0; i < this.columns.length; i++ ) {
+                result = this.columns[ i ][ 1 ];
+                if ( this.columns[ i + 1 ] && width < this.columns[ i + 1 ][ 0 ] ) {
+                    break;
+                }
+            }
+            return result;
+        } else {
+            return this.columns;
+        }
+
+    };
+
+    PerfectGrid.prototype.getBlockSize = function ( $element ) {
+        // This method should be overridden in the settings.
+        $element = $( $element );
+        return {
+            cols: parseInt( $element.data( 'bw' ), 10 ) || 1,
+            rows: parseInt( $element.data( 'bh' ), 10 ) || 1
+        };
+    };
+
+    PerfectGrid.prototype.createBlocks = function ( $elements ) {
+        var blocks = [],
+            $element,
+            blockSize;
+        for ( i = 0; i < $elements.length; i++ ) {
+            element = $elements[ i ];
+            blockSize = this.getBlockSize( element );
+            blocks.push(
+                new Block( {
+                    element: element,
+                    cols: blockSize.cols,
+                    rows: blockSize.rows
+                } )
+            );
+        }
+        return blocks;
+    };
+
+    PerfectGrid.prototype.resetGrid = function () {
+
+        var cols = this.getCols(),
+            i;
+
+        this.cols         = cols;
+        this.cellWidth    = Math.round( this.$container.width() / this.cols );
+        this.cellHeight   = Math.round( this.cellWidth / this.cellRatio );
+
+        /**
+         * In order to circumvent rounding errors caused by the
+         * browser, column positions are rounded and cached to an
+         * array instead of being calculated based on cell size.
+         */
+
+        this.colIntervals = [];
+        for ( i = 0; i < this.cols; i++ ) {
+            this.colIntervals.push( i * this.cellWidth );
+        }
+        this.colIntervals.push( this.$container.width() );
+
+        this.matrix = new Matrix( this.cols, 1 );
+
+    };
+
+    PerfectGrid.prototype.resetBlocks = function () {
+        this.blocks = this.createBlocks( this.$elements );
+        this.placeholderBlocks = this.createBlocks( this.$placeholders );
+    };
+
+    PerfectGrid.prototype.isSpaceAvailable = function ( x, y, cols, rows ) {
+        var matrix = this.matrix,
+            i, j;
+        for ( i = 0; i < rows; i++ ) {
+            if ( matrix.existsRow( y + i ) ) {
+                for ( j = 0; j < cols; j++ ) {
+                    if ( matrix.exists( x + j, y + i ) ) {
+                        if ( matrix.get( x + j, y + i ) ) {
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
+                return false;
+            }
+        }
+        return true;
+    };
+
+    PerfectGrid.prototype.findSpace = function ( block ) {
+
+        /**
+         * Find an open space where a block can be placed.
+         */
+
+        var matrix = this.matrix,
+            result = false,
+            i, j, k, row;
+
+        if ( block.cols > this.cols ) {
+            throw new Error( 'Block does not fit inside of grid.' );
+        }
+
+        for ( k = 0; k < block.rows; k++ ) {
+            matrix.pushRow();
+        }
+
+        i = 0;
+        while ( ! result ) {
+            for ( j = 0; j < matrix.cols; j++ ) {
+                if ( this.isSpaceAvailable( j, i, block.cols, block.rows ) ) {
+                    result = { x: j, y: i };
+                    break;
+                }
+            }
+            i++;
+        }
+
+        return result;
+
+    };
+
+    PerfectGrid.prototype.hasHoles = function () {
+        var matrixValues = this.matrix.values,
+            i, j;
+        for ( i = 0; i < matrixValues.length; i++ ) {
+            for ( j = 0; j < matrixValues[ i ].length; j++ ) {
+                if ( ! matrixValues[ i ][ j ] ) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    };
+
+    PerfectGrid.prototype.append = function ( x, y, block ) {
+        this.$container.append( block.$element );
+        block.append( x, y );
+        this.matrix.setMultiple( x, y, block.cols, block.rows, true );
+    };
+
+    PerfectGrid.prototype.remove = function ( block ) {
+        block.$element.remove();
+        block.remove();
+        this.matrix.setMultiple( block.x, block.y, block.cols, block.rows, null );
+    };
+
+    PerfectGrid.prototype.placeBlock = function ( block ) {
+        var pos = this.findSpace( block );
+        if ( pos ) {
+            this.append( pos.x, pos.y, block );
+            this.trimMatrix();
+        }
+        // console.log( 'Matrix:' );
+        // console.log( this.printMatrix() );
+    };
+
+    PerfectGrid.prototype.fillHoles = function () {
+        /**
+         * Add placeholder blocks if empty spaces are found
+         * within the grid.
+         */
+        var blocks = this.placeholderBlocks.slice();
+        while ( blocks.length && this.hasHoles() ) {
+            this.placeBlock( blocks.shift() );
+        }
+    };
+
+    PerfectGrid.prototype.placeBlocks = function ( blocks ) {
+        blocks = blocks.slice();
+        while ( blocks.length ) {
+            this.placeBlock( blocks.shift() );
+        }
+    };
+
+    PerfectGrid.prototype.removeBlocks = function ( blocks ) {
+        var i;
+        for ( i = 0; i < blocks.length; i++ ) {
+            this.remove( blocks[ i ] );
+        }
+    };
+
+    PerfectGrid.prototype.draw = function () {
+
+        var blocks = this.blocks.concat( this.placeholderBlocks ),
+            i, block, bx, by, bw, bh;
+
+        this.$container.css( {
+            height: this.matrix.rows * this.cellHeight + 'px',
+            position: 'relative'
+        } );
+
+        for ( i = 0; i < blocks.length; i++ ) {
+            block = blocks[ i ];
+            bx = this.colIntervals[ block.x ];
+            by = block.y * this.cellHeight;
+            bw = this.colIntervals[ block.x + block.cols ] - bx;
+            bh = this.cellHeight * block.rows;
+            block.$element.css( {
+                width: bw + 'px',
+                height: bh + 'px',
+                position: 'absolute',
+                top: by + 'px',
+                left: bx + 'px'
+            } );
+        }
+
+    };
+
+    PerfectGrid.prototype.reset = function () {
+        this.resetGrid();
+        this.resetBlocks();
+        this.removeBlocks( this.blocks );
+        this.removeBlocks( this.placeholderBlocks );
+        this.placeBlocks( this.blocks );
+        this.fillHoles();
+        this.draw();
+    };
+
+    PerfectGrid.prototype.isRowEmpty = function ( row ) {
+        var j = row.length;
+        if ( j ) {
+            while ( j-- ) {
+                if ( row[ j ] ) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    };
+
+    PerfectGrid.prototype.trimMatrix = function () {
+        var matrix = this.matrix,
+            i = matrix.values.length;
+        if ( i ) {
+            while ( i-- ) {
+                if ( this.isRowEmpty( matrix.values[ i ] ) ) {
+                    matrix.popRow();
+                } else {
+                    break;
+                }
+            }
+        }
+    };
+
+    PerfectGrid.prototype.printMatrix = function () {
+        var matrix = this.matrix,
+            result = '',
+            i, j, row;
+        for ( i = 0; i < matrix.rows; i++ ) {
+            row = '';
+            for ( j = 0; j < matrix.cols; j++ ) {
+                row += ( matrix.values[ i ][ j ] ) ? '*' : '-';
+            }
+            result += row + '\n';
+        }
+        return result;
+    };
+
+    /**
+     * @class Block
+     *
+     * Each block has size and position measured in grid units.
+     */
+
+    function Block ( options ) {
+        this.$element = $( options.element );
+        this.cols = options.cols;
+        this.rows = options.rows;
+        this.x = null;
+        this.y = null;
+    }
+
+    Block.prototype.append = function ( x, y ) {
+        this.x = x;
+        this.y = y;
+    };
+
+    Block.prototype.remove = function () {
+        this.x = null;
+        this.y = null;
+    };
+
+    /**
+     * @class Matrix
+     *
+     * Matrix is used to keep track of occupied and open spaces
+     * within the grid.
+     */
+
+    function Matrix ( cols, rows ) {
+        var i;
+        rows = parseInt( rows );
+        this.cols = parseInt( cols );
+        this.rows = 0;
+        this.values = [];
+        for ( i = 0; i < rows; i++ ) {
+            this.pushRow();
+        }
+    }
+
+    Matrix.prototype.pushRow = function () {
+        var row = [], j;
+        for ( j = 0; j < this.cols; j++ ) {
+            row.push( null );
+        }
+        this.values.push( row );
+        this.rows += 1;
+    };
+
+    Matrix.prototype.popRow = function () {
+        this.rows -= 1;
+        return this.values.pop();
+    };
+
+    Matrix.prototype.existsRow = function ( y ) {
+        return this.values[ y ] instanceof Array;
+    };
+
+    Matrix.prototype.exists = function ( x, y ) {
+        return (
+            this.existsRow( y ) &&
+            x === parseInt( x, 10 ) &&
+            x >= 0 &&
+            x < this.cols
+        );
+    };
+
+    Matrix.prototype.get = function ( x, y ) {
+        return this.values[ y ][ x ];
+    };
+
+    Matrix.prototype.set = function ( x, y, value ) {
+        if ( this.exists( x, y ) ) {
+            return this.values[ y ][ x ] = value;
+        }
+    };
+
+    Matrix.prototype.setMultiple = function ( x, y, cols, rows, value ) {
+        var i, j;
+        for ( i = 0; i < rows; i++ ) {
+            for ( j = 0; j < cols; j++ ) {
+                this.set( x + j, y + i, value );
+            }
+        }
+    };
+
+    //
+    // Export
+    //
+
+    $.fn.perfectgrid = function ( options ) {
+        this.each( function () {
+            var perfectGrid = new PerfectGrid( this, options );
+        } );
+    };
+
+} )( jQuery );
 
 !function(t){"use strict";var s=function(s,e){this.el=t(s),this.options=t.extend({},t.fn.typed.defaults,e),this.isInput=this.el.is("input"),this.attr=this.options.attr,this.showCursor=this.isInput?!1:this.options.showCursor,this.elContent=this.attr?this.el.attr(this.attr):this.el.text(),this.contentType=this.options.contentType,this.typeSpeed=this.options.typeSpeed,this.startDelay=this.options.startDelay,this.backSpeed=this.options.backSpeed,this.backDelay=this.options.backDelay,this.stringsElement=this.options.stringsElement,this.strings=this.options.strings,this.strPos=0,this.arrayPos=0,this.stopNum=0,this.loop=this.options.loop,this.loopCount=this.options.loopCount,this.curLoop=0,this.stop=!1,this.cursorChar=this.options.cursorChar,this.shuffle=this.options.shuffle,this.sequence=[],this.build()};s.prototype={constructor:s,init:function(){var t=this;t.timeout=setTimeout(function(){for(var s=0;s<t.strings.length;++s)t.sequence[s]=s;t.shuffle&&(t.sequence=t.shuffleArray(t.sequence)),t.typewrite(t.strings[t.sequence[t.arrayPos]],t.strPos)},t.startDelay)},build:function(){var s=this;if(this.showCursor===!0&&(this.cursor=t('<span class="typed-cursor">'+this.cursorChar+"</span>"),this.el.after(this.cursor)),this.stringsElement){s.strings=[],this.stringsElement.hide();var e=this.stringsElement.find("p");t.each(e,function(e,i){s.strings.push(t(i).html())})}this.init()},typewrite:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.typeSpeed,i=this;i.timeout=setTimeout(function(){var e=0,r=t.substr(s);if("^"===r.charAt(0)){var o=1;/^\^\d+/.test(r)&&(r=/\d+/.exec(r)[0],o+=r.length,e=parseInt(r)),t=t.substring(0,s)+t.substring(s+o)}if("html"===i.contentType){var n=t.substr(s).charAt(0);if("<"===n||"&"===n){var a="",h="";for(h="<"===n?">":";";t.substr(s).charAt(0)!==h;)a+=t.substr(s).charAt(0),s++;s++,a+=h}}i.timeout=setTimeout(function(){if(s===t.length){if(i.options.onStringTyped(i.arrayPos),i.arrayPos===i.strings.length-1&&(i.options.callback(),i.curLoop++,i.loop===!1||i.curLoop===i.loopCount))return;i.timeout=setTimeout(function(){i.backspace(t,s)},i.backDelay)}else{0===s&&i.options.preStringTyped(i.arrayPos);var e=t.substr(0,s+1);i.attr?i.el.attr(i.attr,e):i.isInput?i.el.val(e):"html"===i.contentType?i.el.html(e):i.el.text(e),s++,i.typewrite(t,s)}},e)},e)}},backspace:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.backSpeed,i=this;i.timeout=setTimeout(function(){if("html"===i.contentType&&">"===t.substr(s).charAt(0)){for(var e="";"<"!==t.substr(s).charAt(0);)e-=t.substr(s).charAt(0),s--;s--,e+="<"}var r=t.substr(0,s);i.attr?i.el.attr(i.attr,r):i.isInput?i.el.val(r):"html"===i.contentType?i.el.html(r):i.el.text(r),s>i.stopNum?(s--,i.backspace(t,s)):s<=i.stopNum&&(i.arrayPos++,i.arrayPos===i.strings.length?(i.arrayPos=0,i.shuffle&&(i.sequence=i.shuffleArray(i.sequence)),i.init()):i.typewrite(i.strings[i.sequence[i.arrayPos]],s))},e)}},shuffleArray:function(t){var s,e,i=t.length;if(i)for(;--i;)e=Math.floor(Math.random()*(i+1)),s=t[e],t[e]=t[i],t[i]=s;return t},reset:function(){var t=this;clearInterval(t.timeout);var s=this.el.attr("id");this.el.after('<span id="'+s+'"/>'),this.el.remove(),"undefined"!=typeof this.cursor&&this.cursor.remove(),t.options.resetCallback()}},t.fn.typed=function(e){return this.each(function(){var i=t(this),r=i.data("typed"),o="object"==typeof e&&e;r||i.data("typed",r=new s(this,o)),"string"==typeof e&&r[e]()})},t.fn.typed.defaults={strings:["These are the default values...","You know what you should do?","Use your own!","Have a great day!"],stringsElement:null,typeSpeed:0,startDelay:0,backSpeed:0,shuffle:!1,backDelay:500,loop:!1,loopCount:!1,showCursor:!0,cursorChar:"|",attr:null,contentType:"html",callback:function(){},preStringTyped:function(){},onStringTyped:function(){},resetCallback:function(){}}}(window.jQuery);
 /**
