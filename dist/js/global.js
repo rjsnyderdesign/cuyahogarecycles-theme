@@ -290,7 +290,8 @@ if (typeof jQuery === 'undefined') {
             //
 
             $( '[data-action="wdidw-show"]' ).on( 'click', function () {
-                $wdidwSearchBar.addClass( 'active' );
+                $wdidwSearchBar.addClass('active');
+                $('.wdidw-search-bar .wdidw-search-form .form-control').focus();
                 $wdidwBtn.attr( 'tabindex', '-1' );
                 $wdidwSearchFormInputs.attr( 'tabindex', '0' );
                 return false;
@@ -600,10 +601,10 @@ if (typeof jQuery === 'undefined') {
 
             function init () {
 
-                $( '.navbar-primary li a' )
+                $('.navbar-primary li a').not('.event-link')
                     .hover(
-                        function () { enter( $( this ) ); },
-                        function () { exit( $( this ) ); }
+                        function () { enter($(this)); },
+                        function () { exit($(this)); }
                     );
 
                 $mainMenu
